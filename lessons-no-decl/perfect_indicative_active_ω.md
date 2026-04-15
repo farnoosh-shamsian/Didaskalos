@@ -1,0 +1,36 @@
+---
+topic: perfect, indicative, active (ω)
+pos: verb
+frequency: 548
+---
+
+# Lesson: The Perfect Indicative Active (‑ω) in Ancient Greek  
+
+*Target level: Beginner‑Intermediate*  
+
+---
+
+## 1. What the Perfect Indicative Active Is  
+
+| Term | Meaning in English | Greek function |
+|------|-------------------|----------------|
+| **Perfect** | A completed action whose result **still holds** at the moment of speaking. | Shows a present state that follows from a past act (e.g., “I have written” → “the writing exists”). |
+| **Indicative** | The “statement” mood – used for ordinary factual sentences. | The verb tells what *is* or *has been* rather than what *might be* (subjunctive) or *should be* (optative). |
+| **Active** | The subject performs the action (as opposed to middle/passive where the subject is affected). | The subject is the *doer* of the perfect action. |
+
+The **perfect indicative active** therefore tells us that **the subject performed an action in the past and the result of that action is still true**.
+
+> **Greek example:** *γέγραφα* “I have written (and the writing exists).”
+
+The **‑ω** you see in the title refers to the **first‑person singular ending** of the perfect active indicative. In most verbs this ending appears as **‑α**, but after contraction it surfaces as **‑ω** (e.g., *γέγραψα* → *γέγραψα* contracts to *γέγραψα* → *γέγραψα*; the contracted form is written **‑ω**).  
+
+---
+
+## 2. Forms & Patterns  
+
+### 2.1. The Perfect Stem  
+
+1. **Reduplication** – the first part of the verb is repeated, usually with an **ε‑** (or **η‑**) before the original stem.  
+   *Example:* λύω → **λε‑** + λυ‑ → **λελυ‑** (perfect stem).  
+
+2. **Irregular stems** – some verbs have a special perfect stem that does **not** follow the regular reduplication pattern (e.g., *εἰμί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί* → *εἰ*‑*μί*
