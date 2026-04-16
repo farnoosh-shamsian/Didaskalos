@@ -1,37 +1,26 @@
 # Didaskalos Streamlit App
 
-This folder contains a production-oriented Streamlit app for the Didaskalos workflow.
+This folder contains the Streamlit web app for Didaskalos. I'm just testing out things at this point and a lot more is coming.
 
-## What it does
+## What the app does
 
-- Lists available XML treebanks
-- Lets you select one or more files
+- Loads treebanks from the GitHub repository by default
+- Loads lesson modules from the same GitHub repository by default
+- Lets users paste one or more treebank URLs if they want to override the defaults
+- Lets users upload XML treebanks and markdown lesson modules instead of using GitHub
 - Builds a combined token dataframe
 - Computes a frequency-based syllabus table
-- Exports CSV files
-- Generates textbook markdown from your lesson modules
+- Exports CSV, markdown, and HTML downloads
+
+## GitHub sources used by default
+
+- Treebanks: [treebanks/perseus](https://github.com/farnoosh-shamsian/Didaskalos/tree/main/treebanks/perseus)
+- Lesson modules: [lessons-no-decl](https://github.com/farnoosh-shamsian/Didaskalos/tree/main/lessons-no-decl)
+- App folder: [didaskalos_streamlit_app](https://github.com/farnoosh-shamsian/Didaskalos/tree/main/didaskalos_streamlit_app)
 
 ## Project layout
 
-- app.py: Streamlit UI
-- didaskalos_pipeline.py: reusable data and export functions
-- requirements.txt: Python dependencies
-- .streamlit/config.toml: Streamlit runtime/theme config
-
-## Run locally
-
-1. Open a terminal at the Didaskalos repository root.
-2. Install dependencies:
-
-   pip install -r didaskalos_streamlit_app/requirements.txt
-
-3. Run the app:
-
-   streamlit run didaskalos_streamlit_app/app.py
-
-## Default folders expected
-
-- Treebanks: treebanks/perseus
-- Lesson modules: lessons-no-decl
-
-You can change both paths in the app sidebar.
+- `app.py`: Streamlit UI
+- `didaskalos_pipeline.py`: reusable data and export functions
+- `requirements.txt`: Python dependencies
+- `.streamlit/config.toml`: Streamlit runtime and theme config
