@@ -7,7 +7,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 import pandas as pd
@@ -96,6 +96,17 @@ def _parse_list_input(text: str) -> list[str]:
     return deduped
 
 
+def _normalize_url(url: str) -> str:
+    parts = urlsplit(url)
+    if not parts.scheme or not parts.netloc:
+        return url
+
+    path = quote(parts.path, safe="/%")
+    query = quote(parts.query, safe="=&?/%")
+    fragment = quote(parts.fragment, safe="%")
+    return urlunsplit((parts.scheme, parts.netloc, path, query, fragment))
+
+
 def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> tuple[Path | None, list[dict]]:
     if not records:
         return None, []
@@ -103,7 +114,8 @@ def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> t
     target_dir = Path(tempfile.mkdtemp(prefix=f"didaskalos_{suffix_dir_name}_"))
     enriched_records: list[dict] = []
     for item in records:
-        request = Request(item["source_url"], headers={"User-Agent": "Mozilla/5.0"})
+        source_url = _normalize_url(item["source_url"])
+        request = Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
         with urlopen(request) as response:
             payload = response.read()
             (target_dir / item["file"]).write_bytes(payload)
@@ -151,7 +163,7 @@ def _build_records_from_urls(urls: list[str], extract_xml_metadata: bool = False
         author = None
         if extract_xml_metadata:
             try:
-                request = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                request = Request(_normalize_url(url), headers={"User-Agent": "Mozilla/5.0"})
                 with urlopen(request) as response:
                     title, author = _extract_xml_metadata(response.read())
             except (HTTPError, URLError, TimeoutError, ET.ParseError):
