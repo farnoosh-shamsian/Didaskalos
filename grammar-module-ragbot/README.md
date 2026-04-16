@@ -28,3 +28,7 @@ GROQ_API_KEY=your_api_key_here
 
 Batch processing supports rate limiting, timeouts, and progress tracking.
 The output is in markdown.
+
+## License
+
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
