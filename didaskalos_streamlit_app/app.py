@@ -346,11 +346,13 @@ if build_clicked:
             frequency_syllabus=frequency_syllabus,
             grammar_folder=lesson_dir,
             lesson_count=lesson_count,
+            combined_df=combined_df,
         )
         textbook_html = generate_textbook_html(
             frequency_syllabus=frequency_syllabus,
             grammar_folder=lesson_dir,
             lesson_count=lesson_count,
+            combined_df=combined_df,
         )
 
     c1, c2, c3 = st.columns(3)
