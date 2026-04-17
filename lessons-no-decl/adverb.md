@@ -1,6 +1,4 @@
-# Ancient Greek Adverbs – A Beginner’s Lesson
-
----
+# Ancient Greek Adverbs
 
 ## 1. What Is an Adverb?
 

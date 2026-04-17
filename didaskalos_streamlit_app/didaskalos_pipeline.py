@@ -763,7 +763,7 @@ def generate_textbook_markdown(
     combined_df: pd.DataFrame | None = None,
 ) -> str:
     starter_modules = ["about", "alphabet", "introduction_nouns", "introduction_adjectives", "introduction_verbs"]
-    lesson_separator = "════════════════════════════════════════ ⟡ ════════════════════════════════════════"
+    lesson_separator = "════════════════════ ⟡ ════════════════════"
     lesson_separator_markup = f"<div align=\"center\" style=\"font-size: 200%; line-height: 1.2;\">{lesson_separator}</div>"
 
     markdown_content = []

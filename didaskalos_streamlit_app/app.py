@@ -259,6 +259,27 @@ def _ensure_starter_lesson_urls(urls: list[str]) -> list[str]:
     return unique_urls
 
 
+def _list_local_lesson_urls() -> list[str]:
+    lesson_dir = REPO_ROOT / LESSON_PREFIX
+    if not lesson_dir.exists() or not lesson_dir.is_dir():
+        return []
+
+    urls: list[str] = []
+    for path in sorted(lesson_dir.glob("*.md")):
+        # Keep URL format consistent with GitHub raw sources for downstream handling.
+        urls.append(f"{GITHUB_RAW_BASE}/{LESSON_PREFIX}{path.name}")
+    return urls
+
+
+def _resolve_default_lesson_urls() -> list[str]:
+    remote_urls = load_github_tree_urls(LESSON_PREFIX)
+    local_urls = _list_local_lesson_urls()
+
+    # Merge remote and local so transient GitHub API gaps do not hide available lessons.
+    merged = list(remote_urls) + list(local_urls)
+    return _ensure_starter_lesson_urls(merged)
+
+
 def _build_records_from_uploads(uploaded_files) -> list[dict]:
     used_names = set()
     records = []
@@ -331,7 +352,7 @@ with st.sidebar:
 
     if input_mode == "Use GitHub repo URLs":
         default_treebank_urls = load_github_tree_urls(TREEBANK_PREFIX)
-        default_lesson_urls = _ensure_starter_lesson_urls(load_github_tree_urls(LESSON_PREFIX))
+        default_lesson_urls = _resolve_default_lesson_urls()
 
         treebank_url_input = st.text_area(
             "Treebank XML URL(s)",
