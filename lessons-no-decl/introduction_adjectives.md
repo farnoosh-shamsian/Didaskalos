@@ -1,4 +1,4 @@
-# Ancient Greek Adjectives — Structure, Agreement, and Usage
+# Lesson: Introduction to Greek Adjectives
 
 ## 1. What an Adjective Does
 
