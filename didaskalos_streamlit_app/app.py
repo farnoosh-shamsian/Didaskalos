@@ -70,10 +70,17 @@ GITHUB_RAW_BASE = f"https://raw.githubusercontent.com/{GITHUB_OWNER}/{GITHUB_REP
 TREEBANK_PREFIX = "treebanks/perseus/"
 LESSON_PREFIX = "lessons-no-decl/"
 REPO_ROOT = Path(__file__).resolve().parent.parent
+STARTER_LESSON_FILES = [
+    "about.md",
+    "alphabet.md",
+    "introduction_nouns.md",
+    "introduction_adjectives.md",
+    "introduction_verbs.md",
+]
 
 
 def _read_from_local_repo_if_available(source_url: str) -> bytes | None:
-#fallback
+    # Fallback for Streamlit Cloud: read file from local checkout when HTTP fetch fails.
     try:
         parsed = urlparse(source_url)
         raw_prefix = f"/{GITHUB_OWNER}/{GITHUB_REPO}/{GITHUB_BRANCH}/"
@@ -257,6 +264,19 @@ def _build_records_from_urls(urls: list[str], extract_xml_metadata: bool = False
     return records
 
 
+def _ensure_starter_lesson_urls(urls: list[str]) -> list[str]:
+    required_urls = [f"{GITHUB_RAW_BASE}/{LESSON_PREFIX}{filename}" for filename in STARTER_LESSON_FILES]
+    combined = list(urls or []) + required_urls
+
+    seen = set()
+    unique_urls = []
+    for url in combined:
+        if url not in seen:
+            seen.add(url)
+            unique_urls.append(url)
+    return unique_urls
+
+
 def _build_records_from_uploads(uploaded_files) -> list[dict]:
     used_names = set()
     records = []
@@ -329,7 +349,7 @@ with st.sidebar:
 
     if input_mode == "Use GitHub repo URLs":
         default_treebank_urls = load_github_tree_urls(TREEBANK_PREFIX)
-        default_lesson_urls = load_github_tree_urls(LESSON_PREFIX)
+        default_lesson_urls = _ensure_starter_lesson_urls(load_github_tree_urls(LESSON_PREFIX))
 
         treebank_url_input = st.text_area(
             "Treebank XML URL(s)",

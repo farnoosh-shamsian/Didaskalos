@@ -793,7 +793,7 @@ def generate_textbook_markdown(
                 "is_starter": True,
             }
         )
-        markdown_content.append(f"{rank}. [{module_name}](#{filename.replace('.md', '')})")
+        markdown_content.append(f"{rank}. {module_name}")
 
     for _, row in lesson_rows.iterrows():
         rank += 1
@@ -815,7 +815,7 @@ def generate_textbook_markdown(
                 "is_starter": False,
             }
         )
-        markdown_content.append(f"{rank}. [{label}](#{filename.replace('.md', '')})")
+        markdown_content.append(f"{rank}. {label}")
 
     markdown_content.append("")
     markdown_content.append("---")
