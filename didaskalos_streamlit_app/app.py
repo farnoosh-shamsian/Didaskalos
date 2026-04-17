@@ -45,22 +45,26 @@ st.caption("A tool in the making for a frequency-based Ancient Greek grammar tex
 APP_DIR = Path(__file__).resolve().parent
 HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
 
-if HEADER_IMAGE_PATH.exists():
-    st.image(str(HEADER_IMAGE_PATH), use_container_width=True)
+header_col_left, header_col_right = st.columns([1.8, 1.0], vertical_alignment="top")
 
-st.markdown(
-    """
+with header_col_left:
+    st.markdown(
+        """
 Didaskalos builds a frequency-based Ancient Greek grammar textbook from treebanks and modular lessons.
 
 You can either use sample XML treebanks (like the ones I uploaded from the Perseus Digital Library) or upload your own. The app parses the treebanks, pulls out grammatical features, and ranks them by frequency. Based on that, it generates lessons that focus on the structures that actually show up most in the texts.
 
 Right now, the lessons are LLM-generated using a RAG setup with sources like Smyth’s Greek Grammar and Crosby & Schaefer. They’re basically a first draft. I plan to clean them up manually later.
 
-You can download the generated textbook as Markdown or HTML, so it’s easy to tweak or restyle. There are also generated exercises from your chosen texts, where the sentences are ranked by difficulty based on their length and how frequent their words are. 
+You can download the generated textbook as Markdown or HTML, so it’s easy to tweak or restyle. There are also generated exercises from your chosen texts, where the sentences are ranked by difficulty based on their length and how frequent their words are.
 
 This is still an early version and mostly a starting point. For example, noun lessons don’t go declension by declension yet, instead, they explain things case-by-case (like the accusative across all declensions). More features coming soon!
 """.strip()
-)
+    )
+
+with header_col_right:
+    if HEADER_IMAGE_PATH.exists():
+        st.image(str(HEADER_IMAGE_PATH), use_container_width=True)
 
 GITHUB_OWNER = "farnoosh-shamsian"
 GITHUB_REPO = "Didaskalos"
