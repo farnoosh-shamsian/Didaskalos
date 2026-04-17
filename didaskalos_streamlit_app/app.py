@@ -42,6 +42,19 @@ st.set_page_config(page_title="Didaskalos", page_icon="DB", layout="wide")
 st.title("Didaskalos: Frequency-Based Greek Grammar Builder")
 st.caption("GitHub URLs or file upload for treebanks and lesson modules")
 
+APP_DIR = Path(__file__).resolve().parent
+HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
+
+if HEADER_IMAGE_PATH.exists():
+    st.image(str(HEADER_IMAGE_PATH), use_container_width=True)
+
+st.markdown(
+    """
+Didaskalos builds a frequency-based Ancient Greek grammar textbook from selected treebanks and lesson modules.
+Choose your treebank files, generate ranked lesson content, and export the full textbook in Markdown or HTML.
+""".strip()
+)
+
 GITHUB_OWNER = "farnoosh-shamsian"
 GITHUB_REPO = "Didaskalos"
 GITHUB_BRANCH = "main"
@@ -352,9 +365,6 @@ if build_clicked:
 
     st.subheader("Frequency Syllabus")
     st.dataframe(frequency_syllabus, use_container_width=True, height=420)
-
-    st.subheader("Combined Token Data")
-    st.dataframe(combined_df.head(250), use_container_width=True, height=320)
 
     st.download_button(
         label="Download frequency_syllabus.csv",
