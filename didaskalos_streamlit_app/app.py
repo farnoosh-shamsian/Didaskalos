@@ -193,19 +193,6 @@ def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> t
             f"Skipped {len(failed_records)} file(s) that could not be downloaded from GitHub ({suffix_dir_name}). "
             f"Examples: {preview}"
         )
-        with st.expander(f"Show skipped {suffix_dir_name} files"):
-            st.dataframe(
-                pd.DataFrame(
-                    [
-                        {
-                            "file": record.get("file", "unknown"),
-                            "source_url": record.get("source_url", ""),
-                        }
-                        for record in failed_records
-                    ]
-                ),
-                use_container_width=True,
-            )
 
     if not enriched_records:
         return None, []

@@ -1,6 +1,6 @@
-# Ancient Greek Alphabet --- Quick Guide
+## Lesson: Ancient Greek Alphabet
 
-## 1. Overview
+### 1. Overview
 
 The Ancient Greek alphabet has **24 letters**. Each letter has: - an
 uppercase form - a lowercase form - a typical pronunciation (approximate
@@ -10,7 +10,7 @@ Greek is read **left to right**, like English.
 
 ---
 
-## 2. The Letters
+### 2. The Letters
 
 Upper Lower Name Approx. Sound
 
@@ -43,7 +43,7 @@ Upper Lower Name Approx. Sound
 
 ---
 
-## 3. Vowels
+### 3. Vowels
 
 Greek vowels are: - α, ε, η, ι, ο, υ, ω
 
@@ -54,7 +54,7 @@ Some are **short**, some **long**: - Short: ε, ο\
 
 ---
 
-## 4. Diphthongs
+### 4. Diphthongs
 
 Two vowels can combine into one sound:
 
@@ -67,7 +67,7 @@ Two vowels can combine into one sound:
 
 ---
 
-## 5. Consonants to Notice
+### 5. Consonants to Notice
 
 Some consonants don't match English exactly:
 
@@ -77,7 +77,7 @@ Some consonants don't match English exactly:
 
 ---
 
-## 6. Rough Breathing (Very Brief)
+### 6. Rough Breathing (Very Brief)
 
 Words beginning with a vowel may have a breathing mark:
 
@@ -86,15 +86,14 @@ Words beginning with a vowel may have a breathing mark:
 
 ---
 
-## 7. Final Sigma
+### 7. Final Sigma
 
 Sigma has two forms: - σ → middle of word - ς → end of word
 
 ---
 
-## 8. Learning Tips
+### 8. Learning Tips
 
 - Practice writing the alphabet
 - Read words aloud
-- Learn in small groups
 - Don't stress perfect pronunciation

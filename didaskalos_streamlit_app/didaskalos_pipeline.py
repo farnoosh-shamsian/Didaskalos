@@ -759,7 +759,7 @@ def generate_exercises_for_topic(
 def generate_textbook_markdown(
     frequency_syllabus: pd.DataFrame,
     grammar_folder: str | Path,
-    lesson_count: int = 20,
+    lesson_count: int = 35,
     combined_df: pd.DataFrame | None = None,
 ) -> str:
     starter_modules = ["about", "alphabet", "introduction_nouns", "introduction_adjectives", "introduction_verbs"]
@@ -887,7 +887,7 @@ def generate_textbook_markdown(
 def generate_textbook_html(
         frequency_syllabus: pd.DataFrame,
         grammar_folder: str | Path,
-        lesson_count: int = 20,
+        lesson_count: int = 35,
         doc_title: str = "A Frequency-Based Textbook for Ancient Greek Grammar",
     combined_df: pd.DataFrame | None = None,
 ) -> str:
