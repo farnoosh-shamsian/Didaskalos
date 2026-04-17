@@ -294,7 +294,7 @@ st.dataframe(available_treebanks, use_container_width=True, height=240)
 selected_treebank_files = st.multiselect(
     "Select treebank files",
     options=available_treebanks["file"].tolist(),
-    default=available_treebanks["file"].tolist(),
+    default=[],
     format_func=lambda file_name: _format_treebank_option(file_name, available_treebanks),
 )
 
@@ -302,23 +302,13 @@ if available_lessons.empty:
     st.warning("No lesson modules available. Provide lesson URLs or upload markdown files.")
     st.stop()
 
-st.subheader("Available Lesson Modules")
-st.dataframe(available_lessons[["file", "source_url"]], use_container_width=True, height=240)
-
-selected_lesson_files = st.multiselect(
-    "Select lesson modules",
-    options=available_lessons["file"].tolist(),
-    default=available_lessons["file"].tolist(),
-)
+selected_lesson_files = available_lessons["file"].tolist()
 
 build_clicked = st.button("Build Syllabus", type="primary", use_container_width=True)
 
 if build_clicked:
     if not selected_treebank_files:
         st.warning("Select at least one treebank file before building.")
-        st.stop()
-    if not selected_lesson_files:
-        st.warning("Select at least one lesson module before building.")
         st.stop()
 
     selected_treebank_records = [row for row in treebank_records if row["file"] in selected_treebank_files]

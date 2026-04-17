@@ -5,6 +5,7 @@ import re
 import unicodedata
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Any, Mapping
 
 import pandas as pd
 from markdown import markdown as markdown_to_html
@@ -272,53 +273,21 @@ SIMPLE_POS_LESSONS = {
 }
 
 
-POS_EXERCISE_PROMPTS = {
-    "verb": {
-        1: "What is the number and person of the following verbs?",
-        2: "What is the number and person of the marked verbs in each sentence?",
-        3: "Find one finite verb in each sentence and give its dictionary lemma.",
-    },
-    "noun/adjective": {
-        1: "Which declension do the following words belong to?",
-        2: "What is the gender, case, and number of the marked words?",
-        3: "Translate each sentence and identify the marked noun or adjective.",
-    },
-    "article": {
-        1: "What is the gender, case, and number of the marked words?",
-        2: "What is the gender, case, and number of the marked articles?",
-        3: "Identify the article in each sentence and give its gender, case, and number.",
-    },
-    "pronoun": {
-        1: "What is the gender, case, and number of the following pronouns?",
-        2: "What is the gender, case, and number of the marked pronouns?",
-        3: "Identify each pronoun and state its gender, case, and number.",
-    },
-    "adverb": {
-        1: "What are the following adverbs?",
-        2: "Identify the marked adverb in each sentence and note its role.",
-        3: "Translate each sentence and explain how the adverb affects the meaning.",
-    },
-    "preposition": {
-        1: "What are the following prepositions?",
-        2: "Identify the marked preposition in each sentence and give the case it governs.",
-        3: "State the governed case for each marked preposition and identify its complement.",
-    },
-    "particle": {
-        1: "What are the following particles?",
-        2: "Identify the marked particle in each sentence and explain its effect.",
-        3: "Translate each sentence and note the contribution of the particle.",
-    },
-    "conjunction": {
-        1: "What are the following conjunctions?",
-        2: "Identify the marked conjunction in each sentence and explain what it connects.",
-        3: "Translate each sentence and describe the clause or phrase joined by the conjunction.",
-    },
-    "interjection": {
-        1: "What are the following interjections?",
-        2: "Identify the marked interjection in each sentence and give its force or meaning.",
-        3: "Translate each sentence and explain the interjection.",
-    },
+POS_LABEL_FOR_PROMPT = {
+    "verb": "verb",
+    "noun/adjective": "noun or adjective",
+    "article": "article",
+    "pronoun": "pronoun",
+    "adverb": "adverb",
+    "preposition": "preposition",
+    "particle": "particle",
+    "conjunction": "conjunction",
+    "interjection": "interjection",
 }
+
+
+PERSON_MAP = {"1": "1st person", "2": "2nd person", "3": "3rd person", "-": "not marked"}
+NUMBER_MAP = {"s": "singular", "p": "plural", "d": "dual", "-": "not marked"}
 
 
 def split_syllabus_label_and_bucket(syllabus_label: str) -> tuple[str, str | None]:
@@ -330,104 +299,29 @@ def split_syllabus_label_and_bucket(syllabus_label: str) -> tuple[str, str | Non
     return match.group(1), match.group(2)
 
 
-def get_exercise_prompt(lesson_pos_category: str, set_number: int) -> str:
-    return POS_EXERCISE_PROMPTS.get(lesson_pos_category, POS_EXERCISE_PROMPTS["noun/adjective"]).get(
-        set_number,
-        "Translate each sentence.",
-    )
+def decode_marked_verb_features(postag: str) -> dict[str, str]:
+    if not isinstance(postag, str) or len(postag) < 6:
+        return {
+            "person": "unknown",
+            "number": "unknown",
+            "tense": "unknown",
+            "voice": "unknown",
+            "mood": "unknown",
+        }
 
+    person_code = postag[1] if len(postag) > 1 else "-"
+    number_code = postag[2] if len(postag) > 2 else "-"
+    tense_code = postag[3] if len(postag) > 3 else "-"
+    mood_code = postag[4] if len(postag) > 4 else "-"
+    voice_code = postag[5] if len(postag) > 5 else "-"
 
-def decode_nominal_features(postag: str) -> str:
-    if not isinstance(postag, str) or len(postag) < 8:
-        return "gender: unknown; number: unknown; case: unknown"
-
-    gender_map = {"m": "masculine", "f": "feminine", "n": "neuter", "c": "common"}
-    number_map = {"s": "singular", "p": "plural", "d": "dual"}
-    case_map = {"n": "nominative", "g": "genitive", "d": "dative", "a": "accusative", "v": "vocative"}
-
-    gender = gender_map.get(postag[6], "unknown")
-    number = number_map.get(postag[2], "unknown")
-    case_value = case_map.get(postag[7], "unknown")
-    return f"gender: {gender}; number: {number}; case: {case_value}"
-
-
-def decode_set1_verb_features(postag: str) -> str:
-    if not isinstance(postag, str) or len(postag) < 9:
-        return "POS tag explanation unavailable"
-
-    person_map = {"1": "1st person", "2": "2nd person", "3": "3rd person", "-": "not marked"}
-    number_map = {"s": "singular", "p": "plural", "d": "dual", "-": "not marked"}
-    tense_map_local = {
-        "p": "present",
-        "i": "imperfect",
-        "f": "future",
-        "a": "aorist",
-        "r": "perfect",
-        "l": "pluperfect",
-        "t": "future perfect",
-        "-": "not marked",
+    return {
+        "person": PERSON_MAP.get(person_code, "unknown"),
+        "number": NUMBER_MAP.get(number_code, "unknown"),
+        "tense": TENSE_MAP.get(tense_code, "unknown") if tense_code != "-" else "not marked",
+        "voice": VOICE_MAP.get(voice_code, "unknown") if voice_code != "-" else "not marked",
+        "mood": MOOD_MAP.get(mood_code, "unknown") if mood_code != "-" else "not marked",
     }
-    mood_map_local = {
-        "i": "indicative",
-        "s": "subjunctive",
-        "o": "optative",
-        "m": "imperative",
-        "n": "infinitive",
-        "p": "participle",
-        "-": "not marked",
-    }
-    voice_map_local = {"a": "active", "m": "middle", "p": "passive", "e": "middle/passive", "-": "not marked"}
-
-    person_code = postag[1]
-    number_code = postag[2]
-    tense_code = postag[3]
-    mood_code = postag[4]
-    voice_code = postag[5]
-
-    return (
-        f"postag {postag} -> "
-        f"person: {person_map.get(person_code, 'unknown')} ({person_code}); "
-        f"number: {number_map.get(number_code, 'unknown')} ({number_code}); "
-        f"tense: {tense_map_local.get(tense_code, 'unknown')} ({tense_code}); "
-        f"mood: {mood_map_local.get(mood_code, 'unknown')} ({mood_code}); "
-        f"voice: {voice_map_local.get(voice_code, 'unknown')} ({voice_code})"
-    )
-
-
-def infer_preposition_governed_case(sentence_rows: pd.DataFrame | None, preposition_token_index: int | float | None) -> str:
-    if sentence_rows is None or sentence_rows.empty or preposition_token_index is None:
-        return "unknown"
-
-    order_column = "token_index" if "token_index" in sentence_rows.columns else "word_id"
-    ordered_rows = sentence_rows.sort_values(order_column)
-    tail_rows = ordered_rows[ordered_rows[order_column] > preposition_token_index]
-
-    for _, candidate in tail_rows.iterrows():
-        postag = candidate.get("postag")
-        if not isinstance(postag, str) or len(postag) < 8:
-            continue
-        if postag[0] in {"n", "a", "p"}:
-            return decode_nominal_features(postag).split(";")[-1].split(":", 1)[-1].strip()
-        if str(candidate.get("form", "")).strip() in {".", "?", ";", "!", ":"}:
-            break
-
-    return "unknown"
-
-
-def describe_topic_word(row: pd.Series, lesson_pos_category: str, sentence_rows: pd.DataFrame | None = None) -> str:
-    lemma = row.get("lemma", "")
-    postag = row.get("postag", "")
-
-    if lesson_pos_category == "verb":
-        return decode_set1_verb_features(postag)
-    if lesson_pos_category in {"noun/adjective", "article", "pronoun"}:
-        return decode_nominal_features(postag)
-    if lesson_pos_category == "preposition":
-        governed_case = infer_preposition_governed_case(sentence_rows, row.get("token_index"))
-        return f"preposition; governs case: {governed_case}"
-    if lesson_pos_category in {"adverb", "particle", "conjunction", "interjection"}:
-        return f"{lesson_pos_category}; lemma: {lemma}"
-    return f"lemma: {lemma}"
 
 
 def get_topic_rows_for_label(syllabus_label: str, combined_df: pd.DataFrame) -> pd.DataFrame:
@@ -525,7 +419,8 @@ def get_topic_words(
 
     topic_rows["lemma_frequency"] = pd.to_numeric(topic_rows["lemma_frequency"], errors="coerce").fillna(0)
     topic_rows = topic_rows.sort_values("lemma_frequency", ascending=False)
-    return topic_rows.drop_duplicates(subset=["lemma"], keep="first").head(num_words)
+    topic_words = topic_rows.drop_duplicates(subset=["lemma"], keep="first").head(num_words)
+    return topic_words[["form", "lemma", "postag", "token_index", "sentence_index"]]
 
 
 def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
@@ -598,7 +493,7 @@ def get_topic_sentences(
     syllabus_label: str,
     combined_df: pd.DataFrame,
     sentences_df: pd.DataFrame,
-    num_sentences: int = 40,
+    num_sentences: int = 20,
 ) -> pd.DataFrame:
     matching_rows = get_topic_rows_for_label(syllabus_label, combined_df)
     if matching_rows.empty:
@@ -619,77 +514,116 @@ def format_exercise_set1(topic_words: pd.DataFrame, lesson_pos_category: str) ->
     if topic_words is None or topic_words.empty:
         return ""
 
-    prompt = get_exercise_prompt(lesson_pos_category, 1)
-    lines = ["### Exercise Set 1", "", prompt, ""]
+    pos_label = POS_LABEL_FOR_PROMPT.get(lesson_pos_category, "target form")
+    lines = [
+        "### Exercise Type 1: Word List",
+        "",
+        f"Explain each {pos_label} below in relation to this lesson.",
+        "",
+    ]
     for idx, (_, row) in enumerate(topic_words.iterrows(), 1):
         lines.append(f"{idx}. {row['form']} (lemma: {row['lemma']})")
     lines.append("")
     return "\n".join(lines)
 
 
-def format_exercise_set2(exercise_sentences: pd.DataFrame, lesson_pos_category: str) -> str:
+def _build_sentence_target_rows(
+    syllabus_label: str,
+    lesson_pos_category: str,
+    combined_df: pd.DataFrame,
+) -> pd.DataFrame:
+    topic_rows = get_topic_rows_for_label(syllabus_label, combined_df)
+    if topic_rows.empty:
+        return pd.DataFrame()
+
+    topic_rows = topic_rows.dropna(subset=["form", "postag", "sentence_index"]).copy()
+    topic_rows["form"] = topic_rows["form"].astype(str).str.strip()
+    topic_rows["lemma"] = topic_rows["lemma"].astype(str).str.strip()
+    topic_rows["postag"] = topic_rows["postag"].astype(str).str.strip()
+    topic_rows = topic_rows[(topic_rows["form"] != "") & (topic_rows["postag"] != "")]
+    topic_rows = filter_topic_rows_by_lesson_rules(syllabus_label, lesson_pos_category, topic_rows)
+
+    if "token_index" not in topic_rows.columns:
+        if "word_id" in topic_rows.columns:
+            topic_rows["token_index"] = pd.to_numeric(topic_rows["word_id"], errors="coerce")
+        else:
+            topic_rows["token_index"] = pd.Series(range(len(topic_rows)), index=topic_rows.index, dtype="int64")
+
+    return topic_rows
+
+
+def _format_exercise_nonverb(
+    lesson_pos_category: str,
+    exercise_sentences: pd.DataFrame,
+    sentence_form_lookup: dict[int, list[str]],
+) -> str:
     if exercise_sentences is None or exercise_sentences.empty:
         return ""
 
-    prompt = get_exercise_prompt(lesson_pos_category, 2)
-    lines = ["### Exercise Set 2", "", prompt, ""]
+    pos_label = POS_LABEL_FOR_PROMPT.get(lesson_pos_category, "target form")
+    lines = [
+        "### Exercise Type 2: Sentences",
+        "",
+        f"In each sentence, identify the {pos_label}(s) related to this lesson.",
+        "",
+    ]
     for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
-        sentence_text = row.get("sentence_text_marked", row["sentence_text"])
-        lines.append(f"{idx}. {sentence_text}")
-        lines.append("")
+        lines.append(f"{idx}. {row['sentence_text']}")
+    lines.append("")
+    lines.append("#### Answer Key for Exercise Type 2")
+    lines.append("")
+
+    for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
+        targets = sentence_form_lookup.get(row["sentence_index"], [])
+        answer = ", ".join(targets) if targets else "No target form found"
+        lines.append(f"{idx}. {answer}")
+
+    lines.append("")
     return "\n".join(lines)
 
 
-def format_exercise_set3(exercise_sentences: pd.DataFrame, lesson_pos_category: str) -> str:
-    if exercise_sentences is None or exercise_sentences.empty:
-        return ""
-
-    prompt = get_exercise_prompt(lesson_pos_category, 3)
-    lines = ["### Exercise Set 3", "", prompt, ""]
-    for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
-        sentence_text = row.get("sentence_text_marked", row["sentence_text"])
-        lines.append(f"{idx}. {sentence_text}")
-        lines.append("")
-    return "\n".join(lines)
-
-
-def format_verb_exercise_set3(exercise_sentences: pd.DataFrame) -> str:
+def _format_exercise_verb(
+    exercise_sentences: pd.DataFrame,
+    sentence_verb_rows: Mapping[Any, pd.DataFrame],
+) -> str:
     if exercise_sentences is None or exercise_sentences.empty:
         return ""
 
     lines = [
-        "### Exercise Set 3 (Verbs)",
+        "### Exercise Type 2: Sentences (Verbs)",
         "",
-        "Find one finite verb in each sentence and give its dictionary lemma.",
+        "What is the person and number of the marked verbs in each sentence?",
         "",
     ]
+
     for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
-        sentence_text = row.get("sentence_text_marked", row["sentence_text"])
-        lines.append(f"{idx}. {sentence_text}")
-        lines.append("")
-    return "\n".join(lines)
+        sentence_rows = sentence_verb_rows.get(row["sentence_index"])
+        forms = set()
+        if sentence_rows is not None and not sentence_rows.empty:
+            forms = set(sentence_rows["form"].tolist())
+        marked = mark_topic_words_in_sentence(row["sentence_text"], forms)
+        lines.append(f"{idx}. {marked}")
 
+    lines.append("")
+    lines.append("#### Answer Key for Exercise Type 2")
+    lines.append("")
 
-def build_exercise_set1_answer_key(
-    syllabus_label: str,
-    lesson_pos_category: str,
-    combined_df: pd.DataFrame,
-    num_words: int = 15,
-) -> str:
-    topic_words = get_topic_words(syllabus_label, lesson_pos_category, combined_df, num_words=num_words)
-    lines = ["#### Answer Key for Exercise Set 1", ""]
+    for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
+        sentence_rows = sentence_verb_rows.get(row["sentence_index"])
+        if sentence_rows is None or sentence_rows.empty:
+            lines.append(f"{idx}. No marked verbs found")
+            continue
 
-    if topic_words is None or topic_words.empty:
-        lines.append("*No answer key available for Exercise Set 1.*")
-        lines.append("")
-        return "\n".join(lines)
+        sentence_answers = []
+        for _, verb_row in sentence_rows.iterrows():
+            features = decode_marked_verb_features(verb_row.get("postag", ""))
+            sentence_answers.append(
+                f"{verb_row.get('form', '')} ({verb_row.get('lemma', '')}): "
+                f"person: {features['person']}; number: {features['number']}; "
+                f"tense: {features['tense']}; voice: {features['voice']}; mood: {features['mood']}"
+            )
 
-    for idx, (_, row) in enumerate(topic_words.iterrows(), 1):
-        sentence_rows = None
-        if "sentence_index" in combined_df.columns and pd.notna(row.get("sentence_index")):
-            sentence_rows = combined_df[combined_df["sentence_index"] == row["sentence_index"]].copy()
-        answer = describe_topic_word(row, lesson_pos_category, sentence_rows=sentence_rows)
-        lines.append(f"{idx}. {row['form']} (lemma: {row['lemma']}) -> {answer}")
+        lines.append(f"{idx}. " + " | ".join(sentence_answers))
 
     lines.append("")
     return "\n".join(lines)
@@ -700,15 +634,14 @@ def generate_exercises_for_topic(
     lesson_pos_category: str,
     combined_df: pd.DataFrame,
     sentences_df: pd.DataFrame,
-    num_sentences: int = 40,
-    sentences_per_exercise: int = 10,
+    num_sentences: int = 20,
 ) -> str:
     exercise_blocks = []
 
     topic_words = get_topic_words(syllabus_label, lesson_pos_category, combined_df, num_words=15)
-    exercise_set1 = format_exercise_set1(topic_words, lesson_pos_category)
-    if exercise_set1:
-        exercise_blocks.append(exercise_set1)
+    words_exercise = format_exercise_set1(topic_words, lesson_pos_category)
+    if words_exercise:
+        exercise_blocks.append(words_exercise)
 
     topic_sentences = get_topic_sentences(
         syllabus_label=syllabus_label,
@@ -718,37 +651,22 @@ def generate_exercises_for_topic(
     )
 
     if not topic_sentences.empty:
-        topic_rows = get_topic_rows_for_label(syllabus_label, combined_df)
-        topic_rows = topic_rows.dropna(subset=["form", "postag"]).copy()
-        topic_rows["form"] = topic_rows["form"].astype(str).str.strip()
-        topic_rows["postag"] = topic_rows["postag"].astype(str).str.strip()
-        topic_rows = topic_rows[(topic_rows["form"] != "") & (topic_rows["postag"] != "")]
-        topic_rows = filter_topic_rows_by_lesson_rules(syllabus_label, lesson_pos_category, topic_rows)
+        topic_rows = _build_sentence_target_rows(syllabus_label, lesson_pos_category, combined_df)
 
-        sentence_form_lookup = (
-            topic_rows.groupby("sentence_index")["form"].apply(lambda series: set(series.tolist())).to_dict()
-            if not topic_rows.empty
-            else {}
-        )
-
-        topic_sentences = topic_sentences.copy()
-        topic_sentences["sentence_text_marked"] = topic_sentences.apply(
-            lambda row: mark_topic_words_in_sentence(
-                row["sentence_text"],
-                sentence_form_lookup.get(row["sentence_index"], set()),
-            ),
-            axis=1,
-        )
-
-    required_total = 2 * sentences_per_exercise
-    if len(topic_sentences) >= required_total:
-        exercise_set2 = format_exercise_set2(topic_sentences.iloc[0:sentences_per_exercise], lesson_pos_category)
-        if lesson_pos_category == "verb":
-            exercise_set3 = format_verb_exercise_set3(topic_sentences.iloc[sentences_per_exercise:required_total])
-        else:
-            exercise_set3 = format_exercise_set3(topic_sentences.iloc[sentences_per_exercise:required_total], lesson_pos_category)
-
-        exercise_blocks.extend([exercise_set2, exercise_set3])
+        if not topic_rows.empty:
+            if lesson_pos_category == "verb":
+                sentence_verb_rows: Mapping[Any, pd.DataFrame] = {
+                    sent_idx: grp.sort_values("token_index")
+                    for sent_idx, grp in topic_rows.groupby("sentence_index", sort=False)
+                }
+                exercise_blocks.append(_format_exercise_verb(topic_sentences, sentence_verb_rows))
+            else:
+                sentence_form_lookup = {}
+                for sent_idx, grp in topic_rows.groupby("sentence_index", sort=False):
+                    ordered = grp.sort_values("token_index")
+                    ordered_forms = list(dict.fromkeys(ordered["form"].tolist()))
+                    sentence_form_lookup[sent_idx] = ordered_forms
+                exercise_blocks.append(_format_exercise_nonverb(lesson_pos_category, topic_sentences, sentence_form_lookup))
 
     return "\n".join(exercise_blocks)
 
@@ -847,16 +765,6 @@ def generate_textbook_markdown(
                 markdown_content.append(exercises)
             else:
                 markdown_content.append(f"*No exercises available for {lesson['label']}.*")
-
-            markdown_content.append("")
-            answer_key = build_exercise_set1_answer_key(
-                lesson["label"],
-                lesson["pos_category"],
-                working_combined_df,
-                num_words=15,
-            )
-            if answer_key:
-                markdown_content.append(answer_key)
         else:
             markdown_content.append("*Exercises are unavailable because combined treebank data was not provided.*")
 
