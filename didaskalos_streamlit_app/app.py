@@ -65,9 +65,7 @@ st.markdown(
     f"""
     <div style="line-height: 1.6; font-size: 1rem; text-align: left;">
         {header_image_html}
-        <p><strong>Didaskalos builds a frequency-based Ancient Greek grammar textbook from treebanks and modular lessons.</strong></p>
-        <p>
-            You can either use sample XML treebanks (like the ones I uploaded from the Perseus Digital Library) or upload your own.
+        <p>Didaskalos builds a frequency-based Ancient Greek grammar textbook from treebanks and modular lessons. You can either use sample XML treebanks (like the ones I uploaded from the Perseus Digital Library) or upload your own.
             The app parses the treebanks, pulls out grammatical features, and ranks them by frequency. Based on that, it generates
             lessons that focus on the structures that actually show up most in the texts.
         </p>
@@ -387,7 +385,6 @@ with st.sidebar:
         treebank_records = _build_records_from_urls(_parse_list_input(treebank_url_input), extract_xml_metadata=True)
         lesson_records = _build_records_from_urls(default_lesson_urls)
         uploaded_treebanks = []
-        uploaded_lessons = []
     else:
         uploaded_treebanks = st.file_uploader(
             "Upload treebank XML files",
@@ -395,14 +392,9 @@ with st.sidebar:
             accept_multiple_files=True,
             help="Upload one or more XML files.",
         )
-        uploaded_lessons = st.file_uploader(
-            "Upload lesson markdown files",
-            type=["md"],
-            accept_multiple_files=True,
-            help="Upload one or more lesson markdown files.",
-        )
+        default_lesson_urls = _resolve_default_lesson_urls()
         treebank_records = _build_records_from_uploads(uploaded_treebanks)
-        lesson_records = _build_records_from_uploads(uploaded_lessons)
+        lesson_records = _build_records_from_urls(default_lesson_urls)
 
 
 available_treebanks = _build_treebank_display_table(treebank_records)
@@ -423,7 +415,7 @@ selected_treebank_files = st.multiselect(
 )
 
 if available_lessons.empty:
-    st.warning("No lesson modules available. Provide lesson URLs or upload markdown files.")
+    st.warning("No lesson modules available from the default lesson set.")
     st.stop()
 
 selected_lesson_files = available_lessons["file"].tolist()
@@ -441,10 +433,10 @@ if build_clicked:
     with st.spinner("Preparing selected treebanks and lesson modules..."):
         if input_mode == "Use GitHub repo URLs":
             treebank_dir, selected_treebank_records = _download_url_records_to_dir(selected_treebank_records, "treebanks")
-            lesson_dir, selected_lesson_records = _download_url_records_to_dir(selected_lesson_records, "lessons")
         else:
             treebank_dir = _materialize_uploaded_records(uploaded_treebanks, selected_treebank_records, "treebanks")
-            lesson_dir = _materialize_uploaded_records(uploaded_lessons, selected_lesson_records, "lessons")
+
+        lesson_dir, selected_lesson_records = _download_url_records_to_dir(selected_lesson_records, "lessons")
 
         if treebank_dir is None:
             st.error("Could not prepare the selected treebank files.")
