@@ -255,13 +255,26 @@ def build_frequency_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
         .sort_values("frequency", ascending=False, ignore_index=True)
     )
     frequency_syllabus["syllabus_normalized"] = frequency_syllabus["syllabus"].apply(normalize_frequency_row_name)
+
+    # Always skip placeholder rows like NA/unknown in the "other" POS bucket.
+    skip_labels = {"na", "unknown", ""}
+    skip_mask = (
+        frequency_syllabus["pos_category"].astype(str).eq("other")
+        & frequency_syllabus["syllabus_normalized"].astype(str).isin(skip_labels)
+    )
+    frequency_syllabus = frequency_syllabus.loc[~skip_mask].reset_index(drop=True)
+
     return frequency_syllabus
 
 
 def syllabus_to_filename(syllabus_label: str) -> str | None:
-    if pd.isna(syllabus_label) or syllabus_label == "NA":
+    if pd.isna(syllabus_label):
         return None
-    return normalize_frequency_row_name(syllabus_label) + ".md"
+
+    normalized = normalize_frequency_row_name(str(syllabus_label))
+    if normalized in {"na", "unknown", ""}:
+        return None
+    return normalized + ".md"
 
 
 SIMPLE_POS_LESSONS = {

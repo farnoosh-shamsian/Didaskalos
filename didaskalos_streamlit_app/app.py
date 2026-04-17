@@ -62,6 +62,26 @@ GITHUB_TREE_API = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/gi
 GITHUB_RAW_BASE = f"https://raw.githubusercontent.com/{GITHUB_OWNER}/{GITHUB_REPO}/{GITHUB_BRANCH}"
 TREEBANK_PREFIX = "treebanks/perseus/"
 LESSON_PREFIX = "lessons-no-decl/"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _read_from_local_repo_if_available(source_url: str) -> bytes | None:
+#fallback
+    try:
+        parsed = urlparse(source_url)
+        raw_prefix = f"/{GITHUB_OWNER}/{GITHUB_REPO}/{GITHUB_BRANCH}/"
+        if not parsed.path.startswith(raw_prefix):
+            return None
+
+        repo_relative_path = parsed.path[len(raw_prefix):]
+        local_path = (REPO_ROOT / repo_relative_path).resolve()
+
+        if local_path.exists() and local_path.is_file():
+            return local_path.read_bytes()
+    except Exception:
+        return None
+
+    return None
 
 
 def _unique_name(name: str, used_names: set[str]) -> str:
@@ -129,8 +149,8 @@ def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> t
     failed_records: list[dict] = []
 
     for item in records:
+        source_url = _normalize_url(item["source_url"])
         try:
-            source_url = _normalize_url(item["source_url"])
             request = Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
             with urlopen(request) as response:
                 payload = response.read()
@@ -138,8 +158,14 @@ def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> t
                 title, author = _extract_xml_metadata(payload)
                 enriched_records.append({**item, "title": title, "author": author})
         except (HTTPError, URLError, TimeoutError, ValueError):
-            failed_records.append(item)
-            continue
+            local_payload = _read_from_local_repo_if_available(source_url)
+            if local_payload is not None:
+                (target_dir / item["file"]).write_bytes(local_payload)
+                title, author = _extract_xml_metadata(local_payload)
+                enriched_records.append({**item, "title": title, "author": author})
+            else:
+                failed_records.append(item)
+                continue
 
     if failed_records:
         preview = ", ".join(record.get("file", "unknown") for record in failed_records[:5])
