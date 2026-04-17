@@ -126,14 +126,46 @@ def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> t
 
     target_dir = Path(tempfile.mkdtemp(prefix=f"didaskalos_{suffix_dir_name}_"))
     enriched_records: list[dict] = []
+    failed_records: list[dict] = []
+
     for item in records:
-        source_url = _normalize_url(item["source_url"])
-        request = Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
-        with urlopen(request) as response:
-            payload = response.read()
-            (target_dir / item["file"]).write_bytes(payload)
-            title, author = _extract_xml_metadata(payload)
-            enriched_records.append({**item, "title": title, "author": author})
+        try:
+            source_url = _normalize_url(item["source_url"])
+            request = Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
+            with urlopen(request) as response:
+                payload = response.read()
+                (target_dir / item["file"]).write_bytes(payload)
+                title, author = _extract_xml_metadata(payload)
+                enriched_records.append({**item, "title": title, "author": author})
+        except (HTTPError, URLError, TimeoutError, ValueError):
+            failed_records.append(item)
+            continue
+
+    if failed_records:
+        preview = ", ".join(record.get("file", "unknown") for record in failed_records[:5])
+        if len(failed_records) > 5:
+            preview += ", ..."
+        st.warning(
+            f"Skipped {len(failed_records)} file(s) that could not be downloaded from GitHub ({suffix_dir_name}). "
+            f"Examples: {preview}"
+        )
+        with st.expander(f"Show skipped {suffix_dir_name} files"):
+            st.dataframe(
+                pd.DataFrame(
+                    [
+                        {
+                            "file": record.get("file", "unknown"),
+                            "source_url": record.get("source_url", ""),
+                        }
+                        for record in failed_records
+                    ]
+                ),
+                use_container_width=True,
+            )
+
+    if not enriched_records:
+        return None, []
+
     return target_dir, enriched_records
 
 
