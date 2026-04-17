@@ -763,7 +763,8 @@ def generate_textbook_markdown(
     combined_df: pd.DataFrame | None = None,
 ) -> str:
     starter_modules = ["about", "alphabet", "introduction_nouns", "introduction_adjectives", "introduction_verbs"]
-    lesson_separator = "════════════════════ ⟡ ════════════════════"
+    lesson_separator = "════════════════════════════════════════ ⟡ ════════════════════════════════════════"
+    lesson_separator_markup = f"<div align=\"center\" style=\"font-size: 200%; line-height: 1.2;\">{lesson_separator}</div>"
 
     markdown_content = []
     markdown_content.append("# A Frequency-Based Textbook for Ancient Greek Grammar")
@@ -819,7 +820,7 @@ def generate_textbook_markdown(
         markdown_content.append(f"{rank}. {label}")
 
     markdown_content.append("")
-    markdown_content.append(f"<div align=\"center\">{lesson_separator}</div>")
+    markdown_content.append(lesson_separator_markup)
     markdown_content.append("")
 
     grammar_folder = Path(grammar_folder)
@@ -878,7 +879,7 @@ def generate_textbook_markdown(
                 markdown_content.append("*Exercises are unavailable because combined treebank data was not provided.*")
 
         markdown_content.append("")
-        markdown_content.append(f"<div align=\"center\">{lesson_separator}</div>")
+        markdown_content.append(lesson_separator_markup)
         markdown_content.append("")
 
     return "\n".join(markdown_content)
