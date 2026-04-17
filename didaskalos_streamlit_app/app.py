@@ -185,15 +185,6 @@ def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> t
                 failed_records.append(item)
                 continue
 
-    if failed_records:
-        preview = ", ".join(record.get("file", "unknown") for record in failed_records[:5])
-        if len(failed_records) > 5:
-            preview += ", ..."
-        st.warning(
-            f"Skipped {len(failed_records)} file(s) that could not be downloaded from GitHub ({suffix_dir_name}). "
-            f"Examples: {preview}"
-        )
-
     if not enriched_records:
         return None, []
 

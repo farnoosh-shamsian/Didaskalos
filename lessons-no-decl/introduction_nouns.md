@@ -1,4 +1,4 @@
-# Ancient Greek Nouns --- Core Structure (Quick Guide)
+# Lesson: Introduction to Greek Nouns and Declensions
 
 ## 1. What Makes Greek Nouns Unique?
 

@@ -1,4 +1,4 @@
-# Ancient Greek Verbs --- Core Structure (Quick Guide)
+# Lesson: Introduction to Greek verbs
 
 ## 1. What Makes Greek Verbs Unique?
 
