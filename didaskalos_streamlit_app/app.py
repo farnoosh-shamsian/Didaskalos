@@ -45,7 +45,7 @@ st.caption("A tool in the making for a frequency-based Ancient Greek grammar tex
 APP_DIR = Path(__file__).resolve().parent
 HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
 
-header_col_left, header_col_right = st.columns([1.8, 1.0], vertical_alignment="top")
+header_col_left, header_col_right = st.columns([1, 1], vertical_alignment="top")
 
 with header_col_left:
     st.markdown(
@@ -324,7 +324,7 @@ with st.sidebar:
             "Lesson count",
             min_value=1,
             max_value=200,
-            value=20,
+            value=35,
             step=1,
         )
     )
