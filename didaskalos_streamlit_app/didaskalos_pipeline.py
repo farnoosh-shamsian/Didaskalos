@@ -385,7 +385,7 @@ def mark_topic_words_in_sentence(sentence_text: str, target_forms: set[str]) -> 
     for form in sorted(target_forms, key=len, reverse=True):
         if not form:
             continue
-        marked_text = re.sub(rf"(?<!\\w)({re.escape(form)})(?!\\w)", r"<u>\\1</u>", marked_text)
+        marked_text = re.sub(rf"(?<!\w)({re.escape(form)})(?!\w)", r"<u>\1</u>", marked_text)
     return marked_text
 
 
@@ -436,10 +436,17 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
                 words.append(token)
 
         text = " ".join(words)
-        text = re.sub(r"\\s+([,.:;!?\\)])", r"\\1", text)
-        text = re.sub(r"([\\(\\[])\\s+", r"\\1", text)
-        text = re.sub(r"[\\[\\]\\d]", "", text)
-        return re.sub(r"\\s+", " ", text).strip()
+        text = re.sub(r"\s+([,.:;!?\)])", r"\1", text)
+        text = re.sub(r"([\(\[])\s+", r"\1", text)
+
+        # Drop bracketed index markers from source data like [0], [12].
+        text = re.sub(r"\[\s*\d+\s*\]", "", text)
+
+        # Remove hidden Unicode formatting chars that can appear as odd symbols.
+        text = re.sub(r"[\u200b-\u200f\u2060\ufeff]", "", text)
+
+        text = re.sub(r"\s+", " ", text).strip()
+        return text
 
     rows = []
     for sent_id, group in df.groupby("sentence_id", sort=False):
@@ -742,6 +749,8 @@ def generate_textbook_markdown(
     lesson_count: int = 20,
     combined_df: pd.DataFrame | None = None,
 ) -> str:
+    starter_modules = ["about", "alphabet", "introduction_nouns", "introduction_adjectives", "introduction_verbs"]
+
     markdown_content = []
     markdown_content.append("# A Frequency-Based Textbook for Ancient Greek Grammar")
     markdown_content.append("")
@@ -756,6 +765,22 @@ def generate_textbook_markdown(
 
     lesson_data = []
     rank = 0
+
+    # Always prepend core starter modules in this fixed order.
+    for module_name in starter_modules:
+        rank += 1
+        filename = f"{module_name}.md"
+        lesson_data.append(
+            {
+                "rank": rank,
+                "label": module_name,
+                "pos_category": "module",
+                "frequency": "core",
+                "filename": filename,
+                "is_starter": True,
+            }
+        )
+        markdown_content.append(f"{rank}. [{module_name}](#{filename.replace('.md', '')})")
 
     for _, row in lesson_rows.iterrows():
         rank += 1
@@ -774,6 +799,7 @@ def generate_textbook_markdown(
                 "pos_category": pos_category,
                 "frequency": freq,
                 "filename": filename,
+                "is_starter": False,
             }
         )
         markdown_content.append(f"{rank}. [{label}](#{filename.replace('.md', '')})")
@@ -802,8 +828,11 @@ def generate_textbook_markdown(
 
     for lesson in lesson_data:
         markdown_content.append(f"## {lesson['rank']}. {lesson['label']}")
-        markdown_content.append(f"**Part of Speech Family:** {lesson['pos_category']}")
-        markdown_content.append(f"**Frequency:** {lesson['frequency']}")
+        if lesson.get("is_starter"):
+            markdown_content.append("**Module Type:** Core starter module")
+        else:
+            markdown_content.append(f"**Part of Speech Family:** {lesson['pos_category']}")
+            markdown_content.append(f"**Frequency:** {lesson['frequency']}")
         markdown_content.append("")
 
         lesson_path = grammar_folder / lesson["filename"]
@@ -815,23 +844,24 @@ def generate_textbook_markdown(
         else:
             markdown_content.append(f"*Module file not found: {lesson['filename']}*")
 
-        markdown_content.append("")
-        markdown_content.append("### Exercises")
-        markdown_content.append("")
+        if not lesson.get("is_starter"):
+            markdown_content.append("")
+            markdown_content.append("### Exercises")
+            markdown_content.append("")
 
-        if working_combined_df is not None and working_sentences_df is not None and not working_sentences_df.empty:
-            exercises = generate_exercises_for_topic(
-                lesson["label"],
-                lesson["pos_category"],
-                working_combined_df,
-                working_sentences_df,
-            )
-            if exercises:
-                markdown_content.append(exercises)
+            if working_combined_df is not None and working_sentences_df is not None and not working_sentences_df.empty:
+                exercises = generate_exercises_for_topic(
+                    lesson["label"],
+                    lesson["pos_category"],
+                    working_combined_df,
+                    working_sentences_df,
+                )
+                if exercises:
+                    markdown_content.append(exercises)
+                else:
+                    markdown_content.append(f"*No exercises available for {lesson['label']}.*")
             else:
-                markdown_content.append(f"*No exercises available for {lesson['label']}.*")
-        else:
-            markdown_content.append("*Exercises are unavailable because combined treebank data was not provided.*")
+                markdown_content.append("*Exercises are unavailable because combined treebank data was not provided.*")
 
         markdown_content.append("")
         markdown_content.append("---")
