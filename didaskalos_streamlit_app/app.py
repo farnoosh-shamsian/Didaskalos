@@ -39,8 +39,8 @@ from didaskalos_pipeline import (
 
 
 st.set_page_config(page_title="Didaskalos", page_icon="DB", layout="wide")
-st.title("Didaskalos: Frequency-Based Greek Grammar Builder")
-st.caption("GitHub URLs or file upload for treebanks and lesson modules")
+st.title("Didaskalos: Frequency-Based Greek Grammar Textbook Builder")
+st.caption("A tool in the making for a frequency-based Ancient Greek grammar textbook from treebanks by someone obsessed with frequency.")
 
 APP_DIR = Path(__file__).resolve().parent
 HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
@@ -50,8 +50,15 @@ if HEADER_IMAGE_PATH.exists():
 
 st.markdown(
     """
-Didaskalos builds a frequency-based Ancient Greek grammar textbook from selected treebanks and lesson modules.
-Choose your treebank files, generate ranked lesson content, and export the full textbook in Markdown or HTML.
+Didaskalos builds a frequency-based Ancient Greek grammar textbook from treebanks and modular lessons.
+
+You can either use sample XML treebanks (like the ones I uploaded from the Perseus Digital Library) or upload your own. The app parses the treebanks, pulls out grammatical features, and ranks them by frequency. Based on that, it generates lessons that focus on the structures that actually show up most in the texts.
+
+Right now, the lessons are LLM-generated using a RAG setup with sources like Smyth’s Greek Grammar and Crosby & Schaefer. They’re basically a first draft. I plan to clean them up manually later.
+
+You can download the generated textbook as Markdown or HTML, so it’s easy to tweak or restyle. There are also generated exercises from your chosen texts, where the sentences are ranked by difficulty based on their length and how frequent their words are. 
+
+This is still an early version and mostly a starting point. For example, noun lessons don’t go declension by declension yet, instead, they explain things case-by-case (like the accusative across all declensions). More features coming soon!
 """.strip()
 )
 
