@@ -552,10 +552,71 @@ def _build_sentence_target_rows(
     return topic_rows
 
 
+def _normalize_answer_word(word: str) -> str:
+    return str(word).strip().lower()
+
+
+def _pick_unique_exercise_sentences(
+    topic_sentences: pd.DataFrame,
+    topic_rows: pd.DataFrame,
+    max_sentences: int = 20,
+) -> tuple[pd.DataFrame, dict[object, pd.DataFrame]]:
+    if topic_sentences is None or topic_sentences.empty or topic_rows is None or topic_rows.empty:
+        return pd.DataFrame(), {}
+
+    selected_sentence_ids = []
+    selected_targets_by_sentence: dict[object, pd.DataFrame] = {}
+    used_sentence_texts: set[str] = set()
+    used_answer_words: set[str] = set()
+
+    grouped_targets = {
+        sent_idx: grp.sort_values("token_index")
+        for sent_idx, grp in topic_rows.groupby("sentence_index", sort=False)
+    }
+
+    for _, sentence_row in topic_sentences.iterrows():
+        if len(selected_sentence_ids) >= max_sentences:
+            break
+
+        sentence_index = sentence_row["sentence_index"]
+        sentence_text = str(sentence_row.get("sentence_text", "")).strip()
+        sentence_text_key = re.sub(r"\s+", " ", sentence_text)
+
+        if not sentence_text_key or sentence_text_key in used_sentence_texts:
+            continue
+
+        sentence_targets = grouped_targets.get(sentence_index)
+        if sentence_targets is None or sentence_targets.empty:
+            continue
+
+        candidate_rows = []
+        for _, target_row in sentence_targets.iterrows():
+            answer_form = _normalize_answer_word(target_row.get("form", ""))
+            if not answer_form or answer_form in used_answer_words:
+                continue
+            candidate_rows.append(target_row)
+
+        if not candidate_rows:
+            continue
+
+        chosen_targets = pd.DataFrame(candidate_rows)
+        selected_sentence_ids.append(sentence_index)
+        selected_targets_by_sentence[sentence_index] = chosen_targets
+        used_sentence_texts.add(sentence_text_key)
+        used_answer_words.update(_normalize_answer_word(form) for form in chosen_targets["form"].tolist())
+
+    if not selected_sentence_ids:
+        return pd.DataFrame(), {}
+
+    selected_sentences = topic_sentences[topic_sentences["sentence_index"].isin(selected_sentence_ids)].copy()
+    selected_sentences = selected_sentences.drop_duplicates(subset=["sentence_text"], keep="first")
+    return selected_sentences, selected_targets_by_sentence
+
+
 def _format_exercise_nonverb(
     lesson_pos_category: str,
     exercise_sentences: pd.DataFrame,
-    sentence_form_lookup: dict[int, list[str]],
+    sentence_form_lookup: dict[object, list[str]],
 ) -> str:
     if exercise_sentences is None or exercise_sentences.empty:
         return ""
@@ -654,19 +715,23 @@ def generate_exercises_for_topic(
         topic_rows = _build_sentence_target_rows(syllabus_label, lesson_pos_category, combined_df)
 
         if not topic_rows.empty:
+            selected_sentences, selected_targets_by_sentence = _pick_unique_exercise_sentences(
+                topic_sentences,
+                topic_rows,
+                max_sentences=num_sentences,
+            )
+
+            if selected_sentences.empty:
+                return "\n".join(exercise_blocks)
+
             if lesson_pos_category == "verb":
-                sentence_verb_rows: Mapping[Any, pd.DataFrame] = {
-                    sent_idx: grp.sort_values("token_index")
-                    for sent_idx, grp in topic_rows.groupby("sentence_index", sort=False)
-                }
-                exercise_blocks.append(_format_exercise_verb(topic_sentences, sentence_verb_rows))
+                exercise_blocks.append(_format_exercise_verb(selected_sentences, selected_targets_by_sentence))
             else:
-                sentence_form_lookup = {}
-                for sent_idx, grp in topic_rows.groupby("sentence_index", sort=False):
-                    ordered = grp.sort_values("token_index")
-                    ordered_forms = list(dict.fromkeys(ordered["form"].tolist()))
+                sentence_form_lookup: dict[object, list[str]] = {}
+                for sent_idx, grp in selected_targets_by_sentence.items():
+                    ordered_forms = list(dict.fromkeys(grp["form"].tolist()))
                     sentence_form_lookup[sent_idx] = ordered_forms
-                exercise_blocks.append(_format_exercise_nonverb(lesson_pos_category, topic_sentences, sentence_form_lookup))
+                exercise_blocks.append(_format_exercise_nonverb(lesson_pos_category, selected_sentences, sentence_form_lookup))
 
     return "\n".join(exercise_blocks)
 
