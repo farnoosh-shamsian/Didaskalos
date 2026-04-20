@@ -42,7 +42,7 @@ from didaskalos_pipeline import (
 st.set_page_config(page_title="Didaskalos", page_icon="DB", layout="wide")
 APP_DIR = Path(__file__).resolve().parent
 HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
-LOGO_IMAGE_PATH = APP_DIR / "assets" / "english.png"
+LOGO_IMAGE_PATH = APP_DIR / "assets" / "englishdark.png"
 header_image_html = ""
 if HEADER_IMAGE_PATH.exists():
     encoded_image = base64.b64encode(HEADER_IMAGE_PATH.read_bytes()).decode("ascii")
@@ -52,22 +52,15 @@ if HEADER_IMAGE_PATH.exists():
         'alt="Didaskalos header image" />'
     )
 
-top_left_col, top_right_col = st.columns([1, 4])
-
-with top_left_col:
-    if LOGO_IMAGE_PATH.exists():
-        st.image(str(LOGO_IMAGE_PATH), use_container_width=True)
-
-with top_right_col:
-    st.title("Didaskalos: Frequency-Based Greek Grammar Textbook Builder")
-    st.markdown(
-        """
-        <p style="font-size: 1.2rem; font-weight: 600; margin-top: -0.3rem; margin-bottom: 1rem;">
-            A tool in the making for a frequency-based Ancient Greek grammar textbook from treebanks by someone obsessed with frequency.
-        </p>
-        """,
-        unsafe_allow_html=True,
-    )
+st.title("Didaskalos: Frequency-Based Greek Grammar Textbook Builder")
+st.markdown(
+    """
+    <p style="font-size: 1.2rem; font-weight: 600; margin-top: -0.3rem; margin-bottom: 1rem;">
+        A tool in the making for a frequency-based Ancient Greek grammar textbook from treebanks by someone obsessed with frequency.
+    </p>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.markdown(
     f"""
@@ -360,6 +353,9 @@ def _format_treebank_option(file_name: str, records_df: pd.DataFrame) -> str:
 
 
 with st.sidebar:
+    if LOGO_IMAGE_PATH.exists():
+        st.image(str(LOGO_IMAGE_PATH), use_container_width=True)
+
     st.header("Inputs")
 
     input_mode = st.radio(
