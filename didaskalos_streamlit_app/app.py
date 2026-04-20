@@ -40,16 +40,6 @@ from didaskalos_pipeline import (
 
 
 st.set_page_config(page_title="Didaskalos", page_icon="DB", layout="wide")
-st.title("Didaskalos: Frequency-Based Greek Grammar Textbook Builder")
-st.markdown(
-    """
-    <p style="font-size: 1.2rem; font-weight: 600; margin-top: -0.3rem; margin-bottom: 1rem;">
-        A tool in the making for a frequency-based Ancient Greek grammar textbook from treebanks by someone obsessed with frequency.
-    </p>
-    """,
-    unsafe_allow_html=True,
-)
-
 APP_DIR = Path(__file__).resolve().parent
 HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
 LOGO_IMAGE_PATH = APP_DIR / "assets" / "english.png"
@@ -62,38 +52,48 @@ if HEADER_IMAGE_PATH.exists():
         'alt="Didaskalos header image" />'
     )
 
-left_col, right_col = st.columns([1, 4])
+top_left_col, top_right_col = st.columns([1, 4])
 
-with left_col:
+with top_left_col:
     if LOGO_IMAGE_PATH.exists():
         st.image(str(LOGO_IMAGE_PATH), use_container_width=True)
 
-with right_col:
+with top_right_col:
+    st.title("Didaskalos: Frequency-Based Greek Grammar Textbook Builder")
     st.markdown(
-        f"""
-        <div style="line-height: 1.6; font-size: 1rem; text-align: left;">
-            {header_image_html}
-            <p>Didaskalos builds a frequency-based Ancient Greek grammar textbook from treebanks and modular lessons. You can either use sample XML treebanks (like the ones I uploaded from the Perseus Digital Library) or upload your own.
-                The app parses the treebanks, pulls out grammatical features, and ranks them by frequency. Based on that, it generates
-                lessons that focus on the structures that actually show up most in the texts.
-            </p>
-            <p>
-                Right now, the lessons are LLM-generated using a RAG setup with sources like Smyth's Greek Grammar and Crosby &amp; Schaefer.
-                They're basically a first draft. I plan to clean them up manually later.
-            </p>
-            <p>
-                You can download the generated textbook as Markdown or HTML, so it's easy to tweak or restyle. There are also generated
-                exercises from your chosen texts, where the sentences are ranked by difficulty based on their length and how frequent their
-                words are.
-            </p>
-            <p>
-                This is still an early version and mostly a starting point. For example, noun lessons don't go declension by declension yet;
-                instead, they explain things case-by-case (like the accusative across all declensions). More features coming soon!
-            </p>
-        </div>
+        """
+        <p style="font-size: 1.2rem; font-weight: 600; margin-top: -0.3rem; margin-bottom: 1rem;">
+            A tool in the making for a frequency-based Ancient Greek grammar textbook from treebanks by someone obsessed with frequency.
+        </p>
         """,
         unsafe_allow_html=True,
     )
+
+st.markdown(
+    f"""
+    <div style="line-height: 1.6; font-size: 1rem; text-align: left;">
+        {header_image_html}
+        <p>Didaskalos builds a frequency-based Ancient Greek grammar textbook from treebanks and modular lessons. You can either use sample XML treebanks (like the ones I uploaded from the Perseus Digital Library) or upload your own.
+            The app parses the treebanks, pulls out grammatical features, and ranks them by frequency. Based on that, it generates
+            lessons that focus on the structures that actually show up most in the texts.
+        </p>
+        <p>
+            Right now, the lessons are LLM-generated using a RAG setup with sources like Smyth's Greek Grammar and Crosby &amp; Schaefer.
+            They're basically a first draft. I plan to clean them up manually later.
+        </p>
+        <p>
+            You can download the generated textbook as Markdown or HTML, so it's easy to tweak or restyle. There are also generated
+            exercises from your chosen texts, where the sentences are ranked by difficulty based on their length and how frequent their
+            words are.
+        </p>
+        <p>
+            This is still an early version and mostly a starting point. For example, noun lessons don't go declension by declension yet;
+            instead, they explain things case-by-case (like the accusative across all declensions). More features coming soon!
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 GITHUB_OWNER = "farnoosh-shamsian"
 GITHUB_REPO = "Didaskalos"
