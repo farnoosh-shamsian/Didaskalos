@@ -237,7 +237,10 @@ def _tlg_from_document_id(document_id: str | None) -> str | None:
     ``http://.../urn:cts:greekLit:tlg0540.tlg001.perseus-grc1`` — enough to
     identify the work and reuse the catalog below.
     """
-    if not document_id:
+    # Guard against non-strings: ``None``, or the ``NaN`` float a missing pandas
+    # category column yields (NaN is truthy, so ``not document_id`` would let it
+    # through and ``re.search`` would raise on a float).
+    if not isinstance(document_id, str) or not document_id:
         return None
     # Newer CTS urn form: "...urn:cts:greekLit:tlg0540.tlg001.perseus-grc1".
     match = re.search(r"(tlg\d+\.tlg\d+)", document_id)
@@ -304,8 +307,14 @@ def _clean_subdoc(subdoc: str | None) -> str:
     """The usable passage reference from a raw ``subdoc``, or "" when there is
     none. ``subdoc`` is treated as an opaque token (its scheme varies by work:
     book.line, a Stephanus/Bekker page, a bare section, ...): we only strip
-    whitespace and reject the empty / literal-"None" placeholders."""
-    ref = (subdoc or "").strip()
+    whitespace and reject the empty / literal-"None" placeholders.
+
+    Anything that is not a string (``None``, or the ``NaN`` float that a missing
+    pandas category column yields — as with the NT CoNLL-U, which carries no
+    ``subdoc``) is treated as "no reference"."""
+    if not isinstance(subdoc, str):
+        return ""
+    ref = subdoc.strip()
     return "" if ref.lower() == "none" else ref
 
 
