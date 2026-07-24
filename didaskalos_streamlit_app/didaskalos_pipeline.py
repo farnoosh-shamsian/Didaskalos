@@ -1277,7 +1277,7 @@ def _split_lesson_title(lesson_text: str) -> tuple[str | None, str]:
 def generate_textbook_markdown(
     frequency_syllabus: pd.DataFrame,
     grammar_folder: str | Path,
-    lesson_count: int = 35,
+    lesson_count: int = 40,
     combined_df: pd.DataFrame | None = None,
     syllabus_mode: str = "case",
     lang: str = DEFAULT_LANG,
@@ -1452,7 +1452,7 @@ def generate_textbook_markdown(
 def generate_textbook_html(
     frequency_syllabus: pd.DataFrame,
     grammar_folder: str | Path,
-    lesson_count: int = 35,
+    lesson_count: int = 40,
     doc_title: str | None = None,
     combined_df: pd.DataFrame | None = None,
     syllabus_mode: str = "case",

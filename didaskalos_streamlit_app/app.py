@@ -793,7 +793,7 @@ with st.sidebar:
             t("lesson_count_label", lang),
             min_value=1,
             max_value=200,
-            value=35,
+            value=40,
             step=1,
         )
     )
