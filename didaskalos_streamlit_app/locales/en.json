@@ -49,7 +49,6 @@
   "frequency_syllabus_header": "Frequency Syllabus",
   "declension_categories_header": "Declension Categories",
   "no_classified_info": "No nouns or adjectives could be classified in the selected treebanks.",
-  "download_declension_summary": "Download declension_summary.csv",
   "download_frequency_syllabus": "Download frequency_syllabus.csv",
   "download_combined_rows": "Download combined_treebank_rows.csv",
   "download_textbook_md": "Download textbook.md",

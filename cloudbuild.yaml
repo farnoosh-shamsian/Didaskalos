@@ -29,6 +29,17 @@ steps:
       - 'europe-west1'
       - '--platform'
       - 'managed'
+      # Building a textbook loads the whole selected corpus into pandas. A large
+      # "select all" run peaks well above the 512Mi default and was being
+      # OOM-killed mid-build; 2Gi leaves comfortable headroom. Extra CPU speeds
+      # the per-lesson generation, and the longer request timeout covers the
+      # slowest full-corpus builds.
+      - '--memory'
+      - '2Gi'
+      - '--cpu'
+      - '2'
+      - '--timeout'
+      - '600'
 
 images:
   - 'europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:latest'

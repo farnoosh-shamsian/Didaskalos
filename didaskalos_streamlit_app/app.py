@@ -34,7 +34,6 @@ _force_utf8_stdio()
 
 from didaskalos_pipeline import (
     build_combined_df,
-    build_declension_summary,
     build_frequency_syllabus,
     generate_textbook_html,
     generate_textbook_markdown,
@@ -914,8 +913,6 @@ if build_clicked:
             markdown_content=textbook_markdown,
         )
 
-    declension_summary = build_declension_summary(combined_df) if syllabus_mode == "declension" else None
-
     # Results live in session state so later reruns (downloads, toggles, widget
     # changes) keep them on screen without rebuilding. CSV bytes are computed
     # once here instead of holding the full token DataFrame per session.
@@ -926,11 +923,6 @@ if build_clicked:
         "frequency_syllabus": frequency_syllabus,
         "frequency_csv": frequency_syllabus.to_csv(index=False).encode("utf-8"),
         "combined_csv": combined_df.to_csv(index=False).encode("utf-8"),
-        "declension_csv": (
-            declension_summary.to_csv(index=False).encode("utf-8")
-            if declension_summary is not None and not declension_summary.empty
-            else None
-        ),
         "textbook_markdown": textbook_markdown,
         "textbook_html": textbook_html,
     }
@@ -944,15 +936,6 @@ if build_result:
 
     st.subheader(t("frequency_syllabus_header", lang))
     st.dataframe(build_result["frequency_syllabus"], use_container_width=True, height=420)
-
-    if build_result["declension_csv"] is not None:
-        st.download_button(
-            label=t("download_declension_summary", lang),
-            data=build_result["declension_csv"],
-            file_name="declension_summary.csv",
-            mime="text/csv",
-            use_container_width=True,
-        )
 
     st.download_button(
         label=t("download_frequency_syllabus", lang),

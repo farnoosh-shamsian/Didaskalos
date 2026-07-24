@@ -28,10 +28,13 @@ from pathlib import Path
 import pandas as pd
 
 
-# Strong sentence-ending punctuation (including the Greek ano teleia). Native
-# sentence boundaries are primary; this only sub-splits a sentence into segments,
-# and is shared by every adapter so segmentation is format-independent.
-_END_PUNCT = {".", "?", ";", "!", ":", "·"}
+# Strong sentence-ending punctuation. Note ";" is the Greek question mark, so
+# it is a real terminator. The ano teleia "·" and colon ":" are deliberately
+# excluded: in Greek they mark a mid-sentence pause (like a semicolon), and
+# treating them as boundaries chops genuine sentences into clause fragments.
+# Native sentence boundaries are primary; this only sub-splits a sentence into
+# segments, and is shared by every adapter so segmentation is format-independent.
+_END_PUNCT = {".", "?", ";", "!"}
 
 
 # ---------------------------------------------------------------------------
@@ -52,6 +55,13 @@ def parse_agdt_xml(file_path: str | Path) -> pd.DataFrame:
         segment = 1
 
         for word in sentence.findall("word"):
+            # Skip nodes the annotators inserted for gapping/ellipsis (marked
+            # artificial="elliptic"). They are not part of the written text, so
+            # including them injects phantom words into sentences and skews the
+            # frequency counts and exercise-target selection downstream.
+            if word.get("artificial"):
+                continue
+
             token_index += 1
             form = word.get("form") or ""
 

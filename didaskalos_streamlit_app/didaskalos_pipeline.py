@@ -500,6 +500,23 @@ def build_combined_df(
         combined_df = add_declension_features(combined_df)
         combined_df = apply_declension_syllabus(combined_df)
 
+    # Object (Python-string) columns dominate memory: a 258k-token frame lands at
+    # ~220 MB, and a full "select all treebanks" run is ~940k tokens. Generation
+    # needs a working frame on top of that, so a large corpus breaches Cloud Run's
+    # memory limit and the container is OOM-killed (the app "just stops" with no
+    # error). These columns each hold a small fixed vocabulary repeated across
+    # every token, so storing them as categoricals roughly halves the frame with
+    # no behavioural change. Deliberately excluded: form/lemma/sentence_id (used
+    # in text assembly, regex, and groupby keys); word_id/token_index (coerced
+    # with pd.to_numeric downstream); and syllabus/pos_category, which are groupby
+    # keys and reassignment targets in build_frequency_syllabus — as categoricals
+    # they would reject new values in .where() and make groupby emit spurious
+    # zero-count combinations.
+    for column in ("document_id", "subdoc", "postag", "relation", "head",
+                   "file", "verb_subcategory"):
+        if column in combined_df.columns:
+            combined_df[column] = combined_df[column].astype("category")
+
     return combined_df
 
 
@@ -773,12 +790,46 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
 
     def join_forms(forms: list[str]) -> str:
         words = []
+        # A trailing-hyphen token (crasis first half, e.g. "τ-") waits here for
+        # the following word so the two can be glued: "τ-" + "ἀναντία" -> "τἀναντία".
+        pending_prefix = ""
         for form in forms:
-            token = str(form)
+            token = str(form).strip()
+            if not token:
+                continue
+
+            # A bare hyphen is a stray join marker with nothing to attach; drop it.
+            if set(token) == {"-"}:
+                continue
+
+            # Enclitic marked with a leading hyphen (e.g. "-δὲ", "-τε"): glue it to
+            # the preceding word, dropping the seam marker -> "οὐ" + "-δὲ" = "οὐδὲ".
+            if token.startswith("-"):
+                glued = token.lstrip("-")
+                if words:
+                    words[-1] += glued
+                else:
+                    words.append(glued)
+                continue
+
+            # Crasis first half marked with a trailing hyphen (e.g. "τ-", "κ-"):
+            # hold it and prepend it to the next word.
+            if token.endswith("-"):
+                pending_prefix += token.rstrip("-")
+                continue
+
+            if pending_prefix:
+                token = pending_prefix + token
+                pending_prefix = ""
+
             if token in attach_to_prev and words:
                 words[-1] += token
             else:
                 words.append(token)
+
+        # A dangling crasis prefix with no following word: keep it rather than lose text.
+        if pending_prefix:
+            words.append(pending_prefix)
 
         text = " ".join(words)
         text = re.sub(r"\s+([,.:;!?\)])", r"\1", text)
@@ -974,6 +1025,21 @@ def _build_sentence_target_rows(
     return topic_rows
 
 
+# Minimum number of real words a sentence must have to be eligible as an
+# exercise. Filters out single-word or fragment "sentences" that shouldn't
+# appear as full-sentence exercises.
+MIN_EXERCISE_SENTENCE_WORDS = 3
+
+# A token counts as a "word" only if it contains at least one letter, so that
+# standalone punctuation (Greek ano teleia "·", dashes, brackets) is not
+# counted toward the minimum-length check.
+_WORD_TOKEN_RE = re.compile(r"\w", re.UNICODE)
+
+
+def _count_words(text: str) -> int:
+    return sum(1 for token in text.split() if _WORD_TOKEN_RE.search(token))
+
+
 def _normalize_answer_word(word: str) -> str:
     return str(word).strip().lower()
 
@@ -1005,6 +1071,9 @@ def _pick_unique_exercise_sentences(
         sentence_text_key = re.sub(r"\s+", " ", sentence_text)
 
         if not sentence_text_key or sentence_text_key in used_sentence_texts:
+            continue
+
+        if _count_words(sentence_text_key) < MIN_EXERCISE_SENTENCE_WORDS:
             continue
 
         sentence_targets = grouped_targets.get(sentence_index)
@@ -1305,7 +1374,12 @@ def generate_textbook_markdown(
     known_lemmas: set[str] = set()
 
     if combined_df is not None and not combined_df.empty:
-        working_combined_df = combined_df.copy()
+        # Work on the passed frame directly. A full .copy() here duplicated the
+        # entire token table (hundreds of MB for a large corpus) and was the main
+        # driver of the OOM container kills; adding the two derived columns below
+        # in place costs only a few MB. The two extra columns (lemma_frequency,
+        # sentence_index) then also appear in the app's combined-rows CSV export.
+        working_combined_df = combined_df
 
         if "lemma_frequency" not in working_combined_df.columns:
             greek_rows = working_combined_df[working_combined_df["lemma"].apply(is_greek_lemma)]
