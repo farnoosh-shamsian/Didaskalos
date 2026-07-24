@@ -19,6 +19,28 @@
       "language": "grc",
       "license": "CC BY-NC-SA 4.0",
       "source_url": "https://github.com/vgorman1/Greek-Dependency-Trees"
+    },
+    {
+      "id": "harrington",
+      "name": "Harrington Treebanked Commentaries (Perseids)",
+      "path": "treebanks/harrington/",
+      "format": "agdt-xml",
+      "file_glob": "*.xml",
+      "language": "grc",
+      "license": "MIT",
+      "author": "Lucian",
+      "source_url": "https://github.com/perseids-publications/harrington-trees"
+    },
+    {
+      "id": "proiel-nt",
+      "name": "PROIEL New Testament (Ancient Greek)",
+      "path": "treebanks/proiel-nt/",
+      "format": "conllu",
+      "file_glob": "*.conllu",
+      "language": "grc",
+      "license": "CC BY-NC-SA 4.0",
+      "author": "New Testament",
+      "source_url": "https://github.com/proiel/proiel-treebank"
     }
   ]
 }

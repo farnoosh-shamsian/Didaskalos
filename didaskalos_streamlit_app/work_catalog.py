@@ -84,6 +84,132 @@ WORK_CATALOG: dict[str, tuple[str, str]] = {
     "tlg0540.tlg013": ("Lysias", "Against Agoratus"),
     "tlg0540.tlg019": ("Lysias", "On the Property of Aristophanes"),
     "tlg0551.tlg017": ("Appian", "The Civil Wars"),
+    # --- Lucian, added with the Harrington (Perseids) corpus ---
+    "tlg0062.tlg012": ("Lucian", "True Histories"),
+    # --- New Testament books, added with the PROIEL corpus (TLG 0031) ---
+    "tlg0031.tlg001": ("New Testament", "Gospel of Matthew"),
+    "tlg0031.tlg002": ("New Testament", "Gospel of Mark"),
+    "tlg0031.tlg003": ("New Testament", "Gospel of Luke"),
+    "tlg0031.tlg004": ("New Testament", "Gospel of John"),
+    "tlg0031.tlg005": ("New Testament", "Acts of the Apostles"),
+    "tlg0031.tlg006": ("New Testament", "Romans"),
+    "tlg0031.tlg007": ("New Testament", "1 Corinthians"),
+    "tlg0031.tlg008": ("New Testament", "2 Corinthians"),
+    "tlg0031.tlg009": ("New Testament", "Galatians"),
+    "tlg0031.tlg010": ("New Testament", "Ephesians"),
+    "tlg0031.tlg011": ("New Testament", "Philippians"),
+    "tlg0031.tlg012": ("New Testament", "Colossians"),
+    "tlg0031.tlg013": ("New Testament", "1 Thessalonians"),
+    "tlg0031.tlg014": ("New Testament", "2 Thessalonians"),
+    "tlg0031.tlg015": ("New Testament", "1 Timothy"),
+    "tlg0031.tlg016": ("New Testament", "2 Timothy"),
+    "tlg0031.tlg017": ("New Testament", "Titus"),
+    "tlg0031.tlg018": ("New Testament", "Philemon"),
+    "tlg0031.tlg019": ("New Testament", "Hebrews"),
+    "tlg0031.tlg020": ("New Testament", "Epistle of James"),
+    "tlg0031.tlg021": ("New Testament", "1 Peter"),
+    "tlg0031.tlg025": ("New Testament", "3 John"),
+    "tlg0031.tlg026": ("New Testament", "Jude"),
+    "tlg0031.tlg027": ("New Testament", "Revelation"),
+}
+
+
+# Short scholarly citation sigla, keyed on the same ``tlgAUTHOR.tlgWORK`` id as
+# WORK_CATALOG. Each value is ``(siglum, leading_number)``:
+#   siglum          OCD/LSJ-style abbreviation (author, or author+work for
+#                   multi-work authors) that prefixes every reference.
+#   leading_number  the fixed book/speech number that is part of the work's
+#                   canonical reference but is NOT in the treebank ``subdoc``.
+#                   Set for the orators (Lysias/Demosthenes/Antiphon/Aeschines),
+#                   whose ``subdoc`` carries only the section; None otherwise.
+# format_citation composes ``"{siglum} {leading_number}.{subdoc}"`` (empty parts
+# dropped), so the same rule yields "Hom. Il. 1.1-1.7", "Hdt. 1.1", "Lys. 12.1".
+WORK_CITATION: dict[str, tuple[str, str | None]] = {
+    "tlg0003.tlg001": ("Thuc.", None),
+    "tlg0007.tlg004": ("Plut. Lyc.", None),
+    "tlg0007.tlg015": ("Plut. Alc.", None),
+    "tlg0007.tlg086": ("Plut. De fort. Rom.", None),
+    "tlg0007.tlg087": ("Plut. De Alex. fort.", None),
+    "tlg0008.tlg001": ("Ath.", None),
+    "tlg0011.tlg001": ("Soph. Trach.", None),
+    "tlg0011.tlg002": ("Soph. Ant.", None),
+    "tlg0011.tlg003": ("Soph. Aj.", None),
+    "tlg0011.tlg004": ("Soph. OT", None),
+    "tlg0011.tlg005": ("Soph. El.", None),
+    "tlg0012.tlg001": ("Hom. Il.", None),
+    "tlg0012.tlg002": ("Hom. Od.", None),
+    "tlg0013.tlg002": ("Hymn. Hom. Cer.", None),
+    "tlg0016.tlg001": ("Hdt.", None),
+    "tlg0020.tlg001": ("Hes. Theog.", None),
+    "tlg0020.tlg002": ("Hes. Op.", None),
+    "tlg0020.tlg003": ("Hes. Sc.", None),
+    "tlg0059.tlg001": ("Pl. Euthphr.", None),
+    "tlg0059.tlg002": ("Pl. Ap.", None),
+    "tlg0060.tlg001": ("Diod. Sic.", None),
+    "tlg0085.tlg001": ("Aesch. Supp.", None),
+    "tlg0085.tlg002": ("Aesch. Pers.", None),
+    "tlg0085.tlg003": ("Aesch. PV", None),
+    "tlg0085.tlg004": ("Aesch. Sept.", None),
+    "tlg0085.tlg005": ("Aesch. Ag.", None),
+    "tlg0085.tlg006": ("Aesch. Cho.", None),
+    "tlg0085.tlg007": ("Aesch. Eum.", None),
+    "tlg0096.tlg002": ("Aesop", None),
+    "tlg0540.tlg001": ("Lys.", "1"),
+    "tlg0540.tlg012": ("Lys.", "12"),
+    "tlg0540.tlg013": ("Lys.", "13"),
+    "tlg0540.tlg014": ("Lys.", "14"),
+    "tlg0540.tlg015": ("Lys.", "15"),
+    "tlg0540.tlg019": ("Lys.", "19"),
+    "tlg0540.tlg023": ("Lys.", "23"),
+    "tlg0543.tlg001": ("Polyb.", None),
+    "tlg0548.tlg001": ("Apollod.", None),
+    "tlg0014.tlg001": ("Dem.", "1"),
+    "tlg0014.tlg004": ("Dem.", "4"),
+    "tlg0014.tlg018": ("Dem.", "18"),
+    "tlg0014.tlg046": ("Dem.", "46"),
+    "tlg0014.tlg047": ("Dem.", "47"),
+    "tlg0014.tlg049": ("Dem.", "49"),
+    "tlg0014.tlg050": ("Dem.", "50"),
+    "tlg0014.tlg052": ("Dem.", "52"),
+    "tlg0014.tlg053": ("Dem.", "53"),
+    "tlg0014.tlg059": ("Dem.", "59"),
+    "tlg0026.tlg001": ("Aeschin.", "1"),
+    "tlg0028.tlg001": ("Antiph.", "1"),
+    "tlg0028.tlg002": ("Antiph.", "2"),
+    "tlg0028.tlg005": ("Antiph.", "5"),
+    "tlg0028.tlg006": ("Antiph.", "6"),
+    "tlg0032.tlg001": ("Xen. Hell.", None),
+    "tlg0032.tlg007": ("Xen. Cyr.", None),
+    "tlg0032.tlg015": ("Xen. Ath.", None),
+    "tlg0081.tlg001": ("Dion. Hal. Ant. Rom.", None),
+    "tlg0086.tlg035": ("Arist. Pol.", None),
+    "tlg0526.tlg004": ("Joseph. BJ", None),
+    "tlg0551.tlg017": ("App. BC", None),
+    "tlg0062.tlg012": ("Luc. VH", None),
+    "tlg0031.tlg001": ("Matt.", None),
+    "tlg0031.tlg002": ("Mark", None),
+    "tlg0031.tlg003": ("Luke", None),
+    "tlg0031.tlg004": ("John", None),
+    "tlg0031.tlg005": ("Acts", None),
+    "tlg0031.tlg006": ("Rom.", None),
+    "tlg0031.tlg007": ("1 Cor.", None),
+    "tlg0031.tlg008": ("2 Cor.", None),
+    "tlg0031.tlg009": ("Gal.", None),
+    "tlg0031.tlg010": ("Eph.", None),
+    "tlg0031.tlg011": ("Phil.", None),
+    "tlg0031.tlg012": ("Col.", None),
+    "tlg0031.tlg013": ("1 Thess.", None),
+    "tlg0031.tlg014": ("2 Thess.", None),
+    "tlg0031.tlg015": ("1 Tim.", None),
+    "tlg0031.tlg016": ("2 Tim.", None),
+    "tlg0031.tlg017": ("Titus", None),
+    "tlg0031.tlg018": ("Phlm.", None),
+    "tlg0031.tlg019": ("Heb.", None),
+    "tlg0031.tlg020": ("Jas.", None),
+    "tlg0031.tlg021": ("1 Pet.", None),
+    "tlg0031.tlg025": ("3 John", None),
+    "tlg0031.tlg026": ("Jude", None),
+    "tlg0031.tlg027": ("Rev.", None),
 }
 
 
@@ -172,3 +298,39 @@ def resolve_author_work(
     author = (xml_author or "").strip() or None
     work = _clean_title(xml_title) or _strip_extension(file_name)
     return author, work
+
+
+def _clean_subdoc(subdoc: str | None) -> str:
+    """The usable passage reference from a raw ``subdoc``, or "" when there is
+    none. ``subdoc`` is treated as an opaque token (its scheme varies by work:
+    book.line, a Stephanus/Bekker page, a bare section, ...): we only strip
+    whitespace and reject the empty / literal-"None" placeholders."""
+    ref = (subdoc or "").strip()
+    return "" if ref.lower() == "none" else ref
+
+
+def format_citation(
+    file_name: str,
+    document_id: str | None,
+    subdoc: str | None,
+) -> str:
+    """Short scholarly citation for a sentence, e.g. ``"Hdt. 1.1"``,
+    ``"Hom. Il. 1.1-1.7"``, ``"Lys. 12.1"``.
+
+    Uses the curated siglum in :data:`WORK_CITATION` (matched on the TLG work key
+    from the filename or the CTS ``document_id``) and appends the passage
+    reference. For an orator the speech number lives in the work identity, not in
+    ``subdoc``, so it is prepended from the table. Works without a siglum fall
+    back to the full ``"Author, Work"`` name; when no passage reference exists the
+    citation degrades to the work label alone. Returns "" only when even a work
+    label cannot be determined."""
+    ref = _clean_subdoc(subdoc)
+    entry = WORK_CITATION.get(tlg_work_key(file_name, document_id) or "")
+    if entry:
+        siglum, leading = entry
+    else:
+        author, work = resolve_author_work(file_name, None, None, document_id)
+        siglum = f"{author}, {work}" if author else work
+        leading = None
+    reference = ".".join(part for part in (leading, ref) if part)
+    return f"{siglum} {reference}".strip()

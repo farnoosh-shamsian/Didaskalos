@@ -5,6 +5,7 @@ import re
 import unicodedata
 import xml.etree.ElementTree as ET
 from collections import Counter
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -21,6 +22,11 @@ try:
     from treebank_parsers import parse_agdt_xml, parse_treebank_file
 except ImportError:  # imported as part of a package rather than as a flat module
     from .treebank_parsers import parse_agdt_xml, parse_treebank_file
+
+try:
+    from work_catalog import format_citation
+except ImportError:  # imported as part of a package rather than as a flat module
+    from .work_catalog import format_citation
 
 # Back-compat alias: parse_treebank_xml was the historical name for the AGDT
 # parser before formats were pluggable. Kept so external callers keep working.
@@ -172,10 +178,19 @@ def normalize_frequency_row_name(label: str) -> str:
     return normalized
 
 
+# Cached: these two pure helpers are called millions of times during a build
+# (once per token, repeatedly per lesson) but over only a few thousand distinct
+# lemma strings, so memoizing collapses that to one real computation per unique
+# value. This is the single biggest CPU win in textbook generation.
+@lru_cache(maxsize=None)
+def _normalize_greek_lemma_cached(lemma: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFD", lemma.lower().strip()) if unicodedata.category(c) != "Mn")
+
+
 def normalize_greek_lemma(lemma: str) -> str:
     if not isinstance(lemma, str):
         return ""
-    return "".join(c for c in unicodedata.normalize("NFD", lemma.lower().strip()) if unicodedata.category(c) != "Mn")
+    return _normalize_greek_lemma_cached(lemma)
 
 
 def parse_verb_subcategory(lemma: str, postag: str | None = None) -> str:
@@ -194,8 +209,13 @@ def parse_verb_subcategory(lemma: str, postag: str | None = None) -> str:
     return "irregular"
 
 
+@lru_cache(maxsize=None)
+def _is_greek_lemma_cached(lemma: str) -> bool:
+    return bool(GREEK_MARK_RE.search(lemma))
+
+
 def is_greek_lemma(lemma: str) -> bool:
-    return isinstance(lemma, str) and bool(GREEK_MARK_RE.search(lemma))
+    return isinstance(lemma, str) and _is_greek_lemma_cached(lemma)
 
 
 # ---------------------------------------------------------------------------
@@ -638,6 +658,17 @@ def _ltr_isolate(text: str, rtl: bool) -> str:
     return f'<span lang="grc" dir="ltr">{text}</span>'
 
 
+def _citation_suffix(row: Mapping[str, Any], rtl: bool) -> str:
+    """Inline source citation to append to an exercise sentence line, e.g.
+    ``"  (*Hom. Il. 1.1-1.7*)"``. Empty when the sentence's provenance cannot be
+    resolved. The citation is Latin-script, so it is LTR-isolated to survive the
+    RTL (Persian) layout intact."""
+    citation = format_citation(row.get("file"), row.get("document_id"), row.get("subdoc"))
+    if not citation:
+        return ""
+    return f"  (*{_ltr_isolate(citation, rtl)}*)"
+
+
 def _pos_label(lesson_pos_category: str, lang: str) -> str:
     key = "pos_label_" + re.sub(r"[^a-z0-9]+", "_", str(lesson_pos_category).lower()).strip("_")
     value = t(key, lang)
@@ -844,22 +875,54 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
         text = re.sub(r"\s+", " ", text).strip()
         return text
 
+    # Pull the needed columns as plain lists once and address them by positional
+    # group indices. The previous loop did a per-group .sort_values() and
+    # per-group .iloc[0] for all ~19k sentences, which dominated build time. A
+    # sentence's tokens are appended contiguously and in token order by every
+    # parser, so the groups are already ordered and no per-group sort is needed.
+    # groupby(...).indices preserves first-appearance order, matching the
+    # ngroup(sort=False) sentence_index assigned to the token frame elsewhere.
+    forms = df["form"].tolist()
+    doc_ids = df["document_id"].tolist() if "document_id" in df.columns else None
+    subdocs = df["subdoc"].tolist() if "subdoc" in df.columns else None
+    file_ids = df["file"].tolist() if "file" in df.columns else None
+
     rows = []
-    for sent_id, group in df.groupby("sentence_id", sort=False):
-        group = group.sort_values("token_index" if "token_index" in group.columns else "word_id")
-        first = group.iloc[0]
+    for sent_id, positions in df.groupby("sentence_id", sort=False).indices.items():
+        first = positions[0]
         rows.append(
             {
                 "sentence_id": sent_id,
-                "document_id": first.get("document_id"),
-                "subdoc": first.get("subdoc"),
-                "file": first.get("file"),
-                "sentence_text": join_forms(group["form"].tolist()),
-                "word_count": len(group),
+                "document_id": doc_ids[first] if doc_ids is not None else None,
+                "subdoc": subdocs[first] if subdocs is not None else None,
+                "file": file_ids[first] if file_ids is not None else None,
+                "sentence_text": join_forms([forms[position] for position in positions]),
+                "word_count": len(positions),
             }
         )
 
-    return pd.DataFrame(rows)
+    sentences = pd.DataFrame(rows)
+    return _blank_whole_work_subdocs(sentences)
+
+
+def _blank_whole_work_subdocs(sentences: pd.DataFrame) -> pd.DataFrame:
+    """Drop non-informative ``subdoc`` values used as a citation reference.
+
+    Some Perseus files tag *every* sentence with one coarse whole-work range
+    (e.g. Lysias 1 uses ``subdoc="1-50"`` throughout), which is noise rather than
+    a per-sentence citation. Where a file's ``subdoc`` is constant across all its
+    sentences *and* looks like a range, blank it so the citation degrades to the
+    work label. Genuinely varying refs (Homer's per-sentence line ranges) are
+    untouched."""
+    if sentences.empty or "subdoc" not in sentences.columns or "file" not in sentences.columns:
+        return sentences
+
+    for _, idx in sentences.groupby("file", sort=False).groups.items():
+        values = sentences.loc[idx, "subdoc"].dropna().unique()
+        if len(values) == 1 and "-" in str(values[0]):
+            sentences.loc[idx, "subdoc"] = None
+
+    return sentences
 
 
 def add_sentence_scores(sentences_df: pd.DataFrame, combined_df: pd.DataFrame) -> pd.DataFrame:
@@ -1057,18 +1120,28 @@ def _pick_unique_exercise_sentences(
     used_sentence_texts: set[str] = set()
     used_answer_words: set[str] = set()
 
-    grouped_targets = {
-        sent_idx: grp.sort_values("token_index")
-        for sent_idx, grp in topic_rows.groupby("sentence_index", sort=False)
-    }
+    # Sort the target rows once and index them by positional location per
+    # sentence. The previous code sorted+copied every sentence group into its own
+    # DataFrame up front (~135k tiny sort_values per build) even though only a
+    # handful of sentences are ever selected; iterating numpy arrays and slicing
+    # with .iloc once per chosen sentence is dramatically cheaper.
+    topic_rows = topic_rows.sort_values("token_index")
+    group_positions = topic_rows.groupby("sentence_index", sort=False).indices
+    target_forms = topic_rows["form"].to_numpy(dtype=object)
 
-    for _, sentence_row in topic_sentences.iterrows():
+    sentence_index_values = topic_sentences["sentence_index"].to_numpy()
+    sentence_text_values = topic_sentences.get("sentence_text")
+    sentence_text_values = (
+        sentence_text_values.astype(str).to_numpy()
+        if sentence_text_values is not None
+        else np.array([""] * len(topic_sentences), dtype=object)
+    )
+
+    for sentence_index, sentence_text in zip(sentence_index_values, sentence_text_values):
         if len(selected_sentence_ids) >= max_sentences:
             break
 
-        sentence_index = sentence_row["sentence_index"]
-        sentence_text = str(sentence_row.get("sentence_text", "")).strip()
-        sentence_text_key = re.sub(r"\s+", " ", sentence_text)
+        sentence_text_key = re.sub(r"\s+", " ", str(sentence_text).strip())
 
         if not sentence_text_key or sentence_text_key in used_sentence_texts:
             continue
@@ -1076,21 +1149,21 @@ def _pick_unique_exercise_sentences(
         if _count_words(sentence_text_key) < MIN_EXERCISE_SENTENCE_WORDS:
             continue
 
-        sentence_targets = grouped_targets.get(sentence_index)
-        if sentence_targets is None or sentence_targets.empty:
+        positions = group_positions.get(sentence_index)
+        if positions is None or len(positions) == 0:
             continue
 
-        candidate_rows = []
-        for _, target_row in sentence_targets.iterrows():
-            answer_form = _normalize_answer_word(target_row.get("form", ""))
+        candidate_positions = []
+        for position in positions:
+            answer_form = _normalize_answer_word(target_forms[position])
             if not answer_form or answer_form in used_answer_words:
                 continue
-            candidate_rows.append(target_row)
+            candidate_positions.append(position)
 
-        if not candidate_rows:
+        if not candidate_positions:
             continue
 
-        chosen_targets = pd.DataFrame(candidate_rows)
+        chosen_targets = topic_rows.iloc[candidate_positions]
         selected_sentence_ids.append(sentence_index)
         selected_targets_by_sentence[sentence_index] = chosen_targets
         used_sentence_texts.add(sentence_text_key)
@@ -1122,7 +1195,7 @@ def _format_exercise_nonverb(
         "",
     ]
     for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
-        lines.append(f"{idx}. {_ltr_isolate(str(row['sentence_text']), rtl)}")
+        lines.append(f"{idx}. {_ltr_isolate(str(row['sentence_text']), rtl)}{_citation_suffix(row, rtl)}")
     lines.append("")
     lines.append(f"#### {t('tb_answer_key_header', lang)}")
     lines.append("")
@@ -1161,7 +1234,7 @@ def _format_exercise_verb(
         if sentence_rows is not None and not sentence_rows.empty:
             forms = set(sentence_rows["form"].tolist())
         marked = mark_topic_words_in_sentence(row["sentence_text"], forms)
-        lines.append(f"{idx}. {_ltr_isolate(marked, rtl)}")
+        lines.append(f"{idx}. {_ltr_isolate(marked, rtl)}{_citation_suffix(row, rtl)}")
 
     lines.append("")
     lines.append(f"#### {t('tb_answer_key_header', lang)}")

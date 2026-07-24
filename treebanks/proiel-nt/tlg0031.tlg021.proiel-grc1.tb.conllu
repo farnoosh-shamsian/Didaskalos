@@ -1,0 +1,976 @@
+# source = The Greek New Testament, 1 Peter 1
+# text = Πέτρος ἀπόστολος Ἰησοῦ Χριστοῦ ἐκλεκτοῖς παρεπιδήμοις διασπορᾶς Πόντου Γαλατίας Καππαδοκίας Ἀσίας καὶ Βιθυνίας κατὰ πρόγνωσιν θεοῦ πατρός ἐν ἁγιασμῷ πνεύματος εἰς ὑπακοὴν καὶ ῥαντισμὸν αἵματος Ἰησοῦ Χριστοῦ
+# sent_id = 32115
+1	Πέτρος	Πέτρος	PROPN	Ne	Case=Nom|Gender=Masc|Number=Sing	0	root	_	Ref=1PET_1.1
+2	ἀπόστολος	ἀπόστολος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	1	appos	_	Ref=1PET_1.1
+3	Ἰησοῦ	Ἰησοῦς	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	2	nmod	_	Ref=1PET_1.1
+4	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	3	flat:name	_	Ref=1PET_1.1
+5	ἐκλεκτοῖς	ἐκλεκτός	ADJ	A-	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	6	amod	_	Ref=1PET_1.1
+6	παρεπιδήμοις	παρεπίδημος	ADJ	A-	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	1	orphan	_	Ref=1PET_1.1
+7	διασπορᾶς	διασπορά	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	6	nmod	_	Ref=1PET_1.1
+8	Πόντου	Πόντος	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	7	nmod	_	Ref=1PET_1.1
+9	Γαλατίας	Γαλατία	PROPN	Ne	Case=Gen|Gender=Fem|Number=Sing	8	conj	_	Ref=1PET_1.1
+10	Καππαδοκίας	Καππαδοκία	PROPN	Ne	Case=Gen|Gender=Fem|Number=Sing	8	conj	_	Ref=1PET_1.1
+11	Ἀσίας	Ἀσία	PROPN	Ne	Case=Gen|Gender=Fem|Number=Sing	8	conj	_	Ref=1PET_1.1
+12	καὶ	καί	CCONJ	C-	_	13	cc	_	Ref=1PET_1.1
+13	Βιθυνίας	Βιθυνία	PROPN	Ne	Case=Gen|Gender=Fem|Number=Sing	8	conj	_	Ref=1PET_1.1
+14	κατὰ	κατά	ADP	R-	_	15	case	_	Ref=1PET_1.2
+15	πρόγνωσιν	πρόγνωσις	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	1	orphan	_	Ref=1PET_1.2
+16	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	15	nmod	_	Ref=1PET_1.2
+17	πατρός	πατήρ	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	16	appos	_	Ref=1PET_1.2
+18	ἐν	ἐν	ADP	R-	_	19	case	_	Ref=1PET_1.2
+19	ἁγιασμῷ	ἁγιασμός	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	1	orphan	_	Ref=1PET_1.2
+20	πνεύματος	πνεῦμα	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	19	nmod	_	Ref=1PET_1.2
+21	εἰς	εἰς	ADP	R-	_	22	case	_	Ref=1PET_1.2
+22	ὑπακοὴν	ὑπακοή	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	1	orphan	_	Ref=1PET_1.2
+23	καὶ	καί	CCONJ	C-	_	24	cc	_	Ref=1PET_1.2
+24	ῥαντισμὸν	ῥαντισμός	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	22	conj	_	Ref=1PET_1.2
+25	αἵματος	αἷμα	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	24	nmod	_	Ref=1PET_1.2
+26	Ἰησοῦ	Ἰησοῦς	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	25	nmod	_	Ref=1PET_1.2
+27	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	26	flat:name	_	Ref=1PET_1.2
+
+# source = The Greek New Testament, 1 Peter 1
+# text = χάρις ὑμῖν καὶ εἰρήνη πληθυνθείη
+# sent_id = 32116
+1	χάρις	χάρις	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	5	nsubj:pass	_	Ref=1PET_1.2
+2	ὑμῖν	ὑμεῖς	PRON	Pp	Case=Dat|Gender=Fem,Masc|Number=Plur|Person=2|PronType=Prs	5	obl	_	Ref=1PET_1.2
+3	καὶ	καί	CCONJ	C-	_	4	cc	_	Ref=1PET_1.2
+4	εἰρήνη	εἰρήνη	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	1	conj	_	Ref=1PET_1.2
+5	πληθυνθείη	πληθύνω	VERB	V-	Aspect=Perf|Mood=Opt|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_1.2
+
+# source = The Greek New Testament, 1 Peter 1
+# text = Εὐλογητὸς ὁ θεὸς καὶ πατὴρ τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ ὁ κατὰ τὸ πολὺ αὐτοῦ ἔλεος ἀναγεννήσας ἡμᾶς εἰς ἐλπίδα ζῶσαν δι’ ἀναστάσεως Ἰησοῦ Χριστοῦ ἐκ νεκρῶν εἰς κληρονομίαν ἄφθαρτον καὶ ἀμίαντον καὶ ἀμάραντον τετηρημένην ἐν οὐρανοῖς εἰς ὑμᾶς τοὺς ἐν δυνάμει θεοῦ φρουρουμένους διὰ πίστεως εἰς σωτηρίαν ἑτοίμην ἀποκαλυφθῆναι ἐν καιρῷ ἐσχάτῳ
+# sent_id = 32117
+1	Εὐλογητὸς	εὐλογητός	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	0	root	_	Ref=1PET_1.3
+2	ὁ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	3	det	_	Ref=1PET_1.3
+3	θεὸς	θεός	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	1	nsubj	_	Ref=1PET_1.3
+4	καὶ	καί	CCONJ	C-	_	5	cc	_	Ref=1PET_1.3
+5	πατὴρ	πατήρ	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	3	conj	_	Ref=1PET_1.3
+6	τοῦ	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	7	det	_	Ref=1PET_1.3
+7	κυρίου	κύριος	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	5	nmod	_	Ref=1PET_1.3
+8	ἡμῶν	ἡμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=1|PronType=Prs	7	det	_	Ref=1PET_1.3
+9	Ἰησοῦ	Ἰησοῦς	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	7	appos	_	Ref=1PET_1.3
+10	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	9	flat:name	_	Ref=1PET_1.3
+11	ὁ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	17	det	_	Ref=1PET_1.3
+12	κατὰ	κατά	ADP	R-	_	16	case	_	Ref=1PET_1.3
+13	τὸ	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	16	det	_	Ref=1PET_1.3
+14	πολὺ	πολύς	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	16	amod	_	Ref=1PET_1.3
+15	αὐτοῦ	αὐτός	PRON	Pp	Case=Gen|Gender=Masc|Number=Sing|Person=3|PronType=Prs	16	det	_	Ref=1PET_1.3
+16	ἔλεος	ἔλεος	NOUN	Nb	Case=Acc|Gender=Neut|Number=Sing	17	obl	_	Ref=1PET_1.3
+17	ἀναγεννήσας	ἀναγεννάω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Act	3	appos	_	Ref=1PET_1.3
+18	ἡμᾶς	ἡμεῖς	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=1|PronType=Prs	17	obj	_	Ref=1PET_1.3
+19	εἰς	εἰς	ADP	R-	_	20	case	_	Ref=1PET_1.3
+20	ἐλπίδα	ἐλπίς	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	17	obl	_	Ref=1PET_1.3
+21	ζῶσαν	ζῶ	VERB	V-	Case=Acc|Gender=Fem|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	20	acl	_	Ref=1PET_1.3
+22	δι’	διά	ADP	R-	_	23	case	_	Ref=1PET_1.3
+23	ἀναστάσεως	ἀνάστασις	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	17	obl	_	Ref=1PET_1.3
+24	Ἰησοῦ	Ἰησοῦς	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	23	nmod	_	Ref=1PET_1.3
+25	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	24	flat:name	_	Ref=1PET_1.3
+26	ἐκ	ἐκ	ADP	R-	_	27	case	_	Ref=1PET_1.3
+27	νεκρῶν	νεκρός	ADJ	A-	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	23	nmod	_	Ref=1PET_1.3
+28	εἰς	εἰς	ADP	R-	_	29	case	_	Ref=1PET_1.4
+29	κληρονομίαν	κληρονομία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	17	obl	_	Ref=1PET_1.4
+30	ἄφθαρτον	ἄφθαρτος	ADJ	A-	Case=Acc|Degree=Pos|Number=Sing	29	amod	_	Ref=1PET_1.4
+31	καὶ	καί	CCONJ	C-	_	32	cc	_	Ref=1PET_1.4
+32	ἀμίαντον	ἀμίαντος	ADJ	A-	Case=Acc|Degree=Pos|Number=Sing	30	conj	_	Ref=1PET_1.4
+33	καὶ	καί	CCONJ	C-	_	34	cc	_	Ref=1PET_1.4
+34	ἀμάραντον	ἀμάραντος	ADJ	A-	Case=Acc|Degree=Pos|Number=Sing	30	conj	_	Ref=1PET_1.4
+35	τετηρημένην	τηρέω	VERB	V-	Aspect=Perf|Case=Acc|Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	29	acl	_	Ref=1PET_1.4
+36	ἐν	ἐν	ADP	R-	_	37	case	_	Ref=1PET_1.4
+37	οὐρανοῖς	οὐρανός	NOUN	Nb	Case=Dat|Gender=Masc|Number=Plur	35	obl	_	Ref=1PET_1.4
+38	εἰς	εἰς	ADP	R-	_	39	case	_	Ref=1PET_1.4
+39	ὑμᾶς	ὑμεῖς	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=2|PronType=Prs	35	obl	_	Ref=1PET_1.4
+40	τοὺς	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	44	det	_	Ref=1PET_1.5
+41	ἐν	ἐν	ADP	R-	_	42	case	_	Ref=1PET_1.5
+42	δυνάμει	δύναμις	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	44	obl	_	Ref=1PET_1.5
+43	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	42	nmod	_	Ref=1PET_1.5
+44	φρουρουμένους	φρουρέω	VERB	V-	Case=Acc|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Pass	39	appos	_	Ref=1PET_1.5
+45	διὰ	διά	ADP	R-	_	46	case	_	Ref=1PET_1.5
+46	πίστεως	πίστις	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	44	obl	_	Ref=1PET_1.5
+47	εἰς	εἰς	ADP	R-	_	48	case	_	Ref=1PET_1.5
+48	σωτηρίαν	σωτηρία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	44	obl	_	Ref=1PET_1.5
+49	ἑτοίμην	ἕτοιμος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	48	amod	_	Ref=1PET_1.5
+50	ἀποκαλυφθῆναι	ἀποκαλύπτω	VERB	V-	Aspect=Perf|Tense=Past|VerbForm=Inf|Voice=Pass	49	ccomp	_	Ref=1PET_1.5
+51	ἐν	ἐν	ADP	R-	_	52	case	_	Ref=1PET_1.5
+52	καιρῷ	καιρός	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	50	obl	_	Ref=1PET_1.5
+53	ἐσχάτῳ	ἔσχατος	ADJ	A-	Case=Dat|Degree=Sup|Gender=Masc|Number=Sing	52	amod	_	Ref=1PET_1.5
+
+# source = The Greek New Testament, 1 Peter 1
+# text = ἐν ᾧ ἀγαλλιᾶσθε ὀλίγον ἄρτι εἰ δέον λυπηθέντες ἐν ποικίλοις πειρασμοῖς ἵνα τὸ δοκίμιον ὑμῶν τῆς πίστεως πολυτιμότερον χρυσίου τοῦ ἀπολλυμένου διὰ πυρὸς δὲ δοκιμαζομένου εὑρεθῇ εἰς ἔπαινον καὶ δόξαν καὶ τιμὴν ἐν ἀποκαλύψει Ἰησοῦ Χριστοῦ
+# sent_id = 32118
+1	ἐν	ἐν	ADP	R-	_	2	case	_	Ref=1PET_1.6
+2	ᾧ	ὅς	PRON	Pr	Case=Dat|Gender=Neut|Number=Sing|PronType=Rel	3	advcl	_	Ref=1PET_1.6
+3	ἀγαλλιᾶσθε	ἀγαλλιάω	VERB	V-	Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Mid	0	root	_	Ref=1PET_1.6
+4	ὀλίγον	ὀλίγος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	8	advmod	_	Ref=1PET_1.6
+5	ἄρτι	ἄρτι	ADV	Df	_	8	advmod	_	Ref=1PET_1.6
+6	εἰ	εἰ	SCONJ	G-	_	7	mark	_	Ref=1PET_1.6
+7	δέον	δέον	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	8	advcl	_	Ref=1PET_1.6
+8	λυπηθέντες	λυπέω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	3	advcl	_	Ref=1PET_1.6
+9	ἐν	ἐν	ADP	R-	_	11	case	_	Ref=1PET_1.6
+10	ποικίλοις	ποικίλος	ADJ	A-	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	11	amod	_	Ref=1PET_1.6
+11	πειρασμοῖς	πειρασμός	NOUN	Nb	Case=Dat|Gender=Masc|Number=Plur	8	obl	_	Ref=1PET_1.6
+12	ἵνα	ἵνα	SCONJ	G-	_	26	mark	_	Ref=1PET_1.7
+13	τὸ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	14	det	_	Ref=1PET_1.7
+14	δοκίμιον	δοκιμεῖον	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	26	nsubj:pass	_	Ref=1PET_1.7
+15	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	17	det	_	Ref=1PET_1.7
+16	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	17	det	_	Ref=1PET_1.7
+17	πίστεως	πίστις	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	14	nmod	_	Ref=1PET_1.7
+18	πολυτιμότερον	πολύτιμος	ADJ	A-	Case=Nom|Degree=Cmp|Gender=Neut|Number=Sing	14	amod	_	Ref=1PET_1.7
+19	χρυσίου	χρυσίον	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	18	obl	_	Ref=1PET_1.7
+20	τοῦ	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	21	det	_	Ref=1PET_1.7
+21	ἀπολλυμένου	ἀπόλλυμι	VERB	V-	Case=Gen|Gender=Neut|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	19	appos	_	Ref=1PET_1.7
+22	διὰ	διά	ADP	R-	_	23	case	_	Ref=1PET_1.7
+23	πυρὸς	πῦρ	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	25	obl	_	Ref=1PET_1.7
+24	δὲ	δέ	ADV	Df	_	25	discourse	_	Ref=1PET_1.7
+25	δοκιμαζομένου	δοκιμάζω	VERB	V-	Case=Gen|Gender=Neut|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	21	conj	_	Ref=1PET_1.7
+26	εὑρεθῇ	εὑρίσκω	VERB	V-	Aspect=Perf|Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	8	advcl	_	Ref=1PET_1.7
+27	εἰς	εἰς	ADP	R-	_	28	case	_	Ref=1PET_1.7
+28	ἔπαινον	ἔπαινος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	26	obl	_	Ref=1PET_1.7
+29	καὶ	καί	CCONJ	C-	_	30	cc	_	Ref=1PET_1.7
+30	δόξαν	δόξα	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	28	conj	_	Ref=1PET_1.7
+31	καὶ	καί	CCONJ	C-	_	32	cc	_	Ref=1PET_1.7
+32	τιμὴν	τιμή	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	28	conj	_	Ref=1PET_1.7
+33	ἐν	ἐν	ADP	R-	_	34	case	_	Ref=1PET_1.7
+34	ἀποκαλύψει	ἀποκάλυψις	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	26	obl	_	Ref=1PET_1.7
+35	Ἰησοῦ	Ἰησοῦς	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	34	nmod	_	Ref=1PET_1.7
+36	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	35	flat:name	_	Ref=1PET_1.7
+
+# source = The Greek New Testament, 1 Peter 1
+# text = ὃν οὐκ ἰδόντες ἀγαπᾶτε
+# sent_id = 32119
+1	ὃν	ὅς	PRON	Pr	Case=Acc|Gender=Masc|Number=Sing|PronType=Rel	4	obj	_	Ref=1PET_1.8
+2	οὐκ	οὐ	ADV	Df	Polarity=Neg	3	advmod	_	Ref=1PET_1.8
+3	ἰδόντες	ὁράω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Act	4	advcl	_	Ref=1PET_1.8
+4	ἀγαπᾶτε	ἀγαπάω	VERB	V-	Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_1.8
+
+# source = The Greek New Testament, 1 Peter 1
+# text = εἰς ὃν ἄρτι μὴ ὁρῶντες πιστεύοντες δὲ ἀγαλλιᾶσθε χαρᾷ ἀνεκλαλήτῳ καὶ δεδοξασμένῃ κομιζόμενοι τὸ τέλος τῆς πίστεως ὑμῶν σωτηρίαν ψυχῶν
+# sent_id = 159508
+1	εἰς	εἰς	ADP	R-	_	2	case	_	Ref=1PET_1.8
+2	ὃν	ὅς	PRON	Pr	Case=Acc|Gender=Masc|Number=Sing|PronType=Rel	6	obl	_	Ref=1PET_1.8
+3	ἄρτι	ἄρτι	ADV	Df	_	5	advmod	_	Ref=1PET_1.8
+4	μὴ	μή	ADV	Df	Polarity=Neg	5	advmod	_	Ref=1PET_1.8
+5	ὁρῶντες	ὁράω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	6	advcl	_	Ref=1PET_1.8
+6	πιστεύοντες	πιστεύω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	8	advcl	_	Ref=1PET_1.8
+7	δὲ	δέ	ADV	Df	_	8	discourse	_	Ref=1PET_1.8
+8	ἀγαλλιᾶσθε	ἀγαλλιάω	VERB	V-	Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Mid	0	root	_	Ref=1PET_1.8
+9	χαρᾷ	χαρά	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	8	obl	_	Ref=1PET_1.8
+10	ἀνεκλαλήτῳ	ἀνεκλάλητος	ADJ	A-	Case=Dat|Degree=Pos|Gender=Fem|Number=Sing	9	amod	_	Ref=1PET_1.8
+11	καὶ	καί	CCONJ	C-	_	12	cc	_	Ref=1PET_1.8
+12	δεδοξασμένῃ	δοξάζω	VERB	V-	Aspect=Perf|Case=Dat|Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	10	conj	_	Ref=1PET_1.8
+13	κομιζόμενοι	κομίζω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Mid	8	advcl	_	Ref=1PET_1.9
+14	τὸ	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	15	det	_	Ref=1PET_1.9
+15	τέλος	τέλος	NOUN	Nb	Case=Acc|Gender=Neut|Number=Sing	13	xcomp	_	Ref=1PET_1.9
+16	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	17	det	_	Ref=1PET_1.9
+17	πίστεως	πίστις	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	15	nmod	_	Ref=1PET_1.9
+18	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	17	det	_	Ref=1PET_1.9
+19	σωτηρίαν	σωτηρία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	13	obj	_	Ref=1PET_1.9
+20	ψυχῶν	ψυχή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Plur	19	nmod	_	Ref=1PET_1.9
+
+# source = The Greek New Testament, 1 Peter 1
+# text = περὶ ἧς σωτηρίας ἐξεζήτησαν καὶ ἐξηραύνησαν προφῆται οἱ περὶ τῆς εἰς ὑμᾶς χάριτος προφητεύσαντες ἐραυνῶντες εἰς τίνα ἢ ποῖον καιρὸν ἐδήλου τὸ ἐν αὐτοῖς πνεῦμα Χριστοῦ προμαρτυρόμενον τὰ εἰς Χριστὸν παθήματα καὶ τὰς μετὰ ταῦτα δόξας
+# sent_id = 32120
+1	περὶ	περί	ADP	R-	_	3	case	_	Ref=1PET_1.10
+2	ἧς	ὅς	PRON	Pr	Case=Gen|Gender=Fem|Number=Sing|PronType=Rel	3	acl	_	Ref=1PET_1.10
+3	σωτηρίας	σωτηρία	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	4	advcl	_	Ref=1PET_1.10
+4	ἐξεζήτησαν	ἐκζητέω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_1.10
+5	καὶ	καί	CCONJ	C-	_	6	cc	_	Ref=1PET_1.10
+6	ἐξηραύνησαν	ἐξερευνάω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	4	conj	_	Ref=1PET_1.10
+7	προφῆται	προφήτης	NOUN	Nb	Case=Nom|Gender=Masc|Number=Plur	6	nsubj	_	Ref=1PET_1.10
+8	οἱ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	14	det	_	Ref=1PET_1.10
+9	περὶ	περί	ADP	R-	_	13	case	_	Ref=1PET_1.10
+10	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	13	det	_	Ref=1PET_1.10
+11	εἰς	εἰς	ADP	R-	_	12	case	_	Ref=1PET_1.10
+12	ὑμᾶς	ὑμεῖς	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=2|PronType=Prs	13	nmod	_	Ref=1PET_1.10
+13	χάριτος	χάρις	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	14	obl	_	Ref=1PET_1.10
+14	προφητεύσαντες	προφητεύω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Act	7	nmod	_	Ref=1PET_1.10
+15	ἐραυνῶντες	ἐρευνάω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	6	advcl	_	Ref=1PET_1.11
+16	εἰς	εἰς	ADP	R-	_	15	obl	_	Ref=1PET_1.11
+17	τίνα	τίς	PRON	Pi	Case=Acc|Gender=Masc|Number=Sing|PronType=Int	21	obj	_	Ref=1PET_1.11
+18	ἢ	ἤ	CCONJ	C-	_	20	cc	_	Ref=1PET_1.11
+19	ποῖον	ποῖος	PRON	Pi	Case=Acc|Gender=Masc|Number=Sing|PronType=Int	20	det	_	Ref=1PET_1.11
+20	καιρὸν	καιρός	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	17	conj	_	Ref=1PET_1.11
+21	ἐδήλου	δηλόω	VERB	V-	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	16	ccomp	_	Ref=1PET_1.11
+22	τὸ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	25	det	_	Ref=1PET_1.11
+23	ἐν	ἐν	ADP	R-	_	24	case	_	Ref=1PET_1.11
+24	αὐτοῖς	αὐτός	PRON	Pp	Case=Dat|Gender=Masc|Number=Plur|Person=3|PronType=Prs	25	det	_	Ref=1PET_1.11
+25	πνεῦμα	πνεῦμα	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	21	nsubj	_	Ref=1PET_1.11
+26	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	25	nmod	_	Ref=1PET_1.11
+27	προμαρτυρόμενον	προμαρτύρομαι	VERB	V-	Case=Nom|Gender=Neut|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Mid	21	advcl	_	Ref=1PET_1.11
+28	τὰ	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Neut|Number=Plur|PronType=Dem	31	det	_	Ref=1PET_1.11
+29	εἰς	εἰς	ADP	R-	_	30	case	_	Ref=1PET_1.11
+30	Χριστὸν	Χριστός	PROPN	Ne	Case=Acc|Gender=Masc|Number=Sing	31	nmod	_	Ref=1PET_1.11
+31	παθήματα	πάθημα	NOUN	Nb	Case=Nom|Gender=Neut|Number=Plur	27	obj	_	Ref=1PET_1.11
+32	καὶ	καί	CCONJ	C-	_	36	cc	_	Ref=1PET_1.11
+33	τὰς	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	36	det	_	Ref=1PET_1.11
+34	μετὰ	μετά	ADP	R-	_	35	case	_	Ref=1PET_1.11
+35	ταῦτα	οὗτος	DET	Pd	Case=Acc|Gender=Neut|Number=Plur	36	det	_	Ref=1PET_1.11
+36	δόξας	δόξα	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	31	conj	_	Ref=1PET_1.11
+
+# source = The Greek New Testament, 1 Peter 1
+# text = οἷς ἀπεκαλύφθη ὅτι οὐχ ἑαυτοῖς ὑμῖν δὲ διηκόνουν αὐτά ἃ νῦν ἀνηγγέλη ὑμῖν διὰ τῶν εὐαγγελισαμένων ὑμᾶς ἐν πνεύματι ἁγίῳ ἀποσταλέντι ἀπ’ οὐρανοῦ εἰς ἃ ἐπιθυμοῦσιν ἄγγελοι παρακύψαι
+# sent_id = 32121
+1	οἷς	ὅς	PRON	Pr	Case=Dat|Gender=Masc|Number=Plur|PronType=Rel	2	obl:arg	_	Ref=1PET_1.12
+2	ἀπεκαλύφθη	ἀποκαλύπτω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_1.12
+3	ὅτι	ὅτι	SCONJ	G-	_	8	mark	_	Ref=1PET_1.12
+4	οὐχ	οὐ	ADV	Df	Polarity=Neg	5	advmod	_	Ref=1PET_1.12
+5	ἑαυτοῖς	ἑαυτοῦ	PRON	Pk	Case=Dat|Gender=Masc|Number=Plur|Person=3|PronType=Prs|Reflex=Yes	8	obl:arg	_	Ref=1PET_1.12
+6	ὑμῖν	ὑμεῖς	PRON	Pp	Case=Dat|Gender=Masc|Number=Plur|Person=2|PronType=Prs	5	conj	_	Ref=1PET_1.12
+7	δὲ	δέ	ADV	Df	_	6	discourse	_	Ref=1PET_1.12
+8	διηκόνουν	διακονέω	VERB	V-	Aspect=Imp|Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	2	csubj:pass	_	Ref=1PET_1.12
+9	αὐτά	αὐτός	PRON	Pp	Case=Acc|Gender=Neut|Number=Plur|Person=3|PronType=Prs	8	obj	_	Ref=1PET_1.12
+10	ἃ	ὅς	PRON	Pr	Case=Nom|Gender=Neut|Number=Plur|PronType=Rel	12	nsubj:pass	_	Ref=1PET_1.12
+11	νῦν	νῦν	ADV	Df	_	12	advmod	_	LId=1|Ref=1PET_1.12
+12	ἀνηγγέλη	ἀναγγέλλω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	9	acl	_	Ref=1PET_1.12
+13	ὑμῖν	ὑμεῖς	PRON	Pp	Case=Dat|Gender=Masc|Number=Plur|Person=2|PronType=Prs	12	obl:arg	_	Ref=1PET_1.12
+14	διὰ	διά	ADP	R-	_	16	case	_	Ref=1PET_1.12
+15	τῶν	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	16	det	_	Ref=1PET_1.12
+16	εὐαγγελισαμένων	εὐαγγελίζομαι	VERB	V-	Aspect=Perf|Case=Gen|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Mid	12	obl	_	Ref=1PET_1.12
+17	ὑμᾶς	ὑμεῖς	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=2|PronType=Prs	16	obj	_	Ref=1PET_1.12
+18	ἐν	ἐν	ADP	R-	_	19	case	_	Ref=1PET_1.12
+19	πνεύματι	πνεῦμα	NOUN	Nb	Case=Dat|Gender=Neut|Number=Sing	16	obl	_	Ref=1PET_1.12
+20	ἁγίῳ	ἅγιος	ADJ	A-	Case=Dat|Degree=Pos|Gender=Neut|Number=Sing	19	amod	_	Ref=1PET_1.12
+21	ἀποσταλέντι	ἀποστέλλω	VERB	V-	Aspect=Perf|Case=Dat|Gender=Neut|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	19	acl	_	Ref=1PET_1.12
+22	ἀπ’	ἀπό	ADP	R-	_	23	case	_	Ref=1PET_1.12
+23	οὐρανοῦ	οὐρανός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	21	obl	_	Ref=1PET_1.12
+24	εἰς	εἰς	ADP	R-	_	25	case	_	Ref=1PET_1.12
+25	ἃ	ὅς	PRON	Pr	Case=Acc|Gender=Neut|Number=Plur|PronType=Rel	28	obl	_	Ref=1PET_1.12
+26	ἐπιθυμοῦσιν	ἐπιθυμέω	VERB	V-	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	9	acl	_	Ref=1PET_1.12
+27	ἄγγελοι	ἄγγελος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Plur	26	nsubj	_	Ref=1PET_1.12
+28	παρακύψαι	παρακύπτω	VERB	V-	Aspect=Perf|Tense=Past|VerbForm=Inf|Voice=Act	26	xcomp	_	Ref=1PET_1.12
+
+# source = The Greek New Testament, 1 Peter 1
+# text = Διὸ ἀναζωσάμενοι τὰς ὀσφύας τῆς διανοίας ὑμῶν νήφοντες τελείως ἐλπίσατε ἐπὶ τὴν φερομένην ὑμῖν χάριν ἐν ἀποκαλύψει Ἰησοῦ Χριστοῦ
+# sent_id = 32122
+1	Διὸ	διό	ADV	Df	_	10	advmod	_	Ref=1PET_1.13
+2	ἀναζωσάμενοι	ἀναζώννυμι	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Mid	10	advcl	_	Ref=1PET_1.13
+3	τὰς	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	4	det	_	Ref=1PET_1.13
+4	ὀσφύας	ὀσφῦς	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	2	obj	_	Ref=1PET_1.13
+5	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	6	det	_	Ref=1PET_1.13
+6	διανοίας	διάνοια	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	4	nmod	_	Ref=1PET_1.13
+7	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	6	det	_	Ref=1PET_1.13
+8	νήφοντες	νήφω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	10	advcl	_	Ref=1PET_1.13
+9	τελείως	τελείως	ADV	Df	_	8	advmod	_	Ref=1PET_1.13
+10	ἐλπίσατε	ἐλπίζω	VERB	V-	Aspect=Perf|Mood=Imp|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_1.13
+11	ἐπὶ	ἐπί	ADP	R-	_	15	case	_	Ref=1PET_1.13
+12	τὴν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	15	det	_	Ref=1PET_1.13
+13	φερομένην	φέρω	VERB	V-	Case=Acc|Gender=Fem|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	15	acl	_	Ref=1PET_1.13
+14	ὑμῖν	ὑμεῖς	PRON	Pp	Case=Dat|Gender=Masc|Number=Plur|Person=2|PronType=Prs	13	obl:arg	_	Ref=1PET_1.13
+15	χάριν	χάρις	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	10	obl	_	Ref=1PET_1.13
+16	ἐν	ἐν	ADP	R-	_	17	case	_	Ref=1PET_1.13
+17	ἀποκαλύψει	ἀποκάλυψις	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	13	obl	_	Ref=1PET_1.13
+18	Ἰησοῦ	Ἰησοῦς	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	17	nmod	_	Ref=1PET_1.13
+19	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	18	flat:name	_	Ref=1PET_1.13
+
+# source = The Greek New Testament, 1 Peter 1
+# text = ὡς τέκνα ὑπακοῆς μὴ συσχηματιζόμενοι ταῖς πρότερον ἐν τῇ ἀγνοίᾳ ὑμῶν ἐπιθυμίαις ἀλλὰ κατὰ τὸν καλέσαντα ὑμᾶς ἅγιον καὶ αὐτοὶ ἅγιοι ἐν πάσῃ ἀναστροφῇ γενήθητε διότι γέγραπται
+# sent_id = 32123
+1	ὡς	ὡς	ADV	Df	_	2	mark	_	Ref=1PET_1.14
+2	τέκνα	τέκνον	NOUN	Nb	Case=Nom|Gender=Neut|Number=Plur	25	advcl:cmp	_	Ref=1PET_1.14
+3	ὑπακοῆς	ὑπακοή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	2	nmod	_	Ref=1PET_1.14
+4	μὴ	μή	ADV	Df	Polarity=Neg	5	advmod	_	Ref=1PET_1.14
+5	συσχηματιζόμενοι	συσχηματίζω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Mid	25	advcl	_	Ref=1PET_1.14
+6	ταῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	12	det	_	Ref=1PET_1.14
+7	πρότερον	πρότερος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	12	amod	_	Ref=1PET_1.14
+8	ἐν	ἐν	ADP	R-	_	10	case	_	Ref=1PET_1.14
+9	τῇ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	10	det	_	Ref=1PET_1.14
+10	ἀγνοίᾳ	ἄγνοια	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	12	nmod	_	Ref=1PET_1.14
+11	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	10	det	_	Ref=1PET_1.14
+12	ἐπιθυμίαις	ἐπιθυμία	NOUN	Nb	Case=Dat|Gender=Fem|Number=Plur	5	obl:arg	_	Ref=1PET_1.14
+13	ἀλλὰ	ἀλλά	CCONJ	C-	_	16	cc	_	Ref=1PET_1.15
+14	κατὰ	κατά	ADP	R-	_	16	case	_	Ref=1PET_1.15
+15	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	16	det	_	Ref=1PET_1.15
+16	καλέσαντα	καλέω	VERB	V-	Aspect=Perf|Case=Acc|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Act	5	conj	_	Ref=1PET_1.15
+17	ὑμᾶς	ὑμεῖς	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=2|PronType=Prs	16	obj	_	Ref=1PET_1.15
+18	ἅγιον	ἅγιος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	16	amod	_	Ref=1PET_1.15
+19	καὶ	καί	ADV	Df	_	25	advmod	_	LId=1|Ref=1PET_1.15
+20	αὐτοὶ	αὐτός	PRON	Pd	Case=Nom|Gender=Masc|Number=Plur	25	nsubj	_	Ref=1PET_1.15
+21	ἅγιοι	ἅγιος	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur	25	xcomp	_	Ref=1PET_1.15
+22	ἐν	ἐν	ADP	R-	_	24	case	_	Ref=1PET_1.15
+23	πάσῃ	πᾶς	DET	Px	Case=Dat|Gender=Fem|Number=Sing	24	det	_	Ref=1PET_1.15
+24	ἀναστροφῇ	ἀναστροφή	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	25	obl	_	Ref=1PET_1.15
+25	γενήθητε	γίγνομαι	VERB	V-	Aspect=Perf|Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_1.15
+26	διότι	διότι	SCONJ	G-	_	27	mark	_	Ref=1PET_1.16
+27	γέγραπται	γράφω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	25	advcl	_	Ref=1PET_1.16
+
+# source = The Greek New Testament, 1 Peter 1
+# text = ἅγιοι ἔσεσθε διότι ἐγὼ ἅγιος
+# sent_id = 159522
+1	ἅγιοι	ἅγιος	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur	0	root	_	Ref=1PET_1.16
+2	ἔσεσθε	εἰμί	AUX	V-	Mood=Ind|Number=Plur|Person=2|Tense=Fut|VerbForm=Fin|Voice=Mid	1	cop	_	LId=1|Ref=1PET_1.16
+3	διότι	διότι	SCONJ	G-	_	5	mark	_	Ref=1PET_1.16
+4	ἐγὼ	ἐγώ	PRON	Pp	Case=Nom|Gender=Masc|Number=Sing|Person=1|PronType=Prs	5	nsubj	_	Ref=1PET_1.16
+5	ἅγιος	ἅγιος	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	1	advcl	_	Ref=1PET_1.16
+
+# source = The Greek New Testament, 1 Peter 1
+# text = Τὰς ψυχὰς ὑμῶν ἡγνικότες ἐν τῇ ὑπακοῇ τῆς ἀληθείας εἰς φιλαδελφίαν ἀνυπόκριτον ἐκ καρδίας ἀλλήλους ἀγαπήσατε ἐκτενῶς ἀναγεγεννημένοι οὐκ ἐκ σπορᾶς φθαρτῆς ἀλλὰ ἀφθάρτου διὰ λόγου ζῶντος θεοῦ καὶ μένοντος
+# sent_id = 32125
+1	Τὰς	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	2	det	_	Ref=1PET_1.22
+2	ψυχὰς	ψυχή	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	4	obj	_	Ref=1PET_1.22
+3	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	2	det	_	Ref=1PET_1.22
+4	ἡγνικότες	ἁγνίζω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Act	16	advcl	_	Ref=1PET_1.22
+5	ἐν	ἐν	ADP	R-	_	7	case	_	Ref=1PET_1.22
+6	τῇ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	7	det	_	Ref=1PET_1.22
+7	ὑπακοῇ	ὑπακοή	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	4	obl	_	Ref=1PET_1.22
+8	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	9	det	_	Ref=1PET_1.22
+9	ἀληθείας	ἀλήθεια	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	7	nmod	_	Ref=1PET_1.22
+10	εἰς	εἰς	ADP	R-	_	11	case	_	Ref=1PET_1.22
+11	φιλαδελφίαν	φιλαδελφία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	4	obl	_	Ref=1PET_1.22
+12	ἀνυπόκριτον	ἀνυπόκριτος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	11	amod	_	Ref=1PET_1.22
+13	ἐκ	ἐκ	ADP	R-	_	14	case	_	Ref=1PET_1.22
+14	καρδίας	καρδία	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	16	obl	_	Ref=1PET_1.22
+15	ἀλλήλους	ἀλλήλων	PRON	Pc	Case=Acc|Gender=Masc|Number=Plur|PronType=Rcp	16	obj	_	Ref=1PET_1.22
+16	ἀγαπήσατε	ἀγαπάω	VERB	V-	Aspect=Perf|Mood=Imp|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_1.22
+17	ἐκτενῶς	ἐκτενῶς	ADV	Df	Degree=Pos	16	advmod	_	Ref=1PET_1.22
+18	ἀναγεγεννημένοι	ἀναγεννάω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	16	advcl	_	Ref=1PET_1.23
+19	οὐκ	οὐ	ADV	Df	Polarity=Neg	22	advmod	_	Ref=1PET_1.23
+20	ἐκ	ἐκ	ADP	R-	_	21	case	_	Ref=1PET_1.23
+21	σπορᾶς	σπορά	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	18	obl	_	Ref=1PET_1.23
+22	φθαρτῆς	φθαρτός	ADJ	A-	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	21	amod	_	Ref=1PET_1.23
+23	ἀλλὰ	ἀλλά	CCONJ	C-	_	24	cc	_	Ref=1PET_1.23
+24	ἀφθάρτου	ἄφθαρτος	ADJ	A-	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	22	conj	_	Ref=1PET_1.23
+25	διὰ	διά	ADP	R-	_	26	case	_	Ref=1PET_1.23
+26	λόγου	λόγος	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	18	obl	_	Ref=1PET_1.23
+27	ζῶντος	ζῶ	VERB	V-	Case=Gen|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	26	acl	_	Ref=1PET_1.23
+28	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	26	nmod	_	Ref=1PET_1.23
+29	καὶ	καί	CCONJ	C-	_	30	cc	_	Ref=1PET_1.23
+30	μένοντος	μένω	VERB	V-	Case=Gen|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	27	conj	_	Ref=1PET_1.23
+
+# source = The Greek New Testament, 1 Peter 1
+# text = διότι πᾶσα σὰρξ ὡς χόρτος καὶ πᾶσα δόξα αὐτῆς ὡς ἄνθος χόρτου
+# sent_id = 32126
+1	διότι	διότι	ADV	Df	_	3	advmod	_	Ref=1PET_1.24
+2	πᾶσα	πᾶς	DET	Px	Case=Nom|Gender=Fem|Number=Sing	3	det	_	Ref=1PET_1.24
+3	σὰρξ	σάρξ	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	0	root	_	Ref=1PET_1.24
+4	ὡς	ὡς	ADV	Df	_	5	mark	_	Ref=1PET_1.24
+5	χόρτος	χόρτος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	3	orphan	_	Ref=1PET_1.24
+6	καὶ	καί	CCONJ	C-	_	8	cc	_	Ref=1PET_1.24
+7	πᾶσα	πᾶς	DET	Px	Case=Nom|Gender=Fem|Number=Sing	8	det	_	Ref=1PET_1.24
+8	δόξα	δόξα	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	3	conj	_	Ref=1PET_1.24
+9	αὐτῆς	αὐτός	PRON	Pp	Case=Gen|Gender=Fem|Number=Sing|Person=3|PronType=Prs	8	det	_	Ref=1PET_1.24
+10	ὡς	ὡς	ADV	Df	_	11	mark	_	Ref=1PET_1.24
+11	ἄνθος	ἄνθος	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	8	orphan	_	Ref=1PET_1.24
+12	χόρτου	χόρτος	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	11	nmod	_	Ref=1PET_1.24
+
+# source = The Greek New Testament, 1 Peter 1
+# text = ἐξηράνθη ὁ χόρτος καὶ τὸ ἄνθος ἐξέπεσεν
+# sent_id = 32127
+1	ἐξηράνθη	ξηραίνω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_1.24
+2	ὁ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	3	det	_	Ref=1PET_1.24
+3	χόρτος	χόρτος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	1	nsubj:pass	_	Ref=1PET_1.24
+4	καὶ	καί	CCONJ	C-	_	7	cc	_	Ref=1PET_1.24
+5	τὸ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	6	det	_	Ref=1PET_1.24
+6	ἄνθος	ἄνθος	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	7	nsubj	_	Ref=1PET_1.24
+7	ἐξέπεσεν	ἐκπίπτω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	1	conj	_	Ref=1PET_1.24
+
+# source = The Greek New Testament, 1 Peter 1
+# text = τὸ δὲ ῥῆμα κυρίου μένει εἰς τὸν αἰῶνα
+# sent_id = 32128
+1	τὸ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	3	det	_	Ref=1PET_1.25
+2	δὲ	δέ	ADV	Df	_	5	discourse	_	Ref=1PET_1.25
+3	ῥῆμα	ῥῆμα	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	5	nsubj	_	Ref=1PET_1.25
+4	κυρίου	κύριος	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	3	nmod	_	Ref=1PET_1.25
+5	μένει	μένω	VERB	V-	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_1.25
+6	εἰς	εἰς	ADP	R-	_	8	case	_	Ref=1PET_1.25
+7	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	8	det	_	Ref=1PET_1.25
+8	αἰῶνα	αἰών	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	5	obl	_	Ref=1PET_1.25
+
+# source = The Greek New Testament, 1 Peter 1
+# text = τοῦτο δέ ἐστιν τὸ ῥῆμα τὸ εὐαγγελισθὲν εἰς ὑμᾶς
+# sent_id = 32129
+1	τοῦτο	οὗτος	PRON	Pd	Case=Nom|Gender=Neut|Number=Sing	5	nsubj	_	Ref=1PET_1.25
+2	δέ	δέ	ADV	Df	_	5	discourse	_	Ref=1PET_1.25
+3	ἐστιν	εἰμί	AUX	V-	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	5	cop	_	LId=1|Ref=1PET_1.25
+4	τὸ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	5	det	_	Ref=1PET_1.25
+5	ῥῆμα	ῥῆμα	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	0	root	_	Ref=1PET_1.25
+6	τὸ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	7	det	_	Ref=1PET_1.25
+7	εὐαγγελισθὲν	εὐαγγελίζω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Neut|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	5	nmod	_	Ref=1PET_1.25
+8	εἰς	εἰς	ADP	R-	_	9	case	_	Ref=1PET_1.25
+9	ὑμᾶς	ὑμεῖς	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=2|PronType=Prs	7	obl	_	Ref=1PET_1.25
+
+# source = The Greek New Testament, 1 Peter 2
+# text = Ἀποθέμενοι οὖν πᾶσαν κακίαν καὶ πάντα δόλον καὶ ὑποκρίσεις καὶ φθόνους καὶ πάσας καταλαλιάς ὡς ἀρτιγέννητα βρέφη τὸ λογικὸν ἄδολον γάλα ἐπιποθήσατε ἵνα ἐν αὐτῷ αὐξηθῆτε εἰς σωτηρίαν εἰ ἐγεύσασθε ὅτι χρηστὸς ὁ κύριος
+# sent_id = 32130
+1	Ἀποθέμενοι	ἀποτίθημι	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Mid	22	advcl	_	Ref=1PET_2.1
+2	οὖν	οὖν	ADV	Df	_	22	discourse	_	Ref=1PET_2.1
+3	πᾶσαν	πᾶς	DET	Px	Case=Acc|Gender=Fem|Number=Sing	4	det	_	Ref=1PET_2.1
+4	κακίαν	κακία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	1	obj	_	Ref=1PET_2.1
+5	καὶ	καί	CCONJ	C-	_	7	cc	_	Ref=1PET_2.1
+6	πάντα	πᾶς	DET	Px	Case=Acc|Gender=Masc|Number=Sing	7	det	_	Ref=1PET_2.1
+7	δόλον	δόλος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	4	conj	_	Ref=1PET_2.1
+8	καὶ	καί	CCONJ	C-	_	9	cc	_	Ref=1PET_2.1
+9	ὑποκρίσεις	ὑπόκρισις	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	4	conj	_	Ref=1PET_2.1
+10	καὶ	καί	CCONJ	C-	_	11	cc	_	Ref=1PET_2.1
+11	φθόνους	φθόνος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Plur	4	conj	_	Ref=1PET_2.1
+12	καὶ	καί	CCONJ	C-	_	14	cc	_	Ref=1PET_2.1
+13	πάσας	πᾶς	DET	Px	Case=Acc|Gender=Fem|Number=Plur	14	det	_	Ref=1PET_2.1
+14	καταλαλιάς	καταλαλιά	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	4	conj	_	Ref=1PET_2.1
+15	ὡς	ὡς	ADV	Df	_	17	mark	_	Ref=1PET_2.2
+16	ἀρτιγέννητα	ἀρτιγέννητος	ADJ	A-	Case=Nom|Degree=Pos|Gender=Neut|Number=Plur	17	amod	_	Ref=1PET_2.2
+17	βρέφη	βρέφος	NOUN	Nb	Case=Nom|Gender=Neut|Number=Plur	22	advcl:cmp	_	Ref=1PET_2.2
+18	τὸ	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	21	det	_	Ref=1PET_2.2
+19	λογικὸν	λογικός	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	21	amod	_	Ref=1PET_2.2
+20	ἄδολον	ἄδολος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	21	amod	_	Ref=1PET_2.2
+21	γάλα	γάλα	NOUN	Nb	Case=Acc|Gender=Neut|Number=Sing	22	obj	_	Ref=1PET_2.2
+22	ἐπιποθήσατε	ἐπιποθέω	VERB	V-	Aspect=Perf|Mood=Imp|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.2
+23	ἵνα	ἵνα	SCONJ	G-	_	26	mark	_	Ref=1PET_2.2
+24	ἐν	ἐν	ADP	R-	_	25	case	_	Ref=1PET_2.2
+25	αὐτῷ	αὐτός	PRON	Pp	Case=Dat|Gender=Neut|Number=Sing|Person=3|PronType=Prs	26	obl	_	Ref=1PET_2.2
+26	αὐξηθῆτε	αὐξάνω	VERB	V-	Aspect=Perf|Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	22	advcl	_	Ref=1PET_2.2
+27	εἰς	εἰς	ADP	R-	_	28	case	_	Ref=1PET_2.2
+28	σωτηρίαν	σωτηρία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	26	obl	_	Ref=1PET_2.2
+29	εἰ	εἰ	SCONJ	G-	_	30	mark	_	Ref=1PET_2.3
+30	ἐγεύσασθε	γεύω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Mid	26	advcl	_	Ref=1PET_2.3
+31	ὅτι	ὅτι	SCONJ	G-	_	32	mark	_	Ref=1PET_2.3
+32	χρηστὸς	χρηστός	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	30	ccomp	_	Ref=1PET_2.3
+33	ὁ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	34	det	_	Ref=1PET_2.3
+34	κύριος	κύριος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	32	nsubj	_	Ref=1PET_2.3
+
+# source = The Greek New Testament, 1 Peter 2
+# text = πρὸς ὃν προσερχόμενοι λίθον ζῶντα ὑπὸ ἀνθρώπων μὲν ἀποδεδοκιμασμένον παρὰ δὲ θεῷ ἐκλεκτὸν ἔντιμον καὶ αὐτοὶ ὡς λίθοι ζῶντες οἰκοδομεῖσθε οἶκος πνευματικὸς εἰς ἱεράτευμα ἅγιον ἀνενέγκαι πνευματικὰς θυσίας εὐπροσδέκτους θεῷ διὰ Ἰησοῦ Χριστοῦ
+# sent_id = 32131
+1	πρὸς	πρός	ADP	R-	_	2	case	_	Ref=1PET_2.4
+2	ὃν	ὅς	PRON	Pr	Case=Acc|Gender=Masc|Number=Sing|PronType=Rel	3	obl	_	Ref=1PET_2.4
+3	προσερχόμενοι	προσέρχομαι	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Mid	20	advcl	_	Ref=1PET_2.4
+4	λίθον	λίθος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	2	appos	_	Ref=1PET_2.4
+5	ζῶντα	ζῶ	VERB	V-	Case=Acc|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	4	acl	_	Ref=1PET_2.4
+6	ὑπὸ	ὑπό	ADP	R-	_	7	case	_	Ref=1PET_2.4
+7	ἀνθρώπων	ἄνθρωπος	NOUN	Nb	Case=Gen|Gender=Masc|Number=Plur	9	obl:agent	_	Ref=1PET_2.4
+8	μὲν	μέν	ADV	Df	_	9	discourse	_	Ref=1PET_2.4
+9	ἀποδεδοκιμασμένον	ἀποδοκιμάζω	VERB	V-	Aspect=Perf|Case=Acc|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	2	acl	_	Ref=1PET_2.4
+10	παρὰ	παρά	ADP	R-	_	12	case	_	Ref=1PET_2.4
+11	δὲ	δέ	ADV	Df	_	13	discourse	_	Ref=1PET_2.4
+12	θεῷ	θεός	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	13	obl	_	Ref=1PET_2.4
+13	ἐκλεκτὸν	ἐκλεκτός	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	9	conj	_	Ref=1PET_2.4
+14	ἔντιμον	ἔντιμος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	13	conj	_	Ref=1PET_2.4
+15	καὶ	καί	ADV	Df	_	16	advmod	_	LId=1|Ref=1PET_2.5
+16	αὐτοὶ	αὐτός	PRON	Pd	Case=Nom|Gender=Masc|Number=Plur	20	nsubj:pass	_	Ref=1PET_2.5
+17	ὡς	ὡς	ADV	Df	_	18	mark	_	Ref=1PET_2.5
+18	λίθοι	λίθος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Plur	20	advcl:cmp	_	Ref=1PET_2.5
+19	ζῶντες	ζῶ	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	18	acl	_	Ref=1PET_2.5
+20	οἰκοδομεῖσθε	οἰκοδομέω	VERB	V-	Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_2.5
+21	οἶκος	οἶκος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	20	xcomp	_	Ref=1PET_2.5
+22	πνευματικὸς	πνευματικός	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	21	amod	_	Ref=1PET_2.5
+23	εἰς	εἰς	ADP	R-	_	24	case	_	Ref=1PET_2.5
+24	ἱεράτευμα	ἱεράτευμα	NOUN	Nb	Case=Acc|Gender=Neut|Number=Sing	20	obl	_	Ref=1PET_2.5
+25	ἅγιον	ἅγιος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	24	amod	_	Ref=1PET_2.5
+26	ἀνενέγκαι	ἀναφέρω	VERB	V-	Aspect=Perf|Tense=Past|VerbForm=Inf|Voice=Act	20	advcl	_	Ref=1PET_2.5
+27	πνευματικὰς	πνευματικός	ADJ	A-	Case=Acc|Degree=Pos|Gender=Fem|Number=Plur	28	amod	_	Ref=1PET_2.5
+28	θυσίας	θυσία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	26	obj	_	Ref=1PET_2.5
+29	εὐπροσδέκτους	εὐπρόσδεκτος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Fem|Number=Plur	28	amod	_	Ref=1PET_2.5
+30	θεῷ	θεός	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	29	obl	_	Ref=1PET_2.5
+31	διὰ	διά	ADP	R-	_	32	case	_	Ref=1PET_2.5
+32	Ἰησοῦ	Ἰησοῦς	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	29	obl	_	Ref=1PET_2.5
+33	Χριστοῦ	Χριστός	PROPN	Ne	Case=Gen|Gender=Masc|Number=Sing	32	flat:name	_	Ref=1PET_2.5
+
+# source = The Greek New Testament, 1 Peter 2
+# text = διότι περιέχει ἐν γραφῇ
+# sent_id = 32132
+1	διότι	διότι	ADV	Df	_	2	advmod	_	Ref=1PET_2.6
+2	περιέχει	περιέχω	VERB	V-	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.6
+3	ἐν	ἐν	ADP	R-	_	4	case	_	Ref=1PET_2.6
+4	γραφῇ	γραφή	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	2	obl	_	Ref=1PET_2.6
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ἰδοὺ τίθημι ἐν Σιὼν λίθον ἀκρογωνιαῖον ἐκλεκτὸν ἔντιμον καὶ ὁ πιστεύων ἐπ’ αὐτῷ οὐ μὴ καταισχυνθῇ
+# sent_id = 159526
+1	ἰδοὺ	ἰδοὺ	INTJ	I-	_	2	discourse	_	Ref=1PET_2.6
+2	τίθημι	τίθημι	VERB	V-	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.6
+3	ἐν	ἐν	ADP	R-	_	4	case	_	Ref=1PET_2.6
+4	Σιὼν	Σιών	PROPN	Ne	_	2	obl	_	Ref=1PET_2.6
+5	λίθον	λίθος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	2	obj	_	Ref=1PET_2.6
+6	ἀκρογωνιαῖον	ἀκρογωνιαῖος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	5	amod	_	Ref=1PET_2.6
+7	ἐκλεκτὸν	ἐκλεκτός	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	5	amod	_	Ref=1PET_2.6
+8	ἔντιμον	ἔντιμος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Sing	5	amod	_	Ref=1PET_2.6
+9	καὶ	καί	CCONJ	C-	_	16	cc	_	Ref=1PET_2.6
+10	ὁ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	11	det	_	Ref=1PET_2.6
+11	πιστεύων	πιστεύω	VERB	V-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	16	nsubj:pass	_	Ref=1PET_2.6
+12	ἐπ’	ἐπί	ADP	R-	_	13	case	_	Ref=1PET_2.6
+13	αὐτῷ	αὐτός	PRON	Pp	Case=Dat|Gender=Masc|Number=Sing|Person=3|PronType=Prs	11	obl	_	Ref=1PET_2.6
+14	οὐ	οὐ	ADV	Df	Polarity=Neg	16	advmod	_	Ref=1PET_2.6
+15	μὴ	μή	ADV	Df	Polarity=Neg	16	advmod	_	Ref=1PET_2.6
+16	καταισχυνθῇ	καταισχύνω	VERB	V-	Aspect=Perf|Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	2	conj	_	Ref=1PET_2.6
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ὑμῖν οὖν ἡ τιμὴ τοῖς πιστεύουσιν
+# sent_id = 32133
+1	ὑμῖν	ὑμεῖς	PRON	Pp	Case=Dat|Gender=Masc|Number=Plur|Person=2|PronType=Prs	4	orphan	_	Ref=1PET_2.7
+2	οὖν	οὖν	ADV	Df	_	4	discourse	_	Ref=1PET_2.7
+3	ἡ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	4	det	_	Ref=1PET_2.7
+4	τιμὴ	τιμή	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	0	root	_	Ref=1PET_2.7
+5	τοῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	6	det	_	Ref=1PET_2.7
+6	πιστεύουσιν	πιστεύω	VERB	V-	Case=Dat|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	1	appos	_	Ref=1PET_2.7
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ἀπιστοῦσιν δὲ λίθον ὃν ἀπεδοκίμασαν οἱ οἰκοδομοῦντες οὗτος ἐγενήθη εἰς κεφαλὴν γωνίας καὶ λίθος προσκόμματος καὶ πέτρα σκανδάλου οἳ προσκόπτουσιν τῷ λόγῳ ἀπειθοῦντες εἰς ὃ καὶ ἐτέθησαν
+# sent_id = 32134
+1	ἀπιστοῦσιν	ἀπιστέω	VERB	V-	Case=Dat|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	9	advcl	_	Ref=1PET_2.7
+2	δὲ	δέ	ADV	Df	_	9	discourse	_	Ref=1PET_2.7
+3	λίθον	λίθος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	1	obj	_	Ref=1PET_2.7
+4	ὃν	ὅς	PRON	Pr	Case=Acc|Gender=Masc|Number=Sing|PronType=Rel	5	obj	_	Ref=1PET_2.7
+5	ἀπεδοκίμασαν	ἀποδοκιμάζω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	3	acl	_	Ref=1PET_2.7
+6	οἱ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	7	det	_	Ref=1PET_2.7
+7	οἰκοδομοῦντες	οἰκοδομέω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	5	nsubj	_	Ref=1PET_2.7
+8	οὗτος	οὗτος	PRON	Pd	Case=Nom|Gender=Masc|Number=Sing	9	nsubj	_	Ref=1PET_2.7
+9	ἐγενήθη	γίγνομαι	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_2.7
+10	εἰς	εἰς	ADP	R-	_	12	case	_	Ref=1PET_2.7
+11	κεφαλὴν	κεφαλή	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	12	nmod	_	Ref=1PET_2.7
+12	γωνίας	γωνία	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	9	xcomp	_	Ref=1PET_2.7
+13	καὶ	καί	CCONJ	C-	_	14	cc	_	Ref=1PET_2.7
+14	λίθος	λίθος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	12	conj	_	Ref=1PET_2.7
+15	προσκόμματος	πρόσκομμα	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	14	nmod	_	Ref=1PET_2.7
+16	καὶ	καί	CCONJ	C-	_	17	cc	_	Ref=1PET_2.7
+17	πέτρα	πέτρα	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	12	conj	_	Ref=1PET_2.7
+18	σκανδάλου	σκάνδαλον	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	17	nmod	_	Ref=1PET_2.7
+19	οἳ	ὅς	PRON	Pr	Case=Nom|Gender=Masc|Number=Plur|PronType=Rel	20	nsubj	_	Ref=1PET_2.8
+20	προσκόπτουσιν	προσκόπτω	VERB	V-	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	1	parataxis	_	Ref=1PET_2.8
+21	τῷ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	22	det	_	Ref=1PET_2.8
+22	λόγῳ	λόγος	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	20	obl:arg	_	Ref=1PET_2.8
+23	ἀπειθοῦντες	ἀπειθέω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	20	advcl	_	Ref=1PET_2.8
+24	εἰς	εἰς	ADP	R-	_	25	case	_	Ref=1PET_2.8
+25	ὃ	ὅς	PRON	Pr	Case=Acc|Gender=Neut|Number=Sing|PronType=Rel	27	obl	_	Ref=1PET_2.8
+26	καὶ	καί	ADV	Df	_	27	advmod	_	LId=1|Ref=1PET_2.8
+27	ἐτέθησαν	τίθημι	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	20	parataxis	_	Ref=1PET_2.8
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ὑμεῖς δὲ γένος ἐκλεκτόν βασίλειον ἱεράτευμα ἔθνος ἅγιον λαὸς εἰς περιποίησιν ὅπως τὰς ἀρετὰς ἐξαγγείλητε τοῦ ἐκ σκότους ὑμᾶς καλέσαντος εἰς τὸ θαυμαστὸν αὐτοῦ φῶς
+# sent_id = 32135
+1	ὑμεῖς	ὑμεῖς	PRON	Pp	Case=Nom|Gender=Masc|Number=Plur|Person=2|PronType=Prs	3	nsubj	_	Ref=1PET_2.9
+2	δὲ	δέ	ADV	Df	_	3	discourse	_	Ref=1PET_2.9
+3	γένος	γένος	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	0	root	_	Ref=1PET_2.9
+4	ἐκλεκτόν	ἐκλεκτός	ADJ	A-	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	3	amod	_	Ref=1PET_2.9
+5	βασίλειον	βασίλειος	ADJ	A-	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	6	amod	_	Ref=1PET_2.9
+6	ἱεράτευμα	ἱεράτευμα	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	3	conj	_	Ref=1PET_2.9
+7	ἔθνος	ἔθνος	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	3	conj	_	Ref=1PET_2.9
+8	ἅγιον	ἅγιος	ADJ	A-	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	7	amod	_	Ref=1PET_2.9
+9	λαὸς	λαός	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	3	conj	_	Ref=1PET_2.9
+10	εἰς	εἰς	ADP	R-	_	11	case	_	Ref=1PET_2.9
+11	περιποίησιν	περιποίησις	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	9	nmod	_	Ref=1PET_2.9
+12	ὅπως	ὅπως	SCONJ	G-	_	15	mark	_	Ref=1PET_2.9
+13	τὰς	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	14	det	_	Ref=1PET_2.9
+14	ἀρετὰς	ἀρετή	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	15	obj	_	Ref=1PET_2.9
+15	ἐξαγγείλητε	ἐξαγγέλλω	VERB	V-	Aspect=Perf|Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	3	advcl	_	Ref=1PET_2.9
+16	τοῦ	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	20	det	_	Ref=1PET_2.9
+17	ἐκ	ἐκ	ADP	R-	_	18	case	_	Ref=1PET_2.9
+18	σκότους	σκότος	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	20	obl	_	Ref=1PET_2.9
+19	ὑμᾶς	ὑμεῖς	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=2|PronType=Prs	20	obj	_	Ref=1PET_2.9
+20	καλέσαντος	καλέω	VERB	V-	Aspect=Perf|Case=Gen|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Act	14	nmod	_	Ref=1PET_2.9
+21	εἰς	εἰς	ADP	R-	_	25	case	_	Ref=1PET_2.9
+22	τὸ	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	25	det	_	Ref=1PET_2.9
+23	θαυμαστὸν	θαυμαστός	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	25	amod	_	Ref=1PET_2.9
+24	αὐτοῦ	αὐτός	PRON	Pp	Case=Gen|Gender=Masc|Number=Sing|Person=3|PronType=Prs	25	det	_	Ref=1PET_2.9
+25	φῶς	φῶς	NOUN	Nb	Case=Acc|Gender=Neut|Number=Sing	20	obl	_	Ref=1PET_2.9
+
+# source = The Greek New Testament, 1 Peter 2
+# text = οἵ ποτε οὐ λαὸς
+# sent_id = 32136
+1	οἵ	ὁ	PRON	Pp	Case=Nom|Gender=Masc|Number=Plur|Person=3|PronType=Prs	4	nsubj	_	Ref=1PET_2.10
+2	ποτε	ποτε	ADV	Df	_	4	advmod	_	Ref=1PET_2.10
+3	οὐ	οὐ	ADV	Df	Polarity=Neg	4	advmod	_	Ref=1PET_2.10
+4	λαὸς	λαός	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	0	root	_	Ref=1PET_2.10
+
+# source = The Greek New Testament, 1 Peter 2
+# text = νῦν δὲ λαὸς θεοῦ
+# sent_id = 159528
+1	νῦν	νῦν	ADV	Df	_	3	advmod	_	LId=1|Ref=1PET_2.10
+2	δὲ	δέ	ADV	Df	_	3	discourse	_	Ref=1PET_2.10
+3	λαὸς	λαός	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	0	root	_	Ref=1PET_2.10
+4	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	3	nmod	_	Ref=1PET_2.10
+
+# source = The Greek New Testament, 1 Peter 2
+# text = οἱ οὐκ ἠλεημένοι
+# sent_id = 159529
+1	οἱ	ὁ	PRON	Pp	Case=Nom|Gender=Masc|Number=Plur|Person=3|PronType=Prs	3	nsubj:pass	_	Ref=1PET_2.10
+2	οὐκ	οὐ	ADV	Df	Polarity=Neg	3	advmod	_	Ref=1PET_2.10
+3	ἠλεημένοι	ἐλεέω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	Ref=1PET_2.10
+
+# source = The Greek New Testament, 1 Peter 2
+# text = νῦν δὲ ἐλεηθέντες
+# sent_id = 159530
+1	νῦν	νῦν	ADV	Df	_	3	advmod	_	LId=1|Ref=1PET_2.10
+2	δὲ	δέ	ADV	Df	_	3	discourse	_	Ref=1PET_2.10
+3	ἐλεηθέντες	ἐλεέω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	0	root	_	Ref=1PET_2.10
+
+# source = The Greek New Testament, 1 Peter 2
+# text = Ἀγαπητοί παρακαλῶ ὡς παροίκους καὶ παρεπιδήμους ἀπέχεσθαι τῶν σαρκικῶν ἐπιθυμιῶν αἵτινες στρατεύονται κατὰ τῆς ψυχῆς τὴν ἀναστροφὴν ὑμῶν ἐν τοῖς ἔθνεσιν ἔχοντες καλήν ἵνα ἐν ᾧ καταλαλοῦσιν ὑμῶν ὡς κακοποιῶν ἐκ τῶν καλῶν ἔργων ἐποπτεύοντες δοξάσωσιν τὸν θεὸν ἐν ἡμέρᾳ ἐπισκοπῆς
+# sent_id = 32137
+1	Ἀγαπητοί	ἀγαπητός	ADJ	A-	Case=Voc|Degree=Pos|Gender=Masc|Number=Plur	2	vocative	_	Ref=1PET_2.11
+2	παρακαλῶ	παρακαλέω	VERB	V-	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.11
+3	ὡς	ὡς	ADV	Df	_	4	mark	_	Ref=1PET_2.11
+4	παροίκους	πάροικος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Plur	2	advcl:cmp	_	Ref=1PET_2.11
+5	καὶ	καί	CCONJ	C-	_	6	cc	_	Ref=1PET_2.11
+6	παρεπιδήμους	παρεπίδημος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Masc|Number=Plur	4	conj	_	Ref=1PET_2.11
+7	ἀπέχεσθαι	ἀπέχω	VERB	V-	Tense=Pres|VerbForm=Inf|Voice=Mid	2	ccomp	_	Ref=1PET_2.11
+8	τῶν	ὁ	DET	S-	Case=Gen|Definite=Def|Number=Plur|PronType=Dem	10	det	_	Ref=1PET_2.11
+9	σαρκικῶν	σαρκικός	ADJ	A-	Case=Gen|Degree=Pos|Gender=Fem|Number=Plur	10	amod	_	Ref=1PET_2.11
+10	ἐπιθυμιῶν	ἐπιθυμία	NOUN	Nb	Case=Gen|Gender=Fem|Number=Plur	7	obl:arg	_	Ref=1PET_2.11
+11	αἵτινες	ὅστις	PRON	Pr	Case=Nom|Gender=Fem|Number=Plur|PronType=Rel	12	nsubj	_	Ref=1PET_2.11
+12	στρατεύονται	στρατεύω	VERB	V-	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Mid	10	acl	_	Ref=1PET_2.11
+13	κατὰ	κατά	ADP	R-	_	15	case	_	Ref=1PET_2.11
+14	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	15	det	_	Ref=1PET_2.11
+15	ψυχῆς	ψυχή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	12	obl	_	Ref=1PET_2.11
+16	τὴν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	17	det	_	Ref=1PET_2.12
+17	ἀναστροφὴν	ἀναστροφή	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	22	obj	_	Ref=1PET_2.12
+18	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	17	det	_	Ref=1PET_2.12
+19	ἐν	ἐν	ADP	R-	_	21	case	_	Ref=1PET_2.12
+20	τοῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Dem	21	det	_	Ref=1PET_2.12
+21	ἔθνεσιν	ἔθνος	NOUN	Nb	Case=Dat|Gender=Neut|Number=Plur	22	obl	_	Ref=1PET_2.12
+22	ἔχοντες	ἔχω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	7	advcl	_	Ref=1PET_2.12
+23	καλήν	καλός	ADJ	A-	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	22	xcomp	_	Ref=1PET_2.12
+24	ἵνα	ἵνα	SCONJ	G-	_	36	mark	_	Ref=1PET_2.12
+25	ἐν	ἐν	SCONJ	G-	_	27	mark	_	Ref=1PET_2.12
+26	ᾧ	ὅς	PRON	Pr	Case=Dat|Gender=Neut|Number=Sing|PronType=Rel	25	fixed	_	Ref=1PET_2.12
+27	καταλαλοῦσιν	καταλαλέω	VERB	V-	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	36	advcl	_	Ref=1PET_2.12
+28	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	27	obl:arg	_	Ref=1PET_2.12
+29	ὡς	ὡς	ADV	Df	_	30	mark	_	Ref=1PET_2.12
+30	κακοποιῶν	κακοποιός	ADJ	A-	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	27	advcl:cmp	_	Ref=1PET_2.12
+31	ἐκ	ἐκ	ADP	R-	_	34	case	_	Ref=1PET_2.12
+32	τῶν	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Neut|Number=Plur|PronType=Dem	34	det	_	Ref=1PET_2.12
+33	καλῶν	καλός	ADJ	A-	Case=Gen|Degree=Pos|Gender=Neut|Number=Plur	34	amod	_	Ref=1PET_2.12
+34	ἔργων	ἔργον	NOUN	Nb	Case=Gen|Gender=Neut|Number=Plur	35	obl	_	Ref=1PET_2.12
+35	ἐποπτεύοντες	ἐποπτεύω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	36	advcl	_	Ref=1PET_2.12
+36	δοξάσωσιν	δοξάζω	VERB	V-	Aspect=Perf|Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	22	advcl	_	Ref=1PET_2.12
+37	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	38	det	_	Ref=1PET_2.12
+38	θεὸν	θεός	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	36	obj	_	Ref=1PET_2.12
+39	ἐν	ἐν	ADP	R-	_	40	case	_	Ref=1PET_2.12
+40	ἡμέρᾳ	ἡμέρα	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	36	obl	_	Ref=1PET_2.12
+41	ἐπισκοπῆς	ἐπισκοπή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	40	nmod	_	Ref=1PET_2.12
+
+# source = The Greek New Testament, 1 Peter 2
+# text = Ὑποτάγητε πάσῃ ἀνθρωπίνῃ κτίσει διὰ τὸν κύριον εἴτε βασιλεῖ ὡς ὑπερέχοντι εἴτε ἡγεμόσιν ὡς δι’ αὐτοῦ πεμπομένοις εἰς ἐκδίκησιν κακοποιῶν ἔπαινον δὲ ἀγαθοποιῶν
+# sent_id = 32138
+1	Ὑποτάγητε	ὑποτάσσω	VERB	V-	Aspect=Perf|Mood=Imp|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_2.13
+2	πάσῃ	πᾶς	DET	Px	Case=Dat|Gender=Fem|Number=Sing	4	det	_	Ref=1PET_2.13
+3	ἀνθρωπίνῃ	ἀνθρώπινος	ADJ	A-	Case=Dat|Degree=Pos|Gender=Fem|Number=Sing	4	amod	_	Ref=1PET_2.13
+4	κτίσει	κτίσις	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	1	obl:arg	_	Ref=1PET_2.13
+5	διὰ	διά	ADP	R-	_	7	case	_	Ref=1PET_2.13
+6	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	7	det	_	Ref=1PET_2.13
+7	κύριον	κύριος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	1	obl	_	Ref=1PET_2.13
+8	εἴτε	εἴτε	CCONJ	C-	_	9	cc	_	Ref=1PET_2.13
+9	βασιλεῖ	βασιλεύς	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	4	appos	_	Ref=1PET_2.13
+10	ὡς	ὡς	ADV	Df	_	11	advmod	_	Ref=1PET_2.13
+11	ὑπερέχοντι	ὑπερέχω	VERB	V-	Case=Dat|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	1	advcl	_	Ref=1PET_2.13
+12	εἴτε	εἴτε	CCONJ	C-	_	13	cc	_	Ref=1PET_2.14
+13	ἡγεμόσιν	ἡγεμών	NOUN	Nb	Case=Dat|Gender=Masc|Number=Plur	9	conj	_	Ref=1PET_2.14
+14	ὡς	ὡς	ADV	Df	_	17	advmod	_	Ref=1PET_2.14
+15	δι’	διά	ADP	R-	_	16	case	_	Ref=1PET_2.14
+16	αὐτοῦ	αὐτός	PRON	Pp	Case=Gen|Gender=Masc|Number=Sing|Person=3|PronType=Prs	17	obl:agent	_	Ref=1PET_2.14
+17	πεμπομένοις	πέμπω	VERB	V-	Case=Dat|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Pass	1	advcl	_	Ref=1PET_2.14
+18	εἰς	εἰς	ADP	R-	_	19	case	_	Ref=1PET_2.14
+19	ἐκδίκησιν	ἐκδίκησις	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	17	obl	_	Ref=1PET_2.14
+20	κακοποιῶν	κακοποιός	ADJ	A-	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	19	nmod	_	Ref=1PET_2.14
+21	ἔπαινον	ἔπαινος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	19	conj	_	Ref=1PET_2.14
+22	δὲ	δέ	ADV	Df	_	21	discourse	_	Ref=1PET_2.14
+23	ἀγαθοποιῶν	ἀγαθοποιός	ADJ	A-	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	21	nmod	_	Ref=1PET_2.14
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ὅτι οὕτως ἐστὶν τὸ θέλημα τοῦ θεοῦ ἀγαθοποιοῦντας φιμοῦν τὴν τῶν ἀφρόνων ἀνθρώπων ἀγνωσίαν
+# sent_id = 32139
+1	ὅτι	ὅτι	ADV	Df	_	2	advmod	_	LId=1|Ref=1PET_2.15
+2	οὕτως	οὕτω(ς)	ADV	Df	_	0	root	_	Ref=1PET_2.15
+3	ἐστὶν	εἰμί	AUX	V-	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	2	cop	_	LId=1|Ref=1PET_2.15
+4	τὸ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	5	det	_	Ref=1PET_2.15
+5	θέλημα	θέλημα	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	2	nsubj	_	Ref=1PET_2.15
+6	τοῦ	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	7	det	_	Ref=1PET_2.15
+7	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	5	nmod	_	Ref=1PET_2.15
+8	ἀγαθοποιοῦντας	ἀγαθοποιέω	VERB	V-	Case=Acc|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	9	advcl	_	Ref=1PET_2.15
+9	φιμοῦν	φιμόω	VERB	V-	Tense=Pres|VerbForm=Inf|Voice=Act	2	parataxis	_	Ref=1PET_2.15
+10	τὴν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	14	det	_	Ref=1PET_2.15
+11	τῶν	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	13	det	_	Ref=1PET_2.15
+12	ἀφρόνων	ἄφρων	ADJ	A-	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	13	amod	_	Ref=1PET_2.15
+13	ἀνθρώπων	ἄνθρωπος	NOUN	Nb	Case=Gen|Gender=Masc|Number=Plur	14	nmod	_	Ref=1PET_2.15
+14	ἀγνωσίαν	ἀγνωσία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	9	obj	_	Ref=1PET_2.15
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ὡς ἐλεύθεροι καὶ μὴ ὡς ἐπικάλυμμα ἔχοντες τῆς κακίας τὴν ἐλευθερίαν ἀλλ’ ὡς θεοῦ δοῦλοι
+# sent_id = 159561
+1	ὡς	ὡς	ADV	Df	_	2	mark	_	Ref=1PET_2.16
+2	ἐλεύθεροι	ἐλεύθερος	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur	7	advcl:cmp	_	Ref=1PET_2.16
+3	καὶ	καί	CCONJ	C-	_	7	cc	_	Ref=1PET_2.16
+4	μὴ	μή	ADV	Df	Polarity=Neg	7	advmod	_	Ref=1PET_2.16
+5	ὡς	ὡς	ADV	Df	_	6	mark	_	Ref=1PET_2.16
+6	ἐπικάλυμμα	ἐπικάλυμμα	NOUN	Nb	Case=Acc|Gender=Neut|Number=Sing	7	advcl:cmp	_	Ref=1PET_2.16
+7	ἔχοντες	ἔχω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	0	root	_	Ref=1PET_2.16
+8	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	9	det	_	Ref=1PET_2.16
+9	κακίας	κακία	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	6	nmod	_	Ref=1PET_2.16
+10	τὴν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	11	det	_	Ref=1PET_2.16
+11	ἐλευθερίαν	ἐλευθερία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	7	obj	_	Ref=1PET_2.16
+12	ἀλλ’	ἀλλά	CCONJ	C-	_	7	cc	_	Ref=1PET_2.16
+13	ὡς	ὡς	ADV	Df	_	15	mark	_	Ref=1PET_2.16
+14	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	15	nmod	_	Ref=1PET_2.16
+15	δοῦλοι	δοῦλος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Plur	7	advcl:cmp	_	Ref=1PET_2.16
+
+# source = The Greek New Testament, 1 Peter 2
+# text = πάντας τιμήσατε
+# sent_id = 32141
+1	πάντας	πᾶς	PRON	Px	Case=Acc|Gender=Masc|Number=Plur	2	obj	_	Ref=1PET_2.17
+2	τιμήσατε	τιμάω	VERB	V-	Aspect=Perf|Mood=Imp|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.17
+
+# source = The Greek New Testament, 1 Peter 2
+# text = τὴν ἀδελφότητα ἀγαπᾶτε
+# sent_id = 159531
+1	τὴν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	2	det	_	Ref=1PET_2.17
+2	ἀδελφότητα	ἀδελφότης	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	3	obj	_	Ref=1PET_2.17
+3	ἀγαπᾶτε	ἀγαπάω	VERB	V-	Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.17
+
+# source = The Greek New Testament, 1 Peter 2
+# text = τὸν θεὸν φοβεῖσθε
+# sent_id = 159532
+1	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	2	det	_	Ref=1PET_2.17
+2	θεὸν	θεός	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	3	obj	_	Ref=1PET_2.17
+3	φοβεῖσθε	φοβέω	VERB	V-	Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Mid	0	root	_	Ref=1PET_2.17
+
+# source = The Greek New Testament, 1 Peter 2
+# text = τὸν βασιλέα τιμᾶτε
+# sent_id = 159533
+1	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	2	det	_	Ref=1PET_2.17
+2	βασιλέα	βασιλεύς	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	3	obj	_	Ref=1PET_2.17
+3	τιμᾶτε	τιμάω	VERB	V-	Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.17
+
+# source = The Greek New Testament, 1 Peter 2
+# text = Οἱ οἰκέται ὑποτασσόμενοι ἐν παντὶ φόβῳ τοῖς δεσπόταις οὐ μόνον τοῖς ἀγαθοῖς καὶ ἐπιεικέσιν ἀλλὰ καὶ τοῖς σκολιοῖς
+# sent_id = 32142
+1	Οἱ	ὁ	DET	S-	Case=Voc|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	2	det	_	Ref=1PET_2.18
+2	οἰκέται	οἰκέτης	NOUN	Nb	Case=Voc|Gender=Masc|Number=Plur	3	vocative	_	Ref=1PET_2.18
+3	ὑποτασσόμενοι	ὑποτάσσω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Pass	0	root	_	Ref=1PET_2.18
+4	ἐν	ἐν	ADP	R-	_	6	case	_	Ref=1PET_2.18
+5	παντὶ	πᾶς	DET	Px	Case=Dat|Gender=Masc|Number=Sing	6	det	_	Ref=1PET_2.18
+6	φόβῳ	φόβος	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	3	obl	_	Ref=1PET_2.18
+7	τοῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	8	det	_	Ref=1PET_2.18
+8	δεσπόταις	δεσπότης	NOUN	Nb	Case=Dat|Gender=Masc|Number=Plur	3	obl:arg	_	Ref=1PET_2.18
+9	οὐ	οὐ	ADV	Df	Polarity=Neg	10	advmod	_	Ref=1PET_2.18
+10	μόνον	μόνος	ADJ	A-	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	8	dislocated	_	Ref=1PET_2.18
+11	τοῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	12	det	_	Ref=1PET_2.18
+12	ἀγαθοῖς	ἀγαθός	ADJ	A-	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	8	nmod	_	Ref=1PET_2.18
+13	καὶ	καί	CCONJ	C-	_	14	cc	_	Ref=1PET_2.18
+14	ἐπιεικέσιν	ἐπιεικής	ADJ	A-	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	12	conj	_	Ref=1PET_2.18
+15	ἀλλὰ	ἀλλά	CCONJ	C-	_	18	cc	_	Ref=1PET_2.18
+16	καὶ	καί	ADV	Df	_	18	advmod	_	LId=1|Ref=1PET_2.18
+17	τοῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	18	det	_	Ref=1PET_2.18
+18	σκολιοῖς	σκολιός	ADJ	A-	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	12	conj	_	Ref=1PET_2.18
+
+# source = The Greek New Testament, 1 Peter 2
+# text = τοῦτο γὰρ χάρις εἰ διὰ συνείδησιν θεοῦ ὑποφέρει τις λύπας πάσχων ἀδίκως
+# sent_id = 32143
+1	τοῦτο	οὗτος	PRON	Pd	Case=Nom|Gender=Neut|Number=Sing	3	nsubj	_	Ref=1PET_2.19
+2	γὰρ	γάρ	ADV	Df	_	3	discourse	_	Ref=1PET_2.19
+3	χάρις	χάρις	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	0	root	_	Ref=1PET_2.19
+4	εἰ	εἰ	SCONJ	G-	_	8	mark	_	Ref=1PET_2.19
+5	διὰ	διά	ADP	R-	_	6	case	_	Ref=1PET_2.19
+6	συνείδησιν	συνείδησις	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	8	obl	_	Ref=1PET_2.19
+7	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	6	nmod	_	Ref=1PET_2.19
+8	ὑποφέρει	ὑποφέρω	VERB	V-	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	3	advcl	_	Ref=1PET_2.19
+9	τις	τὶς	PRON	Px	Case=Nom|Gender=Masc|Number=Sing	8	nsubj	_	Ref=1PET_2.19
+10	λύπας	λύπη	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	8	obj	_	Ref=1PET_2.19
+11	πάσχων	πάσχω	VERB	V-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	8	advcl	_	Ref=1PET_2.19
+12	ἀδίκως	ἀδίκως	ADV	Df	Degree=Pos	11	advmod	_	Ref=1PET_2.19
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ποῖον γὰρ κλέος εἰ ἁμαρτάνοντες καὶ κολαφιζόμενοι ὑπομενεῖτε
+# sent_id = 32144
+1	ποῖον	ποῖος	PRON	Pi	Case=Nom|Gender=Neut|Number=Sing|PronType=Int	0	root	_	Ref=1PET_2.20
+2	γὰρ	γάρ	ADV	Df	_	1	discourse	_	Ref=1PET_2.20
+3	κλέος	κλέος	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	1	nsubj	_	Ref=1PET_2.20
+4	εἰ	εἰ	SCONJ	G-	_	8	mark	_	Ref=1PET_2.20
+5	ἁμαρτάνοντες	ἁμαρτάνω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	8	advcl	_	Ref=1PET_2.20
+6	καὶ	καί	CCONJ	C-	_	7	cc	_	Ref=1PET_2.20
+7	κολαφιζόμενοι	κολαφίζω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Pass	5	conj	_	Ref=1PET_2.20
+8	ὑπομενεῖτε	ὑπομένω	VERB	V-	Mood=Ind|Number=Plur|Person=2|Tense=Fut|VerbForm=Fin|Voice=Act	1	advcl	_	Ref=1PET_2.20
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ἀλλ’ εἰ ἀγαθοποιοῦντες καὶ πάσχοντες ὑπομενεῖτε τοῦτο χάρις παρὰ θεῷ
+# sent_id = 32145
+1	ἀλλ’	ἀλλά	CCONJ	C-	_	8	cc	_	Ref=1PET_2.20
+2	εἰ	εἰ	SCONJ	G-	_	6	mark	_	Ref=1PET_2.20
+3	ἀγαθοποιοῦντες	ἀγαθοποιέω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	6	advcl	_	Ref=1PET_2.20
+4	καὶ	καί	CCONJ	C-	_	5	cc	_	Ref=1PET_2.20
+5	πάσχοντες	πάσχω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	3	conj	_	Ref=1PET_2.20
+6	ὑπομενεῖτε	ὑπομένω	VERB	V-	Mood=Ind|Number=Plur|Person=2|Tense=Fut|VerbForm=Fin|Voice=Act	8	advcl	_	Ref=1PET_2.20
+7	τοῦτο	οὗτος	PRON	Pd	Case=Nom|Gender=Neut|Number=Sing	8	nsubj	_	Ref=1PET_2.20
+8	χάρις	χάρις	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	0	root	_	Ref=1PET_2.20
+9	παρὰ	παρά	ADP	R-	_	10	case	_	Ref=1PET_2.20
+10	θεῷ	θεός	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	8	obl	_	Ref=1PET_2.20
+
+# source = The Greek New Testament, 1 Peter 2
+# text = εἰς τοῦτο γὰρ ἐκλήθητε ὅτι καὶ Χριστὸς ἔπαθεν ὑπὲρ ὑμῶν ὑμῖν ὑπολιμπάνων ὑπογραμμὸν ἵνα ἐπακολουθήσητε τοῖς ἴχνεσιν αὐτοῦ
+# sent_id = 32146
+1	εἰς	εἰς	ADP	R-	_	2	case	_	Ref=1PET_2.21
+2	τοῦτο	οὗτος	PRON	Pd	Case=Acc|Gender=Neut|Number=Sing	4	obl	_	Ref=1PET_2.21
+3	γὰρ	γάρ	ADV	Df	_	4	discourse	_	Ref=1PET_2.21
+4	ἐκλήθητε	καλέω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_2.21
+5	ὅτι	ὅτι	SCONJ	G-	_	8	mark	_	Ref=1PET_2.21
+6	καὶ	καί	ADV	Df	_	7	advmod	_	LId=1|Ref=1PET_2.21
+7	Χριστὸς	Χριστός	PROPN	Ne	Case=Nom|Gender=Masc|Number=Sing	8	nsubj	_	Ref=1PET_2.21
+8	ἔπαθεν	πάσχω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	4	advcl	_	Ref=1PET_2.21
+9	ὑπὲρ	ὑπέρ	ADP	R-	_	10	case	_	Ref=1PET_2.21
+10	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	8	obl	_	Ref=1PET_2.21
+11	ὑμῖν	ὑμεῖς	PRON	Pp	Case=Dat|Gender=Fem,Masc|Number=Plur|Person=2|PronType=Prs	12	obl:arg	_	Ref=1PET_2.21
+12	ὑπολιμπάνων	ὑπολιμπάνω	VERB	V-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	8	advcl	_	Ref=1PET_2.21
+13	ὑπογραμμὸν	ὑπογραμμός	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	12	obj	_	Ref=1PET_2.21
+14	ἵνα	ἵνα	SCONJ	G-	_	15	mark	_	Ref=1PET_2.21
+15	ἐπακολουθήσητε	ἐπακολουθέω	VERB	V-	Aspect=Perf|Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	12	advcl	_	Ref=1PET_2.21
+16	τοῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Neut|Number=Plur|PronType=Dem	17	det	_	Ref=1PET_2.21
+17	ἴχνεσιν	ἴχνος	NOUN	Nb	Case=Dat|Gender=Neut|Number=Plur	15	obl:arg	_	Ref=1PET_2.21
+18	αὐτοῦ	αὐτός	PRON	Pp	Case=Gen|Gender=Masc|Number=Sing|Person=3|PronType=Prs	17	det	_	Ref=1PET_2.21
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ὃς ἁμαρτίαν οὐκ ἐποίησεν οὐδὲ εὑρέθη δόλος ἐν τῷ στόματι αὐτοῦ
+# sent_id = 159536
+1	ὃς	ὅς	PRON	Pr	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	4	nsubj	_	Ref=1PET_2.22
+2	ἁμαρτίαν	ἁμαρτία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	4	obj	_	Ref=1PET_2.22
+3	οὐκ	οὐ	ADV	Df	Polarity=Neg	4	advmod	_	Ref=1PET_2.22
+4	ἐποίησεν	ποιέω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.22
+5	οὐδὲ	οὐδέ	CCONJ	C-	_	6	cc	_	Ref=1PET_2.22
+6	εὑρέθη	εὑρίσκω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	4	conj	_	Ref=1PET_2.22
+7	δόλος	δόλος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	6	nsubj:pass	_	Ref=1PET_2.22
+8	ἐν	ἐν	ADP	R-	_	10	case	_	Ref=1PET_2.22
+9	τῷ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	10	det	_	Ref=1PET_2.22
+10	στόματι	στόμα	NOUN	Nb	Case=Dat|Gender=Neut|Number=Sing	6	obl	_	Ref=1PET_2.22
+11	αὐτοῦ	αὐτός	PRON	Pp	Case=Gen|Gender=Masc|Number=Sing|Person=3|PronType=Prs	10	det	_	Ref=1PET_2.22
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ὃς λοιδορούμενος οὐκ ἀντελοιδόρει
+# sent_id = 32148
+1	ὃς	ὅς	PRON	Pr	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	4	nsubj	_	Ref=1PET_2.23
+2	λοιδορούμενος	λοιδορέω	VERB	V-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	4	advcl	_	Ref=1PET_2.23
+3	οὐκ	οὐ	ADV	Df	Polarity=Neg	4	advmod	_	Ref=1PET_2.23
+4	ἀντελοιδόρει	ἀντιλοιδορέω	VERB	V-	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.23
+
+# source = The Greek New Testament, 1 Peter 2
+# text = πάσχων οὐκ ἠπείλει
+# sent_id = 159537
+1	πάσχων	πάσχω	VERB	V-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	3	advcl	_	Ref=1PET_2.23
+2	οὐκ	οὐ	ADV	Df	Polarity=Neg	3	advmod	_	Ref=1PET_2.23
+3	ἠπείλει	ἀπειλέω	VERB	V-	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.23
+
+# source = The Greek New Testament, 1 Peter 2
+# text = παρεδίδου δὲ τῷ κρίνοντι δικαίως
+# sent_id = 159538
+1	παρεδίδου	παραδίδωμι	VERB	V-	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.23
+2	δὲ	δέ	ADV	Df	_	1	discourse	_	Ref=1PET_2.23
+3	τῷ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	4	det	_	Ref=1PET_2.23
+4	κρίνοντι	κρίνω	VERB	V-	Case=Dat|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Act	1	obl:arg	_	Ref=1PET_2.23
+5	δικαίως	δικαίως	ADV	Df	Degree=Pos	4	advmod	_	Ref=1PET_2.23
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ὃς τὰς ἁμαρτίας ἡμῶν αὐτὸς ἀνήνεγκεν ἐν τῷ σώματι αὐτοῦ ἐπὶ τὸ ξύλον ἵνα ταῖς ἁμαρτίαις ἀπογενόμενοι τῇ δικαιοσύνῃ ζήσωμεν
+# sent_id = 32149
+1	ὃς	ὅς	PRON	Pr	Case=Nom|Gender=Masc|Number=Sing|PronType=Rel	6	nsubj	_	Ref=1PET_2.24
+2	τὰς	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	3	det	_	Ref=1PET_2.24
+3	ἁμαρτίας	ἁμαρτία	NOUN	Nb	Case=Acc|Gender=Fem|Number=Plur	6	obj	_	Ref=1PET_2.24
+4	ἡμῶν	ἡμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=1|PronType=Prs	3	det	_	Ref=1PET_2.24
+5	αὐτὸς	αὐτός	DET	Pd	Case=Nom|Gender=Masc|Number=Sing	1	det	_	Ref=1PET_2.24
+6	ἀνήνεγκεν	ἀναφέρω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act	0	root	_	Ref=1PET_2.24
+7	ἐν	ἐν	ADP	R-	_	9	case	_	Ref=1PET_2.24
+8	τῷ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	9	det	_	Ref=1PET_2.24
+9	σώματι	σῶμα	NOUN	Nb	Case=Dat|Gender=Neut|Number=Sing	6	obl	_	Ref=1PET_2.24
+10	αὐτοῦ	αὐτός	PRON	Pp	Case=Gen|Gender=Masc|Number=Sing|Person=3|PronType=Prs	9	det	_	Ref=1PET_2.24
+11	ἐπὶ	ἐπί	ADP	R-	_	13	case	_	Ref=1PET_2.24
+12	τὸ	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	13	det	_	Ref=1PET_2.24
+13	ξύλον	ξύλον	NOUN	Nb	Case=Acc|Gender=Neut|Number=Sing	6	obl	_	Ref=1PET_2.24
+14	ἵνα	ἵνα	SCONJ	G-	_	20	mark	_	Ref=1PET_2.24
+15	ταῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	16	det	_	Ref=1PET_2.24
+16	ἁμαρτίαις	ἁμαρτία	NOUN	Nb	Case=Dat|Gender=Fem|Number=Plur	17	obl	_	Ref=1PET_2.24
+17	ἀπογενόμενοι	ἀπογίγνομαι	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Mid	20	advcl	_	Ref=1PET_2.24
+18	τῇ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	19	det	_	Ref=1PET_2.24
+19	δικαιοσύνῃ	δικαιοσύνη	NOUN	Nb	Case=Dat|Gender=Fem|Number=Sing	20	obl	_	Ref=1PET_2.24
+20	ζήσωμεν	ζῶ	VERB	V-	Aspect=Perf|Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin|Voice=Act	6	advcl	_	Ref=1PET_2.24
+
+# source = The Greek New Testament, 1 Peter 2
+# text = οὗ τῷ μώλωπι ἰάθητε
+# sent_id = 32150
+1	οὗ	ὅς	PRON	Pr	Case=Gen|Gender=Masc|Number=Sing|PronType=Rel	3	acl	_	Ref=1PET_2.24
+2	τῷ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	3	det	_	Ref=1PET_2.24
+3	μώλωπι	μώλωψ	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	4	obl:agent	_	Ref=1PET_2.24
+4	ἰάθητε	ἰάομαι	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=1PET_2.24
+
+# source = The Greek New Testament, 1 Peter 2
+# text = ἦτε γὰρ ὡς πρόβατα πλανώμενοι ἀλλ’ ἐπεστράφητε νῦν ἐπὶ τὸν ποιμένα καὶ ἐπίσκοπον τῶν ψυχῶν ὑμῶν
+# sent_id = 32151
+1	ἦτε	εἰμί	AUX	V-	Aspect=Imp|Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Act	5	cop	_	LId=1|Ref=1PET_2.25
+2	γὰρ	γάρ	ADV	Df	_	5	discourse	_	Ref=1PET_2.25
+3	ὡς	ὡς	ADV	Dq	PronType=Rel	5	advcl	_	Ref=1PET_2.25
+4	πρόβατα	πρόβατον	NOUN	Nb	Case=Nom|Gender=Neut|Number=Plur	3	nsubj	_	Ref=1PET_2.25
+5	πλανώμενοι	πλανάω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Pass	0	root	_	Ref=1PET_2.25
+6	ἀλλ’	ἀλλά	CCONJ	C-	_	7	cc	_	Ref=1PET_2.25
+7	ἐπεστράφητε	ἐπιστρέφω	VERB	V-	Aspect=Perf|Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin|Voice=Pass	5	conj	_	Ref=1PET_2.25
+8	νῦν	νῦν	ADV	Df	_	7	advmod	_	LId=1|Ref=1PET_2.25
+9	ἐπὶ	ἐπί	ADP	R-	_	11	case	_	Ref=1PET_2.25
+10	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	11	det	_	Ref=1PET_2.25
+11	ποιμένα	ποιμήν	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	7	obl	_	Ref=1PET_2.25
+12	καὶ	καί	CCONJ	C-	_	13	cc	_	Ref=1PET_2.25
+13	ἐπίσκοπον	ἐπίσκοπος	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	11	conj	_	Ref=1PET_2.25
+14	τῶν	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	15	det	_	Ref=1PET_2.25
+15	ψυχῶν	ψυχή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Plur	13	nmod	_	Ref=1PET_2.25
+16	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Masc|Number=Plur|Person=2|PronType=Prs	15	det	_	Ref=1PET_2.25
+
+# source = The Greek New Testament, 1 Peter 3
+# text = Ὁμοίως γυναῖκες ὑποτασσόμεναι τοῖς ἰδίοις ἀνδράσιν ἵνα καὶ εἴ τινες ἀπειθοῦσιν τῷ λόγῳ διὰ τῆς τῶν γυναικῶν ἀναστροφῆς ἄνευ λόγου κερδηθήσονται ἐποπτεύσαντες τὴν ἐν φόβῳ ἁγνὴν ἀναστροφὴν ὑμῶν
+# sent_id = 32152
+1	Ὁμοίως	ὁμοίως	ADV	Df	_	3	advmod	_	Ref=1PET_3.1
+2	γυναῖκες	γυνή	NOUN	Nb	Case=Voc|Gender=Fem|Number=Plur	3	vocative	_	Ref=1PET_3.1
+3	ὑποτασσόμεναι	ὑποτάσσω	VERB	V-	Case=Nom|Gender=Fem|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Pass	0	root	_	Ref=1PET_3.1
+4	τοῖς	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Plur|PronType=Dem	6	det	_	Ref=1PET_3.1
+5	ἰδίοις	ἴδιος	ADJ	A-	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	6	amod	_	Ref=1PET_3.1
+6	ἀνδράσιν	ἀνήρ	NOUN	Nb	Case=Dat|Gender=Masc|Number=Plur	3	obl:arg	_	Ref=1PET_3.1
+7	ἵνα	ἵνα	SCONJ	G-	_	21	mark	_	Ref=1PET_3.1
+8	καὶ	καί	ADV	Df	_	21	advmod	_	LId=1|Ref=1PET_3.1
+9	εἴ	εἰ	SCONJ	G-	_	11	mark	_	Ref=1PET_3.1
+10	τινες	τὶς	PRON	Px	Case=Nom|Gender=Masc|Number=Plur	11	nsubj	_	Ref=1PET_3.1
+11	ἀπειθοῦσιν	ἀπειθέω	VERB	V-	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	21	advcl	_	Ref=1PET_3.1
+12	τῷ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	13	det	_	Ref=1PET_3.1
+13	λόγῳ	λόγος	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	11	obl:arg	_	Ref=1PET_3.1
+14	διὰ	διά	ADP	R-	_	18	case	_	Ref=1PET_3.1
+15	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	18	det	_	Ref=1PET_3.1
+16	τῶν	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Plur|PronType=Dem	17	det	_	Ref=1PET_3.1
+17	γυναικῶν	γυνή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Plur	18	nmod	_	Ref=1PET_3.1
+18	ἀναστροφῆς	ἀναστροφή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	21	obl	_	Ref=1PET_3.1
+19	ἄνευ	ἄνευ	ADP	R-	_	20	case	_	Ref=1PET_3.1
+20	λόγου	λόγος	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	21	obl	_	Ref=1PET_3.1
+21	κερδηθήσονται	κερδαίνω	VERB	V-	Mood=Ind|Number=Plur|Person=3|Tense=Fut|VerbForm=Fin|Voice=Pass	3	advcl	_	Ref=1PET_3.1
+22	ἐποπτεύσαντες	ἐποπτεύω	VERB	V-	Aspect=Perf|Case=Nom|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Act	21	advcl	_	Ref=1PET_3.2
+23	τὴν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	27	det	_	Ref=1PET_3.2
+24	ἐν	ἐν	ADP	R-	_	25	case	_	Ref=1PET_3.2
+25	φόβῳ	φόβος	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	22	obl	_	Ref=1PET_3.2
+26	ἁγνὴν	ἁγνός	ADJ	A-	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	27	amod	_	Ref=1PET_3.2
+27	ἀναστροφὴν	ἀναστροφή	NOUN	Nb	Case=Acc|Gender=Fem|Number=Sing	22	obj	_	Ref=1PET_3.2
+28	ὑμῶν	ὑμεῖς	PRON	Pp	Case=Gen|Gender=Fem|Number=Plur|Person=2|PronType=Prs	27	det	_	Ref=1PET_3.2
+
+# source = The Greek New Testament, 1 Peter 3
+# text = ὧν ἔστω οὐχ ὁ ἔξωθεν ἐμπλοκῆς τριχῶν καὶ περιθέσεως χρυσίων ἢ ἐνδύσεως ἱματίων κόσμος ἀλλ’ ὁ κρυπτὸς τῆς καρδίας ἄνθρωπος ἐν τῷ ἀφθάρτῳ τοῦ πραέως καὶ ἡσυχίου πνεύματος ὅ ἐστιν ἐνώπιον τοῦ θεοῦ πολυτελές
+# sent_id = 32153
+1	ὧν	ὅς	PRON	Pr	Case=Gen|Gender=Fem|Number=Plur|PronType=Rel	14	acl	_	Ref=1PET_3.3
+2	ἔστω	εἰμί	AUX	V-	Mood=Imp|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	5	cop	_	LId=1|Ref=1PET_3.3
+3	οὐχ	οὐ	ADV	Df	Polarity=Neg	5	advmod	_	Ref=1PET_3.3
+4	ὁ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	5	det	_	Ref=1PET_3.3
+5	ἔξωθεν	ἔξωθεν	ADP	R-	_	0	root	_	Ref=1PET_3.3
+6	ἐμπλοκῆς	ἐμπλοκή	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	5	nmod	_	Ref=1PET_3.3
+7	τριχῶν	θρίξ	NOUN	Nb	Case=Gen|Gender=Fem|Number=Plur	6	nmod	_	Ref=1PET_3.3
+8	καὶ	καί	CCONJ	C-	_	9	cc	_	Ref=1PET_3.3
+9	περιθέσεως	περίθεσις	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	6	conj	_	Ref=1PET_3.3
+10	χρυσίων	χρύσεος	ADJ	A-	Case=Gen|Degree=Pos|Gender=Fem|Number=Plur	9	nmod	_	Ref=1PET_3.3
+11	ἢ	ἤ	CCONJ	C-	_	12	cc	_	Ref=1PET_3.3
+12	ἐνδύσεως	ἔνδυσις	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	6	conj	_	Ref=1PET_3.3
+13	ἱματίων	ἱμάτιον	NOUN	Nb	Case=Gen|Gender=Neut|Number=Plur	12	nmod	_	Ref=1PET_3.3
+14	κόσμος	κόσμος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	5	nsubj	_	Ref=1PET_3.3
+15	ἀλλ’	ἀλλά	CCONJ	C-	_	20	cc	_	Ref=1PET_3.4
+16	ὁ	ὁ	DET	S-	Case=Nom|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	20	det	_	Ref=1PET_3.4
+17	κρυπτὸς	κρυπτός	ADJ	A-	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	20	amod	_	Ref=1PET_3.4
+18	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	19	det	_	Ref=1PET_3.4
+19	καρδίας	καρδία	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	20	nmod	_	Ref=1PET_3.4
+20	ἄνθρωπος	ἄνθρωπος	NOUN	Nb	Case=Nom|Gender=Masc|Number=Sing	5	conj	_	Ref=1PET_3.4
+21	ἐν	ἐν	ADP	R-	_	23	case	_	Ref=1PET_3.4
+22	τῷ	ὁ	DET	S-	Case=Dat|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	23	det	_	Ref=1PET_3.4
+23	ἀφθάρτῳ	ἄφθαρτος	ADJ	A-	Case=Dat|Degree=Pos|Gender=Neut|Number=Sing	20	advmod	_	Ref=1PET_3.4
+24	τοῦ	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Neut|Number=Sing|PronType=Dem	28	det	_	Ref=1PET_3.4
+25	πραέως	πρᾶος	ADJ	A-	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing	28	amod	_	Ref=1PET_3.4
+26	καὶ	καί	CCONJ	C-	_	27	cc	_	Ref=1PET_3.4
+27	ἡσυχίου	ἡσύχιος	ADJ	A-	Case=Gen|Degree=Pos|Gender=Neut|Number=Sing	25	conj	_	Ref=1PET_3.4
+28	πνεύματος	πνεῦμα	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	23	nmod	_	Ref=1PET_3.4
+29	ὅ	ὅς	PRON	Pr	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	34	nsubj	_	Ref=1PET_3.4
+30	ἐστιν	εἰμί	AUX	V-	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act	34	cop	_	LId=1|Ref=1PET_3.4
+31	ἐνώπιον	ἐνώπιον	ADP	R-	_	33	case	_	Ref=1PET_3.4
+32	τοῦ	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	33	det	_	Ref=1PET_3.4
+33	θεοῦ	θεός	NOUN	Nb	Case=Gen|Gender=Masc|Number=Sing	34	obl	_	Ref=1PET_3.4
+34	πολυτελές	πολυτελής	ADJ	A-	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	28	acl	_	Ref=1PET_3.4
+

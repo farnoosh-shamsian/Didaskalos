@@ -1,0 +1,47 @@
+# source = The Greek New Testament, Jude 1
+# text = ἔλεος ὑμῖν καὶ εἰρήνη καὶ ἀγάπη πληθυνθείη
+# sent_id = 32908
+1	ἔλεος	ἔλεος	NOUN	Nb	Case=Nom|Gender=Neut|Number=Sing	7	nsubj:pass	_	Ref=JUDE_1.2
+2	ὑμῖν	ὑμεῖς	PRON	Pp	Case=Dat|Gender=Fem,Masc|Number=Plur|Person=2|PronType=Prs	7	obl:arg	_	Ref=JUDE_1.2
+3	καὶ	καί	CCONJ	C-	_	1	conj	_	Ref=JUDE_1.2
+4	εἰρήνη	εἰρήνη	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	1	conj	_	Ref=JUDE_1.2
+5	καὶ	καί	CCONJ	C-	_	6	cc	_	Ref=JUDE_1.2
+6	ἀγάπη	ἀγάπη	NOUN	Nb	Case=Nom|Gender=Fem|Number=Sing	1	conj	_	Ref=JUDE_1.2
+7	πληθυνθείη	πληθύνω	VERB	V-	Aspect=Perf|Mood=Opt|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	Ref=JUDE_1.2
+
+# source = The Greek New Testament, Jude 1
+# text = καὶ οὓς μὲν ἐλέγχετε διακρινομένους
+# sent_id = 32923
+1	καὶ	καί	CCONJ	C-	_	4	cc	_	Ref=JUDE_1.22
+2	οὓς	ὁ	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=3|PronType=Prs	4	obj	_	Ref=JUDE_1.22
+3	μὲν	μέν	ADV	Df	_	4	discourse	_	Ref=JUDE_1.22
+4	ἐλέγχετε	ἐλέγχω	VERB	V-	Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=JUDE_1.22
+5	διακρινομένους	διακρίνω	VERB	V-	Case=Acc|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Mid	4	advcl	_	Ref=JUDE_1.22
+
+# source = The Greek New Testament, Jude 1
+# text = οὓς δὲ σῴζετε ἐκ πυρὸς ἁρπάζοντες
+# sent_id = 57047
+1	οὓς	ὁ	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=3|PronType=Prs	3	obj	_	Ref=JUDE_1.23
+2	δὲ	δέ	ADV	Df	_	3	discourse	_	Ref=JUDE_1.23
+3	σῴζετε	σῴζω	VERB	V-	Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=JUDE_1.23
+4	ἐκ	ἐκ	ADP	R-	_	5	case	_	Ref=JUDE_1.23
+5	πυρὸς	πῦρ	NOUN	Nb	Case=Gen|Gender=Neut|Number=Sing	6	obl	_	Ref=JUDE_1.23
+6	ἁρπάζοντες	ἁρπάζω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	3	advcl	_	Ref=JUDE_1.23
+
+# source = The Greek New Testament, Jude 1
+# text = οὓς δὲ ἐλεᾶτε ἐν φόβῳ μισοῦντες καὶ τὸν ἀπὸ τῆς σαρκὸς ἐσπιλωμένον χιτῶνα
+# sent_id = 57048
+1	οὓς	ὁ	PRON	Pp	Case=Acc|Gender=Masc|Number=Plur|Person=3|PronType=Prs	3	obj	_	Ref=JUDE_1.23
+2	δὲ	δέ	ADV	Df	_	3	discourse	_	Ref=JUDE_1.23
+3	ἐλεᾶτε	ἐλεέω	VERB	V-	Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	Ref=JUDE_1.23
+4	ἐν	ἐν	ADP	R-	_	5	case	_	Ref=JUDE_1.23
+5	φόβῳ	φόβος	NOUN	Nb	Case=Dat|Gender=Masc|Number=Sing	3	obl	_	Ref=JUDE_1.23
+6	μισοῦντες	μισέω	VERB	V-	Case=Nom|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act	3	advcl	_	Ref=JUDE_1.23
+7	καὶ	καί	ADV	Df	_	13	advmod	_	LId=1|Ref=JUDE_1.23
+8	τὸν	ὁ	DET	S-	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Dem	13	det	_	Ref=JUDE_1.23
+9	ἀπὸ	ἀπό	ADP	R-	_	11	case	_	Ref=JUDE_1.23
+10	τῆς	ὁ	DET	S-	Case=Gen|Definite=Def|Gender=Fem|Number=Sing|PronType=Dem	11	det	_	Ref=JUDE_1.23
+11	σαρκὸς	σάρξ	NOUN	Nb	Case=Gen|Gender=Fem|Number=Sing	12	obl:agent	_	Ref=JUDE_1.23
+12	ἐσπιλωμένον	σπιλόω	VERB	V-	Aspect=Perf|Case=Acc|Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part|Voice=Pass	13	acl	_	Ref=JUDE_1.23
+13	χιτῶνα	χιτών	NOUN	Nb	Case=Acc|Gender=Masc|Number=Sing	6	obj	_	Ref=JUDE_1.23
+

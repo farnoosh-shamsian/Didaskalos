@@ -119,6 +119,9 @@ _FEAT_CASE = {"Nom": "n", "Gen": "g", "Dat": "d", "Acc": "a", "Voc": "v"}
 _FEAT_TENSE = {"Pres": "p", "Imp": "i", "Fut": "f", "Aor": "a", "Perf": "r", "Pqp": "l", "FutPerf": "t"}
 _FEAT_MOOD = {"Ind": "i", "Sub": "s", "Opt": "o", "Imp": "m", "Inf": "n", "Part": "p"}
 _FEAT_VOICE = {"Act": "a", "Mid": "m", "Pass": "p", "MidPass": "e"}
+_FEAT_PERSON = {"1": "1", "2": "2", "3": "3"}
+_FEAT_NUMBER = {"Sing": "s", "Plur": "p", "Dual": "d"}
+_FEAT_GENDER = {"Masc": "m", "Fem": "f", "Neut": "n"}
 
 
 def _parse_feats(feats: str) -> dict[str, str]:
@@ -142,9 +145,23 @@ def _agdt_postag_from_ud(upos: str, xpos: str, feats: dict[str, str]) -> str:
     slots = ["-"] * 9
     slots[0] = _UPOS_TO_AGDT.get(upos, "-")
 
+    person = _FEAT_PERSON.get(feats.get("Person", ""))
+    if person:
+        slots[1] = person
+    number = _FEAT_NUMBER.get(feats.get("Number", ""))
+    if number:
+        slots[2] = number
+    # Tense. Sources that name the Greek tense outright (Tense=Aor/Perf/...) map
+    # directly. PROIEL instead splits it across Tense + Aspect: Tense=Past with
+    # Aspect=Perf is the aorist (the common case) and Aspect=Imp the imperfect,
+    # so those must not be read as a "perfect". A bare Aspect=Perf with no Tense
+    # is the last-resort perfect fallback for other UD schemes.
     tense = _FEAT_TENSE.get(feats.get("Tense", ""))
-    if not tense and feats.get("Aspect") == "Perf":
-        tense = "r"  # Greek perfect is often encoded as Aspect=Perf in UD.
+    if not tense:
+        if feats.get("Tense") == "Past":
+            tense = "i" if feats.get("Aspect") == "Imp" else "a"
+        elif feats.get("Aspect") == "Perf":
+            tense = "r"
     if tense:
         slots[3] = tense
     mood = _FEAT_MOOD.get(feats.get("Mood", ""))
@@ -153,6 +170,9 @@ def _agdt_postag_from_ud(upos: str, xpos: str, feats: dict[str, str]) -> str:
     voice = _FEAT_VOICE.get(feats.get("Voice", ""))
     if voice:
         slots[5] = voice
+    gender = _FEAT_GENDER.get(feats.get("Gender", ""))
+    if gender:
+        slots[6] = gender
     case = _FEAT_CASE.get(feats.get("Case", ""))
     if case:
         slots[7] = case
