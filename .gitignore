@@ -6,3 +6,6 @@ __pycache__/
 .env
 **/.env
 .claude/settings.local.json
+
+# logo generator - kept locally, not published
+brand/build_logo.py
