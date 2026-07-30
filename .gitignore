@@ -1,1 +1,8 @@
-grammar-module-ragbot/.env
+.venv/
+**/.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+**/.env
+.claude/settings.local.json
