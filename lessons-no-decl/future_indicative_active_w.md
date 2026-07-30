@@ -3,7 +3,7 @@ topic: future, indicative, active (ω)
 pos: verb
 ---
 
-# Future Indicative Active (ω-Verbs)
+# The Future Indicative Active (ω-Verbs)
 *Ancient Greek — Beginner–Intermediate Lesson*
 
 ---

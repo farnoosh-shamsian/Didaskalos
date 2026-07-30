@@ -3,7 +3,7 @@ topic: present, indicative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Present Indicative Active of ‑ω Verbs
+# The Present Indicative Active (ω-Verbs)
 
 *Target audience: beginner–intermediate students who already know the Greek alphabet and basic noun declension.*
 

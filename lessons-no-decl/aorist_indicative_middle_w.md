@@ -3,7 +3,7 @@ topic: aorist, indicative, middle (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist · Indicative · Middle (ω-Verbs)
+# The Aorist Indicative Middle (ω-Verbs)
 
 ---
 

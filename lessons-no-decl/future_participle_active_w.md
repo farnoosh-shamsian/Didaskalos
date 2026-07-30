@@ -3,7 +3,7 @@ topic: future, participle, active (ω)
 pos: verb
 ---
 
-# Lesson: The Future Active Participle of ω-Verbs
+# The Future Active Participle (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Present active participle, future indicative active.*

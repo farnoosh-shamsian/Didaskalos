@@ -3,7 +3,7 @@ topic: imperfect, indicative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Imperfect Indicative Active (ω-Verbs)
+# The Imperfect Indicative Active (ω-Verbs)
 
 **Target:** Beginner–intermediate students of Ancient Greek
 **Focus:** How to form and use the imperfect indicative active of regular ω-verbs.

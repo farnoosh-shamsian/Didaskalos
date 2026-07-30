@@ -3,7 +3,7 @@ morph_type: ω-verb — future + indicative + middle
 pos: verb
 ---
 
-## Introduction to ω-Verbs: Future + Indicative + Middle
+# The Future Indicative Middle
 ### Overview
 In Greek, verbs are conjugated for tense, mood, voice, person, and number. The **future indicative middle** expresses an action that the subject will perform in the future **for itself or with self-involvement**. In this lesson we examine the conjugation of ω-verbs in this formation.
 

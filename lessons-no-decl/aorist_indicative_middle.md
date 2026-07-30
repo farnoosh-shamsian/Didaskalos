@@ -4,7 +4,7 @@ morph_type: ω-verb — aorist + indicative + middle
 pos: verb
 ---
 
-## Introduction to ω-Verbs: Aorist + Indicative + Middle
+# The Aorist Indicative Middle
 The Greek language is renowned for its complex yet beautiful grammatical structure, and one of the keys to mastering it is understanding verb conjugation. In this lesson we examine the conjugation of ω-verbs in the aorist tense, indicative mood, and middle voice: how these forms are built, how they are used, and examples of their application in sentences.
 
 ### Explanation of the Grammatical Concept

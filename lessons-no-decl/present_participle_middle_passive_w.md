@@ -3,7 +3,7 @@ topic: present, participle, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Present Middle/Passive Participle of ω-Verbs
+# The Present Middle/Passive Participle (ω-Verbs)
 
 ---
 

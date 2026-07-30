@@ -3,7 +3,7 @@ topic: aorist, participle, middle (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Middle Participle (ω-Verbs)
+# The Aorist Middle Participle (ω-Verbs)
 
 **Goal:**
 By the end of this lesson you will be able to:

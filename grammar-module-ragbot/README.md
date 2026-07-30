@@ -31,4 +31,7 @@ The output is in markdown.
 
 ## License
 
-Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+Copyright © 2026 Farnoosh Shamsian. Released under
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), as part of the
+Didaskalos project — see the [root LICENSE](../LICENSE) for the full text and the
+[README](../README.md#license) for how the license applies to source texts.

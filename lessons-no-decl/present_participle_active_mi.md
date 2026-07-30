@@ -3,7 +3,7 @@ topic: present, participle, active (μι)
 pos: verb
 ---
 
-# Lesson: The Present Active Participle of ‑μι Verbs
+# The Present Active Participle (μι-Verbs)
 
 *Level: beginner–intermediate*
 *Prerequisites: the Greek alphabet, basic noun declension, the present indicative active of ‑μι verbs*

@@ -3,7 +3,7 @@ topic: future, infinitive, middle (ω)
 pos: verb
 ---
 
-# Lesson: The Future Middle Infinitive of ω-Verbs
+# The Future Middle Infinitive (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Future indicative middle, present middle infinitive.*

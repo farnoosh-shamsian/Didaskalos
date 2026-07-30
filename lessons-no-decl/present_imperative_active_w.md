@@ -3,7 +3,7 @@ topic: present, imperative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Present Imperative Active (‑ω Verbs)
+# The Present Imperative Active (ω-Verbs)
 
 **Aim:** by the end of this lesson you will be able to recognise, form, and translate the present active imperative in Ancient Greek, and you will know how the characteristic **‑ω** ending of the present indicative relates to building the imperative.
 

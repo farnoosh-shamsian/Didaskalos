@@ -3,7 +3,7 @@ morph_type: ω-verb — aorist + subjunctive + active
 pos: verb
 ---
 
-## Introduction to ω-Verb Conjugation
+# The Aorist Subjunctive Active
 The conjugation of ω-verbs is a fundamental concept of the Greek language. In this lesson we examine the aorist subjunctive active forms of these verbs to clarify their use and place in the system.
 
 ## Explanation of the Grammatical Concept

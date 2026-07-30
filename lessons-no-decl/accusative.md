@@ -1,4 +1,4 @@
-## Introduction to the Accusative Case
+# The Accusative Case
 
 The accusative in Ancient Greek marks the direct object of a verb. Its shape is obtained by adding a case‑ending to the noun's stem, and the ending that is used depends on the declension to which the noun belongs.
 

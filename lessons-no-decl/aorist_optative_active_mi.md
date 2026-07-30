@@ -3,7 +3,7 @@ topic: aorist, optative, active (μι)
 pos: verb
 ---
 
-# Lesson: The Aorist Optative Active of μι-Verbs
+# The Aorist Optative Active (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Aorist indicative active of μι-verbs (ἔδωκα, ἔθηκα, ἔστην), optative mood basics*

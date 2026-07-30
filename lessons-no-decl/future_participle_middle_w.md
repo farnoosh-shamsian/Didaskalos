@@ -3,7 +3,7 @@ topic: future, participle, middle (ω)
 pos: verb
 ---
 
-# Lesson: The Future Middle Participle of ω-Verbs
+# The Future Middle Participle (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Future indicative middle, present middle participle.*

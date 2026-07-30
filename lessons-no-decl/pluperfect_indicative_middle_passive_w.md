@@ -3,7 +3,7 @@ topic: pluperfect, indicative, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Pluperfect Indicative Middle/Passive of ω-Verbs
+# The Pluperfect Indicative Middle/Passive (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Perfect indicative middle/passive, the augment, reduplication.*

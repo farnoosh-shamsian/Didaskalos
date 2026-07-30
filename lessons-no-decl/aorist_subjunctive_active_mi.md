@@ -3,7 +3,7 @@ topic: aorist, subjunctive, active (μι)
 pos: verb
 ---
 
-# Lesson: The Aorist Subjunctive Active of ‑μι Verbs
+# The Aorist Subjunctive Active (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Aorist indicative active of ‑μι verbs, present subjunctive active of ‑μι verbs.*

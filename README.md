@@ -64,4 +64,31 @@ The core infrastructure is still being built! Ongoing work focuses on:
 
 ## License
 
-Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+Copyright © 2026 Farnoosh Shamsian.
+
+Didaskalos is released under the
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+(CC BY-NC-SA 4.0). You may share and adapt the material for non-commercial purposes,
+provided you give attribution and license your adaptations under the same terms.
+See [LICENSE](LICENSE) for the full text.
+
+**Scope.** This license covers the original work of this project: the pipeline and
+application code, the grammar and lesson modules, the syllabus-generation method, and
+the Persian localization. It does *not* relicense the source texts.
+
+**Source texts.** Each treebank under `treebanks/` retains the license granted by its
+own authors, as declared in [`treebanks/registry.json`](treebanks/registry.json) and
+shown in the app:
+
+| Corpus | Upstream license |
+| --- | --- |
+| Perseus Ancient Greek Dependency Treebank | CC BY-SA 3.0 |
+| Gorman Ancient Greek Dependency Trees | CC BY-NC-SA 4.0 |
+| Harrington Treebanked Commentaries | MIT |
+| PROIEL New Testament | CC BY-NC-SA 4.0 |
+
+Note that Perseus is CC BY-SA 3.0, which does **not** permit a NonCommercial
+restriction to be added to that material; its ShareAlike terms continue to govern the
+Perseus data itself. Because Gorman and PROIEL are ShareAlike, a generated textbook
+containing their sentences must itself be distributed under CC BY-NC-SA 4.0 — the
+exported textbook states this in its "About This Textbook" section.

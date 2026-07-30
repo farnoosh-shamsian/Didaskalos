@@ -4,7 +4,7 @@ morph_type: ω-verb — imperfect + indicative + active
 pos: verb
 ---
 
-### Introduction to ω-Verbs: Imperfect, Indicative, Active
+# The Imperfect Indicative Active
 The Greek language features a complex system of verb conjugation, and ω-verbs form a large part of it. In this lesson we explore the **imperfect** tense of ω-verbs in the indicative mood and active voice. Understanding the imperfect is essential for reading Greek texts accurately.
 
 ### Explanation of the Grammatical Concept

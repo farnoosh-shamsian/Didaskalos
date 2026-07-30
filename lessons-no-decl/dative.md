@@ -1,4 +1,4 @@
-## Introduction to the Dative Case
+# The Dative Case
 
 The dative case marks the indirect object, the recipient, or the "to/for" relation. Its form is created by attaching a case-ending to the noun's stem; the shape of that ending depends on the declension to which the noun belongs.
 

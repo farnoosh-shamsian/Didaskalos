@@ -3,7 +3,7 @@ topic: aorist, participle, active (μι)
 pos: verb
 ---
 
-# Lesson: The Aorist Active Participle of **‑μι** Verbs
+# The Aorist Active Participle (μι-Verbs)
 
 *Target level: Beginner–Intermediate*
 *Prerequisites: Greek alphabet, basic noun declension, present indicative active endings*

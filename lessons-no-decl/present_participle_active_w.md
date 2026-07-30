@@ -3,7 +3,7 @@ topic: present, participle, active (ω)
 pos: verb
 ---
 
-# Lesson: The Present Active Participle (‑ω Verbs)
+# The Present Active Participle (ω-Verbs)
 
 *Level: beginner–intermediate*
 *Prerequisites: the Greek alphabet, basic noun declension, the present-tense endings*

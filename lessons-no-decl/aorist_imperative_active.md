@@ -3,7 +3,7 @@ morph_type: ω-verb — aorist + imperative + active
 pos: verb
 ---
 
-## Introduction to ω-Verbs: Aorist + Imperative + Active
+# The Aorist Imperative Active
 ### Overview
 In this lesson we explore the conjugation of ω-verbs in the aorist imperative active. The aorist imperative is used to command a **single, complete** action — "do this (and be done with it)." Despite what the name "aorist" may suggest, this form says nothing about past time: outside the indicative mood, the aorist expresses only **aspect**.
 

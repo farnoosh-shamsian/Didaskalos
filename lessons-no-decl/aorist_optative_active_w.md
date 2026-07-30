@@ -3,7 +3,7 @@ topic: aorist, optative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Optative Active (ω-Verbs)
+# The Aorist Optative Active (ω-Verbs)
 
 **Goal:** By the end of this lesson you will be able to recognize, form, and translate the aorist optative active of regular verbs and to know its main uses.
 

@@ -3,7 +3,7 @@ topic: aorist, indicative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Indicative Active
+# The Aorist Indicative Active (ω-Verbs)
 
 *(Target: beginner–intermediate students of Ancient Greek)*
 

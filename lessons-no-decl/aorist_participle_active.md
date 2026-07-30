@@ -4,7 +4,7 @@ morph_type: ω-verb — aorist + participle + active
 pos: verb
 ---
 
-## Introduction to ω-Verbs: Aorist, Participle, and Active Voice
+# The Aorist Active Participle
 ### Overview of ω-Verbs
 ω-Verbs (omega verbs) are the class of Ancient Greek verbs with clearly defined conjugation patterns. In this lesson we examine the aorist tense, the formation of the participle, and the active voice of these verbs.
 

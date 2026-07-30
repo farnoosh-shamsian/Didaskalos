@@ -3,7 +3,7 @@ topic: present, indicative, active (μι)
 pos: verb
 ---
 
-# Lesson: The Present Indicative Active of ‑μι Verbs
+# The Present Indicative Active (μι-Verbs)
 
 *Level: beginner–intermediate*
 *Prerequisites: the Greek alphabet, basic noun declension, the notions of person and number*

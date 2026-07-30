@@ -3,7 +3,7 @@ morph_type: ω-verb — aorist + indicative + passive
 pos: verb
 ---
 
-## Introduction to ω-Verbs in the Aorist Indicative Passive
+# The Aorist Indicative Passive
 The ω-verbs (omega verbs) are the class of Greek verbs whose first person singular present ends in ‑ω. Understanding their conjugation in the various tenses — including the aorist indicative passive — is essential for reading and understanding Greek.
 
 ## Explanation of the Grammatical Concept

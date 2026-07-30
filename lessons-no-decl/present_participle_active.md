@@ -3,7 +3,7 @@ morph_type: ω-verb — present + participle + active
 pos: verb
 ---
 
-### Introduction to ω-Verbs
+# The Present Active Participle
 ω-Verbs are the largest category of Greek verbs, and knowing them is essential for reading and understanding Greek texts. This lesson focuses on the present tense, the participle, and the active voice of these verbs.
 
 ### Explanation of the Grammatical Concept

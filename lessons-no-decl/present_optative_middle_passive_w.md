@@ -3,7 +3,7 @@ topic: present, optative, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Present Optative Middle/Passive of ω-Verbs
+# The Present Optative Middle/Passive (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Present indicative middle/passive of ω-verbs, present optative active*

@@ -1,4 +1,4 @@
-## About Didaskalos
+# About Didaskalos
 
 Didaskalos is a corpus-driven system designed to generate fully personalized textbooks for learning Ancient Greek. Instead of relying on fixed curricula or generalized pedagogical sequences, Didaskalos builds each textbook directly from the texts a learner or instructor actually wants to read. This ensures that every lesson, explanation, and exercise is immediately relevant to the learner’s goals and grounded in authentic material.
 

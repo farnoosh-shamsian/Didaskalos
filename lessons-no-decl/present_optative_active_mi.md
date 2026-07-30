@@ -3,7 +3,7 @@ topic: present, optative, active (μι)
 pos: verb
 ---
 
-# Lesson: The Present Optative Active of μι-Verbs
+# The Present Optative Active (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Present indicative of μι-verbs, present optative active of ω-verbs*

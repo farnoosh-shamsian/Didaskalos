@@ -3,7 +3,7 @@ morph_type: ω-verb — present + indicative + medio-passive
 pos: verb
 ---
 
-## Introduction to ω-Verbs: Present Indicative Medio-Passive
+# The Present Indicative Middle/Passive
 ### Overview
 In Greek, verbs are grouped by their conjugation patterns, and the ω-verbs form the largest group. This lesson focuses on the present indicative **medio-passive** forms of ω-verbs, aiming to give a clear picture of their conjugation, usage, and context.
 

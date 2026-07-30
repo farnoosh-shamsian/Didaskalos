@@ -3,7 +3,7 @@ topic: present, infinitive, active (μι)
 pos: verb
 ---
 
-# Lesson: The Present Active Infinitive of ‑μι Verbs
+# The Present Active Infinitive (μι-Verbs)
 
 *Level: beginner–intermediate*
 *Prerequisites: the Greek alphabet, basic verb stems, the present indicative endings*

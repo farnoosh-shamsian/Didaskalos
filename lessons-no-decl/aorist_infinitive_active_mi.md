@@ -3,7 +3,7 @@ topic: aorist, infinitive, active (μι)
 pos: verb
 ---
 
-# Lesson: The Aorist Active Infinitive of ‑μι Verbs
+# The Aorist Active Infinitive (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Aorist indicative active of ‑μι verbs (ἔδωκα, ἔθηκα, ἔστην), present active infinitive of ‑μι verbs.*
@@ -84,7 +84,7 @@ This is the one genuine trap in the lesson:
 | **2. No augment** | The augment (ἔ‑δωκα) belongs to the indicative only. | ἔδωκα → δοῦναι |
 | **3. Ending ‑ναι with circumflex** | δοῦναι, θεῖναι, στῆναι, γνῶναι — the accent sits on the root vowel and is a circumflex. | |
 | **4. Accent stays put in compounds** | ἀποδοῦναι, παραδοῦναι — the prefix does not draw the accent back. | not *ἀπόδουναι* |
-| **5. δοῦναι vs. δοῦσι** | Do not confuse the infinitive δοῦναι with the participle forms (δούς, δόντος). | |
+| **5. δοῦναι vs. δούς** | Do not confuse the infinitive δοῦναι with the participle forms (δούς, δόντος). | |
 | **6. Aspect, not time** | βούλεται δοῦναι "he wants to give (now)" — no past sense. | |
 | **7. In indirect discourse it is past** | After verbs of saying, the aorist infinitive stands for an aorist indicative: ἔφη δοῦναι "he said he had given." | |
 

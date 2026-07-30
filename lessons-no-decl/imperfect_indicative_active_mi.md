@@ -3,7 +3,7 @@ topic: imperfect, indicative, active (μι)
 pos: verb
 ---
 
-# Lesson: The Imperfect Indicative Active of μι-Verbs
+# The Imperfect Indicative Active (μι-Verbs)
 
 **Target:** Beginner–intermediate students of Ancient Greek
 **Focus:** Understanding, forming, and using the imperfect indicative active of the μι-verb class.

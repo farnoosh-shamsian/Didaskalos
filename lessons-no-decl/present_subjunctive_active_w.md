@@ -3,7 +3,7 @@ topic: present, subjunctive, active (ω)
 pos: verb
 ---
 
-# Lesson: The Present Subjunctive Active (‑ω Verbs)
+# The Present Subjunctive Active (ω-Verbs)
 
 *Level: beginner–intermediate*
 *Prerequisites: the Greek alphabet, basic noun declension, the present indicative active endings.*

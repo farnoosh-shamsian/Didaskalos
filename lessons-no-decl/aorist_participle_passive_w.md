@@ -3,7 +3,7 @@ topic: aorist, participle, passive (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Passive Participle (‑θείς) in Ancient Greek
+# The Aorist Passive Participle (ω-Verbs)
 
 *Target level: Beginner–Intermediate*
 

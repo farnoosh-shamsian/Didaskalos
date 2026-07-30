@@ -3,7 +3,7 @@ topic: future, infinitive, middle (μι)
 pos: verb
 ---
 
-# Lesson: The Future Middle Infinitive of ‑μι Verbs
+# The Future Middle Infinitive (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Future indicative middle of ‑μι verbs, future middle infinitive of ω-verbs.*

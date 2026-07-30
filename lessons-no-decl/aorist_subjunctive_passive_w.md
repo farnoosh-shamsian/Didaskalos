@@ -3,7 +3,7 @@ topic: aorist, subjunctive, passive (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Passive Subjunctive of ω-Verbs
+# The Aorist Subjunctive Passive (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Aorist indicative passive, present subjunctive active.*
@@ -97,7 +97,7 @@ Full paradigm of **γραφῶ**: γραφῶ, γραφῇς, γραφῇ, γρ�
 1. **Future more vivid conditions** — ἐάν + aorist passive subjunctive is one of the commonest constructions in Thucydides' speeches: ἐὰν νικηθῶμεν …
 2. **Purpose clauses** — ἵνα, ὅπως + subjunctive after a primary tense.
 3. **Clauses of fearing** — μή "lest" + subjunctive: φοβοῦμαι μὴ βλαβῇ. Add οὐ for a negative fear: μὴ οὐ σωθῶμεν.
-4. **Indefinite temporal clauses** — ὅταν, ἐπειδὰν + aorist subjunctive for a completed event within a repeated frame.
+4. **Indefinite temporal clauses** — ὅταν, ἐπειδάν + aorist subjunctive for a completed event within a repeated frame.
 5. **Prohibitions** — μή + aorist subjunctive, 2nd person: μὴ φοβηθῇς "do not be afraid."
 6. **Aspect choice** — use the aorist for the event, the present for the ongoing state: ἐὰν λυθῇ "if he gets released" vs. ἐὰν λύηται "if he is being released."
 

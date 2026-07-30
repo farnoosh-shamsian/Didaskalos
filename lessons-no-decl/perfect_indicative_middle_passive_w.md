@@ -3,7 +3,7 @@ topic: perfect, indicative, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Perfect Indicative Middle/Passive (ω-Verbs)
+# The Perfect Indicative Middle/Passive (ω-Verbs)
 
 *Target level: Beginner → Intermediate*
 *Prerequisites: Greek alphabet, basic verb concepts (present, aorist), the idea of voice.*

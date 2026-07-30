@@ -3,7 +3,7 @@ topic: present, infinitive, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Present Infinitive Middle/Passive (‑εσθαι)
+# The Present Middle/Passive Infinitive (ω-Verbs)
 
 ---
 

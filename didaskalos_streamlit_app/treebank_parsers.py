@@ -22,6 +22,7 @@ AGDT postag layout (position -> feature)::
 
 from __future__ import annotations
 
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -187,6 +188,7 @@ def parse_conllu(file_path: str | Path) -> pd.DataFrame:
     sentence_counter = 0
     native_id: str | None = None
     document_id: str | None = None
+    subdoc: str | None = None
     segment = 1
 
     with file_path.open("r", encoding="utf-8") as handle:
@@ -196,6 +198,7 @@ def parse_conllu(file_path: str | Path) -> pd.DataFrame:
             if not line.strip():
                 # Blank line ends a sentence; reset per-sentence state.
                 native_id = None
+                subdoc = None
                 segment = 1
                 continue
 
@@ -207,6 +210,15 @@ def parse_conllu(file_path: str | Path) -> pd.DataFrame:
                     native_id = value or None
                 elif key in ("newdoc id", "newdoc"):
                     document_id = value or document_id
+                elif key == "source":
+                    # PROIEL tags each sentence with its locus, e.g.
+                    # "The Greek New Testament, John 3" or "Histories, Book 1,
+                    # chapter 1". The book/work is already carried by the file's
+                    # citation siglum, so keep only the trailing number as the
+                    # passage reference (the chapter): it yields "John 3", not a
+                    # bare "John". No trailing number -> no reference.
+                    match = re.search(r"(\d+)\s*$", value)
+                    subdoc = match.group(1) if match else None
                 continue
 
             fields = line.split("\t")
@@ -236,7 +248,7 @@ def parse_conllu(file_path: str | Path) -> pd.DataFrame:
                 {
                     "sentence_id": f"{file_path.stem}|{native_id}|{segment}",
                     "document_id": document_id,
-                    "subdoc": None,
+                    "subdoc": subdoc,
                     "word_id": word_id,
                     "token_index": token_index,
                     "form": form,

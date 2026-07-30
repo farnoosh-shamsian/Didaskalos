@@ -3,7 +3,7 @@ topic: future, indicative, middle (μι)
 pos: verb
 ---
 
-# Lesson: The Future Indicative Middle of ‑μι Verbs
+# The Future Indicative Middle (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Present indicative of ‑μι verbs, future indicative middle of ω-verbs.*
@@ -102,7 +102,7 @@ The present reduplication (δι‑, τι‑, ἱ‑) is **dropped** in the futur
 ## 5. Usage & Context
 
 1. **Prediction and consequence** — the future indicative is the ordinary tense of forecast; Thucydides' speeches are full of ἔσται in arguments about what will follow.
-2. **In conditional apodoses** — ἐὰν + subjunctive … future indicative: ἐὰν ταῦτα ποιῆτε, ἐλεύθεροι ἔσεσθε.
+2. **In conditional apodoses** — ἐάν + subjunctive … future indicative: ἐὰν ταῦτα ποιῆτε, ἐλεύθεροι ἔσεσθε.
 3. **Future for polite command** — a future indicative can stand for an imperative: ταῦτα ποιήσετε "you will do this" (= do it).
 4. **ἔσται in impersonal expressions** — δῆλον ἔσται "it will be clear," ῥᾴδιον ἔσται "it will be easy": a workhorse of expository prose.
 5. **Aspect note** — Greek has only one future stem; unlike the present/aorist pair, the future does not distinguish ongoing from single action.

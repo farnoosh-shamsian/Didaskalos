@@ -3,7 +3,7 @@ topic: aorist, participle, active (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Active Participle (‑ας, ‑ασα, ‑αν)
+# The Aorist Active Participle (ω-Verbs)
 
 ---
 

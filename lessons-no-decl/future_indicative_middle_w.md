@@ -3,7 +3,7 @@ topic: future, indicative, middle (ω)
 pos: verb
 ---
 
-# Lesson: The Future Indicative Middle (ω-Verbs)
+# The Future Indicative Middle (ω-Verbs)
 
 *Target level: Beginner–Intermediate*
 *Prerequisites: Greek alphabet, basic noun declension, present active and middle endings, the concept of voice.*

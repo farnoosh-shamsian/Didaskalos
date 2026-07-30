@@ -3,7 +3,7 @@ topic: aorist, infinitive, passive (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Passive Infinitive of ω-Verbs
+# The Aorist Passive Infinitive (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Aorist indicative passive, present passive infinitive, aorist active infinitive.*

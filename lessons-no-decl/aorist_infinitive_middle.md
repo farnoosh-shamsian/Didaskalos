@@ -3,7 +3,7 @@ morph_type: ω-verb — aorist + infinitive + middle
 pos: verb
 ---
 
-## Introduction to ω-Verbs: The Aorist Middle Infinitive
+# The Aorist Middle Infinitive
 ### Overview
 ω-Verbs are the class of Greek verbs whose first person singular present ends in ‑ω. This lesson treats their **aorist middle infinitive**: a non-finite form expressing a **single, complete** action with **middle** meaning (for oneself / on oneself) — or, in deponent verbs, an effectively active meaning.
 

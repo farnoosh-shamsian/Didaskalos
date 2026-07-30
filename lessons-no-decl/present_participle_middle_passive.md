@@ -3,7 +3,7 @@ morph_type: ω-verb (thematic) — present + participle + medio-passive
 pos: verb
 ---
 
-## Introduction to ω-Verbs (Thematic) — Present + Participle + Medio-Passive
+# The Present Middle/Passive Participle
 ### Overview
 Greek verbs are grouped by their conjugation patterns. One of these groups is the ω-verbs, also called thematic verbs, which insert a thematic vowel (ε/ο) between stem and ending. This lesson examines the present tense, the participle, and the medio-passive voice of these verbs.
 

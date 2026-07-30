@@ -3,7 +3,7 @@ topic: present, subjunctive, active (μι)
 pos: verb
 ---
 
-# Lesson: The Present Subjunctive Active of ‑μι Verbs
+# The Present Subjunctive Active (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Present indicative of ‑μι verbs, present subjunctive active of ω-verbs.*
@@ -97,7 +97,7 @@ These tiny forms are extremely common: ἐὰν σοφὸς ᾖς "if you are wi
 
 1. **Purpose clauses** — ἵνα, ὅπως + subjunctive after a primary tense.
 2. **Future more vivid conditions** — ἐάν + subjunctive: ἐὰν διδῷ …
-3. **Indefinite clauses** — ὅταν, ὃς ἄν, ἐπειδὰν + subjunctive.
+3. **Indefinite clauses** — ὅταν, ὃς ἄν, ἐπειδάν + subjunctive.
 4. **Hortatory and deliberative** — first person: διδῶμεν "let us give"; τί τιθῶμεν; "what are we to establish?"
 5. **Aspect matters more than usual here** — because the reduplicated and unreduplicated stems sit side by side, Greek authors use διδῶ / δῶ deliberately to mark ongoing versus single action. Read the stem carefully.
 

@@ -3,7 +3,7 @@ topic: aorist, indicative, active (μι)
 pos: verb
 ---
 
-# Lesson: The Aorist Indicative Active of **‑μι** Verbs
+# The Aorist Indicative Active (μι-Verbs)
 *(e.g., φημί, τίθημι, ἵστημι, δίδωμι)*
 
 ---

@@ -3,7 +3,7 @@ topic: aorist, infinitive, middle (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Middle Infinitive of ω-Verbs
+# The Aorist Middle Infinitive (ω-Verbs)
 
 *Target level: Beginner–Intermediate*
 *Prerequisites: Aorist indicative middle, present middle infinitive, middle voice basics.*

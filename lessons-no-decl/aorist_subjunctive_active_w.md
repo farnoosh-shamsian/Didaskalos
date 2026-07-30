@@ -3,7 +3,7 @@ topic: aorist, subjunctive, active (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Subjunctive Active (ω-Verbs)
+# The Aorist Subjunctive Active (ω-Verbs)
 
 *Target level: Beginner–Intermediate*
 *Prerequisites: Greek alphabet, basic verb stems, present indicative active endings.*

@@ -3,7 +3,7 @@ topic: present, infinitive, active (ω)
 pos: verb
 ---
 
-# Lesson: The Present Active Infinitive (endings ‑ειν, ‑ᾶν, ‑εῖν, ‑οῦν)
+# The Present Active Infinitive (ω-Verbs)
 
 *Target level: Beginner → Intermediate*
 

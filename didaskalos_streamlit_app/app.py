@@ -7,6 +7,7 @@ import sys
 import tempfile
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
+from datetime import date
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlparse, urlsplit, urlunsplit
@@ -895,6 +896,52 @@ if build_clicked:
             formats=treebank_formats,
         )
         frequency_syllabus = build_frequency_syllabus(combined_df)
+
+        # Front-matter "About This Textbook" data: the works and corpora this
+        # build was assembled from, plus corpus size. Works are deduped per whole
+        # work (via the TLG work key) so a work split across passage files
+        # collapses to a single entry; corpora are enriched from the registry so
+        # the section can show a source link alongside each name/license.
+        corpus_meta = {c["id"]: c for c in load_treebank_registry() if c.get("id")}
+        summary_works: list[tuple[str | None, str]] = []
+        seen_work_keys: set[str] = set()
+        summary_corpora: list[dict] = []
+        seen_corpus_ids: set[str] = set()
+        has_custom_sources = False
+        for rec in selected_treebank_records:
+            work_key = tlg_work_key(rec["file"], rec.get("document_id")) or rec["file"]
+            if work_key not in seen_work_keys:
+                seen_work_keys.add(work_key)
+                summary_works.append(
+                    resolve_author_work(
+                        rec["file"], rec.get("author"), rec.get("title"), rec.get("document_id")
+                    )
+                )
+            corpus_id = rec.get("corpus")
+            if not corpus_id:
+                has_custom_sources = True
+                continue
+            if corpus_id in seen_corpus_ids:
+                continue
+            seen_corpus_ids.add(corpus_id)
+            meta = corpus_meta.get(corpus_id, {})
+            summary_corpora.append(
+                {
+                    "id": corpus_id,
+                    "name": meta.get("name") or rec.get("corpus_name"),
+                    "license": meta.get("license") or rec.get("license"),
+                    "source_url": meta.get("source_url"),
+                }
+            )
+        summary_works.sort(key=lambda aw: ((aw[0] or "").lower(), (aw[1] or "").lower()))
+        source_summary = {
+            "works": summary_works,
+            "corpora": summary_corpora,
+            "token_count": int(len(combined_df)),
+            "work_count": len(summary_works),
+            "has_custom_sources": has_custom_sources,
+        }
+
         textbook_markdown = generate_textbook_markdown(
             frequency_syllabus=frequency_syllabus,
             grammar_folder=lesson_dir,
@@ -902,6 +949,7 @@ if build_clicked:
             combined_df=combined_df,
             syllabus_mode=syllabus_mode,
             lang=lang,
+            source_summary=source_summary,
         )
         textbook_html = generate_textbook_html(
             frequency_syllabus=frequency_syllabus,
@@ -911,6 +959,7 @@ if build_clicked:
             syllabus_mode=syllabus_mode,
             lang=lang,
             markdown_content=textbook_markdown,
+            source_summary=source_summary,
         )
 
     # Results live in session state so later reruns (downloads, toggles, widget
@@ -981,3 +1030,4 @@ if build_result:
 st.markdown("---")
 st.caption(t("footer_caption", lang))
 st.caption(t("image_credit", lang))
+st.caption(t("license_caption", lang, year=date.today().year))

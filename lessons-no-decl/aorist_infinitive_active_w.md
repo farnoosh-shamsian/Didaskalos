@@ -3,7 +3,7 @@ topic: aorist, infinitive, active (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Infinitive Active of **‑ω** Verbs
+# The Aorist Active Infinitive (ω-Verbs)
 
 ---
 

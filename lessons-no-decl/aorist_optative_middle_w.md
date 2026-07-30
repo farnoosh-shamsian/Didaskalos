@@ -3,7 +3,7 @@ topic: aorist, optative, middle (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Optative Middle of ω-Verbs
+# The Aorist Optative Middle (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Aorist indicative middle, present optative, middle voice basics*

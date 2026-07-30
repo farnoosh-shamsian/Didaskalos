@@ -3,7 +3,7 @@ topic: future, infinitive, active (ω)
 pos: verb
 ---
 
-# Lesson: The Future Active Infinitive (ω-Verbs)
+# The Future Active Infinitive (ω-Verbs)
 
 **Topic:** *Future, infinitive, active* — the form ending in **‑σειν** (e.g., **λύσειν**, **γράψειν**, **τιμήσειν**)
 

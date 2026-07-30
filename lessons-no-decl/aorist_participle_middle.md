@@ -3,7 +3,7 @@ morph_type: ω-verb — aorist + participle + middle
 pos: verb
 ---
 
-## Introduction to ω-Verbs: The Aorist Middle Participle
+# The Aorist Middle Participle
 ### What are ω-Verbs?
 In Greek, verbs are classified by the patterns of their endings. The ω-verbs are those whose first person singular present ends in ‑ω (λύω). This lesson introduces their **aorist middle participle**: a verbal adjective that describes a **single, complete** action with **middle** meaning (for oneself / on oneself).
 

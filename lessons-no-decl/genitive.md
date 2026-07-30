@@ -1,4 +1,4 @@
-## Introduction to the Genitive Case
+# The Genitive Case
 
 In ancient Greek the genitive is expressed by adding a fixed suffix to the noun's stem. Which suffix is used depends on the declension to which the noun belongs and on whether the form is singular or plural.
 

@@ -3,7 +3,7 @@ topic: perfect, participle, active (μι)
 pos: verb
 ---
 
-# Lesson: The Perfect Active Participle of ‑μι Verbs
+# The Perfect Active Participle (μι-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Perfect indicative active of ‑μι verbs, perfect active participle of ω-verbs.*

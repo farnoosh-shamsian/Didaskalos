@@ -3,7 +3,7 @@ topic: aorist, indicative, middle (μι)
 pos: verb
 ---
 
-# Lesson: The Aorist Indicative Middle of **‑μι** Verbs
+# The Aorist Indicative Middle (μι-Verbs)
 
 *Target level: Beginner–Intermediate*
 *Prerequisites: Greek alphabet, basic notions of tense, mood, and voice, and the present indicative active endings.*

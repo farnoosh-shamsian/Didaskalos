@@ -223,3 +223,57 @@ Proto-Indo-European,هندواروپایی آغازین,general & historical,
 Classical period,دورهٔ کلاسیک,general & historical,
 prose,نثر,general & historical,
 poetry,شعر,general & historical,
+present stem,ستاک حال,verb,
+aorist stem,ستاک گذشتهٔ تام,verb,
+perfect stem,ستاک حال کامل,verb,
+future stem,ستاک آینده,verb,
+verb stem,ستاک فعل,verb,
+aorist passive stem,ستاک مجهول گذشتهٔ تام,verb,not used in the Persian lessons; suggested equivalent
+stem vowel,واکهٔ ستاک,verb,
+mood vowel,واکهٔ وجه,verb,not used in the Persian lessons; suggested equivalent
+connecting vowel,واکهٔ پیوند,verb,
+sigmatic aorist,گذشتهٔ تام سیگمایی,verb,not used in the Persian lessons; suggested equivalent
+thematic aorist,گذشتهٔ تام با واکهٔ میانجی,verb,not used in the Persian lessons; suggested equivalent
+athematic aorist,گذشتهٔ تام بدون واکهٔ میانجی,verb,not used in the Persian lessons; suggested equivalent
+liquid future,آیندهٔ روان,verb,not used in the Persian lessons; suggested equivalent
+contracted future,آیندهٔ ادغامی,verb,
+compound verb,فعل مرکب,verb,
+impersonal verb,فعل بی‌شخص,verb,not used in the Persian lessons; suggested equivalent
+middle deponent,مجهول‌نمای میانه,verb,
+passive deponent,مجهول‌نمای مجهول,verb,
+athematic deponent,مجهول‌نمای بدون واکهٔ میانجی,verb,not used in the Persian lessons; suggested equivalent
+semi-deponent,نیمه‌مجهول‌نما,verb,
+middle-only verb (media tantum),فعل تنها‌میانه,verb,not used in the Persian lessons; suggested equivalent
+meaningful middle,میانهٔ معنادار,verb,
+imperfective aspect,نمود ناقص,verb,not used in the Persian lessons; suggested equivalent
+aoristic aspect,نمود تام,verb,not used in the Persian lessons; suggested equivalent
+aspectual,نمودی,verb,
+gnomic aorist,گذشتهٔ تام حکمی,verb,
+ingressive (inceptive),آغازی,verb,
+conative,کوششی,verb,
+primary tense,زمان اصلی,verb,
+lexicalization,واژگانی‌شدن,verb,
+sigma stem,ستاک سیگمایی,noun & case,
+genitive of time,اضافهٔ زمان,noun & case,not used in the Persian lessons; suggested equivalent
+three-ending adjective,صفت سه‌پایانه‌ای,adjective & comparison,not used in the Persian lessons; suggested equivalent
+indirect discourse,گفتار غیرمستقیم,syntax & usage,not used in the Persian lessons; suggested equivalent
+indirect question,پرسش غیرمستقیم,syntax & usage,
+complementary infinitive,مصدر متمّمی,syntax & usage,not used in the Persian lessons; suggested equivalent
+subject accusative,فاعلِ در حالت رایی,syntax & usage,not used in the Persian lessons; suggested equivalent
+potential optative,تمنایی امکانی,syntax & usage,
+optative of wish,تمنایی آرزویی,syntax & usage,not used in the Persian lessons; suggested equivalent
+deliberative subjunctive,التزامی تردیدی,syntax & usage,
+primary sequence,توالی زمان‌های اصلی,syntax & usage,not used in the Persian lessons; suggested equivalent
+secondary sequence,توالی زمان‌های فرعی,syntax & usage,not used in the Persian lessons; suggested equivalent
+apodosis,بند جزا,syntax & usage,not used in the Persian lessons; suggested equivalent
+temporal clause,بند زمانی,syntax & usage,
+causal clause,بند علّی,syntax & usage,not used in the Persian lessons; suggested equivalent
+indefinite clause,بند نامعین,syntax & usage,not used in the Persian lessons; suggested equivalent
+indefinite relative,موصول نامعین,syntax & usage,not used in the Persian lessons; suggested equivalent
+predicate nominative,مسند نهادی,syntax & usage,not used in the Persian lessons; suggested equivalent
+verbs of motion,افعال حرکت,syntax & usage,not used in the Persian lessons; suggested equivalent
+recessive accent,تکیهٔ پس‌رو,phonology & writing,not used in the Persian lessons; suggested equivalent
+accent shift,جابه‌جایی تکیه,phonology & writing,not used in the Persian lessons; suggested equivalent
+compensatory lengthening,کشش جبرانی,phonology & writing,
+headword,سرواژه,general & historical,
+dictionary form,صورت واژه‌نامه‌ای,general & historical,

@@ -3,7 +3,7 @@ topic: perfect, infinitive, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Perfect Middle/Passive Infinitive of ω-Verbs
+# The Perfect Middle/Passive Infinitive (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Perfect indicative middle/passive, present middle infinitive.*

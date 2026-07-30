@@ -3,7 +3,7 @@ topic: imperfect, indicative, middle/passive (μι)
 pos: verb
 ---
 
-# Lesson: The Imperfect Indicative Middle/Passive of **‑μι** Verbs
+# The Imperfect Indicative Middle/Passive (μι-Verbs)
 
 ---
 

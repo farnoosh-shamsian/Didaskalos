@@ -3,7 +3,7 @@ topic: perfect, participle, active (ω)
 pos: verb
 ---
 
-# Lesson: The Perfect Active Participle (‑ώς, ‑υῖα, ‑ός)
+# The Perfect Active Participle (ω-Verbs)
 
 *Level: beginner–intermediate*
 *Prerequisites: the Greek alphabet, basic verb stems, the notion of the participle.*

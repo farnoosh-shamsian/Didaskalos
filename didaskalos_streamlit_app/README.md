@@ -52,6 +52,14 @@ To add a collection:
    `author`, and `license` are shown in the treebank selector (and are the metadata source for
    CoNLL-U, which has no XML header).
 
+   Check the `license` before adding a corpus. Didaskalos is distributed under CC BY-NC-SA 4.0,
+   and generated textbooks quote corpus sentences directly, so a corpus whose terms forbid
+   redistribution, or whose ShareAlike terms cannot coexist with NonCommercial (a bare
+   `CC BY-SA` corpus, for instance), creates an obligation that the project cannot satisfy for
+   the exported textbook. Public-domain, CC BY, CC BY-NC-SA, and permissive software licenses
+   are safe. Record the license verbatim — it is reproduced in the exported textbook's
+   "About This Textbook" section.
+
 3. Check that the files parse before committing:
 
    ```
@@ -68,6 +76,43 @@ To add a collection:
 A new *format* (beyond `agdt-xml`/`conllu`) is added once by writing an adapter in
 `treebank_parsers.py` and registering it in `PARSERS`; every adapter must emit the same token
 schema and normalize morphology into the 9-character postag.
+
+## Writing a lesson module
+
+Lesson files live in `lessons-no-decl/` and `lessons-decl/` (with `-fa` siblings for Persian).
+The pipeline takes each file's leading heading as the lesson's display title, so that heading is
+what a reader sees in the table of contents next to every other lesson:
+
+- One `#` heading at the top (after any YAML frontmatter), and nothing above it.
+- A plain noun phrase: `# The Aorist Indicative Active (ω-Verbs)`, `# Adverbs`. No `Lesson:`
+  prefix and no bold or italic markup — the textbook already numbers each entry and labels it a
+  module. (`normalize_lesson_title` strips these anyway, but the file should read correctly on
+  its own.)
+- Paradigm lessons follow their filename: tense, then mood, then voice, with the verb bucket in
+  parentheses — `(ω-Verbs)`, `(μι-Verbs)`, `(Irregular Verbs)`; the bucket-less fallback file
+  drops the parenthesis. Infinitives and participles read tense-voice-mood
+  (`# The Aorist Middle Infinitive (ω-Verbs)`), which is how Greek grammars name them.
+- A title must stand on its own. Lessons are ordered by corpus frequency, so any lesson can turn
+  up first: a title like "Other Adjectives" would arrive before the learner has met any
+  adjectives. Name what the lesson contains instead. Where the *order* also matters
+  pedagogically, add the lesson to `LESSON_PREREQUISITES` in `didaskalos_pipeline.py` and it will
+  be placed after the lessons it contrasts with whenever those are in the same syllabus.
+
+Translated folders use the same filenames and the same title shape in the target language, so
+`en` and `fa` tables of contents stay line-for-line parallel.
+
+Some lessons teach a concept rather than a paradigm slot. `deponent_verbs.md` and
+`irregular_verbs.md` each collect their tokens from across the whole corpus — every middle-only
+lemma, every irregular verb — instead of from one tense/mood/voice row, and appear once in the
+syllabus. Add one by giving it a label and filename constant, a branch in
+`get_topic_rows_for_label` that selects its tokens, and (if it needs to follow something) an entry
+in `LESSON_PREREQUISITES`.
+
+Two syllabus rows can also share a single lesson: `MERGED_SYLLABUS_LABELS` folds one label into
+another, adding its token count to the host lesson and its tokens to that lesson's exercise pool,
+while leaving the token-level `syllabus` value untouched for answer keys and the CSV export. The
+nominative and vocative are merged this way — the vocative repeats the nominative except in a few
+singular endings, so `nominative.md` teaches both and there is no `vocative.md`.
 
 ## Project layout
 

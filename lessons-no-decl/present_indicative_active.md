@@ -3,7 +3,7 @@ morph_type: ω-verb — present + indicative + active
 pos: verb
 ---
 
-### Introduction to ω-Verbs
+# The Present Indicative Active
 Greek categorizes verbs by the patterns of their endings, and the largest and most important category is the ω-verb. Mastering the conjugation of ω-verbs in the present indicative active is the foundation of Greek grammar. In this lesson we will explore the forms, patterns, and rules of this conjugation.
 
 ### Explanation of the Grammatical Concept

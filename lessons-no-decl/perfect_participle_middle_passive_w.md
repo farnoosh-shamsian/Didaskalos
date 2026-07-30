@@ -3,7 +3,7 @@ topic: perfect, participle, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Perfect Middle/Passive Participle of ω-Verbs
+# The Perfect Middle/Passive Participle (ω-Verbs)
 
 *For beginner–intermediate students of Ancient Greek*
 

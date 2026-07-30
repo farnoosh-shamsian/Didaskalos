@@ -3,7 +3,7 @@ topic: present, indicative, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Present Indicative Middle/Passive of ω-Verbs in Ancient Greek
+# The Present Indicative Middle/Passive (ω-Verbs)
 
 *Target audience: beginner–intermediate students who know the alphabet, the idea of a verb stem, and the concept of voice (active/middle/passive).*
 

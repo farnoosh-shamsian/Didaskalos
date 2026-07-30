@@ -5,6 +5,7 @@ import re
 import unicodedata
 import xml.etree.ElementTree as ET
 from collections import Counter
+from datetime import date
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping
@@ -193,20 +194,45 @@ def normalize_greek_lemma(lemma: str) -> str:
     return _normalize_greek_lemma_cached(lemma)
 
 
+# Treebank lemmas carry Perseus homonym numbers (λέγω3, πάρειμι1, θύω1). The
+# digit hides the ending that identifies a verb's conjugation class, which sent
+# ~3,900 tokens of perfectly regular verbs into the "irregular" bucket, so it is
+# stripped before any ending is inspected.
+_HOMONYM_DIGITS_RE = re.compile(r"\d+$")
+
+
+@lru_cache(maxsize=None)
+def lemma_conjugation_key(lemma: str) -> str:
+    return _HOMONYM_DIGITS_RE.sub("", normalize_greek_lemma(lemma))
+
+
+IRREGULAR_VERB_BUCKET = "irregular"
+
+
 def parse_verb_subcategory(lemma: str, postag: str | None = None) -> str:
     if postag and not str(postag).startswith("v"):
         return ""
 
-    lemma_n = normalize_greek_lemma(lemma)
+    lemma_n = lemma_conjugation_key(lemma)
     if not lemma_n:
         return ""
-    if lemma_n.endswith("μαι"):
-        return "deponent"
-    if lemma_n.endswith("μι"):
+    # Deponent (middle-only) lemmas are bucketed by conjugation class, the way
+    # textbooks conjugate them: thematic -ομαι (βούλομαι, contract φοβέομαι)
+    # follows the -ω paradigms, athematic -μαι (δύναμαι, ἐπίσταμαι, κεῖμαι)
+    # follows the -μι paradigms. Deponency itself is a lexical property carried
+    # separately (is_deponent_lemma), not a paradigm bucket.
+    if lemma_n.endswith("ομαι"):
+        return "w"
+    if lemma_n.endswith("μαι") or lemma_n.endswith("μι"):
         return "mi"
     if lemma_n.endswith("ω"):
         return "w"
-    return "irregular"
+    return IRREGULAR_VERB_BUCKET
+
+
+def is_deponent_lemma(lemma: str) -> bool:
+    """Middle-only ("deponent") verb: the dictionary form ends in -μαι."""
+    return lemma_conjugation_key(lemma).endswith("μαι")
 
 
 @lru_cache(maxsize=None)
@@ -239,13 +265,18 @@ NOUN_DECLENSION_LABELS = {
     "N5": "third declension consonant stem nouns",
     "N6": "third declension iota upsilon stem nouns",
     "N7": "third declension nasal liquid stem nouns",
-    "N8": "other third declension and irregular nouns",
+    # N8 and ADJ3 are residual buckets, but their labels name what is in them
+    # rather than calling them "other": frequency order can put a residual bucket
+    # first (μέγας and πολύς alone outrank whole declension classes), and a
+    # lesson titled "Other Adjectives" makes no sense as the first adjective
+    # lesson a learner meets. See LESSON_PREREQUISITES for the ordering side.
+    "N8": "sigma stem and irregular nouns",
 }
 
 ADJECTIVE_DECLENSION_LABELS = {
     "ADJ1": "first second declension adjectives",
     "ADJ2": "third declension adjectives",
-    "ADJ3": "other adjectives",
+    "ADJ3": "two ending and irregular adjectives",
 }
 
 DECLENSION_LABELS = {**NOUN_DECLENSION_LABELS, **ADJECTIVE_DECLENSION_LABELS}
@@ -279,9 +310,7 @@ IRREGULAR_ADJECTIVE_LEXICON = {
 
 
 def _classification_key(text: str) -> str:
-    normalized = normalize_greek_lemma(text)
-    normalized = re.sub(r"\d+$", "", normalized)
-    return normalized.replace("ς", "σ")  # final sigma -> sigma
+    return lemma_conjugation_key(text).replace("ς", "σ")  # final sigma -> sigma
 
 
 def _genitive_singular_signal(forms: list[str]) -> str | None:
@@ -515,6 +544,7 @@ def build_combined_df(
         lambda row: parse_verb_subcategory(row["lemma"], row["postag"]) if row["pos_category"] == "verb" else "",
         axis=1,
     )
+    combined_df["is_deponent"] = (combined_df["pos_category"] == "verb") & combined_df["lemma"].map(is_deponent_lemma)
 
     if syllabus_mode == "declension":
         combined_df = add_declension_features(combined_df)
@@ -540,6 +570,78 @@ def build_combined_df(
     return combined_df
 
 
+IRREGULAR_LESSON_LABEL = "irregular verbs"
+IRREGULAR_LESSON_FILENAME = "irregular_verbs.md"
+
+TENSE_NAMES = frozenset(TENSE_MAP.values())
+MOOD_NAMES = frozenset(MOOD_MAP.values())
+VOICE_NAMES = frozenset(VOICE_MAP.values())
+CASE_NAMES = frozenset(CASE_MAP.values())
+DECLENSION_LABEL_NAMES = frozenset(DECLENSION_LABELS.values())
+
+
+def is_decodable_verb_label(label: str) -> bool:
+    """True when a verb row names a real tense, mood and voice.
+
+    ``parse_postag`` passes an unmarked slot through as "unknown" and an
+    undefined tagset code through unchanged, so rows like "present, unknown,
+    active" or "aorist, indicative, d" reach the syllabus looking like paradigms.
+    The concept lessons, which are not tense/mood/voice rows at all, are exempt.
+    """
+    text = str(label)
+    if text in {IRREGULAR_LESSON_LABEL, DEPONENT_LESSON_LABEL}:
+        return True
+    base_label, _ = split_syllabus_label_and_bucket(text)
+    parts = [part.strip() for part in base_label.split(",")]
+    if len(parts) != 3:
+        return False
+    tense, mood, voice = parts
+    return tense in TENSE_NAMES and mood in MOOD_NAMES and voice in VOICE_NAMES
+
+
+def is_decodable_nominal_label(label: str) -> bool:
+    """True when a noun/adjective row names a real case or declension class.
+
+    The case slot of a postag can be unmarked ("unknown") or absent entirely
+    ("_" in CoNLL-U), which produces rows no lesson can serve. Both syllabus
+    modes are accepted here: case mode labels a nominal row with its case,
+    declension mode with its declension class.
+    """
+    return str(label) in CASE_NAMES or str(label) in DECLENSION_LABEL_NAMES
+
+# In these tenses the middle and the passive are the same form, so one
+# middle/passive lesson teaches both. The aorist and future are excluded: they
+# build the passive on a separate -θη-/-θησ- stem and need lessons of their own.
+VOICE_SYNCRETIC_TENSES = ("present", "imperfect", "perfect", "pluperfect", "future perfect")
+
+# ...except where a single-voice lesson was deliberately written. These two keep
+# their own module, so their rows must not be folded into the middle/passive one.
+UNMERGED_SINGLE_VOICE_LABELS = frozenset(
+    {"present, indicative, middle (w)", "imperfect, indicative, middle (w)"}
+)
+
+
+def _syncretic_voice_merges() -> dict[str, str]:
+    merges: dict[str, str] = {}
+    for tense in VOICE_SYNCRETIC_TENSES:
+        for mood in MOOD_MAP.values():
+            for bucket in ("", " (w)", " (mi)"):
+                target = f"{tense}, {mood}, middle/passive{bucket}"
+                for voice in ("middle", "passive"):
+                    source = f"{tense}, {mood}, {voice}{bucket}"
+                    if source not in UNMERGED_SINGLE_VOICE_LABELS:
+                        merges[source] = target
+    return merges
+
+
+# Syllabus rows that share another row's lesson. The merge is at the row level
+# only — the token-level "syllabus" value is untouched, so exercise answer keys
+# and the combined-rows export still name the real case and voice of a form.
+# The vocative repeats the nominative everywhere except a few singular endings,
+# so nominative.md covers both and there is no vocative.md.
+MERGED_SYLLABUS_LABELS = {"vocative": "nominative", **_syncretic_voice_merges()}
+
+
 def build_frequency_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
     if combined_df is None or combined_df.empty:
         return pd.DataFrame(columns=["syllabus", "pos_category", "frequency", "syllabus_normalized"])
@@ -555,10 +657,18 @@ def build_frequency_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
         combined_df["syllabus"].astype(str) + " (" + combined_df["verb_subcategory"].astype(str) + ")",
     )
 
+    # The irregular verbs are not a conjugation class: they are ~150 suppletive
+    # aorists (εἶπον, εἶδον), perfects with present meaning (οἶδα, ἔοικα) and
+    # impersonals (δεῖ, χρή), each defective in its own way. Split by
+    # tense/mood/voice they produced 57 thin lessons, so they collapse into one
+    # concept lesson instead — the same treatment deponency gets.
+    irregular_mask = verb_mask & combined_df["verb_subcategory"].astype(str).eq(IRREGULAR_VERB_BUCKET)
+    syllabus_with_verb_bucket = syllabus_with_verb_bucket.where(~irregular_mask, IRREGULAR_LESSON_LABEL)
+
     frequency_syllabus = (
         pd.DataFrame(
             {
-                "syllabus": syllabus_with_verb_bucket,
+                "syllabus": syllabus_with_verb_bucket.replace(MERGED_SYLLABUS_LABELS),
                 "pos_category": combined_df["pos_category"],
             }
         )
@@ -575,7 +685,20 @@ def build_frequency_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
         frequency_syllabus["pos_category"].astype(str).eq("other")
         & frequency_syllabus["syllabus_normalized"].astype(str).isin(skip_labels)
     )
-    frequency_syllabus = frequency_syllabus.loc[~skip_mask].reset_index(drop=True)
+
+    # Same treatment for verb rows the source treebank left unmarked or mis-tagged
+    # ("present, unknown, active", "aorist, indicative, d"): a slot that decodes to
+    # nothing is not a paradigm, so no lesson can be written for it and it should
+    # not occupy a place in the syllabus.
+    pos_series = frequency_syllabus["pos_category"].astype(str)
+    undecodable_mask = (
+        pos_series.eq("verb") & ~frequency_syllabus["syllabus"].apply(is_decodable_verb_label)
+    ) | (
+        pos_series.eq("noun/adjective")
+        & ~frequency_syllabus["syllabus"].apply(is_decodable_nominal_label)
+    )
+
+    frequency_syllabus = frequency_syllabus.loc[~(skip_mask | undecodable_mask)].reset_index(drop=True)
 
     return frequency_syllabus
 
@@ -623,9 +746,16 @@ NUMBER_MAP = {"s": "singular", "p": "plural", "d": "dual", "-": "not marked"}
 _GREEK_LETTER = "Ͱ-Ͽἀ-῿"
 _GREEK_MARKS = "̀-ͯ᾽᾿’'"
 _GREEK_TOKEN = f"[{_GREEK_LETTER}][{_GREEK_LETTER}{_GREEK_MARKS}]*"
-_GREEK_SEP = "[  ,;.··‐‑-]+"
-# A tag-free phrase: Greek tokens joined by spaces/neutral punctuation.
-_GREEK_PHRASE = f"{_GREEK_TOKEN}(?:{_GREEK_SEP}{_GREEK_TOKEN})*"
+# The Arabic comma and semicolon are separators too: a Persian lesson writes its
+# Greek lists with «،», and if that ended the run every form became its own isolate
+# and the paradigm displayed right-to-left — first person last.
+_GREEK_SEP = "[  ,،;؛.··‐‑-]+"
+# A parenthesised tail belongs to the word in front of it: the movable ν of
+# ἐστί(ν) has to stay inside the run, or it is isolated on its own and jumps past
+# the form it belongs to.
+_GREEK_WORD = rf"{_GREEK_TOKEN}(?:\([{_GREEK_LETTER}{_GREEK_MARKS}]+\))?"
+# A tag-free phrase: Greek words joined by spaces/neutral punctuation.
+_GREEK_PHRASE = f"{_GREEK_WORD}(?:{_GREEK_SEP}{_GREEK_WORD})*"
 # A phrase wrapped in one balanced inline element (e.g. <strong>δέ</strong>,
 # rendered from **δέ**), so emphasis inside a Greek sentence does not split
 # the run into separate isolates and reverse the word order.
@@ -717,16 +847,46 @@ def decode_marked_verb_features(postag: str) -> dict[str, str]:
     }
 
 
+DEPONENT_LESSON_LABEL = "deponent verbs"
+DEPONENT_LESSON_FILENAME = "deponent_verbs.md"
+
+
 def get_topic_rows_for_label(syllabus_label: str, combined_df: pd.DataFrame) -> pd.DataFrame:
-    base_label, verb_bucket = split_syllabus_label_and_bucket(syllabus_label)
-    if verb_bucket is None:
-        direct = combined_df[combined_df["syllabus"] == syllabus_label].copy()
-        if not direct.empty:
-            return direct
-    else:
-        direct = combined_df[combined_df["syllabus"] == base_label].copy()
-        if not direct.empty:
-            return direct[(direct["pos_category"] == "verb") & (direct["verb_subcategory"] == verb_bucket)]
+    # The synthetic "deponent verbs" concept lesson draws on every deponent
+    # (middle-only lemma) verb token regardless of tense/mood/voice.
+    if normalize_frequency_row_name(str(syllabus_label)) == normalize_frequency_row_name(DEPONENT_LESSON_LABEL):
+        if "is_deponent" in combined_df.columns:
+            return combined_df[(combined_df["pos_category"] == "verb") & combined_df["is_deponent"]].copy()
+        return combined_df.iloc[0:0].copy()
+
+    # Likewise the "irregular verbs" lesson: every token of an irregular verb,
+    # whatever tense, mood or voice it is in.
+    if normalize_frequency_row_name(str(syllabus_label)) == normalize_frequency_row_name(IRREGULAR_LESSON_LABEL):
+        return combined_df[
+            (combined_df["pos_category"] == "verb")
+            & combined_df["verb_subcategory"].astype(str).eq(IRREGULAR_VERB_BUCKET)
+        ].copy()
+
+    # A lesson that absorbed other rows (nominative + vocative, or a middle and a
+    # passive row folded into one middle/passive lesson) draws on the tokens of
+    # all of them, so its exercises can show any of those forms.
+    candidate_labels = [str(syllabus_label)] + [
+        source for source, target in MERGED_SYLLABUS_LABELS.items() if target == syllabus_label
+    ]
+
+    matched = []
+    for candidate in candidate_labels:
+        base_label, verb_bucket = split_syllabus_label_and_bucket(candidate)
+        rows = combined_df[combined_df["syllabus"] == base_label]
+        if verb_bucket is not None:
+            rows = rows[
+                (rows["pos_category"] == "verb") & (rows["verb_subcategory"] == verb_bucket)
+            ]
+        if not rows.empty:
+            matched.append(rows)
+
+    if matched:
+        return pd.concat(matched).copy() if len(matched) > 1 else matched[0].copy()
 
     normalized_target = normalize_frequency_row_name(syllabus_label)
     normalized_series = combined_df["syllabus"].apply(normalize_frequency_row_name)
@@ -734,8 +894,6 @@ def get_topic_rows_for_label(syllabus_label: str, combined_df: pd.DataFrame) -> 
     verb_suffix_map = {
         "_w": "w",
         "_mi": "mi",
-        "_deponent": "deponent",
-        "_irregular": "irregular",
     }
 
     for suffix, raw_bucket in verb_suffix_map.items():
@@ -1249,19 +1407,20 @@ def _format_exercise_verb(
         sentence_answers = []
         for _, verb_row in sentence_rows.iterrows():
             features = decode_marked_verb_features(verb_row.get("postag", ""))
-            sentence_answers.append(
-                t(
-                    "tb_verb_answer",
-                    lang,
-                    form=_ltr_isolate(str(verb_row.get("form", "")), rtl),
-                    lemma=_ltr_isolate(str(verb_row.get("lemma", "")), rtl),
-                    person=_feature_label(features["person"], lang),
-                    number=_feature_label(features["number"], lang),
-                    tense=_feature_label(features["tense"], lang),
-                    voice=_feature_label(features["voice"], lang),
-                    mood=_feature_label(features["mood"], lang),
-                )
+            answer = t(
+                "tb_verb_answer",
+                lang,
+                form=_ltr_isolate(str(verb_row.get("form", "")), rtl),
+                lemma=_ltr_isolate(str(verb_row.get("lemma", "")), rtl),
+                person=_feature_label(features["person"], lang),
+                number=_feature_label(features["number"], lang),
+                tense=_feature_label(features["tense"], lang),
+                voice=_feature_label(features["voice"], lang),
+                mood=_feature_label(features["mood"], lang),
             )
+            if is_deponent_lemma(str(verb_row.get("lemma", ""))):
+                answer += f" ({t('feat_deponent_note', lang)})"
+            sentence_answers.append(answer)
 
         lines.append(f"{idx}. " + " | ".join(sentence_answers))
 
@@ -1320,6 +1479,85 @@ def generate_exercises_for_topic(
     return "\n".join(exercise_blocks)
 
 
+# Lesson files carry their own display title (the leading heading), so the table
+# of contents is only as uniform as those files are. Titles are normalized on the
+# way in: the textbook already numbers every entry and labels it a module, so a
+# "Lesson:" / "درس:" prefix is redundant, and emphasis markup would make one
+# entry shout in an otherwise plain contents list.
+LESSON_TITLE_PREFIX_RE = re.compile(
+    r"^\s*(?:lesson|module|unit|chapter|درس|بخش|مبحث|فصل)\s*[:：]\s*",
+    re.IGNORECASE,
+)
+
+
+def normalize_lesson_title(title: str) -> str:
+    cleaned = re.sub(r"^\s*#{1,6}\s+", "", str(title))
+    cleaned = LESSON_TITLE_PREFIX_RE.sub("", cleaned)
+    cleaned = re.sub(r"\*{1,3}(.+?)\*{1,3}", r"\1", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" #*_")
+    return cleaned
+
+
+# Lessons that read as a contrast with a class the learner is assumed to know
+# already — the residual declension buckets and the irregular-verb paradigms.
+# Frequency order alone can put them before the class they contrast with, so each
+# declares the lessons it should follow. A lesson whose prerequisites are all
+# absent from this syllabus keeps its frequency position; its title stands on its
+# own, so nothing dangles.
+LESSON_PREREQUISITES: dict[str, tuple[str, ...]] = {
+    "two_ending_and_irregular_adjectives": (
+        "first_second_declension_adjectives",
+        "third_declension_adjectives",
+    ),
+    "sigma_stem_and_irregular_nouns": (
+        "third_declension_consonant_stem_nouns",
+        "third_declension_iota_upsilon_stem_nouns",
+        "third_declension_nasal_liquid_stem_nouns",
+    ),
+    # An irregular verb is only recognizable as irregular against a paradigm the
+    # learner already knows.
+    "irregular_verbs": (
+        "present_indicative_active_w",
+        "aorist_indicative_active_w",
+    ),
+}
+
+
+def lesson_prerequisites(normalized_label: str) -> tuple[str, ...]:
+    """Normalized labels that should precede ``normalized_label``, if present."""
+    return LESSON_PREREQUISITES.get(normalized_label, ())
+
+
+def apply_lesson_prerequisite_order(lesson_data: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Move each dependent lesson just past the last prerequisite that outranks it.
+
+    Everything else keeps its frequency position, so the syllabus stays
+    frequency-ordered apart from these local swaps.
+    """
+    normalized = [normalize_frequency_row_name(str(lesson["label"])) for lesson in lesson_data]
+
+    for _ in range(len(lesson_data)):
+        for position, label in enumerate(normalized):
+            prerequisites = lesson_prerequisites(label)
+            if not prerequisites:
+                continue
+            last_prerequisite = max(
+                (index for index, other in enumerate(normalized) if other in prerequisites),
+                default=-1,
+            )
+            if last_prerequisite <= position:
+                continue
+            lesson_data.insert(last_prerequisite, lesson_data.pop(position))
+            normalized.insert(last_prerequisite, normalized.pop(position))
+            break
+        else:
+            break
+
+    for index, lesson in enumerate(lesson_data, 1):
+        lesson["rank"] = index
+    return lesson_data
+
+
 def _split_lesson_title(lesson_text: str) -> tuple[str | None, str]:
     """Return ``(title, body)`` where ``title`` is the lesson file's leading
     heading (if any) and ``body`` is the remaining markdown.
@@ -1347,6 +1585,95 @@ def _split_lesson_title(lesson_text: str) -> tuple[str | None, str]:
     return None, "\n".join(lines[start:]).lstrip("\n")
 
 
+def _render_source_summary(
+    source_summary: Mapping[str, Any],
+    lesson_count: int,
+    syllabus_mode: str,
+    lang: str = DEFAULT_LANG,
+) -> list[str]:
+    """Markdown lines for the "About This Textbook" front-matter block.
+
+    Describes the build setting (lesson count / corpus size / how the syllabus is
+    organized), the works the frequency analysis was built on (grouped by
+    author), and the corpora used (name, description, license, source link), and
+    closes with the copyright and license statement for the textbook itself.
+    Returns an empty list when there is nothing to show so the caller can skip the
+    section cleanly.
+    """
+    works = list(source_summary.get("works") or [])
+    corpora = list(source_summary.get("corpora") or [])
+    has_custom = bool(source_summary.get("has_custom_sources"))
+    if not works and not corpora and not has_custom:
+        return []
+
+    mode_key = (
+        "tb_syllabus_mode_declension" if syllabus_mode == "declension" else "tb_syllabus_mode_case"
+    )
+
+    lines: list[str] = [f"## {t('tb_about_header', lang)}", ""]
+
+    # --- Setting: one sentence describing the build parameters. ---
+    setting_body = t(
+        "tb_setting_body",
+        lang,
+        lesson_count=int(lesson_count),
+        work_count=int(source_summary.get("work_count", len(works))),
+        token_count=int(source_summary.get("token_count", 0)),
+        mode=t(mode_key, lang),
+    )
+    lines.append(f"**{t('tb_setting_label', lang)}** {setting_body}")
+    lines.append("")
+
+    # --- Texts included, grouped by author (author-less works bucketed last). ---
+    if works:
+        lines.append(f"**{t('tb_texts_label', lang)}**")
+        lines.append("")
+        grouped: dict[str, list[str]] = {}
+        for author, work in works:
+            key = author or t("tb_unknown_author", lang)
+            grouped.setdefault(key, []).append(work)
+        for author in sorted(grouped):
+            lines.append(f"- **{author}** — {', '.join(grouped[author])}")
+        lines.append("")
+
+    # --- Corpora used: name — license (Source link). Description. ---
+    if corpora or has_custom:
+        lines.append(f"**{t('tb_corpora_label', lang)}**")
+        lines.append("")
+        for corpus in corpora:
+            name = (corpus.get("name") or "").strip()
+            if not name:
+                continue
+            license_name = (corpus.get("license") or "").strip()
+            head = [
+                t("tb_corpus_line", lang, name=name, license=license_name)
+                if license_name
+                else f"**{name}**"
+            ]
+            source_url = (corpus.get("source_url") or "").strip()
+            if source_url:
+                head.append(f"([{t('tb_corpus_source_label', lang)}]({source_url}))")
+            line = f"- {' '.join(head)}"
+            desc_key = f"tb_corpus_desc_{corpus.get('id')}"
+            desc = t(desc_key, lang)
+            if desc and desc != desc_key:
+                line += f". {desc}"
+            lines.append(line)
+        if has_custom:
+            lines.append(f"- {t('tb_corpus_custom', lang)}")
+        lines.append("")
+
+    # --- Copyright and license for the generated textbook itself. Exported files
+    # leave the app entirely, so this is the only place a downstream reader can
+    # learn the terms. The ShareAlike corpora above oblige us to state them.
+    lines.append(f"**{t('tb_license_label', lang)}** {t('tb_copyright', lang, year=date.today().year)}")
+    lines.append("")
+    lines.append(t("tb_license_body", lang))
+    lines.append("")
+
+    return lines
+
+
 def generate_textbook_markdown(
     frequency_syllabus: pd.DataFrame,
     grammar_folder: str | Path,
@@ -1354,9 +1681,10 @@ def generate_textbook_markdown(
     combined_df: pd.DataFrame | None = None,
     syllabus_mode: str = "case",
     lang: str = DEFAULT_LANG,
+    source_summary: Mapping[str, Any] | None = None,
 ) -> str:
     starter_modules = ["about", "alphabet", "introduction_nouns", "introduction_adjectives", "introduction_verbs"]
-    lesson_separator = "════════════════════ ⟡ ════════════════════"
+    lesson_separator = "═════ ⟡ ═════"
     lesson_separator_markup = f"<div align=\"center\" style=\"font-size: 200%; line-height: 1.2;\">{lesson_separator}</div>"
 
     rtl = is_rtl(lang)
@@ -1407,6 +1735,34 @@ def generate_textbook_markdown(
             }
         )
 
+    apply_lesson_prerequisite_order(lesson_data)
+
+    # Deponency is a lexical property, not a paradigm of its own: deponent
+    # tokens are counted inside the regular voice lessons, and one concept
+    # lesson introduces them right after the learner first meets the middle
+    # voice. If no middle-voice lesson made the cut, the concept lesson is not
+    # needed either.
+    for position, lesson in enumerate(lesson_data):
+        if lesson["is_starter"] or "middle" not in normalize_frequency_row_name(str(lesson["label"])):
+            continue
+        deponent_frequency: int | str = "—"
+        if combined_df is not None and "is_deponent" in combined_df.columns:
+            deponent_frequency = int(combined_df["is_deponent"].sum())
+        lesson_data.insert(
+            position + 1,
+            {
+                "rank": 0,
+                "label": DEPONENT_LESSON_LABEL,
+                "pos_category": "verb",
+                "frequency": deponent_frequency,
+                "filename": DEPONENT_LESSON_FILENAME,
+                "is_starter": False,
+            },
+        )
+        for index, entry in enumerate(lesson_data, 1):
+            entry["rank"] = index
+        break
+
     grammar_folder = Path(grammar_folder)
 
     # Load lesson bodies up front so the table of contents can use each file's
@@ -1424,7 +1780,7 @@ def generate_textbook_markdown(
             lesson["body"] = f"*{t('tb_error_reading', lang, error=exc)}*"
             continue
         if title:
-            lesson["display_label"] = title
+            lesson["display_label"] = normalize_lesson_title(title) or lesson["label"]
         lesson["body"] = body
 
     markdown_content = []
@@ -1432,6 +1788,12 @@ def generate_textbook_markdown(
     markdown_content.append("")
     markdown_content.append(intro_text)
     markdown_content.append("")
+
+    if source_summary:
+        markdown_content.extend(
+            _render_source_summary(source_summary, lesson_count, syllabus_mode, lang)
+        )
+
     markdown_content.append(f"## {t('tb_toc_header', lang)}")
     markdown_content.append("")
 
@@ -1531,6 +1893,7 @@ def generate_textbook_html(
     syllabus_mode: str = "case",
     lang: str = DEFAULT_LANG,
     markdown_content: str | None = None,
+    source_summary: Mapping[str, Any] | None = None,
 ) -> str:
     rtl = is_rtl(lang)
     if doc_title is None:
@@ -1544,6 +1907,7 @@ def generate_textbook_html(
             combined_df=combined_df,
             syllabus_mode=syllabus_mode,
             lang=lang,
+            source_summary=source_summary,
         )
     # "extra" bundles md_in_html, which keeps parsing the markdown inside the
     # <div dir="rtl" markdown="1"> document wrapper.

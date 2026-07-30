@@ -3,7 +3,7 @@ topic: perfect, indicative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Perfect Indicative Active (ω-Verbs) in Ancient Greek
+# The Perfect Indicative Active (ω-Verbs)
 
 *Target level: Beginner–Intermediate*
 
@@ -63,7 +63,7 @@ The label **(ω)** means this lesson concerns ω-verbs; the perfect itself ends 
 |------|------|-------|
 | **οἶδα** | I know | perfect of the root ἰδ‑ "see": "I have seen → I know" |
 | **ἕστηκα** | I stand | from ἵστημι |
-| **τέθνηκε** | he is dead | from θνῄσκω |
+| **τέθνηκα** | I am dead | from θνῄσκω |
 | **μέμνημαι** | I remember | middle, from μιμνῄσκω |
 
 ---

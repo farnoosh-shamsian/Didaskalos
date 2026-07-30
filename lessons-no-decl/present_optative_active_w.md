@@ -3,7 +3,7 @@ topic: present, optative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Present Optative Active (‑ω Verbs)
+# The Present Optative Active (ω-Verbs)
 
 *Level: beginner–intermediate*
 *Prerequisites: the Greek alphabet, basic noun declension, the present indicative active endings*

@@ -3,7 +3,7 @@ topic: aorist, imperative, active (ω)
 pos: verb
 ---
 
-# Lesson: The Aorist Imperative Active (endings ‑σον / ‑σατε)
+# The Aorist Imperative Active (ω-Verbs)
 
 ---
 

@@ -3,7 +3,7 @@ topic: present, subjunctive, middle/passive (ω)
 pos: verb
 ---
 
-# Lesson: The Present Subjunctive Middle/Passive of ω-Verbs
+# The Present Subjunctive Middle/Passive (ω-Verbs)
 
 *Target level: Intermediate*
 *Prerequisites: Present subjunctive active, present indicative middle/passive.*
@@ -94,7 +94,7 @@ Deponent verbs use exactly these endings with active meaning:
 
 1. **Purpose clauses** — ἵνα, ὅπως, ὡς + subjunctive after a primary tense.
 2. **Future more vivid conditions** — ἐάν + subjunctive: ἐὰν μάχωνται …
-3. **Indefinite clauses** — ὅταν, ὃς ἄν, ἐπειδὰν + subjunctive for repeated or unspecified occasions.
+3. **Indefinite clauses** — ὅταν, ὃς ἄν, ἐπειδάν + subjunctive for repeated or unspecified occasions.
 4. **Hortatory** — 1st person plural, especially with deponents: μὴ φοβώμεθα, πειθώμεθα τοῖς νόμοις.
 5. **Clauses of fearing** — φοβοῦμαι μὴ γίγνηται "I fear that it is happening."
 6. **Aspect** — present subjunctive = ongoing or repeated; aorist subjunctive = a single act. The choice is aspectual, never temporal.
