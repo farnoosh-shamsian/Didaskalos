@@ -15,7 +15,7 @@ This folder contains the Streamlit web app for Didaskalos. I'm just testing out 
 ## GitHub sources used by default
 
 - Treebank collections: listed in [treebanks/registry.json](https://github.com/farnoosh-shamsian/didaskalos/blob/main/treebanks/registry.json) (Perseus by default)
-- Lesson modules: [lessons-no-decl](https://github.com/farnoosh-shamsian/didaskalos/tree/main/lessons-no-decl)
+- Lesson modules: [lessons/en](https://github.com/farnoosh-shamsian/didaskalos/tree/main/lessons/en) (Persian: [lessons/fa](https://github.com/farnoosh-shamsian/didaskalos/tree/main/lessons/fa))
 - App folder: [didaskalos_streamlit_app](https://github.com/farnoosh-shamsian/didaskalos/tree/main/didaskalos_streamlit_app)
 
 ## Adding a treebank collection
@@ -79,7 +79,9 @@ schema and normalize morphology into the 9-character postag.
 
 ## Writing a lesson module
 
-Lesson files live in `lessons-no-decl/` and `lessons-decl/` (with `-fa` siblings for Persian).
+Lesson files live in one folder per language: `lessons/en/` and `lessons/fa/`. Each folder holds
+both the case modules and the declension-class modules — the two sets share no filenames, so the
+syllabus mode selects which of them the textbook uses, not which folder is read.
 The pipeline takes each file's leading heading as the lesson's display title, so that heading is
 what a reader sees in the table of contents next to every other lesson:
 
@@ -98,8 +100,9 @@ what a reader sees in the table of contents next to every other lesson:
   pedagogically, add the lesson to `LESSON_PREREQUISITES` in `didaskalos_pipeline.py` and it will
   be placed after the lessons it contrasts with whenever those are in the same syllabus.
 
-Translated folders use the same filenames and the same title shape in the target language, so
-`en` and `fa` tables of contents stay line-for-line parallel.
+`lessons/fa/` uses the same filenames as `lessons/en/` and the same title shape in the target
+language, so the two tables of contents stay line-for-line parallel. Keeping the languages in
+separate folders is what lets a translated file shadow its English counterpart by name.
 
 Some lessons teach a concept rather than a paradigm slot. `deponent_verbs.md` and
 `irregular_verbs.md` each collect their tokens from across the whole corpus — every middle-only

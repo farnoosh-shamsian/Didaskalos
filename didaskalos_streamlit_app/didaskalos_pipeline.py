@@ -255,8 +255,9 @@ POSTAG_CASE_INDEX = 7
 
 # Label text drives the lesson filename via normalize_frequency_row_name
 # (e.g. "first declension feminine nouns" -> first_declension_feminine_nouns.md),
-# so it must stay in sync with the lessons-decl/ file names. The short code
-# (N1..N8, ADJ1..ADJ3) is kept only as the dict key / declension_code column.
+# so it must stay in sync with the declension module file names in lessons/en/.
+# The short code (N1..N8, ADJ1..ADJ3) is kept only as the dict key /
+# declension_code column.
 NOUN_DECLENSION_LABELS = {
     "N1": "first declension feminine nouns",
     "N2": "first declension masculine nouns",

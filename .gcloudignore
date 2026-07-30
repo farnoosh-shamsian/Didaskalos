@@ -6,12 +6,7 @@
 **/__pycache__/
 *.pyc
 .claude/
-experiments/
+archive/
 treebanks/
 docs/
-grammar-module-ragbot/
-lessons-decl/
-lessons-decl-fa/
-lessons-no-decl/
-lessons-no-decl-fa/
-Didaskalos-sandbox.ipynb
+lessons/

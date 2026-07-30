@@ -127,22 +127,14 @@ FETCH_MAX_WORKERS = 8
 # the largest treebanks (Iliad ~20 MB), so a bounded range read is enough to
 # populate the selector table without downloading whole files.
 METADATA_HEADER_BYTES = 65536
-LESSON_PREFIX = "lessons-no-decl/"
-DECLENSION_LESSON_PREFIX = "lessons-decl/"
-# Per-language lesson folders. Files keep the same names as the English
-# originals so the pipeline's filename-based lesson lookup works unchanged; a
-# translated file shadows its English counterpart, missing ones fall back.
-LOCALIZED_LESSON_PREFIXES = {
-    "fa": {
-        LESSON_PREFIX: "lessons-no-decl-fa/",
-        DECLENSION_LESSON_PREFIX: "lessons-decl-fa/",
-    },
-}
-LESSON_PREFIXES = (LESSON_PREFIX, DECLENSION_LESSON_PREFIX) + tuple(
-    localized_prefix
-    for mapping in LOCALIZED_LESSON_PREFIXES.values()
-    for localized_prefix in mapping.values()
-)
+# One lesson folder per language, holding both the case modules and the
+# declension-class modules; the two sets share no filenames, so the syllabus mode
+# no longer picks a folder. Files keep the same names across languages so the
+# pipeline's filename-based lesson lookup works unchanged; a translated file
+# shadows its English counterpart, missing ones fall back.
+LESSON_PREFIX = "lessons/en/"
+LOCALIZED_LESSON_PREFIXES = {"fa": "lessons/fa/"}
+LESSON_PREFIXES = (LESSON_PREFIX,) + tuple(LOCALIZED_LESSON_PREFIXES.values())
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STARTER_LESSON_FILES = [
     "about.md",
@@ -513,15 +505,10 @@ def _dedupe_lesson_urls_by_filename(urls: list[str]) -> list[str]:
     return deduped
 
 
-def _resolve_default_lesson_urls(syllabus_mode: str = "case", lang: str = DEFAULT_LANG) -> list[str]:
-    # In declension mode, list the declension lesson modules first so they keep
-    # their canonical filenames if a module exists in both folders.
-    base_prefixes = [DECLENSION_LESSON_PREFIX, LESSON_PREFIX] if syllabus_mode == "declension" else [LESSON_PREFIX]
-
-    # Localized folders come first so translated modules shadow the English
-    # originals; untranslated modules still resolve via the English folders.
-    localized = LOCALIZED_LESSON_PREFIXES.get(lang, {})
-    prefixes = [localized[prefix] for prefix in base_prefixes if prefix in localized] + base_prefixes
+def _resolve_default_lesson_urls(lang: str = DEFAULT_LANG) -> list[str]:
+    # Localized folder comes first so translated modules shadow the English
+    # originals; untranslated modules still resolve via the English folder.
+    prefixes = [prefix for prefix in (LOCALIZED_LESSON_PREFIXES.get(lang), LESSON_PREFIX) if prefix]
 
     merged: list[str] = []
     for prefix in prefixes:
@@ -809,7 +796,7 @@ with st.sidebar:
 
     if input_mode == "github":
         default_treebank_entries = load_registered_treebank_urls()
-        default_lesson_urls = _resolve_default_lesson_urls(syllabus_mode, lang)
+        default_lesson_urls = _resolve_default_lesson_urls(lang)
 
         with st.expander(t("custom_treebank_urls_expander", lang), expanded=False):
             custom_treebank_url_input = st.text_area(
@@ -833,7 +820,7 @@ with st.sidebar:
             accept_multiple_files=True,
             help=t("upload_help", lang),
         )
-        default_lesson_urls = _resolve_default_lesson_urls(syllabus_mode, lang)
+        default_lesson_urls = _resolve_default_lesson_urls(lang)
         treebank_records = _build_records_from_uploads(uploaded_treebanks)
         lesson_records = _build_records_from_urls(default_lesson_urls)
 
