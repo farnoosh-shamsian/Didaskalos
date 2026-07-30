@@ -36,7 +36,7 @@ These criteria allow the system to prioritize simpler, more accessible sentences
 
 ## Grammar Module Generation
 
-Initial versions of grammatical explanation modules were produced using a Retrieval-Augmented Generation (RAG) pipeline based on standard reference grammars (including Smyth and Crosby & Schaeffer). Current work focuses on refining these modules and preparing them for localization and translation.
+Initial versions of grammatical explanation modules were produced using a Retrieval-Augmented Generation (RAG) pipeline based on standard reference grammars (including Smyth and Crosby & Schaeffer). That pipeline has since been superseded by hand-written modules and is kept for reference in [`archive/ragbot/`](archive/ragbot/). Current work focuses on refining these modules and preparing them for localization and translation.
 The generation pipeline is language-independent. Scaling to additional languages primarily requires translation and adaptation of grammar modules.
 This enables the production of textbooks in multiple target languages without modification to the underlying system. Current work will soon also include localization into Persian.
 
