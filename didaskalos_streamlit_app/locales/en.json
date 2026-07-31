@@ -136,5 +136,8 @@
   "feat_middle_passive": "middle/passive",
   "feat_not_marked": "not marked",
   "feat_unknown": "unknown",
-  "feat_deponent_note": "deponent — active in meaning"
+  "feat_deponent_note": "deponent — active in meaning",
+  "idle_title": "Still there?",
+  "idle_body": "This session will close in {seconds} seconds so the server can shut down.",
+  "idle_stay": "I'm still here"
 }

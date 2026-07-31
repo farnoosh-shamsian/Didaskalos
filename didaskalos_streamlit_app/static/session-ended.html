@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+  Landing page for a session closed by the idle watcher (see idle_timeout.py).
+
+  Deliberately static and self-contained: it is served by Streamlit's static file
+  handler as one plain HTTP request, so reaching it opens no websocket and keeps
+  no Cloud Run instance alive. No webfonts or other external requests, for the
+  same reason. Both languages are inlined and picked from ?lang= because a static
+  file cannot consult the app's locale JSON.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Didaskalos</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    color: #212529;
+    font-family: 'Source Sans Pro', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+  body[dir="rtl"] {
+    font-family: 'Noto Naskh Arabic', 'B Lotus', Tahoma, sans-serif;
+  }
+  .card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 40px 44px;
+    max-width: 460px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+  h1 { margin: 0 0 14px; font-size: 1.5rem; color: #0b7285; }
+  p { margin: 0 0 26px; font-size: 1.05rem; }
+  a.restart {
+    display: inline-block;
+    background: #0b7285;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 11px 26px;
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1 id="title"></h1>
+  <p id="body"></p>
+  <a class="restart" id="restart" href="/"></a>
+</div>
+<script>
+  var TEXT = {
+    en: {
+      title: "Session closed",
+      body: "This session was closed after a period of inactivity, so the server could shut down. Nothing was lost — start again whenever you like.",
+      restart: "Start again",
+      dir: "ltr"
+    },
+    fa: {
+      title: "نشست بسته شد",
+      body: "این نشست پس از مدتی بی‌فعالیت بسته شد تا سرور خاموش شود. چیزی از دست نرفته — هر وقت خواستید دوباره شروع کنید.",
+      restart: "شروع دوباره",
+      dir: "rtl"
+    }
+  };
+
+  var lang = new URLSearchParams(window.location.search).get("lang");
+  var text = TEXT[lang] || TEXT.en;
+
+  document.documentElement.lang = TEXT[lang] ? lang : "en";
+  document.body.setAttribute("dir", text.dir);
+  document.getElementById("title").textContent = text.title;
+  document.getElementById("body").textContent = text.body;
+
+  var restart = document.getElementById("restart");
+  restart.textContent = text.restart;
+  // Send them back into the app in the language they were using.
+  restart.href = TEXT[lang] ? "/?lang=" + encodeURIComponent(lang) : "/";
+</script>
+</body>
+</html>

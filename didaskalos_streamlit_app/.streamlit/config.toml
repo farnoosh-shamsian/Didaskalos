@@ -9,3 +9,7 @@ textColor = "#212529"
 headless = true
 port = 8080
 enableCORS = false
+# Serves ./static/ at /app/static/. The idle watcher parks timed-out tabs on
+# static/session-ended.html, which has to be reachable without opening a
+# Streamlit session — that is the whole point of sending them there.
+enableStaticServing = true

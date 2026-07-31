@@ -40,6 +40,7 @@ from didaskalos_pipeline import (
     generate_textbook_markdown,
 )
 from i18n import AVAILABLE_LANGS, DEFAULT_LANG, LANG_NAMES, is_rtl, rtl_css, t
+from idle_timeout import render_idle_watcher
 from work_catalog import resolve_author_work, tlg_work_key
 
 
@@ -70,6 +71,10 @@ if st.query_params.get("lang") != lang:
     st.query_params["lang"] = lang
 if is_rtl(lang):
     st.markdown(rtl_css(), unsafe_allow_html=True)
+
+# Installed before any st.stop() below, so an abandoned tab is still timed out
+# even on the paths that abort the page early.
+render_idle_watcher(lang)
 
 
 def _sync_lang_query_param() -> None:
