@@ -1,66 +1,130 @@
 # Didaskalos
 
-Didaskalos is a corpus-driven pipeline for generating personalized Ancient Greek textbooks based on the linguistic features of user-selected texts. The project departs from traditional fixed curricula by tailoring instructional content to the specific vocabulary, morphology, and syntactic structures attested in a target corpus.
+Didaskalos (διδάσκαλος, *teacher*) is a corpus-driven pipeline that reads an annotated Ancient
+Greek corpus and writes a textbook for it. Grammar topics are ordered by what the selected texts
+actually use rather than by a fixed curriculum, and the exercises are authentic sentences from that
+corpus, each carrying its citation.
 
-A central principle of the project is the exclusive use of authentic texts. All instructional material, including examples and exercises, is derived directly from the selected corpus.
+- **Live app:** <https://didaskalos-app-11551311398.europe-west1.run.app/>
+- **Project site:** <https://farnoosh-shamsian.github.io/didaskalos/> (English and Persian)
 
-## Overview
+## Why
 
-Ancient Greek texts exhibit substantial variation across periods, genres, and authors. Standard pedagogical materials typically present a generalized sequence of grammatical topics that may not align with the needs of a given text.
+For readers in Iran and across West and Central Asia, and in parts of Africa, Ancient Greek texts
+are primary sources for their own past: much of the surviving narrative of ancient Persia reaches
+us only in Greek. Yet Ancient Greek is not taught regularly at any institution in Iran, and there
+is no functional grammar, reader, or textbook written for Persian speakers. What exists is read at
+second hand — Xenophon's *Cyropaedia* has at least eight Persian translations, not one of them made
+from the Greek — and every mediating edition adds its own interpretive layer.
 
-Didaskalos addresses this limitation by allowing learners and instructors to select a corpus and automatically generating a corresponding textbook. The resulting material is organized according to the frequency and distribution of linguistic features within the selected texts.
+The answer this project attempts is not one more translated textbook but a generator that can be
+localized: the pedagogy lives in code, the teaching language is data, and the Greek is never
+simplified to make either easier.
 
-## Methodology
+## What is in it
 
-The system integrates three main components:
+| | |
+| --- | --- |
+| Works built in | 85 |
+| Authors and collections | 25 |
+| Treebank corpora | 4 (Perseus, Gorman, Harrington, PROIEL New Testament) |
+| Lesson modules | 157 per language |
+| Interface and textbook languages | English, Persian |
 
-1. Corpus Analysis  
-   The pipeline processes annotated Ancient Greek treebanks to extract lexical frequencies, morphological patterns, and syntactic constructions.
+Users can also paste treebank URLs or upload their own XML.
 
-2. Curriculum Generation  
-   Based on frequency data, the system constructs a sequence of topics reflecting the distribution of linguistic features in the corpus.
+## How the pipeline works
 
-3. Modular Textbook Assembly  
-   The textbook is composed of self-contained modules covering grammatical and morphological categories, accompanied by examples and exercises drawn from the source texts.
+1. **Parse.** Annotated treebanks are read by pluggable per-format adapters — Perseus/AGDT XML and
+   CoNLL-U (Universal Dependencies, PROIEL) — which normalize every token's morphology into one
+   shared 9-character postag.
+2. **Rank.** Every token is counted by the grammatical feature it exhibits, turning the corpus into
+   a ranked list of topics: which case, which declension class, which tense–mood–voice combination
+   this author actually leans on.
+3. **Order.** The ranking is then constrained so that it teaches (see below).
+4. **Assemble.** Each ranked topic pulls in its lesson module, its paradigm, and its exercises, and
+   the book is exported as Markdown, HTML, or CSV — with a colophon naming every source corpus, its
+   license, and its URL.
 
-## Exercises and Difficulty Scoring
+Thucydides, *The Peloponnesian War*, for example, yields 31,924 analyzed tokens and 119 ranked
+grammar topics.
 
-Exercises are generated exclusively from authentic sentences in the corpus. To control progression and pedagogical suitability, each sentence is assigned a difficulty score.
+Two textbook types are available. The case-based textbook explains nouns and adjectives case by
+case; the declension-based one first classifies every noun and adjective into declension classes
+and orders those lessons by how frequent each class is in the selected corpus.
 
-The difficulty score is determined by two factors:
+## Ordering the syllabus
 
-- Sentence length: shorter sentences receive lower difficulty scores
-- Lexical frequency: sentences containing higher-frequency words (relative to the corpus at that stage) receive lower difficulty scores
+A purely statistical syllabus is a bad teacher, so frequency is overruled in three places:
 
-These criteria allow the system to prioritize simpler, more accessible sentences in earlier stages, while gradually introducing more complex material.
+- **A fixed opening.** The alphabet and an orientation to nouns, adjectives, and verbs come first
+  and map the system before the counts take over — otherwise the most frequent form in a corpus,
+  which can be an irregular or an advanced one, would open the course.
+- **Declared prerequisites.** `LESSON_PREREQUISITES` in `didaskalos_pipeline.py` places a lesson
+  after the ones it contrasts with whenever those are in the same syllabus: irregular verbs wait
+  for a paradigm to be irregular against; the middle voice is always followed by deponent verbs.
+- **Merged labels.** `MERGED_SYLLABUS_LABELS` folds a syllabus row into another lesson where a
+  separate module would only repeat it — the vocative is taught inside the nominative.
 
-## Grammar Module Generation
+After that, corpus frequency arranges everything else.
 
-Initial versions of grammatical explanation modules were produced using a Retrieval-Augmented Generation (RAG) pipeline based on standard reference grammars (including Smyth and Crosby & Schaeffer). That pipeline has since been superseded by hand-written modules and is kept for reference in [`archive/ragbot/`](archive/ragbot/). Current work focuses on refining these modules and preparing them for localization and translation.
-The generation pipeline is language-independent. Scaling to additional languages primarily requires translation and adaptation of grammar modules.
-This enables the production of textbooks in multiple target languages without modification to the underlying system. Current work will soon also include localization into Persian.
+## Exercises and difficulty scoring
+
+Exercises are generated exclusively from authentic sentences in the corpus; nothing is rewritten or
+simplified. Each sentence is scored on three factors — the mean rarity of its words, the rarity of
+its single rarest word, and its length — and selection also prefers sentences whose vocabulary
+earlier lessons have already introduced. Difficulty therefore climbs across the book while every
+sentence stays exactly as its author wrote it.
+
+## Lesson modules and localization
+
+Lesson modules are hand-written Markdown, one folder per language (`lessons/en`, `lessons/fa`),
+with parallel filenames so a translated file shadows its English counterpart. Initial drafts came
+from a Retrieval-Augmented Generation pipeline over standard reference grammars (Smyth,
+Crosby & Schaeffer); that pipeline has been retired and is kept for reference in
+[`archive/ragbot/`](archive/ragbot/), and the modules are now hand-corrected and still under review.
+
+Being translatable is a design goal, not an afterthought — Didaskalos was bilingual from the start.
+Localization is end-to-end rather than interface-deep: the UI, the lesson modules, the grammatical
+terminology (kept consistent by a curated English–Persian table), and the exported textbook are all
+translated. One rule makes the modules translatable at all: no lesson explains Greek by comparison
+with the learner's first language.
+
+### Adding a language
+
+Everything language-specific lives in two places:
+
+1. `didaskalos_streamlit_app/locales/<lang>.json` — one locale file, registered in `AVAILABLE_LANGS`
+   in `i18n.py` (add the code to `RTL_LANGS` if the script runs right to left).
+2. `lessons/<lang>/` — the lesson modules, using the same filenames as `lessons/en/` so the two
+   tables of contents stay line-for-line parallel.
+
+Translate those and Didaskalos teaches Greek in that language; the pipeline itself does not change.
+If you would like to do this for your language, I would be glad to help you through it — get in
+touch via <https://farnoosh-shamsian.github.io/pages/contact.html>.
 
 ## Implementation
 
-The project is implemented in Python and integrates:
+The project is implemented in Python (Streamlit app, deployed on Cloud Run) and integrates treebank
+processing, frequency-based linguistic analysis, and modular content generation and assembly.
 
-- Treebank processing
-- Frequency-based linguistic analysis
-- Modular content generation and assembly
-
-Treebank collections are declared in `treebanks/registry.json` and parsed by pluggable,
-per-format adapters (currently Perseus/AGDT XML and CoNLL-U / Universal Dependencies). Adding a
-new corpus is a matter of dropping files into a folder and adding one manifest entry — see
+Treebank collections are declared in `treebanks/registry.json` and parsed by pluggable, per-format
+adapters (currently Perseus/AGDT XML and CoNLL-U / Universal Dependencies). Adding a new corpus is a
+matter of dropping files into a folder and adding one manifest entry — see
 [Adding a treebank collection](didaskalos_streamlit_app/README.md#adding-a-treebank-collection).
 
-## Project Status
+## Known limitations
 
-The core infrastructure is still being built! Ongoing work focuses on:
+The core infrastructure is still being built. Currently:
 
-- Details of foe the frequency-based syllabus is generated
-- Refinement of grammar modules
-- Evaluation of exercices
-- Localization and multilingual support (Persian already added)
+- The syllabus is driven by morphology almost alone; syntax is barely used, though the treebanks
+  carry it.
+- Source treebanks sometimes disagree with each other, or carry undecodable and misaligned tags.
+- Whether the automatically selected exercises are genuinely useful still needs systematic
+  evaluation.
+- Rare paradigms in the long tail have no lesson file yet, so a very large build can still report a
+  missing module.
+- Greek set inside right-to-left Persian needs further attention.
 
 ## License
 

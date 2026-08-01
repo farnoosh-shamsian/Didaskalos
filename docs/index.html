@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Didaskalos generates personalized Ancient Greek textbooks from the texts you choose — frequency-based lessons, authentic examples, and difficulty-ranked exercises."
+      content="Didaskalos generates personalized Ancient Greek textbooks from the texts you choose — a frequency-ordered syllabus and difficulty-ranked exercises drawn from your own corpus, in English and Persian."
     />
-    <meta name="theme-color" content="#350404" />
+    <meta name="theme-color" content="#c4bca9" />
     <meta property="og:title" content="Didaskalos" />
     <meta
       property="og:description"
-      content="A corpus-driven pipeline for personalized Ancient Greek textbooks, built from authentic texts."
+      content="A corpus-driven pipeline for personalized Ancient Greek textbooks, built from authentic texts and localizable into any teaching language."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -42,25 +42,42 @@
           </li>
           <li>
             <a
+              href="#why"
+              data-href-en="#why"
+              data-href-fa="#why-fa"
+              data-en="Why"
+              data-fa="چرا این پروژه"
+              >Why</a
+            >
+          </li>
+          <li>
+            <a
+              href="#how"
+              data-href-en="#how"
+              data-href-fa="#how-fa"
+              data-en="How It Works"
+              data-fa="روش کار"
+              >How It Works</a
+            >
+          </li>
+          <li>
+            <a
+              href="#localization"
+              data-href-en="#localization"
+              data-href-fa="#localization-fa"
+              data-en="Localization"
+              data-fa="بومی‌سازی"
+              >Localization</a
+            >
+          </li>
+          <li>
+            <a
               href="https://didaskalos-app-11551311398.europe-west1.run.app/"
               target="_blank"
               rel="noopener noreferrer"
               data-en="Open the App"
               data-fa="باز کردن برنامه"
               >Open the App</a
-            >
-          </li>
-          <li>
-            <a href="#how" data-en="How It Works" data-fa="روش کار"
-              >How It Works</a
-            >
-          </li>
-          <li>
-            <a
-              href="#about"
-              data-en="About the Lessons"
-              data-fa="دربارهٔ درس‌ها"
-              >About the Lessons</a
             >
           </li>
           <li>
@@ -91,7 +108,7 @@
         <div class="hero-content">
           <img
             class="hero-logo"
-            src="assets/logo-en.png"
+            src="assets/logo-en-dark.png"
             alt="Didaskalos — a Greek column above an open book"
           />
           <h2>
@@ -99,12 +116,11 @@
             choose.
           </h2>
           <p>
-            Didaskalos is a corpus-driven pipeline that generates personalized
-            Ancient Greek textbooks from the linguistic features of your
-            selected texts. Instead of a fixed curriculum, lessons follow the
-            vocabulary, morphology, and syntax actually attested in your corpus
-            — and every example and exercise comes directly from authentic
-            Greek.
+            Didaskalos (διδάσκαλος, <em>teacher</em>) is an open-source pipeline
+            that reads an annotated Greek corpus and writes a textbook for it.
+            Grammar topics are ordered by what your texts actually use rather
+            than by a fixed curriculum, and the exercises are authentic
+            sentences from that corpus, each carrying its citation.
           </p>
           <div class="actions">
             <a
@@ -132,98 +148,320 @@
         </div>
       </section>
 
-      <section class="section" id="how">
-        <h2>How It Works</h2>
-        <p class="section-intro">
-          The system integrates three main components, all driven by the
-          frequency and distribution of linguistic features in your texts.
-        </p>
+      <section class="stats" aria-label="Project at a glance">
+        <div>
+          <span class="num">85</span>
+          <span class="label">works built in</span>
+        </div>
+        <div>
+          <span class="num">25</span>
+          <span class="label">authors and collections</span>
+        </div>
+        <div>
+          <span class="num">4</span>
+          <span class="label">treebank corpora</span>
+        </div>
+        <div>
+          <span class="num">157</span>
+          <span class="label">lesson modules per language</span>
+        </div>
       </section>
+
+      <section class="section" id="why">
+        <p class="eyebrow">Why this project</p>
+        <h2>Who gets to read the sources directly?</h2>
+      </section>
+
+      <div class="about-block">
+        <p>
+          For readers in Iran and across West and Central Asia, and in parts of
+          Africa, Ancient Greek texts are primary sources for their own past:
+          much of the surviving narrative of ancient Persia reaches us only in
+          Greek. From before the Greco-Persian wars until long after Alexander's
+          conquest, Persia and the Greek world were deeply entangled. Yet in
+          Persian those texts are read almost entirely at second hand, and every
+          mediating edition adds its own interpretive layer.
+        </p>
+      </div>
+
       <section class="posts">
         <article>
-          <h3>Corpus Analysis</h3>
+          <h3>Nowhere to learn it</h3>
           <p>
-            The pipeline processes annotated Ancient Greek treebanks — sample
-            texts from the Perseus Digital Library or your own XML uploads — and
-            extracts lexical frequencies, morphological patterns, and syntactic
-            constructions.
+            Ancient Greek is not taught regularly at any institution in Iran,
+            and there is no functional grammar, reader, or textbook written for
+            Persian speakers.
           </p>
         </article>
         <article>
-          <h3>Curriculum Generation</h3>
+          <h3>Translations of translations</h3>
           <p>
-            Frequency data drives the syllabus: grammatical structures are
-            ranked by how often they appear in your corpus, so the lessons focus
-            on what actually shows up most in the texts you want to read.
+            Xenophon's <em>Cyropaedia</em> — his partly fictional life of Cyrus
+            II — exists in at least eight Persian translations. Not one of them
+            was made from the Greek; each came through an English or French
+            edition, inheriting its choices.
           </p>
         </article>
         <article>
-          <h3>Textbook Assembly</h3>
+          <h3>A pipeline, not one more book</h3>
           <p>
-            The textbook is composed of self-contained modules covering
-            grammatical and morphological categories, with examples and
-            exercises drawn straight from the source texts.
+            The answer is not a single translated textbook but a generator that
+            can be localized: the pedagogy lives in code, the teaching language
+            is data, and the sentences the learner practises on stay exactly as
+            their authors wrote them.
           </p>
         </article>
       </section>
 
+      <section class="section" id="how">
+        <p class="eyebrow">How it works</p>
+        <h2>From treebank to textbook</h2>
+        <p class="section-intro">
+          Four stages run server-side each time you press build. Nothing is
+          pre-baked: change the corpus and you get a different book.
+        </p>
+      </section>
+
+      <ol class="steps">
+        <li>
+          <h3>Parse</h3>
+          <p>
+            Annotated treebanks are read by pluggable per-format adapters —
+            Perseus/AGDT XML and CoNLL-U (Universal Dependencies, PROIEL) — which
+            normalize every token's morphology into one shared tag. Adding a new
+            corpus is a folder plus one manifest entry, not a code change.
+          </p>
+        </li>
+        <li>
+          <h3>Rank</h3>
+          <p>
+            Every token is counted by the grammatical feature it exhibits, which
+            turns the corpus into a ranked list of topics: which case, which
+            declension class, which tense-mood-voice combination this author
+            actually leans on.
+          </p>
+        </li>
+        <li>
+          <h3>Order</h3>
+          <p>
+            Frequency alone would open a course on an irregular form, so the
+            ranking is constrained: a fixed opening orients the beginner first,
+            bound sequences keep dependent topics adjacent, and frequency
+            arranges everything after that.
+          </p>
+        </li>
+        <li>
+          <h3>Assemble</h3>
+          <p>
+            Each ranked topic pulls in its lesson module, its paradigm, and its
+            exercises drawn from the corpus, and the book is exported as
+            Markdown, HTML, or CSV — with a colophon naming every source corpus,
+            its license, and its URL.
+          </p>
+        </li>
+      </ol>
+
+      <p class="figure">
+        Thucydides, <em>The Peloponnesian War</em> → 31,924 analyzed tokens ·
+        119 ranked grammar topics.
+      </p>
+
+      <section class="section" id="syllabus">
+        <h2>When frequency and pedagogy disagree</h2>
+        <p class="section-intro">
+          A purely statistical syllabus is a bad teacher. Three cases where
+          Didaskalos deliberately overrules the counts.
+        </p>
+      </section>
+
+      <div class="pairs">
+        <div class="pair">
+          <p class="problem">
+            The most common form in a corpus can be an irregular or an advanced
+            one.
+          </p>
+          <p class="response">
+            The first lessons are fixed: the alphabet and an orientation to
+            nouns, adjectives, and verbs map the system before frequency takes
+            over, so a beginner is oriented rather than overwhelmed.
+          </p>
+        </div>
+        <div class="pair">
+          <p class="problem">
+            Teach an exception before the rule exists and you have taught
+            nothing.
+          </p>
+          <p class="response">
+            Prerequisites are declared per lesson: irregular verbs wait for a
+            paradigm to be irregular against, and the sigma-stem and
+            two-ending-adjective lessons wait for the classes they contrast
+            with.
+          </p>
+        </div>
+        <div class="pair">
+          <p class="problem">
+            Some topics only make sense together — the middle voice raises a
+            question that deponent verbs have to answer.
+          </p>
+          <p class="response">
+            Bound sequences keep them adjacent, and syncretic or repetitive
+            labels are merged into one lesson: the vocative is taught inside the
+            nominative rather than given a module that would repeat it.
+          </p>
+        </div>
+      </div>
+
       <section class="section">
         <h2>In the App</h2>
+        <p class="section-intro">
+          Three choices — a corpus, a lesson count, a textbook type — and the
+          build returns a downloadable book.
+        </p>
       </section>
       <section class="posts">
         <article>
-          <h3>Bring Your Own Corpus</h3>
+          <h3>Bring your own corpus</h3>
           <p>
-            Start from the bundled Perseus treebanks, paste treebank URLs, or
-            upload your own XML files. The app builds a combined token table and
-            computes a frequency-based syllabus from whatever you give it.
+            Pick from 85 works by 25 authors and collections across four
+            treebank corpora — Perseus, Gorman, Harrington, and the PROIEL New
+            Testament — or paste treebank URLs and upload your own XML. Each
+            source is listed in the app with its author and license.
           </p>
         </article>
         <article>
-          <h3>Two Textbook Types</h3>
+          <h3>Two textbook types</h3>
           <p>
-            Choose a case-based textbook that explains nouns and adjectives case
-            by case, or a declension-based one that classifies every noun and
-            adjective into declension classes and orders the lessons by how
-            frequent each class is in your corpus.
+            A case-based textbook explains nouns and adjectives case by case; a
+            declension-based one first classifies every noun and adjective into
+            declension classes and orders the lessons by how frequent each class
+            is in <em>your</em> corpus.
           </p>
         </article>
         <article>
-          <h3>Exercises &amp; Downloads</h3>
+          <h3>Exercises, ranked</h3>
           <p>
-            Exercises are generated exclusively from authentic sentences, ranked
-            by difficulty using sentence length and word frequency. Download the
-            finished textbook as Markdown or HTML, easy to tweak or restyle.
+            Exercises are unaltered corpus sentences, scored by word rarity and
+            sentence length and preferring sentences whose vocabulary earlier
+            lessons have already introduced — so difficulty climbs without any
+            sentence being rewritten.
           </p>
         </article>
       </section>
+
+      <section class="section" id="localization">
+        <p class="eyebrow">Localization</p>
+        <h2>Built to be translated</h2>
+        <p class="section-intro">
+          Didaskalos was bilingual from the start, and being translatable is a
+          design goal rather than an afterthought. A translated interface over an
+          English textbook would not solve anything, so the interface, the lesson
+          modules, the grammatical terminology, and the exported book are all
+          localized together.
+        </p>
+      </section>
+      <section class="posts">
+        <article>
+          <h3>Consistent terminology</h3>
+          <p>
+            A curated English–Persian table of grammatical terms keeps the
+            vocabulary stable across 157 lesson modules, so the same category is
+            never named two ways.
+          </p>
+        </article>
+        <article>
+          <h3>One rule makes it translatable</h3>
+          <p>
+            No lesson explains Greek by comparison with the learner's first
+            language. That single constraint is what lets a module be
+            translated rather than rewritten for each new audience.
+          </p>
+        </article>
+        <article>
+          <h3>The book, not just the buttons</h3>
+          <p>
+            The exported textbook is generated in the chosen language throughout
+            — lesson text, exercise instructions, answer keys, and the colophon.
+            Adding a language is one locale file plus a translated set of
+            modules.
+          </p>
+        </article>
+      </section>
+
+      <div class="cta">
+        <h3>Want Didaskalos in your language?</h3>
+        <p>
+          Everything language-specific lives in two places: the lesson modules
+          and one locale file. Translate those and you have a Didaskalos that
+          teaches Greek in your language — the pipeline itself does not change,
+          and nothing needs to be rewritten for a new audience. If you would
+          like to do that for your language, I would be glad to help you through
+          it:
+          <a
+            href="https://farnoosh-shamsian.github.io/pages/contact.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >get in touch</a
+          >.
+        </p>
+      </div>
 
       <section class="section" id="about">
         <h2>About the Lessons</h2>
       </section>
       <div class="about-block">
         <p>
-          The grammar explanations are currently LLM-generated first drafts,
-          produced with a Retrieval-Augmented Generation (RAG) pipeline over
-          standard reference grammars, including Smyth's
-          <em>Greek Grammar</em> and Crosby &amp; Schaeffer. I plan to refine
-          them manually over time.
+          The grammar modules began as first drafts from a
+          Retrieval-Augmented Generation pipeline over standard reference
+          grammars, including Smyth's <em>Greek Grammar</em> and Crosby &amp;
+          Schaeffer. That pipeline has since been retired: the modules are now
+          hand-written and hand-corrected, and the review is ongoing.
         </p>
         <p>
-          The generation pipeline is language-independent: the interface and the
-          generated textbooks are available in English and Persian, and more
-          languages mainly require translating the grammar modules.
+          The generation pipeline itself is language-independent. English and
+          Persian ship today; another language needs a locale file and a
+          translated set of modules, not a change to the system.
         </p>
+      </div>
+
+      <section class="section" id="limitations">
+        <h2>Known Limitations</h2>
+        <p class="section-intro">
+          The core infrastructure is still being built. These are the problems I
+          am working through, stated plainly.
+        </p>
+      </section>
+      <ul class="limits">
+        <li>
+          The syllabus is driven by morphology almost alone; syntax is barely
+          used, though the treebanks carry it.
+        </li>
+        <li>
+          Source treebanks sometimes disagree with each other, or carry
+          undecodable and misaligned tags.
+        </li>
+        <li>
+          Whether the automatically selected exercises are genuinely useful
+          still needs systematic evaluation.
+        </li>
+        <li>
+          Rare paradigms in the long tail have no lesson file yet, so a very
+          large build can still report a missing module.
+        </li>
+        <li>Greek set inside right-to-left Persian needs further attention.</li>
+      </ul>
+
+      <div class="about-block">
         <p>
-          The core infrastructure is still being built, so expect rough edges —
-          and more features soon. The project is released under
+          Didaskalos is released under
           <a
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
             target="_blank"
             rel="noopener noreferrer"
             >CC BY-NC-SA 4.0</a
-          >. Individual source texts remain under the licenses granted by their
-          own authors.
+          >. That covers the original work — the pipeline, the lesson modules,
+          the syllabus method, and the translations. The Greek source texts
+          remain under the licenses granted by their own authors, which every
+          generated textbook reproduces in its colophon.
         </p>
       </div>
     </div>
@@ -234,7 +472,7 @@
         <div class="hero-content">
           <img
             class="hero-logo"
-            src="assets/logo-el.png"
+            src="assets/logo-el-dark.png"
             alt="دیداسکالوس — ستون یونانی بر فراز کتابی گشوده"
           />
           <h2>
@@ -242,12 +480,12 @@
             خودتان انتخاب می‌کنید.
           </h2>
           <p>
-            دیداسکالوس یک ابزار پیکره‌بنیاد است که بر پایهٔ ویژگی‌های زبانی
-            متن‌های انتخابی شما، کتاب‌های درسی شخصی‌سازی‌شده تولید می‌کند. در
-            نتیجه، برنامه‌ی درسی شما تنها شامل واژگان، تمرینات، صرف و نحوی خواهد
-            بود که واقعاً در پیکرهٔ شما آمده‌اند — و همهٔ مثال‌ها و تمرین‌ها
-            مستقیماً از همان متونی که انتخاب کرده‌اید برگرفته شده و به ترتیب
-            بسامد واژگانی و صرفی مرتب می‌شوند.
+            دیداسکالوس (<span lang="grc" dir="ltr">διδάσκαλος</span>، یعنی
+            «آموزگار») ابزاری متن‌باز است که یک پیکرهٔ حاشیه‌گذاری‌شدهٔ یونانی را
+            می‌خواند و برای همان پیکره کتاب درسی می‌نویسد. مبحث‌های دستوری نه بر
+            پایهٔ یک برنامهٔ درسی از پیش تعیین‌شده، بلکه بر پایهٔ آنچه متن‌های
+            شما واقعاً به کار می‌برند مرتب می‌شوند، و تمرین‌ها جمله‌هایی اصیل از
+            همان پیکره‌اند که هرکدام ارجاعش را با خود دارد.
           </p>
           <div class="actions">
             <a
@@ -275,99 +513,317 @@
         </div>
       </section>
 
-      <section class="section">
-        <h2>روش کار</h2>
-        <p class="section-intro">
-          دیداسکالوس سه وجه اصلی را در هم می‌آمیزد و همهٔ آن‌ها بر پایهٔ بسامد و
-          توزیع ویژگی‌های زبانی در متن‌های شما کار می‌کنند.
-        </p>
+      <section class="stats" aria-label="پروژه در یک نگاه">
+        <div>
+          <span class="num">۸۵</span>
+          <span class="label">اثر آمادهٔ استفاده</span>
+        </div>
+        <div>
+          <span class="num">۲۵</span>
+          <span class="label">نویسنده و مجموعه</span>
+        </div>
+        <div>
+          <span class="num">۴</span>
+          <span class="label">پیکرهٔ درختی</span>
+        </div>
+        <div>
+          <span class="num">۱۵۷</span>
+          <span class="label">ماژول درس در هر زبان</span>
+        </div>
       </section>
+
+      <section class="section" id="why-fa">
+        <p class="eyebrow">چرا این پروژه</p>
+        <h2>چه کسی می‌تواند منابع را بی‌واسطه بخواند؟</h2>
+      </section>
+
+      <div class="about-block">
+        <p>
+          برای خوانندگان ایران و سراسر غرب و مرکز آسیا، و بخش‌هایی از آفریقا،
+          متن‌های یونانی باستان منابع دست‌اول تاریخ خودشان‌اند: بخش بزرگی از
+          روایت برجای‌ماندهٔ ایران باستان تنها به یونانی به دست ما رسیده است. از
+          پیش از جنگ‌های ایران و یونان تا مدت‌ها پس از لشکرکشی اسکندر، ایران و
+          جهان یونانی سخت در هم تنیده بودند. با این حال این متن‌ها در فارسی
+          تقریباً همیشه باواسطه خوانده می‌شوند، و هر ویرایشِ میانجی لایهٔ تفسیری
+          خودش را می‌افزاید.
+        </p>
+      </div>
+
       <section class="posts">
         <article>
-          <h3>تحلیل پیکره</h3>
+          <h3>جایی برای آموختنش نیست</h3>
           <p>
-            پردازش پیکره‌های درختی حاشیه‌گذاری‌شدهٔ یونانی باستان را پردازش
-            می‌کند — نمونه‌متن‌های کتابخانهٔ دیجیتال Perseus یا فایل‌های XML
-            خودتان — و بسامد واژگان، الگوهای صرفی و ساخت‌های نحوی را استخراج
-            می‌کند.
+            یونانی باستان در هیچ نهاد آموزشی ایران به‌طور منظم تدریس نمی‌شود، و
+            هیچ دستور زبان کاربردی، خوانشگر یا کتاب درسی‌ای برای فارسی‌زبانان
+            نوشته نشده است.
           </p>
         </article>
         <article>
-          <h3>تولید برنامهٔ درسی</h3>
+          <h3>ترجمهٔ ترجمه</h3>
           <p>
-            داده‌های بسامدی برنامهٔ درسی را شکل می‌دهند: ساختارهای دستوری بر
-            اساس میزان حضورشان در پیکرهٔ شما رتبه‌بندی می‌شوند تا درس‌ها بر آنچه
-            واقعاً در متن‌های موردعلاقهٔ شما بیشتر دیده می‌شود تمرکز کنند.
+            از <em>کوروش‌نامهٔ</em> گزنفون — زندگی نیمه‌داستانی کوروش دوم —
+            دست‌کم هشت ترجمهٔ فارسی در دست است. هیچ‌یک از یونانی برگردانده نشده؛
+            همه از ویرایش‌های انگلیسی یا فرانسوی آمده‌اند و انتخاب‌های آن‌ها را
+            به ارث برده‌اند.
           </p>
         </article>
         <article>
-          <h3>مونتاژ کتاب درسی</h3>
+          <h3>یک پردازشگر، نه یک کتاب دیگر</h3>
           <p>
-            کتاب از ماژول‌های مستقل تشکیل می‌شود که مقوله‌های دستوری و صرفی را
-            پوشش می‌دهند، همراه با مثال‌ها و تمرین‌هایی که مستقیماً از متن‌های
-            اصلی گرفته شده‌اند.
+            پاسخ، یک کتاب درسیِ ترجمه‌شدهٔ دیگر نیست؛ ابزاری است که بتوان
+            بومی‌سازی‌اش کرد: روش آموزش در کد است، زبان آموزش داده است، و
+            جمله‌هایی که زبان‌آموز روی آن‌ها تمرین می‌کند دقیقاً همان‌اند که
+            نویسندگانشان نوشته‌اند.
           </p>
         </article>
       </section>
 
+      <section class="section" id="how-fa">
+        <p class="eyebrow">روش کار</p>
+        <h2>از پیکرهٔ درختی تا کتاب درسی</h2>
+        <p class="section-intro">
+          با هر بار ساخت، چهار مرحله روی سرور اجرا می‌شود. هیچ چیز از پیش آماده
+          نیست: پیکره را عوض کنید، کتاب دیگری می‌گیرید.
+        </p>
+      </section>
+
+      <ol class="steps">
+        <li>
+          <h3>تجزیه</h3>
+          <p>
+            پیکره‌های درختیِ حاشیه‌گذاری‌شده را مبدل‌هایی جداگانه برای هر قالب
+            می‌خوانند — <span dir="ltr">Perseus/AGDT XML</span> و
+            <span dir="ltr">CoNLL-U</span> (وابستگی‌های جهانی و PROIEL) — و صرفِ
+            هر واژه را به یک برچسب مشترک تبدیل می‌کنند. افزودن پیکرهٔ تازه یعنی
+            یک پوشه و یک سطر در فهرست، نه تغییر در کد.
+          </p>
+        </li>
+        <li>
+          <h3>رتبه‌بندی</h3>
+          <p>
+            هر واژه بر پایهٔ ویژگی دستوری‌اش شمارش می‌شود و پیکره به فهرستی
+            رتبه‌بندی‌شده از مبحث‌ها بدل می‌گردد: اینکه این نویسنده واقعاً بر چه
+            حالت، چه ردهٔ صرفی و چه ترکیبی از زمان و وجه و جهت تکیه کرده است.
+          </p>
+        </li>
+        <li>
+          <h3>چیدمان</h3>
+          <p>
+            بسامدِ تنها ممکن است درس اول را با یک صورت بی‌قاعده آغاز کند، پس
+            رتبه‌بندی مقید می‌شود: چند درس ثابتِ آغازین نخست زبان‌آموز را
+            جهت‌یابی می‌کنند، درس‌های وابسته کنار هم می‌مانند، و بسامد باقی
+            درس‌ها را مرتب می‌کند.
+          </p>
+        </li>
+        <li>
+          <h3>مونتاژ</h3>
+          <p>
+            هر مبحث ماژول درس، جدول صرفی و تمرین‌های برگرفته از پیکره را با خود
+            می‌آورد و کتاب با قالب Markdown، HTML یا CSV بیرون داده می‌شود —
+            همراه با شناسنامه‌ای که نام، مجوز و نشانی هر پیکرهٔ منبع را می‌آورد.
+          </p>
+        </li>
+      </ol>
+
+      <p class="figure">
+        توسیدید، <em>تاریخ جنگ پلوپونزی</em> ← ۳۱٬۹۲۴ واژهٔ تحلیل‌شده · ۱۱۹ مبحث
+        دستوری رتبه‌بندی‌شده.
+      </p>
+
+      <section class="section">
+        <h2>وقتی بسامد و آموزش هم‌داستان نیستند</h2>
+        <p class="section-intro">
+          برنامهٔ درسیِ صرفاً آماری آموزگار خوبی نیست. سه موردی که دیداسکالوس
+          آگاهانه شمارش‌ها را نادیده می‌گیرد.
+        </p>
+      </section>
+
+      <div class="pairs">
+        <div class="pair">
+          <p class="problem">
+            پربسامدترین صورت در یک پیکره می‌تواند صورتی بی‌قاعده یا پیشرفته
+            باشد.
+          </p>
+          <p class="response">
+            نخستین درس‌ها ثابت‌اند: الفبا و درآمدی بر اسم، صفت و فعل پیش از آنکه
+            بسامد کار را به دست بگیرد نقشهٔ کلی زبان را می‌کشند تا مبتدی
+            سرگردان نشود.
+          </p>
+        </div>
+        <div class="pair">
+          <p class="problem">
+            اگر استثنا را پیش از خودِ قاعده آموزش دهید، در عمل چیزی نیاموخته‌اید.
+          </p>
+          <p class="response">
+            برای هر درس پیش‌نیازها اعلام شده‌اند: فعل‌های بی‌قاعده منتظر
+            می‌مانند تا صرفی باشد که نسبت به آن بی‌قاعده شمرده شوند، و درس‌های
+            ستاک سیگما و صفت‌های دوپایانه پس از رده‌هایی می‌آیند که با آن‌ها
+            مقایسه می‌شوند.
+          </p>
+        </div>
+        <div class="pair">
+          <p class="problem">
+            برخی مبحث‌ها فقط کنار هم معنا دارند — جهت میانه پرسشی پیش می‌کشد که
+            فعل‌های دیپوننت باید پاسخش را بدهند.
+          </p>
+          <p class="response">
+            چنین درس‌هایی همیشه پیاپی می‌آیند، و برچسب‌های هم‌صورت یا تکراری در
+            یک درس ادغام می‌شوند: حالت ندایی درون درس فاعلی آموزش داده می‌شود، نه
+            در ماژولی جدا که همان را تکرار کند.
+          </p>
+        </div>
+      </div>
+
       <section class="section">
         <h2>در برنامه</h2>
+        <p class="section-intro">
+          سه انتخاب — یک پیکره، شمار درس‌ها و نوع کتاب — و نتیجه کتابی است آمادهٔ
+          دانلود.
+        </p>
       </section>
       <section class="posts">
         <article>
           <h3>پیکرهٔ خودتان را بیاورید</h3>
           <p>
-            از پیکره‌های درختی Perseus که همراه برنامه است شروع کنید، نشانی
-            پیکره‌ها را وارد کنید، یا فایل‌های XML خودتان را بارگذاری کنید.
-            برنامه جدول واژه‌ها را می‌سازد و برنامهٔ درسی بسامدمحور را از هر
-            آنچه به آن بدهید محاسبه می‌کند.
+            از میان ۸۵ اثر از ۲۵ نویسنده و مجموعه در چهار پیکرهٔ درختی — Perseus،
+            Gorman، Harrington و عهد جدیدِ PROIEL — انتخاب کنید، یا نشانی
+            پیکره‌ها را وارد کنید و فایل‌های XML خودتان را بارگذاری کنید. هر
+            منبع با نام پدیدآور و مجوزش در برنامه فهرست شده است.
           </p>
         </article>
         <article>
           <h3>دو نوع کتاب درسی</h3>
           <p>
-            کتاب مبتنی بر حالت را انتخاب کنید که اسم‌ها و صفت‌ها را حالت‌به‌حالت
-            توضیح می‌دهد، یا کتاب مبتنی بر صرف را که هر اسم و صفت را در رده‌های
-            صرفی دسته‌بندی می‌کند و درس‌ها را بر پایهٔ بسامد هر رده در پیکرهٔ
-            شما مرتب می‌سازد.
+            کتاب مبتنی بر حالت اسم‌ها و صفت‌ها را حالت‌به‌حالت توضیح می‌دهد؛
+            کتاب مبتنی بر صرف نخست هر اسم و صفت را در رده‌های صرفی دسته‌بندی
+            می‌کند و درس‌ها را بر پایهٔ بسامد هر رده در پیکرهٔ <em>شما</em> مرتب
+            می‌سازد.
           </p>
         </article>
         <article>
-          <h3>تمرین‌ها و دانلود</h3>
+          <h3>تمرین‌های رتبه‌بندی‌شده</h3>
           <p>
-            تمرین‌ها تنها از جمله‌های اصیل ساخته می‌شوند و بر اساس دشواری — یعنی
-            طول جمله و بسامد واژه‌ها — رتبه‌بندی می‌شوند. کتاب نهایی را با فرمت
-            Markdown یا HTML دانلود کنید تا ویرایش یا تغییر ظاهر آن آسان باشد.
+            تمرین‌ها جمله‌های دست‌نخوردهٔ پیکره‌اند که بر پایهٔ نایابی واژه‌ها و
+            طول جمله امتیاز می‌گیرند و جمله‌هایی مقدم‌اند که واژگانشان در
+            درس‌های پیشین آمده باشد — پس دشواری بالا می‌رود بی‌آنکه جمله‌ای
+            بازنویسی شود.
           </p>
         </article>
       </section>
+
+      <section class="section" id="localization-fa">
+        <p class="eyebrow">بومی‌سازی</p>
+        <h2>ساخته‌شده برای ترجمه</h2>
+        <p class="section-intro">
+          دیداسکالوس از همان آغاز دوزبانه بوده و ترجمه‌پذیری هدفی طراحی‌شده است،
+          نه چیزی که بعداً به آن افزوده شود. رابط ترجمه‌شده روی کتابی انگلیسی
+          چیزی را حل نمی‌کند، پس رابط برنامه، ماژول‌های درس، اصطلاحات دستوری و
+          کتاب خروجی همگی با هم بومی‌سازی شده‌اند.
+        </p>
+      </section>
+      <section class="posts">
+        <article>
+          <h3>اصطلاحات یکدست</h3>
+          <p>
+            جدولی گزیده از اصطلاحات دستوری انگلیسی–فارسی واژگان را در سراسر ۱۵۷
+            ماژول درس ثابت نگه می‌دارد، تا یک مقوله هرگز به دو نام خوانده نشود.
+          </p>
+        </article>
+        <article>
+          <h3>یک قاعده که ترجمه را ممکن می‌کند</h3>
+          <p>
+            هیچ درسی یونانی را با مقایسه با زبان اول زبان‌آموز توضیح نمی‌دهد.
+            همین یک محدودیت است که اجازه می‌دهد ماژول‌ها برای هر مخاطب تازه
+            ترجمه شوند، نه از نو نوشته.
+          </p>
+        </article>
+        <article>
+          <h3>خودِ کتاب، نه فقط دکمه‌ها</h3>
+          <p>
+            کتاب خروجی سرتاسر به زبان انتخابی تولید می‌شود — متن درس، صورت
+            تمرین‌ها، کلید پاسخ‌ها و شناسنامه. افزودن یک زبان تازه یعنی یک فایل
+            زبان به‌همراه مجموعه‌ای از ماژول‌های ترجمه‌شده.
+          </p>
+        </article>
+      </section>
+
+      <div class="cta">
+        <h3>دیداسکالوس را به زبان دیگری می‌خواهید؟</h3>
+        <p>
+          هر چه به زبان وابسته است تنها در دو جا نشسته است: ماژول‌های درس و یک
+          فایل زبان. همین دو را ترجمه کنید تا دیداسکالوسی داشته باشید که یونانی
+          را به زبان شما درس می‌دهد — خودِ برنامه تغییری نمی‌کند و چیزی لازم
+          نیست برای مخاطب تازه از نو نوشته شود. اگر دوست دارید این کار را برای
+          زبان دیگری انجام دهید، با کمال میل همراهی‌تان می‌کنم:
+          <a
+            href="https://farnoosh-shamsian.github.io/pages/contact.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >با من تماس بگیرید</a
+          >.
+        </p>
+      </div>
 
       <section class="section">
         <h2>دربارهٔ درس‌ها</h2>
       </section>
       <div class="about-block">
         <p>
-          توضیح‌های دستوری در حال حاضر پیش‌نویس‌های اولیه‌ای هستند که با یک مدل
-          زبانی (LLM) و در قالب RAG بر پایهٔ دستورهای مرجع، از جمله دستور زبان
-          یونانی Smyth و Crosby &amp; Schaeffer، تولید شده‌اند. قصد دارم به مرور
-          آن‌ها را دستی ویرایش و پاک‌سازی کنم.
+          ماژول‌های دستوری در آغاز پیش‌نویس‌هایی بودند که با یک پردازشگر RAG بر
+          پایهٔ دستورهای مرجع — از جمله دستور زبان یونانی Smyth و
+          Crosby &amp; Schaeffer — تولید شده بودند. آن پردازشگر کنار گذاشته شده
+          است: ماژول‌ها اکنون دست‌نویس و دست‌ویراسته‌اند و بازبینی‌شان ادامه
+          دارد.
         </p>
         <p>
-          خط لولهٔ تولید مستقل از زبان است: رابط برنامه و کتاب‌های تولیدشده به
-          انگلیسی و فارسی در دسترس‌اند و افزودن زبان‌های دیگر بیشتر به ترجمهٔ
-          ماژول‌های دستوری نیاز دارد.
+          خودِ پردازشگرِ تولید مستقل از زبان است. امروز انگلیسی و فارسی در
+          دسترس‌اند؛ زبان تازه به یک فایل زبان و مجموعه‌ای از ماژول‌های
+          ترجمه‌شده نیاز دارد، نه به تغییر در سامانه.
         </p>
+      </div>
+
+      <section class="section">
+        <h2>کاستی‌های شناخته‌شده</h2>
+        <p class="section-intro">
+          زیرساخت اصلی هنوز در حال ساخت است. این‌ها مسائلی است که روی‌شان کار
+          می‌کنم، بی‌پرده.
+        </p>
+      </section>
+      <ul class="limits">
+        <li>
+          برنامهٔ درسی تقریباً تنها بر صرف استوار است؛ از نحو با آنکه در
+          پیکره‌ها هست کمتر استفاده می‌شود.
+        </li>
+        <li>
+          پیکره‌های منبع گاهی با یکدیگر ناسازگارند یا برچسب‌های ناخوانا و
+          نابه‌جا دارند.
+        </li>
+        <li>
+          اینکه تمرین‌های انتخاب‌شدهٔ خودکار واقعاً سودمندند یا نه، هنوز به
+          ارزیابی نظام‌مند نیاز دارد.
+        </li>
+        <li>
+          صرف‌های نادر هنوز فایل درس ندارند، پس ساخت‌های بسیار بزرگ ممکن است
+          نبودِ یک ماژول را گزارش کنند.
+        </li>
+        <li>
+          نمایش یونانی درون متن راست‌به‌چپ فارسی هنوز به توجه بیشتری نیاز دارد.
+        </li>
+      </ul>
+
+      <div class="about-block">
         <p>
-          زیرساخت اصلی هنوز در حال ساخت است، پس منتظر کاستی‌هایی باشید — و
-          به‌زودی امکانات بیشتر. این پروژه با مجوز
+          دیداسکالوس با مجوز
           <a
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
             target="_blank"
             rel="noopener noreferrer"
             >CC BY-NC-SA 4.0</a
           >
-          منتشر می‌شود. متن‌های منبع همچنان تابع مجوزی هستند که پدیدآورندگان
-          خودشان تعیین کرده‌اند.
+          منتشر می‌شود. این مجوز کار اصلی را دربر می‌گیرد: پردازشگر، ماژول‌های
+          درس، روش تدوین برنامهٔ درسی و ترجمه‌ها. متن‌های یونانی منبع همچنان تابع
+          مجوزی هستند که پدیدآورندگان خودشان تعیین کرده‌اند و هر کتاب تولیدشده
+          آن‌ها را در شناسنامه‌اش بازمی‌آورد.
         </p>
       </div>
     </div>

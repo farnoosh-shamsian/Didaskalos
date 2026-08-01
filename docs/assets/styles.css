@@ -1,16 +1,22 @@
 /* Didaskalos GitHub Pages site.
-   Styled after farnoosh-shamsian.github.io (same palette, fonts, and card style). */
+   Palette taken from farnoosh-shamsian.github.io (styles/variables.css) so the two
+   sites read as one: same deep red, sand background, and card tone. The gold is the
+   one addition — it is the logo's own color, and it carries the accents on dark. */
 
 :root {
-  --primary-color: #30261e;
-  --article-header-color: #2d0101;
+  --primary-color: #530707;
+  --article-header-color: #5b0000;
   --secondary-color: #b3ab9a;
   --footer-color: #b3ab9a;
   --background-color: #c4bca9;
   --text-color: #1f1c16;
   --link-color: #2b2116;
-  --hero-text-color: #ebdfc8;
-  --accent-gold: #d6ab7b;
+  --hero-text-color: #cacbc4;
+  --accent-gold: #d4a87a;
+  /* Large filled surfaces (hero band, call-to-action, step markers) take a dark
+     brownish red rather than the heading red — at that size a saturated red reads
+     as too hot, and the brown ties the band to the sand background. */
+  --deep-red: #3a1712;
   --header-font-size: clamp(26px, 2.4vw, 38px);
   --nav--font-size: clamp(16px, 1vw, 20px);
 }
@@ -178,16 +184,16 @@ nav ul li a:hover {
 }
 
 .lang-btn.is-active {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--deep-red);
+  border-color: var(--deep-red);
   color: var(--hero-text-color);
 }
 
-/* Hero: solid deep-red band with the Didaskalos logo — no photo. */
+/* Hero: no band and no photo — the logo and the headline sit straight on the
+   page, so the sand background runs unbroken from the header down. */
 
 .hero {
-  background-color: var(--primary-color);
-  padding: 60px 10vw 70px;
+  padding: 60px 10vw 50px;
   text-align: center;
 }
 
@@ -200,7 +206,7 @@ nav ul li a:hover {
 .hero-content h2 {
   font-family: "Playfair Display", "Cambria", Georgia, serif;
   font-size: clamp(1.8em, 4vw, 3em);
-  color: var(--hero-text-color);
+  color: var(--primary-color);
   margin: 0;
 }
 
@@ -210,7 +216,7 @@ nav ul li a:hover {
 
 .hero-content p {
   font-size: clamp(1.15em, 2vw, 1.5em);
-  color: var(--hero-text-color);
+  color: var(--text-color);
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -236,26 +242,15 @@ nav ul li a:hover {
 }
 
 .button-primary {
-  background-color: var(--primary-color);
+  background-color: var(--deep-red);
   color: var(--hero-text-color);
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--deep-red);
 }
 
 .button-primary:hover {
   background-color: var(--article-header-color);
+  border-color: var(--article-header-color);
   transform: scale(1.03);
-}
-
-/* On the dark-red hero, the primary button switches to the logo's gold. */
-.hero .button-primary {
-  background-color: var(--accent-gold);
-  border-color: var(--accent-gold);
-  color: #3f0505;
-}
-
-.hero .button-primary:hover {
-  background-color: #e2bd92;
-  border-color: #e2bd92;
 }
 
 .button-secondary {
@@ -270,25 +265,15 @@ nav ul li a:hover {
   transform: scale(1.03);
 }
 
-.hero .button-secondary {
-  border-color: var(--hero-text-color);
-  color: var(--hero-text-color);
-}
-
-.hero .button-secondary:hover {
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
 /* Patience note */
 
 .note {
   max-width: 760px;
   margin: 36px auto 0;
   padding: 16px 22px;
-  background-color: rgba(196, 188, 169, 0.92);
+  background-color: var(--secondary-color);
   color: var(--text-color);
-  border-inline-start: 6px solid var(--primary-color);
+  border-inline-start: 6px solid var(--deep-red);
   border-radius: 5px;
   font-size: 1.05em;
   text-align: start;
@@ -375,6 +360,178 @@ nav ul li a:hover {
   font-size: 0.95em;
   color: var(--text-color);
   text-align: start;
+}
+
+/* Stats band: the project's scale, one figure per tile. */
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  padding: 40px 20px 10px;
+}
+
+.stats div {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  padding: 18px 26px;
+  min-width: 180px;
+  text-align: center;
+}
+
+.stats .num {
+  display: block;
+  font-family: "Playfair Display", "Cambria", Georgia, serif;
+  font-size: 2.6em;
+  line-height: 1.1;
+  color: var(--article-header-color);
+}
+
+[lang="fa"] .stats .num {
+  font-family: inherit;
+}
+
+.stats .label {
+  display: block;
+  font-size: 0.95em;
+}
+
+/* Numbered pipeline steps */
+
+.steps {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px 20px;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  position: relative;
+  padding-inline-start: 70px;
+  margin-bottom: 28px;
+  min-height: 46px;
+}
+
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--deep-red);
+  color: var(--hero-text-color);
+  font-family: "Playfair Display", "Cambria", Georgia, serif;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[lang="fa"] .steps li::before {
+  content: counter(step, persian);
+  font-family: inherit;
+}
+
+.steps h3 {
+  margin: 6px 0 8px;
+  font-size: 1.4em;
+  color: var(--article-header-color);
+}
+
+.steps p {
+  margin: 0;
+  font-size: 1.05em;
+  text-align: start;
+}
+
+/* Worked example / figure line */
+
+.figure {
+  max-width: 840px;
+  margin: 0 auto 20px;
+  padding: 14px 22px;
+  background-color: rgba(31, 28, 22, 0.08);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* Problem → response pairs */
+
+.pairs {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px 30px;
+}
+
+.pairs .pair {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  padding: 18px 24px;
+  margin-bottom: 16px;
+  text-align: start;
+}
+
+.pairs .problem {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: var(--article-header-color);
+}
+
+.pairs .response {
+  margin: 0;
+  font-size: 1.02em;
+}
+
+/* Call to action: an invitation to translate the project. */
+
+.cta {
+  max-width: 840px;
+  margin: 0 auto 40px;
+  padding: 26px 30px;
+  background-color: var(--deep-red);
+  color: var(--hero-text-color);
+  border-radius: 5px;
+  text-align: start;
+}
+
+.cta h3 {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", "Cambria", Georgia, serif;
+  font-size: 1.6em;
+  color: var(--accent-gold);
+}
+
+[lang="fa"] .cta h3 {
+  font-family: inherit;
+}
+
+.cta p {
+  margin: 0;
+  font-size: 1.08em;
+}
+
+.cta a {
+  color: var(--accent-gold);
+}
+
+/* Known limitations */
+
+.limits {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+  font-size: 1.05em;
+  text-align: start;
+}
+
+.limits li {
+  margin-bottom: 10px;
 }
 
 /* About block */
