@@ -29,6 +29,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles.css" />
+    <!-- Resolve the theme before the first paint: a stored choice wins, otherwise
+         the OS setting. app.js (deferred) picks up whatever this decided. -->
+    <script>
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem("didaskalos-theme");
+        } catch (e) {}
+        var dark =
+          stored === "dark" ||
+          (stored !== "light" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.setAttribute(
+          "data-theme",
+          dark ? "dark" : "light",
+        );
+      })();
+    </script>
     <script defer src="assets/app.js"></script>
   </head>
   <body id="top">
@@ -92,12 +110,22 @@
           </li>
         </ul>
       </nav>
-      <div class="lang-switch" role="tablist" aria-label="Language switch">
-        <button class="lang-btn is-active" type="button" data-lang-button="en">
-          English
-        </button>
-        <button class="lang-btn" type="button" data-lang-button="fa">
-          فارسی
+      <div class="header-controls">
+        <div class="lang-switch" role="tablist" aria-label="Language switch">
+          <button class="lang-btn is-active" type="button" data-lang-button="en">
+            English
+          </button>
+          <button class="lang-btn" type="button" data-lang-button="fa">
+            فارسی
+          </button>
+        </div>
+        <button
+          class="theme-btn"
+          type="button"
+          id="theme-toggle"
+          aria-pressed="false"
+        >
+          <span id="theme-icon" aria-hidden="true">☾</span>
         </button>
       </div>
     </header>
@@ -108,7 +136,9 @@
         <div class="hero-content">
           <img
             class="hero-logo"
-            src="assets/logo-en-dark.png"
+            src="assets/logo-en-ink.png"
+            data-src-light="assets/logo-en-ink.png"
+            data-src-dark="assets/logo-en.png"
             alt="Didaskalos — a Greek column above an open book"
           />
           <h2>
@@ -472,7 +502,9 @@
         <div class="hero-content">
           <img
             class="hero-logo"
-            src="assets/logo-el-dark.png"
+            src="assets/logo-el-ink.png"
+            data-src-light="assets/logo-el-ink.png"
+            data-src-dark="assets/logo-el.png"
             alt="دیداسکالوس — ستون یونانی بر فراز کتابی گشوده"
           />
           <h2>

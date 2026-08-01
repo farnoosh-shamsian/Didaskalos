@@ -11,14 +11,37 @@
   --background-color: #c4bca9;
   --text-color: #1f1c16;
   --link-color: #2b2116;
-  --hero-text-color: #cacbc4;
   --accent-gold: #d4a87a;
-  /* Large filled surfaces (hero band, call-to-action, step markers) take a dark
-     brownish red rather than the heading red — at that size a saturated red reads
-     as too hot, and the brown ties the band to the sand background. */
+  /* Small filled surfaces (buttons, step markers, the active language chip) take a
+     dark brownish red rather than the heading red — at any size a saturated red
+     reads as too hot against the sand. */
   --deep-red: #3a1712;
+  /* Text sitting on one of those filled surfaces. */
+  --on-accent: #cacbc4;
+  --rule-color: rgba(31, 28, 22, 0.15);
+  --figure-tint: rgba(31, 28, 22, 0.08);
   --header-font-size: clamp(26px, 2.4vw, 38px);
   --nav--font-size: clamp(16px, 1vw, 20px);
+}
+
+/* Dark theme. An inline script in <head> stamps data-theme on <html> before the
+   first paint — from the stored choice if there is one, otherwise from the OS
+   setting — so this one block serves both without a flash of the light theme.
+
+   The red inverts rather than darkens: on a dark ground a deep red button reads as
+   a hole, so the filled accents become the logo's gold with dark text on top. */
+:root[data-theme="dark"] {
+  --primary-color: #d4a87a;
+  --article-header-color: #e0b68a;
+  --secondary-color: #2b211c;
+  --footer-color: #2b211c;
+  --background-color: #1e1714;
+  --text-color: #e3d9c8;
+  --link-color: #d4a87a;
+  --deep-red: #d4a87a;
+  --on-accent: #1e1714;
+  --rule-color: rgba(227, 217, 200, 0.16);
+  --figure-tint: rgba(227, 217, 200, 0.07);
 }
 
 * {
@@ -56,7 +79,7 @@ header {
   flex-wrap: wrap;
   gap: 10px 28px;
   padding: 18px 5vw;
-  border-bottom: 1px solid rgba(31, 28, 22, 0.15);
+  border-bottom: 1px solid var(--rule-color);
 }
 
 header h1 {
@@ -102,7 +125,7 @@ nav ul {
 }
 
 nav ul li {
-  padding: 8px 14px;
+  padding: 8px 11px;
 }
 
 nav ul li a {
@@ -148,15 +171,21 @@ nav ul li a:hover {
 
 /* Language switch */
 
-.lang-switch {
+.header-controls {
   order: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-switch {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
 @media screen and (max-width: 950px) {
-  .lang-switch {
+  .header-controls {
     order: 2;
     margin-inline-start: auto;
   }
@@ -186,7 +215,27 @@ nav ul li a:hover {
 .lang-btn.is-active {
   background-color: var(--deep-red);
   border-color: var(--deep-red);
-  color: var(--hero-text-color);
+  color: var(--on-accent);
+}
+
+/* Theme switch: same chip as the language buttons, carrying a sun or a moon. */
+
+.theme-btn {
+  font-family: inherit;
+  font-size: 1.05em;
+  line-height: 1;
+  padding: 7px 14px;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.theme-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 /* Hero: no band and no photo — the logo and the headline sit straight on the
@@ -243,7 +292,7 @@ nav ul li a:hover {
 
 .button-primary {
   background-color: var(--deep-red);
-  color: var(--hero-text-color);
+  color: var(--on-accent);
   border: 2px solid var(--deep-red);
 }
 
@@ -335,7 +384,9 @@ nav ul li a:hover {
   border-radius: 5px;
   flex-basis: 30%;
   opacity: 0.7;
-  transition: all ease-in-out 0.5s;
+  /* Only what the hover actually changes: `all` would drag the card's colours
+     through a half-second fade every time the theme is switched. */
+  transition: opacity ease-in-out 0.5s, transform ease-in-out 0.5s;
 }
 
 .posts article:hover {
@@ -424,7 +475,7 @@ nav ul li a:hover {
   height: 46px;
   border-radius: 50%;
   background-color: var(--deep-red);
-  color: var(--hero-text-color);
+  color: var(--on-accent);
   font-family: "Playfair Display", "Cambria", Georgia, serif;
   font-size: 1.25em;
   display: flex;
@@ -455,7 +506,7 @@ nav ul li a:hover {
   max-width: 840px;
   margin: 0 auto 20px;
   padding: 14px 22px;
-  background-color: rgba(31, 28, 22, 0.08);
+  background-color: var(--figure-tint);
   border-radius: 5px;
   text-align: center;
   font-size: 1.1em;
@@ -494,8 +545,8 @@ nav ul li a:hover {
   max-width: 840px;
   margin: 0 auto 40px;
   padding: 26px 30px;
-  background-color: var(--deep-red);
-  color: var(--hero-text-color);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   border-radius: 5px;
   text-align: start;
 }
@@ -504,7 +555,7 @@ nav ul li a:hover {
   margin: 0 0 10px;
   font-family: "Playfair Display", "Cambria", Georgia, serif;
   font-size: 1.6em;
-  color: var(--accent-gold);
+  color: var(--article-header-color);
 }
 
 [lang="fa"] .cta h3 {
@@ -517,7 +568,7 @@ nav ul li a:hover {
 }
 
 .cta a {
-  color: var(--accent-gold);
+  color: var(--link-color);
 }
 
 /* Known limitations */
