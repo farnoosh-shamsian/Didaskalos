@@ -62,6 +62,7 @@ _WATCHER_JS = """
   var ENDED_URL = __ENDED_URL__;
   var SECONDS_TOKEN = __SECONDS_TOKEN__;
   var TEXT = __TEXT__;
+  var COLORS = __COLORS__;
 
   if (window.__didaskalosIdle) { window.__didaskalosIdle.destroy(); }
 
@@ -92,14 +93,14 @@ _WATCHER_JS = """
 
       var card = document.createElement('div');
       card.style.cssText = [
-        'background:#ffffff', 'color:#212529', 'border-radius:12px',
+        'background:' + COLORS.card, 'color:' + COLORS.text, 'border-radius:12px',
         'padding:28px 32px', 'max-width:420px', 'text-align:center',
         'box-shadow:0 10px 40px rgba(0,0,0,0.35)', 'line-height:1.6'
       ].join(';');
 
       var title = document.createElement('h2');
       title.textContent = TEXT.title;
-      title.style.cssText = 'margin:0 0 12px;font-size:1.3rem;color:#0b7285';
+      title.style.cssText = 'margin:0 0 12px;font-size:1.3rem;color:' + COLORS.accent;
 
       counter = document.createElement('p');
       counter.style.cssText = 'margin:0 0 20px;font-size:1rem';
@@ -107,7 +108,7 @@ _WATCHER_JS = """
       var button = document.createElement('button');
       button.textContent = TEXT.stay;
       button.style.cssText = [
-        'background:#0b7285', 'color:#ffffff', 'border:none',
+        'background:' + COLORS.accent, 'color:' + COLORS.onAccent, 'border:none',
         'border-radius:8px', 'padding:10px 22px', 'font-size:1rem',
         'cursor:pointer', 'font-family:inherit'
       ].join(';');
@@ -197,9 +198,27 @@ _FONT_STACK = {
     False: "'Source Sans Pro','Segoe UI',sans-serif",
 }
 
+# The overlay is built in plain DOM, outside Streamlit's stylesheet, so it has to
+# be told the palette. These follow [theme.light] / [theme.dark] in
+# .streamlit/config.toml — a white card would flare on a dark page.
+_OVERLAY_COLORS = {
+    "light": {
+        "card": "#d1cabb",
+        "text": "#1f1c16",
+        "accent": "#3a1712",
+        "onAccent": "#cacbc4",
+    },
+    "dark": {
+        "card": "#2b211c",
+        "text": "#e3d9c8",
+        "accent": "#d4a87a",
+        "onAccent": "#1e1714",
+    },
+}
 
-def render_idle_watcher(lang: str) -> None:
-    """Inject the idle watcher for the active language.
+
+def render_idle_watcher(lang: str, theme: str = "light") -> None:
+    """Inject the idle watcher for the active language and theme.
 
     Renders a zero-height component, so it can be called anywhere in the script;
     calling it early means the watcher is installed even on the ``st.stop()``
@@ -213,7 +232,9 @@ def render_idle_watcher(lang: str) -> None:
         "dir": "rtl" if rtl else "ltr",
         "font": _FONT_STACK[rtl],
     }
-    ended_url = f"{SESSION_ENDED_PATH}?lang={lang}"
+    # The closed-session page is static, so it cannot read the app's state: both
+    # the language and the theme ride along in the URL.
+    ended_url = f"{SESSION_ENDED_PATH}?lang={lang}&theme={theme}"
 
     watcher = (
         _WATCHER_JS.replace("__IDLE_MS__", str(IDLE_TIMEOUT_SECONDS * 1000))
@@ -221,6 +242,10 @@ def render_idle_watcher(lang: str) -> None:
         .replace("__ENDED_URL__", json.dumps(ended_url))
         .replace("__SECONDS_TOKEN__", json.dumps(_SECONDS_TOKEN))
         .replace("__TEXT__", json.dumps(text))
+        .replace(
+            "__COLORS__",
+            json.dumps(_OVERLAY_COLORS.get(theme, _OVERLAY_COLORS["light"])),
+        )
     )
     bootstrap = _BOOTSTRAP_JS.replace("__SCRIPT_ID__", json.dumps(_SCRIPT_ID)).replace(
         "__WATCHER_SOURCE__", json.dumps(watcher)

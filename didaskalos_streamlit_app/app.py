@@ -41,6 +41,7 @@ from didaskalos_pipeline import (
 )
 from i18n import AVAILABLE_LANGS, DEFAULT_LANG, LANG_NAMES, is_rtl, rtl_css, t
 from idle_timeout import render_idle_watcher
+from theme import render_theme_sync, render_theme_toggle, resolve_theme
 from work_catalog import resolve_author_work, tlg_work_key
 
 
@@ -72,9 +73,16 @@ if st.query_params.get("lang") != lang:
 if is_rtl(lang):
     st.markdown(rtl_css(), unsafe_allow_html=True)
 
+# Light or dark. Resolved from the URL for the same reason the language is, and
+# applied in the browser rather than here — see theme.py. The toggle installs
+# itself in Streamlit's toolbar, so this call is not tied to a place on the page.
+theme = resolve_theme()
+render_theme_sync(theme)
+render_theme_toggle(lang, theme)
+
 # Installed before any st.stop() below, so an abandoned tab is still timed out
 # even on the paths that abort the page early.
-render_idle_watcher(lang)
+render_idle_watcher(lang, theme)
 
 
 def _sync_lang_query_param() -> None:
@@ -87,11 +95,19 @@ def _sync_lang_query_param() -> None:
     st.query_params["lang"] = st.session_state["lang"]
 
 HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
-LOGO_IMAGE_PATHS = {
-    "fa": APP_DIR / "assets" / "greek-d.png",
-    "en": APP_DIR / "assets" / "english-d.png",
-}
-LOGO_IMAGE_PATH = LOGO_IMAGE_PATHS.get(lang, LOGO_IMAGE_PATHS[DEFAULT_LANG])
+# One logo per language, each in two inks: the "-ink" file is the deep red-brown
+# recolour (#3a1712, flat, all shading in the alpha channel) for the light theme,
+# the plain one the logo's own gold, which is what survives on the dark sidebar.
+# Same pair, same colours, as the project site's logo-*-ink / logo-* files.
+LOGO_IMAGE_STEMS = {"fa": "greek", "en": "english"}
+
+
+def _logo_image_path(lang: str, theme: str) -> Path:
+    stem = LOGO_IMAGE_STEMS.get(lang, LOGO_IMAGE_STEMS[DEFAULT_LANG])
+    return APP_DIR / "assets" / f"{stem}{'-ink' if theme == 'light' else ''}.png"
+
+
+LOGO_IMAGE_PATH = _logo_image_path(lang, theme)
 header_image_html = ""
 if HEADER_IMAGE_PATH.exists():
     encoded_image = base64.b64encode(HEADER_IMAGE_PATH.read_bytes()).decode("ascii")

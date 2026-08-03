@@ -14,14 +14,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Didaskalos</title>
 <style>
+  /* Both palettes match [theme.light] / [theme.dark] in .streamlit/config.toml.
+     ?theme= says which one to use; the app puts it there when it sends a
+     timed-out tab here, so the page the visitor lands on looks like the one
+     they left. Light is the default here as it is in the app. */
+  :root {
+    --page: #c4bca9;
+    --card: #d1cabb;
+    --border: #a49b86;
+    --text: #1f1c16;
+    --heading: #530707;
+    --accent: #3a1712;
+    --on-accent: #cacbc4;
+    --card-shadow: rgba(31, 28, 22, 0.12);
+  }
+  :root[data-theme="dark"] {
+    --page: #1e1714;
+    --card: #2b211c;
+    --border: #4a3a30;
+    --text: #e3d9c8;
+    --heading: #e0b68a;
+    --accent: #d4a87a;
+    --on-accent: #1e1714;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+  }
   body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f9fa;
-    color: #212529;
+    background: var(--page);
+    color: var(--text);
     font-family: 'Source Sans Pro', 'Segoe UI', sans-serif;
     line-height: 1.6;
   }
@@ -29,20 +53,20 @@
     font-family: 'Noto Naskh Arabic', 'B Lotus', Tahoma, sans-serif;
   }
   .card {
-    background: #ffffff;
-    border: 1px solid #e9ecef;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 40px 44px;
     max-width: 460px;
     text-align: center;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 24px var(--card-shadow);
   }
-  h1 { margin: 0 0 14px; font-size: 1.5rem; color: #0b7285; }
+  h1 { margin: 0 0 14px; font-size: 1.5rem; color: var(--heading); }
   p { margin: 0 0 26px; font-size: 1.05rem; }
   a.restart {
     display: inline-block;
-    background: #0b7285;
-    color: #ffffff;
+    background: var(--accent);
+    color: var(--on-accent);
     text-decoration: none;
     border-radius: 8px;
     padding: 11px 26px;
@@ -72,9 +96,12 @@
     }
   };
 
-  var lang = new URLSearchParams(window.location.search).get("lang");
+  var params = new URLSearchParams(window.location.search);
+  var lang = params.get("lang");
+  var theme = params.get("theme") === "dark" ? "dark" : "light";
   var text = TEXT[lang] || TEXT.en;
 
+  document.documentElement.setAttribute("data-theme", theme);
   document.documentElement.lang = TEXT[lang] ? lang : "en";
   document.body.setAttribute("dir", text.dir);
   document.getElementById("title").textContent = text.title;
@@ -82,8 +109,10 @@
 
   var restart = document.getElementById("restart");
   restart.textContent = text.restart;
-  // Send them back into the app in the language they were using.
-  restart.href = TEXT[lang] ? "/?lang=" + encodeURIComponent(lang) : "/";
+  // Send them back into the app in the language and theme they were using.
+  var back = new URLSearchParams({ theme: theme });
+  if (TEXT[lang]) { back.set("lang", lang); }
+  restart.href = "/?" + back.toString();
 </script>
 </body>
 </html>

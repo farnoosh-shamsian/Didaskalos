@@ -25,8 +25,9 @@
 }
 
 /* Dark theme. An inline script in <head> stamps data-theme on <html> before the
-   first paint — from the stored choice if there is one, otherwise from the OS
-   setting — so this one block serves both without a flash of the light theme.
+   first paint, so this block serves both themes without a flash of the wrong
+   one. Light is the default: the site turns dark only for a visitor who asked
+   for it with the theme button, not because their OS is set that way.
 
    The red inverts rather than darkens: on a dark ground a deep red button reads as
    a hole, so the filled accents become the logo's gold with dark text on top. */

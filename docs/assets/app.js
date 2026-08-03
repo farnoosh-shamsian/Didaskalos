@@ -28,14 +28,6 @@ if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
 }
 
-function storedTheme() {
-  try {
-    return localStorage.getItem(THEME_KEY);
-  } catch (e) {
-    return null;
-  }
-}
-
 function applyTheme(theme) {
   currentTheme = theme === "dark" ? "dark" : "light";
   document.documentElement.setAttribute("data-theme", currentTheme);
@@ -110,14 +102,6 @@ if (themeButton) {
     } catch (e) {}
   });
 }
-
-// Follow the OS while the visitor has not chosen a theme here.
-const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-darkQuery.addEventListener("change", (event) => {
-  if (!storedTheme()) {
-    applyTheme(event.matches ? "dark" : "light");
-  }
-});
 
 if (menuIcon && navList) {
   menuIcon.addEventListener("click", () => {

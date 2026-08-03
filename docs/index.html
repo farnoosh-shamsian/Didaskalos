@@ -29,21 +29,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles.css" />
-    <!-- Resolve the theme before the first paint: a stored choice wins, otherwise
-         the OS setting. app.js (deferred) picks up whatever this decided. -->
+    <!-- Resolve the theme before the first paint. The site starts light whatever
+         the operating system is set to, so only a choice made here — stored by
+         the theme button — turns it dark. app.js (deferred) picks up whatever
+         this decided. -->
     <script>
       (function () {
         var stored = null;
         try {
           stored = localStorage.getItem("didaskalos-theme");
         } catch (e) {}
-        var dark =
-          stored === "dark" ||
-          (stored !== "light" &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches);
         document.documentElement.setAttribute(
           "data-theme",
-          dark ? "dark" : "light",
+          stored === "dark" ? "dark" : "light",
         );
       })();
     </script>

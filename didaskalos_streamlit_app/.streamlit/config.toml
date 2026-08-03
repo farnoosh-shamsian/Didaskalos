@@ -1,9 +1,36 @@
+# Two custom palettes rather than one. Defining [theme.light] and [theme.dark]
+# is what makes Streamlit offer an appearance choice at all: with a single
+# [theme] table the custom theme is the only theme and the switcher is empty.
+# Anything declared here is inherited by both, so every colour lives in one of
+# the two sections below.
+#
+# The colours are the project site's own (docs/assets/styles.css), so the app and
+# the page it is linked from read as one thing: sand ground and deep red on
+# light, the logo's gold on near-black brown for dark. The site's rule about the
+# red holds here too — a saturated red is only ever text or a small filled
+# surface, and on dark it gives way to the gold entirely.
 [theme]
-base = "light"
-primaryColor = "#0b7285"
-backgroundColor = "#f8f9fa"
-secondaryBackgroundColor = "#e9ecef"
-textColor = "#212529"
+font = "sans-serif"
+
+[theme.light]
+primaryColor = "#3a1712"
+backgroundColor = "#c4bca9"
+secondaryBackgroundColor = "#b3ab9a"
+textColor = "#1f1c16"
+linkColor = "#530707"
+borderColor = "#a49b86"
+codeBackgroundColor = "#d1cabb"
+dataframeHeaderBackgroundColor = "#b3ab9a"
+
+[theme.dark]
+primaryColor = "#d4a87a"
+backgroundColor = "#1e1714"
+secondaryBackgroundColor = "#2b211c"
+textColor = "#e3d9c8"
+linkColor = "#e0b68a"
+borderColor = "#4a3a30"
+codeBackgroundColor = "#2b211c"
+dataframeHeaderBackgroundColor = "#2b211c"
 
 [server]
 headless = true
