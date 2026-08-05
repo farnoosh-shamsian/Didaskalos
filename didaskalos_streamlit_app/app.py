@@ -100,22 +100,22 @@ def _sync_lang_query_param() -> None:
     st.query_params["lang"] = st.session_state["lang"]
 
 HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
-# One logo per language, each in two inks: the "-ink" file is the deep red-brown
+# The Greek wordmark carries every language: ΔΙΔΑΣΚΑΛΟΣ is the name in the
+# language the app teaches and needs no translating. (The Latin one is the
+# project site's header brand.) Two inks: the "-ink" file is the deep red-brown
 # recolour (#3a1712, flat, all shading in the alpha channel) for the light theme,
 # the plain one the logo's own gold, which is what survives on the dark sidebar.
-# Same pair, same colours, as the project site's logo-*-ink / logo-* files.
 # Both are rendered; the stylesheet in theme.py shows whichever suits the theme
 # the browser is displaying, so neither ever ends up invisible on its own ground.
-LOGO_IMAGE_STEMS = {"fa": "greek", "en": "english"}
+LOGO_IMAGE_STEM = "greek"
 
 
-def _logo_image_path(lang: str, theme: str) -> Path:
-    stem = LOGO_IMAGE_STEMS.get(lang, LOGO_IMAGE_STEMS[DEFAULT_LANG])
-    return APP_DIR / "assets" / f"{stem}{'-ink' if theme == 'light' else ''}.png"
+def _logo_image_path(theme: str) -> Path:
+    return APP_DIR / "assets" / f"{LOGO_IMAGE_STEM}{'-ink' if theme == 'light' else ''}.png"
 
 
 LOGO_IMAGE_PATHS = {
-    variant: _logo_image_path(lang, variant) for variant in LOGO_CONTAINER_KEYS
+    variant: _logo_image_path(variant) for variant in LOGO_CONTAINER_KEYS
 }
 header_image_html = ""
 if HEADER_IMAGE_PATH.exists():

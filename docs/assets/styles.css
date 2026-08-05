@@ -83,16 +83,26 @@ header {
   border-bottom: 1px solid var(--rule-color);
 }
 
+/* The brand is the logo's own wordmark rather than set text — the name alone,
+   without the emblem above it or the rule below, neither of which belongs in a
+   header bar. The height is tied to the old title's font size, so the name still
+   reads at the size the text did. */
 header h1 {
   order: 1;
   margin: 0;
-  font-family: "Playfair Display", "Cambria", Georgia, serif;
   font-size: var(--header-font-size);
+  line-height: 0;
 }
 
 header h1 a {
-  color: var(--primary-color);
+  display: block;
   text-decoration: none;
+}
+
+.brand-mark {
+  display: block;
+  height: 0.78em;
+  width: auto;
 }
 
 .menu-icon {
