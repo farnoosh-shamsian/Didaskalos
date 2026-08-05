@@ -62,7 +62,15 @@ _WATCHER_JS = """
   var ENDED_URL = __ENDED_URL__;
   var SECONDS_TOKEN = __SECONDS_TOKEN__;
   var TEXT = __TEXT__;
-  var COLORS = __COLORS__;
+  var PALETTES = __PALETTES__;
+  var FALLBACK_THEME = __FALLBACK_THEME__;
+
+  // theme.py stamps the theme the page is actually showing on <html>; read it
+  // late so the overlay is right even if the theme changed after this ran.
+  function activeTheme() {
+    var showing = document.documentElement.getAttribute('data-didaskalos-theme');
+    return showing === 'light' || showing === 'dark' ? showing : FALLBACK_THEME;
+  }
 
   if (window.__didaskalosIdle) { window.__didaskalosIdle.destroy(); }
 
@@ -82,6 +90,7 @@ _WATCHER_JS = """
 
   function showOverlay(secondsLeft) {
     if (!overlay) {
+      var COLORS = PALETTES[activeTheme()];
       overlay = document.createElement('div');
       overlay.setAttribute('dir', TEXT.dir);
       overlay.style.cssText = [
@@ -141,7 +150,7 @@ _WATCHER_JS = """
     var remaining = deadline - Date.now();
     if (remaining <= 0) {
       destroy();
-      window.location.replace(ENDED_URL);
+      window.location.replace(ENDED_URL + '&theme=' + activeTheme());
     } else if (remaining <= WARN_MS) {
       showOverlay(Math.ceil(remaining / 1000));
     }
@@ -199,8 +208,9 @@ _FONT_STACK = {
 }
 
 # The overlay is built in plain DOM, outside Streamlit's stylesheet, so it has to
-# be told the palette. These follow [theme.light] / [theme.dark] in
-# .streamlit/config.toml — a white card would flare on a dark page.
+# be told the palettes. These follow [theme.light] / [theme.dark] in
+# .streamlit/config.toml — a white card would flare on a dark page. Both are sent
+# and the one to use is chosen when the overlay is built, from the theme stamp.
 _OVERLAY_COLORS = {
     "light": {
         "card": "#d1cabb",
@@ -232,9 +242,10 @@ def render_idle_watcher(lang: str, theme: str = "light") -> None:
         "dir": "rtl" if rtl else "ltr",
         "font": _FONT_STACK[rtl],
     }
-    # The closed-session page is static, so it cannot read the app's state: both
-    # the language and the theme ride along in the URL.
-    ended_url = f"{SESSION_ENDED_PATH}?lang={lang}&theme={theme}"
+    # The closed-session page is static, so it cannot read the app's state: the
+    # language rides along in the URL, and the watcher appends the theme it can
+    # see at the moment it gives up on the tab.
+    ended_url = f"{SESSION_ENDED_PATH}?lang={lang}"
 
     watcher = (
         _WATCHER_JS.replace("__IDLE_MS__", str(IDLE_TIMEOUT_SECONDS * 1000))
@@ -242,9 +253,10 @@ def render_idle_watcher(lang: str, theme: str = "light") -> None:
         .replace("__ENDED_URL__", json.dumps(ended_url))
         .replace("__SECONDS_TOKEN__", json.dumps(_SECONDS_TOKEN))
         .replace("__TEXT__", json.dumps(text))
+        .replace("__PALETTES__", json.dumps(_OVERLAY_COLORS))
         .replace(
-            "__COLORS__",
-            json.dumps(_OVERLAY_COLORS.get(theme, _OVERLAY_COLORS["light"])),
+            "__FALLBACK_THEME__",
+            json.dumps(theme if theme in _OVERLAY_COLORS else "light"),
         )
     )
     bootstrap = _BOOTSTRAP_JS.replace("__SCRIPT_ID__", json.dumps(_SCRIPT_ID)).replace(

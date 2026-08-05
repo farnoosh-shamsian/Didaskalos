@@ -41,7 +41,12 @@ from didaskalos_pipeline import (
 )
 from i18n import AVAILABLE_LANGS, DEFAULT_LANG, LANG_NAMES, is_rtl, rtl_css, t
 from idle_timeout import render_idle_watcher
-from theme import render_theme_sync, render_theme_toggle, resolve_theme
+from theme import (
+    LOGO_CONTAINER_KEYS,
+    render_theme_sync,
+    render_theme_toggle,
+    resolve_theme,
+)
 from work_catalog import resolve_author_work, tlg_work_key
 
 
@@ -99,6 +104,8 @@ HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
 # recolour (#3a1712, flat, all shading in the alpha channel) for the light theme,
 # the plain one the logo's own gold, which is what survives on the dark sidebar.
 # Same pair, same colours, as the project site's logo-*-ink / logo-* files.
+# Both are rendered; the stylesheet in theme.py shows whichever suits the theme
+# the browser is displaying, so neither ever ends up invisible on its own ground.
 LOGO_IMAGE_STEMS = {"fa": "greek", "en": "english"}
 
 
@@ -107,7 +114,9 @@ def _logo_image_path(lang: str, theme: str) -> Path:
     return APP_DIR / "assets" / f"{stem}{'-ink' if theme == 'light' else ''}.png"
 
 
-LOGO_IMAGE_PATH = _logo_image_path(lang, theme)
+LOGO_IMAGE_PATHS = {
+    variant: _logo_image_path(lang, variant) for variant in LOGO_CONTAINER_KEYS
+}
 header_image_html = ""
 if HEADER_IMAGE_PATH.exists():
     encoded_image = base64.b64encode(HEADER_IMAGE_PATH.read_bytes()).decode("ascii")
@@ -774,8 +783,10 @@ def _render_sources_note(records: list[dict], lang: str) -> None:
 
 
 with st.sidebar:
-    if LOGO_IMAGE_PATH.exists():
-        st.image(str(LOGO_IMAGE_PATH), use_container_width=True)
+    for variant, logo_path in LOGO_IMAGE_PATHS.items():
+        if logo_path.exists():
+            with st.container(key=LOGO_CONTAINER_KEYS[variant]):
+                st.image(str(logo_path), use_container_width=True)
 
     st.selectbox(
         t("language_label", lang),

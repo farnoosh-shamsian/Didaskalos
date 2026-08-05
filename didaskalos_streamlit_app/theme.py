@@ -39,6 +39,12 @@ DEFAULT_THEME = "light"
 # The icon names the theme the button switches *to*.
 _THEME_ICONS = {"light": "☀", "dark": "☾"}
 
+# Container keys the app puts its two logo variants in. Both are rendered and the
+# stylesheet below shows the one that suits the theme on screen, so the logo is
+# never the invisible ink-on-dark combination — not even in the moment between a
+# theme change made from Streamlit's own ☰ menu and the rerun that notices it.
+LOGO_CONTAINER_KEYS = {"light": "logo_light", "dark": "logo_dark"}
+
 # What the frontend calls the two custom palettes, and the key it caches the
 # active one under. Both are Streamlit internals: the key is
 # ``stActiveTheme-<pathname>-v<n>`` with the version bumped whenever the cached
@@ -58,6 +64,26 @@ _TOGGLE_COLORS = {
     "dark": {"ink": "#e3d9c8", "hover": "#d4a87a", "wash": "rgba(227, 217, 200, 0.12)"},
 }
 
+_TOGGLE_COLOR_RULES = """
+%(scope)s .didaskalos-theme-toggle { color: %(ink)s; }
+%(scope)s .didaskalos-theme-toggle:hover,
+%(scope)s .didaskalos-theme-toggle:focus-visible {
+  background-color: %(wash)s;
+  color: %(hover)s;
+}"""
+
+
+def _toggle_color_rules(theme: str) -> str:
+    """Toggle colours per stamped theme, with the run's own theme pre-stamp."""
+    scopes = [
+        ('html[data-didaskalos-theme="light"]', _TOGGLE_COLORS["light"]),
+        ('html[data-didaskalos-theme="dark"]', _TOGGLE_COLORS["dark"]),
+        ("html:not([data-didaskalos-theme])", _TOGGLE_COLORS[theme]),
+    ]
+    return "\n".join(
+        _TOGGLE_COLOR_RULES % dict(colors, scope=scope) for scope, colors in scopes
+    )
+
 _TOGGLE_CSS = """
 <style>
 /* Sized to sit beside the ☰ menu and the run indicator in Streamlit's toolbar. */
@@ -71,20 +97,31 @@ _TOGGLE_CSS = """
   font-size: 1.05rem;
   line-height: 1;
   text-decoration: none;
-  color: %(ink)s;
   transition: background-color 120ms ease, color 120ms ease;
 }
-.didaskalos-theme-toggle:hover,
-.didaskalos-theme-toggle:focus-visible {
-  background-color: %(wash)s;
-  color: %(hover)s;
-}
+%(theme_rules)s
 /* Fallback position for a Streamlit whose toolbar this script cannot find. */
 .didaskalos-theme-toggle--floating {
   position: fixed;
   top: 0.6rem;
   inset-inline-end: 5.5rem;
   z-index: 999991;
+}
+
+/* Show the logo that suits the theme on screen. The stamp on <html> is read off
+   the rendered background by the script below, so this holds however the theme
+   was set; until it lands, the one the script decided on this run is used. */
+html[data-didaskalos-theme="light"] .st-key-%(dark_logo)s,
+html[data-didaskalos-theme="dark"] .st-key-%(light_logo)s,
+html:not([data-didaskalos-theme]) .st-key-%(unstamped_logo)s {
+  display: none;
+}
+
+/* The logo is a mark, not a figure — Streamlit's hover control that blows an
+   image up to full screen has nothing to offer here. */
+[data-testid="stSidebar"] [data-testid="stElementToolbar"],
+[data-testid="stSidebar"] [data-testid="stBaseButton-elementToolbar"] {
+  display: none !important;
 }
 </style>
 """
@@ -96,34 +133,53 @@ _TOGGLE_JS = """
 (function () {
   var SETTINGS = __SETTINGS__;
   var CLASS = 'didaskalos-theme-toggle';
+  var target = null;
 
   if (window.__didaskalosThemeToggle) { window.__didaskalosThemeToggle.destroy(); }
 
   var link = document.createElement('a');
   link.className = CLASS;
-  link.textContent = SETTINGS.icon;
-  link.title = SETTINGS.label;
-  link.setAttribute('aria-label', SETTINGS.label);
   link.href = '#';
-
-  function targetUrl() {
-    var url = new URL(window.location.href);
-    url.searchParams.set('theme', SETTINGS.target);
-    return url.toString();
-  }
 
   link.addEventListener('click', function (event) {
     event.preventDefault();
+    if (!target) { return; }
     // Pin the frontend's cached choice before navigating, so the page that
     // loads next is already in the new theme and the sync has nothing to do.
     try {
       var key = 'stActiveTheme-' + window.location.pathname + '-v' + SETTINGS.keyVersion;
-      window.localStorage.setItem(key, JSON.stringify(SETTINGS.cachedName));
+      window.localStorage.setItem(key, JSON.stringify(SETTINGS[target].cached));
     } catch (e) {}
-    window.location.assign(targetUrl());
+    var url = new URL(window.location.href);
+    url.searchParams.set('theme', target);
+    window.location.assign(url.toString());
   });
 
+  // Streamlit exposes no theme flag in the DOM, so read the page's own
+  // background: it is the one signal that is right whichever way the theme was
+  // set — this toggle, Streamlit's ☰ menu, or a cached choice from last visit.
+  // Everything that has to match what is on screen keys off this stamp.
+  function stamp() {
+    var parts = String(window.getComputedStyle(document.body).backgroundColor)
+      .match(/[\\d.]+/g);
+    if (!parts || parts.length < 3) { return; }
+    var luminance =
+      (0.299 * Number(parts[0]) + 0.587 * Number(parts[1]) +
+        0.114 * Number(parts[2])) / 255;
+    var showing = luminance < 0.5 ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-didaskalos-theme', showing);
+
+    var wanted = showing === 'dark' ? 'light' : 'dark';
+    if (wanted !== target) {
+      target = wanted;
+      link.textContent = SETTINGS[target].icon;
+      link.title = SETTINGS[target].label;
+      link.setAttribute('aria-label', SETTINGS[target].label);
+    }
+  }
+
   function place() {
+    stamp();
     if (!link.isConnected || !document.body.contains(link)) {
       var toolbar = document.querySelector('[data-testid="stToolbar"]');
       var menu = toolbar && toolbar.querySelector('[data-testid="stMainMenu"]');
@@ -146,8 +202,16 @@ _TOGGLE_JS = """
   }
 
   place();
+  // Nodes coming and going put the link back; class changes catch a theme
+  // switch made from Streamlit's ☰ menu, which restyles in place and would
+  // otherwise leave the stamp — and with it the logo — describing the old theme.
   var observer = new MutationObserver(schedule);
-  observer.observe(document.body, { childList: true, subtree: true });
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['class']
+  });
 
   window.__didaskalosThemeToggle = {
     destroy: function () {
@@ -166,6 +230,13 @@ _SYNC_JS = """
 (function () {
   var WANTED = __WANTED__;
   var KEY = 'stActiveTheme-' + window.location.pathname + '-v' + __KEY_VERSION__;
+
+  // Once per page load, not once per rerun. Applying the URL's theme is what a
+  // load is for; after that the browser is left alone, so a theme picked from
+  // Streamlit's ☰ menu sticks instead of being reloaded away on the next click.
+  if (window.__didaskalosThemeApplied) { return; }
+  window.__didaskalosThemeApplied = true;
+
   // One reload per requested theme per tab. Without this, a Streamlit release
   // that renamed the cache key would leave the page reloading forever.
   var GUARD = 'didaskalos-theme-reload';
@@ -230,6 +301,12 @@ def resolve_theme() -> str:
     Same resolution order as the language: URL -> session state -> default. The
     URL is the durable half of that, which matters more here than for the
     language because switching theme deliberately reloads the page.
+
+    This is the *intent* for a page load, not a live reading of what the browser
+    is showing. The sync applies it once per load and then leaves the browser
+    alone, so a theme picked from Streamlit's own ☰ menu afterwards is not
+    fought; everything that has to match what is on screen — the logo, the
+    toggle's direction, the idle overlay — reads the browser instead.
     """
     requested = st.query_params.get("theme")
     if requested in THEMES and requested != st.session_state.get("theme"):
@@ -269,15 +346,25 @@ def render_theme_toggle(lang: str, theme: str) -> None:
     Like the button on the project site, the icon says what a click will do
     rather than which theme is on.
     """
-    target = _other_theme(theme)
+    # Both directions are sent over; the script picks by what is on screen.
     settings = {
-        "icon": _THEME_ICONS[target],
-        "label": t(f"theme_switch_to_{target}", lang),
-        "target": target,
-        "cachedName": _FRONTEND_THEME_NAMES[target],
         "keyVersion": _ACTIVE_THEME_KEY_VERSION,
+        **{
+            variant: {
+                "icon": _THEME_ICONS[variant],
+                "label": t(f"theme_switch_to_{variant}", lang),
+                "cached": _FRONTEND_THEME_NAMES[variant],
+            }
+            for variant in THEMES
+        },
     }
-    st.markdown(_TOGGLE_CSS % _TOGGLE_COLORS[theme], unsafe_allow_html=True)
+    styles = {
+        "theme_rules": _toggle_color_rules(theme),
+        "light_logo": LOGO_CONTAINER_KEYS["light"],
+        "dark_logo": LOGO_CONTAINER_KEYS["dark"],
+        "unstamped_logo": LOGO_CONTAINER_KEYS[_other_theme(theme)],
+    }
+    st.markdown(_TOGGLE_CSS % styles, unsafe_allow_html=True)
     toggle = _TOGGLE_JS.replace("__SETTINGS__", json.dumps(settings))
     bootstrap = _BOOTSTRAP_JS.replace(
         "__SCRIPT_ID__", json.dumps(_TOGGLE_SCRIPT_ID)
