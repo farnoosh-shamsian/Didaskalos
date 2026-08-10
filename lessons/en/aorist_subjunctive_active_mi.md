@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Subjunctive Active (μι-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Aorist indicative active of ‑μι verbs, present subjunctive active of ‑μι verbs.*
-
 ---
 
 ## 1. What This Form Is

@@ -5,8 +5,6 @@ pos: verb
 
 # The Present Active Infinitive (ω-Verbs)
 
-*Target level: Beginner → Intermediate*
-
 In this lesson we will learn what the **present active infinitive** is, how it is formed for the different verb classes, and how it is used in Ancient Greek. The ending **‑ω** that you see in the first-person singular present indicative (e.g. *λύω*) is the "signal" that the verb belongs to the present active system, and it identifies the stem from which the infinitive is built.
 
 ---

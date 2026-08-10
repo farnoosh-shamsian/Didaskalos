@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Active Infinitive (μι-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Aorist indicative active of ‑μι verbs (ἔδωκα, ἔθηκα, ἔστην), present active infinitive of ‑μι verbs.*
-
 ---
 
 ## 1. What This Form Is

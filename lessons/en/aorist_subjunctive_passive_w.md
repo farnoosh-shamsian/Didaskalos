@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Subjunctive Passive (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Aorist indicative passive, present subjunctive active.*
-
 ---
 
 ## 1. What This Form Is

@@ -5,8 +5,6 @@ pos: verb
 
 # The Present Active Infinitive
 
-*Canonical syllabus label: present, infinitive, active*
-
 The **infinitive** is the non-finite form of the verb — it has no person or number. The **present active infinitive** expresses an action **in progress or repeated**, performed by its own subject.
 
 ## Forms

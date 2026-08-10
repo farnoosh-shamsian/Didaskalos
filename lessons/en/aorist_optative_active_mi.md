@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Optative Active (μι-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Aorist indicative active of μι-verbs (ἔδωκα, ἔθηκα, ἔστην), optative mood basics*
-
 ---
 
 ## 1. What This Form Is

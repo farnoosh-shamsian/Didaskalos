@@ -5,9 +5,6 @@ pos: verb
 
 # The Perfect Middle/Passive Infinitive (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Perfect indicative middle/passive, present middle infinitive.*
-
 ---
 
 ## 1. What This Form Is

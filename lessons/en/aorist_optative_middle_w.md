@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Optative Middle (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Aorist indicative middle, present optative, middle voice basics*
-
 ---
 
 ## 1. What This Form Is

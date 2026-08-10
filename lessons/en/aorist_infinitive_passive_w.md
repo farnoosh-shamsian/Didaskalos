@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Passive Infinitive (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Aorist indicative passive, present passive infinitive, aorist active infinitive.*
-
 ---
 
 ## 1. What This Form Is

@@ -5,9 +5,6 @@ pos: verb
 
 # The Present Optative Active (μι-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Present indicative of μι-verbs, present optative active of ω-verbs*
-
 ---
 
 ## 1. What This Form Is

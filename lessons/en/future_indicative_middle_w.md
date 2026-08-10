@@ -5,9 +5,6 @@ pos: verb
 
 # The Future Indicative Middle (ω-Verbs)
 
-*Target level: Beginner–Intermediate*
-*Prerequisites: Greek alphabet, basic noun declension, present active and middle endings, the concept of voice.*
-
 ---
 
 ## 1. What the Future Indicative Middle Is

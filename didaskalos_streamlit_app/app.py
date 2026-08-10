@@ -922,6 +922,11 @@ if build_clicked:
             source_summary=source_summary,
         )
 
+    # is_deponent is an internal flag driving the deponent lesson, not treebank
+    # data, so it stays out of the export. Selecting columns in to_csv avoids
+    # copying the frame just to drop one column.
+    combined_csv_columns = [column for column in combined_df.columns if column != "is_deponent"]
+
     # Kept in session state so later reruns do not rebuild. CSV bytes are made
     # once here rather than holding the full token frame per session.
     st.session_state["build_result"] = {
@@ -930,7 +935,7 @@ if build_clicked:
         "frequency_rows": int(len(frequency_syllabus)),
         "frequency_syllabus": frequency_syllabus,
         "frequency_csv": frequency_syllabus.to_csv(index=False).encode("utf-8"),
-        "combined_csv": combined_df.to_csv(index=False).encode("utf-8"),
+        "combined_csv": combined_df.to_csv(index=False, columns=combined_csv_columns).encode("utf-8"),
         "textbook_markdown": textbook_markdown,
         "textbook_html": textbook_html,
     }

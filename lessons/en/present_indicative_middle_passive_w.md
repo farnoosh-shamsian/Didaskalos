@@ -5,8 +5,6 @@ pos: verb
 
 # The Present Indicative Middle/Passive (ω-Verbs)
 
-*Target audience: beginner–intermediate students who know the alphabet, the idea of a verb stem, and the concept of voice (active/middle/passive).*
-
 ---
 
 ## 1. What the Present Indicative Middle/Passive Is

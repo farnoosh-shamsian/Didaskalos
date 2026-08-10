@@ -5,9 +5,6 @@ pos: verb
 
 # The Perfect Active Participle (ω-Verbs)
 
-*Level: beginner–intermediate*
-*Prerequisites: the Greek alphabet, basic verb stems, the notion of the participle.*
-
 ---
 
 ## 1. What the Perfect Active Participle Is

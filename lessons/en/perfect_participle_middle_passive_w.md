@@ -5,8 +5,6 @@ pos: verb
 
 # The Perfect Middle/Passive Participle (ω-Verbs)
 
-*For beginner–intermediate students of Ancient Greek*
-
 ---
 
 ## 1. What the Perfect Middle/Passive Participle Is

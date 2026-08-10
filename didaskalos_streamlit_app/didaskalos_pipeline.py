@@ -238,25 +238,32 @@ POSTAG_GENDER_INDEX = 6
 POSTAG_CASE_INDEX = 7
 
 # The label drives the lesson filename via normalize_frequency_row_name, so it
-# must match the module file names in lessons/en/. The short code is only a key.
+# must match the module file names in lessons/en/. The code is only an internal
+# key, never exported: part of speech, declension, then gender for the first two
+# declensions and stem type for the third.
 NOUN_DECLENSION_LABELS = {
-    "N1": "first declension feminine nouns",
-    "N2": "first declension masculine nouns",
-    "N3": "second declension masculine nouns",
-    "N4": "second declension neuter nouns",
-    "N5": "third declension consonant stem nouns",
-    "N6": "third declension iota upsilon stem nouns",
-    "N7": "third declension nasal liquid stem nouns",
-    # N8 and ADJ3 are residual buckets, but named for what is in them: frequency
-    # order can put one first, and "Other Adjectives" is no title for the first
-    # adjective lesson a learner meets. See also LESSON_PREREQUISITES.
-    "N8": "sigma stem and irregular nouns",
+    "noun-1-fem": "first declension feminine nouns",
+    "noun-1-masc": "first declension masculine nouns",
+    "noun-2-masc": "second declension masculine nouns",
+    "noun-2-neut": "second declension neuter nouns",
+    # Labial and velar stems share a lesson: both keep the stop visible in the
+    # nominative (-ψ, -ξ) and behave alike. Dentals drop it, so they get their own.
+    "noun-3-labial-velar": "third declension labial and velar stem nouns",
+    "noun-3-dental": "third declension dental stem nouns",
+    "noun-3-iota-ups": "third declension iota upsilon stem nouns",
+    "noun-3-nasal-liq": "third declension nasal liquid stem nouns",
+    # noun-3-other and adj-3-two-end are residual buckets, but named for what is
+    # in them: frequency order can put one first, and "Other Adjectives" is no
+    # title for the first adjective lesson a learner meets. The code says "other"
+    # where the label says "sigma stem" because the bucket also holds the -ευς,
+    # -αυς and -ω stems. See also LESSON_PREREQUISITE_KINDS.
+    "noun-3-other": "sigma stem and irregular nouns",
 }
 
 ADJECTIVE_DECLENSION_LABELS = {
-    "ADJ1": "first second declension adjectives",
-    "ADJ2": "third declension adjectives",
-    "ADJ3": "two ending and irregular adjectives",
+    "adj-1-2": "first second declension adjectives",
+    "adj-3-three-end": "third declension adjectives",
+    "adj-3-two-end": "two ending and irregular adjectives",
 }
 
 DECLENSION_LABELS = {**NOUN_DECLENSION_LABELS, **ADJECTIVE_DECLENSION_LABELS}
@@ -264,27 +271,29 @@ DECLENSION_LABELS = {**NOUN_DECLENSION_LABELS, **ADJECTIVE_DECLENSION_LABELS}
 # Keyed on _classification_key output. Only lemmas whose nominative-singular
 # ending points to the wrong class need listing.
 IRREGULAR_NOUN_LEXICON = {
-    "γυνη": "N5",  # γυναικός: consonant stem despite ending in -η
-    "παισ": "N5",  # παιδός: dental stem despite ending in -ις
-    "ελπισ": "N5",  # ἐλπίδος
-    "χαρισ": "N5",  # χάριτος
-    "ορνισ": "N5",  # ὄρνιθος
-    "ερισ": "N5",  # ἔριδος
-    "κλεισ": "N5",  # κλειδός
-    "νουσ": "N3",  # second declension contract
-    "πλουσ": "N3",
-    "ζευσ": "N8",
-    "γραυσ": "N8",
-    "γηρασ": "N8",
-    "κερασ": "N8",
-    "τερασ": "N8",
-    "κρεασ": "N8",
-    "υδωρ": "N7",
+    "γυνη": "noun-3-labial-velar",  # γυναικός: velar stem despite ending in -η
+    "παισ": "noun-3-dental",  # παιδός: dental stem despite ending in -ις
+    "ελπισ": "noun-3-dental",  # ἐλπίδος
+    "χαρισ": "noun-3-dental",  # χάριτος
+    "ορνισ": "noun-3-dental",  # ὄρνιθος
+    "ερισ": "noun-3-dental",  # ἔριδος
+    "κλεισ": "noun-3-dental",  # κλειδός
+    "νυξ": "noun-3-dental",  # νυκτός: the -ξ writes κτ + ς, the stem is dental
+    "εισ": "noun-3-nasal-liq",  # ἑνός: the numeral is tagged a noun, stem ἑν-
+    "νουσ": "noun-2-masc",  # second declension contract
+    "πλουσ": "noun-2-masc",
+    "ζευσ": "noun-3-other",
+    "γραυσ": "noun-3-other",
+    "γηρασ": "noun-3-other",
+    "κερασ": "noun-3-other",
+    "τερασ": "noun-3-other",
+    "κρεασ": "noun-3-other",
+    "υδωρ": "noun-3-nasal-liq",
 }
 
 IRREGULAR_ADJECTIVE_LEXICON = {
-    "πολυσ": "ADJ3",  # mixed 2nd/3rd declension paradigm
-    "μεγασ": "ADJ3",  # mixed 2nd/3rd declension paradigm
+    "πολυσ": "adj-3-two-end",  # mixed 2nd/3rd declension paradigm
+    "μεγασ": "adj-3-two-end",  # mixed 2nd/3rd declension paradigm
 }
 
 
@@ -313,13 +322,55 @@ def _genitive_singular_signal(forms: list[str]) -> str | None:
     return counts.most_common(1)[0][0]
 
 
-def classify_noun_declension(lemma: str, gender: str = "-", genitive_signal: str | None = None) -> str:
+STEM_CONSONANT_CLASSES = {
+    **{letter: "labial-velar" for letter in "πβφκγχ"},
+    **{letter: "dental" for letter in "τδθ"},
+    **{letter: "nasal-liquid" for letter in "νρλ"},
+}
+
+CONSONANT_STEM_CODES = {
+    "labial-velar": "noun-3-labial-velar",
+    "dental": "noun-3-dental",
+    "nasal-liquid": "noun-3-nasal-liq",
+}
+
+
+def _consonant_stem_signal(forms: list[str]) -> str | None:
+    # Vote on the stem class from the genitive singulars in -ος: the letter
+    # before that ending is the stem's real final consonant, which the
+    # nominative usually hides. νυκτός gives τ, so νύξ is dental despite the -ξ,
+    # and χειρός gives ρ, so χείρ is liquid despite failing the -ηρ/-ωρ test.
+    counts: Counter[str] = Counter()
+    for form in forms:
+        key = _classification_key(form)
+        if not key.endswith("οσ") or len(key) < 3:
+            continue
+        stem_class = STEM_CONSONANT_CLASSES.get(key[-3])
+        if stem_class:
+            counts[stem_class] += 1
+    if not counts:
+        return None
+    return counts.most_common(1)[0][0]
+
+
+def _consonant_stem_class(stem_signal: str | None) -> str:
+    # Dental is the fallback: it is much the larger class, mostly on the strength
+    # of the -μα, -ματος neuters.
+    return CONSONANT_STEM_CODES.get(str(stem_signal), "noun-3-dental")
+
+
+def classify_noun_declension(
+    lemma: str,
+    gender: str = "-",
+    genitive_signal: str | None = None,
+    stem_signal: str | None = None,
+) -> str:
     # gender is the AGDT postag gender character, ideally the lemma's majority
     # gender across the corpus; genitive_signal comes from
-    # _genitive_singular_signal.
+    # _genitive_singular_signal and stem_signal from _consonant_stem_signal.
     key = _classification_key(lemma)
     if not key:
-        return "N8"
+        return "noun-3-other"
     if key in IRREGULAR_NOUN_LEXICON:
         return IRREGULAR_NOUN_LEXICON[key]
 
@@ -327,58 +378,64 @@ def classify_noun_declension(lemma: str, gender: str = "-", genitive_signal: str
 
     # Unambiguously third-declension nominative endings.
     if key.endswith(("ευσ", "αυσ", "ουσ", "ω")):
-        return "N8"  # βασιλεύς, ναῦς, βοῦς, πειθώ
+        return "noun-3-other"  # βασιλεύς, ναῦς, βοῦς, πειθώ
     if key.endswith(("ην", "ων", "ηρ", "ωρ")):
-        return "N7"  # ποιμήν, δαίμων, πατήρ, ῥήτωρ
+        return "noun-3-nasal-liq"  # ποιμήν, δαίμων, πατήρ, ῥήτωρ
     if key.endswith("ισ"):
         # πόλις (-εως, iota stem) vs. ἐλπίς (-ίδος, dental stem).
         if genitive_signal == "d3":
-            return "N5"
-        return "N6"
+            return "noun-3-dental"  # -ιδος, -ιτος, -ιθος are all dental
+        return "noun-3-iota-ups"
     if key.endswith(("υσ", "υ")):
-        return "N6"  # ἰχθύς, ἄστυ
+        return "noun-3-iota-ups"  # ἰχθύς, ἄστυ
 
-    # -μα, -ματος neuters are consonant (dental) stems: σῶμα, πρᾶγμα.
+    # -μα, -ματος neuters are dental stems: σῶμα, πρᾶγμα.
     if gender == "n" and key.endswith("μα"):
-        return "N5"
+        return "noun-3-dental"
 
     if gender == "f" and key.endswith(("α", "η")):
-        return "N5" if third_declension_evidence else "N1"
+        return _consonant_stem_class(stem_signal) if third_declension_evidence else "noun-1-fem"
     if gender == "m" and key.endswith(("ασ", "ησ")):
         # πολίτης (-ου, 1st decl) vs. Σωκράτης (-ους, sigma stem) vs. γίγας (-αντος).
         if genitive_signal == "d3s":
-            return "N8"
+            return "noun-3-other"
         if genitive_signal == "d3":
-            return "N5"
-        return "N2"
+            return _consonant_stem_class(stem_signal)
+        return "noun-1-masc"
 
     if key.endswith("οσ"):
         if gender == "n":
-            return "N8"  # γένος, τεῖχος: sigma-stem neuters
+            return "noun-3-other"  # γένος, τεῖχος: sigma-stem neuters
         if third_declension_evidence:
-            return "N5"
-        return "N3"  # masc λόγος (rare feminines like ὁδός also land here)
+            return _consonant_stem_class(stem_signal)
+        return "noun-2-masc"  # masc λόγος (rare feminines like ὁδός also land here)
     if gender == "n" and key.endswith("ον"):
-        return "N4"
+        return "noun-2-neut"
 
     # Remaining lemmas ending in a consonant: φύλαξ, νύξ, Ἑλλάς, χείρ, ...
-    if key.endswith(("ξ", "ψ", "ρ", "ν", "σ")):
-        return "N5"
+    if key.endswith(("ρ", "ν")):
+        return "noun-3-nasal-liq"  # χείρ, πῦρ: the -ηρ/-ωρ test above misses these
+    if key.endswith(("ξ", "ψ", "σ")):
+        if stem_signal:
+            return _consonant_stem_class(stem_signal)
+        # No genitive attested, so fall back to the nominative: the stop that
+        # survives in -ξ/-ψ is the stem's own, while -ς has swallowed a dental.
+        return "noun-3-labial-velar" if key.endswith(("ξ", "ψ")) else "noun-3-dental"
 
-    return "N8"
+    return "noun-3-other"
 
 
 def classify_adjective_declension(lemma: str) -> str:
     key = _classification_key(lemma)
     if not key:
-        return "ADJ3"
+        return "adj-3-two-end"
     if key in IRREGULAR_ADJECTIVE_LEXICON:
         return IRREGULAR_ADJECTIVE_LEXICON[key]
     if key.endswith(("οσ", "ουσ")):
-        return "ADJ1"  # ἀγαθός, δίκαιος, contract χρυσοῦς
+        return "adj-1-2"  # ἀγαθός, δίκαιος, contract χρυσοῦς
     if key.endswith(("υσ", "εισ", "ασ")):
-        return "ADJ2"  # three-ending 3rd decl: ταχύς, χαρίεις, πᾶς, μέλας
-    return "ADJ3"  # two-ending 3rd decl (-ης, -ων), comparatives, irregulars
+        return "adj-3-three-end"  # three-ending 3rd decl: ταχύς, χαρίεις, πᾶς, μέλας
+    return "adj-3-two-end"  # two-ending 3rd decl (-ης, -ων), comparatives, irregulars
 
 
 def add_declension_features(combined_df: pd.DataFrame) -> pd.DataFrame:
@@ -413,16 +470,19 @@ def add_declension_features(combined_df: pd.DataFrame) -> pd.DataFrame:
             noun_rows["postag"].astype(str).str.slice(POSTAG_CASE_INDEX, POSTAG_CASE_INDEX + 1).eq("g")
             & noun_rows["postag"].astype(str).str.slice(POSTAG_NUMBER_INDEX, POSTAG_NUMBER_INDEX + 1).eq("s")
         )
-        genitive_signals = {
-            key: _genitive_singular_signal(group["form"].astype(str).tolist())
+        genitive_forms = {
+            key: group["form"].astype(str).tolist()
             for key, group in noun_rows[genitive_singular_mask].groupby("key")
         }
+        genitive_signals = {key: _genitive_singular_signal(forms) for key, forms in genitive_forms.items()}
+        stem_signals = {key: _consonant_stem_signal(forms) for key, forms in genitive_forms.items()}
 
         code_by_key = {
             row["key"]: classify_noun_declension(
                 row["lemma"],
                 majority_gender.get(row["key"], "-"),
                 genitive_signals.get(row["key"]),
+                stem_signals.get(row["key"]),
             )
             for _, row in noun_rows.drop_duplicates("key").iterrows()
         }
@@ -458,36 +518,6 @@ def apply_declension_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
-def build_declension_summary(combined_df: pd.DataFrame) -> pd.DataFrame:
-    # Token counts, lemma counts and example lemmas per category, by frequency.
-    columns = ["declension_code", "declension_label", "tokens", "distinct_lemmas", "example_lemmas"]
-    if combined_df is None or combined_df.empty:
-        return pd.DataFrame(columns=columns)
-
-    df = combined_df if "declension_code" in combined_df.columns else add_declension_features(combined_df)
-    classified = df[df["declension_code"].astype(str).ne("")]
-    if classified.empty:
-        return pd.DataFrame(columns=columns)
-
-    summary_rows = []
-    for code, label in DECLENSION_LABELS.items():
-        subset = classified[classified["declension_code"] == code]
-        if subset.empty:
-            continue
-        lemma_counts = subset["lemma"].value_counts()
-        summary_rows.append(
-            {
-                "declension_code": code,
-                "declension_label": label,
-                "tokens": int(len(subset)),
-                "distinct_lemmas": int(lemma_counts.size),
-                "example_lemmas": ", ".join(lemma_counts.head(5).index.astype(str).tolist()),
-            }
-        )
-
-    return pd.DataFrame(summary_rows, columns=columns).sort_values("tokens", ascending=False, ignore_index=True)
-
-
 def build_combined_df(
     folder: str | Path,
     selected_files: list[str],
@@ -520,6 +550,10 @@ def build_combined_df(
     if syllabus_mode == "declension":
         combined_df = add_declension_features(combined_df)
         combined_df = apply_declension_syllabus(combined_df)
+        # Both are spent once the label is in "syllabus": the code is an internal
+        # key and the label now duplicates the syllabus text. Dropping them keeps
+        # the exported columns the same in either syllabus mode.
+        combined_df = combined_df.drop(columns=["declension_code", "declension_label"])
 
     # Object columns dominate memory (~220 MB for 258k tokens) and got the
     # container OOM-killed; these few repeat a small vocabulary, so categoricals
@@ -1416,49 +1450,74 @@ def normalize_lesson_title(title: str) -> str:
 
 
 # Lessons that read as a contrast with a class the learner already knows, which
-# frequency order alone can put first. Each declares the lessons it should
-# follow; one whose prerequisites are all absent keeps its frequency position.
-LESSON_PREREQUISITES: dict[str, tuple[str, ...]] = {
-    "two_ending_and_irregular_adjectives": (
-        "first_second_declension_adjectives",
-        "third_declension_adjectives",
-    ),
-    "sigma_stem_and_irregular_nouns": (
-        "third_declension_consonant_stem_nouns",
-        "third_declension_iota_upsilon_stem_nouns",
-        "third_declension_nasal_liquid_stem_nouns",
-    ),
-    # An irregular verb only reads as irregular against a known paradigm.
-    "irregular_verbs": (
-        "present_indicative_active_w",
-        "aorist_indicative_active_w",
-    ),
+# frequency order alone can put first. A lesson of the kind on the left waits
+# for one lesson of the kind on the right; with none in the syllabus it keeps
+# its frequency position.
+LESSON_PREREQUISITE_KINDS: dict[str, str] = {
+    # An irregular form only reads as irregular against a paradigm.
+    "irregular verb": "regular verb",
+    "irregular noun": "regular noun",
+    "irregular adjective": "regular adjective",
+    # An adjective agrees with a noun, so a noun class comes first.
+    "adjective": "noun",
 }
 
+REGULAR_NOUN_LESSONS = frozenset(
+    normalize_frequency_row_name(label) for code, label in NOUN_DECLENSION_LABELS.items() if code != "noun-3-other"
+)
+IRREGULAR_NOUN_LESSON = normalize_frequency_row_name(NOUN_DECLENSION_LABELS["noun-3-other"])
+REGULAR_ADJECTIVE_LESSONS = frozenset(
+    normalize_frequency_row_name(label)
+    for code, label in ADJECTIVE_DECLENSION_LABELS.items()
+    if code != "adj-3-two-end"
+)
+IRREGULAR_ADJECTIVE_LESSON = normalize_frequency_row_name(ADJECTIVE_DECLENSION_LABELS["adj-3-two-end"])
 
-def lesson_prerequisites(normalized_label: str) -> tuple[str, ...]:
-    # Normalized labels that should precede normalized_label, if present.
-    return LESSON_PREREQUISITES.get(normalized_label, ())
+
+def lesson_kinds(lesson: Mapping[str, Any]) -> frozenset[str]:
+    # The prerequisite kinds a lesson belongs to, as a dependent and as a
+    # prerequisite for others. Case-mode noun/adjective lessons name a case
+    # rather than an inflection class, so they belong to none and stay put.
+    if lesson.get("is_starter"):
+        return frozenset()
+    normalized = normalize_frequency_row_name(str(lesson.get("label", "")))
+    if normalized in REGULAR_NOUN_LESSONS:
+        return frozenset({"noun", "regular noun"})
+    if normalized == IRREGULAR_NOUN_LESSON:
+        return frozenset({"noun", "irregular noun"})
+    if normalized in REGULAR_ADJECTIVE_LESSONS:
+        return frozenset({"adjective", "regular adjective"})
+    if normalized == IRREGULAR_ADJECTIVE_LESSON:
+        return frozenset({"adjective", "irregular adjective"})
+    if str(lesson.get("pos_category", "")) != "verb":
+        return frozenset()
+    if normalized == normalize_frequency_row_name(IRREGULAR_LESSON_LABEL):
+        return frozenset({"verb", "irregular verb"})
+    if normalized == normalize_frequency_row_name(DEPONENT_LESSON_LABEL):
+        return frozenset({"verb"})  # a concept lesson, not a paradigm to contrast against
+    return frozenset({"verb", "regular verb"})
 
 
 def apply_lesson_prerequisite_order(lesson_data: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    # Move each dependent lesson just past the last prerequisite that outranks
-    # it; everything else keeps its frequency position.
-    normalized = [normalize_frequency_row_name(str(lesson["label"])) for lesson in lesson_data]
+    # Move each dependent lesson just past the first lesson satisfying each
+    # prerequisite it lacks; everything else keeps its frequency position.
+    kinds = [lesson_kinds(lesson) for lesson in lesson_data]
 
     for _ in range(len(lesson_data)):
-        for position, label in enumerate(normalized):
-            prerequisites = lesson_prerequisites(label)
-            if not prerequisites:
+        for position, lesson_kind_set in enumerate(kinds):
+            target = position
+            for kind in lesson_kind_set:
+                required = LESSON_PREREQUISITE_KINDS.get(kind)
+                if required is None:
+                    continue
+                first = next((index for index, other in enumerate(kinds) if required in other), None)
+                if first is None or first < position:
+                    continue
+                target = max(target, first)
+            if target == position:
                 continue
-            last_prerequisite = max(
-                (index for index, other in enumerate(normalized) if other in prerequisites),
-                default=-1,
-            )
-            if last_prerequisite <= position:
-                continue
-            lesson_data.insert(last_prerequisite, lesson_data.pop(position))
-            normalized.insert(last_prerequisite, normalized.pop(position))
+            lesson_data.insert(target, lesson_data.pop(position))
+            kinds.insert(target, kinds.pop(position))
             break
         else:
             break

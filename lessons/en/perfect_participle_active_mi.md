@@ -5,9 +5,6 @@ pos: verb
 
 # The Perfect Active Participle (μι-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Perfect indicative active of ‑μι verbs, perfect active participle of ω-verbs.*
-
 ---
 
 ## 1. What This Form Is

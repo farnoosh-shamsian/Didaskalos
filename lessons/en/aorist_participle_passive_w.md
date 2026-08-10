@@ -5,8 +5,6 @@ pos: verb
 
 # The Aorist Passive Participle (ω-Verbs)
 
-*Target level: Beginner–Intermediate*
-
 ---
 
 ## 1. What Is the Aorist Passive Participle?

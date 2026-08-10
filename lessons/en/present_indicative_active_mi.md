@@ -5,9 +5,6 @@ pos: verb
 
 # The Present Indicative Active (μι-Verbs)
 
-*Level: beginner–intermediate*
-*Prerequisites: the Greek alphabet, basic noun declension, the notions of person and number*
-
 ---
 
 ## 1. What the Present Indicative Active of ‑μι Verbs Is

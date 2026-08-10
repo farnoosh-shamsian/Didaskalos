@@ -97,8 +97,15 @@ what a reader sees in the table of contents next to every other lesson:
 - A title must stand on its own. Lessons are ordered by corpus frequency, so any lesson can turn
   up first: a title like "Other Adjectives" would arrive before the learner has met any
   adjectives. Name what the lesson contains instead. Where the *order* also matters
-  pedagogically, add the lesson to `LESSON_PREREQUISITES` in `didaskalos_pipeline.py` and it will
-  be placed after the lessons it contrasts with whenever those are in the same syllabus.
+  pedagogically, give the lesson a kind in `lesson_kinds` and a rule in
+  `LESSON_PREREQUISITE_KINDS` in `didaskalos_pipeline.py`, and it will be placed after one lesson
+  of the kind it contrasts with whenever such a lesson is in the same syllabus.
+- No level, audience, or prerequisite line under the heading (`*Target level: …*`,
+  `*Prerequisites: …*`, `**Target:** …`). The textbook prints the part of speech and the corpus
+  frequency there, and where a lesson sits in the sequence is decided by
+  `LESSON_PREREQUISITE_KINDS`, not by prose in the file. A subtitle naming the lesson's example
+  verbs — `*(e.g., δίδωμι, τίθημι, ἵημι)*` — or a `**Focus:**` line describing what the lesson
+  covers is fine.
 
 `lessons/fa/` uses the same filenames as `lessons/en/` and the same title shape in the target
 language, so the two tables of contents stay line-for-line parallel. Keeping the languages in
@@ -108,8 +115,8 @@ Some lessons teach a concept rather than a paradigm slot. `deponent_verbs.md` an
 `irregular_verbs.md` each collect their tokens from across the whole corpus — every middle-only
 lemma, every irregular verb — instead of from one tense/mood/voice row, and appear once in the
 syllabus. Add one by giving it a label and filename constant, a branch in
-`get_topic_rows_for_label` that selects its tokens, and (if it needs to follow something) an entry
-in `LESSON_PREREQUISITES`.
+`get_topic_rows_for_label` that selects its tokens, and (if it needs to follow something) a kind in
+`lesson_kinds` and a rule in `LESSON_PREREQUISITE_KINDS`.
 
 Two syllabus rows can also share a single lesson: `MERGED_SYLLABUS_LABELS` folds one label into
 another, adding its token count to the host lesson and its tokens to that lesson's exercise pool,

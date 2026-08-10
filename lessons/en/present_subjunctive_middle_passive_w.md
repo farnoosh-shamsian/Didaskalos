@@ -5,9 +5,6 @@ pos: verb
 
 # The Present Subjunctive Middle/Passive (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Present subjunctive active, present indicative middle/passive.*
-
 ---
 
 ## 1. What This Form Is

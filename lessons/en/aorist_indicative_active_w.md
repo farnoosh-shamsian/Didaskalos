@@ -5,8 +5,6 @@ pos: verb
 
 # The Aorist Indicative Active (ω-Verbs)
 
-*(Target: beginner–intermediate students of Ancient Greek)*
-
 ---
 
 ## 1. What the Aorist Is

@@ -4,7 +4,6 @@ pos: verb
 ---
 
 # The Future Indicative Active (ω-Verbs)
-*Ancient Greek — Beginner–Intermediate Lesson*
 
 ---
 

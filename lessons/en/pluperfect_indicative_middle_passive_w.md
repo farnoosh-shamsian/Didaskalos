@@ -5,9 +5,6 @@ pos: verb
 
 # The Pluperfect Indicative Middle/Passive (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Perfect indicative middle/passive, the augment, reduplication.*
-
 ---
 
 ## 1. What This Form Is

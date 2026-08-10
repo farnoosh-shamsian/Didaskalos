@@ -5,9 +5,6 @@ pos: verb
 
 # The Present Optative Active (ω-Verbs)
 
-*Level: beginner–intermediate*
-*Prerequisites: the Greek alphabet, basic noun declension, the present indicative active endings*
-
 ---
 
 ## 1. What the Optative Mood Is

@@ -5,9 +5,6 @@ pos: verb
 
 # The Present Optative Middle/Passive (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Present indicative middle/passive of ω-verbs, present optative active*
-
 ---
 
 ## 1. What This Form Is

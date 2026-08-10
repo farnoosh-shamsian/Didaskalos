@@ -5,9 +5,6 @@ pos: verb
 
 # The Present Active Participle (ω-Verbs)
 
-*Level: beginner–intermediate*
-*Prerequisites: the Greek alphabet, basic noun declension, the present-tense endings*
-
 ---
 
 ## 1. What the Present Active Participle Is

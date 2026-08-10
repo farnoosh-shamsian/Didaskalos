@@ -5,9 +5,6 @@ pos: verb
 
 # The Future Active Participle (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Present active participle, future indicative active.*
-
 ---
 
 ## 1. What This Form Is

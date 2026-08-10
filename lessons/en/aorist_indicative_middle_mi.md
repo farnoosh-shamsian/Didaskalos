@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Indicative Middle (μι-Verbs)
 
-*Target level: Beginner–Intermediate*
-*Prerequisites: Greek alphabet, basic notions of tense, mood, and voice, and the present indicative active endings.*
-
 ---
 
 ## 1. What Is the Aorist Indicative Middle?

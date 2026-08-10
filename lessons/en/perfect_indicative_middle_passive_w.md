@@ -5,9 +5,6 @@ pos: verb
 
 # The Perfect Indicative Middle/Passive (ω-Verbs)
 
-*Target level: Beginner → Intermediate*
-*Prerequisites: Greek alphabet, basic verb concepts (present, aorist), the idea of voice.*
-
 ---
 
 ## 1. What the Perfect Middle/Passive Is

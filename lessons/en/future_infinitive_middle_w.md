@@ -5,9 +5,6 @@ pos: verb
 
 # The Future Middle Infinitive (ω-Verbs)
 
-*Target level: Intermediate*
-*Prerequisites: Future indicative middle, present middle infinitive.*
-
 ---
 
 ## 1. What This Form Is

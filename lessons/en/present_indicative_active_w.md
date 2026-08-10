@@ -5,8 +5,6 @@ pos: verb
 
 # The Present Indicative Active (ω-Verbs)
 
-*Target audience: beginner–intermediate students who already know the Greek alphabet and basic noun declension.*
-
 ---
 
 ## 1. What the Present Indicative Active Is

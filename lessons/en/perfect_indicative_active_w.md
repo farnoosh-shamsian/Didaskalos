@@ -5,8 +5,6 @@ pos: verb
 
 # The Perfect Indicative Active (ω-Verbs)
 
-*Target level: Beginner–Intermediate*
-
 ---
 
 ## 1. What the Perfect Indicative Active Is

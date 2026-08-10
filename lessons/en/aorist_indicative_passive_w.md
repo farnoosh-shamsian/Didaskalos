@@ -5,9 +5,6 @@ pos: verb
 
 # The Aorist Indicative Passive (ω-Verbs)
 
-*Target level: Beginner–Intermediate*
-*Prerequisites: Greek alphabet, basic knowledge of verbs, present indicative active.*
-
 ---
 
 ## 1. What Is the Aorist Indicative Passive?

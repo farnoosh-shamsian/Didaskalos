@@ -5,9 +5,6 @@ pos: verb
 
 # The Present Active Infinitive (μι-Verbs)
 
-*Level: beginner–intermediate*
-*Prerequisites: the Greek alphabet, basic verb stems, the present indicative endings*
-
 ---
 
 ## 1. What the Present Active Infinitive of ‑μι Verbs Is

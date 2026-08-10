@@ -60,9 +60,11 @@ A purely statistical syllabus is a bad teacher, so frequency is overruled in thr
 - **A fixed opening.** The alphabet and an orientation to nouns, adjectives, and verbs come first
   and map the system before the counts take over — otherwise the most frequent form in a corpus,
   which can be an irregular or an advanced one, would open the course.
-- **Declared prerequisites.** `LESSON_PREREQUISITES` in `didaskalos_pipeline.py` places a lesson
-  after the ones it contrasts with whenever those are in the same syllabus: irregular verbs wait
-  for a paradigm to be irregular against; the middle voice is always followed by deponent verbs.
+- **Declared prerequisites.** `LESSON_PREREQUISITE_KINDS` in `didaskalos_pipeline.py` makes a
+  lesson wait for one of the kind it contrasts with, whenever such a lesson is in the same
+  syllabus: an irregular verb, noun, or adjective class follows a regular one of the same part of
+  speech, and every adjective class follows a noun class. The middle voice is always followed by
+  deponent verbs.
 - **Merged labels.** `MERGED_SYLLABUS_LABELS` folds a syllabus row into another lesson where a
   separate module would only repeat it — the vocative is taught inside the nominative.
 
