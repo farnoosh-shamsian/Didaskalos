@@ -58,3 +58,31 @@ _Morphology_ — The stem may change slightly before the dative ending attaches 
 | Third (most common) | ‑ι | ‑σι(ν) |
 
 These endings attach directly to the noun's stem, producing the dative forms that express "to" or "for" the noun in Ancient Greek.
+
+---
+
+### Dialect and Period
+
+Of all the cases, the dative changes most across the span of Greek — in its endings, in its jobs, and finally in whether it exists at all.
+
+**Three cases in one.** The Greek dative is a merger. Indo-European had a dative ("to/for"), a separate **instrumental** ("by means of, together with") and a separate **locative** ("in, at"). Greek collapsed all three into one form, which is why a single case covers such an odd range of meanings. The old locative survives visibly in fossils like **Ἀθήνησι** "at Athens" and **οἴκοι** "at home", and the ‑φι(ν) ending Homer uses for both instrument and place (βίηφι "by force", ναῦφι "at the ships") is another relic of the same system.
+
+**The endings were longer.**
+
+| Case | Homer | Ionic (Herodotus) | Attic |
+|---|---|---|---|
+| 1st decl. plural | ‑ῃσι(ν), ‑ῃς (θεῇσι) | ‑ῃσι | ‑αις |
+| 2nd decl. plural | ‑οισι(ν) (θεοῖσι) | ‑οισι | ‑οις |
+| 3rd decl. plural | ‑σι(ν) and **‑εσσι(ν)** (πόδεσσι) | ‑σι | ‑σι(ν) |
+
+These long datives are among the most conspicuous features of Homeric Greek; if a text is full of ‑οισι and ‑ῃσι, you are reading epic or Ionic.
+
+**Then the case recedes.** In Homer and Classical Attic the bare dative does a great deal of work with no preposition at all: **τῇ μαχαίρᾳ** "with the sword", **τῷ λόγῳ** "by the argument", **ταύτῃ τῇ ἡμέρᾳ** "on that day". Over the Hellenistic period Greek increasingly props the case up with a preposition instead — **ἐν** + dative for instrument and place — and where the dative marked a goal or recipient, **εἰς** or **πρός** + accusative starts to take over. In the New Testament ἐν is extremely frequent, doing work that Plato would have left to a bare dative.
+
+| | Classical Attic | Koine tendency |
+|---|---|---|
+| Instrument | bare dative: μαχαίρᾳ | ἐν μαχαίρῃ |
+| Place where | bare dative or ἐν | almost always ἐν |
+| Goal / recipient | dative | dative, but εἰς/πρός + acc. spreading |
+
+The endpoint lies beyond our period: **Modern Greek has no dative case at all.** Its functions are shared between the genitive and prepositional phrases. So when a Koine text uses a preposition where you expected a plain dative, you are watching the beginning of that loss — not sloppiness, but the language in motion.

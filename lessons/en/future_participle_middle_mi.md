@@ -50,7 +50,7 @@ A future participle after a verb of motion states the goal of the journey, and �
 | --- | --- |
 | **1. σ marks the future** | δω‑**σ**‑όμενος. Without it you have the present διδόμενος "being given"; with a reduplication you have the perfect δεδομένος "having been given". Three participles, three stems. |
 | **2. Long stem vowel** | δω‑, θη‑, στη‑ throughout the future, unlike the short δο‑, θε‑, στα‑ of the aorist. |
-| **3. Purpose is its main use** | Greek prefers a future participle where English says "in order to"; with ὡς it is unmistakable. |
+| **3. Purpose is its main use** | Greek expresses purpose with a future participle where another language might need a subordinate clause ("in order to …"); with ὡς it is unmistakable. |
 | **4. Middle form, often active sense** | δωσόμενος can mean "about to give (of his own)"; many verbs simply have no future active, and their middle participle translates actively. |
 | **5. The accent is fixed** | On the ‑ό‑ of ‑όμενος throughout the declension: δωσόμενος, δωσομένου. |
 

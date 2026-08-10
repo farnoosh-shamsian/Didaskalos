@@ -40,6 +40,22 @@ Because subject and object forms look the same, word order and context tell you 
 - The genitive and dative (both numbers) are identical to λόγος: δώρου = λόγου, δώρῳ = λόγῳ. Only nominative/accusative/vocative are new.
 - The article for neuters: τό (sg.), τά (pl.): τὸ ἔργον, τὰ ἔργα.
 
+## Dialect and Period
+
+The endings themselves barely move across the periods: δῶρον is δῶρον in Homer and in the New Testament alike. The dative plural follows the masculine pattern, with the longer **-οισι(ν)** in Homer and Herodotus against Attic -οις (δώροισι / δώροις).
+
+**The interesting change is the neuter plural rule.** The rule given above — a neuter plural subject takes a **singular** verb (τὰ ζῷα τρέχει) — is a genuine peculiarity of Greek, and it is not equally strict at every period.
+
+| | Practice |
+|---|---|
+| **Homer** | Both constructions occur; the singular is common but the plural verb is already found |
+| **Classical Attic** | The rule is at its strictest — a plural verb with a neuter plural subject is unusual |
+| **Koine and the NT** | The rule weakens considerably; plural verbs with neuter plural subjects are frequent and unremarkable |
+
+So the "strange" agreement is strongest in exactly the authors most grammars are built on, and a New Testament sentence that breaks it is not making an error — it is showing you where the language was heading. Modern Greek has no trace of the rule.
+
+**In Koine** the type stays fully productive, and one subgroup expands sharply: diminutives in **-ιον** (παιδίον "little child", βιβλίον "book", πλοῖον "boat"), which are common in the New Testament and often no longer diminutive in force at all.
+
 ## Examples
 
 - τὰ τέκνα παίζει — "the children play" (neuter plural + singular verb)

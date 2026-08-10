@@ -92,7 +92,7 @@ In the middle/passive imperfect, μι-verbs use the **short stem** (the same as 
 
 ## 4. Example Sentences
 
-| Greek (imperfect middle/passive) | Transliteration | English |
+| Greek (imperfect middle/passive) | Transliteration | Meaning |
 |-----------------------------------|----------------|---------|
 | **οἱ νόμοι ἐτίθεντο ὑπὸ τῶν πολιτῶν.** | hoi nómoi etíthento… | The laws were being enacted by the citizens. |
 | **τὰ δῶρα ἐδίδοτο τοῖς θεοῖς.** | ta dôra edídoto… | The gifts were being given to the gods. |

@@ -2,9 +2,11 @@
 
 ## 1. Introduction
 
-Ancient Greek has a definite article corresponding to English "the" — but unlike English *the*, it **declines**: its form changes with the gender, number, and case of its noun. It is the single most frequent word in Greek texts, and because it wears its noun's grammar so visibly, it is also the reader's best guide through a sentence.
+Ancient Greek has a **definite article**: a short word placed before a noun to mark it as a particular, already-identified thing rather than any member of its class. ὁ ἄνθρωπος is *the* man — one the speaker and hearer can both pick out; ἄνθρωπος on its own is a man, or simply "man" in general.
 
-There is **no indefinite article** ("a/an"): ἄνθρωπος by itself means "a man" or simply "man".
+What makes the Greek article distinctive is that it **declines**. It is not a single fixed word but a full paradigm of seventeen forms, changing with the gender, number and case of the noun it belongs to. It is the single most frequent word in Greek texts, and because it wears its noun's grammar so visibly, it is also the reader's best guide through a sentence.
+
+There is **no indefinite article**: Greek has no separate word for marking a noun as "some, any". A noun standing without the article is simply unmarked for definiteness, and context decides.
 
 ## 2. Declension
 
@@ -28,7 +30,7 @@ There is **no indefinite article** ("a/an"): ἄνθρωπος by itself means "
 
 - ὁ λόγος — "the word" · ἡ γυνή — "the woman" · τὸ δῶρον — "the gift"
 - The article agrees with its noun in gender, number, and case, exactly like an adjective: τοῦ ἀγαθοῦ ἀνθρώπου "of the good man".
-- Greek regularly uses the article where English does not: with **proper names** (ὁ Σωκράτης "Socrates"), **abstract nouns** (ἡ ἀρετή "virtue"), and **possessives** (ὁ πατήρ often = "my/his father", clear from context).
+- Greek uses the article in three places where a reader may not expect one: with **proper names** (ὁ Σωκράτης "Socrates"), with **abstract nouns** (ἡ ἀρετή "virtue"), and in a **possessive** sense (ὁ πατήρ often means "my father" or "his father", with context supplying the owner).
 
 ## 4. The Article as a Noun-Maker
 
@@ -60,3 +62,20 @@ Watch the article and it will tell you:
 - whether an adjective is **attributive or predicate** (ὁ σοφὸς ἀνήρ "the wise man" vs. σοφὸς ὁ ἀνήρ "the man is wise").
 
 Learning the article's 17 distinct forms thoroughly is the single best early investment in reading Greek.
+
+## 7. Dialect and Period
+
+The article has the most dramatic history of any word in Greek: within the span of texts you will read, **it turns from a pronoun into an article.** §5 above mentions this in passing; it is worth seeing properly, because it changes how you read Homer.
+
+| | What ὁ, ἡ, τό is doing |
+|---|---|
+| **Homer** | Still essentially a **demonstrative** — "that one, this one" — and often a **relative** pronoun. A true article, marking a noun as definite, is the exception rather than the rule |
+| **Herodotus** | Intermediate: recognizably an article, but the old demonstrative use is still common |
+| **Classical Attic** | Fully an article. The demonstrative survives only in fixed patterns — ὁ μέν … ὁ δέ, and ὁ δέ "but he" |
+| **Koine / NT** | An article throughout, used more systematically still, and extended to whole constructions |
+
+**Reading Homer, do not expect the article to mean "the."** Where a Classical author writes τὸν ἄνδρα "the man", Homer's τὸν is likelier to mean "that man" or "him", or to introduce a relative clause. Homer also frequently uses **no article at all** where Attic would require one — one reason epic can feel abrupt.
+
+**Homeric and Ionic forms.** Epic has **τοί** and **ταί** for the nominative plurals οἱ and αἱ, and the long datives **τοῖσι(ν)** and **τῇσι(ν)** for τοῖς and ταῖς. Herodotus uses τοῖσι and τῇσι as a matter of course.
+
+**Koine pushes the article further.** Two habits stand out in the New Testament: the **articular infinitive**, in which the article turns a whole verbal phrase into a noun that can be governed by a preposition (διὰ τὸ εἶναι "because of being", ἐν τῷ λέγειν "while speaking"); and a much freer use of the article with proper names and abstract nouns. The article is the one part of the Greek nominal system that grows stronger over time — and it survives intact into Modern Greek.

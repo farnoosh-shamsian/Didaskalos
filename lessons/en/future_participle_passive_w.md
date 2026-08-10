@@ -51,7 +51,7 @@ pos: verb
 | **2. Built on the aorist passive** | Know the sixth principal part and this participle follows automatically. |
 | **3. No augment** | ἐλύθην has one; the participle does not. |
 | **4. Fixed accent** | Always on the ‑ό‑ of ‑όμενος, throughout the declension. |
-| **5. Often best rendered with a relative clause** | "who is going to be freed" reads better in English than "about to be freed". |
+| **5. Often best unpacked as a relative clause** | A relative clause ("who is going to be freed") usually reads more naturally than a compressed phrase ("about to be freed"). |
 
 ---
 

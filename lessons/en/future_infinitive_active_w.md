@@ -11,7 +11,7 @@ pos: verb
 
 ## 1. What the Future Active Infinitive Is
 
-| Term | Meaning | Typical English equivalent |
+| Term | Meaning | Typical equivalent |
 |------|-------------------|----------------------------|
 | **Future** | An action that will happen **after** the moment of speaking. | "will …" |
 | **Infinitive** | The "bare" verb form, without person or number. | "to …" |
@@ -81,7 +81,7 @@ The infinitive has no person or number; each verb has just one form:
 
 ## 5. Example Sentences
 
-| Greek | English |
+| Greek | Meaning |
 |-------|---------------|
 | **ἔφη λύσειν τὸν δεσμόν.** | He said that he would loose the bond. |
 | **μέλλομεν γράψειν τὴν ἐπιστολήν.** | We intend to write the letter. |

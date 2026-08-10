@@ -14,7 +14,7 @@ pos: verb
 | **Present participle** | A verbal adjective expressing an action **in progress and simultaneous** with the main verb. |
 | **Middle/Passive voice** | Shows that the subject acts **on itself or for its own benefit** (middle) or **is acted upon** (passive). |
 
-The marker of this participle is the suffix **‑όμενος, ‑ομένη, ‑όμενον**: λυόμενος "being loosed / loosing for oneself." Typical English renderings:
+The marker of this participle is the suffix **‑όμενος, ‑ομένη, ‑όμενον**: λυόμενος "being loosed / loosing for oneself." Typical renderings:
 
 * "who is being …" (attributive): "the horse that is being untied"
 * "while …" (temporal)

@@ -34,6 +34,24 @@ The stem is παντ-; ντ drops before σ with lengthening (παντ-ς → π
 - μέλας, μέλαινα, μέλαν has stem μελαν-: gen. μέλανος, fem. like θάλαττα.
 - Adjectives of this class always take the first-declension feminine; only the masculine and neuter are third declension.
 
+## Dialect and Period
+
+These adjectives inherit the dialect features of the third-declension nouns, and for the same reason: their stems end in a vowel or a consonant that reacts to the ending attached to it.
+
+**Contraction is the dividing line.** Where Attic runs two vowels together, Homer and Herodotus keep them apart — so the Ionic form is regularly a syllable longer:
+
+| | Homer / Ionic | Attic |
+|---|---|---|
+| ἡδύς dat. sg. | ἡδέϊ | ἡδεῖ |
+| ἡδύς neut. pl. | ἡδέα | ἡδέα (also contracted in places) |
+| εὐρύς acc. sg. | εὐρέα | εὐρύν |
+
+**The ‑εσσι dative plural.** As with the nouns, epic has a second dative plural in **‑εσσι(ν)**: πάντεσσι for πᾶσι, ἡδέεσσι. In Homer it is used freely wherever the metre prefers the extra syllable.
+
+**πᾶς in Homer** also appears in the Ionic form πάντεσσι and, in the feminine, as πᾶσα beside the epic πᾶσα/πάσῃσι datives. The ντ-stem declension itself is unchanged.
+
+**In Koine** the type is stable and heavily used. πᾶς is one of the most frequent words in the New Testament, and the ‑ής / ‑ές adjectives (ἀληθής "true", ἀσθενής "weak", πλήρης "full") remain fully productive. One small Koine habit to note: πλήρης is sometimes left **undeclined** in the New Testament, standing in the nominative form regardless of the case it should agree in — an early sign of the third declension loosening.
+
 ## Examples
 
 - πάντες ἄνθρωποι τοῦ εἰδέναι ὀρέγονται φύσει — "all human beings by nature desire to know" (Aristotle)

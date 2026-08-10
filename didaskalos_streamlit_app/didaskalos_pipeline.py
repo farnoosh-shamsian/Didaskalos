@@ -16,21 +16,20 @@ from markdown import markdown as markdown_to_html
 
 try:
     from i18n import DEFAULT_LANG, is_rtl, t
-except ImportError:  # imported as part of a package rather than as a flat module
+except ImportError:  # imported as a package rather than a flat module
     from .i18n import DEFAULT_LANG, is_rtl, t
 
 try:
     from treebank_parsers import parse_agdt_xml, parse_treebank_file
-except ImportError:  # imported as part of a package rather than as a flat module
+except ImportError:
     from .treebank_parsers import parse_agdt_xml, parse_treebank_file
 
 try:
     from work_catalog import format_citation
-except ImportError:  # imported as part of a package rather than as a flat module
+except ImportError:
     from .work_catalog import format_citation
 
-# Back-compat alias: parse_treebank_xml was the historical name for the AGDT
-# parser before formats were pluggable. Kept so external callers keep working.
+# Back-compat alias for the AGDT parser's historical name.
 parse_treebank_xml = parse_agdt_xml
 
 
@@ -78,21 +77,16 @@ POS_CATEGORY_MAP = {
     **SIMPLE_POS_LABELS,
 }
 
-# First postag character of the word classes whose lemmas carry lexical content
-# (noun, adjective, verb, adverb, pronoun). Everything else (article, particle,
-# conjunction, preposition, interjection, punctuation) is treated as a function
-# word for difficulty scoring and known-vocabulary coverage.
+# Postag first letters of the content words (noun, adjective, verb, adverb,
+# pronoun); everything else counts as a function word.
 CONTENT_POS_PREFIXES = ("n", "a", "v", "d", "p")
 
-# Sentence difficulty blends how rare the sentence's content words are on
-# average, how rare its single rarest word is (the word that gates
-# comprehension), and how long the sentence is.
+# Difficulty blends mean content-word rarity, the rarest word, and length.
 DIFFICULTY_WEIGHT_MEAN_RARITY = 0.35
 DIFFICULTY_WEIGHT_RAREST_WORD = 0.35
 DIFFICULTY_WEIGHT_LENGTH = 0.30
 
-# Stage-aware exercise selection: prefer sentences whose content lemmas are
-# mostly vocabulary already introduced in earlier lessons.
+# Prefer exercise sentences whose lemmas were mostly introduced already.
 KNOWN_LEMMA_COVERAGE_THRESHOLD = 0.70
 KNOWN_FUNCTION_LEMMA_SEED_COUNT = 50
 
@@ -179,10 +173,8 @@ def normalize_frequency_row_name(label: str) -> str:
     return normalized
 
 
-# Cached: these two pure helpers are called millions of times during a build
-# (once per token, repeatedly per lesson) but over only a few thousand distinct
-# lemma strings, so memoizing collapses that to one real computation per unique
-# value. This is the single biggest CPU win in textbook generation.
+# Called millions of times per build over a few thousand distinct lemmas, so
+# memoizing is the biggest CPU win in textbook generation.
 @lru_cache(maxsize=None)
 def _normalize_greek_lemma_cached(lemma: str) -> str:
     return "".join(c for c in unicodedata.normalize("NFD", lemma.lower().strip()) if unicodedata.category(c) != "Mn")
@@ -194,10 +186,8 @@ def normalize_greek_lemma(lemma: str) -> str:
     return _normalize_greek_lemma_cached(lemma)
 
 
-# Treebank lemmas carry Perseus homonym numbers (λέγω3, πάρειμι1, θύω1). The
-# digit hides the ending that identifies a verb's conjugation class, which sent
-# ~3,900 tokens of perfectly regular verbs into the "irregular" bucket, so it is
-# stripped before any ending is inspected.
+# Perseus homonym numbers (λέγω3, θύω1) hide the ending that identifies a verb's
+# conjugation class, so they are stripped before any ending is inspected.
 _HOMONYM_DIGITS_RE = re.compile(r"\d+$")
 
 
@@ -216,11 +206,9 @@ def parse_verb_subcategory(lemma: str, postag: str | None = None) -> str:
     lemma_n = lemma_conjugation_key(lemma)
     if not lemma_n:
         return ""
-    # Deponent (middle-only) lemmas are bucketed by conjugation class, the way
-    # textbooks conjugate them: thematic -ομαι (βούλομαι, contract φοβέομαι)
-    # follows the -ω paradigms, athematic -μαι (δύναμαι, ἐπίσταμαι, κεῖμαι)
-    # follows the -μι paradigms. Deponency itself is a lexical property carried
-    # separately (is_deponent_lemma), not a paradigm bucket.
+    # Deponents go by conjugation class: thematic -ομαι follows the -ω paradigms,
+    # athematic -μαι the -μι ones. Deponency itself is carried by
+    # is_deponent_lemma, not by a bucket.
     if lemma_n.endswith("ομαι"):
         return "w"
     if lemma_n.endswith("μαι") or lemma_n.endswith("μι"):
@@ -231,7 +219,7 @@ def parse_verb_subcategory(lemma: str, postag: str | None = None) -> str:
 
 
 def is_deponent_lemma(lemma: str) -> bool:
-    """Middle-only ("deponent") verb: the dictionary form ends in -μαι."""
+    # Middle-only ("deponent") verb: the dictionary form ends in -μαι.
     return lemma_conjugation_key(lemma).endswith("μαι")
 
 
@@ -244,20 +232,13 @@ def is_greek_lemma(lemma: str) -> bool:
     return isinstance(lemma, str) and _is_greek_lemma_cached(lemma)
 
 
-# ---------------------------------------------------------------------------
-# Declension classification (declension-based textbook mode)
-# ---------------------------------------------------------------------------
-
 # AGDT 9-position postag indices.
 POSTAG_NUMBER_INDEX = 2
 POSTAG_GENDER_INDEX = 6
 POSTAG_CASE_INDEX = 7
 
-# Label text drives the lesson filename via normalize_frequency_row_name
-# (e.g. "first declension feminine nouns" -> first_declension_feminine_nouns.md),
-# so it must stay in sync with the declension module file names in lessons/en/.
-# The short code (N1..N8, ADJ1..ADJ3) is kept only as the dict key /
-# declension_code column.
+# The label drives the lesson filename via normalize_frequency_row_name, so it
+# must match the module file names in lessons/en/. The short code is only a key.
 NOUN_DECLENSION_LABELS = {
     "N1": "first declension feminine nouns",
     "N2": "first declension masculine nouns",
@@ -266,11 +247,9 @@ NOUN_DECLENSION_LABELS = {
     "N5": "third declension consonant stem nouns",
     "N6": "third declension iota upsilon stem nouns",
     "N7": "third declension nasal liquid stem nouns",
-    # N8 and ADJ3 are residual buckets, but their labels name what is in them
-    # rather than calling them "other": frequency order can put a residual bucket
-    # first (μέγας and πολύς alone outrank whole declension classes), and a
-    # lesson titled "Other Adjectives" makes no sense as the first adjective
-    # lesson a learner meets. See LESSON_PREREQUISITES for the ordering side.
+    # N8 and ADJ3 are residual buckets, but named for what is in them: frequency
+    # order can put one first, and "Other Adjectives" is no title for the first
+    # adjective lesson a learner meets. See also LESSON_PREREQUISITES.
     "N8": "sigma stem and irregular nouns",
 }
 
@@ -282,9 +261,8 @@ ADJECTIVE_DECLENSION_LABELS = {
 
 DECLENSION_LABELS = {**NOUN_DECLENSION_LABELS, **ADJECTIVE_DECLENSION_LABELS}
 
-# Keys are diacritic-stripped, lowercased, with final sigma normalized to σ
-# (the output of _classification_key). Only lemmas whose nominative-singular
-# ending points to the wrong class need to be listed here.
+# Keyed on _classification_key output. Only lemmas whose nominative-singular
+# ending points to the wrong class need listing.
 IRREGULAR_NOUN_LEXICON = {
     "γυνη": "N5",  # γυναικός: consonant stem despite ending in -η
     "παισ": "N5",  # παιδός: dental stem despite ending in -ις
@@ -315,12 +293,8 @@ def _classification_key(text: str) -> str:
 
 
 def _genitive_singular_signal(forms: list[str]) -> str | None:
-    """Vote on the declension using the genitive-singular forms attested in the corpus.
-
-    Returns one of: "d12" (-ου: 1st masc / 2nd decl), "d1" (-ης/-ας: 1st decl),
-    "d3i" (-εως: 3rd decl iota stem), "d3s" (-ους: 3rd decl sigma stem),
-    "d3" (-ος: other 3rd decl), or None when no genitive singular is attested.
-    """
+    # Vote on the declension from the attested genitive singulars: "d12" (-ου),
+    # "d1" (-ης/-ας), "d3i" (-εως), "d3s" (-ους), "d3" (-ος), or None.
     counts: Counter[str] = Counter()
     for form in forms:
         key = _classification_key(form)
@@ -340,12 +314,9 @@ def _genitive_singular_signal(forms: list[str]) -> str | None:
 
 
 def classify_noun_declension(lemma: str, gender: str = "-", genitive_signal: str | None = None) -> str:
-    """Classify a noun lemma into N1..N8.
-
-    ``gender`` is the AGDT postag gender character ("m", "f", "n" or "-"),
-    ideally the majority gender of the lemma across the corpus.
-    ``genitive_signal`` is the output of _genitive_singular_signal for the lemma.
-    """
+    # gender is the AGDT postag gender character, ideally the lemma's majority
+    # gender across the corpus; genitive_signal comes from
+    # _genitive_singular_signal.
     key = _classification_key(lemma)
     if not key:
         return "N8"
@@ -411,7 +382,7 @@ def classify_adjective_declension(lemma: str) -> str:
 
 
 def add_declension_features(combined_df: pd.DataFrame) -> pd.DataFrame:
-    """Add declension_code / declension_label columns for noun and adjective rows."""
+    # Add declension_code / declension_label for noun and adjective rows.
     out = combined_df.copy()
     out["declension_code"] = ""
     out["declension_label"] = ""
@@ -473,7 +444,7 @@ def add_declension_features(combined_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def apply_declension_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
-    """Replace the case-based syllabus of noun/adjective rows with declension labels."""
+    # Swap the case-based syllabus of noun/adjective rows for declension labels.
     out = combined_df if "declension_label" in combined_df.columns else add_declension_features(combined_df)
     out = out.copy()
 
@@ -488,7 +459,7 @@ def apply_declension_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_declension_summary(combined_df: pd.DataFrame) -> pd.DataFrame:
-    """Per-category token counts, lemma counts and example lemmas, sorted by frequency."""
+    # Token counts, lemma counts and example lemmas per category, by frequency.
     columns = ["declension_code", "declension_label", "tokens", "distinct_lemmas", "example_lemmas"]
     if combined_df is None or combined_df.empty:
         return pd.DataFrame(columns=columns)
@@ -523,9 +494,8 @@ def build_combined_df(
     syllabus_mode: str = "case",
     formats: Mapping[str, str | None] | None = None,
 ) -> pd.DataFrame:
-    # ``formats`` maps a selected filename to its declared corpus format (from the
-    # registry). Missing/None entries let the dispatcher auto-detect by extension
-    # or content, which keeps uploads and ad-hoc URLs working.
+    # formats maps a filename to its registry format; a missing entry lets the
+    # dispatcher auto-detect, which keeps uploads and ad-hoc URLs working.
     formats = formats or {}
     all_dfs = []
 
@@ -551,18 +521,10 @@ def build_combined_df(
         combined_df = add_declension_features(combined_df)
         combined_df = apply_declension_syllabus(combined_df)
 
-    # Object (Python-string) columns dominate memory: a 258k-token frame lands at
-    # ~220 MB, and a full "select all treebanks" run is ~940k tokens. Generation
-    # needs a working frame on top of that, so a large corpus breaches Cloud Run's
-    # memory limit and the container is OOM-killed (the app "just stops" with no
-    # error). These columns each hold a small fixed vocabulary repeated across
-    # every token, so storing them as categoricals roughly halves the frame with
-    # no behavioural change. Deliberately excluded: form/lemma/sentence_id (used
-    # in text assembly, regex, and groupby keys); word_id/token_index (coerced
-    # with pd.to_numeric downstream); and syllabus/pos_category, which are groupby
-    # keys and reassignment targets in build_frequency_syllabus — as categoricals
-    # they would reject new values in .where() and make groupby emit spurious
-    # zero-count combinations.
+    # Object columns dominate memory (~220 MB for 258k tokens) and got the
+    # container OOM-killed; these few repeat a small vocabulary, so categoricals
+    # roughly halve the frame. The rest stay objects: syllabus/pos_category in
+    # particular are reassigned and grouped on in build_frequency_syllabus.
     for column in ("document_id", "subdoc", "postag", "relation", "head",
                    "file", "verb_subcategory"):
         if column in combined_df.columns:
@@ -582,13 +544,10 @@ DECLENSION_LABEL_NAMES = frozenset(DECLENSION_LABELS.values())
 
 
 def is_decodable_verb_label(label: str) -> bool:
-    """True when a verb row names a real tense, mood and voice.
-
-    ``parse_postag`` passes an unmarked slot through as "unknown" and an
-    undefined tagset code through unchanged, so rows like "present, unknown,
-    active" or "aorist, indicative, d" reach the syllabus looking like paradigms.
-    The concept lessons, which are not tense/mood/voice rows at all, are exempt.
-    """
+    # True when a verb row names a real tense, mood and voice. parse_postag lets
+    # unmarked and undefined slots through, so rows like "present, unknown,
+    # active" reach the syllabus looking like paradigms. Concept lessons, which
+    # are not tense/mood/voice rows at all, are exempt.
     text = str(label)
     if text in {IRREGULAR_LESSON_LABEL, DEPONENT_LESSON_LABEL}:
         return True
@@ -601,22 +560,18 @@ def is_decodable_verb_label(label: str) -> bool:
 
 
 def is_decodable_nominal_label(label: str) -> bool:
-    """True when a noun/adjective row names a real case or declension class.
-
-    The case slot of a postag can be unmarked ("unknown") or absent entirely
-    ("_" in CoNLL-U), which produces rows no lesson can serve. Both syllabus
-    modes are accepted here: case mode labels a nominal row with its case,
-    declension mode with its declension class.
-    """
+    # True when a noun/adjective row names a real case or declension class. An
+    # unmarked or absent case slot produces rows no lesson can serve. Both
+    # syllabus modes are accepted.
     return str(label) in CASE_NAMES or str(label) in DECLENSION_LABEL_NAMES
 
-# In these tenses the middle and the passive are the same form, so one
-# middle/passive lesson teaches both. The aorist and future are excluded: they
-# build the passive on a separate -θη-/-θησ- stem and need lessons of their own.
+# Tenses where the middle and the passive are the same form, so one lesson
+# teaches both. The aorist and future build the passive on a separate -θη- stem
+# and need their own lessons.
 VOICE_SYNCRETIC_TENSES = ("present", "imperfect", "perfect", "pluperfect", "future perfect")
 
-# ...except where a single-voice lesson was deliberately written. These two keep
-# their own module, so their rows must not be folded into the middle/passive one.
+# ...except these two, which have a single-voice module of their own and must
+# not be folded into the middle/passive one.
 UNMERGED_SINGLE_VOICE_LABELS = frozenset(
     {"present, indicative, middle (w)", "imperfect, indicative, middle (w)"}
 )
@@ -635,11 +590,10 @@ def _syncretic_voice_merges() -> dict[str, str]:
     return merges
 
 
-# Syllabus rows that share another row's lesson. The merge is at the row level
-# only — the token-level "syllabus" value is untouched, so exercise answer keys
-# and the combined-rows export still name the real case and voice of a form.
-# The vocative repeats the nominative everywhere except a few singular endings,
-# so nominative.md covers both and there is no vocative.md.
+# Syllabus rows that share another row's lesson. Merged at row level only: the
+# token-level "syllabus" value is untouched, so answer keys and the exported rows
+# still name the real case and voice. The vocative repeats the nominative bar a
+# few singular endings, so nominative.md covers both and there is no vocative.md.
 MERGED_SYLLABUS_LABELS = {"vocative": "nominative", **_syncretic_voice_merges()}
 
 
@@ -658,11 +612,9 @@ def build_frequency_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
         combined_df["syllabus"].astype(str) + " (" + combined_df["verb_subcategory"].astype(str) + ")",
     )
 
-    # The irregular verbs are not a conjugation class: they are ~150 suppletive
-    # aorists (εἶπον, εἶδον), perfects with present meaning (οἶδα, ἔοικα) and
-    # impersonals (δεῖ, χρή), each defective in its own way. Split by
-    # tense/mood/voice they produced 57 thin lessons, so they collapse into one
-    # concept lesson instead — the same treatment deponency gets.
+    # The irregular verbs are not a conjugation class but ~150 lemmas each
+    # defective in its own way. Split by tense/mood/voice they made 57 thin
+    # lessons, so they collapse into one concept lesson, as deponency does.
     irregular_mask = verb_mask & combined_df["verb_subcategory"].astype(str).eq(IRREGULAR_VERB_BUCKET)
     syllabus_with_verb_bucket = syllabus_with_verb_bucket.where(~irregular_mask, IRREGULAR_LESSON_LABEL)
 
@@ -680,17 +632,15 @@ def build_frequency_syllabus(combined_df: pd.DataFrame) -> pd.DataFrame:
     )
     frequency_syllabus["syllabus_normalized"] = frequency_syllabus["syllabus"].apply(normalize_frequency_row_name)
 
-    # Always skip placeholder rows like NA/unknown in the "other" POS bucket.
+    # Skip placeholder rows like NA/unknown in the "other" POS bucket.
     skip_labels = {"na", "unknown", ""}
     skip_mask = (
         frequency_syllabus["pos_category"].astype(str).eq("other")
         & frequency_syllabus["syllabus_normalized"].astype(str).isin(skip_labels)
     )
 
-    # Same treatment for verb rows the source treebank left unmarked or mis-tagged
-    # ("present, unknown, active", "aorist, indicative, d"): a slot that decodes to
-    # nothing is not a paradigm, so no lesson can be written for it and it should
-    # not occupy a place in the syllabus.
+    # Same for rows the treebank left unmarked or mis-tagged: a slot that decodes
+    # to nothing is not a paradigm, so no lesson can be written for it.
     pos_series = frequency_syllabus["pos_category"].astype(str)
     undecodable_mask = (
         pos_series.eq("verb") & ~frequency_syllabus["syllabus"].apply(is_decodable_verb_label)
@@ -740,41 +690,32 @@ PERSON_MAP = {"1": "1st person", "2": "2nd person", "3": "3rd person", "-": "not
 NUMBER_MAP = {"s": "singular", "p": "plural", "d": "dual", "-": "not marked"}
 
 
-# Bidi handling for RTL output languages (e.g. Persian). Greek is strongly
-# left-to-right; inside an RTL paragraph the Unicode bidi algorithm misplaces
-# neutral characters (hyphens, punctuation) that sit at the edges of a Greek
-# run, so Greek runs get isolated explicitly.
+# Bidi handling for RTL languages. Greek is strongly left-to-right, but inside an
+# RTL paragraph the bidi algorithm misplaces the neutral characters at the edges
+# of a Greek run, so Greek runs are isolated explicitly.
 _GREEK_LETTER = "Ͱ-Ͽἀ-῿"
 _GREEK_MARKS = "̀-ͯ᾽᾿’'"
 _GREEK_TOKEN = f"[{_GREEK_LETTER}][{_GREEK_LETTER}{_GREEK_MARKS}]*"
-# The Arabic comma and semicolon are separators too: a Persian lesson writes its
-# Greek lists with «،», and if that ended the run every form became its own isolate
-# and the paradigm displayed right-to-left — first person last.
+# The Arabic comma and semicolon separate too: a Persian lesson writes its Greek
+# lists with them, and ending the run there reversed the whole paradigm.
 _GREEK_SEP = "[  ,،;؛.··‐‑-]+"
-# A parenthesised tail belongs to the word in front of it: the movable ν of
-# ἐστί(ν) has to stay inside the run, or it is isolated on its own and jumps past
-# the form it belongs to.
+# A parenthesised tail stays inside the run: a movable ν left outside is isolated
+# on its own and jumps past the form it belongs to.
 _GREEK_WORD = rf"{_GREEK_TOKEN}(?:\([{_GREEK_LETTER}{_GREEK_MARKS}]+\))?"
 # A tag-free phrase: Greek words joined by spaces/neutral punctuation.
 _GREEK_PHRASE = f"{_GREEK_WORD}(?:{_GREEK_SEP}{_GREEK_WORD})*"
-# A phrase wrapped in one balanced inline element (e.g. <strong>δέ</strong>,
-# rendered from **δέ**), so emphasis inside a Greek sentence does not split
-# the run into separate isolates and reverse the word order.
+# A phrase inside one balanced inline element, so emphasis within a Greek
+# sentence does not split the run and reverse the word order.
 _GREEK_ELEM = "(?:" + "|".join(
     f"<{tag}>{_GREEK_PHRASE}</{tag}>" for tag in ("u", "em", "strong", "b", "i")
 ) + ")"
 _GREEK_ATOM = f"(?:{_GREEK_PHRASE}|{_GREEK_ELEM})"
-# A run: atoms joined by separators, with optional attached hyphens
-# (endings like "-η", stems like "λυ-").
+# A run: atoms joined by separators, with optional attached hyphens.
 _GREEK_RUN_RE = re.compile(f"-?{_GREEK_ATOM}(?:{_GREEK_SEP}{_GREEK_ATOM})*-?")
 
 
 def wrap_greek_runs_in_html(html: str) -> str:
-    """Wrap runs of Greek text in ``<bdi dir="ltr">`` isolates.
-
-    Safe to apply to rendered HTML because Greek characters only ever occur in
-    text content, never inside tag markup.
-    """
+    # Safe on rendered HTML: Greek only ever occurs in text, never in markup.
     return _GREEK_RUN_RE.sub(
         lambda match: f'<bdi lang="grc" dir="ltr">{match.group(0)}</bdi>',
         html,
@@ -782,18 +723,15 @@ def wrap_greek_runs_in_html(html: str) -> str:
 
 
 def _ltr_isolate(text: str, rtl: bool) -> str:
-    """Wrap a fully-Greek fragment (possibly containing inline tags such as
-    ``<u>``) in an LTR span so word order survives an RTL paragraph."""
+    # LTR span around a Greek fragment so word order survives an RTL paragraph.
     if not rtl:
         return text
     return f'<span lang="grc" dir="ltr">{text}</span>'
 
 
 def _citation_suffix(row: Mapping[str, Any], rtl: bool) -> str:
-    """Inline source citation to append to an exercise sentence line, e.g.
-    ``"  (*Hom. Il. 1.1-1.7*)"``. Empty when the sentence's provenance cannot be
-    resolved. The citation is Latin-script, so it is LTR-isolated to survive the
-    RTL (Persian) layout intact."""
+    # Source citation for an exercise line, e.g. "  (*Hom. Il. 1.1-1.7*)"; empty
+    # when the provenance cannot be resolved. LTR-isolated for RTL layouts.
     citation = format_citation(row.get("file"), row.get("document_id"), row.get("subdoc"))
     if not citation:
         return ""
@@ -853,24 +791,22 @@ DEPONENT_LESSON_FILENAME = "deponent_verbs.md"
 
 
 def get_topic_rows_for_label(syllabus_label: str, combined_df: pd.DataFrame) -> pd.DataFrame:
-    # The synthetic "deponent verbs" concept lesson draws on every deponent
-    # (middle-only lemma) verb token regardless of tense/mood/voice.
+    # The "deponent verbs" concept lesson draws on every deponent verb token,
+    # whatever its tense, mood or voice.
     if normalize_frequency_row_name(str(syllabus_label)) == normalize_frequency_row_name(DEPONENT_LESSON_LABEL):
         if "is_deponent" in combined_df.columns:
             return combined_df[(combined_df["pos_category"] == "verb") & combined_df["is_deponent"]].copy()
         return combined_df.iloc[0:0].copy()
 
-    # Likewise the "irregular verbs" lesson: every token of an irregular verb,
-    # whatever tense, mood or voice it is in.
+    # Likewise the "irregular verbs" lesson.
     if normalize_frequency_row_name(str(syllabus_label)) == normalize_frequency_row_name(IRREGULAR_LESSON_LABEL):
         return combined_df[
             (combined_df["pos_category"] == "verb")
             & combined_df["verb_subcategory"].astype(str).eq(IRREGULAR_VERB_BUCKET)
         ].copy()
 
-    # A lesson that absorbed other rows (nominative + vocative, or a middle and a
-    # passive row folded into one middle/passive lesson) draws on the tokens of
-    # all of them, so its exercises can show any of those forms.
+    # A lesson that absorbed other rows draws on the tokens of all of them, so
+    # its exercises can show any of those forms.
     candidate_labels = [str(syllabus_label)] + [
         source for source, target in MERGED_SYLLABUS_LABELS.items() if target == syllabus_label
     ]
@@ -980,8 +916,8 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
 
     def join_forms(forms: list[str]) -> str:
         words = []
-        # A trailing-hyphen token (crasis first half, e.g. "τ-") waits here for
-        # the following word so the two can be glued: "τ-" + "ἀναντία" -> "τἀναντία".
+        # A trailing-hyphen token (the first half of a crasis) waits here to be
+        # glued to the following word.
         pending_prefix = ""
         for form in forms:
             token = str(form).strip()
@@ -992,8 +928,8 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
             if set(token) == {"-"}:
                 continue
 
-            # Enclitic marked with a leading hyphen (e.g. "-δὲ", "-τε"): glue it to
-            # the preceding word, dropping the seam marker -> "οὐ" + "-δὲ" = "οὐδὲ".
+            # Enclitic marked with a leading hyphen: glue it to the word before,
+            # dropping the seam marker.
             if token.startswith("-"):
                 glued = token.lstrip("-")
                 if words:
@@ -1002,8 +938,7 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
                     words.append(glued)
                 continue
 
-            # Crasis first half marked with a trailing hyphen (e.g. "τ-", "κ-"):
-            # hold it and prepend it to the next word.
+            # Crasis first half: hold it and prepend it to the next word.
             if token.endswith("-"):
                 pending_prefix += token.rstrip("-")
                 continue
@@ -1017,7 +952,7 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
             else:
                 words.append(token)
 
-        # A dangling crasis prefix with no following word: keep it rather than lose text.
+        # A dangling crasis prefix is kept rather than lost.
         if pending_prefix:
             words.append(pending_prefix)
 
@@ -1025,22 +960,18 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
         text = re.sub(r"\s+([,.:;!?\)])", r"\1", text)
         text = re.sub(r"([\(\[])\s+", r"\1", text)
 
-        # Drop bracketed index markers from source data like [0], [12].
+        # Bracketed index markers from the source data, like [0], [12].
         text = re.sub(r"\[\s*\d+\s*\]", "", text)
 
-        # Remove hidden Unicode formatting chars that can appear as odd symbols.
+        # Hidden Unicode formatting chars, which show up as odd symbols.
         text = re.sub(r"[\u200b-\u200f\u2060\ufeff]", "", text)
 
         text = re.sub(r"\s+", " ", text).strip()
         return text
 
-    # Pull the needed columns as plain lists once and address them by positional
-    # group indices. The previous loop did a per-group .sort_values() and
-    # per-group .iloc[0] for all ~19k sentences, which dominated build time. A
-    # sentence's tokens are appended contiguously and in token order by every
-    # parser, so the groups are already ordered and no per-group sort is needed.
-    # groupby(...).indices preserves first-appearance order, matching the
-    # ngroup(sort=False) sentence_index assigned to the token frame elsewhere.
+    # Columns as plain lists, addressed by group position: a per-group
+    # sort_values over ~19k sentences dominated build time, and every parser
+    # already appends a sentence's tokens contiguously and in order.
     forms = df["form"].tolist()
     doc_ids = df["document_id"].tolist() if "document_id" in df.columns else None
     subdocs = df["subdoc"].tolist() if "subdoc" in df.columns else None
@@ -1065,14 +996,10 @@ def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _blank_whole_work_subdocs(sentences: pd.DataFrame) -> pd.DataFrame:
-    """Drop non-informative ``subdoc`` values used as a citation reference.
-
-    Some Perseus files tag *every* sentence with one coarse whole-work range
-    (e.g. Lysias 1 uses ``subdoc="1-50"`` throughout), which is noise rather than
-    a per-sentence citation. Where a file's ``subdoc`` is constant across all its
-    sentences *and* looks like a range, blank it so the citation degrades to the
-    work label. Genuinely varying refs (Homer's per-sentence line ranges) are
-    untouched."""
+    # Some Perseus files tag every sentence with one whole-work range (Lysias 1
+    # is "1-50" throughout), which is noise, not a citation. Blank a subdoc that
+    # is constant across a file and looks like a range, so the citation degrades
+    # to the work label. Varying refs (Homer's line ranges) are untouched.
     if sentences.empty or "subdoc" not in sentences.columns or "file" not in sentences.columns:
         return sentences
 
@@ -1094,10 +1021,8 @@ def add_sentence_scores(sentences_df: pd.DataFrame, combined_df: pd.DataFrame) -
         counts = greek["lemma"].value_counts()
         greek["lemma_frequency"] = greek["lemma"].map(counts).astype(float)
 
-    # Function words are frequent enough to drown out the words that actually
-    # gate comprehension, so lexical difficulty looks at content words only.
-    # Log frequencies tame the Zipf skew: a couple of articles no longer make a
-    # sentence full of rare words look easy.
+    # Content words only: function words are frequent enough to drown out the
+    # ones that gate comprehension. Log frequencies tame the Zipf skew.
     content = greek[greek["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES)].copy()
 
     stat_columns = ["avg_log_lemma_freq", "min_log_lemma_freq"]
@@ -1112,7 +1037,7 @@ def add_sentence_scores(sentences_df: pd.DataFrame, combined_df: pd.DataFrame) -
             min_log_lemma_freq=("log_lemma_freq", "min"),
         )
         out = out.merge(sent_stats, on="sentence_id", how="left")
-        # Sentences with no content words carry no lexical load; score them easy.
+        # No content words means no lexical load, so score them easy.
         for column in stat_columns:
             max_value = out[column].max()
             out[column] = out[column].fillna(max_value if pd.notna(max_value) else 0.0)
@@ -1138,9 +1063,8 @@ def build_known_lemma_seed(
     combined_df: pd.DataFrame,
     top_n: int = KNOWN_FUNCTION_LEMMA_SEED_COUNT,
 ) -> set[str]:
-    """Top function-word lemmas (articles, particles, conjunctions, ...) that
-    every reader meets from the first page; they seed the known-vocabulary set
-    used for stage-aware sentence selection."""
+    # The top function-word lemmas, which every reader meets from the first page,
+    # seed the known-vocabulary set used for stage-aware sentence selection.
     if combined_df is None or combined_df.empty:
         return set()
     greek = combined_df[combined_df["lemma"].apply(is_greek_lemma)]
@@ -1150,7 +1074,7 @@ def build_known_lemma_seed(
 
 
 def _known_lemma_coverage_by_sentence(combined_df: pd.DataFrame, known_lemmas: set[str]) -> pd.Series:
-    """Fraction of content-word lemmas per sentence_index that are known."""
+    # Fraction of content-word lemmas per sentence_index that are known.
     greek = combined_df[combined_df["lemma"].apply(is_greek_lemma)]
     content = greek[greek["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES)]
     if content.empty:
@@ -1181,8 +1105,7 @@ def get_topic_sentences(
     if not known_lemmas:
         return topic_sentences.sort_values("difficulty_score").head(num_sentences)
 
-    # The lesson's own target lemmas are being taught right now, so they count
-    # as known when judging whether a sentence fits the learner's stage.
+    # The lesson's own target lemmas are being taught now, so they count as known.
     effective_known = known_lemmas | {
         normalize_greek_lemma(str(lemma)) for lemma in matching_rows["lemma"].dropna()
     }
@@ -1190,8 +1113,8 @@ def get_topic_sentences(
     coverage = _known_lemma_coverage_by_sentence(candidate_rows, effective_known)
     topic_sentences["known_lemma_coverage"] = topic_sentences["sentence_index"].map(coverage).fillna(1.0)
 
-    # Stage-appropriate sentences first; if the corpus cannot fill the quota,
-    # fall back to the remaining sentences ranked by difficulty alone.
+    # Stage-appropriate sentences first; the rest, ranked by difficulty alone,
+    # fill the quota when the corpus cannot.
     qualified_mask = topic_sentences["known_lemma_coverage"] >= KNOWN_LEMMA_COVERAGE_THRESHOLD
     qualified = topic_sentences[qualified_mask].sort_values("difficulty_score")
     remainder = topic_sentences[~qualified_mask].sort_values("difficulty_score")
@@ -1247,14 +1170,11 @@ def _build_sentence_target_rows(
     return topic_rows
 
 
-# Minimum number of real words a sentence must have to be eligible as an
-# exercise. Filters out single-word or fragment "sentences" that shouldn't
-# appear as full-sentence exercises.
+# Fragments and one-word "sentences" make poor full-sentence exercises.
 MIN_EXERCISE_SENTENCE_WORDS = 3
 
-# A token counts as a "word" only if it contains at least one letter, so that
-# standalone punctuation (Greek ano teleia "·", dashes, brackets) is not
-# counted toward the minimum-length check.
+# A token counts as a word only if it has a letter, so standalone punctuation
+# does not count toward the minimum length.
 _WORD_TOKEN_RE = re.compile(r"\w", re.UNICODE)
 
 
@@ -1279,11 +1199,9 @@ def _pick_unique_exercise_sentences(
     used_sentence_texts: set[str] = set()
     used_answer_words: set[str] = set()
 
-    # Sort the target rows once and index them by positional location per
-    # sentence. The previous code sorted+copied every sentence group into its own
-    # DataFrame up front (~135k tiny sort_values per build) even though only a
-    # handful of sentences are ever selected; iterating numpy arrays and slicing
-    # with .iloc once per chosen sentence is dramatically cheaper.
+    # Sort the target rows once and index them by position per sentence. Sorting
+    # and copying every sentence group up front cost ~135k tiny sort_values per
+    # build, though only a handful of sentences are ever selected.
     topic_rows = topic_rows.sort_values("token_index")
     group_positions = topic_rows.groupby("sentence_index", sort=False).indices
     target_forms = topic_rows["form"].to_numpy(dtype=object)
@@ -1480,11 +1398,9 @@ def generate_exercises_for_topic(
     return "\n".join(exercise_blocks)
 
 
-# Lesson files carry their own display title (the leading heading), so the table
-# of contents is only as uniform as those files are. Titles are normalized on the
-# way in: the textbook already numbers every entry and labels it a module, so a
-# "Lesson:" / "درس:" prefix is redundant, and emphasis markup would make one
-# entry shout in an otherwise plain contents list.
+# Lesson files carry their own display title, so titles are normalized on the way
+# into the contents: the textbook already numbers and labels each entry, so a
+# "Lesson:" prefix is redundant and emphasis markup makes one entry shout.
 LESSON_TITLE_PREFIX_RE = re.compile(
     r"^\s*(?:lesson|module|unit|chapter|درس|بخش|مبحث|فصل)\s*[:：]\s*",
     re.IGNORECASE,
@@ -1499,12 +1415,9 @@ def normalize_lesson_title(title: str) -> str:
     return cleaned
 
 
-# Lessons that read as a contrast with a class the learner is assumed to know
-# already — the residual declension buckets and the irregular-verb paradigms.
-# Frequency order alone can put them before the class they contrast with, so each
-# declares the lessons it should follow. A lesson whose prerequisites are all
-# absent from this syllabus keeps its frequency position; its title stands on its
-# own, so nothing dangles.
+# Lessons that read as a contrast with a class the learner already knows, which
+# frequency order alone can put first. Each declares the lessons it should
+# follow; one whose prerequisites are all absent keeps its frequency position.
 LESSON_PREREQUISITES: dict[str, tuple[str, ...]] = {
     "two_ending_and_irregular_adjectives": (
         "first_second_declension_adjectives",
@@ -1515,8 +1428,7 @@ LESSON_PREREQUISITES: dict[str, tuple[str, ...]] = {
         "third_declension_iota_upsilon_stem_nouns",
         "third_declension_nasal_liquid_stem_nouns",
     ),
-    # An irregular verb is only recognizable as irregular against a paradigm the
-    # learner already knows.
+    # An irregular verb only reads as irregular against a known paradigm.
     "irregular_verbs": (
         "present_indicative_active_w",
         "aorist_indicative_active_w",
@@ -1525,16 +1437,13 @@ LESSON_PREREQUISITES: dict[str, tuple[str, ...]] = {
 
 
 def lesson_prerequisites(normalized_label: str) -> tuple[str, ...]:
-    """Normalized labels that should precede ``normalized_label``, if present."""
+    # Normalized labels that should precede normalized_label, if present.
     return LESSON_PREREQUISITES.get(normalized_label, ())
 
 
 def apply_lesson_prerequisite_order(lesson_data: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Move each dependent lesson just past the last prerequisite that outranks it.
-
-    Everything else keeps its frequency position, so the syllabus stays
-    frequency-ordered apart from these local swaps.
-    """
+    # Move each dependent lesson just past the last prerequisite that outranks
+    # it; everything else keeps its frequency position.
     normalized = [normalize_frequency_row_name(str(lesson["label"])) for lesson in lesson_data]
 
     for _ in range(len(lesson_data)):
@@ -1560,12 +1469,8 @@ def apply_lesson_prerequisite_order(lesson_data: list[dict[str, Any]]) -> list[d
 
 
 def _split_lesson_title(lesson_text: str) -> tuple[str | None, str]:
-    """Return ``(title, body)`` where ``title`` is the lesson file's leading
-    heading (if any) and ``body`` is the remaining markdown.
-
-    Leading YAML frontmatter is dropped so its metadata does not leak into the
-    rendered textbook.
-    """
+    # (leading heading, remaining markdown). Leading YAML frontmatter is dropped
+    # so its metadata does not leak into the rendered textbook.
     lines = lesson_text.splitlines()
     start = 0
     if lines and lines[0].strip() == "---":
@@ -1592,15 +1497,9 @@ def _render_source_summary(
     syllabus_mode: str,
     lang: str = DEFAULT_LANG,
 ) -> list[str]:
-    """Markdown lines for the "About This Textbook" front-matter block.
-
-    Describes the build setting (lesson count / corpus size / how the syllabus is
-    organized), the works the frequency analysis was built on (grouped by
-    author), and the corpora used (name, description, license, source link), and
-    closes with the copyright and license statement for the textbook itself.
-    Returns an empty list when there is nothing to show so the caller can skip the
-    section cleanly.
-    """
+    # Markdown for the "About This Textbook" front matter: the build setting, the
+    # works and corpora behind it, and the textbook's own licence. Empty when
+    # there is nothing to show, so the caller can skip the section.
     works = list(source_summary.get("works") or [])
     corpora = list(source_summary.get("corpora") or [])
     has_custom = bool(source_summary.get("has_custom_sources"))
@@ -1613,7 +1512,6 @@ def _render_source_summary(
 
     lines: list[str] = [f"## {t('tb_about_header', lang)}", ""]
 
-    # --- Setting: one sentence describing the build parameters. ---
     setting_body = t(
         "tb_setting_body",
         lang,
@@ -1625,7 +1523,7 @@ def _render_source_summary(
     lines.append(f"**{t('tb_setting_label', lang)}** {setting_body}")
     lines.append("")
 
-    # --- Texts included, grouped by author (author-less works bucketed last). ---
+    # Texts included, grouped by author.
     if works:
         lines.append(f"**{t('tb_texts_label', lang)}**")
         lines.append("")
@@ -1637,7 +1535,7 @@ def _render_source_summary(
             lines.append(f"- **{author}** — {', '.join(grouped[author])}")
         lines.append("")
 
-    # --- Corpora used: name — license (Source link). Description. ---
+    # Corpora used: name — license (source link). Description.
     if corpora or has_custom:
         lines.append(f"**{t('tb_corpora_label', lang)}**")
         lines.append("")
@@ -1664,9 +1562,9 @@ def _render_source_summary(
             lines.append(f"- {t('tb_corpus_custom', lang)}")
         lines.append("")
 
-    # --- Copyright and license for the generated textbook itself. Exported files
-    # leave the app entirely, so this is the only place a downstream reader can
-    # learn the terms. The ShareAlike corpora above oblige us to state them.
+    # Terms for the textbook itself. An exported file leaves the app entirely, so
+    # this is the only place a later reader can learn them, and the ShareAlike
+    # corpora above oblige us to state them.
     lines.append(f"**{t('tb_license_label', lang)}** {t('tb_copyright', lang, year=date.today().year)}")
     lines.append("")
     lines.append(t("tb_license_body", lang))
@@ -1684,7 +1582,15 @@ def generate_textbook_markdown(
     lang: str = DEFAULT_LANG,
     source_summary: Mapping[str, Any] | None = None,
 ) -> str:
-    starter_modules = ["about", "alphabet", "introduction_nouns", "introduction_adjectives", "introduction_verbs"]
+    # Keep in sync with STARTER_LESSON_FILES in app.py, which drives the download.
+    starter_modules = [
+        "about",
+        "alphabet",
+        "greek_dialects",
+        "introduction_nouns",
+        "introduction_adjectives",
+        "introduction_verbs",
+    ]
     lesson_separator = "═════ ⟡ ═════"
     lesson_separator_markup = f"<div align=\"center\" style=\"font-size: 200%; line-height: 1.2;\">{lesson_separator}</div>"
 
@@ -1701,7 +1607,6 @@ def generate_textbook_markdown(
     lesson_data = []
     rank = 0
 
-    # Always prepend core starter modules in this fixed order.
     for module_name in starter_modules:
         rank += 1
         lesson_data.append(
@@ -1738,11 +1643,9 @@ def generate_textbook_markdown(
 
     apply_lesson_prerequisite_order(lesson_data)
 
-    # Deponency is a lexical property, not a paradigm of its own: deponent
-    # tokens are counted inside the regular voice lessons, and one concept
-    # lesson introduces them right after the learner first meets the middle
-    # voice. If no middle-voice lesson made the cut, the concept lesson is not
-    # needed either.
+    # Deponency is lexical, not a paradigm: deponent tokens are counted in the
+    # regular voice lessons, and one concept lesson follows the first middle-voice
+    # lesson. With no middle-voice lesson in the cut it is not needed either.
     for position, lesson in enumerate(lesson_data):
         if lesson["is_starter"] or "middle" not in normalize_frequency_row_name(str(lesson["label"])):
             continue
@@ -1766,9 +1669,8 @@ def generate_textbook_markdown(
 
     grammar_folder = Path(grammar_folder)
 
-    # Load lesson bodies up front so the table of contents can use each file's
-    # own H1 title (localized in translated lesson folders) instead of the raw
-    # syllabus label.
+    # Bodies are loaded up front so the contents can use each file's own H1 title
+    # (localized in a translated folder) rather than the raw syllabus label.
     for lesson in lesson_data:
         lesson["display_label"] = lesson["label"]
         lesson_path = grammar_folder / lesson["filename"]
@@ -1810,11 +1712,9 @@ def generate_textbook_markdown(
     known_lemmas: set[str] = set()
 
     if combined_df is not None and not combined_df.empty:
-        # Work on the passed frame directly. A full .copy() here duplicated the
-        # entire token table (hundreds of MB for a large corpus) and was the main
-        # driver of the OOM container kills; adding the two derived columns below
-        # in place costs only a few MB. The two extra columns (lemma_frequency,
-        # sentence_index) then also appear in the app's combined-rows CSV export.
+        # The passed frame is worked on directly: a full .copy() duplicated the
+        # whole token table and drove the OOM kills, whereas the two derived
+        # columns cost a few MB. They also show up in the combined-rows export.
         working_combined_df = combined_df
 
         if "lemma_frequency" not in working_combined_df.columns:
@@ -1877,9 +1777,8 @@ def generate_textbook_markdown(
     document = "\n".join(markdown_content)
 
     if rtl:
-        # Set the base paragraph direction for the whole document. The blank
-        # lines make renderers such as GitHub keep parsing the inner markdown;
-        # markdown="1" does the same for python-markdown's md_in_html.
+        # Base paragraph direction for the document. The blank lines keep GitHub
+        # parsing the inner markdown; markdown="1" does the same for md_in_html.
         document = f'<div dir="rtl" markdown="1">\n\n{document}\n\n</div>\n'
 
     return document
@@ -1910,8 +1809,7 @@ def generate_textbook_html(
             lang=lang,
             source_summary=source_summary,
         )
-    # "extra" bundles md_in_html, which keeps parsing the markdown inside the
-    # <div dir="rtl" markdown="1"> document wrapper.
+    # "extra" bundles md_in_html, which parses the markdown inside the RTL wrapper.
     body_html = markdown_to_html(markdown_content, extensions=["extra", "toc", "tables"])
 
     if rtl:

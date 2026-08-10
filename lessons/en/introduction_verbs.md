@@ -2,7 +2,7 @@
 
 ## 1. One Word, a Whole Sentence
 
-A single Greek verb form packs in everything English needs several words for:
+A single Greek verb form carries a great deal of information at once — who is acting, how many of them, when, in what manner, and whether they act or are acted upon. All of it sits in one word, in the stem and the ending:
 
 - παιδεύομεν = "we are educating" (who: *we*; when/how: *ongoing present*; voice: *active*)
 - ἐπαιδεύθης = "you were educated" (*you*, *past, single event*, *passive*)
@@ -25,7 +25,7 @@ Because the ending shows the person, subject pronouns are usually omitted: λέ�
 
 Greek "tenses" say less about *when* than about *how the action unfolds* (its **aspect**):
 
-| Tense | Aspect + time | English feel |
+| Tense | Aspect + time | Force |
 |---|---|---|
 | Present | ongoing, now | "I am loosening" |
 | Imperfect | ongoing, past | "I was loosening" |
@@ -53,7 +53,7 @@ Middle and passive share their forms in most tenses; context decides. Some verbs
 | Optative | wish, remote possibility | λύοι "may he loosen!" |
 | Imperative | command | λῦε "loosen!" |
 
-Two further verb forms behave like nouns and adjectives: the **infinitive** (λύειν "to loosen") and the **participle** (λύων "loosening"), both of which Greek uses far more than English does.
+Two further verb forms behave like nouns and adjectives: the **infinitive** (λύειν "to loosen") and the **participle** (λύων "loosening"), both of which Greek uses with great freedom, often building whole subordinate clauses around a single participle.
 
 ## 3. Anatomy of a Verb Form
 
@@ -75,6 +75,18 @@ Because stems change across tenses, dictionaries list **six principal parts** fo
 6. ἐπαιδεύθην (aorist passive)
 
 Regular verbs like this are predictable; frequent irregular verbs must be memorized — and the frequency-based lessons in this book prioritize exactly those.
+
+## 5. A Note on Dialect and Period
+
+The paradigms in this book are **Attic** unless a lesson says otherwise. Your reading passages may come from texts written centuries apart, so some forms will not match.
+
+Three shifts affect the verb system in particular, and they are worth knowing before you start:
+
+- **The optative fades.** Common and supple in Homer and Classical Attic, it declines sharply in the Hellenistic period and is nearly gone from the New Testament, surviving mostly in the fixed phrase μὴ γένοιτο "may it not be so."
+- **The perfect merges with the aorist.** Classical Greek keeps them distinct — the aorist reports an event, the perfect a state that still holds. In Koine that distinction erodes and the perfect drifts toward being a plain past tense.
+- **The infinitive gives way to ἵνα clauses**, the beginning of a change that Modern Greek completed.
+
+Every verb lesson has a **Historical Development & Etymology** section covering its own slot, and the dialects module earlier in this book gives the overview.
 
 ## Summary
 

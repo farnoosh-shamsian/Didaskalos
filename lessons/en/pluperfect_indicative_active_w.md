@@ -86,5 +86,5 @@ If the perfect reduplication already begins with a vowel — because the verb do
 ## 5. Usage and Context
 
 1. **Subordinate clauses of time** — after ἐπεί, ἐπειδή, πρίν — are the pluperfect's natural home, where it fixes one action as prior to another past action.
-2. **The aorist often does the job instead.** Greek is happy to narrate with successive aorists and leave the sequence to context; do not expect a pluperfect wherever English uses "had".
+2. **The aorist often does the job instead.** Greek is happy to narrate with successive aorists and leave the sequence to context; do not expect a pluperfect at every point where one event precedes another.
 3. **Reading tip.** The signature is augment *plus* reduplication in one word: ἐ‑λε‑λύκ‑η. Spot both and you have the tense before you reach the ending.

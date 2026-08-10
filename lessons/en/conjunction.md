@@ -62,7 +62,25 @@ The boundary is soft. δέ, γάρ, and οὖν are traditionally counted as par
 - Negative in the subordinate clause follows its type: factual ὅτι-clauses take οὐ, purpose and conditional clauses take μή: ἵνα μὴ ἁμάρτῃ "so that he may not err".
 - After verbs of saying, Greek often prefers an **infinitive construction** instead of ὅτι — both are common.
 
-## 7. Example Sentences
+## 7. Dialect and Period
+
+How Greek joins its clauses together changes a great deal between Homer and the New Testament, and the change affects the whole texture of a text.
+
+**Homer has conjunctions Attic lost.** Epic uses **αὐτάρ / ἀτάρ** "but", **ἠδέ** and **ἰδέ** "and", **ὄφρα** "until, so that", **εὖτε** "when", **ἠμέν … ἠδέ** "both … and". Most of these are gone by the Classical period.
+
+**Classical Attic is the peak of subordination.** Attic prose builds long, hierarchical sentences with clauses carefully nested inside one another — the *periodic* style at its most elaborate in Demosthenes and Thucydides. Conjunctions are what hold those structures up, and reading Attic means tracking them closely.
+
+**Koine returns to parataxis.** Hellenistic Greek, and the New Testament in particular, prefers to lay clauses side by side rather than subordinate them — sentence after sentence linked by a plain **καί** "and". Mark's Gospel is the extreme case; the influence of Hebrew and Aramaic narrative style is generally held to reinforce a tendency the language already had.
+
+Three specific Koine developments are worth watching for:
+
+- **ἵνα expands well past purpose.** In Attic ἵνα means "in order that". In Koine it also introduces plain complement clauses — "that" after verbs of wishing, commanding and even saying — taking over territory the infinitive used to hold. This is the beginning of Modern Greek **να**, which has displaced the infinitive entirely.
+- **ὅτι does the same**, and additionally appears as **ὅτι recitativum**, standing immediately before *direct* speech, where it does the work of opening quotation marks rather than of a conjunction: εἶπεν ὅτι "ἐγώ εἰμι" — "he said, 'I am'." Such an ὅτι should not be rendered as "that" at all; it is simply the mark that a quotation follows.
+- **ὡς loses ground** to ὅτι and ἵνα.
+
+So the same skill scales differently: in Attic, conjunctions tell you the architecture of a long sentence; in Koine, they tell you mainly where one short sentence ends and the next begins.
+
+## 8. Example Sentences
 
 - λέγουσιν ὅτι ὁ βασιλεὺς ἥκει. — "They say that the king has come."
 - ἐὰν τοῦτο ποιῇς, χαιρήσεις. — "If you do this, you will be glad."

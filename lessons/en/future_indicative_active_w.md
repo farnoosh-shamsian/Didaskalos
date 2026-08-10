@@ -106,7 +106,7 @@ The **‑σ‑** attaches directly to the root *φη‑*; in the future, μι-ve
 
 ## 5. Example Sentences
 
-| Greek (future active) | Transliteration | English |
+| Greek (future active) | Transliteration | Meaning |
 |-----------------------|----------------|---------|
 | **ἡ γυνὴ τὸν ἄνθρωπον λύσει.** | hē gynḕ ton ánthrōpon lýsei | The woman will set the man free. |
 | **τοὺς θεοὺς τιμήσομεν.** | tous theoùs timḗsomen | We will honor the gods. |

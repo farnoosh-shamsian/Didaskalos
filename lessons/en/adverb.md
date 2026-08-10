@@ -83,7 +83,25 @@ The article can even turn an adverb into a noun or adjective: οἱ νῦν "the
 - ὡς is a chameleon: "as", "that", "how", and with superlatives "as ... as possible". Let context decide.
 - The neuter accusative of an adjective often serves as an adverb on its own: πολύ "much, far", πρῶτον "first", ὀλίγον "a little".
 
-## 7. Example Sentences
+## 7. Dialect and Period
+
+**Most Greek adverbs are fossilized case forms.** The ‑ως ending itself descends from an old case ending, and once you know that, a whole class of odd little words falls into place: ποῦ "where" and ποῖ "whither" are frozen case forms, οἴκοι "at home" is an old locative, and κύκλῳ "in a circle" is simply a dative doing adverbial duty.
+
+**Homer keeps a set of suffixes Attic only preserves in fossils.** Epic still forms adverbs freely with three endings that later froze into a handful of fixed words:
+
+| Suffix | Meaning | Homeric examples | Attic survival |
+|---|---|---|---|
+| **‑θεν** | from where | οὐρανόθεν "from heaven", Ἰλιόθεν | οἴκοθεν, πόθεν, ἄνωθεν |
+| **‑δε** | to where | οἴκαδε "homewards", πόλινδε | Ἀθήναζε, οἴκαδε |
+| **‑θι** | where | οἴκοθι "at home", ἄλλοθι | ἄλλοθι, αὐτόθι |
+
+In Homer these are a living system that can be applied to many nouns; in Attic only the leftovers remain. So a Homeric adverb you have never seen may well be transparent once you strip the suffix.
+
+**In Koine** the ‑ως formation is fully productive and the adverb inventory grows, but two changes matter for reading. Adverbs are pressed into service as **prepositions** — ἐνώπιον, ἔμπροσθεν, ὀπίσω all begin as adverbs and end up governing the genitive. And comparison is increasingly made **periphrastically**, with μᾶλλον "more" plus the positive form, rather than with a comparative ending.
+
+Modern Greek has replaced the ‑ως ending with ‑α for most adverbs, though ‑ως survives in formal registers.
+
+## 8. Example Sentences
 
 - οἱ στρατιῶται ταχέως ἐπορεύοντο. — "The soldiers marched quickly."
 - εὖ λέγεις. — "You speak well / well said."

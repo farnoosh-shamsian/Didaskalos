@@ -1,19 +1,10 @@
-"""Client-side idle timeout for the Streamlit session.
-
-Cloud Run bills for every second a request is in flight, and Streamlit's
-``/_stcore/stream`` websocket *is* a long-lived request: an abandoned browser tab
-reconnects the moment the server-side request timeout drops it, so the instance
-never goes idle and never scales to zero. A tab left open all afternoon is the
-single most expensive thing that can happen to this app.
-
-Streamlit has no server-side idle timeout, so activity is watched in the browser
-instead. After ``IDLE_TIMEOUT_SECONDS`` without interaction a countdown appears,
-and if that lapses the tab is navigated to a static "session closed" page.
-Navigating away is the part that does the work: blanking the page contents would
-leave the websocket open, whereas unloading the document closes it for real. The
-destination is served by Streamlit's static file handler, so it is one plain HTTP
-request that starts no new session.
-"""
+# Client-side idle timeout. Cloud Run bills for every second a request is in
+# flight, and Streamlit's websocket is a long-lived request that an abandoned tab
+# keeps reconnecting, so the instance never scales to zero. Streamlit has no
+# server-side idle timeout, so activity is watched in the browser: after
+# IDLE_TIMEOUT_SECONDS a countdown appears, and if it lapses the tab is navigated
+# to a static "session closed" page. Navigating away is what does the work —
+# blanking the page would leave the websocket open.
 from __future__ import annotations
 
 import json
@@ -25,12 +16,8 @@ from i18n import is_rtl, t
 
 
 def _seconds_from_env(name: str, default: int) -> int:
-    """Read a positive integer of seconds from the environment.
-
-    Both timings are env-overridable so the behaviour can be exercised in seconds
-    locally instead of waiting out the real timeout, and so the production value
-    can be retuned from the deploy config without a code change.
-    """
+    # Both timings are env-overridable, so the behaviour can be tried out in
+    # seconds locally and retuned in production without a code change.
     try:
         value = int(os.environ.get(name, ""))
     except ValueError:
@@ -39,22 +26,22 @@ def _seconds_from_env(name: str, default: int) -> int:
 
 
 # Long enough that reading a generated lesson never trips it, short enough that a
-# tab abandoned at the end of a talk stops costing money within the hour.
+# tab abandoned after a talk stops costing money within the hour.
 IDLE_TIMEOUT_SECONDS = _seconds_from_env("DIDASKALOS_IDLE_TIMEOUT_SECONDS", 20 * 60)
-# Grace period between the warning appearing and the session actually closing.
+# Grace period between the warning appearing and the session closing.
 IDLE_WARNING_SECONDS = _seconds_from_env("DIDASKALOS_IDLE_WARNING_SECONDS", 60)
 # Streamlit serves ./static/ here when server.enableStaticServing is on.
 SESSION_ENDED_PATH = "/app/static/session-ended.html"
 
-# Placeholder swapped for the live countdown in the browser; the localized string
-# is formatted once here, but the number changes every second.
+# Placeholder for the live countdown: the localized string is formatted once
+# here, but the number changes every second.
 _SECONDS_TOKEN = "%SECONDS%"
 
-# DOM id of the injected <script>, so a rerun can find and replace its predecessor.
+# DOM id of the injected <script>, so a rerun can replace its predecessor.
 _SCRIPT_ID = "didaskalos-idle-watcher"
 
-# The watcher itself. This runs in the *app* document, not in the component
-# iframe, so ``window`` and ``document`` below are the real page.
+# The watcher runs in the app document, not the component iframe, so window and
+# document below are the real page.
 _WATCHER_JS = """
 (function () {
   var IDLE_MS = __IDLE_MS__;
@@ -65,8 +52,8 @@ _WATCHER_JS = """
   var PALETTES = __PALETTES__;
   var FALLBACK_THEME = __FALLBACK_THEME__;
 
-  // theme.py stamps the theme the page is actually showing on <html>; read it
-  // late so the overlay is right even if the theme changed after this ran.
+  // theme.py stamps the theme on <html>; read it late so the overlay is right
+  // even if the theme changed after this ran.
   function activeTheme() {
     var showing = document.documentElement.getAttribute('data-didaskalos-theme');
     return showing === 'light' || showing === 'dark' ? showing : FALLBACK_THEME;
@@ -138,10 +125,9 @@ _WATCHER_JS = """
   }
 
   function tick() {
-    // A running script counts as activity. A full-corpus build produces no mouse
-    // or key events for minutes at a time, and timing someone out mid-build
-    // would cost them more than the idle instance costs us. The status widget is
-    // in the DOM only while Streamlit is actually running or rerunning.
+    // A running script counts as activity: a full-corpus build fires no mouse or
+    // key events for minutes at a time. The status widget is in the DOM only
+    // while Streamlit is running.
     if (document.querySelector('[data-testid="stStatusWidget"]')) {
       reset();
       return;
@@ -174,11 +160,10 @@ _WATCHER_JS = """
 })();
 """
 
-# components.html renders a sandboxed iframe. The sandbox grants allow-same-origin
-# (so the app document is reachable) but *not* allow-top-navigation, so a redirect
-# issued from inside the iframe is silently blocked — which is the one thing the
-# watcher has to be able to do. The iframe therefore only bootstraps: it injects
-# the watcher as a <script> in the app document, where it runs unsandboxed.
+# components.html's iframe sandbox grants allow-same-origin but not
+# allow-top-navigation, so a redirect from inside it is silently blocked — the
+# one thing the watcher must do. The iframe therefore only injects the watcher
+# into the app document, where it runs unsandboxed.
 _BOOTSTRAP_JS = """
 <script>
 (function () {
@@ -186,8 +171,8 @@ _BOOTSTRAP_JS = """
   if (!parentWin || !parentWin.document) { return; }
   var doc = parentWin.document;
 
-  // Every interaction reruns the script and re-injects this component. Drop the
-  // previous watcher and its <script> so the two never run side by side.
+  // Every interaction re-injects this component, so drop the previous watcher
+  // and its <script> to keep two from running side by side.
   if (parentWin.__didaskalosIdle) { parentWin.__didaskalosIdle.destroy(); }
   var previous = doc.getElementById(__SCRIPT_ID__);
   if (previous) { previous.remove(); }
@@ -200,17 +185,16 @@ _BOOTSTRAP_JS = """
 </script>
 """
 
-# Persian needs a font stack that actually has the glyphs; the app's own RTL CSS
-# pulls a webfont, but the overlay should not wait on a network request.
+# Persian needs a stack that has the glyphs; the app's RTL CSS pulls a webfont,
+# but the overlay should not wait on a network request.
 _FONT_STACK = {
     True: "'Noto Naskh Arabic','B Lotus',Tahoma,sans-serif",
     False: "'Source Sans Pro','Segoe UI',sans-serif",
 }
 
-# The overlay is built in plain DOM, outside Streamlit's stylesheet, so it has to
-# be told the palettes. These follow [theme.light] / [theme.dark] in
-# .streamlit/config.toml — a white card would flare on a dark page. Both are sent
-# and the one to use is chosen when the overlay is built, from the theme stamp.
+# The overlay is plain DOM, outside Streamlit's stylesheet, so it is told the
+# palettes; these follow [theme.light] / [theme.dark] in .streamlit/config.toml.
+# Both are sent and the overlay picks one from the theme stamp.
 _OVERLAY_COLORS = {
     "light": {
         "card": "#d1cabb",
@@ -228,12 +212,8 @@ _OVERLAY_COLORS = {
 
 
 def render_idle_watcher(lang: str, theme: str = "light") -> None:
-    """Inject the idle watcher for the active language and theme.
-
-    Renders a zero-height component, so it can be called anywhere in the script;
-    calling it early means the watcher is installed even on the ``st.stop()``
-    paths that abort the page before the build UI exists.
-    """
+    # A zero-height component, so it can be called anywhere in the script; called
+    # early, it is installed even on the st.stop() paths.
     rtl = is_rtl(lang)
     text = {
         "title": t("idle_title", lang),
@@ -242,9 +222,8 @@ def render_idle_watcher(lang: str, theme: str = "light") -> None:
         "dir": "rtl" if rtl else "ltr",
         "font": _FONT_STACK[rtl],
     }
-    # The closed-session page is static, so it cannot read the app's state: the
-    # language rides along in the URL, and the watcher appends the theme it can
-    # see at the moment it gives up on the tab.
+    # The closed-session page is static and cannot read the app's state, so the
+    # language rides in the URL and the watcher appends the theme it can see.
     ended_url = f"{SESSION_ENDED_PATH}?lang={lang}"
 
     watcher = (

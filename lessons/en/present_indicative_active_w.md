@@ -85,7 +85,7 @@ The final vowel of the stem merges with the ending. There are three sub-types:
 
 ## 4. Example Sentences
 
-| Greek (present indicative active) | Transliteration | English |
+| Greek (present indicative active) | Transliteration | Meaning |
 |-----------------------------------|-----------------|---------|
 | **λέγω τὸν νόμον.** | *légō ton nómon* | I recite the law. |
 | **φιλεῖς τὸν φίλον σου.** | *phileîs ton phílon sou* | You love your friend. |
@@ -112,4 +112,4 @@ The final vowel of the stem merges with the ending. There are three sub-types:
 - The thematic conjugation, with its linking vowel ε/ο, is part of Greek's Indo-European inheritance; the ending ‑ω continues the old first-person-singular ending of the parent language.
 - The **contract verbs** are not a separate conjugation but ordinary thematic verbs whose stems happened to end in a vowel; the contractions are a regular Attic sound change, and Homeric Greek often preserves the uncontracted forms (*ὁράω* beside Attic *ὁρῶ*).
 - The ω‑verb pattern proved remarkably stable, and in later Greek the older μι‑verbs gradually migrated into it.
-- Many ω‑verbs survive in English loanwords: *graph* and *graphic* come from the same root as γράφω.
+- The roots of many ω‑verbs have been borrowed into the technical vocabulary of modern languages the world over: γράφω "write" underlies the international *graph‑* family, and γίγνομαι, λέγω and φέρω have been similarly productive.

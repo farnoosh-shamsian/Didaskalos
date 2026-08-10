@@ -72,4 +72,4 @@ Because so many Greek futures are middle in form, most future optatives you meet
 
 1. **Historians and orators** use it when reporting what someone said would happen — a hallmark of careful Attic style.
 2. **Xenophon** is especially fond of it; in Herodotus and later Greek it grows rarer, and Koine has all but lost it.
-3. **Reading tip.** If you see ‑σοι‑ with a middle ending in a ὅτι clause after a past verb, you are looking at a future optative and should translate it "would".
+3. **Reading tip.** If you see ‑σοι‑ with a middle ending in a ὅτι clause after a past verb, you are looking at a future optative: it reports what was going to happen, viewed from the past narrative rather than from the present.

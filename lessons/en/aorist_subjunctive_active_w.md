@@ -87,7 +87,7 @@ These forms must be memorized.
 
 ## 4. Example Sentences
 
-| Greek (aorist subjunctive active) | Transliteration | English |
+| Greek (aorist subjunctive active) | Transliteration | Meaning |
 |-----------------------------------|----------------|---------|
 | **ἵνα τὸν πόλεμον νικήσωμεν.** | hína ton pólemon nikḗsōmen | so that we may win the war. |
 | **ἐὰν ἔλθῃ, ἀκουσόμεθα.** | eàn élthēi, akousómetha | If he comes, we shall hear. |

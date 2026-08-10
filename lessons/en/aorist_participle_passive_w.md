@@ -11,7 +11,7 @@ pos: verb
 
 ## 1. What Is the Aorist Passive Participle?
 
-| Term | Meaning in Greek | English gloss |
+| Term | Meaning in Greek | Gloss |
 |------|------------------|---------------|
 | **Aorist** | The "single event" aspect: the action is viewed as a whole, without reference to duration or repetition. | "was …ed" |
 | **Passive** | The subject receives the action rather than performing it. | "…ed" |

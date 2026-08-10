@@ -74,7 +74,7 @@ Many of them also show **ι‑reduplication** in the present system: δί‑δω
 
 ## 4. Example Sentences
 
-| Greek (present indicative active) | Transliteration | English |
+| Greek (present indicative active) | Transliteration | Meaning |
 |-----------------------------------|-----------------|---------|
 | **δίδωμί σοι τὸ βιβλίον.** | *dídōmí soi to biblíon* | I give you the book. |
 | **ὁ νομοθέτης τίθησι τοὺς νόμους.** | *ho nomothétēs títhēsi tous nómous* | The lawgiver lays down the laws. |

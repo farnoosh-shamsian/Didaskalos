@@ -84,5 +84,5 @@ When the stem ends in a consonant it meets the **μ** of the ending and assimila
 ## 5. Usage and Context
 
 1. **Attributive use is everywhere.** With the article the participle becomes a noun phrase — τὰ δεδομένα, οἱ τεταγμένοι "those posted (on duty)" — and this is how you will most often meet it in prose.
-2. **State, not event.** Where an aorist participle (δούς "having given") reports the act, the perfect participle reports the situation it produced. Translators often reach for an English adjective: "given", "established", "appointed".
+2. **State, not event.** Where an aorist participle (δούς "having given") reports the act, the perfect participle reports the situation it produced. Its force is usually adjectival: "given", "established", "appointed".
 3. **ἑσταμένος and ἑστώς.** ἵστημι has both a middle/passive participle ἑσταμένος and an active ἑστώς, ἑστῶσα, ἑστός; both mean "standing", and the active form is the commoner in Attic prose.

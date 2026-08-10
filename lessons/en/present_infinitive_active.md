@@ -35,7 +35,7 @@ The present infinitive does not indicate the time "now"; it indicates **imperfec
 
 ## Example Sentences
 
-| Greek | English |
+| Greek | Meaning |
 |---|---|
 | **καλόν ἐστι τὴν ἀλήθειαν λέγειν.** | It is good to tell the truth. |
 | **ἐθέλει τοὺς παῖδας παιδεύειν.** | He wishes to educate the children. |

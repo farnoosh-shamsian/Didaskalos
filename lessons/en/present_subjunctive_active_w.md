@@ -105,7 +105,7 @@ The present subjunctive of εἰμί is the bare set of long endings:
 
 ## 4. Example Sentences
 
-| Greek (present subjunctive) | Transliteration | English |
+| Greek (present subjunctive) | Transliteration | Meaning |
 |-----------------------------|-----------------|---------|
 | **ἵνα λύῃς τὸν δεσμόν** | *hína lýēis ton desmón* | "so that you may loose the bond" |
 | **μανθάνομεν ἵνα σοφοὶ ὦμεν.** | *manthánomen hína sophoì ômen* | "We learn in order to be wise." |

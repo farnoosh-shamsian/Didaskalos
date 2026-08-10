@@ -30,9 +30,7 @@
     />
     <link rel="stylesheet" href="assets/styles.css" />
     <!-- Resolve the theme before the first paint. The site starts light whatever
-         the operating system is set to, so only a choice made here — stored by
-         the theme button — turns it dark. app.js (deferred) picks up whatever
-         this decided. -->
+         the OS is set to, so only a stored choice turns it dark. -->
     <script>
       (function () {
         var stored = null;
@@ -120,7 +118,11 @@
       </nav>
       <div class="header-controls">
         <div class="lang-switch" role="tablist" aria-label="Language switch">
-          <button class="lang-btn is-active" type="button" data-lang-button="en">
+          <button
+            class="lang-btn is-active"
+            type="button"
+            data-lang-button="en"
+          >
             English
           </button>
           <button class="lang-btn" type="button" data-lang-button="fa">
@@ -142,8 +144,7 @@
     <div class="lang-panel" data-lang-panel="en" lang="en">
       <section class="hero">
         <div class="hero-content">
-          <!-- The Greek lockup serves both panels: ΔΙΔΑΣΚΑΛΟΣ is the name in the
-               language the project teaches, and needs no translating. -->
+          <!-- The Greek lockup serves both panels: the name needs no translating. -->
           <img
             class="hero-logo"
             src="assets/logo-el-ink.png"
@@ -267,9 +268,9 @@
           <h3>Parse</h3>
           <p>
             Annotated treebanks are read by pluggable per-format adapters —
-            Perseus/AGDT XML and CoNLL-U (Universal Dependencies, PROIEL) — which
-            normalize every token's morphology into one shared tag. Adding a new
-            corpus is a folder plus one manifest entry, not a code change.
+            Perseus/AGDT XML and CoNLL-U (Universal Dependencies, PROIEL) —
+            which normalize every token's morphology into one shared tag. Adding
+            a new corpus is a folder plus one manifest entry, not a code change.
           </p>
         </li>
         <li>
@@ -393,10 +394,10 @@
         <h2>Built to be translated</h2>
         <p class="section-intro">
           Didaskalos was bilingual from the start, and being translatable is a
-          design goal rather than an afterthought. A translated interface over an
-          English textbook would not solve anything, so the interface, the lesson
-          modules, the grammatical terminology, and the exported book are all
-          localized together.
+          design goal rather than an afterthought. A translated interface over
+          an English textbook would not solve anything, so the interface, the
+          lesson modules, the grammatical terminology, and the exported book are
+          all localized together.
         </p>
       </section>
       <section class="posts">
@@ -412,8 +413,8 @@
           <h3>One rule makes it translatable</h3>
           <p>
             No lesson explains Greek by comparison with the learner's first
-            language. That single constraint is what lets a module be
-            translated rather than rewritten for each new audience.
+            language. That single constraint is what lets a module be translated
+            rather than rewritten for each new audience.
           </p>
         </article>
         <article>
@@ -450,11 +451,11 @@
       </section>
       <div class="about-block">
         <p>
-          The grammar modules began as first drafts from a
-          Retrieval-Augmented Generation pipeline over standard reference
-          grammars, including Smyth's <em>Greek Grammar</em> and Crosby &amp;
-          Schaeffer. That pipeline has since been retired: the modules are now
-          hand-written and hand-corrected, and the review is ongoing.
+          The grammar modules began as first drafts from a Retrieval-Augmented
+          Generation pipeline over standard reference grammars, including
+          Smyth's <em>Greek Grammar</em> and Crosby &amp; Schaeffer. That
+          pipeline has since been retired: the modules are now hand-written and
+          hand-corrected, and the review is ongoing.
         </p>
         <p>
           The generation pipeline itself is language-independent. English and
@@ -523,10 +524,10 @@
           </h2>
           <p>
             دیداسکالوس (<span lang="grc" dir="ltr">διδάσκαλος</span>، یعنی
-            «آموزگار») ابزاری متن‌باز است که یک پیکرهٔ حاشیه‌گذاری‌شدهٔ یونانی را
-            می‌خواند و برای همان پیکره کتاب درسی می‌نویسد. مبحث‌های دستوری نه بر
-            پایهٔ یک برنامهٔ درسی از پیش تعیین‌شده، بلکه بر پایهٔ آنچه متن‌های
-            شما واقعاً به کار می‌برند مرتب می‌شوند، و تمرین‌ها جمله‌هایی
+            «آموزگار») ابزاری متن‌باز است که یک پیکرهٔ حاشیه‌گذاری‌شدهٔ یونانی
+            را می‌خواند و برای همان پیکره کتاب درسی می‌نویسد. مبحث‌های دستوری نه
+            بر پایهٔ یک برنامهٔ درسی از پیش تعیین‌شده، بلکه بر پایهٔ آنچه
+            متن‌های شما واقعاً به کار می‌برند مرتب می‌شوند، و تمرین‌ها جمله‌هایی
             دست‌نخورده از همان پیکره‌اند که هرکدام ارجاعش را با خود دارد.
           </p>
           <div class="actions">
@@ -550,7 +551,7 @@
             چیزی کارهای زیادی روی متن‌ها انجام می‌دهد — تجزیهٔ همهٔ پیکره‌های
             درختی، استخراج ویژگی‌های دستوری و رتبه‌بندی آن‌ها بر اساس بسامد.
             بنابراین برنامه گاهی کمی کند به نظر می‌رسد. لطفاً شکیبا باشید؛ ساختن
-            یک کتاب خوب کمی زمان می‌برد.
+            یک کتاب خوب کمی زمان می‌برد!
           </div>
         </div>
       </section>
@@ -673,45 +674,41 @@
       </p>
 
       <section class="section">
-        <h2>وقتی بسامد و آموزش هم‌داستان نیستند</h2>
+        <h2>وقتی بسامد و آموزش در تقابل قرار می‌گیرند</h2>
         <p class="section-intro">
-          برنامهٔ درسیِ صرفاً آماری آموزگار خوبی نیست. سه موردی که دیداسکالوس
-          آگاهانه شمارش‌ها را نادیده می‌گیرد.
+          برنامهٔ درسیِ صرفاً آماری لزوماً آموزگار خوبی نیست. سه موردی که
+          دیداسکالوس آگاهانه بسامد را نادیده می‌گیرد.
         </p>
       </section>
 
       <div class="pairs">
         <div class="pair">
           <p class="problem">
-            پربسامدترین صورت در یک پیکره می‌تواند صورتی بی‌قاعده یا پیشرفته
-            باشد.
+            پربسامدترین صورت در یک پیکره می‌تواند صورتی بی‌قاعده باشد.
           </p>
           <p class="response">
             نخستین درس‌ها ثابت‌اند: الفبا و درآمدی بر اسم، صفت و فعل پیش از آنکه
-            بسامد کار را به دست بگیرد نقشهٔ کلی زبان را می‌کشند تا مبتدی
-            سرگردان نشود.
+            بسامد کار را به دست بگیرد نقشهٔ کلی زبان را می‌کشند تا مبتدی سرگردان
+            نشود.
           </p>
         </div>
         <div class="pair">
           <p class="problem">
-            اگر استثنا را پیش از خودِ قاعده آموزش دهید، در عمل چیزی نیاموخته‌اید.
+            اگر استثنا را پیش از خودِ قاعده آموزش دهید، در عمل چیزی
+            نیاموخته‌اید.
           </p>
           <p class="response">
-            برای هر درس پیش‌نیازها اعلام شده‌اند: فعل‌های بی‌قاعده منتظر
-            می‌مانند تا صرفی باشد که نسبت به آن بی‌قاعده شمرده شوند، و درس‌های
-            ستاک سیگما و صفت‌های دوپایانه پس از رده‌هایی می‌آیند که با آن‌ها
-            مقایسه می‌شوند.
+            برای هر درس پیش‌نیازها اعلام شده‌اند: برای مثال، فعل‌های بی‌قاعده
+            منتظر می‌مانند تا ابتدا دست‌کم یک صرف باقاعده آموزش داده شود.
           </p>
         </div>
         <div class="pair">
           <p class="problem">
-            برخی مبحث‌ها فقط کنار هم معنا دارند — جهت میانه پرسشی پیش می‌کشد که
-            فعل‌های دیپوننت باید پاسخش را بدهند.
-          </p>
+            برخی مبحث‌ها فقط کنار هم معنا دارند — جهت میانه پرسشی پیش می‌کشد که در درس افعال مجهول‌نما به آن پاسخ داده می‌شود<div class=""></div>          </p>
           <p class="response">
             چنین درس‌هایی همیشه پیاپی می‌آیند، و برچسب‌های هم‌صورت یا تکراری در
-            یک درس ادغام می‌شوند: حالت ندایی درون درس فاعلی آموزش داده می‌شود، نه
-            در ماژولی جدا که همان را تکرار کند.
+            یک درس ادغام می‌شوند: حالت ندایی درون درس فاعلی آموزش داده می‌شود،
+            نه در ماژولی جدا که همان را تکرار کند.
           </p>
         </div>
       </div>
@@ -719,18 +716,18 @@
       <section class="section">
         <h2>در برنامه</h2>
         <p class="section-intro">
-          سه انتخاب — یک پیکره، شمار درس‌ها و نوع کتاب — و نتیجه کتابی است آمادهٔ
-          دانلود.
+          سه انتخاب — یک پیکره، شمار درس‌ها و نوع کتاب — و نتیجه کتابی است
+          آمادهٔ دانلود.
         </p>
       </section>
       <section class="posts">
         <article>
           <h3>پیکرهٔ خودتان را بیاورید</h3>
           <p>
-            از میان ۸۵ اثر از ۲۵ نویسنده و مجموعه در چهار پیکرهٔ درختی — Perseus،
-            Gorman، Harrington و عهد جدیدِ PROIEL — انتخاب کنید، یا نشانی
-            پیکره‌ها را وارد کنید و فایل‌های XML خودتان را بارگذاری کنید. هر
-            منبع با نام پدیدآور و مجوزش در برنامه فهرست شده است.
+            از میان ۸۵ اثر از ۲۵ نویسنده و مجموعه در چهار پیکرهٔ درختی —
+            Perseus، Gorman، Harrington و عهد جدیدِ PROIEL — انتخاب کنید، یا
+            نشانی پیکره‌ها را وارد کنید و فایل‌های XML خودتان را بارگذاری کنید.
+            هر منبع با نام پدیدآور و مجوزش در برنامه فهرست شده است.
           </p>
         </article>
         <article>
@@ -812,10 +809,9 @@
       <div class="about-block">
         <p>
           ماژول‌های دستوری در آغاز پیش‌نویس‌هایی بودند که با یک پردازشگر RAG بر
-          پایهٔ دستورهای مرجع — از جمله دستور زبان یونانی Smyth و
-          Crosby &amp; Schaeffer — تولید شده بودند. آن پردازشگر کنار گذاشته شده
-          است: ماژول‌ها اکنون دست‌نویس و دست‌ویراسته‌اند و بازبینی‌شان ادامه
-          دارد.
+          پایهٔ دستورهای مرجع — از جمله دستور زبان یونانی Smyth و Crosby &amp;
+          Schaeffer — تولید شده بودند. آن پردازشگر کنار گذاشته شده است: ماژول‌ها
+          اکنون دست‌نویس و دست‌ویراسته‌اند و بازبینی‌شان ادامه دارد.
         </p>
         <p>
           خودِ پردازشگرِ تولید مستقل از زبان است. امروز انگلیسی و فارسی در
@@ -863,9 +859,9 @@
             >CC BY-NC-SA 4.0</a
           >
           منتشر می‌شود. این مجوز کار اصلی را دربر می‌گیرد: پردازشگر، ماژول‌های
-          درس، روش تدوین برنامهٔ درسی و ترجمه‌ها. متن‌های یونانی منبع همچنان تابع
-          مجوزی هستند که پدیدآورندگان خودشان تعیین کرده‌اند و هر کتاب تولیدشده
-          آن‌ها را در شناسنامه‌اش بازمی‌آورد.
+          درس، روش تدوین برنامهٔ درسی و ترجمه‌ها. متن‌های یونانی منبع همچنان
+          تابع مجوزی هستند که پدیدآورندگان خودشان تعیین کرده‌اند و هر کتاب
+          تولیدشده آن‌ها را در شناسنامه‌اش بازمی‌آورد.
         </p>
       </div>
     </div>

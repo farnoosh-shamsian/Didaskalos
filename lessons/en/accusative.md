@@ -58,3 +58,28 @@ _Examples_
 3. **Attach the appropriate accusative suffix** listed above for the noun's gender, number, and declension.
 
 These suffixes give each noun its accusative form, allowing it to serve as the direct object in a sentence.
+
+---
+
+### Dialect and Period
+
+The accusative is the most stable case in Greek. Its endings barely move between Homer and the New Testament, and unlike the dative it never came under threat — it is still very much alive in Modern Greek. What changes is how much work it is asked to do, and the trend is that it takes on **more**.
+
+**Epic uses.** Two constructions are far commoner in Homer than in later prose:
+
+- The **accusative of respect**, naming the part or aspect in which something is true: πόδας ὠκὺς Ἀχιλλεύς "Achilles, swift **as to his feet**", ἀλγέων ἦτορ "grieving **in his heart**". Attic keeps it but uses it more sparingly.
+- The **double accusative** with verbs of asking, teaching and depriving (διδάσκω τοὺς παῖδας τὴν μουσικήν "I teach the children music"), which narrows steadily after the Classical period.
+
+The accusative of extent in space and time (ἐνιαυτόν "for a year", δέκα σταδίους "ten stades") runs through every period unchanged.
+
+**Koine expands it — largely at the dative's expense.** As the dative recedes, prepositional phrases take over its jobs, and the preposition that gains most is **εἰς** + accusative:
+
+| | Classical Attic | Koine tendency |
+|---|---|---|
+| Motion towards | εἰς + acc. | εἰς + acc. |
+| Place where | ἐν + dative | ἐν + dat., but **εἰς + acc. encroaches** |
+| Goal / recipient | dative | dative, or εἰς / πρός + acc. |
+
+In the New Testament εἰς and ἐν are no longer kept rigidly apart, and εἰς sometimes appears where strict Attic would require ἐν with the dative. Greek is on its way to the modern state of affairs, in which the accusative is the ordinary case after almost every preposition.
+
+**In Koine** the accusative is also the case that survives the general levelling best. Where third-declension nouns start drifting toward first-declension endings, it is usually the accusative plural that shows the first signs — the beginning of a merger that finishes long after the New Testament.

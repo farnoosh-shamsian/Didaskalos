@@ -16,7 +16,7 @@ By the end of this lesson you will be able to:
 
 ## 1. What Is an Aorist Participle?
 
-| Term | Meaning in Greek grammar | Rough English approximation |
+| Term | Meaning in Greek grammar | Rough approximation |
 |------|--------------------------|------------------------------|
 | **Aorist** | The aspect presenting the action as a simple, complete whole, without reference to duration. | "did / having done" |
 | **Participle** | A verbal adjective: it both modifies a noun (like an adjective) and replaces a subordinate clause. | "having done…," "the one who…" |

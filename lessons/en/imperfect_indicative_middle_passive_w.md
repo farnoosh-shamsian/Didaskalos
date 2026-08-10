@@ -88,7 +88,7 @@ The stem vowel merges with the thematic vowel:
 
 ## 4. Example Sentences
 
-| Greek (imperfect middle/passive) | Transliteration | English |
+| Greek (imperfect middle/passive) | Transliteration | Meaning |
 |----------------------------------|----------------|---------------------|
 | **ἡ οἰκία ᾠκοδομεῖτο.** | hē oikía ōikodomeîto | The house was being built. |
 | **οἱ στρατιῶται ὡπλίζοντο.** | hoi stratiôtai hōplízonto | The soldiers were arming themselves. |

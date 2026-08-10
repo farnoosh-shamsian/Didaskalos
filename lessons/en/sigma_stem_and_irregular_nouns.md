@@ -50,6 +50,33 @@ Like πόλεως, the genitive βασιλέως keeps its unusual accent.
 - The nom./acc. plural γένη comes from contraction (γένεσ-α → γένεα → γένη); Ionic and poetry often keep the uncontracted forms (γένεα).
 - ναῦς and Ζεύς are among the most frequent irregular nouns in epic and historiography; they repay memorization as whole paradigms.
 
+## Dialect and Period
+
+**The sigma stems are the clearest demonstration of contraction in the whole noun system.** Every Attic form you learned here is a contraction, and Homer and Herodotus preserve the uncontracted originals. Set them side by side and the Attic paradigm stops looking arbitrary:
+
+| Case | Original / Homeric | Attic |
+|---|---|---|
+| Genitive singular | γένε(σ)ος → **γένεος** | **γένους** |
+| Dative singular | γένε(σ)ι → **γένεϊ** | **γένει** |
+| Nominative–accusative plural | γένε(σ)α → **γένεα** | **γένη** |
+| Genitive plural | **γενέων** | **γενῶν** |
+
+The σ of the stem drops between vowels; the vowels left touching then contract in Attic but stay apart in Ionic. So γένους is not an ending to memorize — it is γένεος with the work done. Herodotus writes γένεος, τείχεος, ἔτεα; Homer writes ἔπεα "words" where Attic has ἔπη.
+
+The same applies to the ‑ης names: Homer and Ionic have Σωκράτεος-type genitives against Attic Σωκράτους.
+
+**ναῦς and Ζεύς across the dialects.** The two great irregulars are irregular differently in different places:
+
+| | Homer | Attic |
+|---|---|---|
+| "ship" | **νηῦς**, gen. νηός, dat. νηΐ, pl. νῆες | **ναῦς**, gen. νεώς, pl. νῆες |
+| "Zeus" acc. | **Ζῆν(α)** beside Δία | Δία |
+| "Zeus" gen. | **Ζηνός** beside Διός | Διός |
+
+Homeric Ζῆνα and Ζηνός are built on a different form of the name than Attic Δία and Διός; both descend from the same Indo-European word, and Greek simply kept two versions of it.
+
+**In Koine** the contracted Attic forms are standard, and the sigma-stem type remains productive — γένος, ἔθνος, τέλος, σκεῦος, ὄρος, πλῆθος are all common in the New Testament. ναῦς, however, largely gives way to the ordinary second-declension **πλοῖον** "boat", which is what the Gospels use.
+
 ## Examples
 
 - τὰ τῆς πόλεως τείχη — "the walls of the city"

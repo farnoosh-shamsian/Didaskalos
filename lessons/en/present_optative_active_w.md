@@ -15,7 +15,7 @@ pos: verb
 | Feature | Indicative | Subjunctive | **Optative** |
 |---------|------------|-------------|--------------|
 | **Function** | States a fact or asks a question | Possibility, purpose, exhortation (often in subordinate clauses) | Wish, remote possibility, a "softened" statement (especially in indirect discourse after a past tense) |
-| **Rough English equivalent** | "he writes" | "(that) he may write" | "may he write," "he might write" |
+| **Rough equivalent** | "he writes" | "(that) he may write" | "may he write," "he might write" |
 | **Aspect in this lesson** | — | — | **Present** (a wish or possibility in progress) as against **aorist** (a single occurrence) |
 | **Voice** | active/middle/passive | active/middle/passive | here: **active** |
 
@@ -98,7 +98,7 @@ In contract verbs the singular prefers the extended suffix **‑οίη‑**:
 
 ## 4. Example Sentences
 
-| Greek (optative) | Transliteration | English |
+| Greek (optative) | Transliteration | Meaning |
 |------------------|-----------------|---------|
 | **εἴθε ἀεὶ τὴν ἀλήθειαν λέγοις.** | *eíthe aeì tēn alḗtheian légois* | "If only you would always speak the truth." |
 | **εἴθε εὐδαίμων εἴης.** | *eíthe eudaímōn eíēs* | "May you be happy." |

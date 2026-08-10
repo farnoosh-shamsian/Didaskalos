@@ -96,7 +96,7 @@ The verb πρίαμαι "to buy" is used only in the aorist and has a perfectly 
 
 ## 4. Example Sentences
 
-| Greek (μι aorist middle) | Transliteration | English |
+| Greek (μι aorist middle) | Transliteration | Meaning |
 |---------------------------|----------------|---------|
 | **ἔθετο τὸ ξίφος ἐπὶ τὴν τράπεζαν.** | *étheto to xíphos…* | He laid his sword on the table. |
 | **οἱ πολῖται νόμους ἔθεντο.** | *hoi polîtai nómous éthento* | The citizens enacted laws for themselves. |

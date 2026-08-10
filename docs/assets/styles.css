@@ -1,7 +1,5 @@
-/* Didaskalos GitHub Pages site.
-   Palette taken from farnoosh-shamsian.github.io (styles/variables.css) so the two
-   sites read as one: same deep red, sand background, and card tone. The gold is the
-   one addition — it is the logo's own color, and it carries the accents on dark. */
+/* Palette taken from farnoosh-shamsian.github.io so the two sites read as one.
+   The gold is the one addition: it is the logo's own colour. */
 
 :root {
   --primary-color: #530707;
@@ -12,9 +10,8 @@
   --text-color: #1f1c16;
   --link-color: #2b2116;
   --accent-gold: #d4a87a;
-  /* Small filled surfaces (buttons, step markers, the active language chip) take a
-     dark brownish red rather than the heading red — at any size a saturated red
-     reads as too hot against the sand. */
+  /* Small filled surfaces take a brownish red, not the heading red, which reads
+     too hot against the sand. */
   --deep-red: #3a1712;
   /* Text sitting on one of those filled surfaces. */
   --on-accent: #cacbc4;
@@ -24,13 +21,10 @@
   --nav--font-size: clamp(16px, 1vw, 20px);
 }
 
-/* Dark theme. An inline script in <head> stamps data-theme on <html> before the
-   first paint, so this block serves both themes without a flash of the wrong
-   one. Light is the default: the site turns dark only for a visitor who asked
-   for it with the theme button, not because their OS is set that way.
-
-   The red inverts rather than darkens: on a dark ground a deep red button reads as
-   a hole, so the filled accents become the logo's gold with dark text on top. */
+/* Dark theme, applied only when the visitor asks for it — never from the OS
+   setting. A script in <head> stamps data-theme before the first paint.
+   The red inverts rather than darkens: on a dark ground a deep red button reads
+   as a hole, so filled accents become gold with dark text. */
 :root[data-theme="dark"] {
   --primary-color: #d4a87a;
   --article-header-color: #e0b68a;
@@ -72,7 +66,7 @@ body {
   line-height: 1.9;
 }
 
-/* Header & Navigation: horizontal bar — brand left, nav and language switch right. */
+/* Header: brand left, nav and language switch right. */
 
 header {
   display: flex;
@@ -83,10 +77,8 @@ header {
   border-bottom: 1px solid var(--rule-color);
 }
 
-/* The brand is the logo's own wordmark rather than set text — the name alone,
-   without the emblem above it or the rule below, neither of which belongs in a
-   header bar. The height is tied to the old title's font size, so the name still
-   reads at the size the text did. */
+/* The brand is the logo's wordmark, not set text: the name alone, without the
+   emblem or rule. Its height is tied to the old title's font size. */
 header h1 {
   order: 1;
   margin: 0;
@@ -249,8 +241,7 @@ nav ul li a:hover {
   border-color: var(--primary-color);
 }
 
-/* Hero: no band and no photo — the logo and the headline sit straight on the
-   page, so the sand background runs unbroken from the header down. */
+/* Hero: no band and no photo, so the background runs unbroken from the header. */
 
 .hero {
   padding: 60px 10vw 50px;
@@ -395,8 +386,8 @@ nav ul li a:hover {
   border-radius: 5px;
   flex-basis: 30%;
   opacity: 0.7;
-  /* Only what the hover actually changes: `all` would drag the card's colours
-     through a half-second fade every time the theme is switched. */
+  /* Only what the hover changes: `all` would fade the card's colours on every
+     theme switch. */
   transition: opacity ease-in-out 0.5s, transform ease-in-out 0.5s;
 }
 

@@ -88,7 +88,7 @@ The infinitive has **only one form** — it takes neither person nor number. All
 
 ## 4. Example Sentences
 
-| Greek (aorist infinitive active) | Transliteration | English |
+| Greek (aorist infinitive active) | Transliteration | Meaning |
 |----------------------------|----------------|---------------------|
 | **ἐθέλω λῦσαι τὸν δεσμόν.** | ethélō lŷsai ton desmón | I want to loose the bond. |
 | **ἐκέλευσε τοὺς στρατιώτας ἐλθεῖν.** | ekéleuse tous stratiṓtas eltheîn | He ordered the soldiers to come. |

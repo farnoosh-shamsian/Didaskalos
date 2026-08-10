@@ -113,7 +113,7 @@ The middle shape (‑σομαι) is **entirely distinct** from the active (‑σ
 
 ## 4. Example Sentences
 
-| Greek (future middle) | Transliteration | English |
+| Greek (future middle) | Transliteration | Meaning |
 |-----------------------|----------------|---------|
 | **λύσομαι τὸν αἰχμάλωτον.** | lýsomai ton aikhmálōton | I will ransom the captive. |
 | **ὁ παῖς παιδεύσεται ὑπὸ σοφοῦ διδασκάλου.** | ho paîs paideúsetai… | The boy will be educated by a wise teacher. |

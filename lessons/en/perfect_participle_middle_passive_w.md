@@ -11,7 +11,7 @@ pos: verb
 
 ## 1. What the Perfect Middle/Passive Participle Is
 
-| Term | Meaning | Typical English rendering |
+| Term | Meaning | Typical rendering |
 |------|---------|---------------------------|
 | **Perfect** | An aspect expressing a **completed action whose result still holds**. | "has written," "written" |
 | **Participle** | A verbal adjective; it modifies a noun or stands in place of one. | "the **written** book" |
@@ -96,7 +96,7 @@ The same pattern works for any perfect stem; simply replace λελυ‑ with the
 
 ## 6. Usage & Context
 
-1. **Describing states** — this participle describes an abiding result and often corresponds to an English adjective: γεγραμμένος "written."
+1. **Describing states** — this participle describes an abiding result, and its force is usually adjectival rather than verbal: γεγραμμένος "written."
 2. **Substantive use** — with the article: τὰ γεγραμμένα "the writings," οἱ πεπαιδευμένοι "the educated."
 3. **Periphrasis with εἰμί** — replaces finite forms: λελυμένος ἐστί "he has been freed."
 4. **Aspectual contrast** — compare the present participle (λυόμενος "in the process of being loosed") and the aorist (λυθείς "loosed, in a single event"): the perfect emphasizes the **present state** of the result.

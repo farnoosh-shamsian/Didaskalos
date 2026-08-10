@@ -56,7 +56,7 @@ The infinitive is built on the **short-vowel** form of the stem: δίδωμι bu
 | **1. No thematic vowel** | δίδοσθαι, not *διδόεσθαι. Compare ω-verb λύεσθαι, where the ε is required. |
 | **2. Short stem vowel** | δίδο‑, τίθε‑, ἵστα‑ throughout. The ω and η of δίδωμι, τίθημι never appear here. |
 | **3. Present vs. perfect by accent and reduplication** | δίδοσθαι (present, recessive accent) vs. δεδόσθαι (perfect, reduplicated, accent on the penult). |
-| **4. Middle-only verbs use it constantly** | δύνασθαι, ἐπίστασθαι, κεῖσθαι have no active at all; their infinitive is this form and its meaning is active in English. |
+| **4. Middle-only verbs use it constantly** | δύνασθαι, ἐπίστασθαι, κεῖσθαι have no active at all; their infinitive is this form, and although the ending is middle/passive the meaning is active. |
 | **5. Watch the compounds** | ἀποδίδοσθαι "to sell", προτίθεσθαι "to set before oneself", ἀφίστασθαι "to revolt" — the accent stays recessive but cannot move back past the preposition: ἀφίστασθαι, not *ἄφιστασθαι. |
 
 ---

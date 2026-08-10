@@ -53,7 +53,7 @@ Verbs whose future contracts show it here too:
 | **1. Indirect discourse only** | After ὅτι, ὡς, or in an indirect question, following a past main verb. |
 | **2. ‑σοι‑ is the signature** | λύ‑**σοι**‑μι: σ for future, οι for optative. |
 | **3. λύσοι vs. λύσαι** | λύσοι is the future optative; λύσαι is the aorist optative 3 sg. One vowel, two tenses. |
-| **4. Translate with "would"** | English reports a future in past narrative as "would ‑": "he said he would come". |
+| **4. A future seen from the past** | It reports what was *going to* happen, from the standpoint of the past narrative — not from the speaker's present: "he said he would come". |
 | **5. It is optional** | Retaining the future indicative (εἶπεν ὅτι λύσει) is equally good Greek. |
 
 ---
@@ -71,4 +71,4 @@ Verbs whose future contracts show it here too:
 
 1. **Xenophon and Thucydides** use it freely in reported speech; it is a marker of careful classical prose.
 2. **Indirect questions** after a past verb are its second home: εἰ … μενοῖ.
-3. **Reading tip.** ‑σοι‑ with active endings in a ὅτι clause after a past verb: future optative, and "would" is your translation.
+3. **Reading tip.** ‑σοι‑ with active endings in a ὅτι clause after a past verb: future optative. It reports what was going to happen, viewed from the past narrative rather than from the present.

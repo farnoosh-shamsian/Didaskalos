@@ -80,4 +80,4 @@ The 2 sg ending is ‑θητι, not ‑θηθι: Greek dissimilates the second o
 
 1. **Drama and dialogue.** Short imperatives of this kind carry the emotional register of tragedy and of Socratic conversation alike.
 2. **Third person in decrees.** λυθήτω, ἀποδόσθω "let it be sold" is administrative Greek.
-3. **Reading tip.** ‑σαι/‑οῦ = middle; ‑θητι = passive form. Then ask whether the verb has an active voice before choosing the English.
+3. **Reading tip.** ‑σαι/‑οῦ = middle; ‑θητι = passive form. Then ask whether the verb has an active voice at all before deciding how to render it — a middle-only verb takes an active sense.

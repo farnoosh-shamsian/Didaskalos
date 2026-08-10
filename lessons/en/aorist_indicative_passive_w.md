@@ -20,7 +20,7 @@ pos: verb
 
 The **aorist indicative passive** therefore expresses a completed action **done to** the subject, stated as a fact.
 
-> **Example (English):** "The city **was destroyed**."
+> **Force:** the subject undergoes the action rather than performing it — "The city **was destroyed**."
 > **Greek:** ἡ πόλις **διεφθάρη**.
 
 > **A note on "‑ω"** — the lesson title means that this formation belongs to ω-verbs (verbs whose first person present ends in ‑ω). The aorist passive itself does not end in ‑ω; its first person singular is **‑θην** (or **‑ην** in the second aorist passive).
@@ -84,7 +84,7 @@ Both types take the **augment** ἐ‑ in the indicative (occasionally dropped i
 
 ## 4. Example Sentences
 
-| Greek (aorist passive) | Transliteration | English |
+| Greek (aorist passive) | Transliteration | Meaning |
 |------------------------|----------------|---------|
 | ἡ πόλις **διεφθάρη** ὑπὸ τῶν πολεμίων. | hē pólis **diephthárē**… | The city was destroyed by the enemy. |
 | τὰ δένδρα **ἐκόπη** ὑπὸ τῶν γεωργῶν. | ta déndra **ekópē**… | The trees were cut down by the farmers. |

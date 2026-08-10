@@ -60,6 +60,25 @@ The nominative singular -ς and the dative plural -σι(ν) fuse with the final 
 - γυνή is irregular in the nominative but regular on its stem γυναικ-: γυναικός, γυναικί, γυναῖκα; pl. γυναῖκες, γυναικῶν, γυναιξί(ν), γυναῖκας.
 - Monosyllabic stems accent the ending in the genitive and dative: νυκτός, νυκτί, νυκτῶν, νυξί(ν).
 
+## Dialect and Period
+
+**The dative plural is the epic tell.** Beside the -σι(ν) you learned, Homer has a second dative plural ending, **-εσσι(ν)**, borrowed into epic from Aeolic:
+
+| Attic | Homeric |
+|---|---|
+| ποσί(ν) "to the feet" | **πόδεσσι(ν)** |
+| ἔπεσι(ν) "with words" | **ἐπέεσσι(ν)** |
+| ἀνδράσι(ν) | **ἄνδρεσσι(ν)** |
+| κυσί(ν) "to the dogs" | **κύνεσσι(ν)** |
+
+The advantage for a poet is obvious: -εσσι adds a syllable and dodges the awkward consonant clusters that -σι produces. It is one of the clearest cases of Homeric Greek being a *made* language, assembled from several dialects for the convenience of verse rather than spoken anywhere as it stands.
+
+**Uncontracted forms in Ionic.** Herodotus keeps vowels apart where Attic runs them together, so third-declension stems ending in a vowel look longer in his text than in Plato's.
+
+**The -μα / -ματος class explodes in Koine.** Neuter dental stems were always a large group, but in Hellenistic Greek they became the standard way to coin a noun meaning "the result of doing X." The New Testament vocabulary is full of them: **πνεῦμα** "spirit", **ῥῆμα** "word", **θέλημα** "will", **βάπτισμα** "baptism", **χάρισμα** "gift", **κρίμα** "judgement", **ὄνομα**, **σῶμα**, **αἷμα**. If your corpus is Koine, learning the -μα, -ματος pattern repays the effort faster than almost anything else in the noun system.
+
+**In Koine** the declension is otherwise conservative, though the pressure that eventually dissolved it is already visible: some third-declension nouns start acquiring first-declension endings, a drift that finishes long after our period.
+
 ## Examples
 
 - ἡ τῶν φυλάκων ἀρετή — "the excellence of the guards"

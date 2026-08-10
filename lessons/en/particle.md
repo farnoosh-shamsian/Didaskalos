@@ -2,7 +2,7 @@
 
 ## 1. What Particles Are
 
-Particles are **small, uninflected words** that organize and color a sentence. They connect ideas, add emphasis, mark contrast or continuation, and signal the speaker's attitude. They rarely translate one-to-one into English — often their "translation" is a tone of voice or a punctuation mark — but Greek without them is like speech without intonation.
+Particles are **small, uninflected words** that organize and color a sentence. They connect ideas, add emphasis, mark contrast or continuation, and signal the speaker's attitude. They rarely have a one-to-one equivalent in another language — often the nearest thing is a tone of voice or a punctuation mark — but Greek without them is like speech without intonation.
 
 Three facts hold across the family:
 
@@ -57,7 +57,29 @@ The negatives behave like particles and follow a clean division of labor:
 
 Compounds follow the same split: οὐδείς / μηδείς "no one", οὐδέ / μηδέ "and not, not even", οὔποτε / μήποτε "never".
 
-## 6. Why Particles Matter
+## 6. Dialect and Period
+
+Particles are the part of Greek that varies most sharply by period — and the one where reading a Koine text is genuinely easier than reading an Attic one.
+
+**Classical Attic is the high point.** The dense, precise particle usage described above belongs above all to Plato, the orators and drama. It is a spoken-language feature that Attic prose preserves in unusual richness, and no later stage of Greek matches it.
+
+**Homer has a different set.** Epic uses particles just as freely, but not the same ones:
+
+| Homeric | Attic equivalent |
+|---|---|
+| **κε(ν)** | **ἄν** — the potential/conditional particle |
+| ῥα, ἄρα, ἄρ | ἄρα "then, so" |
+| αὐτάρ, ἀτάρ | δέ, ἀλλά "but" |
+| ἠδέ, ἰδέ | καί "and" |
+| τοι | τοι (but far commoner in Homer) |
+
+**κε(ν) is the one to learn first.** It does the job of Attic ἄν, and since ἄν is essential to conditionals and potentials, mistaking κεν will derail a Homeric sentence. Herodotus uses both κε and ἄν.
+
+**Koine thins the system drastically.** In the New Testament the particle inventory shrinks to a small working set — καί, δέ, γάρ, οὖν, ἀλλά, μέν (much reduced) — and the fine Attic distinctions between γε, δή, τοι, μέντοι, δῆτα largely disappear. The **μέν … δέ** correlation, near-automatic in Attic, becomes optional and comparatively rare; a δέ frequently appears with no μέν to answer it.
+
+This has a practical consequence: if your corpus is Attic prose, particles repay close study, because they carry much of the argument's structure. If it is Koine, you need far fewer of them, and the ones you need are mostly the plain connectives. Modern Greek has kept almost none.
+
+## 7. Why Particles Matter
 
 Particles are the **logical glue** of Greek. They tell you whether a sentence continues (δέ), explains (γάρ), concludes (οὖν), or contrasts (μέν … δέ) — before you have even parsed the verb. Experienced readers navigate by them; beginners who skip them lose the thread of the argument.
 

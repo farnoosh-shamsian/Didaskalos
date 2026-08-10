@@ -17,7 +17,7 @@ The **present active participle** is a verbal adjective expressing an action **i
 - It is **active** (the subject performs the action).
 - It is **present** (the action runs alongside the main verb).
 
-In English it is usually rendered by an "‑ing" form or a "while …" clause:
+Its force is that the action is **going on at the same time** as the action of the main verb — a "‑ing" form or a "while …" clause will carry that:
 
 | Greek | Rendering |
 |-------|-----------|
@@ -97,7 +97,7 @@ The basic pattern:
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | English |
+| Greek | Transliteration | Meaning |
 |-------|-----------------|---------|
 | **ὁ ἀνὴρ τὸν λόγον γράφων ἐξέρχεται.** | *ho anḗr ton lógon gráphōn exérkhetai* | The man goes out while writing the speech. |
 | **ἡ γυνὴ τὴν ὁδὸν ὁρῶσα ἔσπευδεν.** | *hē gynḕ tēn hodòn horôsa éspeuden* | The woman, seeing the road, hurried on. |

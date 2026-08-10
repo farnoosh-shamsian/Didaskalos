@@ -40,6 +40,23 @@ Note the iota subscript in the dative singular (-ῳ): it is silent but always w
 - Contract nouns like νοῦς "mind" (from νόος) belong here too: νοῦς, νοῦ, νῷ, νοῦν.
 - Do not confuse the accusative singular -ον with the neuter nouns of the next lesson; for masculines, nominative -ος and accusative -ον differ, while neuters use -ον for both.
 
+## Dialect and Period
+
+The second declension is the most stable pattern in the language — but two of its endings are among the first things you will notice in Homer.
+
+| Case | Homer | Ionic (Herodotus) | Attic |
+|---|---|---|---|
+| Genitive singular | **-οιο** (πολέμοιο, ἵπποιο), also -ου | -ου | -ου (πολέμου) |
+| Dative plural | **-οισι(ν)** (θεοῖσι), also -οις | -οισι | -οις (θεοῖς) |
+
+**-οιο is the single most recognizable epic ending.** It is the older genitive, and Homer uses it constantly beside the shorter -ου, choosing whichever the metre wants. Once you know it, a great deal of Homer stops looking strange: πολέμοιο is simply "of war."
+
+**-οισι** works the same way. Homer has both θεοῖσι and θεοῖς; Herodotus prefers -οισι; Attic prose has settled on -οις. Notice the pattern — in each case the older form is the longer one.
+
+**The Attic declension is a local oddity.** A small group of Attic nouns shifts to -ως / -ων: **νεώς** "temple", **λεώς** "people", the name Μενέλεως. Everywhere else in Greek these are ordinary second-declension nouns — Homer and Ionic have νηός and λαός, and Koine has **ναός** and **λαός**. Since λαός "people" is extremely frequent in the Septuagint and the New Testament, this is a difference you will meet early if your corpus includes them.
+
+**In Koine** the declension is unchanged and remains the default pattern for masculine nouns: λόγος, θεός, κύριος, ἄνθρωπος, οὐρανός.
+
 ## Examples
 
 - ὁ νόμος τοὺς ἀνθρώπους παιδεύει — "the law educates people"

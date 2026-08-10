@@ -58,7 +58,30 @@ Notice the elegant trio for motion and rest: **εἰς + acc.** (motion toward),
 - Prepositions also serve as **verb prefixes** with related meanings: εἰσ-έρχομαι "go into", ἐκ-βάλλω "throw out", περι-βάλλω "throw around". Recognizing the preposition inside a compound verb unlocks its meaning.
 - A prepositional phrase between article and noun is attributive: οἱ ἐν τῇ πόλει ἄνθρωποι "the people in the city".
 
-## 7. Example Sentences
+## 7. Dialect and Period
+
+Prepositions have the clearest life story of any word class in Greek: they begin as free adverbs, become prepositions and preverbs, and end up taking over work the case endings used to do on their own.
+
+**Homer shows the earlier stage.** In epic, what later became a preposition is often still an independent adverb, standing apart from the verb it belongs with. Grammarians call this **tmesis** ("cutting"):
+
+> **ἀπὸ** … **ὄλεσσε** — "he destroyed **away**", i.e. ἀπώλεσε
+
+To an Attic reader this looks like a compound verb split in half; historically it is the opposite — Homer preserves the stage before the two grew together. Epic also has forms Attic lost: **ἐνί, εἰν** for ἐν, **προτί, ποτί** for πρός, and **ξύν** for σύν (which older Attic and Thucydides also use).
+
+**Then prepositions take over from the cases.** As the bare dative recedes, prepositional phrases step in, and by the Koine period much that Attic expressed with a plain case ending is expressed with a preposition instead. Several specific shifts are worth knowing:
+
+| | Classical Attic | Koine / NT |
+|---|---|---|
+| Instrument | bare dative | ἐν + dative |
+| "with" (accompaniment) | σύν + dat., or bare dat. | **μετά + genitive**; σύν becomes uncommon |
+| "into" / "in" | εἰς vs ἐν kept distinct | the two blur; εἰς encroaches on ἐν |
+| Agent | ὑπό + gen. | ὑπό + gen., but ἀπό and διά spread |
+
+**"Improper" prepositions multiply.** Koine freely presses adverbs into prepositional service — **ἐνώπιον** "before", **ἔμπροσθεν**, **ὀπίσω**, **χάριν**, **ἕνεκα**, **ἔξωθεν**. These govern the genitive and never compound with verbs, which is why grammars call them improper. The New Testament uses them constantly.
+
+The endpoint: Modern Greek keeps only a handful of prepositions, and nearly all of them take the accusative.
+
+## 8. Example Sentences
 
 - οἱ στρατιῶται ἐκ τῆς πόλεως εἰς τὴν θάλατταν ἐπορεύοντο. — "The soldiers marched out of the city to the sea."
 - μετὰ τὴν μάχην οἱ σύμμαχοι σὺν τοῖς Ἀθηναίοις ἦσαν. — "After the battle the allies were with the Athenians."

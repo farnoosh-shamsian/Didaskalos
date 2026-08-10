@@ -1,17 +1,8 @@
-"""Validate a treebank file against Didaskalos's parser adapters.
-
-Run this before committing a new treebank so you know it parses into the schema
-the pipeline expects, and that its morphology decodes into recognizable syllabus
-categories.
-
-Usage::
-
-    py -3 validate_treebank.py <file> [--format agdt-xml|conllu]
-
-With no --format the format is auto-detected (by extension, then content).
-Exit code is non-zero when the file yields no tokens.
-"""
-
+# Run before committing a new treebank, to check it parses into the schema the
+# pipeline expects and that its morphology decodes into syllabus categories:
+#     py -3 validate_treebank.py <file> [--format agdt-xml|conllu]
+# Without --format the format is auto-detected. Exit code is non-zero when the
+# file yields no tokens.
 from __future__ import annotations
 
 import argparse
@@ -20,13 +11,15 @@ from pathlib import Path
 try:
     from treebank_parsers import PARSERS, detect_format, parse_treebank_file
     from didaskalos_pipeline import parse_pos_category, parse_postag
-except ImportError:  # imported as part of a package rather than as a flat module
+except ImportError:  # imported as a package rather than a flat module
     from .treebank_parsers import PARSERS, detect_format, parse_treebank_file
     from .didaskalos_pipeline import parse_pos_category, parse_postag
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(
+        description="Validate a treebank file against Didaskalos's parser adapters."
+    )
     parser.add_argument("file", help="Path to the treebank file to validate.")
     parser.add_argument(
         "--format",
@@ -54,8 +47,8 @@ def main() -> int:
     missing = int((postags == "").sum())
     syllabus = postags.apply(parse_postag)
     pos_category = postags.apply(parse_pos_category)
-    # "Undecodable" = a real word (not punctuation/other) whose postag the pipeline
-    # cannot classify into a syllabus label. A high count signals a bad postag map.
+    # A real word whose postag yields no syllabus label. A high count means the
+    # postag map is wrong.
     undecodable = int(((syllabus == "NA") & (pos_category != "other")).sum())
 
     print(f"Sentences:            {df['sentence_id'].nunique()}")

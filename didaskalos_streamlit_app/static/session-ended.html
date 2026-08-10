@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <!--
   Landing page for a session closed by the idle watcher (see idle_timeout.py).
-
-  Deliberately static and self-contained: it is served by Streamlit's static file
-  handler as one plain HTTP request, so reaching it opens no websocket and keeps
-  no Cloud Run instance alive. No webfonts or other external requests, for the
-  same reason. Both languages are inlined and picked from ?lang= because a static
-  file cannot consult the app's locale JSON.
+  Static and self-contained on purpose: one plain HTTP request, no websocket and
+  no external fetches, so reaching it keeps no Cloud Run instance alive. Both
+  languages are inlined because a static file cannot read the app's locale JSON.
 -->
 <html lang="en">
 <head>
@@ -15,9 +12,8 @@
 <title>Didaskalos</title>
 <style>
   /* Both palettes match [theme.light] / [theme.dark] in .streamlit/config.toml.
-     ?theme= says which one to use; the app puts it there when it sends a
-     timed-out tab here, so the page the visitor lands on looks like the one
-     they left. Light is the default here as it is in the app. */
+     The app appends ?theme= when it sends a timed-out tab here, so this page
+     looks like the one the visitor left. Light is the default, as in the app. */
   :root {
     --page: #c4bca9;
     --card: #d1cabb;

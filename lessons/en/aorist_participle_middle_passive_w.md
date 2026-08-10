@@ -90,4 +90,4 @@ The θ is the single most useful letter here: where you see ‑θε‑, the subj
 
 1. **The genitive absolute** is the construction to watch: a participle plus a noun in the genitive, both outside the main clause's syntax — ἀποκριναμένου τοῦ βασιλέως.
 2. **Attributive with the article** it names a person by what they did: οἱ λυθέντες "those who were freed", ὁ βουλευσάμενος "the one who planned it".
-3. **English needs several translations.** "Having ‑ed", "after ‑ing", "when he had ‑ed", or simply a second finite verb joined by "and". Choose whatever keeps the sentence readable.
+3. **No single equivalent.** The participle packs a whole clause into one word, so it has to be unpacked differently each time: as "having ‑ed", "after ‑ing", "when he had ‑ed", or simply as a second finite verb in sequence. Choose whatever keeps the sentence readable.

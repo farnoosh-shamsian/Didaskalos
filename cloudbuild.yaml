@@ -29,18 +29,10 @@ steps:
       - 'europe-west1'
       - '--platform'
       - 'managed'
-      # Building a textbook loads the whole selected corpus into pandas. A large
-      # "select all" run peaks well above the 512Mi default and was being
-      # OOM-killed mid-build; 2Gi leaves comfortable headroom. The longer request
-      # timeout covers the slowest full-corpus builds.
-      #
-      # CPU is back to 1: the OOM was a memory problem, the second core only
-      # shaved time off builds, and every vCPU is billed for the whole life of an
-      # instance — including the long idle stretches an open Streamlit tab causes
-      # (its websocket counts as an in-flight request). startup-cpu-boost still
-      # covers cold starts. max-instances caps the worst case; at the default
-      # concurrency of 80 sessions per instance, 3 is plenty for a demo app and
-      # turns an unbounded bill into a bounded one.
+      # A "select all" build peaks well above the 512Mi default and was being
+      # OOM-killed, so 2Gi and a longer timeout. CPU stays at 1: a second core
+      # only shaved time off builds, and every vCPU is billed for the whole life
+      # of an instance, idle stretches included. max-instances bounds the bill.
       - '--memory'
       - '2Gi'
       - '--cpu'

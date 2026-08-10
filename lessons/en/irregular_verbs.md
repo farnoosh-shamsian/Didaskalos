@@ -19,7 +19,7 @@ There is no "irregular conjugation" to learn. What follows is three families of 
 
 ## 1. Suppletive Aorists
 
-Some verbs supply their aorist from an entirely different root — the way English "go" takes "went". The present and the aorist are two roots serving one meaning, and both must be learned as a pair.
+Some verbs supply their aorist from an entirely different root. This is called **suppletion**: two unrelated stems are pressed into service as though they were one verb, so that ὁράω "I see" takes the aorist εἶδον, which has no letter in common with it. The present and the aorist are two roots serving one meaning, and both must be learned as a pair.
 
 | Present | Aorist | Meaning |
 | --- | --- | --- |
@@ -117,7 +117,25 @@ Also common: **εἰκός (ἐστι)** "it is likely", **δοκεῖ** "it see
 
 ---
 
-## 6. Usage Notes
+## 6. Historical Development & Etymology
+
+There is a reason the irregular verbs are also the commonest ones. **Frequency protects irregularity**: a verb used constantly is learned as a whole, form by form, and never gets levelled by analogy, while a rare verb is rebuilt on the regular pattern the moment a speaker has to guess. This is why the irregular verbs of any language tend to be its everyday ones — "be", "go", "see", "give" — and Greek is no exception: εἰμί, ἔρχομαι, ὁράω and δίδωμι are all both irregular and unavoidable.
+
+**Suppletion is inherited, not Greek.** The suppletive verbs are among the oldest material in the language: ἔρχομαι / ἦλθον / ἐλήλυθα and ὁράω / εἶδον / ὄψομαι are each built from two or three originally separate Indo-European roots that were pressed into one paradigm long before Greek existed. **οἶδα** "I know" is a genuine relic — an old perfect of the root meaning "see", so literally "I have seen, therefore I know". The same Indo-European root surfaces across the family — Latin *vīdī* "I saw", Sanskrit *véda* "I know" — and in Greek's own εἶδον.
+
+**Homer has even more variety.** Epic preserves alternative forms that Attic dropped: **ἔμμεναι, ἔμεν, ἔμμεν** beside εἶναι; **ἴδμεν** for ἴσμεν "we know"; **ἔσσομαι** for ἔσομαι. Since these are the highest-frequency verbs in the language, an unfamiliar epic form here will block a sentence more often than an unfamiliar noun would — they are worth meeting early if you are reading Homer.
+
+**Koine starts to regularize — visibly.** The clearest case is the **α-aorist**, in which the endings of the first (sigmatic) aorist are transferred onto second-aorist stems:
+
+| Classical | Koine / NT |
+|---|---|
+| εἶπον, εἶπες | **εἶπα, εἶπας** |
+| ἦλθον, ἤλθετε | **ἦλθα, ἤλθατε** |
+| εἶδον | **εἶδα** (occasionally) |
+
+Both forms coexist in the New Testament, often within a few verses. This is not corruption; it is the regular pattern winning, one verb at a time — and Modern Greek has completed the process. Several of the suppletions themselves, however, survive intact into Modern Greek, still irregular after three thousand years.
+
+## 7. Usage Notes
 
 1. **Frequency.** εἶπον, εἶδον, οἶδα, δεῖ and χρή are among the most common verbs in all of Greek prose. The handful of forms in this lesson will earn their keep on every page.
 2. **οἶδα vs. γιγνώσκω.** οἶδα is knowing a fact; γιγνώσκω is coming to know, recognizing. σύνοιδα + dative = "I am conscious of, I share the knowledge with".

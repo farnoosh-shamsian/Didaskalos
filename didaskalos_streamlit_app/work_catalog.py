@@ -1,22 +1,10 @@
-"""Human-friendly author/work names for the treebank picker.
-
-The treebank files are named by their TLG/CTS reference (e.g.
-``tlg0012.tlg001.perseus-grc1.tb.xml``). The XML ``<title>`` inside each file is
-a bibliographic *edition* string ("Homeri Opera in five volumes."), not a clean
-work name, and several works by one author share an identical title string
-(e.g. four Lysias speeches). So we keep a small curated lookup from the TLG
-``author.work`` id to a clean ``(author, work)`` pair, and fall back to a cleaned
-XML title for anything not in the map (custom URLs / uploaded files).
-
-To add a work, drop in a new ``"tlgAUTHOR.tlgWORK": ("Author", "Work")`` row.
-For example, once Xenophon's treebanks are added to the corpus::
-
-    "tlg0032.tlg006": ("Xenophon", "Hellenica"),
-    "tlg0032.tlg007": ("Xenophon", "Anabasis"),
-
-All names below were verified against the Perseus catalog
-(https://catalog.perseus.org/).
-"""
+# Author/work names for the treebank picker. Files are named by TLG/CTS
+# reference, and the XML <title> inside is an edition string ("Homeri Opera in
+# five volumes.") that several works by one author often share. So a curated
+# lookup maps the TLG author.work id to a clean (author, work) pair; anything
+# missing (custom URLs, uploads) falls back to a cleaned XML title. Add a work
+# with one "tlgAUTHOR.tlgWORK": ("Author", "Work") row. Names below were checked
+# against the Perseus catalog (https://catalog.perseus.org/).
 from __future__ import annotations
 
 import re
@@ -55,7 +43,7 @@ WORK_CATALOG: dict[str, tuple[str, str]] = {
     "tlg0540.tlg023": ("Lysias", "Against Pancleon"),
     "tlg0543.tlg001": ("Polybius", "Histories"),
     "tlg0548.tlg001": ("Apollodorus", "The Library"),
-    # --- Works added with the Gorman corpus (prose authors) ---
+    # Works added with the Gorman corpus (prose authors).
     "tlg0007.tlg086": ("Plutarch", "On the Fortune of the Romans"),
     "tlg0007.tlg087": ("Plutarch", "On the Fortune or Virtue of Alexander"),
     "tlg0014.tlg001": ("Demosthenes", "Olynthiac 1"),
@@ -84,9 +72,9 @@ WORK_CATALOG: dict[str, tuple[str, str]] = {
     "tlg0540.tlg013": ("Lysias", "Against Agoratus"),
     "tlg0540.tlg019": ("Lysias", "On the Property of Aristophanes"),
     "tlg0551.tlg017": ("Appian", "The Civil Wars"),
-    # --- Lucian, added with the Harrington (Perseids) corpus ---
+    # Lucian, added with the Harrington (Perseids) corpus.
     "tlg0062.tlg012": ("Lucian", "True Histories"),
-    # --- New Testament books, added with the PROIEL corpus (TLG 0031) ---
+    # New Testament books, added with the PROIEL corpus (TLG 0031).
     "tlg0031.tlg001": ("New Testament", "Gospel of Matthew"),
     "tlg0031.tlg002": ("New Testament", "Gospel of Mark"),
     "tlg0031.tlg003": ("New Testament", "Gospel of Luke"),
@@ -114,16 +102,11 @@ WORK_CATALOG: dict[str, tuple[str, str]] = {
 }
 
 
-# Short scholarly citation sigla, keyed on the same ``tlgAUTHOR.tlgWORK`` id as
-# WORK_CATALOG. Each value is ``(siglum, leading_number)``:
-#   siglum          OCD/LSJ-style abbreviation (author, or author+work for
-#                   multi-work authors) that prefixes every reference.
-#   leading_number  the fixed book/speech number that is part of the work's
-#                   canonical reference but is NOT in the treebank ``subdoc``.
-#                   Set for the orators (Lysias/Demosthenes/Antiphon/Aeschines),
-#                   whose ``subdoc`` carries only the section; None otherwise.
-# format_citation composes ``"{siglum} {leading_number}.{subdoc}"`` (empty parts
-# dropped), so the same rule yields "Hom. Il. 1.1-1.7", "Hdt. 1.1", "Lys. 12.1".
+# Citation sigla, keyed as WORK_CATALOG is. Each value is (siglum,
+# leading_number): the LSJ-style abbreviation, and the fixed book/speech number
+# that belongs to the canonical reference but is missing from the treebank
+# subdoc (set for the orators only). format_citation composes
+# "{siglum} {leading_number}.{subdoc}", dropping empty parts.
 WORK_CITATION: dict[str, tuple[str, str | None]] = {
     "tlg0003.tlg001": ("Thuc.", None),
     "tlg0007.tlg004": ("Plut. Lyc.", None),
@@ -221,8 +204,8 @@ def _strip_extension(file_name: str) -> str:
 
 
 def _tlg_key(file_name: str) -> str | None:
-    """The ``tlgAUTHOR.tlgWORK`` id from a treebank filename, or None if it does
-    not follow the TLG naming convention (custom URLs / arbitrary uploads)."""
+    # The tlgAUTHOR.tlgWORK id from a filename, or None when it does not follow
+    # the TLG convention (custom URLs, arbitrary uploads).
     parts = _strip_extension(file_name).split(".")
     if len(parts) >= 2 and parts[0].startswith("tlg") and parts[1].startswith("tlg"):
         return f"{parts[0]}.{parts[1]}"
@@ -230,23 +213,17 @@ def _tlg_key(file_name: str) -> str | None:
 
 
 def _tlg_from_document_id(document_id: str | None) -> str | None:
-    """Pull a ``tlgAUTHOR.tlgWORK`` id out of a CTS document_id / urn.
-
-    The Gorman files are not TLG-named, but every sentence carries a
-    ``document_id`` such as
-    ``http://.../urn:cts:greekLit:tlg0540.tlg001.perseus-grc1`` — enough to
-    identify the work and reuse the catalog below.
-    """
-    # Guard against non-strings: ``None``, or the ``NaN`` float a missing pandas
-    # category column yields (NaN is truthy, so ``not document_id`` would let it
-    # through and ``re.search`` would raise on a float).
+    # The Gorman files are not TLG-named, but their CTS document_id identifies
+    # the work well enough to reuse the catalog.
+    # NaN (from a missing pandas category) is truthy, so check the type: a float
+    # would reach re.search and raise.
     if not isinstance(document_id, str) or not document_id:
         return None
     # Newer CTS urn form: "...urn:cts:greekLit:tlg0540.tlg001.perseus-grc1".
     match = re.search(r"(tlg\d+\.tlg\d+)", document_id)
     if match:
         return match.group(1)
-    # Older Gorman form: "0014-046" (author-work) -> "tlg0014.tlg046".
+    # Older Gorman form: "0014-046" -> "tlg0014.tlg046".
     match = re.fullmatch(r"\s*(\d{1,4})-(\d{1,3})\s*", document_id)
     if match:
         return f"tlg{int(match.group(1)):04d}.tlg{int(match.group(2)):03d}"
@@ -254,17 +231,13 @@ def _tlg_from_document_id(document_id: str | None) -> str | None:
 
 
 def tlg_work_key(file_name: str, document_id: str | None = None) -> str | None:
-    """The TLG ``author.work`` id for a file, from its name or its document_id.
-
-    This is the key the picker groups on: every file that resolves to the same
-    key is one *work* (so a work split across many passage files, like the
-    Gorman texts, collapses into a single entry). ``None`` when neither source
-    yields a TLG id (arbitrary uploads / custom URLs)."""
+    # The key the picker groups on: files sharing one are one work, so a work
+    # split across passage files collapses into a single entry.
     return _tlg_key(file_name) or _tlg_from_document_id(document_id)
 
 
-# Boilerplate fragments that clutter the raw XML <title> of texts not in the
-# catalog. Cut the title at the first match, then trim leftover punctuation.
+# Boilerplate cluttering the XML <title> of texts not in the catalog; the title
+# is cut at the first match.
 _TITLE_BOILERPLATE = re.compile(
     r"(,?\s*(with an English translation|with an English Translation|"
     r"ed\.|edited by|translated by|in (two|three|four|five|twelve) volumes)\b.*)$",
@@ -286,15 +259,9 @@ def resolve_author_work(
     xml_title: str | None,
     document_id: str | None = None,
 ) -> tuple[str | None, str]:
-    """Return ``(author, work)`` display names for a treebank file.
-
-    Curated catalog entries win (matched on the TLG work key from the filename
-    or the CTS ``document_id``); otherwise fall back to the (cleaned) XML author
-    and title, and finally to the filename. ``author`` may be ``None`` (the
-    caller buckets those under an "Unknown author" heading). No book/section
-    suffix is added: files of one work are meant to collapse into a single
-    whole-work entry.
-    """
+    # Catalog entries win, then the cleaned XML author and title, then the
+    # filename. author may be None, which the caller buckets under "Unknown
+    # author". No book/section suffix: files of one work collapse into one entry.
     entry = WORK_CATALOG.get(tlg_work_key(file_name, document_id) or "")
     if entry:
         return entry
@@ -304,14 +271,10 @@ def resolve_author_work(
 
 
 def _clean_subdoc(subdoc: str | None) -> str:
-    """The usable passage reference from a raw ``subdoc``, or "" when there is
-    none. ``subdoc`` is treated as an opaque token (its scheme varies by work:
-    book.line, a Stephanus/Bekker page, a bare section, ...): we only strip
-    whitespace and reject the empty / literal-"None" placeholders.
-
-    Anything that is not a string (``None``, or the ``NaN`` float that a missing
-    pandas category column yields — as with the NT CoNLL-U, which carries no
-    ``subdoc``) is treated as "no reference"."""
+    # The usable passage reference, or "". subdoc is opaque (book.line, a
+    # Stephanus page, a bare section), so only whitespace and the empty /
+    # literal-"None" placeholders are rejected. A non-string (None, or the NaN a
+    # missing pandas category yields) means no reference.
     if not isinstance(subdoc, str):
         return ""
     ref = subdoc.strip()
@@ -323,16 +286,9 @@ def format_citation(
     document_id: str | None,
     subdoc: str | None,
 ) -> str:
-    """Short scholarly citation for a sentence, e.g. ``"Hdt. 1.1"``,
-    ``"Hom. Il. 1.1-1.7"``, ``"Lys. 12.1"``.
-
-    Uses the curated siglum in :data:`WORK_CITATION` (matched on the TLG work key
-    from the filename or the CTS ``document_id``) and appends the passage
-    reference. For an orator the speech number lives in the work identity, not in
-    ``subdoc``, so it is prepended from the table. Works without a siglum fall
-    back to the full ``"Author, Work"`` name; when no passage reference exists the
-    citation degrades to the work label alone. Returns "" only when even a work
-    label cannot be determined."""
+    # A short citation: "Hdt. 1.1", "Hom. Il. 1.1-1.7", "Lys. 12.1". A work with
+    # no siglum falls back to "Author, Work", and with no passage reference the
+    # citation degrades to the work label; "" only when even that is unknown.
     ref = _clean_subdoc(subdoc)
     entry = WORK_CITATION.get(tlg_work_key(file_name, document_id) or "")
     if entry:

@@ -50,6 +50,25 @@ Which vowel a noun keeps in the singular follows a simple rule:
 - The plural endings (-αι, -ῶν, -αις, -ας) are identical for all three singular types.
 - The definite article is your friend: ἡ τιμή, τῆς τιμῆς — the article changes with the noun and confirms the case.
 
+## Dialect and Period
+
+This is the declension where dialect shows most plainly, because the singular vowel itself differs from region to region.
+
+**The pure-α type is an Attic feature.** The rule above — that a stem ending in ε, ι or ρ keeps α through the singular — holds for Attic. **Ionic simply uses η everywhere**, whatever precedes it. Herodotus writes χώρη, σοφίη, ἡμέρη, οἰκίη where Attic has χώρα, σοφία, ἡμέρα, οἰκία, and the goddess is Ἀθηναίη, not Ἀθηναία. Homer, whose language is largely Ionic, does the same.
+
+**θάλαττα is Attic and Attic only.** The paradigm word for the mixed type above is spelled **θάλασσα** everywhere else — in Homer, in Herodotus, and throughout Koine and the New Testament. The same holds for γλῶττα / γλῶσσα and for every other ττ word.
+
+**The plural endings were once longer:**
+
+| Case | Homer | Ionic (Herodotus) | Attic |
+|---|---|---|---|
+| Genitive plural | -άων (θεάων) | -έων, often uncontracted | -ῶν (θεῶν) |
+| Dative plural | -ῃσι(ν), -ῃς (θεῇσι) | -ῃσι | -αις (θεαῖς) |
+
+The Attic -ῶν you learned is a contraction of the older -άων. When Homer's genitive plural runs to three syllables, that is the original form surviving, not a poetic licence — which is also why the ending is always accented -ῶν in Attic.
+
+**In Koine** the declension is the Attic one with σσ restored, and it stays fully productive: the New Testament is thick with first-declension feminines — ἡμέρα, ἐκκλησία, ἁμαρτία, βασιλεία, ἀγάπη.
+
 ## Examples
 
 - ἡ ἀρχὴ τῆς σοφίας — "the beginning of wisdom" (nominative + genitive)

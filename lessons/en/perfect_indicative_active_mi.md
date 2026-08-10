@@ -83,6 +83,6 @@ Infinitive **ἑστάναι**, participle **ἑστώς, ἑστῶσα, ἑσ�
 
 ## 5. Usage and Context
 
-1. **State, not history.** Where the aorist ἔδωκα reports the act of giving, δέδωκα says the thing is now in the recipient's hands. Greek uses the perfect far more sparingly than English uses "have ‑ed".
+1. **State, not history.** Where the aorist ἔδωκα reports the act of giving, δέδωκα says the thing is now in the recipient's hands. Greek reserves the perfect for cases where the resulting state is what matters; it is **not** the ordinary tense for reporting a completed action. That is the aorist's job.
 2. **ἕστηκα in battle narrative.** Historians use it constantly for troops holding a position, and its participle ἑστώς for whatever is standing — a monument, a wall, a man.
 3. **Reading tip.** Reduplication plus κα is the signature: δέδω‑κα, τέθη‑κα, ἕστη‑κα. Add an augment in front and you have moved to the pluperfect.

@@ -9,7 +9,7 @@ pos: pronoun
 
 A **pronoun** stands in for a noun or noun phrase. Greek pronouns decline — they show case and number, and most show gender — and they are among the most frequent words in any text. The main families:
 
-| Family | English counterpart | Greek examples |
+| Family | Counterpart | Greek examples |
 |---|---|---|
 | Personal | I, you, we | ἐγώ, σύ, ἡμεῖς, ὑμεῖς |
 | αὐτός | him/her/it; self; the same | αὐτός, αὐτή, αὐτό |
@@ -124,7 +124,34 @@ These decline and agree like ordinary adjectives. Just as common is the plain **
 - **A neuter plural subject takes a singular verb** with pronouns too: ταῦτα καλά ἐστιν "these things are beautiful."
 - The genitive of a demonstrative or of αὐτός sits in **predicate position**: ἡ τούτου γυνή or ἡ γυνὴ αὐτοῦ "his wife".
 
-## 10. Example Sentences
+## 10. Dialect and Period
+
+Pronouns are among the oldest and most-used words in any language, and heavy use keeps them irregular. Greek never fully standardized them, so this is one of the areas where dialect differences are most visible.
+
+**Homeric personal pronouns.** Epic has a fuller and more varied set than Attic:
+
+| | Homer | Attic |
+|---|---|---|
+| "I" (nom.) | ἐγών, ἐγώ | ἐγώ |
+| "of me" | ἐμεῖο, ἐμέο, ἐμεῦ, μευ | ἐμοῦ, μου |
+| "of you" | σεῖο, σέο, σεῦ | σοῦ, σου |
+| "we" | **ἄμμες**, acc. ἄμμε | ἡμεῖς, ἡμᾶς |
+| "you" (pl.) | **ὔμμες**, acc. ὔμμε | ὑμεῖς, ὑμᾶς |
+| 3rd person | ἕο, εὗ, οἷ, ἕ | αὐτοῦ, αὐτῷ, αὐτόν |
+
+**ἄμμες** and **ὔμμες** are Aeolic forms taken into the epic language — a good illustration of Homeric Greek being assembled from more than one dialect. They are unrelated in appearance to ἡμεῖς and ὑμεῖς but descend from the same originals.
+
+**Ionic μιν.** Herodotus and Homer both use the indeclinable **μιν** "him, her, it" as an unstressed third-person object pronoun, and **σφέας, σφι** for the plural. Attic has none of these; it uses αὐτόν, αὐτούς instead. μιν is frequent enough in Herodotus that it is worth learning on sight.
+
+**Reflexives are a late arrival.** The compound reflexives ἐμαυτοῦ, σεαυτοῦ, ἑαυτοῦ are an Attic development. Homer has no such compounds and uses the plain pronouns (ἕ, οἷ) reflexively, leaving context to make the sense clear.
+
+**Koine simplifies.** Three changes matter for reading the New Testament:
+
+- **αὐτός becomes an ordinary third-person pronoun.** In Attic it is chiefly the intensive "himself" or the identifying "the same"; in Koine it is simply "he, she, it" in the oblique cases, and by far the commonest way to say so.
+- **ἑαυτοῦ spreads to all persons.** Where Attic distinguishes ἐμαυτοῦ, σεαυτοῦ and ἑαυτοῦ, Koine often uses ἑαυτῶν for "ourselves" and "yourselves" as well.
+- **ὅστις loses its force.** The distinction between the definite relative ὅς and the indefinite ὅστις "whoever" erodes, and in the New Testament ὅστις is frequently just a longer ὅς.
+
+## 11. Example Sentences
 
 - τίς ταῦτα ἐποίησεν; — "Who did these things?"
 - ὁ ἀνὴρ ὃν εἶδες φίλος ἐμός ἐστιν. — "The man whom you saw is my friend."

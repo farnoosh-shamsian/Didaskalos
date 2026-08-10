@@ -20,7 +20,7 @@ The **aorist** expresses a *simple, complete* action, without reference to durat
 
 So the **aorist active participle** means "the one who did (once)," "having done." The label **(μι)** signals that this lesson concerns the μι-verbs — δίδωμι, τίθημι, ἵημι, ἵστημι — whose athematic aorists (without the thematic vowel) give the participle a distinctive shape.
 
-> **English equivalents** — "having given," "having placed," "the one who gave," "after placing."
+> **Force** — the action is complete before the main verb's: "having given," "having placed," "the one who gave," "after placing."
 
 ---
 

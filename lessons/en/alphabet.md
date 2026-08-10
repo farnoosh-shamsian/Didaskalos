@@ -34,9 +34,9 @@ The Ancient Greek alphabet has **24 letters**. Each has a name, an uppercase and
 Two writing rules to notice immediately:
 
 - **Final sigma:** σ is written **ς** at the end of a word: σοφός "wise".
-- **Gamma before velars:** γ before γ, κ, χ, ξ is pronounced /ŋ/ (as in English *sing*): ἄγγελος "messenger" = *angelos*.
+- **Gamma before velars:** γ before γ, κ, χ, ξ is pronounced **/ŋ/** — a nasal made at the back of the mouth, in the same position as κ, rather than the ordinary /g/: ἄγγελος "messenger" = *angelos*.
 
-> The aspirated stops θ, φ, χ were pronounced like t, p, k **with a puff of air** in the Classical period. Their fricative sounds (as in English *thin*, *photo*) developed later; you will hear both conventions in classrooms.
+> The aspirated stops θ, φ, χ were pronounced in the Classical period as **/tʰ/, /pʰ/, /kʰ/** — τ, π, κ released **with a puff of air** after them. Their fricative pronunciations **/θ/, /f/, /x/** developed later; you will hear both conventions in classrooms.
 
 ## 2. Vowels
 
@@ -87,11 +87,31 @@ Almost every Greek word carries one accent, on one of its last three syllables:
 
 In the Classical period the accent was musical (a change of pitch); today it is usually read as stress. For now: **copy accents faithfully** — they occasionally distinguish words (εἰμί "I am" vs. εἶμι "I will go") — but do not let them slow down your reading.
 
-## 6. Attic Spelling Notes
+## 6. Dialect and Period
+
+**Spelling differs by dialect.** These two differences account for a great many words that look almost, but not quite, familiar:
 
 - Attic writes **ττ** where Ionic and most other dialects write σσ: θάλαττα / θάλασσα "sea", πράττω / πράσσω "do".
 - Attic writes **ρρ** where other dialects have ρσ: θάρρος / θάρσος "courage".
-- Consonants assimilate before certain endings: ἐπεμπ-θην → ἐπέμφθην "I was sent". You will meet these changes gradually — no need to memorize them now.
+
+Attic is the odd one out in both. Homer, Herodotus, Koine and the New Testament all have σσ and ρσ — so if your texts are epic or Koine, **σσ is what you should expect to see**, and θάλαττα is the unusual spelling rather than the normal one.
+
+Consonants also assimilate before certain endings: ἐπεμπ-θην → ἐπέμφθην "I was sent". You will meet these changes gradually — no need to memorize them now.
+
+**The alphabet on this page is not the alphabet the Greeks used.** Almost everything about how Greek looks on a modern page is a later invention:
+
+| Feature | When it arrived |
+|---|---|
+| **Ionic alphabet at Athens** | Officially adopted in 403/402 BCE. Earlier Attic inscriptions use a different local alphabet with no separate letters for η and ω |
+| **Accents and breathings** | Invented by Alexandrian scholars around 200 BCE, and not written regularly for centuries afterwards |
+| **Lowercase letters** | A medieval development. Ancient texts are written in capitals |
+| **Spaces between words, punctuation** | Ancient texts run the letters together without gaps — *scriptio continua* |
+
+So a Classical Athenian reading Plato saw an unbroken line of capitals with no accents and no word division. Every accent, breathing, comma and space in your text was supplied by an editor.
+
+**The lost letter.** Greek once had a letter **Ϝ** (digamma), pronounced **/w/** — the semivowel corresponding to the vowel υ, as ι corresponds to /j/. It had disappeared from Attic and Ionic before our texts were written, but it was still there when the Homeric poems were composed, and its ghost affects the metre: a word such as ἔργον (originally ϝέργον) or οἶνος (ϝοῖνος) sometimes behaves in Homer's verse as though it still began with a consonant. If a Homeric line seems not to scan, a vanished digamma is a common reason.
+
+**Pronunciation drifted too.** By the Koine period several vowels and diphthongs that were once distinct had converged on the same *i* sound — ι, η, ει and οι all heading toward /i/, a change called **iotacism**. This is why New Testament manuscripts so often disagree over exactly these spellings: scribes were writing what they heard, and what they heard no longer distinguished them.
 
 ## 7. Practice Reading
 

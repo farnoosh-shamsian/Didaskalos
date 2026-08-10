@@ -12,7 +12,7 @@ pos: verb
 ## 1. What the Aorist Is
 
 The **aorist** is one of the fundamental tenses of the Greek verb.
-It expresses a **simple, complete action**, without reference to its duration or repetition. In English it is usually rendered by the simple past: "he went," "they saw," "I loosed."
+It expresses a **simple, complete action**, without reference to its duration or repetition. The aorist views the event as a single whole, from outside — it reports *that* it happened, and says nothing about how long it took or whether it was repeated. Use whatever your language's plainest narrative past tense is: "he went," "they saw," "I loosed."
 
 The **indicative mood** is the "statement" mood — for ordinary factual sentences.
 
@@ -31,7 +31,7 @@ Greek has **two morphological families** for the aorist:
 | **First aorist** (sigmatic, "regular") | Add **‑σ(α)‑** to the verb stem, then the aorist endings. | λύω "to loose" → stem **λυσ‑** → *ἔλυσα* "I loosed" | Simple past action |
 | **Second aorist** ("strong") | No **‑σ‑**; the aorist stem is an altered form of the root (changed vowel, different consonant, occasionally reduplication). | λαμβάνω "to take" → stem **λαβ‑** → *ἔλαβον* "I took" | Simple past action |
 
-The meaning is the same in both; the difference is purely formal — like regular and irregular verbs in English.
+The meaning is the same in both; the difference is purely formal, a matter of which stem the verb happens to use. Nothing about the aspect or the time changes.
 
 ---
 
@@ -104,7 +104,7 @@ The present indicative active has the ending **‑ω** in the first person singu
 
 ## 6. Example Sentences
 
-| Greek (aorist indicative active) | Transliteration | English |
+| Greek (aorist indicative active) | Transliteration | Meaning |
 |-----------------------------------|----------------|---------|
 | **ἔλυσα τὸν δεσμόν.** | *élysa ton desmón* | I loosed the bond. |
 | **ἔλαβον τὰ δῶρα.** | *élabon ta dôra* | They took the gifts. |
@@ -120,7 +120,7 @@ The present indicative active has the ending **‑ω** in the first person singu
 
 1. **Simple past actions** — the aorist is the default tense for a single, complete event: *ἔφαγον* "I ate (once)."
 2. **Narrative sequence** — in storytelling, aorist verbs follow one another and move the plot forward.
-3. **Gnomic aorist** — in general truths Greek sometimes uses the aorist where English uses the present: "he who does not strive does not (ever) succeed."
+3. **Gnomic aorist** — in proverbs and general truths Greek sometimes uses the aorist although **no past time is meant at all**. The statement is timeless; the aorist marks it as a single completed instance standing for every instance: "he who does not strive does not (ever) succeed."
 4. **Contrast with present and imperfect** — present = in progress; imperfect = in progress in the past; aorist = punctual: *ἐπαίδευον* "I was educating" vs. *ἐπαίδευσα* "I educated."
 5. **Verbs of perception** — verbs of seeing and hearing often stand in the aorist for a single perception: *εἶδον* "I saw."
 

@@ -40,6 +40,22 @@ Everything else — including the entire plural — matches the feminine paradig
 - The article resolves any doubt about gender: **ὁ** πολίτης is masculine even though the endings look like τιμή's.
 - The genitive plural is -ῶν here too: πολιτῶν, νεανιῶν.
 
+## Dialect and Period
+
+The masculine first declension is a relative newcomer in Greek: it is the feminine paradigm fitted out with a masculine -ς, and the fitting was done differently in different dialects. The **genitive singular** is where you see it.
+
+| | Homer | Ionic (Herodotus) | Attic |
+|---|---|---|---|
+| Genitive singular | -ᾱο: Ἀτρεΐδαο, Πηληϊάδαο | -εω: δεσπότεω, Καμβύσεω | -ου: πολίτου, δεσπότου |
+
+Homer's -ᾱο is the oldest of the three. Ionic -εω is what -ᾱο became when the two vowels exchanged length; in verse it is normally scanned as a single syllable. The Attic -ου is not an inherited first-declension ending at all — it is borrowed outright from the second declension (λόγου), a masculine noun helping itself to the masculine ending of the other pattern.
+
+**Homeric nominatives in -ᾰ.** Epic keeps a short-vowel nominative with no -ς whatever, chiefly in formulaic titles: ἱππότα Νέστωρ "Nestor the horseman", νεφεληγερέτα Ζεύς "cloud-gathering Zeus", μητίετα Ζεύς. It looks like a vocative doing a subject's work, and historically that may be exactly what it is. Attic has nothing of the kind.
+
+**The α/η split applies here too.** Where Attic has -ᾱς after ε, ι or ρ, Ionic and Homer prefer -ης: Herodotus writes νεηνίης for Attic νεανίας.
+
+**In Koine** the type is stable and Attic-looking, and it stays productive for agent nouns and titles — μαθητής "disciple", προφήτης "prophet", βαπτιστής, τελώνης "tax collector". These -της nouns are among the commonest masculine nouns in the New Testament.
+
 ## Examples
 
 - ὁ ποιητὴς λέγει — "the poet speaks"

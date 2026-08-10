@@ -10,7 +10,7 @@ Interjections stand outside the grammar of the sentence: they modify nothing and
 
 | Interjection | Force | Typical context |
 |---|---|---|
-| **ὦ** | address: "O ...!" | before a vocative: ὦ Ζεῦ "O Zeus!" |
+| **ὦ** | marks direct address | before a vocative: ὦ Ζεῦ, addressing Zeus |
 | **ἰώ** | cry of grief or appeal: "oh! alas!" | tragedy, especially laments and invocations |
 | **φεῦ** | grief or amazement: "alas! ah!" | often with a genitive of cause |
 | **ὢ πόποι** | dismay, indignation: "good heavens!" | Homeric; opens speeches of complaint |
@@ -47,7 +47,26 @@ Interjections are grammatically independent, but three patterns recur:
 - Interjections are often **doubled or piled up** for intensity: ἰὼ ἰώ, αἰαῖ αἰαῖ, οἴμοι μοι.
 - In your reading, an interjection is a strong signal of **direct speech and heightened emotion** — expect a vocative, an imperative, or a wish nearby.
 
-## 5. Example Sentences
+## 5. Dialect and Period
+
+Interjections are the most register-bound words in the language: they belong to particular genres and particular centuries far more tightly than ordinary vocabulary does.
+
+**ὦ before a vocative is an Attic prose habit.** Homer often omits it, and the New Testament normally omits it — so the bare address that sounds abrupt in Plato is simply the ordinary form in Koine. Where the NT does use ὦ, it is genuinely emphatic.
+
+**The great cries belong to tragedy.** αἰαῖ, ὀτοτοῖ, ἰώ, ἰού, φεῦ, οἴμοι, παπαῖ are overwhelmingly poetic. If your corpus is Aeschylus or Sophocles you will meet them constantly; in Attic prose they are rare, and in Koine narrative rarer still. Homer has its own: **ὦ πόποι** "good heavens" and **ὤ μοι** are formulaic in epic and absent from later prose.
+
+**Koine has a distinct set of its own**, and it is one of the more recognizable features of New Testament Greek:
+
+| Word | Origin | Use |
+|---|---|---|
+| **ἰδού**, **ἴδε** | frozen imperatives of εἶδον "see" | "behold, look" — extremely frequent, often merely marking a new turn in the narrative |
+| **οὐαί** | probably echoing a Semitic cry | "woe to …", followed by the dative |
+| **ἀμήν** | Hebrew | "truly" — and in the Gospels used to *open* a solemn statement, which Hebrew does not do |
+| **ἀλληλουϊά**, **ὡσαννά**, **μαράνα θά** | Hebrew / Aramaic | liturgical exclamations, taken over untranslated |
+
+**ἰδού deserves particular attention**, because it is not really an interjection in force: it has stopped meaning "look!" and often functions as a discourse marker, roughly "and then", with no visual sense at all. Translating it as "behold" every time overstates it considerably.
+
+## 6. Example Sentences
 
 - ὦ ἄνδρες Ἀθηναῖοι, οὐκ ἴστε τί ποιεῖτε. — "Men of Athens, you do not know what you are doing."
 - ἰὼ γενεαὶ βροτῶν. — "Alas, generations of mortals!" (Sophocles)

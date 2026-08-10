@@ -12,7 +12,7 @@ pos: verb
 
 ## 1. What the Perfect Middle/Passive Is
 
-| Term | Meaning | Typical English equivalent |
+| Term | Meaning | Typical equivalent |
 |------|-------------------|----------------------------|
 | **Perfect** | A past action whose **result still holds now**. | "I have written," "it is (now) written." |
 | **Indicative** | The ordinary "statement" mood. | — |
@@ -98,7 +98,7 @@ When the stem ends in a consonant, that consonant assimilates to the ending — 
 
 ## 5. Example Sentences
 
-| Greek (perfect middle/passive) | Transliteration | English |
+| Greek (perfect middle/passive) | Transliteration | Meaning |
 |-----------------------------|----------------|---------|
 | **ὁ ἵππος λέλυται.** | ho híppos lélytai | The horse has been set loose. |
 | **γέγραπται ἐν τῷ νόμῳ.** | gégraptai en tôi nómōi | It is written in the law. |

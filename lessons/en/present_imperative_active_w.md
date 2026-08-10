@@ -11,7 +11,7 @@ pos: verb
 
 ## 1. What the Present Active Imperative Is
 
-| Term | Function in the sentence | Rough English equivalent |
+| Term | Function in the sentence | Rough equivalent |
 |------|--------------------------|--------------------------|
 | **Present active** | An action going on **now** (or habitually), performed by the **subject**. | "you write," "he speaks." |
 | **Imperative mood** | A **command, request, or exhortation** addressed to someone. | "write!", "let him speak!" |

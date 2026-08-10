@@ -12,7 +12,7 @@ pos: verb
 
 ## 1. What Is the Imperfect?
 
-| Term | Meaning | Rough English equivalent |
+| Term | Meaning | Rough equivalent |
 |------|------------------|--------------------------|
 | **Imperfect** | A past action **in progress** or **repeated**. | "was doing," "used to do" |
 | **Indicative** | The ordinary mood of statement (as opposed to subjunctive, optative, etc.). | — |
@@ -20,7 +20,7 @@ pos: verb
 
 The imperfect describes an action that **was going on** or was **habitual** in the past, without saying that it came to an end.
 
-> **English:** "I was walking home."
+> **Force:** an action pictured as still in progress in the past — "I was walking home."
 > **Greek:** οἴκαδε ἔβαινον.
 
 ---
@@ -86,7 +86,7 @@ The secondary endings with the thematic vowel (ο before μ/ν, otherwise ε):
 
 ## 5. Example Sentences
 
-| Greek (imperfect) | Transliteration | English |
+| Greek (imperfect) | Transliteration | Meaning |
 |-------------------|----------------|---------|
 | **ἔλυον τὸν δεσμὸν ἡμέρας πολλάς.** | élyon ton desmòn hēméras pollás | I was loosening the bond for many days. |
 | **ἐλύομεν τοὺς ἵππους ἐν τῇ ἀγορᾷ.** | elýomen tous híppous en têi agorâi | We were untying the horses in the marketplace. |

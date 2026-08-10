@@ -15,7 +15,7 @@ The **aorist active participle** is a non-finite form that:
 * **Behaves like an adjective**: it agrees with its noun in gender, number, and case.
 * **Has active voice**: the noun it modifies is the doer of the action.
 
-In English it is usually rendered with "having …ed," "after …ing," or a relative clause:
+Its force is that the action was **completed before** the action of the main verb — "having …ed," "after …ing," or a relative clause will all carry that:
 
 * *ὁ γράψας ἀνήρ* — "the man **who wrote**"
 * *τὰ πεσόντα δένδρα* — "the trees **that fell**"

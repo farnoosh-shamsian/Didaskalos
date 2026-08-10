@@ -16,7 +16,7 @@ Agreement means matching the grammar, **not** necessarily the ending:
 - ἡ ἀγαθὴ γυνή — "the good woman" (both fem. nom. sg. — endings differ)
 - τῆς μεγάλης πόλεως — "of the great city" (both fem. gen. sg. — a first-declension adjective with a third-declension noun)
 
-Because the forms match grammatically, Greek can separate an adjective from its noun without losing the connection — something English word order cannot do:
+Because the forms match grammatically, Greek can separate an adjective from its noun by several words without losing the connection. It is the **agreement** that binds the two together, not their being next to each other:
 
 - καλὸν ἐποίησεν ἔργον — "he did a *fine* deed" (καλόν and ἔργον agree, though split by the verb)
 
@@ -60,6 +60,14 @@ Greek adjectives have three degrees:
 Several very common adjectives compare irregularly: ἀγαθός → ἀμείνων/βελτίων "better", ἄριστος/βέλτιστος "best"; κακός → κακίων "worse", κάκιστος "worst"; μέγας → μείζων "greater", μέγιστος "greatest"; πολύς → πλείων "more", πλεῖστος "most".
 
 Comparatives and superlatives decline and agree like any other adjective. The standard of comparison appears either in the genitive or with ἤ "than": σοφώτερος τοῦ ἀδελφοῦ / σοφώτερος ἢ ὁ ἀδελφός "wiser than his brother".
+
+## A Note on Dialect and Period
+
+Adjective endings are borrowed wholesale from the noun declensions, so they inherit exactly the same dialect variation. The forms given here are **Attic**.
+
+Two differences will account for most of what looks unfamiliar. **Ionic uses η where Attic uses ᾱ** in the feminine, so Herodotus writes ἀξίη and μικρή for Attic ἀξία and μικρά. And the **contract adjectives are contractions**: Attic χρυσοῦς "golden" is Homeric and Ionic χρύσεος with the vowels run together, which is why the epic form has an extra syllable.
+
+Each adjective lesson has a **Dialect and Period** section, and the dialects module earlier in this book gives the whole picture.
 
 ## Summary
 

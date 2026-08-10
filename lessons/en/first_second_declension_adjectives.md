@@ -35,6 +35,26 @@ An adjective **agrees** with its noun in gender, number, and case — not necess
 - **Substantivized adjectives.** The article turns an adjective into a noun: οἱ ἀγαθοί "the good (people)", τὸ καλόν "the beautiful, beauty".
 - Regular comparatives and superlatives decline the same way: σοφώτερος, -α, -ον "wiser"; σοφώτατος, -η, -ον "wisest".
 
+## Dialect and Period
+
+Because this class borrows the first declension for its feminine and the second for its masculine and neuter, it inherits the dialect differences of both. Everything said in those two lessons applies here.
+
+**The feminine vowel is the main one.** Attic uses ‑ᾱ after ε, ι or ρ and ‑η elsewhere (ἀξία but ἀγαθή); **Ionic uses ‑η throughout**, so Herodotus writes ἀξίη, μικρή, νέη where Attic has ἀξία, μικρά, νέα. In the plural, Homer has the long feminine genitive ‑άων and the long datives ‑ῃσι and ‑οισι.
+
+**Contract adjectives are visibly younger in Attic.** The ‑οῦς / ‑ᾶ / ‑οῦν type is a contraction, and epic and Ionic preserve the originals:
+
+| | Homer / Ionic | Attic |
+|---|---|---|
+| "golden" | **χρύσεος, χρυσέη, χρύσεον** | **χρυσοῦς, χρυσῆ, χρυσοῦν** |
+| "silver" | ἀργύρεος | ἀργυροῦς |
+| "simple" | ἁπλόος | ἁπλοῦς |
+
+Homer's χρύσεος is three syllables and Attic's χρυσοῦς is two; the Attic form is what happens when the ε and ο fall together. Seeing the pair side by side makes the contract paradigm much easier to hold on to.
+
+**Two endings instead of three.** Compound adjectives regularly use the masculine form for the feminine as well (ἡ ἄδικος πόλις "the unjust city"), and this is true at every period — but the habit spreads in Koine, where compounding is very productive.
+
+**In Koine** the class is entirely stable and remains the default adjective pattern: ἀγαθός, καλός, πιστός, ἅγιος, δίκαιος are all ordinary first-and-second-declension adjectives.
+
 ## Examples
 
 - οἱ σοφοὶ ἄνθρωποι — "wise people"

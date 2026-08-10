@@ -83,7 +83,7 @@ The label **(ω)** means this lesson concerns ω-verbs; the perfect itself ends 
 
 ## 4. Example Sentences
 
-| Greek (perfect active) | Transliteration | English |
+| Greek (perfect active) | Transliteration | Meaning |
 |-----------------------|----------------|---------|
 | **γέγραφα τὴν ἐπιστολήν.** | gégrapha tēn epistolḗn | I have written the letter. |
 | **λελύκαμεν τοὺς ἵππους.** | lelýkamen tous híppous | We have untied the horses. |

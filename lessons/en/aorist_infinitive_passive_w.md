@@ -65,7 +65,7 @@ A smaller group forms the passive without θ. The stem often shows a changed vow
 
 ¹ σῴζω is in fact a first (θη) passive — listed here because σωθῆναι is so frequent that it is worth memorising alongside the others.
 
-> **The two types mean the same thing.** The difference is purely morphological, like "strong" and "weak" verbs in English.
+> **The two types mean the same thing.** The difference is purely morphological — a matter of which stem the verb takes — and carries no difference of aspect, time or force.
 
 ---
 
@@ -79,7 +79,7 @@ A smaller group forms the passive without θ. The stem often shows a changed vow
 | **4. Consonant adjustments before θ** | Labials → φ (γραφθ‑), velars → χ (ἀχθ‑), dentals → σ (πεισθ‑). | πείθω → πεισθῆναι |
 | **5. Aspect, not time** | βούλεται λυθῆναι "he wants to be released" — no past sense. | |
 | **6. In indirect discourse it is past** | ἔφη λυθῆναι "he said that he had been released." | |
-| **7. Many "passives" are intransitive** | φανῆναι means "to appear," not "to be shown," in most contexts; likewise σωθῆναι "to get away safely." Do not force a passive English rendering. | |
+| **7. Many "passives" are intransitive** | φανῆναι means "to appear," not "to be shown," in most contexts; likewise σωθῆναι "to get away safely." Do not force a passive rendering where the sense is intransitive. | |
 
 ---
 

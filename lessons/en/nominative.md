@@ -36,9 +36,9 @@ Unlike the nominative it takes **no article**. Compare **ὁ ἄνθρωπος �
 
 ### The Particle ὦ
 
-Attic Greek normally prefixes the particle **ὦ** to a vocative. It is far weaker than English "O" — in Plato it is simply the ordinary, polite way to address someone, and it is best left untranslated:
+Attic Greek normally prefixes the particle **ὦ** to a vocative. It carries no solemnity or emotion of its own: in Plato it is simply the ordinary, polite way to address someone, as unremarkable as using a person's name. Render it only if your language has an equally neutral particle of address; otherwise leave it out rather than reach for something emphatic.
 
-- **ὦ Σώκρατες** — "Socrates," not "O Socrates!"
+- **ὦ Σώκρατες** — plain, courteous address: "Socrates".
 - **ὦ ἄνδρες Ἀθηναῖοι** — "Men of Athens" (the standard opening of an Athenian speech).
 
 Omitting ὦ makes the address more abrupt or more urgent; adding it is the unmarked, neutral choice.
@@ -137,9 +137,27 @@ Between them these two cases are the least burdensome part of the noun system: t
 
 ---
 
-## 6. Example Sentences
+## 6. Dialect and Period
 
-| Greek | English |
+The nominative endings themselves are the most conservative in the noun system. What varies across the periods is **how Greek addresses people** — the vocative side of this lesson.
+
+**ὦ is an Attic prose habit.** The rule given in §2 — that Attic normally prefixes ὦ, and that it is weak enough to leave untranslated — is specifically an Attic rule.
+
+| | Practice |
+|---|---|
+| **Homer** | ὦ is frequently absent; the bare vocative is entirely normal |
+| **Classical Attic** | ὦ is the unmarked, polite default; omitting it is abrupt |
+| **Koine / New Testament** | ὦ is normally **absent**; when it does appear it carries real emotional weight |
+
+So the plain Σώκρατες-type address without ὦ, which sounds brusque in Plato, is simply the ordinary form in the New Testament. Where the NT does use ὦ — ὦ γύναι, μεγάλη σου ἡ πίστις "woman, great is your faith" — it is genuinely emphatic.
+
+**Koine addresses with the nominative.** Rule 6 in §4 above notes that Greek can use the article plus a nominative in place of a vocative. That construction, occasional and colloquial in Attic, becomes **routine in the New Testament**: ὁ πατήρ "Father!", τὸ κοράσιον, ἔγειρε "Little girl, arise!", ναί, ὁ πατήρ. Semitic influence is usually held to have encouraged it, since Hebrew and Aramaic address in much the same way. Modern Greek has gone the whole distance: the vocative survives only in the masculine singular.
+
+**Homeric nominatives in -ᾰ.** Epic has a set of masculine nominatives with no -ς at all, confined to formulaic titles: ἱππότα Νέστωρ, νεφεληγερέτα Ζεύς, μητίετα Ζεύς. They look like vocatives serving as subjects, and that may be their origin.
+
+## 7. Example Sentences
+
+| Greek | Meaning |
 | --- | --- |
 | **ὁ ἄνθρωπος τὸν παῖδα ὁρᾷ.** | The man sees the child. *(nominative subject)* |
 | **Σωκράτης φιλόσοφός ἐστιν.** | Socrates is a philosopher. *(predicate nominative)* |

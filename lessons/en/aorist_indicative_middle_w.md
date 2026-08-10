@@ -92,7 +92,7 @@ That is why the second person of the aorist middle ends in ‑ω — a shape tha
 
 ## 5. Example Sentences
 
-| Greek (aorist indicative middle) | Transliteration | English |
+| Greek (aorist indicative middle) | Transliteration | Meaning |
 |-----------------------------------|----------------|---------|
 | **ἐλυσάμην τὸν αἰχμάλωτον.** | *elysámēn ton aikhmálōton* | I ransomed the captive. |
 | **ἐπράξατο χρήματα.** | *epráxato khrḗmata* | He collected money (for himself). |

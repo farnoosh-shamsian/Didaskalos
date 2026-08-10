@@ -44,7 +44,7 @@ A contract-verb example: **ἀγαπάω** "to love" → **ἠγάπηκα** (th
 * **γέγραφε τὴν ἐπιστολήν.** — He has written the letter (and it now exists).
 
 ### Notes on Usage and Context
-The Greek perfect is less a "past" than a **present arising from the past**: it stresses the present result of the action. Several very common perfects have practically present meaning: **οἶδα** "I know," **ἕστηκα** "I stand," **τέθνηκα** "I am dead," **μέμνημαι** "I remember." In English "have done" usually works as a translation, but always ask: what is the present result?
+The Greek perfect is less a "past" than a **present arising from the past**: it stresses the present result of the action. Several very common perfects have practically present meaning: **οἶδα** "I know," **ἕστηκα** "I stand," **τέθνηκα** "I am dead," **μέμνημαι** "I remember." A "have done" rendering usually works, but always ask the more important question: what is the present result?
 
 ### Historical Development and Etymology
 Reduplication is an ancient Indo-European feature (compare Sanskrit). The perfect originally expressed the **state** arising from an action (λέλοιπα "I am in a state of having left"), and the κ of the first perfect is a Greek innovation. In the Koine the boundary between perfect and aorist blurred, and in Modern Greek the old perfect disappeared, replaced by the periphrasis έχω + infinitive. Knowing this development helps in reading texts of different periods.

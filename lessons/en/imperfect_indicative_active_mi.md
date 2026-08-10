@@ -109,7 +109,7 @@ The imperfect answers the question *"What was going on?"* It is not the simple p
 
 ## 4. Example Sentences
 
-| Greek (imperfect) | Transliteration | English |
+| Greek (imperfect) | Transliteration | Meaning |
 |-------------------|----------------|---------|
 | **ἦν ὁ ἀνὴρ ἐν τῇ ἀγορᾷ.** | ên ho anḕr en têi agorâi | The man was in the marketplace. |
 | **ἐδίδου τοῖς πτωχοῖς ἀεί.** | edídou toîs ptōkhoîs aeí | He always used to give to the poor. |
