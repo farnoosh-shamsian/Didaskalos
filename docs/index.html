@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Didaskalos generates personalized Ancient Greek textbooks from the texts you choose — a frequency-ordered syllabus and difficulty-ranked exercises drawn from your own corpus, in English and Persian."
+      content="Didaskalos generates personalized Ancient Greek textbooks from the texts you choose — a frequency-ordered syllabus and difficulty-ranked exercises drawn from your own corpus, built to be taught in any language (English and Persian today)."
     />
     <meta name="theme-color" content="#c4bca9" />
     <meta property="og:title" content="Didaskalos" />
@@ -184,7 +184,7 @@
             your texts before it generates anything — parsing every treebank,
             extracting grammatical features, and ranking them by frequency. So
             the app can feel a little slow at times. Please be patient with it;
-            a good textbook takes a moment.
+            a good textbook takes a moment!
           </div>
         </div>
       </section>
@@ -198,58 +198,52 @@
           <span class="num">25</span>
           <span class="label">authors and collections</span>
         </div>
-        <div>
-          <span class="num">4</span>
-          <span class="label">treebank corpora</span>
-        </div>
-        <div>
+          <div>
           <span class="num">157</span>
           <span class="label">lesson modules per language</span>
         </div>
+        <div>
+          <span class="num">2</span>
+          <span class="label">languages available</span>
+        </div>
+
       </section>
 
       <section class="section" id="why">
         <p class="eyebrow">Why this project</p>
-        <h2>Who gets to read the sources directly?</h2>
+        <h2>Flexible Greek instruction for any language</h2>
       </section>
 
       <div class="about-block">
         <p>
-          For readers in Iran and across West and Central Asia, and in parts of
-          Africa, Ancient Greek texts are primary sources for their own past:
-          much of the surviving narrative of ancient Persia reaches us only in
-          Greek. From before the Greco-Persian wars until long after Alexander's
-          conquest, Persia and the Greek world were deeply entangled. Yet in
-          Persian those texts are read almost entirely at second hand, and every
-          mediating edition adds its own interpretive layer.
+          Ancient Greek pedagogy is mostly limited to a few languages. For most of the world's speakers, learning Greek therefore means going through a second foreign language first, or translating a textbook that was written for a different audience, which can turn the translation process into a rewrite, or complicate the learning experience.
+          Didaskalos is built the other way round: the pedagogy lives in code
+          and the teaching language is data, so a textbook in a new language is
+          a translation job rather than a rewrite. It is now available in English and Persian, but nothing in the design is specific to either.
         </p>
       </div>
 
       <section class="posts">
         <article>
-          <h3>Nowhere to learn it</h3>
+          <h3>The teaching language is data</h3>
           <p>
-            Ancient Greek is not taught regularly at any institution in Iran,
-            and there is no functional grammar, reader, or textbook written for
-            Persian speakers.
+            Everything language-specific sits in two places — the lesson modules
+            and one locale file. Translate those and Didaskalos teaches Greek in
+            that language: interface, lessons, grammatical terminology, and the
+            exported book together. The pipeline itself does not change.
           </p>
         </article>
         <article>
-          <h3>Translations of translations</h3>
+          <h3>Made for languages with no Greek grammar</h3>
           <p>
-            Xenophon's <em>Cyropaedia</em> — his partly fictional life of Cyrus
-            II — exists in at least eight Persian translations. Not one of them
-            was made from the Greek; each came through an English or French
-            edition, inheriting its choices.
+            Didaskalos is worth most exactly where pedagogical resources for learning Greek are lacking or limited. Persian comes first because it is the language I work in and care about most, but it is one case of a shared problem that involves many other low-resource languages.
           </p>
         </article>
         <article>
-          <h3>A pipeline, not one more book</h3>
+          <h3>More than a translated textbook</h3>
           <p>
-            The answer is not a single translated textbook but a generator that
-            can be localized: the pedagogy lives in code, the teaching language
-            is data, and the sentences the learner practises on stay exactly as
-            their authors wrote them.
+            Even in English, this is not the conventional method. There is no
+            fixed curriculum and no simplified sentences: the syllabus is ordered by what your chosen texts actually use, and every exercise is a real sentence carrying its citation.
           </p>
         </article>
       </section>
@@ -310,8 +304,7 @@
       <section class="section" id="syllabus">
         <h2>When frequency and pedagogy disagree</h2>
         <p class="section-intro">
-          A purely statistical syllabus is a bad teacher. Three cases where
-          Didaskalos deliberately overrules the counts.
+          A purely statistical syllabus mighe be a flawed teacher. Three cases where Didaskalos deliberately overrules the frequency count:
         </p>
       </section>
 
@@ -329,8 +322,7 @@
         </div>
         <div class="pair">
           <p class="problem">
-            Teach an exception before the rule exists and you have taught
-            nothing.
+            Teaching an exception before the rule exists can be veryconfusing.
           </p>
           <p class="response">
             Prerequisites are declared by kind: an irregular verb, noun, or
@@ -382,8 +374,7 @@
           <p>
             Exercises are unaltered corpus sentences, scored by word rarity and
             sentence length and preferring sentences whose vocabulary earlier
-            lessons have already introduced — so difficulty climbs without any
-            sentence being rewritten.
+            lessons have already introduced — so difficulty increases slowly.
           </p>
         </article>
       </section>
@@ -393,10 +384,7 @@
         <h2>Built to be translated</h2>
         <p class="section-intro">
           Didaskalos was bilingual from the start, and being translatable is a
-          design goal rather than an afterthought. A translated interface over
-          an English textbook would not solve anything, so the interface, the
-          lesson modules, the grammatical terminology, and the exported book are
-          all localized together.
+          design goal rather than an afterthought. Localizaion in a new language would only require a single locale file and a translated set of modules.
         </p>
       </section>
       <section class="posts">
@@ -419,10 +407,8 @@
         <article>
           <h3>The book, not just the buttons</h3>
           <p>
-            The exported textbook is generated in the chosen language throughout
+            Translating the interface only would not solve the accessibility issue; Localizing Didaskalos means the exported textbook is generated in the chosen language throughout
             — lesson text, exercise instructions, answer keys, and the colophon.
-            Adding a language is one locale file plus a translated set of
-            modules.
           </p>
         </article>
       </section>
@@ -445,6 +431,29 @@
         </p>
       </div>
 
+      <section class="section" id="origins">
+        <p class="eyebrow">Where this started</p>
+        <h2>Who gets to read the sources directly?</h2>
+      </section>
+      <div class="about-block">
+        <p>
+          Didaskalos began as an answer to one language's version of that
+          problem. For readers in Iran and across West and Central Asia, and in
+          parts of Africa, Ancient Greek texts are primary sources for their own
+          past: much of the surviving narrative of ancient Persia reaches us
+          only in Greek. Yet Ancient Greek is not taught regularly at any
+          institution in Iran, and there is no functional grammar, reader, or
+          textbook written for Persian speakers.
+        </p>
+        <p>
+          So those texts are read at second hand, and every mediating edition
+          adds its own interpretive layer. Xenophon's <em>Cyropaedia</em> — his
+          partly fictional life of Cyrus II — exists in at least eight Persian
+          translations, and not one of them was made from the Greek. That is a
+          problem that a tool like Didaskalos in trying to solve, by helping a larger audience read the sources directly.
+        </p>
+      </div>
+
       <section class="section" id="about">
         <h2>About the Lessons</h2>
       </section>
@@ -453,27 +462,32 @@
           The grammar modules began as first drafts from a Retrieval-Augmented
           Generation pipeline over standard reference grammars, including
           Smyth's <em>Greek Grammar</em> and Crosby &amp; Schaeffer. That
-          pipeline has since been retired: the modules are now hand-written and
+          pipeline has since been retired: the modules are now being
           hand-corrected, and the review is ongoing.
         </p>
         <p>
           The generation pipeline itself is language-independent. English and
-          Persian ship today; another language needs a locale file and a
-          translated set of modules, not a change to the system.
+          Persian are available today; another language needs a locale file and a translated set of modules, not a change to the system.
         </p>
       </div>
 
       <section class="section" id="limitations">
         <h2>Known Limitations</h2>
         <p class="section-intro">
-          The core infrastructure is still being built. These are the problems I
-          am working through, stated plainly.
+          Other than reviewing the lesson modules, the core infrastructure is also being modified and improved. These are some of the issues I am working through:
+
         </p>
       </section>
       <ul class="limits">
         <li>
           The syllabus is driven by morphology almost alone; syntax is barely
-          used, though the treebanks carry it.
+          used, though the treebanks carry it. I'm trying to find a way to use it without overcomplicating the system.
+        </li>
+        <li>The pedagogical approach needs further refinement, particularly in how it integrates with the syntax. I'm working on integrating Didakta to the system.
+        </li>
+          <li>
+          Rare paradigms in the long tail have no lesson file yet, so a very
+          large build can still report a missing module.
         </li>
         <li>
           Source treebanks sometimes disagree with each other, or carry
@@ -483,11 +497,7 @@
           Whether the automatically selected exercises are genuinely useful
           still needs systematic evaluation.
         </li>
-        <li>
-          Rare paradigms in the long tail have no lesson file yet, so a very
-          large build can still report a missing module.
-        </li>
-        <li>Greek set inside right-to-left Persian needs further attention.</li>
+
       </ul>
 
       <div class="about-block">
@@ -576,46 +586,47 @@
 
       <section class="section" id="why-fa">
         <p class="eyebrow">چرا این پروژه</p>
-        <h2>چه کسی می‌تواند منابع را بی‌واسطه بخواند؟</h2>
+        <h2>یونانی‌ای که به یک زبانِ آموزش گره نخورده باشد</h2>
       </section>
 
       <div class="about-block">
         <p>
-          برای خوانندگان ایران و سراسر غرب و مرکز آسیا، و بخش‌هایی از آفریقا،
-          متن‌های یونانی باستان منابع دست‌اول تاریخ خودشان‌اند: بخش بزرگی از
-          روایت برجای‌ماندهٔ ایران باستان تنها به یونانی به دست ما رسیده است. از
-          پیش از جنگ‌های ایران و یونان تا مدت‌ها پس از لشکرکشی اسکندر، ایران و
-          جهان یونانی سخت در هم تنیده بودند. با این حال این متن‌ها در فارسی
-          تقریباً همیشه باواسطه خوانده می‌شوند، و هر ویرایشِ میانجی لایهٔ تفسیری
-          خودش را می‌افزاید.
+          یونانی باستان تقریباً همیشه از راه انگلیسی، آلمانی، فرانسوی و ایتالیایی
+          آموزش داده می‌شود. برای بیشتر مردم جهان، آموختن یونانی یعنی نخست گذشتن
+          از یک زبان خارجی دیگر — و معمولاً همین راهِ دور است که آدم‌ها را متوقف
+          می‌کند، نه خودِ یونانی. دیداسکالوس از سوی دیگر ساخته شده است: روش آموزش
+          در کد است و زبان آموزش داده است، پس کتاب درسی به زبانی تازه کارِ ترجمه
+          است نه نوشتنِ دوباره. امروز انگلیسی و فارسی در دسترس‌اند؛ هیچ چیز در
+          طراحی به هیچ‌کدام از این دو وابسته نیست.
         </p>
       </div>
 
       <section class="posts">
         <article>
-          <h3>جایی برای آموختنش نیست</h3>
+          <h3>زبانِ آموزش، داده است</h3>
           <p>
-            یونانی باستان در هیچ نهاد آموزشی ایران به‌طور منظم تدریس نمی‌شود، و
-            هیچ دستور زبان کاربردی، خوانشگر یا کتاب درسی‌ای برای فارسی‌زبانان
-            نوشته نشده است.
+            هر چه به زبان وابسته است تنها در دو جا نشسته است: ماژول‌های درس و یک
+            فایل زبان. همین دو را ترجمه کنید تا دیداسکالوس یونانی را به آن زبان
+            درس بدهد — رابط، درس‌ها، اصطلاحات دستوری و کتاب خروجی با هم. خودِ
+            برنامه تغییری نمی‌کند.
           </p>
         </article>
         <article>
-          <h3>ترجمهٔ ترجمه</h3>
+          <h3>برای زبان‌هایی که دستور یونانی ندارند</h3>
           <p>
-            از <em>کوروش‌نامهٔ</em> گزنفون — زندگی نیمه‌داستانی کوروش دوم —
-            دست‌کم هشت ترجمهٔ فارسی در دست است. هیچ‌یک از یونانی برگردانده نشده؛
-            همه از ویرایش‌های انگلیسی یا فرانسوی آمده‌اند و انتخاب‌های آن‌ها را
-            به ارث برده‌اند.
+            ابزاری از این دست دقیقاً همان‌جا بیشترین ارزش را دارد که هیچ ناشری
+            کتاب درسی منتشر نمی‌کند. فارسی نخستین است، چون زبانی است که در آن کار
+            می‌کنم و بیش از همه برایم اهمیت دارد، اما تنها یک نمونه از مسئله‌ای
+            است که بیشتر زبان‌های جهان با آن روبه‌رویند.
           </p>
         </article>
         <article>
-          <h3>یک پردازشگر، نه یک کتاب دیگر</h3>
+          <h3>بیش از یک کتابِ ترجمه‌شده</h3>
           <p>
-            پاسخ، یک کتاب درسیِ ترجمه‌شدهٔ دیگر نیست؛ ابزاری است که بتوان
-            بومی‌سازی‌اش کرد: روش آموزش در کد است، زبان آموزش داده است، و
-            جمله‌هایی که زبان‌آموز روی آن‌ها تمرین می‌کند دقیقاً همان‌اند که
-            نویسندگانشان نوشته‌اند.
+            حتی به انگلیسی هم این روشِ متعارف نیست. نه برنامهٔ درسیِ از پیش
+            تعیین‌شده‌ای در کار است و نه جملهٔ ساختگی: ترتیب درس‌ها را آنچه
+            متن‌های انتخابی شما واقعاً به کار می‌برند تعیین می‌کند، و هر تمرین
+            جمله‌ای واقعی است که ارجاعش را با خود دارد.
           </p>
         </article>
       </section>
@@ -799,6 +810,30 @@
             rel="noopener noreferrer"
             >با من تماس بگیرید</a
           >.
+        </p>
+      </div>
+
+      <section class="section" id="origins-fa">
+        <p class="eyebrow">از کجا آغاز شد</p>
+        <h2>چه کسی می‌تواند منابع را بی‌واسطه بخواند؟</h2>
+      </section>
+      <div class="about-block">
+        <p>
+          دیداسکالوس در آغاز پاسخی بود به روایتِ یک زبان از همین مسئله. برای
+          خوانندگان ایران و سراسر غرب و مرکز آسیا، و بخش‌هایی از آفریقا، متن‌های
+          یونانی باستان منابع دست‌اول تاریخ خودشان‌اند: بخش بزرگی از روایت
+          برجای‌ماندهٔ ایران باستان تنها به یونانی به دست ما رسیده است. با این
+          حال یونانی باستان در هیچ نهاد آموزشی ایران به‌طور منظم تدریس نمی‌شود، و
+          هیچ دستور زبان کاربردی، خوانشگر یا کتاب درسی‌ای برای فارسی‌زبانان نوشته
+          نشده است.
+        </p>
+        <p>
+          پس این متن‌ها باواسطه خوانده می‌شوند و هر ویرایشِ میانجی لایهٔ تفسیری
+          خودش را می‌افزاید. از <em>کوروش‌نامهٔ</em> گزنفون — زندگی نیمه‌داستانی
+          کوروش دوم — دست‌کم هشت ترجمهٔ فارسی در دست است و هیچ‌یک از یونانی
+          برگردانده نشده. یک کتاب درسیِ ترجمه‌شده این مسئله را برای فارسی حل
+          نمی‌کرد، همان‌طور که برای هیچ‌یک از زبان‌های دیگری که در همین وضعیت‌اند
+          حل نمی‌کند. از همین رو، یک پردازشگر.
         </p>
       </div>
 

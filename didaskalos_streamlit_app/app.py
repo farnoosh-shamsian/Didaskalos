@@ -146,10 +146,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 STARTER_LESSON_FILES = [
     "about.md",
     "alphabet.md",
-    "greek_dialects.md",
+    "using_a_dictionary.md",
     "introduction_nouns.md",
     "introduction_adjectives.md",
     "introduction_verbs.md",
+    "greek_dialects.md",
 ]
 
 

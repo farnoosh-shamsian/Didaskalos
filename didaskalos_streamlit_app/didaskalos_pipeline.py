@@ -9,6 +9,7 @@ from datetime import date
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Mapping
+from urllib.parse import quote
 
 import numpy as np
 import pandas as pd
@@ -194,6 +195,16 @@ _HOMONYM_DIGITS_RE = re.compile(r"\d+$")
 @lru_cache(maxsize=None)
 def lemma_conjugation_key(lemma: str) -> str:
     return _HOMONYM_DIGITS_RE.sub("", normalize_greek_lemma(lemma))
+
+
+def lemma_headword(lemma: str) -> str:
+    # The lemma as a dictionary prints it: the homonym digit is an internal key,
+    # and Logeion answers a request for "λέγω1" with "Could not find λέγω1", so it
+    # comes off before a lemma is shown or linked. Accents stay, unlike
+    # lemma_conjugation_key, because a headword without them is not lookup-able.
+    if not isinstance(lemma, str):
+        return ""
+    return _HOMONYM_DIGITS_RE.sub("", lemma.strip())
 
 
 IRREGULAR_VERB_BUCKET = "irregular"
@@ -438,6 +449,82 @@ def classify_adjective_declension(lemma: str) -> str:
     return "adj-3-two-end"  # two-ending 3rd decl (-ης, -ων), comparatives, irregulars
 
 
+def _noun_rows_with_keys(combined_df: pd.DataFrame, key_func=None) -> pd.DataFrame:
+    postag = combined_df["postag"].astype(str)
+    noun_mask = postag.str.startswith("n") & combined_df["lemma"].apply(is_greek_lemma)
+    rows = combined_df.loc[noun_mask, ["lemma", "form", "postag"]].copy()
+    if rows.empty:
+        return rows.assign(key="", gender="")
+    rows["key"] = rows["lemma"].apply(key_func or _classification_key)
+    rows["gender"] = rows["postag"].astype(str).str.slice(POSTAG_GENDER_INDEX, POSTAG_GENDER_INDEX + 1)
+    return rows
+
+
+def _noun_lemma_signals(noun_rows: pd.DataFrame) -> tuple[dict[str, str], dict[str, list[str]]]:
+    # Majority gender and the attested genitive singulars, per lemma key. The
+    # declension classifier votes on the ending; the dictionary citation line
+    # prints the form itself. Both want the same two groupbys, so they share them.
+    gendered = noun_rows[noun_rows["gender"].isin(["m", "f", "n"])]
+    majority_gender = (
+        gendered.groupby("key")["gender"].agg(lambda genders: genders.value_counts().idxmax()).to_dict()
+        if not gendered.empty
+        else {}
+    )
+
+    postag = noun_rows["postag"].astype(str)
+    genitive_singular_mask = (
+        postag.str.slice(POSTAG_CASE_INDEX, POSTAG_CASE_INDEX + 1).eq("g")
+        & postag.str.slice(POSTAG_NUMBER_INDEX, POSTAG_NUMBER_INDEX + 1).eq("s")
+    )
+    genitive_forms = {
+        key: group["form"].astype(str).tolist()
+        for key, group in noun_rows[genitive_singular_mask].groupby("key")
+    }
+    return majority_gender, genitive_forms
+
+
+GENDER_ARTICLES = {"m": "ὁ", "f": "ἡ", "n": "τό"}
+
+_GRAVE, _ACUTE = "̀", "́"
+
+
+def to_citation_accent(form: str) -> str:
+    # A final acute turns grave in running text, so the corpus attests ἀνδρὸς
+    # where a dictionary prints ἀνδρός. Put the acute back for the citation line.
+    if not form or _GRAVE not in unicodedata.normalize("NFD", form):
+        return form
+    decomposed = unicodedata.normalize("NFD", form).replace(_GRAVE, _ACUTE)
+    return unicodedata.normalize("NFC", decomposed)
+
+
+def build_lemma_citation_index(combined_df: pd.DataFrame) -> dict[str, dict[str, str]]:
+    # Dictionary-style citation data per noun lemma: the article its majority
+    # gender implies, and the genitive singular the corpus actually attests. A
+    # lemma with no attested genitive gets none, and the entry prints short --
+    # better a bare headword than an ending we guessed.
+    #
+    # Keyed on the accented headword, not the classifier's key: that one strips
+    # accents and breathings, which would let the preposition εἰς collect the
+    # article of the numeral εἷς.
+    if combined_df is None or combined_df.empty or "postag" not in combined_df.columns:
+        return {}
+
+    noun_rows = _noun_rows_with_keys(combined_df, key_func=lemma_headword)
+    if noun_rows.empty:
+        return {}
+
+    majority_gender, genitive_forms = _noun_lemma_signals(noun_rows)
+
+    citation_index: dict[str, dict[str, str]] = {}
+    for key in set(majority_gender) | set(genitive_forms):
+        forms = genitive_forms.get(key, [])
+        citation_index[key] = {
+            "genitive": to_citation_accent(Counter(forms).most_common(1)[0][0]) if forms else "",
+            "article": GENDER_ARTICLES.get(majority_gender.get(key, ""), ""),
+        }
+    return citation_index
+
+
 def add_declension_features(combined_df: pd.DataFrame) -> pd.DataFrame:
     # Add declension_code / declension_label for noun and adjective rows.
     out = combined_df.copy()
@@ -459,21 +546,7 @@ def add_declension_features(combined_df: pd.DataFrame) -> pd.DataFrame:
             POSTAG_GENDER_INDEX, POSTAG_GENDER_INDEX + 1
         )
 
-        gendered = noun_rows[noun_rows["gender"].isin(["m", "f", "n"])]
-        majority_gender = (
-            gendered.groupby("key")["gender"].agg(lambda genders: genders.value_counts().idxmax()).to_dict()
-            if not gendered.empty
-            else {}
-        )
-
-        genitive_singular_mask = (
-            noun_rows["postag"].astype(str).str.slice(POSTAG_CASE_INDEX, POSTAG_CASE_INDEX + 1).eq("g")
-            & noun_rows["postag"].astype(str).str.slice(POSTAG_NUMBER_INDEX, POSTAG_NUMBER_INDEX + 1).eq("s")
-        )
-        genitive_forms = {
-            key: group["form"].astype(str).tolist()
-            for key, group in noun_rows[genitive_singular_mask].groupby("key")
-        }
+        majority_gender, genitive_forms = _noun_lemma_signals(noun_rows)
         genitive_signals = {key: _genitive_singular_signal(forms) for key, forms in genitive_forms.items()}
         stem_signals = {key: _consonant_stem_signal(forms) for key, forms in genitive_forms.items()}
 
@@ -823,6 +896,10 @@ def decode_marked_verb_features(postag: str) -> dict[str, str]:
 DEPONENT_LESSON_LABEL = "deponent verbs"
 DEPONENT_LESSON_FILENAME = "deponent_verbs.md"
 
+# The starter module that teaches dictionary lookup; it also carries the generated
+# core function-word table, so the book names it rather than matching on position.
+DICTIONARY_LESSON_MODULE = "using_a_dictionary"
+
 
 def get_topic_rows_for_label(syllabus_label: str, combined_df: pd.DataFrame) -> pd.DataFrame:
     # The "deponent verbs" concept lesson draws on every deponent verb token,
@@ -943,6 +1020,159 @@ def get_topic_words(
     topic_rows = topic_rows.sort_values("lemma_frequency", ascending=False)
     topic_words = topic_rows.drop_duplicates(subset=["lemma"], keep="first").head(num_words)
     return topic_words[["form", "lemma", "postag", "token_index", "sentence_index"]]
+
+
+# How many words each kind of lesson offers. Nouns and adjectives get one shot per
+# declension class, and the closed classes are worth learning nearly whole, so both
+# run to 20; verb lessons are many and every entry in them is new, so 10 each still
+# adds up. These are targets, not quotas: a lesson prints fewer rather than padding.
+VOCAB_LIST_SIZES = {
+    "verb": 10,
+    "noun/adjective": 20,
+}
+VOCAB_LIST_SIZE_DEFAULT = 20
+# How many function words the dictionary module hands over up front.
+VOCAB_CORE_WORD_COUNT = 20
+# A function word attested once is a scribal accident, not vocabulary.
+VOCAB_MIN_FUNCTION_WORD_COUNT = 2
+
+_VOCAB_COLUMNS = ["headword", "ledger_key", "frequency", "is_name", "is_deponent", "pos_category"]
+
+
+# One notion of "the same word" for the whole book: accents and homonym digits
+# off, so λέγω1 and λέγω3 are one entry in the ledger and one word to a learner.
+# Cached because the sentence-coverage scan runs it over every token.
+@lru_cache(maxsize=None)
+def vocabulary_ledger_key(lemma: str) -> str:
+    return normalize_greek_lemma(lemma_headword(lemma))
+
+
+def _is_proper_name(headword: str) -> bool:
+    # Treebank lemmas are lemmatized, so an initial capital marks a name and not
+    # merely a word that opened a sentence.
+    return bool(headword) and headword[:1].isupper()
+
+
+def _vocabulary_list_size(lesson_pos_category: str) -> int:
+    return VOCAB_LIST_SIZES.get(lesson_pos_category, VOCAB_LIST_SIZE_DEFAULT)
+
+
+def _clean_lemma_rows(rows: pd.DataFrame) -> pd.DataFrame:
+    rows = rows.dropna(subset=["lemma", "postag"]).copy()
+    rows["lemma"] = rows["lemma"].astype(str).str.strip()
+    rows["postag"] = rows["postag"].astype(str).str.strip()
+    rows = rows[(rows["lemma"] != "") & (rows["postag"] != "")]
+    return rows[rows["lemma"].apply(is_greek_lemma)]
+
+
+def _aggregate_vocabulary_rows(rows: pd.DataFrame) -> pd.DataFrame:
+    # One row per headword, ranked by how often the corpus uses it.
+    if rows.empty:
+        return pd.DataFrame(columns=_VOCAB_COLUMNS)
+
+    rows = rows.copy()
+    rows["headword"] = rows["lemma"].map(lemma_headword)
+    rows["ledger_key"] = rows["lemma"].map(vocabulary_ledger_key)
+    rows = rows[rows["headword"] != ""]
+    if rows.empty:
+        return pd.DataFrame(columns=_VOCAB_COLUMNS)
+
+    if "lemma_frequency" in rows.columns:
+        rows["_frequency"] = pd.to_numeric(rows["lemma_frequency"], errors="coerce").fillna(0)
+    else:
+        rows["_frequency"] = rows["lemma"].map(rows["lemma"].value_counts()).fillna(0)
+
+    rows["_deponent"] = (
+        rows["is_deponent"].fillna(False).astype(bool) if "is_deponent" in rows.columns else False
+    )
+    rows["_pos"] = rows["pos_category"].astype(str) if "pos_category" in rows.columns else ""
+
+    aggregated = (
+        rows.groupby("ledger_key", sort=False)
+        .agg(
+            headword=("headword", "first"),
+            frequency=("_frequency", "max"),
+            is_deponent=("_deponent", "any"),
+            pos_category=("_pos", "first"),
+        )
+        .reset_index()
+    )
+    aggregated["is_name"] = aggregated["headword"].map(_is_proper_name)
+    return aggregated.sort_values("frequency", ascending=False, ignore_index=True)
+
+
+def _reserved_verb_lemmas(topic_rows: pd.DataFrame) -> set[str]:
+    # Deponents and irregulars are taught as lexical classes in their own concept
+    # lessons, so the paradigm lessons they happen to appear in leave them alone.
+    reserved = pd.Series(False, index=topic_rows.index)
+    if "is_deponent" in topic_rows.columns:
+        reserved |= topic_rows["is_deponent"].fillna(False).astype(bool)
+    if "verb_subcategory" in topic_rows.columns:
+        reserved |= topic_rows["verb_subcategory"].astype(str).eq(IRREGULAR_VERB_BUCKET)
+    return {vocabulary_ledger_key(str(lemma)) for lemma in topic_rows.loc[reserved, "lemma"]}
+
+
+def _attach_citations(
+    words: pd.DataFrame,
+    citation_index: Mapping[str, Mapping[str, str]] | None,
+) -> pd.DataFrame:
+    words = words.copy()
+    if words.empty:
+        words["genitive"] = ""
+        words["article"] = ""
+        return words
+
+    index = citation_index or {}
+    keys = words["headword"].map(lemma_headword)
+    words["genitive"] = keys.map(lambda key: index.get(key, {}).get("genitive", ""))
+    words["article"] = keys.map(lambda key: index.get(key, {}).get("article", ""))
+    return words
+
+
+def get_lesson_vocabulary(
+    syllabus_label: str,
+    lesson_pos_category: str,
+    combined_df: pd.DataFrame,
+    introduced_lemmas: set[str] | None = None,
+    citation_index: Mapping[str, Mapping[str, str]] | None = None,
+) -> pd.DataFrame:
+    # The most frequent words of this lesson's own part of speech, counted over
+    # the whole corpus. The lesson's exercises play no part in the choice.
+    introduced = introduced_lemmas or set()
+    empty = pd.DataFrame(columns=_VOCAB_COLUMNS)
+
+    topic_rows = get_topic_rows_for_label(syllabus_label, combined_df)
+    if topic_rows.empty:
+        return empty
+
+    topic_rows = _clean_lemma_rows(topic_rows)
+    topic_rows = filter_topic_rows_by_lesson_rules(syllabus_label, lesson_pos_category, topic_rows)
+    if topic_rows.empty:
+        return empty
+
+    normalized_label = normalize_frequency_row_name(str(syllabus_label))
+    teaches_reserved_class = normalized_label in {
+        normalize_frequency_row_name(DEPONENT_LESSON_LABEL),
+        normalize_frequency_row_name(IRREGULAR_LESSON_LABEL),
+    }
+
+    candidates = _aggregate_vocabulary_rows(topic_rows)
+    if candidates.empty:
+        return empty
+
+    if lesson_pos_category == "verb" and not teaches_reserved_class:
+        candidates = candidates[~candidates["ledger_key"].isin(_reserved_verb_lemmas(topic_rows))]
+    elif lesson_pos_category not in VOCAB_LIST_SIZES:
+        # A closed class: print the inventory rather than a sample of it.
+        candidates = candidates[candidates["frequency"] >= VOCAB_MIN_FUNCTION_WORD_COUNT]
+
+    # Proper names are frequent but they are not vocabulary: a lexicon will not
+    # help with Κῦρος, and in a corpus like Herodotus they would crowd out the
+    # nouns worth learning.
+    candidates = candidates[~candidates["is_name"]]
+    candidates = candidates[~candidates["ledger_key"].isin(introduced)]
+    words = candidates.head(_vocabulary_list_size(lesson_pos_category))
+    return _attach_citations(words, citation_index).reset_index(drop=True)
 
 
 def assemble_sentences(df: pd.DataFrame) -> pd.DataFrame:
@@ -1104,7 +1334,7 @@ def build_known_lemma_seed(
     greek = combined_df[combined_df["lemma"].apply(is_greek_lemma)]
     function_rows = greek[~greek["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES)]
     top_lemmas = function_rows["lemma"].value_counts().head(top_n).index
-    return {normalize_greek_lemma(str(lemma)) for lemma in top_lemmas}
+    return {vocabulary_ledger_key(str(lemma)) for lemma in top_lemmas}
 
 
 def _known_lemma_coverage_by_sentence(combined_df: pd.DataFrame, known_lemmas: set[str]) -> pd.Series:
@@ -1113,7 +1343,7 @@ def _known_lemma_coverage_by_sentence(combined_df: pd.DataFrame, known_lemmas: s
     content = greek[greek["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES)]
     if content.empty:
         return pd.Series(dtype=float)
-    known = content["lemma"].astype(str).map(normalize_greek_lemma).isin(known_lemmas)
+    known = content["lemma"].astype(str).map(vocabulary_ledger_key).isin(known_lemmas)
     return known.groupby(content["sentence_index"]).mean()
 
 
@@ -1177,6 +1407,143 @@ def format_exercise_set1(topic_words: pd.DataFrame, lesson_pos_category: str, la
         lines.append(f"{idx}. {item}")
     lines.append("")
     return "\n".join(lines)
+
+
+LOGEION_URL = "https://logeion.uchicago.edu/{headword}"
+PERSEUS_URL = "https://www.perseus.tufts.edu/hopper/morph?l={headword}&la=greek"
+
+
+def logeion_url(headword: str) -> str:
+    # Logeion takes the accented headword straight in the path, but answers a
+    # request carrying a Perseus homonym digit with "Could not find λέγω1", so the
+    # digit has to be gone before the link is built.
+    return LOGEION_URL.format(headword=quote(lemma_headword(headword), safe=""))
+
+
+def perseus_url(headword: str) -> str:
+    # The Perseus word study tool, which parses the form and then offers LSJ,
+    # Middle Liddell, Slater and Autenrieth for it.
+    return PERSEUS_URL.format(headword=quote(lemma_headword(headword), safe=""))
+
+
+def _vocabulary_frequency(row: pd.Series, lang: str) -> str:
+    return t("tb_vocab_freq", lang, count=int(row.get("frequency", 0) or 0))
+
+
+def _vocabulary_tagged_entry(row: pd.Series, lang: str, rtl: bool) -> str:
+    # Headword plus its part of speech. A mis-tagged token leaves pos_category as
+    # "other", and _pos_label answers that with the exercise wording "target
+    # form", which says nothing in a word list -- so the tag is simply dropped.
+    headword = _ltr_isolate(str(row["headword"]), rtl)
+    pos_category = str(row.get("pos_category", "") or "")
+    if not pos_category or pos_category == "other":
+        return headword
+    return t("tb_vocab_word_with_pos", lang, headword=headword, pos_label=_pos_label(pos_category, lang))
+
+
+def _vocabulary_word_cell(row: pd.Series, lang: str, rtl: bool) -> str:
+    # A dictionary entry's opening line, as far as the corpus can attest it:
+    # headword, genitive singular, article. Missing parts are left out rather
+    # than guessed, so a noun with no attested genitive prints as a bare headword.
+    entry = _ltr_isolate(str(row["headword"]), rtl)
+    genitive = str(row.get("genitive", "") or "")
+    article = str(row.get("article", "") or "")
+
+    if genitive and article:
+        entry = t(
+            "tb_vocab_entry_full",
+            lang,
+            headword=entry,
+            genitive=_ltr_isolate(genitive, rtl),
+            article=_ltr_isolate(article, rtl),
+        )
+    elif article:
+        entry = t("tb_vocab_entry_article", lang, headword=entry, article=_ltr_isolate(article, rtl))
+
+    if bool(row.get("is_deponent", False)):
+        entry = f"{entry} *({t('tb_vocab_deponent_tag', lang)})*"
+    return entry
+
+
+def _vocabulary_lookup_cell(headword: str, lang: str, rtl: bool) -> str:
+    # Both lexicon links, each one the word itself, so the student clicks the
+    # Greek rather than a bare "here".
+    return t(
+        "tb_vocab_lookup_cell",
+        lang,
+        perseus=f"[{_ltr_isolate(headword, rtl)}]({perseus_url(headword)})",
+        logeion=f"[{_ltr_isolate(headword, rtl)}]({logeion_url(headword)})",
+    )
+
+
+def _vocabulary_table(rows: pd.DataFrame, lang: str, rtl: bool, word_cell) -> list[str]:
+    header = [t("tb_vocab_col_word", lang), t("tb_vocab_col_frequency", lang), t("tb_vocab_col_lookup", lang)]
+    lines = ["| " + " | ".join(header) + " |", "|---|---|---|"]
+    for _, row in rows.iterrows():
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    word_cell(row, lang, rtl),
+                    _vocabulary_frequency(row, lang),
+                    _vocabulary_lookup_cell(str(row["headword"]), lang, rtl),
+                ]
+            )
+            + " |"
+        )
+    return lines
+
+
+def format_vocabulary_section(
+    vocabulary: pd.DataFrame | None,
+    lang: str = DEFAULT_LANG,
+) -> str:
+    if vocabulary is None or vocabulary.empty:
+        return ""
+
+    rtl = is_rtl(lang)
+    lines = [
+        f"### {t('tb_vocab_header', lang)}",
+        "",
+        t("tb_vocab_prompt", lang),
+        "",
+        t("tb_vocab_lookup_hint", lang),
+        "",
+        *_vocabulary_table(vocabulary, lang, rtl, _vocabulary_word_cell),
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def get_core_function_words(
+    combined_df: pd.DataFrame,
+    top_n: int = VOCAB_CORE_WORD_COUNT,
+) -> pd.DataFrame:
+    # The function words a reader meets on the first page. Their own lessons are
+    # ordered by frequency and may land late or fall outside the lesson count
+    # altogether, so the book hands them over up front instead.
+    if combined_df is None or combined_df.empty or "postag" not in combined_df.columns:
+        return pd.DataFrame(columns=_VOCAB_COLUMNS)
+
+    rows = _clean_lemma_rows(combined_df)
+    function_rows = rows[~rows["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES)]
+    if function_rows.empty:
+        return pd.DataFrame(columns=_VOCAB_COLUMNS)
+    return _aggregate_vocabulary_rows(function_rows).head(top_n)
+
+
+def format_core_function_words(core_words: pd.DataFrame | None, lang: str = DEFAULT_LANG) -> str:
+    if core_words is None or core_words.empty:
+        return ""
+
+    rtl = is_rtl(lang)
+    lines = [
+        f"### {t('tb_core_words_header', lang)}",
+        "",
+        t("tb_core_words_note", lang),
+        "",
+        *_vocabulary_table(core_words, lang, rtl, _vocabulary_tagged_entry),
+    ]
+    return "\n".join(lines) + "\n"
 
 
 def _build_sentence_target_rows(
@@ -1645,10 +2012,11 @@ def generate_textbook_markdown(
     starter_modules = [
         "about",
         "alphabet",
-        "greek_dialects",
+        DICTIONARY_LESSON_MODULE,
         "introduction_nouns",
         "introduction_adjectives",
         "introduction_verbs",
+        "greek_dialects",
     ]
     lesson_separator = "═════ ⟡ ═════"
     lesson_separator_markup = f"<div align=\"center\" style=\"font-size: 200%; line-height: 1.2;\">{lesson_separator}</div>"
@@ -1769,6 +2137,9 @@ def generate_textbook_markdown(
     working_combined_df = None
     working_sentences_df = None
     known_lemmas: set[str] = set()
+    introduced_lemmas: set[str] = set()
+    citation_index: dict[str, dict[str, str]] = {}
+    core_function_words = pd.DataFrame()
 
     if combined_df is not None and not combined_df.empty:
         # The passed frame is worked on directly: a full .copy() duplicated the
@@ -1788,6 +2159,13 @@ def generate_textbook_markdown(
             working_sentences_df = add_sentence_scores(working_sentences_df, working_combined_df)
 
         known_lemmas = build_known_lemma_seed(working_combined_df)
+        citation_index = build_lemma_citation_index(working_combined_df)
+        # The dictionary module hands the closed classes over on page one, because
+        # their own lessons are frequency-ordered and may land late or not at all.
+        # The ledger starts from exactly the words that table printed.
+        core_function_words = get_core_function_words(working_combined_df)
+        if not core_function_words.empty:
+            introduced_lemmas.update(core_function_words["ledger_key"])
 
     for lesson in lesson_data:
         markdown_content.append(f"## {lesson['rank']}. {lesson['display_label']}")
@@ -1799,12 +2177,38 @@ def generate_textbook_markdown(
         markdown_content.append("")
         markdown_content.append(lesson["body"])
 
-        if not lesson.get("is_starter"):
-            markdown_content.append("")
-            markdown_content.append(f"### {t('tb_exercises_header', lang)}")
-            markdown_content.append("")
+        if lesson.get("is_starter"):
+            if lesson["label"] == DICTIONARY_LESSON_MODULE:
+                core_words_table = format_core_function_words(core_function_words, lang=lang)
+                if core_words_table:
+                    markdown_content.append("")
+                    markdown_content.append(core_words_table)
+        else:
+            corpus_available = (
+                working_combined_df is not None
+                and working_sentences_df is not None
+                and not working_sentences_df.empty
+            )
+            vocabulary_markdown = ""
+            exercises = ""
 
-            if working_combined_df is not None and working_sentences_df is not None and not working_sentences_df.empty:
+            if corpus_available:
+                vocabulary = get_lesson_vocabulary(
+                    lesson["label"],
+                    lesson["pos_category"],
+                    working_combined_df,
+                    introduced_lemmas=introduced_lemmas,
+                    citation_index=citation_index,
+                )
+                vocabulary_markdown = format_vocabulary_section(vocabulary, lang=lang)
+
+                # Words this lesson handed over count from here on: the ledger keeps
+                # later lessons off them, and known_lemmas steers sentence selection
+                # toward what the student has already met.
+                if not vocabulary.empty:
+                    introduced_lemmas.update(vocabulary["ledger_key"])
+                    known_lemmas.update(vocabulary["ledger_key"])
+
                 topic_words = get_topic_words(
                     lesson["label"], lesson["pos_category"], working_combined_df, num_words=15
                 )
@@ -1817,17 +2221,25 @@ def generate_textbook_markdown(
                     topic_words=topic_words,
                     known_lemmas=known_lemmas,
                 )
-                # Vocabulary introduced here counts as known for later lessons.
                 if not topic_words.empty:
                     known_lemmas.update(
-                        normalize_greek_lemma(str(lemma)) for lemma in topic_words["lemma"]
+                        vocabulary_ledger_key(str(lemma)) for lemma in topic_words["lemma"]
                     )
-                if exercises:
-                    markdown_content.append(exercises)
-                else:
-                    markdown_content.append(f"*{t('tb_no_exercises', lang, label=lesson['display_label'])}*")
-            else:
+
+            if vocabulary_markdown:
+                markdown_content.append("")
+                markdown_content.append(vocabulary_markdown)
+
+            markdown_content.append("")
+            markdown_content.append(f"### {t('tb_exercises_header', lang)}")
+            markdown_content.append("")
+
+            if not corpus_available:
                 markdown_content.append(f"*{t('tb_exercises_unavailable', lang)}*")
+            elif exercises:
+                markdown_content.append(exercises)
+            else:
+                markdown_content.append(f"*{t('tb_no_exercises', lang, label=lesson['display_label'])}*")
 
         markdown_content.append("")
         markdown_content.append(lesson_separator_markup)

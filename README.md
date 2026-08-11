@@ -10,16 +10,21 @@ corpus, each carrying its citation.
 
 ## Why
 
-For readers in Iran and across West and Central Asia, and in parts of Africa, Ancient Greek texts
-are primary sources for their own past: much of the surviving narrative of ancient Persia reaches
-us only in Greek. Yet Ancient Greek is not taught regularly at any institution in Iran, and there
-is no functional grammar, reader, or textbook written for Persian speakers. What exists is read at
-second hand — Xenophon's *Cyropaedia* has at least eight Persian translations, not one of them made
-from the Greek — and every mediating edition adds its own interpretive layer.
+Ancient Greek is taught almost entirely through English, German, French, and Italian. For most of
+the world's speakers, learning Greek therefore means going through a second foreign language first,
+and that detour — rather than the Greek — is usually where people stop. Didaskalos is built the
+other way round: the pedagogy lives in code, the teaching language is data, and the Greek is never
+simplified to make either easier. A textbook in a new language is a translation job rather than a
+rewrite — one locale file and a translated set of lesson modules, with no change to the pipeline.
 
-The answer this project attempts is not one more translated textbook but a generator that can be
-localized: the pedagogy lives in code, the teaching language is data, and the Greek is never
-simplified to make either easier.
+English and Persian ship today. Persian comes first because it is the language I work in and care
+about most, and it is where the project started (see [Where this started](#where-this-started)),
+but nothing in the design is specific to it, and a generator is worth most exactly in the languages
+for which no publisher will produce a textbook.
+
+Reaching more languages is not all it does. Even in English this is not the conventional method:
+there is no fixed curriculum and no invented sentences, the syllabus is ordered by what the chosen
+texts actually use, and every exercise is a real sentence carrying its citation.
 
 ## What is in it
 
@@ -114,6 +119,19 @@ Treebank collections are declared in `treebanks/registry.json` and parsed by plu
 adapters (currently Perseus/AGDT XML and CoNLL-U / Universal Dependencies). Adding a new corpus is a
 matter of dropping files into a folder and adding one manifest entry — see
 [Adding a treebank collection](didaskalos_streamlit_app/README.md#adding-a-treebank-collection).
+
+## Where this started
+
+Didaskalos began as an answer to one language's version of that problem. For readers in Iran and
+across West and Central Asia, and in parts of Africa, Ancient Greek texts are primary sources for
+their own past: much of the surviving narrative of ancient Persia reaches us only in Greek. Yet
+Ancient Greek is not taught regularly at any institution in Iran, and there is no functional
+grammar, reader, or textbook written for Persian speakers.
+
+So those texts are read at second hand, and every mediating edition adds its own interpretive
+layer: Xenophon's *Cyropaedia* exists in at least eight Persian translations, not one of them made
+from the Greek. A single translated textbook would not have fixed that for Persian, and would not
+fix it for any of the other languages in the same position. Hence a generator.
 
 ## Known limitations
 

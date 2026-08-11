@@ -53,11 +53,9 @@ Dictionaries therefore list nouns with the nominative, the genitive, and the art
 
 ## 7. A Note on Dialect and Period
 
-The endings in this module, and in every declension lesson that follows, are given in their **Attic** form — the Greek of Classical Athens, which is what grammars and dictionaries are organized around.
+Your reading passages come from whatever texts you chose, and those may be centuries apart. So you will meet endings that do not match the table: a genitive in ‑οιο instead of ‑ου, a dative plural in ‑οισι instead of ‑οις, a vowel left uncontracted where the paradigm contracts it. These are not errors and not exceptions to be memorized — they are the same endings at a different point in their history, and each declension lesson has a **Dialect and Period** section explaining which is which.
 
-Your reading passages, however, come from whatever texts you chose, and those may be centuries apart. So you will meet endings that do not match the table: a genitive in ‑οιο instead of ‑ου, a dative plural in ‑οισι instead of ‑οις, a vowel left uncontracted where the paradigm contracts it. These are not errors and not exceptions to be memorized — they are the same endings at a different point in their history, and each declension lesson has a **Dialect and Period** section explaining which is which.
-
-The dialects module earlier in this book sets out the whole picture in one place. The short version: **if a form looks longer than the paradigm, it is probably older.**
+The short version: **if a form looks longer than the paradigm, it is probably older.** The dialects module, which closes this opening group of lessons, sets out the whole picture — including how much attention those sections deserve given the texts you chose.
 
 ## Summary
 

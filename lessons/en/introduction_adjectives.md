@@ -63,11 +63,11 @@ Comparatives and superlatives decline and agree like any other adjective. The st
 
 ## A Note on Dialect and Period
 
-Adjective endings are borrowed wholesale from the noun declensions, so they inherit exactly the same dialect variation. The forms given here are **Attic**.
+Adjective endings are borrowed wholesale from the noun declensions, so they inherit exactly the same dialect variation.
 
 Two differences will account for most of what looks unfamiliar. **Ionic uses η where Attic uses ᾱ** in the feminine, so Herodotus writes ἀξίη and μικρή for Attic ἀξία and μικρά. And the **contract adjectives are contractions**: Attic χρυσοῦς "golden" is Homeric and Ionic χρύσεος with the vowels run together, which is why the epic form has an extra syllable.
 
-Each adjective lesson has a **Dialect and Period** section, and the dialects module earlier in this book gives the whole picture.
+Each adjective lesson has a **Dialect and Period** section, and the dialects module, which closes this opening group of lessons, gives the whole picture.
 
 ## Summary
 

@@ -78,15 +78,13 @@ Regular verbs like this are predictable; frequent irregular verbs must be memori
 
 ## 5. A Note on Dialect and Period
 
-The paradigms in this book are **Attic** unless a lesson says otherwise. Your reading passages may come from texts written centuries apart, so some forms will not match.
-
-Three shifts affect the verb system in particular, and they are worth knowing before you start:
+Your reading passages may come from texts written centuries apart, so some forms will not match the paradigm. Three shifts affect the verb system in particular, and they are worth knowing before you start:
 
 - **The optative fades.** Common and supple in Homer and Classical Attic, it declines sharply in the Hellenistic period and is nearly gone from the New Testament, surviving mostly in the fixed phrase μὴ γένοιτο "may it not be so."
 - **The perfect merges with the aorist.** Classical Greek keeps them distinct — the aorist reports an event, the perfect a state that still holds. In Koine that distinction erodes and the perfect drifts toward being a plain past tense.
 - **The infinitive gives way to ἵνα clauses**, the beginning of a change that Modern Greek completed.
 
-Every verb lesson has a **Historical Development & Etymology** section covering its own slot, and the dialects module earlier in this book gives the overview.
+Every verb lesson has a **Historical Development & Etymology** section covering its own slot, and the dialects module, which closes this opening group of lessons, gives the overview.
 
 ## Summary
 
