@@ -86,6 +86,9 @@ The pipeline takes each file's leading heading as the lesson's display title, so
 what a reader sees in the table of contents next to every other lesson:
 
 - One `#` heading at the top (after any YAML frontmatter), and nothing above it.
+- Sections within the lesson start at `##`. The textbook drops the file's own top heading and
+  re-emits the title as the lesson's `#`, so the body's `##` sections nest under it and the
+  lesson title stays the largest heading on the page.
 - A plain noun phrase: `# The Aorist Indicative Active (ω-Verbs)`, `# Adverbs`. No `Lesson:`
   prefix and no bold or italic markup — the textbook already numbers each entry and labels it a
   module. (`normalize_lesson_title` strips these anyway, but the file should read correctly on

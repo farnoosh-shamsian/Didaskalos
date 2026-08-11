@@ -44,7 +44,7 @@ The hard step is not the lookup; it is knowing what to look up. A form in a text
 
 A compound verb augments **after** the prefix, not before it, so ἀπ-έ-θανον hides its augment in the middle. Look for the verb under its prefix: ἀποθνῄσκω, not θνῄσκω.
 
-**When the stem itself has changed**, no amount of stripping will help — ἦλθον belongs to ἔρχομαι and εἶπον to λέγω. These are the suppletive verbs, and they are common. Two ways through: the principal parts (§4), or Logeion's morphology tool, which takes the inflected form and tells you the headword.
+**When the stem itself has changed**, no amount of stripping will help — ἦλθον belongs to ἔρχομαι and εἶπον to λέγω. These are the suppletive verbs, and they are common. Two ways through: the principal parts (§4), or a morphology tool — the **Perseus word study tool** takes an inflected form, parses it, and hands you the headword with links to the lexicons. That is what the Perseus link beside each vocabulary word opens.
 
 ## 4. Principal Parts
 
@@ -87,7 +87,7 @@ The right lexicon depends on the text you are reading.
 | Homer | **Autenrieth** or **Cunliffe**, both Homer-only |
 | The Greek New Testament | **Abbott-Smith** |
 
-**Logeion** (`logeion.uchicago.edu`) searches all of these at once. Type the Greek word, or click any word in this book's vocabulary lists. Its top panel gives a short definition; the full entries follow underneath, and it is those you should be reading. Logeion also reports its own frequency figure for the word — that is calculated across its whole corpus, and it will not match the count printed in this book, which counts only the texts you selected.
+**Logeion** (`logeion.uchicago.edu`) searches all of these at once. Type the Greek word, or follow the Logeion link beside any word in this book's vocabulary tables. Its top panel gives a short definition; the full entries follow underneath, and it is those you should be reading. Logeion also reports its own frequency figure for the word — that is calculated across its whole corpus, and it will not match the count printed in this book, which counts only the texts you selected.
 
 You can type Greek without a Greek keyboard: Logeion accepts transliteration, so `logos` finds λόγος.
 

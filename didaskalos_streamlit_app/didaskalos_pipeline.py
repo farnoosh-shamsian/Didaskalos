@@ -64,6 +64,10 @@ TENSE_MAP = {
 }
 MOOD_MAP = {"i": "indicative", "s": "subjunctive", "o": "optative", "m": "imperative", "n": "infinitive", "p": "participle"}
 VOICE_MAP = {"a": "active", "m": "middle", "p": "passive", "e": "middle/passive"}
+GENDER_MAP = {"m": "masculine", "f": "feminine", "n": "neuter"}
+# The degree slot only ever carries a comparative or a superlative; a positive
+# adjective leaves it empty, so there is no code for it to decode.
+DEGREE_MAP = {"c": "comparative", "s": "superlative"}
 SIMPLE_POS_LABELS = {
     "d": "adverb",
     "r": "preposition",
@@ -77,6 +81,11 @@ POS_CATEGORY_MAP = {
     "p": "pronoun",
     **SIMPLE_POS_LABELS,
 }
+
+# The inflected classes, the only ones a parsing exercise can ask about. Named
+# separately from POS_CATEGORY_MAP because that one folds nouns and adjectives
+# into a single category, and an answer key has to tell them apart.
+POSTAG_POS_NAMES = {"n": "noun", "a": "adjective", "v": "verb", "l": "article", "p": "pronoun"}
 
 # Postag first letters of the content words (noun, adjective, verb, adverb,
 # pronoun); everything else counts as a function word.
@@ -244,9 +253,14 @@ def is_greek_lemma(lemma: str) -> bool:
 
 
 # AGDT 9-position postag indices.
+POSTAG_PERSON_INDEX = 1
 POSTAG_NUMBER_INDEX = 2
+POSTAG_TENSE_INDEX = 3
+POSTAG_MOOD_INDEX = 4
+POSTAG_VOICE_INDEX = 5
 POSTAG_GENDER_INDEX = 6
 POSTAG_CASE_INDEX = 7
+POSTAG_DEGREE_INDEX = 8
 
 # The label drives the lesson filename via normalize_frequency_row_name, so it
 # must match the module file names in lessons/en/. The code is only an internal
@@ -821,12 +835,20 @@ _GREEK_ATOM = f"(?:{_GREEK_PHRASE}|{_GREEK_ELEM})"
 _GREEK_RUN_RE = re.compile(f"-?{_GREEK_ATOM}(?:{_GREEK_SEP}{_GREEK_ATOM})*-?")
 
 
+_HTML_TAG_SPLIT_RE = re.compile(r"(<[^>]*>)")
+
+
 def wrap_greek_runs_in_html(html: str) -> str:
-    # Safe on rendered HTML: Greek only ever occurs in text, never in markup.
-    return _GREEK_RUN_RE.sub(
-        lambda match: f'<bdi lang="grc" dir="ltr">{match.group(0)}</bdi>',
-        html,
-    )
+    # Text nodes only. Heading ids and the links to them are slugged from the
+    # heading text, so Greek does reach markup, and wrapping it there would break
+    # the attribute.
+    parts = _HTML_TAG_SPLIT_RE.split(html)
+    for index in range(0, len(parts), 2):
+        parts[index] = _GREEK_RUN_RE.sub(
+            lambda match: f'<bdi lang="grc" dir="ltr">{match.group(0)}</bdi>',
+            parts[index],
+        )
+    return "".join(parts)
 
 
 def _ltr_isolate(text: str, rtl: bool) -> str:
@@ -859,6 +881,76 @@ def _feature_label(feature_value: str, lang: str) -> str:
     return feature_value if value == key else value
 
 
+def _feature_name_label(feature_name: str, lang: str) -> str:
+    key = "featname_" + re.sub(r"[^a-z0-9]+", "_", str(feature_name).lower()).strip("_")
+    value = t(key, lang)
+    return feature_name if value == key else value
+
+
+def _postag_pos_label(postag: str, lang: str) -> str:
+    pos_name = POSTAG_POS_NAMES.get(postag[0] if postag else "", "other")
+    key = "pos_label_" + pos_name
+    value = t(key, lang)
+    return pos_name if value == key else value
+
+
+def format_parsed_features(postag: str, lang: str) -> str:
+    pairs = parse_form_features(postag)
+    if not pairs:
+        return ""
+    separator = t("tb_feature_separator", lang)
+    return separator.join(
+        t("tb_feature_pair", lang, name=_feature_name_label(name, lang), value=_feature_label(value, lang))
+        for name, value in pairs
+    )
+
+
+def _parse_answer_line(row: Mapping[str, Any], lang: str, rtl: bool) -> str | None:
+    # One answer-key line for one token, or None when the form does not inflect and
+    # so has nothing to parse. Every exercise that prints a key uses this, so a
+    # verb, a participle and a noun all answer in the same shape.
+    postag = str(row.get("postag") or "")
+    features = format_parsed_features(postag, lang)
+    if not features:
+        return None
+
+    lemma = str(row.get("lemma", ""))
+    answer = t(
+        "tb_parse_answer",
+        lang,
+        form=_ltr_isolate(str(row.get("form", "")), rtl),
+        lemma=_ltr_isolate(lemma, rtl),
+        pos=_postag_pos_label(postag, lang),
+        features=features,
+    )
+    if postag.startswith("v") and is_deponent_lemma(lemma):
+        answer += f" ({t('feat_deponent_note', lang)})"
+    return answer
+
+
+def _parse_answers_for_rows(target_rows: pd.DataFrame | None, lang: str, rtl: bool) -> tuple[list[str], bool]:
+    # Answers for the target words of one sentence, deduplicated by form, plus
+    # whether any of them had a parse at all. A word with nothing to parse still
+    # answers with itself, so the sentence exercise on an adverb or preposition
+    # lesson keeps naming the forms it asked for; the flag is what stops that
+    # lesson's prompt from telling the student to parse them.
+    if target_rows is None or target_rows.empty:
+        return [], False
+
+    answers = []
+    parsed_any = False
+    seen = set()
+    for _, row in target_rows.iterrows():
+        form = str(row.get("form", ""))
+        if form in seen:
+            continue
+        seen.add(form)
+        parsed = _parse_answer_line(row, lang, rtl)
+        parsed_any = parsed_any or parsed is not None
+        answers.append(parsed or _ltr_isolate(form, rtl))
+    return answers, parsed_any
+
+
 def split_syllabus_label_and_bucket(syllabus_label: str) -> tuple[str, str | None]:
     if not isinstance(syllabus_label, str):
         return syllabus_label, None
@@ -868,29 +960,67 @@ def split_syllabus_label_and_bucket(syllabus_label: str) -> tuple[str, str | Non
     return match.group(1), match.group(2)
 
 
-def decode_marked_verb_features(postag: str) -> dict[str, str]:
-    if not isinstance(postag, str) or len(postag) < 6:
-        return {
-            "person": "unknown",
-            "number": "unknown",
-            "tense": "unknown",
-            "voice": "unknown",
-            "mood": "unknown",
-        }
+def _postag_feature(postag: str, index: int, code_map: Mapping[str, str]) -> str | None:
+    # An empty slot is left out of a parse rather than answered, so "-" is None
+    # here even though PERSON_MAP and NUMBER_MAP give it a label of its own.
+    code = postag[index] if len(postag) > index else "-"
+    if code == "-":
+        return None
+    return code_map.get(code)
 
-    person_code = postag[1] if len(postag) > 1 else "-"
-    number_code = postag[2] if len(postag) > 2 else "-"
-    tense_code = postag[3] if len(postag) > 3 else "-"
-    mood_code = postag[4] if len(postag) > 4 else "-"
-    voice_code = postag[5] if len(postag) > 5 else "-"
 
-    return {
-        "person": PERSON_MAP.get(person_code, "unknown"),
-        "number": NUMBER_MAP.get(number_code, "unknown"),
-        "tense": TENSE_MAP.get(tense_code, "unknown") if tense_code != "-" else "not marked",
-        "voice": VOICE_MAP.get(voice_code, "unknown") if voice_code != "-" else "not marked",
-        "mood": MOOD_MAP.get(mood_code, "unknown") if mood_code != "-" else "not marked",
-    }
+def parse_form_features(postag: str) -> list[tuple[str, str]]:
+    # The full parse of one form, as ordered (feature, value) pairs in the order a
+    # grammar book asks for them. Only what the form actually carries is reported:
+    # an infinitive has no person, a participle has a case. Slots left empty by the
+    # tagger are dropped rather than answered "not marked", and a postag outside
+    # the inflected classes yields nothing at all, which is what keeps the parsing
+    # exercise off the preposition and conjunction lessons.
+    if not isinstance(postag, str) or not postag:
+        return []
+
+    pos = postag[0]
+    if pos not in POSTAG_POS_NAMES:
+        return []
+
+    pairs: list[tuple[str, str | None]] = []
+
+    if pos == "v":
+        mood = _postag_feature(postag, POSTAG_MOOD_INDEX, MOOD_MAP)
+        if mood in {"infinitive", "participle"}:
+            pairs = [
+                ("tense", _postag_feature(postag, POSTAG_TENSE_INDEX, TENSE_MAP)),
+                ("voice", _postag_feature(postag, POSTAG_VOICE_INDEX, VOICE_MAP)),
+                ("mood", mood),
+            ]
+            if mood == "participle":
+                pairs += [
+                    ("case", _postag_feature(postag, POSTAG_CASE_INDEX, CASE_MAP)),
+                    ("number", _postag_feature(postag, POSTAG_NUMBER_INDEX, NUMBER_MAP)),
+                    ("gender", _postag_feature(postag, POSTAG_GENDER_INDEX, GENDER_MAP)),
+                ]
+        else:
+            pairs = [
+                ("person", _postag_feature(postag, POSTAG_PERSON_INDEX, PERSON_MAP)),
+                ("number", _postag_feature(postag, POSTAG_NUMBER_INDEX, NUMBER_MAP)),
+                ("tense", _postag_feature(postag, POSTAG_TENSE_INDEX, TENSE_MAP)),
+                ("mood", mood),
+                ("voice", _postag_feature(postag, POSTAG_VOICE_INDEX, VOICE_MAP)),
+            ]
+    else:
+        if pos == "p":
+            # Only the personal pronouns are marked for person; the rest leave the
+            # slot empty and drop out below.
+            pairs.append(("person", _postag_feature(postag, POSTAG_PERSON_INDEX, PERSON_MAP)))
+        pairs += [
+            ("case", _postag_feature(postag, POSTAG_CASE_INDEX, CASE_MAP)),
+            ("number", _postag_feature(postag, POSTAG_NUMBER_INDEX, NUMBER_MAP)),
+            ("gender", _postag_feature(postag, POSTAG_GENDER_INDEX, GENDER_MAP)),
+        ]
+        if pos == "a":
+            pairs.append(("degree", _postag_feature(postag, POSTAG_DEGREE_INDEX, DEGREE_MAP)))
+
+    return [(name, value) for name, value in pairs if value]
 
 
 DEPONENT_LESSON_LABEL = "deponent verbs"
@@ -1385,26 +1515,43 @@ def get_topic_sentences(
     return pd.concat([qualified, remainder]).head(num_sentences)
 
 
-def format_exercise_set1(topic_words: pd.DataFrame, lesson_pos_category: str, lang: str = DEFAULT_LANG) -> str:
+def format_parsing_exercise(topic_words: pd.DataFrame, lang: str = DEFAULT_LANG) -> str:
+    # Words that do not inflect are dropped rather than asked about, so the whole
+    # exercise disappears from the adverb, preposition, conjunction, particle and
+    # interjection lessons; those keep the sentence exercise alone. The prompt names
+    # no part of speech because a case lesson mixes nouns and adjectives.
     if topic_words is None or topic_words.empty:
         return ""
 
     rtl = is_rtl(lang)
-    pos_label = _pos_label(lesson_pos_category, lang)
+    items = []
+    answers = []
+    for _, row in topic_words.iterrows():
+        answer = _parse_answer_line(row, lang, rtl)
+        if not answer:
+            continue
+        items.append(
+            t(
+                "tb_ex_parsing_item",
+                lang,
+                form=_ltr_isolate(str(row["form"]), rtl),
+                lemma=_ltr_isolate(str(row["lemma"]), rtl),
+            )
+        )
+        answers.append(answer)
+
+    if not items:
+        return ""
+
     lines = [
-        f"### {t('tb_ex1_header', lang)}",
+        f"### {t('tb_ex_parsing_header', lang)}",
         "",
-        t("tb_ex1_prompt", lang, pos_label=pos_label),
+        t("tb_ex_parsing_prompt", lang),
         "",
     ]
-    for idx, (_, row) in enumerate(topic_words.iterrows(), 1):
-        item = t(
-            "tb_ex1_item",
-            lang,
-            form=_ltr_isolate(str(row["form"]), rtl),
-            lemma=_ltr_isolate(str(row["lemma"]), rtl),
-        )
-        lines.append(f"{idx}. {item}")
+    lines += [f"{idx}. {item}" for idx, item in enumerate(items, 1)]
+    lines += ["", f"#### {t('tb_answer_key_header', lang)}", ""]
+    lines += [f"{idx}. {answer}" for idx, answer in enumerate(answers, 1)]
     lines.append("")
     return "\n".join(lines)
 
@@ -1466,13 +1613,14 @@ def _vocabulary_word_cell(row: pd.Series, lang: str, rtl: bool) -> str:
 
 
 def _vocabulary_lookup_cell(headword: str, lang: str, rtl: bool) -> str:
-    # Both lexicon links, each one the word itself, so the student clicks the
-    # Greek rather than a bare "here".
+    # The lexicon names carry the links; the locale string holds the markdown so
+    # a translator controls the link text along with the sentence around it.
     return t(
         "tb_vocab_lookup_cell",
         lang,
-        perseus=f"[{_ltr_isolate(headword, rtl)}]({perseus_url(headword)})",
-        logeion=f"[{_ltr_isolate(headword, rtl)}]({logeion_url(headword)})",
+        headword=_ltr_isolate(headword, rtl),
+        perseus_url=perseus_url(headword),
+        logeion_url=logeion_url(headword),
     )
 
 
@@ -1503,7 +1651,7 @@ def format_vocabulary_section(
 
     rtl = is_rtl(lang)
     lines = [
-        f"### {t('tb_vocab_header', lang)}",
+        f"## {t('tb_vocab_header', lang)}",
         "",
         t("tb_vocab_prompt", lang),
         "",
@@ -1537,7 +1685,7 @@ def format_core_function_words(core_words: pd.DataFrame | None, lang: str = DEFA
 
     rtl = is_rtl(lang)
     lines = [
-        f"### {t('tb_core_words_header', lang)}",
+        f"## {t('tb_core_words_header', lang)}",
         "",
         t("tb_core_words_note", lang),
         "",
@@ -1658,7 +1806,7 @@ def _pick_unique_exercise_sentences(
 def _format_exercise_nonverb(
     lesson_pos_category: str,
     exercise_sentences: pd.DataFrame,
-    sentence_form_lookup: dict[object, list[str]],
+    sentence_target_rows: Mapping[Any, pd.DataFrame],
     lang: str = DEFAULT_LANG,
 ) -> str:
     if exercise_sentences is None or exercise_sentences.empty:
@@ -1666,10 +1814,21 @@ def _format_exercise_nonverb(
 
     rtl = is_rtl(lang)
     pos_label = _pos_label(lesson_pos_category, lang)
+
+    # Answers come first: whether anything could be parsed decides which prompt the
+    # exercise opens with, and a preposition lesson must not ask for a parse.
+    answer_lines = []
+    parsed_any = False
+    for _, row in exercise_sentences.iterrows():
+        answers, parsed = _parse_answers_for_rows(sentence_target_rows.get(row["sentence_index"]), lang, rtl)
+        parsed_any = parsed_any or parsed
+        answer_lines.append(" | ".join(answers) if answers else t("tb_no_target_form", lang))
+
+    prompt_key = "tb_ex_sentences_prompt" if parsed_any else "tb_ex_sentences_identify_prompt"
     lines = [
-        f"### {t('tb_ex2_header', lang)}",
+        f"### {t('tb_ex_sentences_header', lang)}",
         "",
-        t("tb_ex2_prompt", lang, pos_label=pos_label),
+        t(prompt_key, lang, pos_label=pos_label),
         "",
     ]
     for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
@@ -1677,14 +1836,7 @@ def _format_exercise_nonverb(
     lines.append("")
     lines.append(f"#### {t('tb_answer_key_header', lang)}")
     lines.append("")
-
-    for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
-        targets = sentence_form_lookup.get(row["sentence_index"], [])
-        if targets:
-            answer = _ltr_isolate(", ".join(targets), rtl)
-        else:
-            answer = t("tb_no_target_form", lang)
-        lines.append(f"{idx}. {answer}")
+    lines += [f"{idx}. {answer}" for idx, answer in enumerate(answer_lines, 1)]
 
     lines.append("")
     return "\n".join(lines)
@@ -1700,9 +1852,9 @@ def _format_exercise_verb(
 
     rtl = is_rtl(lang)
     lines = [
-        f"### {t('tb_ex2_verb_header', lang)}",
+        f"### {t('tb_ex_sentences_header', lang)}",
         "",
-        t("tb_ex2_verb_prompt", lang),
+        t("tb_ex_sentences_verb_prompt", lang),
         "",
     ]
 
@@ -1719,30 +1871,8 @@ def _format_exercise_verb(
     lines.append("")
 
     for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
-        sentence_rows = sentence_verb_rows.get(row["sentence_index"])
-        if sentence_rows is None or sentence_rows.empty:
-            lines.append(f"{idx}. " + t("tb_no_marked_verbs", lang))
-            continue
-
-        sentence_answers = []
-        for _, verb_row in sentence_rows.iterrows():
-            features = decode_marked_verb_features(verb_row.get("postag", ""))
-            answer = t(
-                "tb_verb_answer",
-                lang,
-                form=_ltr_isolate(str(verb_row.get("form", "")), rtl),
-                lemma=_ltr_isolate(str(verb_row.get("lemma", "")), rtl),
-                person=_feature_label(features["person"], lang),
-                number=_feature_label(features["number"], lang),
-                tense=_feature_label(features["tense"], lang),
-                voice=_feature_label(features["voice"], lang),
-                mood=_feature_label(features["mood"], lang),
-            )
-            if is_deponent_lemma(str(verb_row.get("lemma", ""))):
-                answer += f" ({t('feat_deponent_note', lang)})"
-            sentence_answers.append(answer)
-
-        lines.append(f"{idx}. " + " | ".join(sentence_answers))
+        answers, _ = _parse_answers_for_rows(sentence_verb_rows.get(row["sentence_index"]), lang, rtl)
+        lines.append(f"{idx}. " + (" | ".join(answers) if answers else t("tb_no_marked_verbs", lang)))
 
     lines.append("")
     return "\n".join(lines)
@@ -1762,7 +1892,7 @@ def generate_exercises_for_topic(
 
     if topic_words is None:
         topic_words = get_topic_words(syllabus_label, lesson_pos_category, combined_df, num_words=15)
-    words_exercise = format_exercise_set1(topic_words, lesson_pos_category, lang=lang)
+    words_exercise = format_parsing_exercise(topic_words, lang=lang)
     if words_exercise:
         exercise_blocks.append(words_exercise)
 
@@ -1790,11 +1920,9 @@ def generate_exercises_for_topic(
             if lesson_pos_category == "verb":
                 exercise_blocks.append(_format_exercise_verb(selected_sentences, selected_targets_by_sentence, lang=lang))
             else:
-                sentence_form_lookup: dict[object, list[str]] = {}
-                for sent_idx, grp in selected_targets_by_sentence.items():
-                    ordered_forms = list(dict.fromkeys(grp["form"].tolist()))
-                    sentence_form_lookup[sent_idx] = ordered_forms
-                exercise_blocks.append(_format_exercise_nonverb(lesson_pos_category, selected_sentences, sentence_form_lookup, lang=lang))
+                exercise_blocks.append(
+                    _format_exercise_nonverb(lesson_pos_category, selected_sentences, selected_targets_by_sentence, lang=lang)
+                )
 
     return "\n".join(exercise_blocks)
 
@@ -1936,7 +2064,7 @@ def _render_source_summary(
         "tb_syllabus_mode_declension" if syllabus_mode == "declension" else "tb_syllabus_mode_case"
     )
 
-    lines: list[str] = [f"## {t('tb_about_header', lang)}", ""]
+    lines: list[str] = [f"# {t('tb_about_header', lang)}", ""]
 
     setting_body = t(
         "tb_setting_body",
@@ -1999,6 +2127,45 @@ def _render_source_summary(
     return lines
 
 
+# Cover logo. The markdown export links the committed PNG so the .md file stays
+# small and readable; the HTML export swaps this src for an inlined data URI so a
+# downloaded file still shows the logo offline (see generate_textbook_html).
+TEXTBOOK_LOGO_URL = (
+    "https://raw.githubusercontent.com/farnoosh-shamsian/didaskalos/main/docs/assets/logo-el-ink.png"
+)
+
+_HEADING_SLUG_STRIP_RE = re.compile(r"[^\w\s-]", re.UNICODE)
+_HEADING_SLUG_SPACE_RE = re.compile(r"\s+")
+
+
+def heading_slug(text: str, separator: str = "-") -> str:
+    # GitHub-compatible anchor, used for both the contents links and the ids
+    # rendered into the HTML. Python-Markdown's own slugify is ASCII-only, which
+    # would collapse every Greek and Persian heading to a bare number.
+    slug = _HEADING_SLUG_STRIP_RE.sub("", str(text)).strip().lower()
+    return _HEADING_SLUG_SPACE_RE.sub(separator, slug)
+
+
+def _render_title_page(lang: str) -> list[str]:
+    # Cover: logo, title, tagline, build date. The blank lines inside the div are
+    # what keep GitHub and md_in_html parsing the markdown within it, and
+    # align="center" rather than a style attribute because GitHub strips styles.
+    return [
+        '<div class="title-page" align="center" markdown="1">',
+        "",
+        f'<img class="textbook-logo" src="{TEXTBOOK_LOGO_URL}" alt="Didaskalos" width="360">',
+        "",
+        f"# {t('tb_doc_title', lang)}",
+        "",
+        t("subtitle", lang),
+        "",
+        t("tb_built_on", lang, date=date.today().isoformat()),
+        "",
+        "</div>",
+        "",
+    ]
+
+
 def generate_textbook_markdown(
     frequency_syllabus: pd.DataFrame,
     grammar_folder: str | Path,
@@ -2018,9 +2185,6 @@ def generate_textbook_markdown(
         "introduction_verbs",
         "greek_dialects",
     ]
-    lesson_separator = "═════ ⟡ ═════"
-    lesson_separator_markup = f"<div align=\"center\" style=\"font-size: 200%; line-height: 1.2;\">{lesson_separator}</div>"
-
     rtl = is_rtl(lang)
     if syllabus_mode == "declension":
         intro_text = t("tb_intro_declension", lang)
@@ -2114,8 +2278,7 @@ def generate_textbook_markdown(
         lesson["body"] = body
 
     markdown_content = []
-    markdown_content.append(f"# {t('tb_doc_title', lang)}")
-    markdown_content.append("")
+    markdown_content.extend(_render_title_page(lang))
     markdown_content.append(intro_text)
     markdown_content.append("")
 
@@ -2124,14 +2287,14 @@ def generate_textbook_markdown(
             _render_source_summary(source_summary, lesson_count, syllabus_mode, lang)
         )
 
-    markdown_content.append(f"## {t('tb_toc_header', lang)}")
+    markdown_content.append(f"# {t('tb_toc_header', lang)}")
     markdown_content.append("")
 
+    # Linked to the heading each lesson will emit below, slugged the same way.
     for lesson in lesson_data:
-        markdown_content.append(f"{lesson['rank']}. {lesson['display_label']}")
+        anchor = heading_slug(f"{lesson['rank']}. {lesson['display_label']}")
+        markdown_content.append(f"{lesson['rank']}. [{lesson['display_label']}](#{anchor})")
 
-    markdown_content.append("")
-    markdown_content.append(lesson_separator_markup)
     markdown_content.append("")
 
     working_combined_df = None
@@ -2168,7 +2331,13 @@ def generate_textbook_markdown(
             introduced_lemmas.update(core_function_words["ledger_key"])
 
     for lesson in lesson_data:
-        markdown_content.append(f"## {lesson['rank']}. {lesson['display_label']}")
+        # A rule then an H1: the lesson title outranks every heading its own body
+        # uses, which is what tells a reader one lesson has ended and another
+        # begun. The HTML export turns the same H1 into a banded, page-breaking
+        # heading.
+        markdown_content.append("---")
+        markdown_content.append("")
+        markdown_content.append(f"# {lesson['rank']}. {lesson['display_label']}")
         if lesson.get("is_starter"):
             markdown_content.append(t("tb_module_type_core", lang))
         else:
@@ -2231,7 +2400,7 @@ def generate_textbook_markdown(
                 markdown_content.append(vocabulary_markdown)
 
             markdown_content.append("")
-            markdown_content.append(f"### {t('tb_exercises_header', lang)}")
+            markdown_content.append(f"## {t('tb_exercises_header', lang)}")
             markdown_content.append("")
 
             if not corpus_available:
@@ -2241,8 +2410,6 @@ def generate_textbook_markdown(
             else:
                 markdown_content.append(f"*{t('tb_no_exercises', lang, label=lesson['display_label'])}*")
 
-        markdown_content.append("")
-        markdown_content.append(lesson_separator_markup)
         markdown_content.append("")
 
     document = "\n".join(markdown_content)
@@ -2265,6 +2432,7 @@ def generate_textbook_html(
     lang: str = DEFAULT_LANG,
     markdown_content: str | None = None,
     source_summary: Mapping[str, Any] | None = None,
+    logo_data_uri: str | None = None,
 ) -> str:
     rtl = is_rtl(lang)
     if doc_title is None:
@@ -2280,8 +2448,18 @@ def generate_textbook_html(
             lang=lang,
             source_summary=source_summary,
         )
+
+    # A downloaded HTML file is read offline as often as not, so the cover logo is
+    # inlined here rather than left pointing at GitHub.
+    if logo_data_uri:
+        markdown_content = markdown_content.replace(TEXTBOOK_LOGO_URL, logo_data_uri)
+
     # "extra" bundles md_in_html, which parses the markdown inside the RTL wrapper.
-    body_html = markdown_to_html(markdown_content, extensions=["extra", "toc", "tables"])
+    body_html = markdown_to_html(
+        markdown_content,
+        extensions=["extra", "toc", "tables"],
+        extension_configs={"toc": {"slugify": heading_slug}},
+    )
 
     if rtl:
         body_html = wrap_greek_runs_in_html(body_html)
@@ -2312,6 +2490,9 @@ def generate_textbook_html(
     <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
     <title>{doc_title}</title>{rtl_font_link}
     <style>
+        @page {{
+            margin: 18mm;
+        }}
         body {{
             margin: 0;
             padding: 2rem;
@@ -2320,8 +2501,70 @@ def generate_textbook_html(
             color: #222;
             background: #fff;
         }}
-        h1, h2, h3 {{
+        h1, h2, h3, h4 {{
             line-height: 1.3;
+        }}
+        /* Each lesson opens on an H1 banded in the logo's ink, so the start of a
+           lesson is unmistakable on screen and lands on a fresh printed page. */
+        h1 {{
+            margin: 4rem 0 1.5rem;
+            padding: 0.7rem 1rem;
+            font-size: 2rem;
+            color: #3A1712;
+            background: #f6f1ea;
+            border-inline-start: 6px solid #3A1712;
+            break-before: page;
+            page-break-before: always;
+        }}
+        h1 + p {{
+            margin-top: -0.8rem;
+            color: #6b5b4d;
+            font-size: 0.92rem;
+        }}
+        h2 {{
+            margin: 2.4rem 0 0.8rem;
+            font-size: 1.45rem;
+            color: #3A1712;
+        }}
+        h3 {{
+            margin: 1.8rem 0 0.6rem;
+            font-size: 1.15rem;
+        }}
+        h4 {{
+            margin: 1.4rem 0 0.5rem;
+            font-size: 1rem;
+            color: #6b5b4d;
+        }}
+        hr {{
+            border: 0;
+            border-top: 1px solid #e0d6ca;
+            margin: 3rem 0 0;
+            break-after: avoid;
+        }}
+        .title-page {{
+            padding: 4rem 0 5rem;
+            break-after: page;
+            page-break-after: always;
+        }}
+        .title-page .textbook-logo {{
+            width: min(360px, 60%);
+            height: auto;
+        }}
+        .title-page h1 {{
+            margin: 2rem 0 1rem;
+            padding: 0;
+            font-size: 2.4rem;
+            background: none;
+            border: 0;
+            break-before: auto;
+            page-break-before: auto;
+        }}
+        .title-page h1 + p {{
+            margin-top: 0;
+            color: #444;
+            font-size: 1.05rem;
+            max-width: 34rem;
+            margin-inline: auto;
         }}
         pre {{
             padding: 1rem;

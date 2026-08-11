@@ -10,20 +10,22 @@ corpus, each carrying its citation.
 
 ## Why
 
-Ancient Greek is taught almost entirely through English, German, French, and Italian. For most of
-the world's speakers, learning Greek therefore means going through a second foreign language first,
-and that detour — rather than the Greek — is usually where people stop. Didaskalos is built the
-other way round: the pedagogy lives in code, the teaching language is data, and the Greek is never
-simplified to make either easier. A textbook in a new language is a translation job rather than a
-rewrite — one locale file and a translated set of lesson modules, with no change to the pipeline.
+Ancient Greek pedagogy is mostly limited to a few languages. For most of the world's speakers,
+learning Greek therefore means going through a second foreign language first, or translating a
+textbook that was written for a different audience — which can turn the translation into a rewrite,
+or complicate the learning experience. Didaskalos is built the other way round: the pedagogy lives
+in code, the teaching language is data, and the Greek is never simplified to make either easier. A
+textbook in a new language is a translation job rather than a rewrite — one locale file and a
+translated set of lesson modules, with no change to the pipeline.
 
-English and Persian ship today. Persian comes first because it is the language I work in and care
-about most, and it is where the project started (see [Where this started](#where-this-started)),
-but nothing in the design is specific to it, and a generator is worth most exactly in the languages
-for which no publisher will produce a textbook.
+English and Persian are available today. Persian comes first because it is the language I work in
+and care about most, and it is where the project started (see
+[Where this started](#where-this-started)), but nothing in the design is specific to it. Didaskalos
+is worth most exactly where pedagogical resources for learning Greek are lacking or limited, and
+that is a shared problem involving many other low-resource languages.
 
 Reaching more languages is not all it does. Even in English this is not the conventional method:
-there is no fixed curriculum and no invented sentences, the syllabus is ordered by what the chosen
+there is no fixed curriculum and no simplified sentences, the syllabus is ordered by what the chosen
 texts actually use, and every exercise is a real sentence carrying its citation.
 
 ## What is in it
@@ -60,7 +62,8 @@ and orders those lessons by how frequent each class is in the selected corpus.
 
 ## Ordering the syllabus
 
-A purely statistical syllabus is a bad teacher, so frequency is overruled in three places:
+A purely statistical syllabus might be a flawed teacher, so the frequency count is overruled in
+three places:
 
 - **A fixed opening.** The alphabet and an orientation to nouns, adjectives, and verbs come first
   and map the system before the counts take over — otherwise the most frequent form in a corpus,
@@ -80,8 +83,8 @@ After that, corpus frequency arranges everything else.
 Exercises are generated exclusively from authentic sentences in the corpus; nothing is rewritten or
 simplified. Each sentence is scored on three factors — the mean rarity of its words, the rarity of
 its single rarest word, and its length — and selection also prefers sentences whose vocabulary
-earlier lessons have already introduced. Difficulty therefore climbs across the book while every
-sentence stays exactly as its author wrote it.
+earlier lessons have already introduced. Difficulty therefore increases slowly across the book,
+and every sentence stays exactly as its author wrote it.
 
 ## Lesson modules and localization
 
@@ -92,10 +95,11 @@ Crosby & Schaeffer); that pipeline has been retired and is kept for reference in
 [`archive/ragbot/`](archive/ragbot/), and the modules are now hand-corrected and still under review.
 
 Being translatable is a design goal, not an afterthought — Didaskalos was bilingual from the start.
-Localization is end-to-end rather than interface-deep: the UI, the lesson modules, the grammatical
-terminology (kept consistent by a curated English–Persian table), and the exported textbook are all
-translated. One rule makes the modules translatable at all: no lesson explains Greek by comparison
-with the learner's first language.
+Translating the interface alone would not solve the accessibility problem, so localization is
+end-to-end rather than interface-deep: the UI, the lesson modules, the grammatical terminology
+(kept consistent by a curated English–Persian table), and the exported textbook are all translated.
+One rule makes the modules translatable at all: no lesson explains Greek by comparison with the
+learner's first language.
 
 ### Adding a language
 
@@ -130,21 +134,23 @@ grammar, reader, or textbook written for Persian speakers.
 
 So those texts are read at second hand, and every mediating edition adds its own interpretive
 layer: Xenophon's *Cyropaedia* exists in at least eight Persian translations, not one of them made
-from the Greek. A single translated textbook would not have fixed that for Persian, and would not
-fix it for any of the other languages in the same position. Hence a generator.
+from the Greek. That is the problem a tool like Didaskalos is trying to solve, by helping a larger
+audience read the sources directly.
 
 ## Known limitations
 
-The core infrastructure is still being built. Currently:
+Other than reviewing the lesson modules, the core infrastructure is also being modified and
+improved. These are some of the issues I am working through:
 
 - The syllabus is driven by morphology almost alone; syntax is barely used, though the treebanks
-  carry it.
+  carry it. I am looking for a way to use it without overcomplicating the system.
+- The pedagogical approach needs further refinement, particularly in how it integrates with the
+  syntax. I am working on integrating Didakta into the system.
+- Rare paradigms in the long tail have no lesson file yet, so a very large build can still report a
+  missing module.
 - Source treebanks sometimes disagree with each other, or carry undecodable and misaligned tags.
 - Whether the automatically selected exercises are genuinely useful still needs systematic
   evaluation.
-- Rare paradigms in the long tail have no lesson file yet, so a very large build can still report a
-  missing module.
-- Greek set inside right-to-left Persian needs further attention.
 
 ## License
 

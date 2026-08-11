@@ -98,6 +98,13 @@ def _logo_image_path(theme: str) -> Path:
 LOGO_IMAGE_PATHS = {
     variant: _logo_image_path(variant) for variant in LOGO_CONTAINER_KEYS
 }
+# Cover logo for the exported textbook, inlined so a downloaded HTML file still
+# shows it offline. The markdown export keeps the plain URL instead.
+TEXTBOOK_LOGO_PATH = APP_DIR / "assets" / "textbook-logo.svg"
+textbook_logo_data_uri = ""
+if TEXTBOOK_LOGO_PATH.exists():
+    encoded_logo = base64.b64encode(TEXTBOOK_LOGO_PATH.read_bytes()).decode("ascii")
+    textbook_logo_data_uri = f"data:image/svg+xml;base64,{encoded_logo}"
 header_image_html = ""
 if HEADER_IMAGE_PATH.exists():
     encoded_image = base64.b64encode(HEADER_IMAGE_PATH.read_bytes()).decode("ascii")
@@ -921,6 +928,7 @@ if build_clicked:
             lang=lang,
             markdown_content=textbook_markdown,
             source_summary=source_summary,
+            logo_data_uri=textbook_logo_data_uri or None,
         )
 
     # is_deponent is an internal flag driving the deponent lesson, not treebank
