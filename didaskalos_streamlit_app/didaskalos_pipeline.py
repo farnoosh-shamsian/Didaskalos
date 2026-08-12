@@ -2937,6 +2937,20 @@ def generate_textbook_html(
             font-size: 1rem;
             color: #6b5b4d;
         }}
+        /* links */
+        a, a:visited {{
+            color: #3e6182;
+            text-decoration-color: #a3b6c8;
+        }}
+        /* contents entries: the numbered list already reads as navigation */
+        li > a {{
+            text-decoration: none;
+        }}
+        a:hover {{
+            color: #2c4762;
+            text-decoration: underline;
+            text-decoration-color: #2c4762;
+        }}
         hr {{
             border: 0;
             border-top: 1px solid #e0d6ca;
