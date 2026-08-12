@@ -28,12 +28,52 @@ An adjective **agrees** with its noun in gender, number, and case — not necess
 | ἄξιος, -α, -ον | worthy |
 | δεινός, -ή, -όν | terrible, clever |
 
+## Degree: comparative and superlative
+
+This class supplies the regular comparison endings for the whole language. Drop the -ος of the masculine and add:
+
+| Degree | Endings | Example |
+|---|---|---|
+| Positive | — | σοφός "wise" |
+| Comparative | **-τερος, -τέρα, -τερον** | σοφώτερος "wiser" |
+| Superlative | **-τατος, -τάτη, -τατον** | σοφώτατος "wisest" |
+
+**The ο/ω rule.** If the syllable before the ending is **short**, the connecting vowel lengthens to ω; if it is long, it stays ο:
+
+| Preceding syllable | Positive | Comparative | Superlative |
+|---|---|---|---|
+| short | σοφός | σοφώτερος | σοφώτατος |
+| short | νέος | νεώτερος | νεώτατος |
+| short | ἄξιος | ἀξιώτερος | ἀξιώτατος |
+| long | μικρός (ῑ) | μικρότερος | μικρότατος |
+| long | δίκαιος (αι) | δικαιότερος | δικαιότατος |
+
+Both new forms are themselves ordinary first/second declension adjectives and decline exactly like ἀγαθός above. Note only that the comparative feminine has ‑ᾱ, because the stem ends in ρ: σοφωτέρα, σοφωτέρας — while the superlative feminine has ‑η: σοφωτάτη, σοφωτάτης.
+
+**Frequent irregulars.** A handful of very common adjectives of this class compare from a different root, and must be learned as vocabulary:
+
+| Positive | Comparative | Superlative |
+|---|---|---|
+| ἀγαθός "good" | ἀμείνων, βελτίων, κρείττων | ἄριστος, βέλτιστος, κράτιστος |
+| κακός "bad" | κακίων, χείρων | κάκιστος, χείριστος |
+| καλός "beautiful" | καλλίων | κάλλιστος |
+| αἰσχρός "shameful" | αἰσχίων | αἴσχιστος |
+| ἐχθρός "hostile" | ἐχθίων | ἔχθιστος |
+
+The superlatives here are plain first/second declension, but the comparatives in ‑ίων / ‑ων are **third declension two-ending** adjectives — the two-ending lesson gives their paradigm.
+
+**Using the degrees.**
+
+- The standard of comparison stands in the **genitive**, or after **ἤ** "than" in the same case as the thing compared: σοφώτερος τοῦ ἀδελφοῦ / σοφώτερος ἢ ὁ ἀδελφός "wiser than his brother".
+- A superlative takes a **partitive genitive**: σοφώτατος τῶν Ἑλλήνων "the wisest of the Greeks".
+- With no standard expressed, the comparative often means "rather, too" and the superlative simply "very": νεώτερος "rather young", δεινότατος "very clever".
+- **ὡς** (or ὅτι) + superlative = "as ... as possible": ὡς σοφώτατος "as wise as can be".
+
 ## Points to watch
 
 - **Two-ending compounds.** Most compound adjectives lack a separate feminine and use the -ος forms for both masculine and feminine: ἄδικος (m./f.), ἄδικον (n.) "unjust"; ἀθάνατος "immortal".
 - **Attributive vs. predicate position.** ὁ ἀγαθὸς ἀνήρ / ὁ ἀνὴρ ὁ ἀγαθός = "the good man" (attributive, inside the article phrase); ὁ ἀνὴρ ἀγαθός = "the man is good" (predicate, no article before the adjective).
 - **Substantivized adjectives.** The article turns an adjective into a noun: οἱ ἀγαθοί "the good (people)", τὸ καλόν "the beautiful, beauty".
-- Regular comparatives and superlatives decline the same way: σοφώτερος, -α, -ον "wiser"; σοφώτατος, -η, -ον "wisest".
 
 ## Dialect and Period
 

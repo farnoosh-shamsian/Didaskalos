@@ -83,14 +83,14 @@ The final vowel of the stem merges with the ending. There are three sub-types:
 
 ## 4. Example Sentences
 
-| Greek (present indicative active) | Transliteration | Meaning |
-|-----------------------------------|-----------------|---------|
-| **λέγω τὸν νόμον.** | *légō ton nómon* | I recite the law. |
-| **φιλεῖς τὸν φίλον σου.** | *phileîs ton phílon sou* | You love your friend. |
-| **πίνουσιν οἶνον ἐν τῇ ἀγορᾷ.** | *pínousin oînon en têi agorâi* | They drink wine in the marketplace. |
-| **τιμῶ τὸν πατέρα μου.** | *timô ton patéra mou* | I honour my father. |
-| **ἐγὼ ἔχω τὰ βιβλία.** | *egṓ ékhō ta biblía* | I have the books. |
-| **ὁ ἀνὴρ ὁρᾷ τὸν οὐρανόν.** | *ho anḗr horâi ton ouranón* | The man sees the sky. |
+| Greek (present indicative active) | Meaning |
+|-----------------------------------|---------|
+| **λέγω τὸν νόμον.** | I recite the law. |
+| **φιλεῖς τὸν φίλον σου.** | You love your friend. |
+| **πίνουσιν οἶνον ἐν τῇ ἀγορᾷ.** | They drink wine in the marketplace. |
+| **τιμῶ τὸν πατέρα μου.** | I honour my father. |
+| **ἐγὼ ἔχω τὰ βιβλία.** | I have the books. |
+| **ὁ ἀνὴρ ὁρᾷ τὸν οὐρανόν.** | The man sees the sky. |
 
 *Notice the verb endings:* **‑ω**, **‑εις**, **‑ει**, **‑ομεν**, **‑ετε**, **‑ουσι(ν)**.
 

@@ -13,9 +13,9 @@ The aorist expresses a completed past action. The indicative middle conjugation 
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | ἐλυσάμην (elysámēn) | ἐλυσάμεθα (elysámetha) |
-| 2nd | ἐλύσω (elýsō) | ἐλύσασθε (elýsasthe) |
-| 3rd | ἐλύσατο (elýsato) | ἐλύσαντο (elýsanto) |
+| 1st | ἐλυσάμην | ἐλυσάμεθα |
+| 2nd | ἐλύσω | ἐλύσασθε |
+| 3rd | ἐλύσατο | ἐλύσαντο |
 
 ### The Aorist Middle Participle
 The aorist middle participle is built from the **aorist stem (without the augment) + ‑σάμενος, ‑σαμένη, ‑σάμενον** and declines like adjectives of the καλός type:
@@ -47,9 +47,9 @@ Verbs with a second aorist take the suffix ‑όμενος on the aorist stem:
 * The aorist middle participle ≠ passive: "having been loosed" (action done to the subject) is expressed by the passive formation λυθείς.
 
 ## Example Sentences with Translations
-* **λυσάμενος τὸν αἰχμάλωτον, ἀπῆλθεν.** (lysámenos ton aikhmálōton, apêlthen) — Having ransomed the captive, he departed.
-* **ὁ δεξάμενος τὰ δῶρα ἔχαιρεν.** (ho dexámenos ta dôra ékhairen) — The one who had received the gifts rejoiced.
-* **γενόμενος βασιλεύς, εἰρήνην ἦγεν.** (genómenos basileús, eirḗnēn êgen) — Having become king, he kept the peace.
+* **λυσάμενος τὸν αἰχμάλωτον, ἀπῆλθεν.** — Having ransomed the captive, he departed.
+* **ὁ δεξάμενος τὰ δῶρα ἔχαιρεν.** — The one who had received the gifts rejoiced.
+* **γενόμενος βασιλεύς, εἰρήνην ἦγεν.** — Having become king, he kept the peace.
 
 ## Notes on Usage and Context
 * In narrative, the aorist middle participle compactly expresses the prior action: "he did this, and then…"

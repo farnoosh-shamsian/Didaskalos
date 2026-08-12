@@ -25,16 +25,16 @@ The forms are built on the present stem, to which the medio-passive endings are 
 ### Example with λύω ("to loose")
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | λύομαι (lýomai) | λυόμεθα (lyómetha) |
-| 2nd | λύῃ / λύει (lýēi / lýei) | λύεσθε (lýesthe) |
-| 3rd | λύεται (lýetai) | λύονται (lýontai) |
+| 1st | λύομαι | λυόμεθα |
+| 2nd | λύῃ / λύει | λύεσθε |
+| 3rd | λύεται | λύονται |
 
 ### Another Example with γράφω ("to write")
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | γράφομαι (gráphomai) | γραφόμεθα (graphómetha) |
-| 2nd | γράφῃ / γράφει (gráphēi / gráphei) | γράφεσθε (gráphesthe) |
-| 3rd | γράφεται (gráphetai) | γράφονται (gráphontai) |
+| 1st | γράφομαι | γραφόμεθα |
+| 2nd | γράφῃ / γράφει | γράφεσθε |
+| 3rd | γράφεται | γράφονται |
 
 ## Key Rules and Exceptions
 - **Thematic vowel**: it appears as ο before μ (λυ‑ό‑μεθα) and as ε elsewhere (λύ‑ε‑σθε).
@@ -45,10 +45,10 @@ The forms are built on the present stem, to which the medio-passive endings are 
 - **Deponent verbs** (such as ἔρχομαι, "to come") have only these medio-passive forms but an active meaning; they are treated in a separate lesson.
 
 ## Example Sentences with Translations
-1. **ὁ παῖς λούεται.** (ho paîs loúetai) — The boy washes himself. (middle)
-2. **τὸ βιβλίον γράφεται ὑπὸ τοῦ μαθητοῦ.** (tò biblíon gráphetai hypò toû mathētoû) — The book is being written by the student. (passive)
-3. **λύεται ὁ ἵππος.** (lýetai ho híppos) — The horse is being untied.
-4. **παιδευόμεθα ὑπὸ τοῦ διδασκάλου.** (paideuómetha hypò toû didaskálou) — We are being educated by the teacher.
+1. **ὁ παῖς λούεται.** — The boy washes himself. (middle)
+2. **τὸ βιβλίον γράφεται ὑπὸ τοῦ μαθητοῦ.** — The book is being written by the student. (passive)
+3. **λύεται ὁ ἵππος.** — The horse is being untied.
+4. **παιδευόμεθα ὑπὸ τοῦ διδασκάλου.** — We are being educated by the teacher.
 
 ## Notes on Usage and Context
 The medio-passive voice is used when the subject either receives the action or performs it on or for itself. Interpreting it correctly requires attention to context: λύεται can mean both "is being untied" and "unties for himself." These forms are frequent in every kind of text — historical prose, philosophy, poetry, and conversation.

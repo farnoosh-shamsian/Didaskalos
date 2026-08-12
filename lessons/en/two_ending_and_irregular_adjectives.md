@@ -43,6 +43,33 @@ Both use first/second declension forms built on a longer stem (μεγαλ-, πο
 
 The plurals are entirely regular: μεγάλοι, -αι, -α; πολλοί, πολλαί, πολλά.
 
+## Degree: comparative and superlative
+
+The two-ending types use the same -τερος / -τατος endings as ἀγαθός, but attach them to the **third declension stem**, which brings its σ along:
+
+| Type | Positive | Comparative | Superlative |
+|---|---|---|---|
+| σ-stem in -ης | ἀληθής "true" | ἀληθέστερος | ἀληθέστατος |
+| σ-stem in -ης | σαφής "clear" | σαφέστερος | σαφέστατος |
+| σ-stem in -ης | ἀσθενής "weak" | ἀσθενέστερος | ἀσθενέστατος |
+| ν-stem in -ων | σώφρων "prudent" | σωφρονέστερος | σωφρονέστατος |
+
+The ‑εσ‑ of ἀληθέστερος is the stem's own sigma (ἀληθεσ- + -τερος). σώφρων has no sigma to contribute, but borrows the pattern anyway and builds on σωφρον-, which is why the ν-stems too end up with ‑εστερος.
+
+The irregulars use the older **-ίων / -ιστος** comparison instead, built on a bare root:
+
+| Positive | Comparative | Superlative |
+|---|---|---|
+| μέγας "big" | μείζων, μεῖζον | μέγιστος |
+| πολύς "much, many" | πλείων (πλέων), πλέον | πλεῖστος |
+| μικρός / ὀλίγος "small, few" | ἐλάττων, ἔλαττον | ἐλάχιστος |
+| ἀγαθός "good" | βελτίων, ἀμείνων, κρείττων | βέλτιστος, ἄριστος, κράτιστος |
+| κακός "bad" | κακίων, χείρων | κάκιστος, χείριστος |
+
+Note the split that gives this lesson its shape: **the comparatives are two-ending third declension** adjectives, declined like σώφρων with the short forms shown in the section above (μείζω, μείζους), while **the superlatives are ordinary first/second declension** — μέγιστος, μεγίστη, μέγιστον. One system, two declensions.
+
+The standard of comparison behaves exactly as with ἀγαθός: genitive, or ἤ with the same case — μείζων τοῦ ἀδελφοῦ / μείζων ἢ ὁ ἀδελφός. Note also πλέον ἢ before a numeral, "more than": πλέον ἢ δέκα.
+
 ## Points to watch
 
 - For -ης adjectives, m./f. accusative singular -ῆ and neuter plural -ῆ look identical — the noun's gender/number decides.

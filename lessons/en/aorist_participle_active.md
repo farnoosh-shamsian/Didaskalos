@@ -12,22 +12,22 @@ pos: verb
 The conjugation of ω-verbs in the aorist follows a clear pattern: the **first aorist** is formed with the marker **‑σα‑** added to the stem (and, in the indicative mood, the augment ἐ‑ at the beginning).
 
 #### The Aorist Indicative Active of ω-Verbs
-The following table shows the aorist active conjugation of λύω (lýō), "to loose, to free":
+The following table shows the aorist active conjugation of λύω, "to loose, to free":
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | ἔλυσα (élysa) | ἐλύσαμεν (elýsamen) |
-| 2nd | ἔλυσας (élysas) | ἐλύσατε (elýsate) |
-| 3rd | ἔλυσε(ν) (élyse(n)) | ἔλυσαν (élysan) |
+| 1st | ἔλυσα | ἐλύσαμεν |
+| 2nd | ἔλυσας | ἐλύσατε |
+| 3rd | ἔλυσε(ν) | ἔλυσαν |
 
 #### The Aorist Participle of ω-Verbs
 The aorist participle describes an action that occurred **before** the action of the main verb. The aorist active participle is built on the aorist stem (without the augment!): ‑σας for the masculine, ‑σασα for the feminine, and ‑σαν for the neuter:
 
 | Gender | Singular | Plural |
 | --- | --- | --- |
-| Masculine | λύσας (lýsas) | λύσαντες (lýsantes) |
-| Feminine | λύσασα (lýsasa) | λύσασαι (lýsasai) |
-| Neuter | λῦσαν (lŷsan) | λύσαντα (lýsanta) |
+| Masculine | λύσας | λύσαντες |
+| Feminine | λύσασα | λύσασαι |
+| Neuter | λῦσαν | λύσαντα |
 
 ### Key Rules and Exceptions
 - **Rule 1:** The first aorist of ω-verbs is formed with the marker **‑σα‑**: ἔλυσα, ἔγραψα.

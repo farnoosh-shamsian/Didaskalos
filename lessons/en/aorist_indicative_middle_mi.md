@@ -93,13 +93,13 @@ The verb πρίαμαι "to buy" is used only in the aorist and has a perfectly 
 
 ## 4. Example Sentences
 
-| Greek (μι aorist middle) | Transliteration | Meaning |
-|---------------------------|----------------|---------|
-| **ἔθετο τὸ ξίφος ἐπὶ τὴν τράπεζαν.** | *étheto to xíphos…* | He laid his sword on the table. |
-| **οἱ πολῖται νόμους ἔθεντο.** | *hoi polîtai nómous éthento* | The citizens enacted laws for themselves. |
-| **ἀπέδοτο τὸν ἀγρόν.** | *apédoto ton agrón* | He sold the field. |
-| **ἐπριάμην βιβλίον ἐν τῇ ἀγορᾷ.** | *epriámēn biblíon…* | I bought a book in the marketplace. |
-| **συνέθεντο εἰρήνην.** | *synéthento eirḗnēn* | They agreed on a peace. |
+| Greek (μι aorist middle) | Meaning |
+|---------------------------|---------|
+| **ἔθετο τὸ ξίφος ἐπὶ τὴν τράπεζαν.** | He laid his sword on the table. |
+| **οἱ πολῖται νόμους ἔθεντο.** | The citizens enacted laws for themselves. |
+| **ἀπέδοτο τὸν ἀγρόν.** | He sold the field. |
+| **ἐπριάμην βιβλίον ἐν τῇ ἀγορᾷ.** | I bought a book in the marketplace. |
+| **συνέθεντο εἰρήνην.** | They agreed on a peace. |
 
 *Note the short stem, the augment, and the endings ‑μην, ‑το, ‑ντο.*
 

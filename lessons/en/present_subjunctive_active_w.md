@@ -102,13 +102,13 @@ The present subjunctive of εἰμί is the bare set of long endings:
 
 ## 4. Example Sentences
 
-| Greek (present subjunctive) | Transliteration | Meaning |
-|-----------------------------|-----------------|---------|
-| **ἵνα λύῃς τὸν δεσμόν** | *hína lýēis ton desmón* | "so that you may loose the bond" |
-| **μανθάνομεν ἵνα σοφοὶ ὦμεν.** | *manthánomen hína sophoì ômen* | "We learn in order to be wise." |
-| **ἐὰν ζητῇς, εὑρήσεις.** | *eàn zētêis, heurḗseis* | "If you seek, you will find." |
-| **γράφωμεν.** | *gráphōmen* | "Let us write!" (hortatory subjunctive) |
-| **τί ποιῶμεν;** | *tí poiômen?* | "What are we to do?" (deliberative question) |
+| Greek (present subjunctive) | Meaning |
+|-----------------------------|---------|
+| **ἵνα λύῃς τὸν δεσμόν** | "so that you may loose the bond" |
+| **μανθάνομεν ἵνα σοφοὶ ὦμεν.** | "We learn in order to be wise." |
+| **ἐὰν ζητῇς, εὑρήσεις.** | "If you seek, you will find." |
+| **γράφωμεν.** | "Let us write!" (hortatory subjunctive) |
+| **τί ποιῶμεν;** | "What are we to do?" (deliberative question) |
 
 *Note the use of **ἵνα** (purpose) and **ἐάν** (condition) introducing subjunctive clauses.*
 

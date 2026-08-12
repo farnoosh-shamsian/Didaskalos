@@ -67,13 +67,13 @@ The same rules as in the active: syllabic ἐ‑ before consonants (ἐ‑λυό
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **ἤρχετο πρὸς τὴν θάλατταν.** | ḗrkheto pròs tḕn thálattan | He was going toward the sea. (deponent) |
-| **ἐβούλοντο εἰρήνην ἄγειν.** | eboúlonto eirḗnēn ágein | They wanted to keep peace. (deponent) |
-| **ταῦτα ἐγίγνετο πολλάκις.** | taûta egígneto pollákis | These things kept happening often. (deponent) |
-| **οἱ στρατιῶται ἐμάχοντο πᾶσαν τὴν ἡμέραν.** | hoi stratiôtai emákhonto pâsan tḕn hēméran | The soldiers were fighting all day. (deponent) |
-| **ἐλύετο τοὺς αἰχμαλώτους.** | elýeto toùs aikhmalṓtous | He was ransoming the prisoners. (true middle) |
+| Greek | Translation |
+|----------------------------|-------------|
+| **ἤρχετο πρὸς τὴν θάλατταν.** | He was going toward the sea. (deponent) |
+| **ἐβούλοντο εἰρήνην ἄγειν.** | They wanted to keep peace. (deponent) |
+| **ταῦτα ἐγίγνετο πολλάκις.** | These things kept happening often. (deponent) |
+| **οἱ στρατιῶται ἐμάχοντο πᾶσαν τὴν ἡμέραν.** | The soldiers were fighting all day. (deponent) |
+| **ἐλύετο τοὺς αἰχμαλώτους.** | He was ransoming the prisoners. (true middle) |
 
 ---
 

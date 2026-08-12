@@ -15,9 +15,9 @@ The aorist indicative passive of ω-verbs follows a clear pattern: **augment ἐ
 ### Conjugation Table for λύω
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | ἐλύθην (elýthēn) | ἐλύθημεν (elýthēmen) |
-| 2nd | ἐλύθης (elýthēs) | ἐλύθητε (elýthēte) |
-| 3rd | ἐλύθη (elýthē) | ἐλύθησαν (elýthēsan) |
+| 1st | ἐλύθην | ἐλύθημεν |
+| 2nd | ἐλύθης | ἐλύθητε |
+| 3rd | ἐλύθη | ἐλύθησαν |
 
 ### General Pattern for ω-Verbs
 | Person | Singular | Plural |
@@ -38,8 +38,8 @@ The basic rule: aorist indicative passive = augment + stem + ‑θη‑ + ending
 ### Present Stems and Aorist Passives of ω-Verbs
 | Verb | Present stem | Aorist passive |
 | --- | --- | --- |
-| λύω (lýō) | λυ‑ | ἐλύθην |
-| γράφω (gráphō) | γραφ‑ | ἐγράφην |
+| λύω | λυ‑ | ἐλύθην |
+| γράφω | γραφ‑ | ἐγράφην |
 
 ## Example Sentences with Translations
 A few examples of the aorist indicative passive of ω-verbs in use:

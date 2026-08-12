@@ -102,13 +102,13 @@ All the patterns take the **augment** ἐ‑ (or vowel lengthening) in the indic
 
 ## 4. Example Sentences
 
-| Greek (aorist active) | Transliteration | Translation |
-|-----------------------|-------|-------------|
-| **ἔθηκα τὸν δακτύλιον ἐπὶ τὴν τράπεζαν.** | éthēka | I placed the ring on the table. |
-| **ἔδωκαν τὰ δῶρα τοῖς θεοῖς.** | édōkan | They gave the gifts to the gods. |
-| **ἔστησαν τὸν βωμὸν ἐν τῇ ἀγορᾷ.** | éstēsan | They set up the altar in the marketplace. |
-| **ἔστη πρὸ τῶν πυλῶν.** | éstē | He stood before the gates. |
-| **ἔφη ὅτι ἡ πόλις ἀσφαλής ἐστιν.** | éphē | He said that the city is safe. |
+| Greek (aorist active) | Translation |
+|-----------------------|-------------|
+| **ἔθηκα τὸν δακτύλιον ἐπὶ τὴν τράπεζαν.** | I placed the ring on the table. |
+| **ἔδωκαν τὰ δῶρα τοῖς θεοῖς.** | They gave the gifts to the gods. |
+| **ἔστησαν τὸν βωμὸν ἐν τῇ ἀγορᾷ.** | They set up the altar in the marketplace. |
+| **ἔστη πρὸ τῶν πυλῶν.** | He stood before the gates. |
+| **ἔφη ὅτι ἡ πόλις ἀσφαλής ἐστιν.** | He said that the city is safe. |
 
 *Note:* in every sentence the aorist marks a **single, completed action** in the past.
 

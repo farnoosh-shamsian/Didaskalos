@@ -37,27 +37,27 @@ The first person singular always ends in **‑σω**, which is why the whole ten
 
 ### 3.1 Regular Thematic Verb (λύω "to loose")
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1 sg. | λύσω | **lýsō** | I will loose |
-| 2 sg. | λύσεις | **lýseis** | you (sg.) will loose |
-| 3 sg. | λύσει | **lýsei** | he/she/it will loose |
-| 1 pl. | λύσομεν | **lýsomen** | we will loose |
-| 2 pl. | λύσετε | **lýsete** | you (pl.) will loose |
-| 3 pl. | λύσουσι(ν) | **lýsousi(n)** | they will loose |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1 sg. | λύσω | I will loose |
+| 2 sg. | λύσεις | you (sg.) will loose |
+| 3 sg. | λύσει | he/she/it will loose |
+| 1 pl. | λύσομεν | we will loose |
+| 2 pl. | λύσετε | you (pl.) will loose |
+| 3 pl. | λύσουσι(ν) | they will loose |
 
 *Construction: λυ‑ + **σ** + the present endings — the future conjugates exactly like the present, only with σ.*
 
 ### 3.2 Contract Verb (τιμάω "to honor")
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1 sg. | τιμήσω | **timḗsō** | I will honor |
-| 2 sg. | τιμήσεις | **timḗseis** | you will honor |
-| 3 sg. | τιμήσει | **timḗsei** | he/she/it will honor |
-| 1 pl. | τιμήσομεν | **timḗsomen** | we will honor |
-| 2 pl. | τιμήσετε | **timḗsete** | you (pl.) will honor |
-| 3 pl. | τιμήσουσι(ν) | **timḗsousi(n)** | they will honor |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1 sg. | τιμήσω | I will honor |
+| 2 sg. | τιμήσεις | you will honor |
+| 3 sg. | τιμήσει | he/she/it will honor |
+| 1 pl. | τιμήσομεν | we will honor |
+| 2 pl. | τιμήσετε | you (pl.) will honor |
+| 3 pl. | τιμήσουσι(ν) | they will honor |
 
 *Notice the lengthened **η** before the **‑σ‑** — there is no contraction in the future.*
 
@@ -105,13 +105,13 @@ The **‑σ‑** attaches directly to the root *φη‑*; in the future, μι-ve
 
 ## 5. Example Sentences
 
-| Greek (future active) | Transliteration | Meaning |
-|-----------------------|----------------|---------|
-| **ἡ γυνὴ τὸν ἄνθρωπον λύσει.** | hē gynḕ ton ánthrōpon lýsei | The woman will set the man free. |
-| **τοὺς θεοὺς τιμήσομεν.** | tous theoùs timḗsomen | We will honor the gods. |
-| **οἱ μαθηταὶ φήσουσιν ὅτι ἀληθές ἐστιν.** | hoi mathētaì phḗsousin… | The students will say that it is true. |
-| **ἔσομαι ἐν τῇ πόλει.** | ésomai en tēi pólei | I will be in the city. |
-| **δώσω σοι τὸ βιβλίον.** | dṓsō soi to biblíon | I will give you the book. |
+| Greek (future active) | Meaning |
+|-----------------------|---------|
+| **ἡ γυνὴ τὸν ἄνθρωπον λύσει.** | The woman will set the man free. |
+| **τοὺς θεοὺς τιμήσομεν.** | We will honor the gods. |
+| **οἱ μαθηταὶ φήσουσιν ὅτι ἀληθές ἐστιν.** | The students will say that it is true. |
+| **ἔσομαι ἐν τῇ πόλει.** | I will be in the city. |
+| **δώσω σοι τὸ βιβλίον.** | I will give you the book. |
 
 ---
 

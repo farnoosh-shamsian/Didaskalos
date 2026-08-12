@@ -92,13 +92,13 @@ That is why the second person of the aorist middle ends in ‑ω — a shape tha
 
 ## 5. Example Sentences
 
-| Greek (aorist indicative middle) | Transliteration | Meaning |
-|-----------------------------------|----------------|---------|
-| **ἐλυσάμην τὸν αἰχμάλωτον.** | *elysámēn ton aikhmálōton* | I ransomed the captive. |
-| **ἐπράξατο χρήματα.** | *epráxato khrḗmata* | He collected money (for himself). |
-| **ἐγένετο βασιλεύς.** | *egéneto basileús* | He became king. |
-| **ἐδέξασθε τοὺς ξένους.** | *edéxasthe tous xénous* | You (pl.) received the guests. |
-| **τί ἐλύσω τὸν ἵππον;** | *tí elýsō ton híppon?* | Why did you untie your horse? |
+| Greek (aorist indicative middle) | Meaning |
+|-----------------------------------|---------|
+| **ἐλυσάμην τὸν αἰχμάλωτον.** | I ransomed the captive. |
+| **ἐπράξατο χρήματα.** | He collected money (for himself). |
+| **ἐγένετο βασιλεύς.** | He became king. |
+| **ἐδέξασθε τοὺς ξένους.** | You (pl.) received the guests. |
+| **τί ἐλύσω τὸν ἵππον;** | Why did you untie your horse? |
 
 ---
 

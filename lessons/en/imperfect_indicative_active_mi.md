@@ -79,14 +79,14 @@ The imperfect answers the question *"What was going on?"* It is not the simple p
 
 ### 2.4 The Verb εἰμί "to be"
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1 sg | ἦν (older: ἦ) | ên | I was |
-| 2 sg | ἦσθα | êstha | you were |
-| 3 sg | ἦν | ên | he/she/it was |
-| 1 pl | ἦμεν | êmen | we were |
-| 2 pl | ἦτε | ête | you (pl.) were |
-| 3 pl | ἦσαν | êsan | they were |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1 sg | ἦν (older: ἦ) | I was |
+| 2 sg | ἦσθα | you were |
+| 3 sg | ἦν | he/she/it was |
+| 1 pl | ἦμεν | we were |
+| 2 pl | ἦτε | you (pl.) were |
+| 3 pl | ἦσαν | they were |
 
 *The ἦ‑ is the augment fused with the root ἐσ‑ (ἐ + ἐσ → ἠσ): the apparently "augmentless" look is deceptive.*
 
@@ -108,13 +108,13 @@ The imperfect answers the question *"What was going on?"* It is not the simple p
 
 ## 4. Example Sentences
 
-| Greek (imperfect) | Transliteration | Meaning |
-|-------------------|----------------|---------|
-| **ἦν ὁ ἀνὴρ ἐν τῇ ἀγορᾷ.** | ên ho anḕr en têi agorâi | The man was in the marketplace. |
-| **ἐδίδου τοῖς πτωχοῖς ἀεί.** | edídou toîs ptōkhoîs aeí | He always used to give to the poor. |
-| **ἔφη τοὺς ξένους ἥκειν.** | éphē tous xénous hḗkein | He said that the strangers had come. |
-| **ἵστασαν τρόπαιον.** | hístasan trópaion | They were setting up a trophy. |
-| **ἦσαν οἱ παῖδες ἐν τῷ κήπῳ.** | êsan hoi paîdes en tôi kḗpōi | The children were in the garden. |
+| Greek (imperfect) | Meaning |
+|-------------------|---------|
+| **ἦν ὁ ἀνὴρ ἐν τῇ ἀγορᾷ.** | The man was in the marketplace. |
+| **ἐδίδου τοῖς πτωχοῖς ἀεί.** | He always used to give to the poor. |
+| **ἔφη τοὺς ξένους ἥκειν.** | He said that the strangers had come. |
+| **ἵστασαν τρόπαιον.** | They were setting up a trophy. |
+| **ἦσαν οἱ παῖδες ἐν τῷ κήπῳ.** | The children were in the garden. |
 
 ---
 

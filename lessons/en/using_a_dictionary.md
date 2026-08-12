@@ -6,13 +6,13 @@ Every lesson in this book ends with a list of words to learn, and none of them c
 
 A lexicon does not list the word as you met it in the text. It lists the **headword** — one fixed form that stands for the whole word — and the headword differs by part of speech.
 
-| Part of speech | Headword is | Example | What follows it |
-|---|---|---|---|
-| **Noun** | nominative singular | **λόγος, λόγου, ὁ** | genitive singular, then the article showing gender |
-| **Adjective** | masculine nominative singular | **ἀγαθός, -ή, -όν** | the feminine and neuter endings |
-| **Verb** | 1st person singular present indicative active | **λύω** | the principal parts (§4) |
-| **Deponent verb** | 1st singular present, ending in **-μαι** | **γίγνομαι** | no active form exists; translate actively |
-| **Everything else** | the word itself | **ὑπό**, **καί**, **μέν** | the constructions it governs |
+| Part of speech | Headword is | Example | Transliteration | What follows it |
+|---|---|---|---|---|
+| **Noun** | nominative singular | **λόγος, λόγου, ὁ** | lógos, lógou, ho | genitive singular, then the article showing gender |
+| **Adjective** | masculine nominative singular | **ἀγαθός, -ή, -όν** | agathós, -ḗ, -ón | the feminine and neuter endings |
+| **Verb** | 1st person singular present indicative active | **λύω** | lýō | the principal parts (§4) |
+| **Deponent verb** | 1st singular present, ending in **-μαι** *-mai* | **γίγνομαι** | gígnomai | no active form exists; translate actively |
+| **Everything else** | the word itself | **ὑπό**, **καί**, **μέν** | hypó, kaí, mén | the constructions it governs |
 
 The vocabulary lists in this book follow the same conventions. Where a noun's genitive and article are printed, they were taken from the texts themselves — from a genitive singular actually attested in the corpus you built this book from. Where they are missing, the corpus simply never used that noun in the genitive singular; the lexicon will supply it.
 
@@ -22,9 +22,9 @@ Greek dictionaries order words by the alphabet you learned in the previous modul
 
 Three things are **ignored** when ordering:
 
-- **Breathings.** ἀγαθός and ἁγνός are ordered by α-γ-α and α-γ-ν, not by the breathing mark. Rough and smooth breathings do not separate words into two lists.
-- **Accents.** νόμος and νομός sit together, distinguished only after the letters run out.
-- **Iota subscript.** ᾳ, ῃ, ῳ order as α, η, ω.
+- **Breathings.** ἀγαθός and ἁγνός *agathós, hagnós* are ordered by α-γ-α and α-γ-ν (*a-g-a*, *a-g-n*), not by the breathing mark. Rough and smooth breathings do not separate words into two lists.
+- **Accents.** νόμος and νομός *nómos, nomós* sit together, distinguished only after the letters run out.
+- **Iota subscript.** ᾳ, ῃ, ῳ (*āi, ēi, ōi*) order as α, η, ω (*a, ē, ō*).
 
 Final **ς** is the same letter as **σ** and orders in the same place.
 
@@ -32,25 +32,26 @@ Final **ς** is the same letter as **σ** and orders in the same place.
 
 The hard step is not the lookup; it is knowing what to look up. A form in a text has usually been changed at both ends.
 
-**Take the ending off.** τοὺς λόγους → the accusative plural ending -ους comes off, leaving the stem λογ-, and you look for λόγος. The declension lessons in this book exist largely so that you can do this step by eye.
+**Take the ending off.** τοὺς λόγους *toùs lógous* → the accusative plural ending -ους *-ous* comes off, leaving the stem λογ- *log-*, and you look for λόγος *lógos*. The declension lessons in this book exist largely so that you can do this step by eye.
 
 **Take the front off too, for verbs.** This is where beginners lose the most time:
 
-| What you see | What was added | Headword |
-|---|---|---|
-| **ἔλυσα** | **ἐ-** augment, past tense | λύω |
-| **λέλυκα** | **λε-** reduplication, perfect | λύω |
-| **ἀπέθανον** | prefix ἀπο- **plus** augment inside it | ἀποθνῄσκω |
+| What you see | Transliteration | What was added | Headword |
+|---|---|---|---|
+| **ἔλυσα** | élysa | **ἐ-** *e-* augment, past tense | λύω *lýō* |
+| **λέλυκα** | lélyka | **λε-** *le-* reduplication, perfect | λύω *lýō* |
+| **ἀπέθανον** | apéthanon | prefix ἀπο- *apo-* **plus** augment inside it | ἀποθνῄσκω *apothnḗiskō* |
 
-A compound verb augments **after** the prefix, not before it, so ἀπ-έ-θανον hides its augment in the middle. Look for the verb under its prefix: ἀποθνῄσκω, not θνῄσκω.
+A compound verb augments **after** the prefix, not before it, so ἀπ-έ-θανον *ap-é-thanon* hides its augment in the middle. Look for the verb under its prefix: ἀποθνῄσκω *apothnḗiskō*, not θνῄσκω *thnḗiskō*.
 
-**When the stem itself has changed**, no amount of stripping will help — ἦλθον belongs to ἔρχομαι and εἶπον to λέγω. These are the suppletive verbs, and they are common. Two ways through: the principal parts (§4), or a morphology tool — the **Perseus word study tool** takes an inflected form, parses it, and hands you the headword with links to the lexicons. That is what the Perseus link beside each vocabulary word opens.
+**When the stem itself has changed**, no amount of stripping will help — ἦλθον *êlthon* belongs to ἔρχομαι *érchomai* and εἶπον *eîpon* to λέγω *légō*. These are the suppletive verbs, and they are common. Two ways through: the principal parts (§4), or a morphology tool — the **Perseus word study tool** takes an inflected form, parses it, and hands you the headword with links to the lexicons. That is what the Perseus link beside each vocabulary word opens.
 
 ## 4. Principal Parts
 
 A verb entry gives a series of forms, conventionally six:
 
 > **λύω, λύσω, ἔλυσα, λέλυκα, λέλυμαι, ἐλύθην**
+> *lýō, lýsō, élysa, lélyka, lélymai, elýthēn*
 > present — future — aorist active — perfect active — perfect middle/passive — aorist passive
 
 Each one is the stem for a whole family of forms. Learning the principal parts of a common verb is worth more than learning several rare words, because the third and sixth parts in particular are often unpredictable, and they are what let you recognise the verb in a text at all.
@@ -74,7 +75,7 @@ Abbreviations you will meet constantly:
 
 The abbreviations after a sense — **Hdt. 1.1**, **Pl. R. 344d** — are citations: author, work, and place. If a sense is attested only in poetry, or only in one author, the entry is telling you so.
 
-**Beware the first sense.** Entries are ordered historically, oldest sense first, not by how common the sense is. The meaning you want is often several branches down. λόγος begins at "computation, reckoning" and only later reaches "word" and "reason".
+**Beware the first sense.** Entries are ordered historically, oldest sense first, not by how common the sense is. The meaning you want is often several branches down. λόγος *lógos* begins at "computation, reckoning" and only later reaches "word" and "reason".
 
 ## 6. Which Lexicon
 
@@ -95,6 +96,6 @@ You can type Greek without a Greek keyboard: Logeion accepts transliteration, so
 
 Write the entry down by hand, in this form:
 
-> **λόγος, λόγου, ὁ** — word, speech, account; reason, argument
+> **λόγος, λόγου, ὁ** *lógos, lógou, ho* — word, speech, account; reason, argument
 
 Three habits make the difference. Copy the **whole headword**, genitive and article included, because that is what tells you how to decline it. Record **two or three senses**, not one, so you are not trapped when the first fails. And add the sense you found in **your own** sentence, not the lexicon's, since the phrasing you choose is the one you will remember.

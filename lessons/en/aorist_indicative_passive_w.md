@@ -39,27 +39,27 @@ Both types take the **augment** ἐ‑ in the indicative (occasionally dropped i
 
 **Example with λύω "to loose, set free"**
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1 sg | ἐλύθην | elýthēn | I was set free |
-| 2 sg | ἐλύθης | elýthēs | you were set free |
-| 3 sg | ἐλύθη | elýthē | he/she/it was set free |
-| 1 pl | ἐλύθημεν | elýthēmen | we were set free |
-| 2 pl | ἐλύθητε | elýthēte | you (pl.) were set free |
-| 3 pl | ἐλύθησαν | elýthēsan | they were set free |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1 sg | ἐλύθην | I was set free |
+| 2 sg | ἐλύθης | you were set free |
+| 3 sg | ἐλύθη | he/she/it was set free |
+| 1 pl | ἐλύθημεν | we were set free |
+| 2 pl | ἐλύθητε | you (pl.) were set free |
+| 3 pl | ἐλύθησαν | they were set free |
 
 ### 2.2 The Second Aorist Passive Paradigm
 
 **Example with γράφω "to write" → ἐγράφην "I was written"**
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1 sg | ἐγράφην | egráphēn | I was written |
-| 2 sg | ἐγράφης | egráphēs | you were written |
-| 3 sg | ἐγράφη | egráphē | it was written |
-| 1 pl | ἐγράφημεν | egráphēmen | we were written |
-| 2 pl | ἐγράφητε | egráphēte | you (pl.) were written |
-| 3 pl | ἐγράφησαν | egráphēsan | they were written |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1 sg | ἐγράφην | I was written |
+| 2 sg | ἐγράφης | you were written |
+| 3 sg | ἐγράφη | it was written |
+| 1 pl | ἐγράφημεν | we were written |
+| 2 pl | ἐγράφητε | you (pl.) were written |
+| 3 pl | ἐγράφησαν | they were written |
 
 *The second aorist passive belongs to verbs such as γράφω (ἐγράφην), φαίνω (ἐφάνην "I appeared"), and κόπτω (ἐκόπην "I was cut"); apart from the missing θ its conjugation is identical to the first type.*
 
@@ -81,12 +81,12 @@ Both types take the **augment** ἐ‑ in the indicative (occasionally dropped i
 
 ## 4. Example Sentences
 
-| Greek (aorist passive) | Transliteration | Meaning |
-|------------------------|----------------|---------|
-| ἡ πόλις **διεφθάρη** ὑπὸ τῶν πολεμίων. | hē pólis **diephthárē**… | The city was destroyed by the enemy. |
-| τὰ δένδρα **ἐκόπη** ὑπὸ τῶν γεωργῶν. | ta déndra **ekópē**… | The trees were cut down by the farmers. |
-| ὁ ἀνὴρ **ἐλύθη** ἐκ τῶν δεσμῶν. | ho anḗr **elýthē**… | The man was freed from his bonds. |
-| τὰ ἔργα **ἐγράφη** ὑπὸ τῶν γραμματέων. | ta érga **egráphē**… | The deeds were recorded by the secretaries. |
+| Greek (aorist passive) | Meaning |
+|------------------------|---------|
+| ἡ πόλις **διεφθάρη** ὑπὸ τῶν πολεμίων. | The city was destroyed by the enemy. |
+| τὰ δένδρα **ἐκόπη** ὑπὸ τῶν γεωργῶν. | The trees were cut down by the farmers. |
+| ὁ ἀνὴρ **ἐλύθη** ἐκ τῶν δεσμῶν. | The man was freed from his bonds. |
+| τὰ ἔργα **ἐγράφη** ὑπὸ τῶν γραμματέων. | The deeds were recorded by the secretaries. |
 
 *Reminder: a neuter plural subject (τὰ δένδρα, τὰ ἔργα) takes a singular verb.*
 

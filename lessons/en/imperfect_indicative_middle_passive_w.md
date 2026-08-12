@@ -85,13 +85,13 @@ The stem vowel merges with the thematic vowel:
 
 ## 4. Example Sentences
 
-| Greek (imperfect middle/passive) | Transliteration | Meaning |
-|----------------------------------|----------------|---------------------|
-| **ἡ οἰκία ᾠκοδομεῖτο.** | hē oikía ōikodomeîto | The house was being built. |
-| **οἱ στρατιῶται ὡπλίζοντο.** | hoi stratiôtai hōplízonto | The soldiers were arming themselves. |
-| **ἐλύετο ὁ ἵππος ὑπὸ τοῦ παιδός.** | elýeto ho híppos hypò tou paidós | The horse was being untied by the boy. |
-| **ἐπαιδευόμην ὑπὸ σοφοῦ διδασκάλου.** | epaideuómēn… | I was being educated by a wise teacher. |
-| **ἐβουλόμεθα εἰρήνην.** | eboulómetha eirḗnēn | We wanted peace. (deponent) |
+| Greek (imperfect middle/passive) | Meaning |
+|----------------------------------|---------------------|
+| **ἡ οἰκία ᾠκοδομεῖτο.** | The house was being built. |
+| **οἱ στρατιῶται ὡπλίζοντο.** | The soldiers were arming themselves. |
+| **ἐλύετο ὁ ἵππος ὑπὸ τοῦ παιδός.** | The horse was being untied by the boy. |
+| **ἐπαιδευόμην ὑπὸ σοφοῦ διδασκάλου.** | I was being educated by a wise teacher. |
+| **ἐβουλόμεθα εἰρήνην.** | We wanted peace. (deponent) |
 
 ---
 

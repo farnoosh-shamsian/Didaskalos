@@ -95,13 +95,13 @@ When the stem ends in a consonant, that consonant assimilates to the ending — 
 
 ## 5. Example Sentences
 
-| Greek (perfect middle/passive) | Transliteration | Meaning |
-|-----------------------------|----------------|---------|
-| **ὁ ἵππος λέλυται.** | ho híppos lélytai | The horse has been set loose. |
-| **γέγραπται ἐν τῷ νόμῳ.** | gégraptai en tôi nómōi | It is written in the law. |
-| **ἡ πόλις καλῶς πεπαίδευται.** | hē pólis kalôs pepaídeutai | The city has been well educated. |
-| **μέμνημαι τῶν λόγων σου.** | mémnēmai tôn lógōn sou | I remember your words. |
-| **οἱ νόμοι γεγραμμένοι εἰσίν.** | hoi nómoi gegramménoi eisín | The laws stand written. |
+| Greek (perfect middle/passive) | Meaning |
+|-----------------------------|---------|
+| **ὁ ἵππος λέλυται.** | The horse has been set loose. |
+| **γέγραπται ἐν τῷ νόμῳ.** | It is written in the law. |
+| **ἡ πόλις καλῶς πεπαίδευται.** | The city has been well educated. |
+| **μέμνημαι τῶν λόγων σου.** | I remember your words. |
+| **οἱ νόμοι γεγραμμένοι εἰσίν.** | The laws stand written. |
 
 ---
 

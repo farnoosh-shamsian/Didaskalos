@@ -88,13 +88,13 @@ The infinitive has **only one form** — it takes neither person nor number. All
 
 ## 4. Example Sentences
 
-| Greek (aorist infinitive active) | Transliteration | Meaning |
-|----------------------------|----------------|---------------------|
-| **ἐθέλω λῦσαι τὸν δεσμόν.** | ethélō lŷsai ton desmón | I want to loose the bond. |
-| **ἐκέλευσε τοὺς στρατιώτας ἐλθεῖν.** | ekéleuse tous stratiṓtas eltheîn | He ordered the soldiers to come. |
-| **ἔδει αὐτὸν εἰπεῖν τὴν ἀλήθειαν.** | édei autòn eipeîn tēn alḗtheian | He had to tell the truth. |
-| **δεινὸς λέγειν, δεινὸς δὲ καὶ πρᾶξαι.** | deinòs légein, … prâxai | Skilled in speaking, and skilled in acting too. |
-| **ἔφη τὸν στρατηγὸν νικῆσαι.** | éphē ton stratēgòn nikêsai | He said that the general had won. |
+| Greek (aorist infinitive active) | Meaning |
+|----------------------------|---------------------|
+| **ἐθέλω λῦσαι τὸν δεσμόν.** | I want to loose the bond. |
+| **ἐκέλευσε τοὺς στρατιώτας ἐλθεῖν.** | He ordered the soldiers to come. |
+| **ἔδει αὐτὸν εἰπεῖν τὴν ἀλήθειαν.** | He had to tell the truth. |
+| **δεινὸς λέγειν, δεινὸς δὲ καὶ πρᾶξαι.** | Skilled in speaking, and skilled in acting too. |
+| **ἔφη τὸν στρατηγὸν νικῆσαι.** | He said that the general had won. |
 
 *In the last sentence, the aorist infinitive in indirect statement marks an event **prior to** the verb of saying.*
 

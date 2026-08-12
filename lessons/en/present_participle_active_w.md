@@ -94,12 +94,12 @@ The basic pattern:
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Meaning |
-|-------|-----------------|---------|
-| **ὁ ἀνὴρ τὸν λόγον γράφων ἐξέρχεται.** | *ho anḗr ton lógon gráphōn exérkhetai* | The man goes out while writing the speech. |
-| **ἡ γυνὴ τὴν ὁδὸν ὁρῶσα ἔσπευδεν.** | *hē gynḕ tēn hodòn horôsa éspeuden* | The woman, seeing the road, hurried on. |
-| **τὰ παιδία παίζοντα μανθάνει.** | *ta paidía paízonta manthánei* | The children learn while playing. (neuter plural + singular verb!) |
-| **ὁ ἡγεμὼν τοὺς στρατιώτας ἄγων ἐπὶ τὴν νῆσον ἦλθεν.** | *ho hēgemṑn tous stratiṓtas ágōn epì tēn nêson êlthen* | The commander, leading the soldiers, came to the island. |
+| Greek | Meaning |
+|-------|---------|
+| **ὁ ἀνὴρ τὸν λόγον γράφων ἐξέρχεται.** | The man goes out while writing the speech. |
+| **ἡ γυνὴ τὴν ὁδὸν ὁρῶσα ἔσπευδεν.** | The woman, seeing the road, hurried on. |
+| **τὰ παιδία παίζοντα μανθάνει.** | The children learn while playing. (neuter plural + singular verb!) |
+| **ὁ ἡγεμὼν τοὺς στρατιώτας ἄγων ἐπὶ τὴν νῆσον ἦλθεν.** | The commander, leading the soldiers, came to the island. |
 
 *Note how the participle agrees with its noun (masc. nom. sg. γράφων, fem. nom. sg. ὁρῶσα, neut. pl. παίζοντα).*
 

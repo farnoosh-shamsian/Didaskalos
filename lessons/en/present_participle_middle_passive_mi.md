@@ -73,12 +73,12 @@ The middle‑only verbs form the same participle, translated **actively**:
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **οἱ δυνάμενοι λέγειν πείθουσι τὸν δῆμον.** | hoi dynámenoi légein peíthousi tòn dêmon | Those able to speak persuade the people. (deponent) |
-| **τὰ διδόμενα δῶρα δέχεται.** | tà didómena dôra dékhetai | He receives the gifts that are being given. (passive) |
-| **οἱ καθήμενοι ἐν τῇ ἀγορᾷ ἤκουον.** | hoi kathḗmenoi en têi agorâi ḗkouon | Those sitting in the marketplace were listening. |
-| **κατὰ τοὺς κειμένους νόμους** | katà toùs keiménous nómous | according to the established laws |
+| Greek | Translation |
+|----------------------------|-------------|
+| **οἱ δυνάμενοι λέγειν πείθουσι τὸν δῆμον.** | Those able to speak persuade the people. (deponent) |
+| **τὰ διδόμενα δῶρα δέχεται.** | He receives the gifts that are being given. (passive) |
+| **οἱ καθήμενοι ἐν τῇ ἀγορᾷ ἤκουον.** | Those sitting in the marketplace were listening. |
+| **κατὰ τοὺς κειμένους νόμους** | according to the established laws |
 
 ---
 

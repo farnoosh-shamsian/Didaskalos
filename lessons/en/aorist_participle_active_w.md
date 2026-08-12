@@ -81,13 +81,13 @@ First aorist participle = **aorist stem (without the augment) + ‑σα‑ + the
 
 ## 4. Example Sentences
 
-| Greek (with transliteration) | Translation |
+| Greek | Translation |
 |------------------------------|---------------------|
-| **ὁ ἀνὴρ γράψας τὸν λόγον ἀπῆλθεν.** (ho anḗr grápsas ton lógon apêlthen) | The man who wrote the speech left. |
-| **ἡ γυνὴ παιδεύσασα τὸν παῖδα εὐδαίμων ἦν.** (hē gynḕ paideúsasa ton paîda…) | The woman who educated the child was happy. |
-| **λύσας τὸν δεσμόν, ἀπῆλθον.** (lýsas ton desmón, apêlthon) | Having loosed the bond, I went away. |
-| **ἰδὼν τὸν ἐχθρόν, ὁ στρατηγὸς ἐβόησεν.** (idṑn ton ekhthrón…) | When he saw the enemy, the general shouted. |
-| **ἀκούσας τὸν λόγον, ἔγραψε τὴν ἀπόκρισιν.** (akoúsas ton lógon…) | Having heard the speech, he wrote the reply. |
+| **ὁ ἀνὴρ γράψας τὸν λόγον ἀπῆλθεν.** | The man who wrote the speech left. |
+| **ἡ γυνὴ παιδεύσασα τὸν παῖδα εὐδαίμων ἦν.** | The woman who educated the child was happy. |
+| **λύσας τὸν δεσμόν, ἀπῆλθον.** | Having loosed the bond, I went away. |
+| **ἰδὼν τὸν ἐχθρόν, ὁ στρατηγὸς ἐβόησεν.** | When he saw the enemy, the general shouted. |
+| **ἀκούσας τὸν λόγον, ἔγραψε τὴν ἀπόκρισιν.** | Having heard the speech, he wrote the reply. |
 
 ---
 

@@ -21,24 +21,24 @@ The present indicative active of the model verb **λύω**, "to loose":
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | λύω (lýō) | λύομεν (lýomen) |
-| 2nd | λύεις (lýeis) | λύετε (lýete) |
-| 3rd | λύει (lýei) | λύουσι(ν) (lýousi(n)) |
+| 1st | λύω | λύομεν |
+| 2nd | λύεις | λύετε |
+| 3rd | λύει | λύουσι(ν) |
 
 ### Aorist Indicative Active
 The aorist indicative active is formed with the augment ἐ‑ and the aorist stem:
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | ἔλυσα (élysa) | ἐλύσαμεν (elýsamen) |
-| 2nd | ἔλυσας (élysas) | ἐλύσατε (elýsate) |
-| 3rd | ἔλυσε(ν) (élyse(n)) | ἔλυσαν (élysan) |
+| 1st | ἔλυσα | ἐλύσαμεν |
+| 2nd | ἔλυσας | ἐλύσατε |
+| 3rd | ἔλυσε(ν) | ἔλυσαν |
 
 ### Present Imperative Active (for comparison)
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 2nd | λῦε (lŷe) | λύετε (lýete) |
-| 3rd | λυέτω (lyétō) | λυόντων / λυέτωσαν (lyóntōn / lyétōsan) |
+| 2nd | λῦε | λύετε |
+| 3rd | λυέτω | λυόντων / λυέτωσαν |
 
 ### Aorist Imperative Active
 The endings of the sigmatic (first) aorist imperative:
@@ -52,15 +52,15 @@ For the verb **λύω**, "to loose":
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 2nd | **λῦσον** (lŷson) | **λύσατε** (lýsate) |
-| 3rd | **λυσάτω** (lysátō) | **λυσάντων / λυσάτωσαν** |
+| 2nd | **λῦσον** | **λύσατε** |
+| 3rd | **λυσάτω** | **λυσάντων / λυσάτωσαν** |
 
 Another example, the verb **ποιέω**, "to do, make":
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 2nd | **ποίησον** (poíēson) | **ποιήσατε** (poiḗsate) |
-| 3rd | **ποιησάτω** (poiēsátō) | **ποιησάντων / ποιησάτωσαν** |
+| 2nd | **ποίησον** | **ποιήσατε** |
+| 3rd | **ποιησάτω** | **ποιησάντων / ποιησάτωσαν** |
 
 ## Key Rules and Exceptions
 - The aorist imperative is built on the **unaugmented aorist stem**: ἔλυσα → stem λυσ‑ → λῦσον.
@@ -70,9 +70,9 @@ Another example, the verb **ποιέω**, "to do, make":
 - A **prohibition of a single act** is normally expressed not by the aorist imperative but by **μή + aorist subjunctive**: μὴ λύσῃς "do not loose!"
 
 ## Example Sentences with Translations
-1. **λῦσον τὰ δεσμά.** (lŷson ta desmá) — Loose the bonds!
-2. **ποιησάτω ὁ ἄρχων.** (poiēsátō ho árkhōn) — Let the ruler act.
-3. **λύσατε τὰς θύρας.** (lýsate tas thýras) — Open the doors!
+1. **λῦσον τὰ δεσμά.** — Loose the bonds!
+2. **ποιησάτω ὁ ἄρχων.** — Let the ruler act.
+3. **λύσατε τὰς θύρας.** — Open the doors!
 
 ## Notes on Usage and Context
 The aorist imperative commands a specific, single action and is very common in prayers and formal requests (prayers almost always use the aorist: "give us this day…"). Its contrast with the present imperative is one of **aspect**, not time: present imperative = "keep doing this / always do this"; aorist imperative = "do this (once)." Attending to this contrast makes the force of a command much more precise when reading texts.

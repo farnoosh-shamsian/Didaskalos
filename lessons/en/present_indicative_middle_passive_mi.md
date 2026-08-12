@@ -94,13 +94,13 @@ These middle‑only verbs conjugate exactly like the paradigms above and always 
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **οὐ δύναμαι λέγειν.** | ou dýnamai légein | I am not able to speak. (deponent) |
-| **τὰ δῶρα δίδοται τῷ θεῷ.** | tà dôra dídotai tôi theôi | The gifts are given to the god. (passive) |
-| **ὁ νόμος κεῖται τοῖς πολίταις.** | ho nómos keîtai toîs polítais | The law is laid down for the citizens. |
-| **ἐπίστασθε τὴν τέχνην.** | epístasthe tḕn tékhnēn | You (pl.) know the craft. (deponent) |
-| **ἡ πόλις ἐν τῇ νήσῳ ἵσταται.** | hē pólis en têi nḗsōi hístatai | The city stands on the island. (middle) |
+| Greek | Translation |
+|----------------------------|-------------|
+| **οὐ δύναμαι λέγειν.** | I am not able to speak. (deponent) |
+| **τὰ δῶρα δίδοται τῷ θεῷ.** | The gifts are given to the god. (passive) |
+| **ὁ νόμος κεῖται τοῖς πολίταις.** | The law is laid down for the citizens. |
+| **ἐπίστασθε τὴν τέχνην.** | You (pl.) know the craft. (deponent) |
+| **ἡ πόλις ἐν τῇ νήσῳ ἵσταται.** | The city stands on the island. (middle) |
 
 ---
 

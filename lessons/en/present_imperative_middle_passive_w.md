@@ -72,13 +72,13 @@ Deponents use exactly these endings, translated **actively**:
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **μὴ φοβοῦ, ὦ παῖ.** | mḕ phoboû, ô paî | Don't be afraid, child. (deponent) |
-| **ἔρχου εἰς τὴν οἰκίαν.** | érkhou eis tḕn oikían | Come into the house. (deponent) |
-| **δέχεσθε τὰ δῶρα.** | dékhesthe tà dôra | Receive the gifts. (deponent) |
-| **πειθέσθω τοῖς νόμοις ὁ πολίτης.** | peithésthō toîs nómois ho polítēs | Let the citizen obey the laws. (3rd person) |
-| **λούου καθ' ἡμέραν.** | loúou kath' hēméran | Wash yourself every day. (true middle) |
+| Greek | Translation |
+|----------------------------|-------------|
+| **μὴ φοβοῦ, ὦ παῖ.** | Don't be afraid, child. (deponent) |
+| **ἔρχου εἰς τὴν οἰκίαν.** | Come into the house. (deponent) |
+| **δέχεσθε τὰ δῶρα.** | Receive the gifts. (deponent) |
+| **πειθέσθω τοῖς νόμοις ὁ πολίτης.** | Let the citizen obey the laws. (3rd person) |
+| **λούου καθ' ἡμέραν.** | Wash yourself every day. (true middle) |
 
 ---
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import os
 import re
 import unicodedata
@@ -26,9 +27,9 @@ except ImportError:
     from .treebank_parsers import parse_agdt_xml, parse_treebank_file
 
 try:
-    from work_catalog import format_citation
+    from work_catalog import format_citation, tlg_work_key
 except ImportError:
-    from .work_catalog import format_citation
+    from .work_catalog import format_citation, tlg_work_key
 
 # Back-compat alias for the AGDT parser's historical name.
 parse_treebank_xml = parse_agdt_xml
@@ -99,6 +100,21 @@ DIFFICULTY_WEIGHT_LENGTH = 0.30
 # Prefer exercise sentences whose lemmas were mostly introduced already.
 KNOWN_LEMMA_COVERAGE_THRESHOLD = 0.70
 KNOWN_FUNCTION_LEMMA_SEED_COUNT = 50
+
+# A reading passage runs whole citation units up to a word budget, so a cut never
+# lands inside a chapter, section or verse. The texts already mark their own
+# divisions in subdoc, and those are where the subject changes: a Herodotus
+# chapter, one Aesop fable, seven Homer verse-sentences. word_count counts tokens
+# including punctuation, so the budget is roughly ninety words of running text.
+PASSAGE_WORD_BUDGET = 100
+PASSAGE_MIN_WORDS = 40
+PASSAGE_MAX_WORDS = 160
+PASSAGE_COUNT = 25
+
+# One long work would otherwise take every slot, since it supplies most of the
+# candidates and epic repeats its vocabulary: unguarded, the Iliad took 1,187 of
+# 1,322 candidates in a four-work build. Ignored when only one work was picked.
+PASSAGE_MAX_WORK_SHARE = 0.4
 
 
 GREEK_MARK_RE = re.compile(r"[\u0370-\u03FF\u1F00-\u1FFF]")
@@ -1477,6 +1493,218 @@ def _known_lemma_coverage_by_sentence(combined_df: pd.DataFrame, known_lemmas: s
     return known.groupby(content["sentence_index"]).mean()
 
 
+def _sentence_known_lemma_counts(combined_df: pd.DataFrame, known_lemmas: set[str]) -> pd.DataFrame:
+    # Content-word totals and known counts per sentence_index. Only two columns
+    # are materialized: the boolean-index copies _known_lemma_coverage_by_sentence
+    # takes carry all fifteen, which one lesson's rows can afford and a whole
+    # select-all frame cannot.
+    empty = pd.DataFrame(columns=["content_words", "known_words"])
+    if combined_df is None or combined_df.empty or "sentence_index" not in combined_df.columns:
+        return empty
+
+    lemmas = combined_df["lemma"].astype(str)
+    content = combined_df["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES) & lemmas.map(is_greek_lemma)
+    if not content.any():
+        return empty
+
+    known = lemmas[content].map(vocabulary_ledger_key).isin(known_lemmas)
+    grouped = known.groupby(combined_df["sentence_index"][content], sort=False)
+    return pd.DataFrame({"content_words": grouped.size(), "known_words": grouped.sum()})
+
+
+def _citation_units(sentences: pd.DataFrame) -> list[dict]:
+    # Runs of consecutive sentences sharing one subdoc, per file, in document
+    # order. A run-length walk rather than a groupby: Homer's "1.9" is followed by
+    # "1.9-1.12", and a reference that recurs later must stay two units instead of
+    # fusing into one range that never existed. Sentences whose subdoc was blanked
+    # group under "", which _split_oversized_unit then cuts on sentence bounds.
+    if sentences is None or sentences.empty:
+        return []
+
+    ordered = sentences.sort_values(["file", "sentence_index"], kind="stable")
+    units: list[dict] = []
+    current: dict | None = None
+
+    for row in ordered.itertuples(index=False):
+        subdoc = row.subdoc.strip() if isinstance(row.subdoc, str) else ""
+        if current is None or current["file"] != row.file or current["subdoc"] != subdoc:
+            current = {
+                "file": row.file,
+                "document_id": row.document_id,
+                "subdoc": subdoc,
+                "sentences": [],
+                "word_count": 0,
+            }
+            units.append(current)
+        current["sentences"].append(row)
+        current["word_count"] += int(row.word_count)
+
+    return units
+
+
+def _split_oversized_unit(unit: dict) -> list[dict]:
+    # A unit too big to be a passage is cut on sentence boundaries instead. Plato's
+    # Euthyphro carries one subdoc across all 6,349 of its words and Lysias 1 has
+    # its whole-work range blanked, so without this those two textbooks would end
+    # on an empty appendix. Cuts still never land inside a sentence.
+    if unit["word_count"] <= PASSAGE_MAX_WORDS:
+        return [unit]
+
+    pieces: list[dict] = []
+    current: dict | None = None
+    for sentence in unit["sentences"]:
+        words = int(sentence.word_count)
+        if current is not None and (
+            current["word_count"] >= PASSAGE_WORD_BUDGET
+            or current["word_count"] + words > PASSAGE_MAX_WORDS
+        ):
+            current = None
+        if current is None:
+            current = {**unit, "sentences": [], "word_count": 0}
+            pieces.append(current)
+        current["sentences"].append(sentence)
+        current["word_count"] += words
+
+    return pieces
+
+
+def _pack_passages(units: list[dict]) -> list[dict]:
+    # Whole units accumulated to the budget, cut only on a unit boundary. The
+    # lookahead earns its keep: closing as soon as the budget is reached lets a
+    # 97-word Aesop fable swallow the next one, and the 195-word result then fails
+    # the maximum and is dropped, so Aesop would contribute nothing at all.
+    passages: list[dict] = []
+    current: dict | None = None
+
+    def close() -> None:
+        if current is not None and PASSAGE_MIN_WORDS <= current["word_count"] <= PASSAGE_MAX_WORDS:
+            passages.append(current)
+
+    for unit in units:
+        for piece in _split_oversized_unit(unit):
+            if current is not None and (
+                current["file"] != piece["file"]
+                or current["word_count"] >= PASSAGE_WORD_BUDGET
+                or current["word_count"] + piece["word_count"] > PASSAGE_MAX_WORDS
+            ):
+                close()
+                current = None
+            if current is None:
+                current = {
+                    "file": piece["file"],
+                    "document_id": piece["document_id"],
+                    "first_subdoc": "",
+                    "last_subdoc": "",
+                    "sentences": [],
+                    "word_count": 0,
+                }
+            current["sentences"].extend(piece["sentences"])
+            current["word_count"] += piece["word_count"]
+            # Only referenced units move the span, so a passage running from a
+            # referenced unit into an unreferenced one still cites what it can.
+            if piece["subdoc"]:
+                current["first_subdoc"] = current["first_subdoc"] or piece["subdoc"]
+                current["last_subdoc"] = piece["subdoc"]
+
+    close()
+    return passages
+
+
+def _subdoc_span(first_subdoc: str, last_subdoc: str) -> str:
+    # One reference covering both ends. A unit that is itself a range contributes
+    # its outer edge, so Homer's "1.1-1.7" through "1.29-1.31" joins to "1.1-1.31".
+    # Either end may be missing where a work references only part of itself, and a
+    # half-open "1.1.1-" is worse than the narrower reference that is certain.
+    start = (first_subdoc or "").split("-")[0].strip()
+    end = (last_subdoc or "").split("-")[-1].strip()
+    if not start or not end:
+        return start or end
+    return start if start == end else f"{start}-{end}"
+
+
+def build_reading_passages(
+    sentences_df: pd.DataFrame,
+    combined_df: pd.DataFrame,
+    known_lemmas: set[str],
+    count: int = PASSAGE_COUNT,
+) -> list[dict]:
+    # Passages ranked by how much of their vocabulary the finished book taught, so
+    # the appendix opens with what a reader who worked through it can already read.
+    if sentences_df is None or sentences_df.empty:
+        return []
+
+    packed = _pack_passages(_citation_units(sentences_df))
+    if not packed:
+        return []
+
+    counts = _sentence_known_lemma_counts(combined_df, known_lemmas)
+    content_by_sentence = counts["content_words"].to_dict() if not counts.empty else {}
+    known_by_sentence = counts["known_words"].to_dict() if not counts.empty else {}
+
+    scored: list[dict] = []
+    for passage in packed:
+        indices = [sentence.sentence_index for sentence in passage["sentences"]]
+        content_words = sum(int(content_by_sentence.get(index, 0)) for index in indices)
+        if content_words <= 0:
+            # A run of nothing but punctuation and function words; ranking it by
+            # coverage would put it first on a division by nothing.
+            continue
+        known_words = sum(int(known_by_sentence.get(index, 0)) for index in indices)
+        difficulties = [float(getattr(sentence, "difficulty_score", 0.0) or 0.0) for sentence in passage["sentences"]]
+        scored.append(
+            {
+                "file": passage["file"],
+                "document_id": passage["document_id"],
+                "work_key": tlg_work_key(passage["file"], passage["document_id"]) or passage["file"],
+                "citation": format_citation(
+                    passage["file"],
+                    passage["document_id"],
+                    _subdoc_span(passage["first_subdoc"], passage["last_subdoc"]),
+                ),
+                "word_count": passage["word_count"],
+                "coverage": known_words / content_words,
+                "difficulty": sum(difficulties) / len(difficulties) if difficulties else 0.0,
+                "order": min(indices),
+                "text": " ".join(str(sentence.sentence_text) for sentence in passage["sentences"]),
+            }
+        )
+
+    # Difficulty breaks ties on coverage; file and position only make the build
+    # repeatable.
+    def ranking(passage: dict) -> tuple:
+        return -passage["coverage"], passage["difficulty"], str(passage["file"]), passage["order"]
+
+    scored.sort(key=ranking)
+
+    per_work_cap = count
+    if len({passage["work_key"] for passage in scored}) > 1:
+        per_work_cap = max(1, int(count * PASSAGE_MAX_WORK_SHARE))
+
+    selected: list[dict] = []
+    taken: dict[str, int] = {}
+    for passage in scored:
+        work_key = passage["work_key"]
+        if taken.get(work_key, 0) >= per_work_cap:
+            continue
+        selected.append(passage)
+        taken[work_key] = taken.get(work_key, 0) + 1
+        if len(selected) >= count:
+            break
+
+    # A cap that starves the appendix is worse than an unbalanced one, so fill any
+    # shortfall from what it held back.
+    if len(selected) < count:
+        chosen = {id(passage) for passage in selected}
+        for passage in scored:
+            if len(selected) >= count:
+                break
+            if id(passage) not in chosen:
+                selected.append(passage)
+        selected.sort(key=ranking)
+
+    return selected
+
+
 def get_topic_sentences(
     syllabus_label: str,
     combined_df: pd.DataFrame,
@@ -1660,6 +1888,73 @@ def format_vocabulary_section(
         *_vocabulary_table(vocabulary, lang, rtl, _vocabulary_word_cell),
     ]
     return "\n".join(lines) + "\n"
+
+
+COVERAGE_RING_RADIUS = 26
+COVERAGE_RING_CIRCUMFERENCE = 2 * math.pi * COVERAGE_RING_RADIUS
+
+
+def _count_new_lemma_tokens(
+    ledger_keys,
+    counted: set[str],
+    token_counts: pd.Series,
+) -> int:
+    # Only lemmas not already counted, so a word handed over twice cannot inflate
+    # the running total.
+    fresh = {str(key) for key in ledger_keys} - counted
+    if not fresh:
+        return 0
+    counted |= fresh
+    return int(token_counts.reindex(sorted(fresh)).fillna(0).sum())
+
+
+def _coverage_fraction(covered: int, total: int) -> float:
+    if total <= 0:
+        return 0.0
+    return min(max(covered / total, 0.0), 1.0)
+
+
+def _coverage_ring_svg(fraction: float, label_key: str, aria_key: str, lang: str) -> str:
+    # A donut rather than a bar: the covered arc is one circle stroked over a full
+    # circle, started at twelve o'clock by rotating it instead of computing a path.
+    percent = int(round(fraction * 100))
+    dash = COVERAGE_RING_CIRCUMFERENCE * fraction
+    gap = COVERAGE_RING_CIRCUMFERENCE - dash
+    label = t(label_key, lang)
+    aria = t(aria_key, lang, percent=percent).replace('"', "&quot;")
+    return (
+        '<figure class="coverage-ring">'
+        f'<svg viewBox="0 0 64 64" width="76" height="76" role="img" aria-label="{aria}">'
+        f'<circle class="coverage-track" cx="32" cy="32" r="{COVERAGE_RING_RADIUS}"/>'
+        f'<circle class="coverage-fill" cx="32" cy="32" r="{COVERAGE_RING_RADIUS}"'
+        f' stroke-dasharray="{dash:.2f} {gap:.2f}" transform="rotate(-90 32 32)"/>'
+        '<text class="coverage-value" x="32" y="32" dy="0.35em" text-anchor="middle">'
+        f"{percent}%</text>"
+        "</svg>"
+        f"<figcaption>{label}</figcaption>"
+        "</figure>"
+    )
+
+
+def render_coverage_gauges(
+    vocabulary_fraction: float,
+    morphology_fraction: float,
+    lang: str = DEFAULT_LANG,
+) -> str:
+    # The book's argument for its own ordering, made once per lesson: the learner
+    # sees how much of the corpus they can already read, not just how often this
+    # lesson's forms happen to occur.
+    #
+    # One line of raw HTML on purpose. The document is handed to md_in_html inside
+    # the RTL wrapper, and a block with no internal newline passes through whole.
+    lead = t("tb_coverage_lead", lang).strip()
+    lead_html = f'<p class="coverage-lead">{lead}</p>' if lead else ""
+    rings = _coverage_ring_svg(
+        vocabulary_fraction, "tb_coverage_vocab", "tb_coverage_vocab_aria", lang
+    ) + _coverage_ring_svg(
+        morphology_fraction, "tb_coverage_morph", "tb_coverage_morph_aria", lang
+    )
+    return f'<div class="coverage">{lead_html}<div class="coverage-rings">{rings}</div></div>'
 
 
 def get_core_function_words(
@@ -2166,6 +2461,27 @@ def _render_title_page(lang: str) -> list[str]:
     ]
 
 
+def format_passage_appendix(passages: list[dict], lang: str = DEFAULT_LANG) -> str:
+    # The passages themselves. Greek is LTR-isolated here rather than left to the
+    # HTML export, because wrap_greek_runs_in_html only runs on that path and the
+    # markdown download would otherwise reorder the words on an RTL page.
+    rtl = is_rtl(lang)
+    lines = [t("tb_passages_intro", lang), ""]
+
+    for number, passage in enumerate(passages, 1):
+        citation = passage.get("citation") or ""
+        if citation:
+            heading = t("tb_passage_heading", lang, number=number, citation=_ltr_isolate(citation, rtl))
+        else:
+            heading = str(number)
+        lines.append(f"## {heading}")
+        lines.append("")
+        lines.append(_ltr_isolate(passage["text"], rtl))
+        lines.append("")
+
+    return "\n".join(lines).rstrip()
+
+
 def generate_textbook_markdown(
     frequency_syllabus: pd.DataFrame,
     grammar_folder: str | Path,
@@ -2194,6 +2510,14 @@ def generate_textbook_markdown(
     lesson_rows = frequency_syllabus[
         frequency_syllabus["syllabus"].notna() & (frequency_syllabus["syllabus"] != "NA")
     ].head(int(lesson_count))
+
+    # Every analyzable token in the corpus, whether or not its lesson made the cut.
+    # build_frequency_syllabus has already dropped the rows no lesson could teach,
+    # so a complete book approaches 100% instead of stalling at an unexplained
+    # ceiling.
+    total_forms = int(
+        pd.to_numeric(frequency_syllabus["frequency"], errors="coerce").fillna(0).sum()
+    )
 
     lesson_data = []
     rank = 0
@@ -2295,6 +2619,12 @@ def generate_textbook_markdown(
         anchor = heading_slug(f"{lesson['rank']}. {lesson['display_label']}")
         markdown_content.append(f"{lesson['rank']}. [{lesson['display_label']}](#{anchor})")
 
+    # Held open for the passage appendix, which cannot be built until known_lemmas
+    # is final and that only happens after the lesson loop. An unclaimed slot stays
+    # an empty string at the end of the list, where it cannot split the contents.
+    passages_toc_slot = len(markdown_content)
+    markdown_content.append("")
+
     markdown_content.append("")
 
     working_combined_df = None
@@ -2304,16 +2634,36 @@ def generate_textbook_markdown(
     citation_index: dict[str, dict[str, str]] = {}
     core_function_words = pd.DataFrame()
 
+    # Running coverage of the corpus, carried across the lesson loop.
+    ledger_token_counts = pd.Series(dtype="int64")
+    total_greek_tokens = 0
+    counted_lemma_keys: set[str] = set()
+    covered_tokens = 0
+    covered_forms = 0
+
     if combined_df is not None and not combined_df.empty:
         # The passed frame is worked on directly: a full .copy() duplicated the
         # whole token table and drove the OOM kills, whereas the two derived
         # columns cost a few MB. They also show up in the combined-rows export.
         working_combined_df = combined_df
 
+        # Counted over the distinct lemmas rather than every token: the Greek test
+        # then runs a few thousand times instead of a few hundred thousand, and the
+        # counts are needed here even when lemma_frequency survives from an earlier
+        # build, because the frame is worked on in place.
+        all_lemma_counts = working_combined_df["lemma"].value_counts()
+        greek_mask = np.array(all_lemma_counts.index.map(is_greek_lemma), dtype=bool)
+        lemma_counts = all_lemma_counts[greek_mask]
+
         if "lemma_frequency" not in working_combined_df.columns:
-            greek_rows = working_combined_df[working_combined_df["lemma"].apply(is_greek_lemma)]
-            lemma_counts = greek_rows["lemma"].value_counts()
             working_combined_df["lemma_frequency"] = working_combined_df["lemma"].map(lemma_counts).fillna(0)
+
+        # Coverage is counted in running text, over the same merged identity the
+        # vocabulary ledger uses, so λέγω1 and λέγω3 are one word here too.
+        ledger_token_counts = lemma_counts.groupby(
+            lemma_counts.index.map(vocabulary_ledger_key)
+        ).sum()
+        total_greek_tokens = int(lemma_counts.sum())
 
         working_sentences_df = assemble_sentences(working_combined_df)
         if not working_sentences_df.empty:
@@ -2329,6 +2679,9 @@ def generate_textbook_markdown(
         core_function_words = get_core_function_words(working_combined_df)
         if not core_function_words.empty:
             introduced_lemmas.update(core_function_words["ledger_key"])
+            covered_tokens += _count_new_lemma_tokens(
+                core_function_words["ledger_key"], counted_lemma_keys, ledger_token_counts
+            )
 
     for lesson in lesson_data:
         # A rule then an H1: the lesson title outranks every heading its own body
@@ -2343,6 +2696,15 @@ def generate_textbook_markdown(
         else:
             markdown_content.append(t("tb_pos_family", lang, pos=_pos_label(lesson["pos_category"], lang)))
             markdown_content.append(t("tb_frequency", lang, frequency=lesson["frequency"]))
+        markdown_content.append("")
+
+        # Filled in at the end of this iteration. The figure worth showing is what
+        # the reader knows once the lesson is done, and the ledger only reaches
+        # that state further down the loop. Sitting after the subtitle keeps the
+        # h1 + p rule matching, so the grey subtitle keeps its styling.
+        coverage_slot = len(markdown_content)
+        markdown_content.append("")
+
         markdown_content.append("")
         markdown_content.append(lesson["body"])
 
@@ -2377,6 +2739,9 @@ def generate_textbook_markdown(
                 if not vocabulary.empty:
                     introduced_lemmas.update(vocabulary["ledger_key"])
                     known_lemmas.update(vocabulary["ledger_key"])
+                    covered_tokens += _count_new_lemma_tokens(
+                        vocabulary["ledger_key"], counted_lemma_keys, ledger_token_counts
+                    )
 
                 topic_words = get_topic_words(
                     lesson["label"], lesson["pos_category"], working_combined_df, num_words=15
@@ -2410,6 +2775,43 @@ def generate_textbook_markdown(
             else:
                 markdown_content.append(f"*{t('tb_no_exercises', lang, label=lesson['display_label'])}*")
 
+            # Deponency is a lexical class, not a paradigm: its tokens were already
+            # counted under the voice lessons they appear in, so the concept lesson
+            # adds no forms of its own. Starter modules never reach here, and a
+            # gauge reading 0% morphology on the alphabet page would argue against
+            # the very thing it exists to argue for.
+            frequency = lesson["frequency"]
+            if lesson["label"] != DEPONENT_LESSON_LABEL and isinstance(
+                frequency, (int, np.integer)
+            ):
+                covered_forms += int(frequency)
+
+            if total_greek_tokens and total_forms:
+                markdown_content[coverage_slot] = render_coverage_gauges(
+                    _coverage_fraction(covered_tokens, total_greek_tokens),
+                    _coverage_fraction(covered_forms, total_forms),
+                    lang,
+                )
+
+        markdown_content.append("")
+
+    # Continuous reading to close on, drawn from the same texts the lessons were
+    # built from. known_lemmas now holds everything the book taught, which is what
+    # ranks the passages.
+    passages: list[dict] = []
+    if working_combined_df is not None and working_sentences_df is not None and not working_sentences_df.empty:
+        passages = build_reading_passages(working_sentences_df, working_combined_df, known_lemmas)
+
+    if passages:
+        passages_rank = len(lesson_data) + 1
+        passages_title = t("tb_passages_header", lang)
+        anchor = heading_slug(f"{passages_rank}. {passages_title}")
+        markdown_content[passages_toc_slot] = f"{passages_rank}. [{passages_title}](#{anchor})"
+        markdown_content.append("---")
+        markdown_content.append("")
+        markdown_content.append(f"# {passages_rank}. {passages_title}")
+        markdown_content.append("")
+        markdown_content.append(format_passage_appendix(passages, lang=lang))
         markdown_content.append("")
 
     document = "\n".join(markdown_content)
@@ -2586,6 +2988,53 @@ def generate_textbook_html(
         }}
         th {{
             background: #f0f0f0;
+        }}
+        /* The two coverage donuts under a lesson heading. Kept on the heading's
+           page: orphaned from it they say nothing. */
+        .coverage {{
+            margin: 0 0 1.8rem;
+            break-inside: avoid;
+            page-break-inside: avoid;
+            break-after: avoid;
+        }}
+        .coverage-lead {{
+            margin: 0 0 0.5rem;
+            color: #6b5b4d;
+            font-size: 0.92rem;
+        }}
+        .coverage-rings {{
+            display: flex;
+            gap: 2.2rem;
+        }}
+        .coverage-ring {{
+            margin: 0;
+            text-align: center;
+        }}
+        .coverage-ring figcaption {{
+            margin-top: 0.1rem;
+            color: #6b5b4d;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }}
+        .coverage-track {{
+            fill: none;
+            stroke: #e0d6ca;
+            stroke-width: 8;
+        }}
+        .coverage-fill {{
+            fill: none;
+            stroke: #3A1712;
+            stroke-width: 8;
+        }}
+        /* The numeral stays left-to-right in an RTL book, or the per-cent sign
+           lands on the wrong side of the digits. */
+        .coverage-value {{
+            fill: #3A1712;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            direction: ltr;
+            unicode-bidi: isolate;
         }}
 {rtl_style}    </style>
 </head>

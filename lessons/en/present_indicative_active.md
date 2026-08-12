@@ -22,17 +22,17 @@ For example, the verb γράφω, "to write," is conjugated as follows:
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | γράφω (gráphō) | γράφομεν (gráphomen) |
-| 2nd | γράφεις (grápheis) | γράφετε (gráphete) |
-| 3rd | γράφει (gráphei) | γράφουσι(ν) (gráphousi(n)) |
+| 1st | γράφω | γράφομεν |
+| 2nd | γράφεις | γράφετε |
+| 3rd | γράφει | γράφουσι(ν) |
 
 Another example is the verb λύω, "to loose":
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | λύω (lýō) | λύομεν (lýomen) |
-| 2nd | λύεις (lýeis) | λύετε (lýete) |
-| 3rd | λύει (lýei) | λύουσι(ν) (lýousi(n)) |
+| 1st | λύω | λύομεν |
+| 2nd | λύεις | λύετε |
+| 3rd | λύει | λύουσι(ν) |
 
 ### Key Rules and Exceptions
 - **Accent**: the accent of finite verb forms is *recessive* — it moves as far toward the beginning of the word as the rules of accentuation allow (γράφομεν, not *γραφόμεν*).
@@ -42,16 +42,16 @@ Another example is the verb λύω, "to loose":
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | εἰμί (eimí) | ἐσμέν (esmén) |
-| 2nd | εἶ (eî) | ἐστέ (esté) |
-| 3rd | ἐστί(ν) (estí(n)) | εἰσί(ν) (eisí(n)) |
+| 1st | εἰμί | ἐσμέν |
+| 2nd | εἶ | ἐστέ |
+| 3rd | ἐστί(ν) | εἰσί(ν) |
 
 Most forms of εἰμί are enclitic — they surrender their accent to the preceding word.
 
 ### Example Sentences with Translations
-1. **γράφω ἐπιστολήν.** (gráphō epistolḗn) — I am writing a letter.
-2. **οἱ μαθηταὶ γράφουσι τοὺς λόγους.** (hoi mathētaì gráphousi toùs lógous) — The students are writing the speeches.
-3. **ἡ κόρη λύει τὸν ἵππον.** (hē kórē lýei tòn híppon) — The girl unties the horse.
+1. **γράφω ἐπιστολήν.** — I am writing a letter.
+2. **οἱ μαθηταὶ γράφουσι τοὺς λόγους.** — The students are writing the speeches.
+3. **ἡ κόρη λύει τὸν ἵππον.** — The girl unties the horse.
 
 ### Notes on Usage and Context
 ω-Verbs are the most numerous class of Greek verbs, and command of their conjugation is essential for reading any text. The present indicative active is used for actions in progress ("I am writing now"), general truths ("the sun rises"), and habitual actions ("he writes every day"). Historians also frequently narrate past events in the "historical present" to make the scene more vivid.

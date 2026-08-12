@@ -85,12 +85,12 @@ The secondary endings with the thematic vowel (ο before μ/ν, otherwise ε):
 
 ## 5. Example Sentences
 
-| Greek (imperfect) | Transliteration | Meaning |
-|-------------------|----------------|---------|
-| **ἔλυον τὸν δεσμὸν ἡμέρας πολλάς.** | élyon ton desmòn hēméras pollás | I was loosening the bond for many days. |
-| **ἐλύομεν τοὺς ἵππους ἐν τῇ ἀγορᾷ.** | elýomen tous híppous en têi agorâi | We were untying the horses in the marketplace. |
-| **ἔγραφες τὴν ἐπιστολήν.** | égraphes tēn epistolḗn | You were writing the letter. |
-| **ὁ διδάσκαλος ἐπαίδευε τὰ παιδία.** | ho didáskalos epaídeue ta paidía | The teacher was educating the children. |
+| Greek (imperfect) | Meaning |
+|-------------------|---------|
+| **ἔλυον τὸν δεσμὸν ἡμέρας πολλάς.** | I was loosening the bond for many days. |
+| **ἐλύομεν τοὺς ἵππους ἐν τῇ ἀγορᾷ.** | We were untying the horses in the marketplace. |
+| **ἔγραφες τὴν ἐπιστολήν.** | You were writing the letter. |
+| **ὁ διδάσκαλος ἐπαίδευε τὰ παιδία.** | The teacher was educating the children. |
 
 ---
 
@@ -114,14 +114,14 @@ The secondary endings with the thematic vowel (ο before μ/ν, otherwise ε):
 
 ## 8. Quick Reference Sheet
 
-| Person | Imperfect active (ω-verb) | Transliteration |
-|--------|---------------------------|-----------------|
-| 1st sg. | ἐ + stem + **‑ον** | é-…-on |
-| 2nd sg. | ἐ + stem + **‑ες** | é-…-es |
-| 3rd sg. | ἐ + stem + **‑ε(ν)** | é-…-e(n) |
-| 1st pl. | ἐ + stem + **‑ομεν** | e-…-omen |
-| 2nd pl. | ἐ + stem + **‑ετε** | e-…-ete |
-| 3rd pl. | ἐ + stem + **‑ον** | é-…-on |
+| Person | Imperfect active (ω-verb) |
+|--------|---------------------------|
+| 1st sg. | ἐ + stem + **‑ον** |
+| 2nd sg. | ἐ + stem + **‑ες** |
+| 3rd sg. | ἐ + stem + **‑ε(ν)** |
+| 1st pl. | ἐ + stem + **‑ομεν** |
+| 2nd pl. | ἐ + stem + **‑ετε** |
+| 3rd pl. | ἐ + stem + **‑ον** |
 
 *Stem = the present stem without ‑ω (e.g., λυ‑ for λύω).*
 

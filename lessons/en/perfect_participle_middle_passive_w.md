@@ -82,13 +82,13 @@ The same pattern works for any perfect stem; simply replace λελυ‑ with the
 
 ## 5. Example Sentences
 
-| Greek | Transliteration | Translation |
-|------------------------------|----------------|-------------|
-| **τὸ βιβλίον γεγραμμένον ἐστίν.** | tò biblíon gegramménon estín | The book has been written. (periphrastic) |
-| **ὁ ἵππος ὁ λελυμένος φεύγει.** | ho híppos ho lelyménos pheúgei | The horse that has been untied runs away. |
-| **οἱ πεπαιδευμένοι σοφοί εἰσιν.** | hoi pepaideuménoi sophoí eisin | The educated are wise. (substantive use) |
-| **τὰ γεγραμμένα ἀναγιγνώσκομεν.** | tà gegramména anagignṓskomen | We read the things that have been written. |
-| **ἡ πόλις τεταγμένη ὑπὸ τοῦ ἄρχοντος εὖ ἔχει.** | hē pólis tetagménē hypò toû árkhontos eû ékhei | The city that has been set in order by its ruler fares well. |
+| Greek | Translation |
+|------------------------------|-------------|
+| **τὸ βιβλίον γεγραμμένον ἐστίν.** | The book has been written. (periphrastic) |
+| **ὁ ἵππος ὁ λελυμένος φεύγει.** | The horse that has been untied runs away. |
+| **οἱ πεπαιδευμένοι σοφοί εἰσιν.** | The educated are wise. (substantive use) |
+| **τὰ γεγραμμένα ἀναγιγνώσκομεν.** | We read the things that have been written. |
+| **ἡ πόλις τεταγμένη ὑπὸ τοῦ ἄρχοντος εὖ ἔχει.** | The city that has been set in order by its ruler fares well. |
 
 ---
 

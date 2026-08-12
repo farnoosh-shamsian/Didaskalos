@@ -110,13 +110,13 @@ The middle shape (‑σομαι) is **entirely distinct** from the active (‑σ
 
 ## 4. Example Sentences
 
-| Greek (future middle) | Transliteration | Meaning |
-|-----------------------|----------------|---------|
-| **λύσομαι τὸν αἰχμάλωτον.** | lýsomai ton aikhmálōton | I will ransom the captive. |
-| **ὁ παῖς παιδεύσεται ὑπὸ σοφοῦ διδασκάλου.** | ho paîs paideúsetai… | The boy will be educated by a wise teacher. |
-| **ἐλεύσομαι εἰς τὴν πόλιν.** | eleúsomai eis tēn pólin | I will come to the city. |
-| **ὄψεσθε τὰ ἔργα τῶν θεῶν.** | ópsesthe ta érga tōn theôn | You will see the works of the gods. |
-| **ταῦτα ἔσται.** | taûta éstai | So it will be. |
+| Greek (future middle) | Meaning |
+|-----------------------|---------|
+| **λύσομαι τὸν αἰχμάλωτον.** | I will ransom the captive. |
+| **ὁ παῖς παιδεύσεται ὑπὸ σοφοῦ διδασκάλου.** | The boy will be educated by a wise teacher. |
+| **ἐλεύσομαι εἰς τὴν πόλιν.** | I will come to the city. |
+| **ὄψεσθε τὰ ἔργα τῶν θεῶν.** | You will see the works of the gods. |
+| **ταῦτα ἔσται.** | So it will be. |
 
 ---
 

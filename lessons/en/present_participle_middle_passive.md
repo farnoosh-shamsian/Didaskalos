@@ -12,33 +12,33 @@ The present indicative active of ω-verbs follows a fixed pattern: the stem comb
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | γράφω (gráphō) | γράφομεν (gráphomen) |
-| 2nd | γράφεις (grápheis) | γράφετε (gráphete) |
-| 3rd | γράφει (gráphei) | γράφουσι(ν) (gráphousi(n)) |
+| 1st | γράφω | γράφομεν |
+| 2nd | γράφεις | γράφετε |
+| 3rd | γράφει | γράφουσι(ν) |
 
 The present **active** participle (for comparison) is formed with the markers ‑ων (masculine), ‑ουσα (feminine), and ‑ον (neuter):
 
 | Gender | Singular | Plural |
 | --- | --- | --- |
-| Masculine | γράφων (gráphōn) | γράφοντες (gráphontes) |
-| Feminine | γράφουσα (gráphousa) | γράφουσαι (gráphousai) |
-| Neuter | γράφον (gráphon) | γράφοντα (gráphonta) |
+| Masculine | γράφων | γράφοντες |
+| Feminine | γράφουσα | γράφουσαι |
+| Neuter | γράφον | γράφοντα |
 
 The present **medio-passive** participle is formed with the marker **‑όμενος** (masculine), **‑ομένη** (feminine), **‑όμενον** (neuter) and declines exactly like a first/second-declension adjective:
 
 | Gender | Singular | Plural |
 | --- | --- | --- |
-| Masculine | γραφόμενος (graphómenos) | γραφόμενοι (graphómenoi) |
-| Feminine | γραφομένη (graphoménē) | γραφόμεναι (graphómenai) |
-| Neuter | γραφόμενον (graphómenon) | γραφόμενα (graphómena) |
+| Masculine | γραφόμενος | γραφόμενοι |
+| Feminine | γραφομένη | γραφόμεναι |
+| Neuter | γραφόμενον | γραφόμενα |
 
 The medio-passive voice of the present indicative also has its own endings:
 
 | Person | Singular | Plural |
 | --- | --- | --- |
-| 1st | γράφομαι (gráphomai) | γραφόμεθα (graphómetha) |
-| 2nd | γράφῃ / γράφει (gráphēi / gráphei) | γράφεσθε (gráphesthe) |
-| 3rd | γράφεται (gráphetai) | γράφονται (gráphontai) |
+| 1st | γράφομαι | γραφόμεθα |
+| 2nd | γράφῃ / γράφει | γράφεσθε |
+| 3rd | γράφεται | γράφονται |
 
 ## Key Rules and Exceptions
 - **Rule 1:** The medio-passive participle is always built on the present stem + thematic vowel ο + ‑μενος and declines like adjectives in ‑ος/‑η/‑ον.
@@ -49,9 +49,9 @@ The medio-passive voice of the present indicative also has its own endings:
 - **Exception 3:** Deponent verbs (such as ἔρχομαι) have only the medio-passive participle but translate actively: ἐρχόμενος "coming."
 
 ## Example Sentences with Translations
-1. **γράφω ἐπιστολήν.** (gráphō epistolḗn) — I am writing a letter.
-2. **τὸ βιβλίον τὸ γραφόμενον ὑπὸ τοῦ μαθητοῦ καλόν ἐστιν.** (tò biblíon tò graphómenon hypò toû mathētoû kalón estin) — The book being written by the student is beautiful.
-3. **ἡ γυνὴ λουομένη ἐν τῷ ποταμῷ ᾄδει.** (hē gynḕ louoménē en tôi potamôi áidei) — The woman sings while washing herself in the river.
+1. **γράφω ἐπιστολήν.** — I am writing a letter.
+2. **τὸ βιβλίον τὸ γραφόμενον ὑπὸ τοῦ μαθητοῦ καλόν ἐστιν.** — The book being written by the student is beautiful.
+3. **ἡ γυνὴ λουομένη ἐν τῷ ποταμῷ ᾄδει.** — The woman sings while washing herself in the river.
 
 ## Notes on Usage and Context
 The present medio-passive participle expresses an action simultaneous with the main verb that is either done to the subject (passive) or done by the subject on or for itself (middle). With the article it serves attributive or substantive functions (τὰ λεγόμενα "the things being said, sayings"); without the article it is usually circumstantial, expressing time, cause, or manner. If an agent is expressed (ὑπό + genitive), the passive reading is almost certain.

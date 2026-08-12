@@ -72,14 +72,14 @@ A few deponents borrow **active‑form** tenses from other stems: ἔρχομα�
 
 ## 5. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **ἔρχομαι εἰς τὴν πόλιν.** | érkhomai eis tḕn pólin | I am coming into the city. |
-| **οἱ στρατιῶται μάχονται τοῖς πολεμίοις.** | hoi stratiôtai mákhontai toîs polemíois | The soldiers fight the enemy. |
-| **ἐβουλήθη ὁ βασιλεὺς ἀκοῦσαι.** | eboulḗthē ho basileùs akoûsai | The king wanted to listen. (passive form, active meaning) |
-| **οὐ δύναμαι λέγειν.** | ou dýnamai légein | I am not able to speak. (athematic) |
-| **ἦλθον οἱ ξένοι εἰς τὴν οἰκίαν.** | êlthon hoi xénoi eis tḕn oikían | The strangers came into the house. (suppletive active aorist of ἔρχομαι) |
-| **ὁ διδάσκαλος φιλεῖται ὑπὸ τῶν μαθητῶν.** | ho didáskalos phileîtai hypò tôn mathētôn | The teacher is loved by the students. (true passive, for contrast) |
+| Greek | Translation |
+|----------------------------|-------------|
+| **ἔρχομαι εἰς τὴν πόλιν.** | I am coming into the city. |
+| **οἱ στρατιῶται μάχονται τοῖς πολεμίοις.** | The soldiers fight the enemy. |
+| **ἐβουλήθη ὁ βασιλεὺς ἀκοῦσαι.** | The king wanted to listen. (passive form, active meaning) |
+| **οὐ δύναμαι λέγειν.** | I am not able to speak. (athematic) |
+| **ἦλθον οἱ ξένοι εἰς τὴν οἰκίαν.** | The strangers came into the house. (suppletive active aorist of ἔρχομαι) |
+| **ὁ διδάσκαλος φιλεῖται ὑπὸ τῶν μαθητῶν.** | The teacher is loved by the students. (true passive, for contrast) |
 
 ---
 

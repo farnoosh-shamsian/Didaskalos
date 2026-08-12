@@ -74,13 +74,13 @@ The final vowel of the stem merges with the thematic vowel and ending:
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|-----------------------------------|----------------|---------|
-| **ὁ παῖς λούεται.** | ho paîs loúetai | The boy washes himself. (middle) |
-| **ὁ διδάσκαλος φιλεῖται ὑπὸ τῶν μαθητῶν.** | ho didáskalos phileîtai hypò tôn mathētôn | The teacher is loved by the students. (passive) |
-| **λύονται οἱ ἵπποι.** | lýontai hoi híppoi | The horses are being untied. |
-| **παιδευόμεθα ὑπὸ τῶν πατέρων.** | paideuómetha hypò tôn patérōn | We are being educated by our fathers. |
-| **ἡ ἀλήθεια δηλοῦται τοῖς σοφοῖς.** | hē alḗtheia dēloûtai toîs sophoîs | The truth is revealed to the wise. |
+| Greek | Translation |
+|-----------------------------------|---------|
+| **ὁ παῖς λούεται.** | The boy washes himself. (middle) |
+| **ὁ διδάσκαλος φιλεῖται ὑπὸ τῶν μαθητῶν.** | The teacher is loved by the students. (passive) |
+| **λύονται οἱ ἵπποι.** | The horses are being untied. |
+| **παιδευόμεθα ὑπὸ τῶν πατέρων.** | We are being educated by our fathers. |
+| **ἡ ἀλήθεια δηλοῦται τοῖς σοφοῖς.** | The truth is revealed to the wise. |
 
 ---
 

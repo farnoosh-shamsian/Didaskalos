@@ -105,13 +105,13 @@ In μι-verbs the ending ‑σθαι attaches **directly to the stem, without th
 
 ## 5. Example Sentences
 
-| Greek | Transliteration | Translation |
-|------------------------------|-------------|-------------|
-| **ὁ στρατηγὸς κελεύει τοὺς ἵππους λύεσθαι.** | ho stratēgòs keleúei toùs híppous lýesthai | The general orders the horses to be untied. |
-| **ὁ παῖς βούλεται λούεσθαι.** | ho paîs boúletai loúesthai | The boy wants to wash himself. (middle) |
-| **καλόν ἐστι τιμᾶσθαι ὑπὸ τῶν πολιτῶν.** | kalón esti timâsthai hypò tôn politôn | It is a fine thing to be honored by the citizens. (passive) |
-| **ὁ διδάσκαλος κελεύει τὸν παῖδα παιδεύεσθαι.** | ho didáskalos keleúei tòn paîda paideúesthai | The teacher orders the child to be educated. |
-| **ὁ στρατηγὸς ἐκέλευσεν ἀποκρίνεσθαι ταχέως.** | ho stratēgòs ekéleusen apokrínesthai takhéōs | The general ordered them to answer quickly. (deponent, active meaning) |
+| Greek | Translation |
+|------------------------------|-------------|
+| **ὁ στρατηγὸς κελεύει τοὺς ἵππους λύεσθαι.** | The general orders the horses to be untied. |
+| **ὁ παῖς βούλεται λούεσθαι.** | The boy wants to wash himself. (middle) |
+| **καλόν ἐστι τιμᾶσθαι ὑπὸ τῶν πολιτῶν.** | It is a fine thing to be honored by the citizens. (passive) |
+| **ὁ διδάσκαλος κελεύει τὸν παῖδα παιδεύεσθαι.** | The teacher orders the child to be educated. |
+| **ὁ στρατηγὸς ἐκέλευσεν ἀποκρίνεσθαι ταχέως.** | The general ordered them to answer quickly. (deponent, active meaning) |
 
 ---
 

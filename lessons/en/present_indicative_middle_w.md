@@ -71,13 +71,13 @@ In the present tense middle and passive **share the same forms**; this lesson ga
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **ἔρχεται ὁ διδάσκαλος εἰς τὴν πόλιν.** | érkhetai ho didáskalos eis tḕn pólin | The teacher is coming into the city. (deponent) |
-| **βούλομαι μανθάνειν.** | boúlomai manthánein | I want to learn. (deponent) |
-| **ταῦτα γίγνεται καθ' ἡμέραν.** | taûta gígnetai kath' hēméran | These things happen every day. (deponent) |
-| **οἱ παῖδες λούονται ἐν τῷ ποταμῷ.** | hoi paîdes loúontai en tôi potamôi | The children wash themselves in the river. (reflexive middle) |
-| **ὁ στρατηγὸς πείθεται τοῖς νόμοις.** | ho stratēgòs peíthetai toîs nómois | The general obeys the laws. (middle with special meaning) |
+| Greek | Translation |
+|----------------------------|-------------|
+| **ἔρχεται ὁ διδάσκαλος εἰς τὴν πόλιν.** | The teacher is coming into the city. (deponent) |
+| **βούλομαι μανθάνειν.** | I want to learn. (deponent) |
+| **ταῦτα γίγνεται καθ' ἡμέραν.** | These things happen every day. (deponent) |
+| **οἱ παῖδες λούονται ἐν τῷ ποταμῷ.** | The children wash themselves in the river. (reflexive middle) |
+| **ὁ στρατηγὸς πείθεται τοῖς νόμοις.** | The general obeys the laws. (middle with special meaning) |
 
 ---
 

@@ -92,13 +92,13 @@ In the middle/passive imperfect, μι-verbs use the **short stem** (the same as 
 
 ## 4. Example Sentences
 
-| Greek (imperfect middle/passive) | Transliteration | Meaning |
-|-----------------------------------|----------------|---------|
-| **οἱ νόμοι ἐτίθεντο ὑπὸ τῶν πολιτῶν.** | hoi nómoi etíthento… | The laws were being enacted by the citizens. |
-| **τὰ δῶρα ἐδίδοτο τοῖς θεοῖς.** | ta dôra edídoto… | The gifts were being given to the gods. |
-| **ὁ στρατὸς ἵστατο πρὸ τῶν πυλῶν.** | ho stratòs hístato… | The army was taking its stand before the gates. |
-| **οὐκ ἐδύνατο λέγειν.** | ouk edýnato légein | He was unable to speak. |
-| **τὸ ξίφος ἔκειτο ἐπὶ τῆς τραπέζης.** | to xíphos ékeito… | The sword lay on the table. |
+| Greek (imperfect middle/passive) | Meaning |
+|-----------------------------------|---------|
+| **οἱ νόμοι ἐτίθεντο ὑπὸ τῶν πολιτῶν.** | The laws were being enacted by the citizens. |
+| **τὰ δῶρα ἐδίδοτο τοῖς θεοῖς.** | The gifts were being given to the gods. |
+| **ὁ στρατὸς ἵστατο πρὸ τῶν πυλῶν.** | The army was taking its stand before the gates. |
+| **οὐκ ἐδύνατο λέγειν.** | He was unable to speak. |
+| **τὸ ξίφος ἔκειτο ἐπὶ τῆς τραπέζης.** | The sword lay on the table. |
 
 ---
 

@@ -69,13 +69,13 @@ The subjunctive is marked by the **long thematic vowel** (ω/η). No augment.
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **ἔρχεται ἵνα δέξηται τὰ δῶρα.** | érkhetai hína déxētai tà dôra | He comes so that he may receive the gifts. (deponent) |
-| **φοβοῦνται μὴ γένηται πόλεμος.** | phoboûntai mḕ génētai pólemos | They fear that war may break out. (deponent) |
-| **γενώμεθα ἄνδρες ἀγαθοί.** | genṓmetha ándres agathoí | Let us become good men. (hortatory) |
-| **μένει ἕως ἂν ἀφίκηται ὁ ἄγγελος.** | ménei héōs àn aphíkētai ho ángelos | He waits until the messenger arrives. |
-| **ἐὰν λύσηται τοὺς αἰχμαλώτους, ἐπαινεθήσεται.** | eàn lýsētai toùs aikhmalṓtous, epainethḗsetai | If he ransoms the prisoners, he will be praised. (true middle: "have released for oneself") |
+| Greek | Translation |
+|----------------------------|-------------|
+| **ἔρχεται ἵνα δέξηται τὰ δῶρα.** | He comes so that he may receive the gifts. (deponent) |
+| **φοβοῦνται μὴ γένηται πόλεμος.** | They fear that war may break out. (deponent) |
+| **γενώμεθα ἄνδρες ἀγαθοί.** | Let us become good men. (hortatory) |
+| **μένει ἕως ἂν ἀφίκηται ὁ ἄγγελος.** | He waits until the messenger arrives. |
+| **ἐὰν λύσηται τοὺς αἰχμαλώτους, ἐπαινεθήσεται.** | If he ransoms the prisoners, he will be praised. (true middle: "have released for oneself") |
 
 ---
 

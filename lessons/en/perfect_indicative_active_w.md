@@ -35,14 +35,14 @@ The label **(ω)** means this lesson concerns ω-verbs; the perfect itself ends 
 
 ### 2.2 Full Paradigm: **λύω** → **λέλυκα** "I have loosed"
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1 sg. | **λέλυκα** | lélyka | I have loosed |
-| 2 sg. | **λέλυκας** | lélykas | you have loosed |
-| 3 sg. | **λέλυκε(ν)** | lélyke(n) | he/she/it has loosed |
-| 1 pl. | **λελύκαμεν** | lelýkamen | we have loosed |
-| 2 pl. | **λελύκατε** | lelýkate | you (pl.) have loosed |
-| 3 pl. | **λελύκασι(ν)** | lelýkasi(n) | they have loosed |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1 sg. | **λέλυκα** | I have loosed |
+| 2 sg. | **λέλυκας** | you have loosed |
+| 3 sg. | **λέλυκε(ν)** | he/she/it has loosed |
+| 1 pl. | **λελύκαμεν** | we have loosed |
+| 2 pl. | **λελύκατε** | you (pl.) have loosed |
+| 3 pl. | **λελύκασι(ν)** | they have loosed |
 
 ### 2.3 The Second Perfect (without κ)
 
@@ -81,13 +81,13 @@ The label **(ω)** means this lesson concerns ω-verbs; the perfect itself ends 
 
 ## 4. Example Sentences
 
-| Greek (perfect active) | Transliteration | Meaning |
-|-----------------------|----------------|---------|
-| **γέγραφα τὴν ἐπιστολήν.** | gégrapha tēn epistolḗn | I have written the letter. |
-| **λελύκαμεν τοὺς ἵππους.** | lelýkamen tous híppous | We have untied the horses. |
-| **ὁ στρατηγὸς τέθνηκεν.** | ho stratēgòs téthnēken | The general is dead. |
-| **οἶδα ὅτι ἀληθές ἐστιν.** | oîda hóti alēthés estin | I know that it is true. |
-| **πεπαιδεύκασι τοὺς παῖδας.** | pepaideúkasi tous paîdas | They have educated the children. |
+| Greek (perfect active) | Meaning |
+|-----------------------|---------|
+| **γέγραφα τὴν ἐπιστολήν.** | I have written the letter. |
+| **λελύκαμεν τοὺς ἵππους.** | We have untied the horses. |
+| **ὁ στρατηγὸς τέθνηκεν.** | The general is dead. |
+| **οἶδα ὅτι ἀληθές ἐστιν.** | I know that it is true. |
+| **πεπαιδεύκασι τοὺς παῖδας.** | They have educated the children. |
 
 ---
 

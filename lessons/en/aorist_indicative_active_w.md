@@ -61,27 +61,27 @@ The present indicative active has the ending **‑ω** in the first person singu
 
 ### 4.1 First Aorist Indicative Active (λύω "to loose")
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1st sg. | **ἔλυσα** | *élysa* | I loosed |
-| 2nd sg. | **ἔλυσας** | *élysas* | you (sg.) loosed |
-| 3rd sg. | **ἔλυσε(ν)** | *élyse(n)* | he/she/it loosed |
-| 1st pl. | **ἐλύσαμεν** | *elýsamen* | we loosed |
-| 2nd pl. | **ἐλύσατε** | *elýsate* | you (pl.) loosed |
-| 3rd pl. | **ἔλυσαν** | *élysan* | they loosed |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1st sg. | **ἔλυσα** | I loosed |
+| 2nd sg. | **ἔλυσας** | you (sg.) loosed |
+| 3rd sg. | **ἔλυσε(ν)** | he/she/it loosed |
+| 1st pl. | **ἐλύσαμεν** | we loosed |
+| 2nd pl. | **ἐλύσατε** | you (pl.) loosed |
+| 3rd pl. | **ἔλυσαν** | they loosed |
 
 *The augment **ἐ‑** at the start of the indicative forms marks past time.*
 
 ### 4.2 Second Aorist Indicative Active (λαμβάνω "to take")
 
-| Person | Form | Transliteration | Gloss |
-|--------|------|----------------|-------|
-| 1st sg. | **ἔλαβον** | *élabon* | I took |
-| 2nd sg. | **ἔλαβες** | *élabes* | you (sg.) took |
-| 3rd sg. | **ἔλαβε(ν)** | *élabe(n)* | he/she/it took |
-| 1st pl. | **ἐλάβομεν** | *elábomen* | we took |
-| 2nd pl. | **ἐλάβετε** | *elábete* | you (pl.) took |
-| 3rd pl. | **ἔλαβον** | *élabon* | they took |
+| Person | Form | Gloss |
+|--------|------|-------|
+| 1st sg. | **ἔλαβον** | I took |
+| 2nd sg. | **ἔλαβες** | you (sg.) took |
+| 3rd sg. | **ἔλαβε(ν)** | he/she/it took |
+| 1st pl. | **ἐλάβομεν** | we took |
+| 2nd pl. | **ἐλάβετε** | you (pl.) took |
+| 3rd pl. | **ἔλαβον** | they took |
 
 *(The aorist stem of λαμβάνω is the shortened form **λαβ‑** — the classic second aorist.)*
 
@@ -102,13 +102,13 @@ The present indicative active has the ending **‑ω** in the first person singu
 
 ## 6. Example Sentences
 
-| Greek (aorist indicative active) | Transliteration | Meaning |
-|-----------------------------------|----------------|---------|
-| **ἔλυσα τὸν δεσμόν.** | *élysa ton desmón* | I loosed the bond. |
-| **ἔλαβον τὰ δῶρα.** | *élabon ta dôra* | They took the gifts. |
-| **ἔγραψε τὸν λόγον.** | *égrapse ton lógon* | He wrote the speech. |
-| **ἠθελήσατε ἰδεῖν τὸν ἀγῶνα.** | *ēthelḗsate ideîn ton agôna* | You (pl.) wanted to see the contest. |
-| **ἔσπευσα εἰς τὴν πόλιν.** | *éspeusa eis tēn pólin* | I hurried to the city. |
+| Greek (aorist indicative active) | Meaning |
+|-----------------------------------|---------|
+| **ἔλυσα τὸν δεσμόν.** | I loosed the bond. |
+| **ἔλαβον τὰ δῶρα.** | They took the gifts. |
+| **ἔγραψε τὸν λόγον.** | He wrote the speech. |
+| **ἠθελήσατε ἰδεῖν τὸν ἀγῶνα.** | You (pl.) wanted to see the contest. |
+| **ἔσπευσα εἰς τὴν πόλιν.** | I hurried to the city. |
 
 *Notice the augment (ἐ‑) and the aorist endings.*
 

@@ -69,13 +69,13 @@ pos: verb
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **δώσω σοι τὰ χρήματα.** | dṓsō soi tà khrḗmata | I will give you the money. |
-| **οἱ στρατιῶται τρόπαιον στήσουσιν.** | hoi stratiôtai trópaion stḗsousin | The soldiers will set up a trophy. |
-| **θήσομεν τοὺς νόμους ἐν τῇ ἀγορᾷ.** | thḗsomen toùs nómous en têi agorâi | We will place the laws in the marketplace. |
-| **δείξει τὴν ὁδὸν τοῖς ξένοις.** | deíxei tḕn hodòn toîs xénois | He will show the strangers the way. |
-| **ἔσται ταῦτα.** | éstai taûta | These things will be so. |
+| Greek | Translation |
+|----------------------------|-------------|
+| **δώσω σοι τὰ χρήματα.** | I will give you the money. |
+| **οἱ στρατιῶται τρόπαιον στήσουσιν.** | The soldiers will set up a trophy. |
+| **θήσομεν τοὺς νόμους ἐν τῇ ἀγορᾷ.** | We will place the laws in the marketplace. |
+| **δείξει τὴν ὁδὸν τοῖς ξένοις.** | He will show the strangers the way. |
+| **ἔσται ταῦτα.** | These things will be so. |
 
 ---
 

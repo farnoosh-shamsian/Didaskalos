@@ -71,13 +71,13 @@ Passive deponents form this future with **active meaning**:
 
 ## 4. Example Sentences
 
-| Greek | Transliteration | Translation |
-|----------------------------|----------------|-------------|
-| **οἱ αἰχμάλωτοι λυθήσονται.** | hoi aikhmálōtoi lythḗsontai | The prisoners will be released. |
-| **ὁ δῆμος πεισθήσεται ὑπὸ τῶν ῥητόρων.** | ho dêmos peisthḗsetai hypò tôn rhētórōn | The people will be persuaded by the orators. |
-| **ἡ ἐπιστολὴ γραφήσεται.** | hē epistolḕ graphḗsetai | The letter will be written. |
-| **ὁ παῖς ἰαθήσεται.** | ho paîs iathḗsetai | The child will be healed. (passive deponent, active sense "will recover") |
-| **πορευθησόμεθα εἰς τὴν πόλιν.** | poreuthēsómetha eis tḕn pólin | We will travel to the city. (passive deponent) |
+| Greek | Translation |
+|----------------------------|-------------|
+| **οἱ αἰχμάλωτοι λυθήσονται.** | The prisoners will be released. |
+| **ὁ δῆμος πεισθήσεται ὑπὸ τῶν ῥητόρων.** | The people will be persuaded by the orators. |
+| **ἡ ἐπιστολὴ γραφήσεται.** | The letter will be written. |
+| **ὁ παῖς ἰαθήσεται.** | The child will be healed. (passive deponent, active sense "will recover") |
+| **πορευθησόμεθα εἰς τὴν πόλιν.** | We will travel to the city. (passive deponent) |
 
 ---
 

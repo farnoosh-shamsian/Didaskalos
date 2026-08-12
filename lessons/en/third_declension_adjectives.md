@@ -27,6 +27,36 @@ The masculine/neuter follow the υ/ε-alternating pattern (compare πόλις in
 
 The stem is παντ-; ντ drops before σ with lengthening (παντ-ς → πᾶς; παντ-σι → πᾶσι). The feminine πᾶσα declines like θάλαττα (gen./dat. sg. in η).
 
+## Degree: comparative and superlative
+
+Two patterns divide this class, and the split is worth knowing because the second one hides the positive completely.
+
+**Regular: -τερος / -τατος on the stem.** The υ-stems simply keep their υ and add the usual endings; μέλας builds on μελαν-:
+
+| Positive | Comparative | Superlative |
+|---|---|---|
+| βαρύς "heavy" | βαρύτερος | βαρύτατος |
+| βαθύς "deep" | βαθύτερος | βαθύτατος |
+| εὐρύς "wide" | εὐρύτερος | εὐρύτατος |
+| γλυκύς "sweet" | γλυκύτερος | γλυκύτατος |
+| μέλας "black" | μελάντερος | μελάντατος |
+
+**Older: -ίων / -ιστος on the bare root.** The two commonest members of the class compare this way, and the comparative looks nothing like the positive:
+
+| Positive | Comparative | Superlative |
+|---|---|---|
+| ταχύς "swift" | θάττων (Ionic θάσσων) | τάχιστος |
+| ἡδύς "sweet, pleasant" | ἡδίων | ἥδιστος |
+
+These are vocabulary, not paradigms — θάττων must simply be recognised as the comparative of ταχύς.
+
+Two structural notes:
+
+- The ‑ίων comparative is a **two-ending third declension** adjective, declined like σώφρων and with the same short alternatives (ἡδίω, ἡδίους); the two-ending lesson gives its paradigm. The ‑ιστος superlative, by contrast, is a plain first/second declension adjective: τάχιστος, ταχίστη, τάχιστον.
+- **πᾶς has no degrees.** "All" admits no comparison, and neither does its compound ἅπας.
+
+The adverbs follow the adjective, as always: ταχέως, θᾶττον, τάχιστα — and ὡς τάχιστα "as quickly as possible".
+
 ## Points to watch
 
 - **πᾶς changes meaning with position**: πᾶσα πόλις "every city"; πᾶσα ἡ πόλις "the whole city"; οἱ πάντες ἄνθρωποι "the sum total of people".

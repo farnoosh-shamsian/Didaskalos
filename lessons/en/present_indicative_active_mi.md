@@ -71,14 +71,14 @@ Many of them also show **ι‑reduplication** in the present system: δί‑δω
 
 ## 4. Example Sentences
 
-| Greek (present indicative active) | Transliteration | Meaning |
-|-----------------------------------|-----------------|---------|
-| **δίδωμί σοι τὸ βιβλίον.** | *dídōmí soi to biblíon* | I give you the book. |
-| **ὁ νομοθέτης τίθησι τοὺς νόμους.** | *ho nomothétēs títhēsi tous nómous* | The lawgiver lays down the laws. |
-| **οἱ θεοὶ διδόασι τὰ ἀγαθά.** | *hoi theoì didóasi ta agathá* | The gods grant good things. |
-| **δείκνυσι τὴν ὁδόν.** | *deíknusi tēn hodón* | He points out the road. |
-| **φησὶν ὁ διδάσκαλος τοῦτο.** | *phēsìn ho didáskalos toûto* | The teacher says this. |
-| **ὁ θεὸς ἵστησι τὴν πόλιν.** | *ho theòs hístēsi tēn pólin* | The god keeps the city standing. |
+| Greek (present indicative active) | Meaning |
+|-----------------------------------|---------|
+| **δίδωμί σοι τὸ βιβλίον.** | I give you the book. |
+| **ὁ νομοθέτης τίθησι τοὺς νόμους.** | The lawgiver lays down the laws. |
+| **οἱ θεοὶ διδόασι τὰ ἀγαθά.** | The gods grant good things. |
+| **δείκνυσι τὴν ὁδόν.** | He points out the road. |
+| **φησὶν ὁ διδάσκαλος τοῦτο.** | The teacher says this. |
+| **ὁ θεὸς ἵστησι τὴν πόλιν.** | The god keeps the city standing. |
 
 *Notice the endings:* **‑μι**, **‑ς**, **‑σι(ν)**, **‑μεν**, **‑τε**, **‑ασι(ν)**.
 

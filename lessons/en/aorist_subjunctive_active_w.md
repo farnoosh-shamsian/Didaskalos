@@ -84,13 +84,13 @@ These forms must be memorized.
 
 ## 4. Example Sentences
 
-| Greek (aorist subjunctive active) | Transliteration | Meaning |
-|-----------------------------------|----------------|---------|
-| **ἵνα τὸν πόλεμον νικήσωμεν.** | hína ton pólemon nikḗsōmen | so that we may win the war. |
-| **ἐὰν ἔλθῃ, ἀκουσόμεθα.** | eàn élthēi, akousómetha | If he comes, we shall hear. |
-| **ἔλθωμεν εἰς τὸν ναόν.** | élthōmen eis ton naón | Let us go into the temple! |
-| **μὴ λύσῃς τὸν ἵππον.** | mē lýsēis ton híppon | Do not untie the horse! |
-| **τί δῶ τῷ παιδί;** | tí dô tōi paidí? | What am I to give the child? (deliberative subjunctive) |
+| Greek (aorist subjunctive active) | Meaning |
+|-----------------------------------|---------|
+| **ἵνα τὸν πόλεμον νικήσωμεν.** | so that we may win the war. |
+| **ἐὰν ἔλθῃ, ἀκουσόμεθα.** | If he comes, we shall hear. |
+| **ἔλθωμεν εἰς τὸν ναόν.** | Let us go into the temple! |
+| **μὴ λύσῃς τὸν ἵππον.** | Do not untie the horse! |
+| **τί δῶ τῷ παιδί;** | What am I to give the child? (deliberative subjunctive) |
 
 ---
 

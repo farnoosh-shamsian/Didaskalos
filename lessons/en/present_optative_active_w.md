@@ -28,14 +28,14 @@ The optative is built on the **present stem**. Its marker is the suffix **‑ο�
 
 ### 2.1 Endings of the Present Optative Active
 
-| Person | Ending | Transliteration |
-|--------|--------|-----------------|
-| 1st sg. | **‑οιμι** | ‑oimi |
-| 2nd sg. | **‑οις** | ‑ois |
-| 3rd sg. | **‑οι** | ‑oi |
-| 1st pl. | **‑οιμεν** | ‑oimen |
-| 2nd pl. | **‑οιτε** | ‑oite |
-| 3rd pl. | **‑οιεν** | ‑oien |
+| Person | Ending |
+|--------|--------|
+| 1st sg. | **‑οιμι** |
+| 2nd sg. | **‑οις** |
+| 3rd sg. | **‑οι** |
+| 1st pl. | **‑οιμεν** |
+| 2nd pl. | **‑οιτε** |
+| 3rd pl. | **‑οιεν** |
 
 > **Note:** the 1st singular ends in **‑οιμι**, not ‑ω. The diphthong **‑οι‑** replaces the thematic vowel of the indicative and is the reliable sign of the optative.
 
@@ -43,14 +43,14 @@ The optative is built on the **present stem**. Its marker is the suffix **‑ο�
 
 The verb **λύω** "to loose":
 
-| Person | Optative active | Transliteration | Meaning |
-|--------|-----------------|-----------------|---------|
-| 1st sg. | **λύοιμι** | *lýoimi* | "may I loose" |
-| 2nd sg. | **λύοις** | *lýois* | "may you loose" |
-| 3rd sg. | **λύοι** | *lýoi* | "may he/she loose" |
-| 1st pl. | **λύοιμεν** | *lýoimen* | "may we loose" |
-| 2nd pl. | **λύοιτε** | *lýoite* | "may you (pl.) loose" |
-| 3rd pl. | **λύοιεν** | *lýoien* | "may they loose" |
+| Person | Optative active | Meaning |
+|--------|-----------------|---------|
+| 1st sg. | **λύοιμι** | "may I loose" |
+| 2nd sg. | **λύοις** | "may you loose" |
+| 3rd sg. | **λύοι** | "may he/she loose" |
+| 1st pl. | **λύοιμεν** | "may we loose" |
+| 2nd pl. | **λύοιτε** | "may you (pl.) loose" |
+| 3rd pl. | **λύοιεν** | "may they loose" |
 
 ### 2.3 Contract Verb — **φιλέω** "to love"
 
@@ -95,12 +95,12 @@ In contract verbs the singular prefers the extended suffix **‑οίη‑**:
 
 ## 4. Example Sentences
 
-| Greek (optative) | Transliteration | Meaning |
-|------------------|-----------------|---------|
-| **εἴθε ἀεὶ τὴν ἀλήθειαν λέγοις.** | *eíthe aeì tēn alḗtheian légois* | "If only you would always speak the truth." |
-| **εἴθε εὐδαίμων εἴης.** | *eíthe eudaímōn eíēs* | "May you be happy." |
-| **λέγοι ἄν τις ὅτι χαλεπόν ἐστιν.** | *légoi án tis hóti khalepón estin* | "Someone might say that it is difficult." (potential optative with ἄν) |
-| **ἔλεγεν ὅτι γράφοι.** | *élegen hóti gráphoi* | "He said that he was writing." (optative in indirect discourse after a past tense) |
+| Greek (optative) | Meaning |
+|------------------|---------|
+| **εἴθε ἀεὶ τὴν ἀλήθειαν λέγοις.** | "If only you would always speak the truth." |
+| **εἴθε εὐδαίμων εἴης.** | "May you be happy." |
+| **λέγοι ἄν τις ὅτι χαλεπόν ἐστιν.** | "Someone might say that it is difficult." (potential optative with ἄν) |
+| **ἔλεγεν ὅτι γράφοι.** | "He said that he was writing." (optative in indirect discourse after a past tense) |
 
 *Note the two main uses: a wish with εἴθε, and possibility with ἄν.*
 
