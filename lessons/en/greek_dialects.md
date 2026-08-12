@@ -25,9 +25,9 @@ What does need saying is that the **Dialect and Period** section at the end of e
 | If your texts are… | Treat the dialect notes as… |
 |---|---|
 | Classical Attic prose and drama — Thucydides, Plato, Xenophon, the orators, the tragedians | **Background.** The paradigm in the lesson is already the Greek in front of you. Read the notes for context and etymology, and to know what you are *not* seeing; nothing in them is required to construe your sentences. |
-| Hellenistic and Imperial Koine — Polybius, Plutarch, Josephus, Lucian | **Mostly background, with a few live differences.** Koine is built on Attic, so the paradigms hold, but the notes on σσ/ττ, the receding dative, the vanishing optative and the merging perfect describe your texts directly. |
-| The New Testament | **Half background, half working knowledge.** The endings are largely Attic, but the syntactic notes — ἐν doing the dative's work, ἵνα doing the infinitive's, the shrunken particle inventory — are about the language you are actually reading. |
-| Homer, the Homeric Hymns, Hesiod, Herodotus | **Part of the lesson.** These notes are not extra; they are where your forms are. A Homeric line will hand you πολέμοιο, θεοῖσι and an uncontracted γένεος that the paradigm table does not contain, and Herodotus will give you η where the table gives ᾱ. Learn these sections as you learn the paradigm itself. |
+| Hellenistic and Imperial Koine — Polybius, Plutarch, Josephus, Lucian | **Mostly background, with a few live differences.** Koine is built on Attic, so the paradigms hold, but the notes on σσ/ττ (*ss/tt*), the receding dative, the vanishing optative and the merging perfect describe your texts directly. |
+| The New Testament | **Half background, half working knowledge.** The endings are largely Attic, but the syntactic notes — ἐν *en* doing the dative's work, ἵνα *hína* doing the infinitive's, the shrunken particle inventory — are about the language you are actually reading. |
+| Homer, the Homeric Hymns, Hesiod, Herodotus | **Part of the lesson.** These notes are not extra; they are where your forms are. A Homeric line will hand you πολέμοιο, θεοῖσι *polémoio, theoîsi* and an uncontracted γένεος *géneos* that the paradigm table does not contain, and Herodotus will give you η *ē* where the table gives ᾱ *ā*. Learn these sections as you learn the paradigm itself. |
 
 The rule of thumb: **the further your authors are from fifth-century Athens, the more the dialect notes stop being commentary and start being the grammar you need.** If you chose a mixed corpus, expect both at once — and see §7 on using the citation to tell which is which.
 
@@ -43,11 +43,11 @@ These five account for the large majority of "why does this look wrong" moments.
 
 | Signal | Attic | Elsewhere | Where you meet it |
 |---|---|---|---|
-| **σσ / ττ** | θάλαττα, πράττω | θάλασσα, πράσσω | Homer, Herodotus, Koine, the NT — Attic is the odd one out here |
-| **ρρ / ρσ** | θάρρος, ἄρρην | θάρσος, ἄρσην | Homer, Herodotus, Koine |
-| **Uncontracted vowels** | γένους, γένει, τιμᾶν | γένεος, γένεϊ, τιμάειν | Homer and Herodotus keep the older uncontracted forms |
-| **Longer datives** | θεοῖς, τιμαῖς, ποσί | θεοῖσι(ν), τιμῇσι, πόδεσσι | Homer above all; Herodotus for -οισι and -ῃσι |
-| **Older genitive singulars** | πολέμου, Ἀτρεΐδου | πολέμοιο, Ἀτρεΐδαο, δεσπότεω | -οιο and -ᾱο in Homer; -εω in Herodotus |
+| **σσ / ττ** (*ss / tt*) | θάλαττα, πράττω *thálatta, práttō* | θάλασσα, πράσσω *thálassa, prássō* | Homer, Herodotus, Koine, the NT — Attic is the odd one out here |
+| **ρρ / ρσ** (*rr / rs*) | θάρρος, ἄρρην *thárros, árrēn* | θάρσος, ἄρσην *thársos, ársēn* | Homer, Herodotus, Koine |
+| **Uncontracted vowels** | γένους, γένει, τιμᾶν *génous, génei, timân* | γένεος, γένεϊ, τιμάειν *géneos, géneï, timáein* | Homer and Herodotus keep the older uncontracted forms |
+| **Longer datives** | θεοῖς, τιμαῖς, ποσί *theoîs, timaîs, posí* | θεοῖσι(ν), τιμῇσι, πόδεσσι *theoîsi(n), timêisi, pódessi* | Homer above all; Herodotus for -οισι *-oisi* and -ῃσι *-ēisi* |
+| **Older genitive singulars** | πολέμου, Ἀτρεΐδου *polémou, Atreḯdou* | πολέμοιο, Ἀτρεΐδαο, δεσπότεω *polémoio, Atreḯdao, despóteō* | -οιο *-oio* and -ᾱο *-āo* in Homer; -εω *-eō* in Herodotus |
 
 A rough rule of thumb: **if a form looks longer or less contracted than the paradigm, it is probably older** — Homeric or Ionic. Greek spent those centuries wearing its endings down.
 
@@ -55,15 +55,15 @@ A rough rule of thumb: **if a form looks longer or less contracted than the para
 
 Beyond individual endings, three large shifts run through the entire language. Each is picked up again in the specific lessons where it matters; this is the overview.
 
-**The dative recedes.** In Homer and Attic the bare dative does a great deal of work on its own — instrument, place, accompaniment, all with no preposition. Koine increasingly props it up with a preposition instead (ἐν + dative, εἰς + accusative), and by Modern Greek the case is gone altogether. When a New Testament sentence uses ἐν where Plato would have used a bare dative, this is why.
+**The dative recedes.** In Homer and Attic the bare dative does a great deal of work on its own — instrument, place, accompaniment, all with no preposition. Koine increasingly props it up with a preposition instead (ἐν *en* + dative, εἰς *eis* + accusative), and by Modern Greek the case is gone altogether. When a New Testament sentence uses ἐν *en* where Plato would have used a bare dative, this is why.
 
-**The optative dies out.** The optative mood is common and supple in Homer and Classical Attic. In the Hellenistic period it declines sharply, and in the New Testament it is essentially confined to a few fixed expressions — most famously μὴ γένοιτο "may it not be so." If your corpus is mostly Koine you will see very few optatives; if it is Homer and Plato, you will see a great many.
+**The optative dies out.** The optative mood is common and supple in Homer and Classical Attic. In the Hellenistic period it declines sharply, and in the New Testament it is essentially confined to a few fixed expressions — most famously μὴ γένοιτο *mḕ génoito* "may it not be so." If your corpus is mostly Koine you will see very few optatives; if it is Homer and Plato, you will see a great many.
 
-**The perfect merges with the aorist.** Classical Greek keeps a sharp distinction: the aorist reports an event, the perfect reports a resulting state that still holds. In Koine that distinction erodes and the perfect is increasingly used as a plain past tense. The pluperfect, meanwhile, is progressively replaced by a periphrasis — participle plus a form of εἰμί.
+**The perfect merges with the aorist.** Classical Greek keeps a sharp distinction: the aorist reports an event, the perfect reports a resulting state that still holds. In Koine that distinction erodes and the perfect is increasingly used as a plain past tense. The pluperfect, meanwhile, is progressively replaced by a periphrasis — participle plus a form of εἰμί *eimí*.
 
 ## 6. Attic Tragedy Is a Special Case
 
-Aeschylus and Sophocles wrote in Athens, but tragedy is not plain Attic. The spoken dialogue is Attic with an archaic, elevated vocabulary, while the **choral odes are written in a Doric-flavoured literary language** — most visibly, they keep long **ᾱ** where Attic prose has **η** (χώρᾱ, μάτηρ for χώρη-type and μήτηρ). If a chorus looks like it is using the wrong vowel throughout, that is the convention, not an error.
+Aeschylus and Sophocles wrote in Athens, but tragedy is not plain Attic. The spoken dialogue is Attic with an archaic, elevated vocabulary, while the **choral odes are written in a Doric-flavoured literary language** — most visibly, they keep long **ᾱ** *ā* where Attic prose has **η** *ē* (χώρᾱ, μάτηρ *chṓrā, mátēr* for χώρη-type and μήτηρ *chṓrē-, mḗtēr*). If a chorus looks like it is using the wrong vowel throughout, that is the convention, not an error.
 
 ## 7. Reading the Citations
 
@@ -71,12 +71,12 @@ Every exercise sentence in this book is followed by a short reference in italics
 
 When a form surprises you, look at the citation first:
 
-- *Hom. Il.*, *Hom. Od.*, *Hes. Theog.*, *Hymn. Hom. Cer.* — epic. Expect uncontracted vowels, long datives in -οισι/-ῃσι/-εσσι, genitives in -οιο and -ᾱο, and an article that is still really a demonstrative.
-- *Hdt.* — Herodotus, in Ionic. Expect η for Attic ᾱ, σσ for ττ, uncontracted forms, and genitives in -εω and -έων.
+- *Hom. Il.*, *Hom. Od.*, *Hes. Theog.*, *Hymn. Hom. Cer.* — epic. Expect uncontracted vowels, long datives in -οισι/-ῃσι/-εσσι (*-oisi/-ēisi/-essi*), genitives in -οιο and -ᾱο (*-oio*, *-āo*), and an article that is still really a demonstrative.
+- *Hdt.* — Herodotus, in Ionic. Expect η *ē* for Attic ᾱ *ā*, σσ *ss* for ττ *tt*, uncontracted forms, and genitives in -εω and -έων (*-eō*, *-éōn*).
 - *Thuc.*, *Pl. Ap.*, *Xen. Hell.*, *Arist. Pol.*, *Dem.*, *Lys.*, *Aeschin.*, *Antiph.* — Classical Attic prose. This is the paradigm as the lesson gives it.
 - *Soph. Ant.*, *Aesch. Ag.* and the other tragedies — Attic verse, with Doric-coloured choral odes (§6).
 - *Polyb.*, *Diod. Sic.* — Hellenistic Koine, still close to Attic.
-- *Matt.*, *Mark*, *Luke*, *John*, *Acts*, *Rom.*, *Heb.*, *Rev.* and the other New Testament books — Koine. Expect σσ, few optatives, prepositions doing work the dative once did, and a very productive -μα/-ματος noun class.
+- *Matt.*, *Mark*, *Luke*, *John*, *Acts*, *Rom.*, *Heb.*, *Rev.* and the other New Testament books — Koine. Expect σσ *ss*, few optatives, prepositions doing work the dative once did, and a very productive -μα/-ματος (*-ma/-matos*) noun class.
 - *Plut.*, *Luc. VH*, *Joseph. BJ*, *App. BC*, *Ath.*, *Dion. Hal.*, *Apollod.*, *Aesop* — Imperial period. Ranges from plain Koine (Aesop, Apollodorus) to careful Atticism (Lucian, Plutarch, Dionysius) — see §3.
 
 You do not need to memorize this table. You need only the habit of glancing at the citation before deciding that a form is irregular. Nine times out of ten it is perfectly regular — for the dialect it belongs to.

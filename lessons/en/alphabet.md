@@ -91,10 +91,10 @@ In the Classical period the accent was musical (a change of pitch); today it is 
 
 **Spelling differs by dialect.** These two differences account for a great many words that look almost, but not quite, familiar:
 
-- Attic writes **ττ** where Ionic and most other dialects write σσ: θάλαττα / θάλασσα *thálatta / thálassa* "sea", πράττω / πράσσω *práttō / prássō* "do".
-- Attic writes **ρρ** where other dialects have ρσ: θάρρος / θάρσος *thárros / thársos* "courage".
+- Attic writes **ττ** *tt* where Ionic and most other dialects write σσ *ss*: θάλαττα / θάλασσα *thálatta / thálassa* "sea", πράττω / πράσσω *práttō / prássō* "do".
+- Attic writes **ρρ** *rr* where other dialects have ρσ *rs*: θάρρος / θάρσος *thárros / thársos* "courage".
 
-Attic is the odd one out in both. Homer, Herodotus, Koine and the New Testament all have σσ and ρσ — so if your texts are epic or Koine, **σσ is what you should expect to see**, and θάλαττα is the unusual spelling rather than the normal one.
+Attic is the odd one out in both. Homer, Herodotus, Koine and the New Testament all have σσ *ss* and ρσ *rs* — so if your texts are epic or Koine, **σσ is what you should expect to see**, and θάλαττα *thálatta* is the unusual spelling rather than the normal one.
 
 Consonants also assimilate before certain endings: ἐπεμπ-θην → ἐπέμφθην *epemp-thēn → epémphthēn* "I was sent". You will meet these changes gradually — no need to memorize them now.
 
@@ -111,7 +111,7 @@ So a Classical Athenian reading Plato saw an unbroken line of capitals with no a
 
 **The lost letter.** Greek once had a letter **Ϝ** (digamma), pronounced **/w/** — the semivowel corresponding to the vowel υ, as ι corresponds to /j/. It had disappeared from Attic and Ionic before our texts were written, but it was still there when the Homeric poems were composed, and its ghost affects the metre: a word such as ἔργον *érgon* (originally ϝέργον *wérgon*) or οἶνος *oînos* (ϝοῖνος *woînos*) sometimes behaves in Homer's verse as though it still began with a consonant. If a Homeric line seems not to scan, a vanished digamma is a common reason.
 
-**Pronunciation drifted too.** By the Koine period several vowels and diphthongs that were once distinct had converged on the same *i* sound — ι, η, ει and οι all heading toward /i/, a change called **iotacism**. This is why New Testament manuscripts so often disagree over exactly these spellings: scribes were writing what they heard, and what they heard no longer distinguished them.
+**Pronunciation drifted too.** By the Koine period several vowels and diphthongs that were once distinct had converged on the same *i* sound — ι, η, ει and οι (*i, ē, ei, oi*) all heading toward /i/, a change called **iotacism**. This is why New Testament manuscripts so often disagree over exactly these spellings: scribes were writing what they heard, and what they heard no longer distinguished them.
 
 ## 7. Practice Reading
 
