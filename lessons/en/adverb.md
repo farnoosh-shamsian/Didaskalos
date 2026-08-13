@@ -83,7 +83,7 @@ The article can even turn an adverb into a noun or adjective: οἱ νῦν "the
 - ὡς is a chameleon: "as", "that", "how", and with superlatives "as ... as possible". Let context decide.
 - The neuter accusative of an adjective often serves as an adverb on its own: πολύ "much, far", πρῶτον "first", ὀλίγον "a little".
 
-## 7. Dialect and Period
+## 7. Historical Development
 
 **Most Greek adverbs are fossilized case forms.** The ‑ως ending itself descends from an old case ending, and once you know that, a whole class of odd little words falls into place: ποῦ "where" and ποῖ "whither" are frozen case forms, οἴκοι "at home" is an old locative, and κύκλῳ "in a circle" is simply a dative doing adverbial duty.
 

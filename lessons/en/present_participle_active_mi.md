@@ -107,7 +107,7 @@ The commonest participle of this group belongs to εἰμί "to be":
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Detail |
 |--------|--------|
@@ -126,7 +126,7 @@ The commonest participle of this group belongs to εἰμί "to be":
 | **Formation** | Short present stem + ‑ντ‑; masculine nominative in ‑ς with compensatory lengthening |
 | **Sample forms** | διδούς/διδοῦσα/διδόν; τιθείς/τιθεῖσα/τιθέν; ὤν/οὖσα/ὄν |
 | **Declension** | Masculine/neuter: third declension (ντ); feminine: first declension |
-| **Main uses** | Attributive adjective, adverbial clause, genitive absolute, substantivised with the article |
+| **Main uses** | Attributive adjective, adverbial clause, genitive absolute, substantivized with the article |
 | **Special note** | The present reduplication (διδούς) distinguishes it from the aorist participle (δούς) |
 
 ---

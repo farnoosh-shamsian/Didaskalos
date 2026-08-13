@@ -91,7 +91,7 @@ A few deponents borrow **active‑form** tenses from other stems: ἔρχομα�
 
 ---
 
-## 7. Historical Development & Etymology
+## 7. Historical Development
 
 Deponency looks like an irregularity, but it is better understood as a **leftover from an older system** — and the system it is left over from is visible at both ends of the period you are reading.
 

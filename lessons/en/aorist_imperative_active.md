@@ -77,5 +77,5 @@ Another example, the verb **ποιέω**, "to do, make":
 ## Notes on Usage and Context
 The aorist imperative commands a specific, single action and is very common in prayers and formal requests (prayers almost always use the aorist: "give us this day…"). Its contrast with the present imperative is one of **aspect**, not time: present imperative = "keep doing this / always do this"; aorist imperative = "do this (once)." Attending to this contrast makes the force of a command much more precise when reading texts.
 
-## Historical Development and Etymology
+## Historical Development
 The aorist is one of the oldest aspectual categories of Indo-European, and its Greek marker ‑σ(α)‑ goes back to the sigmatic suffix of the parent language. The 3rd person plural ending ‑τωσαν is a later development that replaced classical ‑ντων in Koine Greek; this is why classical Attic texts show λυσάντων while later texts (including the New Testament) show λυσάτωσαν. Knowing this development helps in reading texts from different periods.

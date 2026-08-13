@@ -19,7 +19,7 @@ Its single most important job is to express **purpose**, especially with verbs o
 
 > ἦλθον **λύσοντες** τοὺς αἰχμαλώτους. — "They came to release the prisoners."
 
-This is a construction you must be able to recognise instantly; it is far commoner in prose than ἵνα-clauses after verbs of going and sending.
+This is a construction you must be able to recognize instantly; it is far commoner in prose than ἵνα-clauses after verbs of going and sending.
 
 ---
 
@@ -103,7 +103,7 @@ Verbs whose stem ends in λ, μ, ν, ρ lose the σ and contract, giving a parti
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The future participle is a Greek innovation, formed by simply applying the participial suffix *‑ont‑ to the future stem — a neat piece of paradigm-building rather than an inherited category.
 - The **σ** of the future continues the Indo-European desiderative *‑sye/o‑ ("be about to, want to"), which is exactly why the participle so readily expresses intention.

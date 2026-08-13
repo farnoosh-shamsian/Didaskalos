@@ -48,7 +48,7 @@ The final vowel of the stem merges with the ending. There are three sub-types:
 
 | Sub-type | Example | Present indicative active forms |
 |----------|---------|---------------------------------|
-| **α‑contract** | **τιμάω** "to honour" (stem *τιμα‑*) | τιμῶ, τιμᾷς, τιμᾷ, τιμῶμεν, τιμᾶτε, τιμῶσι(ν) |
+| **α‑contract** | **τιμάω** "to honor" (stem *τιμα‑*) | τιμῶ, τιμᾷς, τιμᾷ, τιμῶμεν, τιμᾶτε, τιμῶσι(ν) |
 | **ε‑contract** | **φιλέω** "to love" (stem *φιλε‑*) | φιλῶ, φιλεῖς, φιλεῖ, φιλοῦμεν, φιλεῖτε, φιλοῦσι(ν) |
 | **ο‑contract** | **δηλόω** "to make clear" (stem *δηλο‑*) | δηλῶ, δηλοῖς, δηλοῖ, δηλοῦμεν, δηλοῦτε, δηλοῦσι(ν) |
 
@@ -88,7 +88,7 @@ The final vowel of the stem merges with the ending. There are three sub-types:
 | **λέγω τὸν νόμον.** | I recite the law. |
 | **φιλεῖς τὸν φίλον σου.** | You love your friend. |
 | **πίνουσιν οἶνον ἐν τῇ ἀγορᾷ.** | They drink wine in the marketplace. |
-| **τιμῶ τὸν πατέρα μου.** | I honour my father. |
+| **τιμῶ τὸν πατέρα μου.** | I honor my father. |
 | **ἐγὼ ἔχω τὰ βιβλία.** | I have the books. |
 | **ὁ ἀνὴρ ὁρᾷ τὸν οὐρανόν.** | The man sees the sky. |
 
@@ -105,7 +105,7 @@ The final vowel of the stem merges with the ending. There are three sub-types:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The thematic conjugation, with its linking vowel ε/ο, is part of Greek's Indo-European inheritance; the ending ‑ω continues the old first-person-singular ending of the parent language.
 - The **contract verbs** are not a separate conjugation but ordinary thematic verbs whose stems happened to end in a vowel; the contractions are a regular Attic sound change, and Homeric Greek often preserves the uncontracted forms (*ὁράω* beside Attic *ὁρῶ*).

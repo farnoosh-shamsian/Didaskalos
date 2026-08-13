@@ -58,7 +58,7 @@ Notice the elegant trio for motion and rest: **εἰς + acc.** (motion toward),
 - Prepositions also serve as **verb prefixes** with related meanings: εἰσ-έρχομαι "go into", ἐκ-βάλλω "throw out", περι-βάλλω "throw around". Recognizing the preposition inside a compound verb unlocks its meaning.
 - A prepositional phrase between article and noun is attributive: οἱ ἐν τῇ πόλει ἄνθρωποι "the people in the city".
 
-## 7. Dialect and Period
+## 7. Historical Development
 
 Prepositions have the clearest life story of any word class in Greek: they begin as free adverbs, become prepositions and preverbs, and end up taking over work the case endings used to do on their own.
 

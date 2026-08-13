@@ -47,5 +47,5 @@ The infinitive has no person or number; each verb has just one form. The base is
 - With the **article** it becomes a noun: τὸ γενέσθαι "the coming-to-be."
 - The choice between present and aorist infinitive is **aspectual**: γίγνεσθαι "to be (in the process of) becoming" vs. γενέσθαι "to become (once)." The infinitive is negated with **μή**.
 
-## Historical Development and Etymology
+## Historical Development
 The middle ending **‑σθαι** is Greek's continuation of the ancient Indo-European middle/passive infinitive ending and recurs in every tense (present ‑εσθαι, aorist ‑σασθαι/‑έσθαι, perfect ‑σθαι); what separates the tenses is the stem. The verb φιλέω, which appears throughout these lessons' vocabulary, comes from the root φιλ‑ "friendship, affection" and has cognates of similar meaning in the related languages. Attending to these infinitive formations is essential for reading classical prose, which uses the infinitive far more than modern languages do.

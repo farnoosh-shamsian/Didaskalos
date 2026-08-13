@@ -126,7 +126,7 @@ The **‑σ‑** attaches directly to the root *φη‑*; in the future, μι-ve
 
 ---
 
-## 7. Historical Development & Etymology
+## 7. Historical Development
 
 * **Indo-European origin** — the future marker ‑σ‑ is connected with the desiderative suffix *‑s‑ of Proto-Indo-European (compare Sanskrit *‑sya‑*).
 * **Phonological development** — in liquid verbs the σ dropped between vowels and contraction produced the ‑ῶ future (ἀγγελῶ) — the same pattern as the contract presents.

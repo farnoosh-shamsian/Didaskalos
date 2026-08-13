@@ -100,7 +100,7 @@ Full paradigm of **γραφῶ**: γραφῶ, γραφῇς, γραφῇ, γρ�
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The **‑θη‑** passive is a Greek innovation built on an older stative/intransitive suffix, which is why its endings are active in form: originally these were intransitive verbs, not passives, and they simply took the ordinary active endings.
 - The **‑η‑ (second) passive** preserves the older bare stative suffix, seen also in ἐμάνην "I went mad."

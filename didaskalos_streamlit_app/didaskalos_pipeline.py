@@ -2495,10 +2495,10 @@ def generate_textbook_markdown(
     starter_modules = [
         "about",
         "alphabet",
-        DICTIONARY_LESSON_MODULE,
         "introduction_nouns",
         "introduction_adjectives",
         "introduction_verbs",
+        DICTIONARY_LESSON_MODULE,
         "greek_dialects",
     ]
     rtl = is_rtl(lang)

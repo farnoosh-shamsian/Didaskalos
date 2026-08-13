@@ -128,7 +128,7 @@ The imperfect answers the question *"What was going on?"* It is not the simple p
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Detail |
 |--------|--------|

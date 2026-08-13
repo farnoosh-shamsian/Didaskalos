@@ -59,7 +59,7 @@ Many common verbs have no active future at all and use these middle forms with a
 | λαμβάνω | **λήψομαι** | I shall take |
 | ὁράω | **ὄψομαι** | I shall see |
 
-ἀκούω, λαμβάνω and ὁράω are active in the present but middle in the future — a quirk worth memorising.
+ἀκούω, λαμβάνω and ὁράω are active in the present but middle in the future — a quirk worth memorizing.
 
 ---
 

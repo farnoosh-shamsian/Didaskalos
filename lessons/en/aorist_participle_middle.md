@@ -56,5 +56,5 @@ Verbs with a second aorist take the suffix ‑όμενος on the aorist stem:
 * With the article it replaces a relative clause: ὁ λυσάμενος "the one who ransomed."
 * In high-frequency deponents (γενόμενος, πυθόμενος, δεξάμενος) you will meet this form constantly in texts.
 
-## Historical Development and Etymology
+## Historical Development
 The suffix **‑μενος** continues the middle/passive participle suffix of Proto-Indo-European (*‑m(e)no‑) and has parallels in the related languages. Combined with the sigmatic aorist stem (‑σα‑) it produced ‑σάμενος, and with the thematic stem of the second aorist, ‑όμενος. The middle voice itself arose from ancient reflexive constructions — action for oneself — and remained a living, meaningful category in Greek. Knowing this development aids in understanding the structure and evolution of the language.

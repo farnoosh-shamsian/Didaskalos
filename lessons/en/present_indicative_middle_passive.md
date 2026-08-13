@@ -53,5 +53,5 @@ The forms are built on the present stem, to which the medio-passive endings are 
 ## Notes on Usage and Context
 The medio-passive voice is used when the subject either receives the action or performs it on or for itself. Interpreting it correctly requires attention to context: λύεται can mean both "is being untied" and "unties for himself." These forms are frequent in every kind of text — historical prose, philosophy, poetry, and conversation.
 
-## Historical Development and Etymology
+## Historical Development
 The middle voice reached Greek from its Proto-Indo-European ancestor, where the basic opposition was between active and middle and no independent passive existed. Greek, too, developed the passive out of the middle, creating separate passive forms (with the marker ‑θη‑) only in the aorist and the future; in the present and imperfect the same middle forms serve both functions. The loss of σ in the second person singular (‑εσαι → ‑ῃ) is one of the regular sound changes that shaped these endings.

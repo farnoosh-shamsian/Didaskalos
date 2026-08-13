@@ -75,5 +75,5 @@ Since οἶδα means "I know", εἰδείη is a present in force and belongs 
 ## 5. Usage and Context
 
 1. **Indirect discourse after past verbs** accounts for nearly every occurrence of this form.
-2. **εἰδείην and its plural** are the members worth memorising; the rest can be recognised from the periphrasis.
+2. **εἰδείην and its plural** are the members worth memorizing; the rest can be recognized from the periphrasis.
 3. **Reading tip.** A perfect participle sitting beside εἴη or εἶεν is a single perfect optative; read them together.

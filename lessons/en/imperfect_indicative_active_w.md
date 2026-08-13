@@ -103,7 +103,7 @@ The secondary endings with the thematic vowel (ο before μ/ν, otherwise ε):
 
 ---
 
-## 7. Historical Development & Etymology
+## 7. Historical Development
 
 - The imperfect = **augment + present stem + secondary endings** — a formation inherited directly from Proto-Indo-European, which Sanskrit shares as well.
 - The **augment** (*e‑) was originally a past-marking particle that became grammaticalized; it survives only in Greek, Indo-Iranian, Armenian, and Phrygian.

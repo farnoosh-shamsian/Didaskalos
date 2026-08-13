@@ -41,7 +41,7 @@ The great majority of verbs. Take the aorist passive stem in ‑θη‑ and add 
 | παιδεύω "educate" | ἐπαιδεύθην | **παιδευθῆναι** | to be educated |
 | πείθω "persuade" | ἐπείσθην | **πεισθῆναι** | to be persuaded |
 | ἄγω "lead" | ἤχθην | **ἀχθῆναι** | to be led |
-| τιμάω "honour" | ἐτιμήθην | **τιμηθῆναι** | to be honoured |
+| τιμάω "honor" | ἐτιμήθην | **τιμηθῆναι** | to be honored |
 | ποιέω "make" | ἐποιήθην | **ποιηθῆναι** | to be made |
 | λέγω "say" | ἐλέχθην | **λεχθῆναι** | to be said |
 
@@ -60,7 +60,7 @@ A smaller group forms the passive without θ. The stem often shows a changed vow
 | φθείρω "destroy" | ἐφθάρην | **φθαρῆναι** | to be destroyed |
 | σῴζω "save" | ἐσώθην¹ | **σωθῆναι** | to be saved |
 
-¹ σῴζω is in fact a first (θη) passive — listed here because σωθῆναι is so frequent that it is worth memorising alongside the others.
+¹ σῴζω is in fact a first (θη) passive — listed here because σωθῆναι is so frequent that it is worth memorizing alongside the others.
 
 > **The two types mean the same thing.** The difference is purely morphological — a matter of which stem the verb takes — and carries no difference of aspect, time or force.
 
@@ -103,9 +103,9 @@ A smaller group forms the passive without θ. The stem often shows a changed vow
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The **‑θη‑** passive is a Greek innovation with no exact Indo-European parallel; it grew out of an old stative/intransitive formation, which explains why so many ‑θη‑ aorists are intransitive rather than truly passive (φανῆναι "appear," ἡσθῆναι "be pleased").
 - The **‑η‑ (second) passive** is the older layer, a bare stative suffix added to the root — the same element seen in ἐμάνην "I went mad" and ἐρρύην "I flowed."
-- Both types spread at the expense of the **aorist middle**, which in earlier Greek had carried much of the passive load; by Attic the division of labour is largely settled.
+- Both types spread at the expense of the **aorist middle**, which in earlier Greek had carried much of the passive load; by Attic the division of labor is largely settled.
 - In Koine the ‑θη‑ type continued to expand, and its descendant is still visible in the Modern Greek passive aorist (λύθηκα).

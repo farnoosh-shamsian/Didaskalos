@@ -40,7 +40,7 @@ Take the bare aorist root and add **‑ναι**, with a circumflex on the root v
 | **τίθημι** "place" | ἔθηκα | **θεῖναι** | to place |
 | **ἵστημι** "stand" | ἔστην | **στῆναι** | to stand |
 | **ἵημι** "send" | ἧκα | **εἷναι** | to send |
-| **γιγνώσκω** "know" | ἔγνων | **γνῶναι** | to recognise |
+| **γιγνώσκω** "know" | ἔγνων | **γνῶναι** | to recognize |
 | **βαίνω** "go" | ἔβην | **βῆναι** | to go |
 
 *γιγνώσκω and βαίνω are ω-verbs in the present, but their aorists are athematic root aorists, so they form their infinitive exactly like the ‑μι verbs.*
@@ -58,7 +58,7 @@ Compounds are far commoner than the simple verbs, especially in prose:
 | ἀφίστημι | **ἀποστῆναι** | to revolt, stand away |
 | ἀφίημι | **ἀφεῖναι** | to let go, release |
 
-> **Reading tip:** strip the prefix first, then recognise the root. παρα‑δοῦναι, ἀπο‑στῆναι, ἀφ‑εῖναι. ἀποστῆναι "to revolt" is one of the defining words of Thucydides' narrative.
+> **Reading tip:** strip the prefix first, then recognize the root. παρα‑δοῦναι, ἀπο‑στῆναι, ἀφ‑εῖναι. ἀποστῆναι "to revolt" is one of the defining words of Thucydides' narrative.
 
 ### 2.3 ἵστημι Has Two Aorists
 
@@ -109,9 +109,9 @@ This is the one genuine trap in the lesson:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The ending **‑ναι** is the athematic infinitive marker, the same one seen in the present διδόναι and in εἶναι. The aorist and present differ only by stem, not by ending.
 - The **root aorist** (ἔδων/ἔστην type) is the oldest aorist formation in Indo-European, preserving a bare root with secondary endings. Sanskrit *ádāt* "he gave" is the exact counterpart of Greek ἔδω‑.
 - **δοῦναι** derives from *δο‑εναι with contraction; the circumflex is the trace of that lost vowel.
-- As the ‑μι class eroded in later Greek, these infinitives were among the last athematic forms to survive, precisely because the compounds (παραδοῦναι, ἀποστῆναι) were so heavily lexicalised in legal, military, and religious language.
+- As the ‑μι class eroded in later Greek, these infinitives were among the last athematic forms to survive, precisely because the compounds (παραδοῦναι, ἀποστῆναι) were so heavily lexicalized in legal, military, and religious language.

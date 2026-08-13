@@ -50,7 +50,7 @@ Which vowel a noun keeps in the singular follows a simple rule:
 - The plural endings (-αι, -ῶν, -αις, -ας) are identical for all three singular types.
 - The definite article is your friend: ἡ τιμή, τῆς τιμῆς — the article changes with the noun and confirms the case.
 
-## Dialect and Period
+## Historical Development
 
 This is the declension where dialect shows most plainly, because the singular vowel itself differs from region to region.
 

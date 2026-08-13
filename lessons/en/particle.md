@@ -57,7 +57,7 @@ The negatives behave like particles and follow a clean division of labor:
 
 Compounds follow the same split: οὐδείς / μηδείς "no one", οὐδέ / μηδέ "and not, not even", οὔποτε / μήποτε "never".
 
-## 6. Dialect and Period
+## 6. Historical Development
 
 Particles are the part of Greek that varies most sharply by period — and the one where reading a Koine text is genuinely easier than reading an Attic one.
 

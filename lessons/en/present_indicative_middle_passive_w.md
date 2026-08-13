@@ -93,7 +93,7 @@ The final vowel of the stem merges with the thematic vowel and ending:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Details |
 |--------|---------|

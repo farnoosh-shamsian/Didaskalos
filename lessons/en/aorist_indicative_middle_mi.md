@@ -114,7 +114,7 @@ The verb πρίαμαι "to buy" is used only in the aorist and has a perfectly 
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - **Indo-European roots**: athematic inflection (endings attached directly to the root) is the oldest layer of the Indo-European verb; the μι aorist middles preserve it intact.
 - **Homeric Greek**: these forms abound in epic (θέτο, δόσθαι), sometimes without the augment — an old poetic liberty.

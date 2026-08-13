@@ -130,7 +130,7 @@ The middle shape (‑σομαι) is **entirely distinct** from the active (‑σ
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Details |
 |--------|---------|

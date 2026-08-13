@@ -123,7 +123,7 @@ All the patterns take the **augment** ἐ‑ (or vowel lengthening) in the indic
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Details |
 |--------|---------|

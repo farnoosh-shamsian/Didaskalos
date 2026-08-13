@@ -45,7 +45,7 @@ In contract verbs the vowel at the end of the stem (α, ε, ο) "contracts" with
 
 | Contract type | Stem ending | Infinitive ending | Example verb | Infinitive |
 |---------------|-------------|-------------------|--------------|------------|
-| **α‑contract** | ‑α | ‑ᾶν | τιμάω "I honour" | τιμᾶν |
+| **α‑contract** | ‑α | ‑ᾶν | τιμάω "I honor" | τιμᾶν |
 | **ε‑contract** | ‑ε | ‑εῖν | ποιέω "I do, make" | ποιεῖν |
 | **ο‑contract** | ‑ο | ‑οῦν | δηλόω "I make clear" | δηλοῦν |
 
@@ -91,7 +91,7 @@ The infinitive is the same for every person; it is listed only once.
 | Greek | Translation |
 |-------|-------------|
 | **λύειν** τὸν δεσμώτην ἀνάγκη ἐστίν. | "To free the prisoner is necessary." |
-| **τιμᾶν** τὸν θεὸν ἀρετή ἐστιν. | "To honour the god is a virtue." |
+| **τιμᾶν** τὸν θεὸν ἀρετή ἐστιν. | "To honor the god is a virtue." |
 | βούλομαι **ποιεῖν** τὸ ἔργον. | "I want to do the work." |
 | **δηλοῦν** βούλεται τὴν ἀλήθειαν. | "He wants to make the truth clear." |
 | χρήσιμόν ἐστιν **ἀκούειν** τῶν σοφῶν. | "It is useful to listen to the wise." |
@@ -118,13 +118,13 @@ Notice that the infinitive can function as the **subject**, **object**, or **com
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Period | Development |
 |--------|-------------|
 | **Proto-Indo-European** | PIE had no single infinitive; the daughter languages built one from verbal nouns. Greek ‑ειν is usually derived from a formation *‑e‑(s)en. |
 | **Mycenaean Greek** | Infinitive forms are already attested on the Linear B tablets (e.g. *e‑ke‑e* = /hekhehen/ "to have"). |
-| **Classical Attic** | The three contract patterns (‑ᾶν, ‑εῖν, ‑οῦν) become regularised; uncontracted ‑ειν dominates for regular verbs. |
+| **Classical Attic** | The three contract patterns (‑ᾶν, ‑εῖν, ‑οῦν) become regularized; uncontracted ‑ειν dominates for regular verbs. |
 | **Koine & Byzantine** | The infinitive gradually gives way to finite clauses — a process completed in Modern Greek, where the infinitive has been lost. |
 
 ---
@@ -146,7 +146,7 @@ Notice that the infinitive can function as the **subject**, **object**, or **com
 
 - The **present active infinitive** expresses an active action with imperfective aspect, in a non-finite way.
 - It is built from the **present stem** + **‑ειν** (regular) or the **contracted** endings **‑ᾶν, ‑εῖν, ‑οῦν**.
-- Recognising the **‑ω** ending of the first-person singular present indicative gives you the stem you need to form the infinitive.
+- Recognizing the **‑ω** ending of the first-person singular present indicative gives you the stem you need to form the infinitive.
 - Use the infinitive as a noun-like element (subject, object, complement), or after particular verbs and — with the article — after prepositions.
 
 Now you have the tools to identify, form, and understand the present active infinitive in Ancient Greek.

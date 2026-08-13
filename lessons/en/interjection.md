@@ -47,7 +47,7 @@ Interjections are grammatically independent, but three patterns recur:
 - Interjections are often **doubled or piled up** for intensity: ἰὼ ἰώ, αἰαῖ αἰαῖ, οἴμοι μοι.
 - In your reading, an interjection is a strong signal of **direct speech and heightened emotion** — expect a vocative, an imperative, or a wish nearby.
 
-## 5. Dialect and Period
+## 5. Historical Development
 
 Interjections are the most register-bound words in the language: they belong to particular genres and particular centuries far more tightly than ordinary vocabulary does.
 

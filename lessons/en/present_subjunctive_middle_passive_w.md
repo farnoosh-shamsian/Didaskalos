@@ -98,7 +98,7 @@ Deponent verbs use exactly these endings with active meaning:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The subjunctive's long thematic vowel continues the Indo-European subjunctive formation directly; Greek is unusually conservative here.
 - The middle endings **‑μαι, ‑σαι, ‑ται** are the primary middle set, shared with the indicative; the subjunctive is marked purely by the vowel that precedes them.

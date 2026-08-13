@@ -61,7 +61,7 @@ These endings attach directly to the noun's stem, producing the dative forms tha
 
 ---
 
-### Dialect and Period
+### Historical Development
 
 Of all the cases, the dative changes most across the span of Greek — in its endings, in its jobs, and finally in whether it exists at all.
 

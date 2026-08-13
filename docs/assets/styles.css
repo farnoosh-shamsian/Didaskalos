@@ -353,6 +353,12 @@ nav ul li a:hover {
   font-family: inherit;
 }
 
+/* Persian keeps the wider leading set on [lang="fa"]. */
+[lang="fa"] .about-block,
+[lang="fa"] .limits {
+  line-height: 1.9;
+}
+
 .section-intro {
   max-width: 800px;
   margin: 0 auto;
@@ -575,11 +581,16 @@ nav ul li a:hover {
 
 /* Known limitations */
 
+/* The type scales with the column so the line stays at its current length: a
+   wider measure at the old size would run past 100 characters. */
 .limits {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px 20px;
-  font-size: 1.05em;
+  /* The shorthand above would otherwise kill the list's default indent. */
+  padding-inline-start: 46px;
+  font-size: clamp(1.05em, 0.9rem + 0.5vw, 1.25em);
+  line-height: 1.6;
   text-align: start;
 }
 
@@ -590,11 +601,18 @@ nav ul li a:hover {
 /* About block */
 
 .about-block {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px 50px;
-  font-size: 1.1em;
+  font-size: clamp(1.1em, 0.95rem + 0.5vw, 1.35em);
+  line-height: 1.6;
   text-align: start;
+}
+
+/* The licence notice is boilerplate, not narrative: it keeps the old size. */
+.about-block.colophon {
+  max-width: 800px;
+  font-size: 1.05em;
 }
 
 .about-block a,

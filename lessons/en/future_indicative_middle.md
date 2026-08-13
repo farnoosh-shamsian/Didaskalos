@@ -54,5 +54,5 @@ The general pattern of endings:
 ## Notes on Usage and Context
 The future middle either (1) carries genuine middle meaning — a future action in one's own interest: γράψομαι in a legal context, "I will file a suit" — or (2) is simply the future shape of verbs whose future happens to be middle (ἀκούσομαι, ὄψομαι). When reading, always check the dictionary first: does this verb have an active or a middle future?
 
-## Historical Development and Etymology
+## Historical Development
 The ‑σομαι formation arose from the combination of the future marker **‑σ‑** (from the Indo-European desiderative suffix) with the middle endings in **‑ομαι**. The tendency of verbs of perception and motion toward middle futures is an ancient phenomenon, showing that Greek speakers felt the future of these actions to be inherently "self-involving." In the Koine these distinctions faded, and in Modern Greek the inflected future gave way to the θα + verb construction.

@@ -93,7 +93,7 @@ Compounds are commoner than the simple verbs in prose:
 
 | Greek | Translation |
 |---|---|
-| ὁ τὰ χρήματα **δεδωκὼς** τιμᾶται. | "The man who has given the money is honoured." |
+| ὁ τὰ χρήματα **δεδωκὼς** τιμᾶται. | "The man who has given the money is honored." |
 | οἱ φύλακες **ἑστῶτες** πρὸ τῶν πυλῶν ἐφύλαττον. | "The guards, standing before the gates, kept watch." |
 | αἱ πόλεις αἱ **ἀφεστῶσαι** οὐκ ἐπείθοντο. | "The cities in revolt would not obey." |
 | τὰ **καθεστῶτα** οὐκ ἤρεσκεν αὐτοῖς. | "The existing order did not please them." |
@@ -111,7 +111,7 @@ Compounds are commoner than the simple verbs in prose:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The perfect participle suffix is Indo-European *‑wos‑/‑us‑ (Sanskrit ‑vāṃs‑), which in Greek yields ‑ώς with the oblique stem ‑ότ‑ and the feminine ‑υῖα.
 - The **κ‑perfect** (δέδωκα, τέθηκα, ἕστηκα) is a Greek innovation that spread from a small group of roots ending in a vowel; the ‑μι verbs were its earliest home.

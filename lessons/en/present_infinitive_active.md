@@ -12,7 +12,7 @@ The **infinitive** is the non-finite form of the verb — it has no person or nu
 | Verb type | Present indicative (1st sg.) | Present active infinitive | Meaning |
 |---|---|---|---|
 | Regular ‑ω | λύω | **λύειν** | to loose |
-| α‑contract | τιμάω | **τιμᾶν** | to honour |
+| α‑contract | τιμάω | **τιμᾶν** | to honor |
 | ε‑contract | ποιέω | **ποιεῖν** | to do, to make |
 | ο‑contract | δηλόω | **δηλοῦν** | to make clear |
 | ‑μι | δίδωμι | **διδόναι** | to give |

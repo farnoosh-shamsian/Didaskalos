@@ -39,7 +39,7 @@ pos: verb
 | --- | --- |
 | Attributive with article | οἱ λυθησόμενοι "those who are to be released" |
 | Expectation | τὰ γραφησόμενα "what will be written" |
-| Purpose (rarer than the middle) | ἦλθεν ὡς τιμηθησόμενος "he came expecting to be honoured" |
+| Purpose (rarer than the middle) | ἦλθεν ὡς τιμηθησόμενος "he came expecting to be honored" |
 
 ---
 
@@ -59,7 +59,7 @@ pos: verb
 
 - **οἱ λυθησόμενοι αἰχμάλωτοι ἐν φυλακῇ ἦσαν.** — "The prisoners who were to be released were under guard."
 - **τὰ γραφησόμενα ἐν στήλῃ ἀνεγνώσθη.** — "What was to be inscribed on the stele was read out."
-- **ἦλθεν ὡς τιμηθησόμενος ὑπὸ τῆς πόλεως.** — "He came expecting to be honoured by the city."
+- **ἦλθεν ὡς τιμηθησόμενος ὑπὸ τῆς πόλεως.** — "He came expecting to be honored by the city."
 
 ---
 

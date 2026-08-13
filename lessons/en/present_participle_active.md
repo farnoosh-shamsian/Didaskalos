@@ -71,5 +71,5 @@ And its present active participle:
 ### Notes on Usage and Context
 The present participle expresses an action **simultaneous** with the main verb. It has three main uses: **attributive** with the article (ὁ γράφων ἀνήρ "the man who is writing"), **substantive** with the article alone (ὁ γράφων "the writer, the one writing"), and **circumstantial**, expressing time, cause, or manner (γράφων "while writing / because he was writing"). Instead of piling up subordinate clauses, Greek very often prefers these compact participles.
 
-### Historical Development and Etymology
+### Historical Development
 The marker ‑ντ‑ of the present active participle is a direct inheritance from Proto-Indo-European and appears in the related languages as well; Latin *amāns, amantis* "loving" preserves the same suffix. The declension of these participles — masculine and neuter after the third declension, feminine after the first — is an ancient pattern that was fully established in Classical Greek, and recognizing it is a key to reading both prose and poetry.

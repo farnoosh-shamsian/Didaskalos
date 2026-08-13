@@ -111,7 +111,7 @@ The infinitive has **only one form** — it takes neither person nor number. All
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The ending **‑σαι** arose from the sigmatic marker ‑σ(α)‑ combined with the ancient infinitive ending *‑ai.
 - The second aorist ending **‑εῖν** developed from the contraction of the thematic vowel with old *‑εν — the same ending seen in the present infinitive (‑ειν); the difference lies only in stem and accent.

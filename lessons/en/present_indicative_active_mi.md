@@ -42,7 +42,7 @@ Many of them also show **ι‑reduplication** in the present system: δί‑δω
 | 2nd pl. | **‑τε** | **δίδοτε** | **τίθετε** |
 | 3rd pl. | **‑ασι(ν)** | **διδόασι(ν)** | **τιθέασι(ν)** |
 
-> **Note:** observe the contrast between the long vowel of the singular (δίδω‑, τίθη‑) and the short vowel of the plural (δίδο‑, τίθε‑) — this is the key to recognising ‑μι verbs.
+> **Note:** observe the contrast between the long vowel of the singular (δίδω‑, τίθη‑) and the short vowel of the plural (δίδο‑, τίθε‑) — this is the key to recognizing ‑μι verbs.
 
 ### 2.3 Other Important Members of the Group
 
@@ -94,7 +94,7 @@ Many of them also show **ι‑reduplication** in the present system: δί‑δω
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Detail |
 |--------|--------|

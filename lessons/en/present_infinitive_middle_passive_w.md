@@ -126,7 +126,7 @@ In μι-verbs the ending ‑σθαι attaches **directly to the stem, without th
 
 ---
 
-## 7. Historical Development & Etymology
+## 7. Historical Development
 
 | Aspect | Details |
 |--------|---------|

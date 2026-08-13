@@ -117,7 +117,7 @@ Also common: **εἰκός (ἐστι)** "it is likely", **δοκεῖ** "it see
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 There is a reason the irregular verbs are also the commonest ones. **Frequency protects irregularity**: a verb used constantly is learned as a whole, form by form, and never gets levelled by analogy, while a rare verb is rebuilt on the regular pattern the moment a speaker has to guess. This is why the irregular verbs of any language tend to be its everyday ones — "be", "go", "see", "give" — and Greek is no exception: εἰμί, ἔρχομαι, ὁράω and δίδωμι are all both irregular and unavoidable.
 

@@ -106,7 +106,7 @@ The present reduplication (δι‑, τι‑, ἱ‑) is **dropped** in the futur
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The Greek future in **‑σ‑** continues an Indo-European desiderative formation in *‑sye/o‑ ("be about to, want to"), which is why a future so often shades into intention.
 - **ἔσομαι** is built on the root *h₁es‑ "to be" — the same root as εἰμί, Latin *sum/erō*, Sanskrit *ásmi*. The 3rd singular **ἔσται** preserves an athematic ending directly on the root, a genuine archaism frozen into the paradigm.

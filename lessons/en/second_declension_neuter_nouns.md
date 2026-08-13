@@ -40,7 +40,7 @@ Because subject and object forms look the same, word order and context tell you 
 - The genitive and dative (both numbers) are identical to λόγος: δώρου = λόγου, δώρῳ = λόγῳ. Only nominative/accusative/vocative are new.
 - The article for neuters: τό (sg.), τά (pl.): τὸ ἔργον, τὰ ἔργα.
 
-## Dialect and Period
+## Historical Development
 
 The endings themselves barely move across the periods: δῶρον is δῶρον in Homer and in the New Testament alike. The dative plural follows the masculine pattern, with the longer **-οισι(ν)** in Homer and Herodotus against Attic -οις (δώροισι / δώροις).
 

@@ -40,7 +40,7 @@ Everything else — including the entire plural — matches the feminine paradig
 - The article resolves any doubt about gender: **ὁ** πολίτης is masculine even though the endings look like τιμή's.
 - The genitive plural is -ῶν here too: πολιτῶν, νεανιῶν.
 
-## Dialect and Period
+## Historical Development
 
 The masculine first declension is a relative newcomer in Greek: it is the feminine paradigm fitted out with a masculine -ς, and the fitting was done differently in different dialects. The **genitive singular** is where you see it.
 

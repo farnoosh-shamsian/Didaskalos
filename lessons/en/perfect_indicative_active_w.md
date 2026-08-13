@@ -100,7 +100,7 @@ The label **(ω)** means this lesson concerns ω-verbs; the perfect itself ends 
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The Indo-European perfect originally expressed a **state**, not an act (λέλοιπα "I have left → I am without"); οἶδα (cognate with Sanskrit *véda*) is a relic of that layer.
 - **Reduplication** is the ancient mark of this formation and appears in Sanskrit and Latin as well.

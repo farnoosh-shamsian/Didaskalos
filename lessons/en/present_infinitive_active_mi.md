@@ -89,7 +89,7 @@ The infinitive can serve as **subject**, **object**, or **complement** — exact
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Detail |
 |--------|--------|

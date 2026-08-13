@@ -76,7 +76,7 @@ The standard of comparison behaves exactly as with ἀγαθός: genitive, or �
 - οἱ πολλοί "the many, the majority" and τὸ πολύ "the greater part" are fixed expressions.
 - Only four forms each of μέγας and πολύς are irregular (nom./acc. m. and n. sg., bolded above); everything else is plain ἀγαθός-style.
 
-## Dialect and Period
+## Historical Development
 
 **The σ-stems are contractions, and the older forms are visible in Ionic.** ἀληθής declines exactly like the neuter σ-stem noun γένος, so it shows the same split: Attic ἀληθοῦς is a contraction of **ἀληθέος**, which is what Herodotus and Homer write. Likewise ἀληθεῖ ← ἀληθέϊ, and the neuter plural ἀληθῆ ← ἀληθέα. If a form here looks a syllable too long, it is the original.
 

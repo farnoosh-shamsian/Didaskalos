@@ -56,5 +56,5 @@ The medio-passive voice of the present indicative also has its own endings:
 ## Notes on Usage and Context
 The present medio-passive participle expresses an action simultaneous with the main verb that is either done to the subject (passive) or done by the subject on or for itself (middle). With the article it serves attributive or substantive functions (τὰ λεγόμενα "the things being said, sayings"); without the article it is usually circumstantial, expressing time, cause, or manner. If an agent is expressed (ὑπό + genitive), the passive reading is almost certain.
 
-## Historical Development and Etymology
+## Historical Development
 The suffix ‑μενος descends from the middle-participle suffix of Proto-Indo-European and has cognates in the related languages (Sanskrit ‑māna‑/‑āna‑, Avestan ‑mna‑). In Greek this suffix remained unchanged from Homer to the Koine; forms such as γραφόμενος and λεγόμενος are frequent in texts of every period, and some of them (like τὰ λεγόμενα "sayings") became fixed expressions.

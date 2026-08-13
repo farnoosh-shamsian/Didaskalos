@@ -111,7 +111,7 @@ When the stem ends in a consonant, the ending collides with it and both adjust. 
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The pluperfect is a **Greek innovation**: Indo-European had a perfect but no pluperfect. Greek built one by applying the past-tense apparatus (augment + secondary endings) to the existing perfect stem.
 - The **middle/passive** pluperfect is the older and more regular half of the tense; the active pluperfect (ἐλελύκη, ‑κειν) developed its ‑κ‑ endings later and varied considerably between periods.

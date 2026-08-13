@@ -75,13 +75,13 @@ Stems in λ, μ, ν, ρ drop the σ and contract:
 
 | Rule | Explanation | Example |
 |---|---|---|
-| **1. Regular adjective endings** | ‑ος, ‑η, ‑ον throughout. Nothing to memorise beyond the future stem. | |
+| **1. Regular adjective endings** | ‑ος, ‑η, ‑ον throughout. Nothing to memorize beyond the future stem. | |
 | **2. Accent is fixed on the ‑ο‑** | λυσόμενος, λυσομένου — the accent does not shift as in ντ‑participles. | |
 | **3. Middle form, often active sense** | For deponents and for verbs like ἀκούω the middle form carries no middle meaning. | ἀκουσόμενος "about to hear" |
 | **4. Not the same as the future passive participle** | λυσόμενος (middle) vs. λυθησόμενος (passive, "about to be loosed"). | |
 | **5. Purpose after verbs of motion** | Same construction as the active: ἦλθον μαχούμενοι. | |
 | **6. ὡς + participle marks alleged purpose** | ὡς μαχούμενοι "on the pretext of intending to fight." | |
-| **7. τὸ ἐσόμενον = "the future"** | The substantivised neuter is a standard idiom: τὰ ἐσόμενα "what is to come." | |
+| **7. τὸ ἐσόμενον = "the future"** | The substantivized neuter is a standard idiom: τὰ ἐσόμενα "what is to come." | |
 
 ---
 
@@ -107,7 +107,7 @@ Stems in λ, μ, ν, ρ drop the σ and contract:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The middle participle suffix **‑μενο‑** is inherited directly from Indo-European *‑mh₁no‑, the same element visible in Sanskrit *‑māna‑* and, more distantly, in Latin *alumnus*.
 - Because ‑μενο‑ makes a plain thematic adjective, the middle participle escaped the complications of the ντ‑stems, which is why it is the most regular participle in the language.

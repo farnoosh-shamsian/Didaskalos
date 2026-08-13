@@ -107,7 +107,7 @@ In all of these, choosing the aorist over the present is an **aspectual** choice
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The mark of the subjunctive — the **long mood vowel** — reached Greek from Proto-Indo-European.
 - In Homeric Greek the boundary between subjunctive and future was still fluid; this kinship explains the formal identity of λύσω (subjunctive/future).

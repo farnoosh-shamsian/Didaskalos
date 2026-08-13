@@ -50,7 +50,7 @@ Like πόλεως, the genitive βασιλέως keeps its unusual accent.
 - The nom./acc. plural γένη comes from contraction (γένεσ-α → γένεα → γένη); Ionic and poetry often keep the uncontracted forms (γένεα).
 - ναῦς and Ζεύς are among the most frequent irregular nouns in epic and historiography; they repay memorization as whole paradigms.
 
-## Dialect and Period
+## Historical Development
 
 **The sigma stems are the clearest demonstration of contraction in the whole noun system.** Every Attic form you learned here is a contraction, and Homer and Herodotus preserve the uncontracted originals. Set them side by side and the Attic paradigm stops looking arbitrary:
 

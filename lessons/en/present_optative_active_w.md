@@ -116,7 +116,7 @@ In contract verbs the singular prefers the extended suffix **‑οίη‑**:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Detail |
 |--------|--------|

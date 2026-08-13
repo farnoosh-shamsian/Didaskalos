@@ -102,7 +102,7 @@ Both types take the **augment** ἐ‑ in the indicative (occasionally dropped i
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Details |
 |--------|---------|

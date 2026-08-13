@@ -48,7 +48,7 @@ Only a handful of verbs use this tense with any frequency, and they are worth kn
 | θνῄσκω | **τεθνήξω / τεθνήξομαι** | I shall be dead |
 | ἵστημι | **ἑστήξω** | I shall be standing |
 
-μεμνήσομαι and κεκλήσομαι are common enough that many learners meet them without realising which tense they are.
+μεμνήσομαι and κεκλήσομαι are common enough that many learners meet them without realizing which tense they are.
 
 ### 2.3 Periphrasis
 

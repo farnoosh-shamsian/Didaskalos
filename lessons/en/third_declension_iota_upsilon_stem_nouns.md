@@ -37,7 +37,7 @@ This class matters far beyond πόλις itself: the enormously productive abstr
 - Nominative and accusative plural are identical: πόλεις. Context and the article (αἱ vs. τάς) decide.
 - Simple υ-stems keep υ throughout and take the ordinary third-declension endings: ἰχθύς, ἰχθύος, ἰχθύι, ἰχθύν, pl. ἰχθύες, ἰχθύων, ἰχθύσι(ν), ἰχθῦς.
 
-## Dialect and Period
+## Historical Development
 
 The Attic genitive singular **-εως** of πόλις is one of the strangest endings in the language — the accent sits on a short vowel three syllables from the end, which no ordinary Greek word does. The dialects show why: **Attic got there by an exchange of vowel lengths, and the other dialects did not make the exchange.**
 

@@ -40,7 +40,7 @@ Note the iota subscript in the dative singular (-ῳ): it is silent but always w
 - Contract nouns like νοῦς "mind" (from νόος) belong here too: νοῦς, νοῦ, νῷ, νοῦν.
 - Do not confuse the accusative singular -ον with the neuter nouns of the next lesson; for masculines, nominative -ος and accusative -ον differ, while neuters use -ον for both.
 
-## Dialect and Period
+## Historical Development
 
 The second declension is the most stable pattern in the language — but two of its endings are among the first things you will notice in Homer.
 

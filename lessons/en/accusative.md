@@ -13,7 +13,7 @@ The accusative in Ancient Greek marks the direct object of a verb. Its shape is 
 The accusative replaces the nominative ‑α/‑η (sg.) and ‑αι (pl.).
 
 _Example_ – **ἀγορά** "market" → **ἀγοράν** (sg. "market" as object) → **ἀγοράς** (pl. "markets" as objects).
-_Example_ – **τιμή** "honour" → **τιμήν** → **τιμάς**.
+_Example_ – **τιμή** "honor" → **τιμήν** → **τιμάς**.
 
 ---
 
@@ -61,7 +61,7 @@ These suffixes give each noun its accusative form, allowing it to serve as the d
 
 ---
 
-### Dialect and Period
+### Historical Development
 
 The accusative is the most stable case in Greek. Its endings barely move between Homer and the New Testament, and unlike the dative it never came under threat — it is still very much alive in Modern Greek. What changes is how much work it is asked to do, and the trend is that it takes on **more**.
 

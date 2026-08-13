@@ -72,5 +72,5 @@ The aorist subjunctive appears in these contexts:
 
 Choosing the aorist (rather than the present) in all of these is an **aspectual** choice: a single act versus an act in progress.
 
-## Historical Development and Etymology
+## Historical Development
 The long mood vowel of the subjunctive reached Greek from Proto-Indo-European and has a parallel in Sanskrit. The formal identity of the aorist subjunctive (λύσω) and the future indicative is no accident: the Greek future grew out of old subjunctive/desiderative formations. In Koine Greek the subjunctive absorbed the optative's territory, and in Modern Greek (with the marker να) it remains the backbone of the mood system — so mastering it pays off both for classical texts and for understanding the language's development.

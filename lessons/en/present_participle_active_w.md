@@ -124,7 +124,7 @@ The basic pattern:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Detail |
 |--------|--------|
@@ -145,7 +145,7 @@ The basic pattern:
 | **Form** | Stem + **‑ων / ‑ουσα / ‑ον** (masc./fem./neut.) |
 | **Declension** | Masc./neut.: third declension (ντ‑stem); fem.: first declension |
 | **Agreement** | With its noun in gender, number, and case |
-| **Common uses** | Attributive adjective, adverbial clause, genitive absolute, substantivised with the article |
+| **Common uses** | Attributive adjective, adverbial clause, genitive absolute, substantivized with the article |
 | **Irregulars** | εἰμί → ὤν, οὖσα, ὄν; contract verbs contract before the suffix |
 | **Historical note** | A direct continuation of Indo-European *‑ont‑*; attested from Homer onwards |
 

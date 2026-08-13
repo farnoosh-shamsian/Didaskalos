@@ -111,7 +111,7 @@ In the middle/passive imperfect, μι-verbs use the **short stem** (the same as 
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Details |
 |--------|---------|

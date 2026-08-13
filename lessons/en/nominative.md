@@ -80,7 +80,7 @@ _Key points_
 
 - The masculine/feminine singular is the one really distinctive vocative in this declension: **‑ος → ‑ε**.
 - **Neuters never change**, in either number.
-- Two irregulars worth memorising: **θεός** keeps the nominative form (ὦ θεός), and **ἀδελφός** "brother" has the vocative ὦ **ἄδελφε**, with the accent thrown back.
+- Two irregulars worth memorizing: **θεός** keeps the nominative form (ὦ θεός), and **ἀδελφός** "brother" has the vocative ὦ **ἄδελφε**, with the accent thrown back.
 
 ---
 
@@ -137,7 +137,7 @@ Between them these two cases are the least burdensome part of the noun system: t
 
 ---
 
-## 6. Dialect and Period
+## 6. Historical Development
 
 The nominative endings themselves are the most conservative in the noun system. What varies across the periods is **how Greek addresses people** — the vocative side of this lesson.
 

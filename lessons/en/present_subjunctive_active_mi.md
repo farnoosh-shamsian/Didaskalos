@@ -100,7 +100,7 @@ These tiny forms are extremely common: ἐὰν σοφὸς ᾖς "if you are wi
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - In the subjunctive the athematic verbs adopt the **thematic long vowel**, so the ‑μι class is already partly assimilated to the ω‑verbs here — an early stage of the drift that eventually dissolved the class entirely.
 - The **ι‑reduplication** of the present system (δί‑δωμι, τί‑θημι, ἵ‑στημι) is inherited from Indo-European, where it marked the imperfective stem; its survival in the subjunctive is what keeps the aspectual contrast visible.

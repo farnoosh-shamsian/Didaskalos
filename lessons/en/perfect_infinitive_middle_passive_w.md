@@ -37,7 +37,7 @@ Thucydides reaches for it constantly in reported claims about treaties, agreemen
 | λύω "loose" | λέλυμαι | **λελύσθαι** |
 | παύω "stop" | πέπαυμαι | **πεπαῦσθαι** |
 | ποιέω "make" | πεποίημαι | **πεποιῆσθαι** |
-| τιμάω "honour" | τετίμημαι | **τετιμῆσθαι** |
+| τιμάω "honor" | τετίμημαι | **τετιμῆσθαι** |
 
 *Note the accent: it falls on the syllable before ‑σθαι and is a circumflex when that syllable is long — πεπαῦσθαι, πεποιῆσθαι.*
 
@@ -103,7 +103,7 @@ The reduplication is what marks the perfect off from all the others.
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The infinitive ending **‑σθαι** is invariant for the middle across all tenses of the Greek verb; the tense is signalled entirely by the stem — here, by reduplication.
 - The **reduplication** of the perfect is an Indo-European inheritance, originally marking a stative formation, which is why the Greek perfect means a *state* rather than a past event.

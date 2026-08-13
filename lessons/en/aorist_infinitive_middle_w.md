@@ -37,7 +37,7 @@ Aorist stem in ‑σα‑ + **‑σθαι**:
 | λύω "loose" | ἐλυσάμην | **λύσασθαι** | to ransom |
 | παύω "stop" | ἐπαυσάμην | **παύσασθαι** | to cease |
 | βουλεύω "plan" | ἐβουλευσάμην | **βουλεύσασθαι** | to deliberate |
-| τιμάω "honour" | ἐτιμησάμην | **τιμήσασθαι** | to value, esteem |
+| τιμάω "honor" | ἐτιμησάμην | **τιμήσασθαι** | to value, esteem |
 | φυλάττω "guard" | ἐφυλαξάμην | **φυλάξασθαι** | to be on guard |
 
 ### 2.2 Second (thematic) aorist — ending **‑έσθαι**
@@ -99,7 +99,7 @@ Thucydides is especially fond of γενέσθαι and πυθέσθαι in report
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The middle ending **‑σθαι** is the regular infinitive marker of the middle voice throughout the Greek verb (present λύεσθαι, perfect λελύσθαι, aorist λύσασθαι) — a stable formation from Proto-Greek onwards.
 - The **‑σα‑** of the first aorist reflects the Indo-European sigmatic aorist suffix *‑s‑, seen also in Latin *dīxī* and Sanskrit *ábhārṣam*.

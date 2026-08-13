@@ -104,7 +104,7 @@ The stem vowel merges with the thematic vowel:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Details |
 |--------|---------|

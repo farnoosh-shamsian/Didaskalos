@@ -75,7 +75,7 @@ The superlatives here are plain first/second declension, but the comparatives in
 - **Attributive vs. predicate position.** ὁ ἀγαθὸς ἀνήρ / ὁ ἀνὴρ ὁ ἀγαθός = "the good man" (attributive, inside the article phrase); ὁ ἀνὴρ ἀγαθός = "the man is good" (predicate, no article before the adjective).
 - **Substantivized adjectives.** The article turns an adjective into a noun: οἱ ἀγαθοί "the good (people)", τὸ καλόν "the beautiful, beauty".
 
-## Dialect and Period
+## Historical Development
 
 Because this class borrows the first declension for its feminine and the second for its masculine and neuter, it inherits the dialect differences of both. Everything said in those two lessons applies here.
 

@@ -44,7 +44,7 @@ In ω-verbs the aorist stem remains constant while the ending changes according 
 ### Notes on Usage and Context
 The aorist indicative middle describes a completed past action in which the subject is a beneficiary or participant: something done for oneself, on oneself, or with one's own possessions. The same verb can take on a different meaning depending on the voice — λύω "I loose," but λύομαι/ἐλυσάμην in a war context "I ransom / I ransomed" — so always pay attention to the voice of the verb and the context of the sentence.
 
-### Historical Development and Etymology
+### Historical Development
 The middle endings (‑μην, ‑σο, ‑το, …) continue the middle ending set of Proto-Indo-European; the augment ἐ‑ is the ancient past-tense marker, and ‑σ(α)‑ is the sigmatic suffix of the first aorist. The middle voice remained a living and meaningful category in Greek while disappearing in many related languages — which is precisely why understanding it matters so much for reading Greek texts.
 
 By mastering the aorist indicative middle of ω-verbs, learners significantly enhance their ability to read and understand ancient Greek texts, as well as to express themselves more precisely in the language.

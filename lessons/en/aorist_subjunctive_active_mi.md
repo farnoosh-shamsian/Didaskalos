@@ -14,7 +14,7 @@ The **aorist subjunctive active** of a ‑μι verb expresses a single, complete
 > ἐὰν **δῷ** — "if he gives"
 > ἵνα **θῶμεν** — "so that we may establish"
 
-These are among the shortest words in Greek — often a single syllable — and beginners regularly fail to recognise them.
+These are among the shortest words in Greek — often a single syllable — and beginners regularly fail to recognize them.
 
 **The defining feature is the absence of reduplication.** Compare:
 
@@ -56,7 +56,7 @@ Same endings, same contraction — only the stem differs, and with it the aspect
 
 | Verb | Aorist | Subjunctive 3 sg | Gloss |
 |---|---|---|---|
-| γιγνώσκω "know" | ἔγνων | **γνῷ** | that he may recognise |
+| γιγνώσκω "know" | ἔγνων | **γνῷ** | that he may recognize |
 | βαίνω "go" | ἔβην | **βῇ** | that he may go |
 | ἵημι "send" | ἧκα | **ᾗ** (ἀφῇ) | that he may release |
 | ἁλίσκομαι "be caught" | ἑάλων | **ἁλῷ** | that it may be captured |
@@ -110,9 +110,9 @@ Same endings, same contraction — only the stem differs, and with it the aspect
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The **root aorist** (ἔδων, ἔθην, ἔστην type) is the oldest aorist formation in Indo-European: a bare root with personal endings and no suffix at all.
 - In the subjunctive these roots take the **long thematic vowel**, which then contracts with the root vowel — the reason δο‑ + ω yields δῶ and στα‑ + η yields στῶ.
 - The **contrast reduplicated/unreduplicated** is the cleanest surviving expression of the Indo-European aspect system in Greek: imperfective stems are reduplicated, aoristic stems are not.
-- Because these forms were so short, they were vulnerable; later Greek gradually replaced them with regularised thematic formations, and the whole ‑μι class disappeared by the medieval period.
+- Because these forms were so short, they were vulnerable; later Greek gradually replaced them with regularized thematic formations, and the whole ‑μι class disappeared by the medieval period.

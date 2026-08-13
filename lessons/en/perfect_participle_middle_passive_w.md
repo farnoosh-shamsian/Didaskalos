@@ -102,7 +102,7 @@ The same pattern works for any perfect stem; simply replace λελυ‑ with the
 
 ---
 
-## 7. Historical Development & Etymology
+## 7. Historical Development
 
 | Aspect | Details |
 |--------|---------|

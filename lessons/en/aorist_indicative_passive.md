@@ -50,5 +50,5 @@ A few examples of the aorist indicative passive of ω-verbs in use:
 ## Notes on Usage and Context
 The aorist indicative passive describes completed actions that directly affected the subject. It is particularly useful in narrative and historical writing, since it reports the action without emphasizing who performed it; when the agent does matter, it is expressed with **ὑπό + genitive**: ἐπαιδεύθη ὑπὸ τοῦ διδασκάλου "he was educated by the teacher."
 
-## Historical Development and Etymology
+## Historical Development
 The ω-verbs reached Greek from Proto-Indo-European. The marker ‑θη‑, however, is an innovation within Greek itself: originally it expressed a change of state and only gradually took on the role of a full passive. The passive voice as a whole grew out of the middle — the middle, which described action in the subject's interest, came to be used also for action done to the subject, and eventually the distinct ‑θην formation arose in the aorist. Awareness of this development helps in understanding the structure and evolution of Greek.

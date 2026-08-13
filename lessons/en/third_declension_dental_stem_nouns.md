@@ -59,14 +59,14 @@ A neuter stem has no -ς in the nominative at all. It would end in the bare stem
 
 ## Points to watch
 
-- **The neuters in -μα, -ματος are the class to know.** ὄνομα, πρᾶγμα, χρῆμα, σῶμα and hundreds more: the ending -μα is a reliable sign of a neuter dental stem, and recognising it pays off on almost every page.
+- **The neuters in -μα, -ματος are the class to know.** ὄνομα, πρᾶγμα, χρῆμα, σῶμα and hundreds more: the ending -μα is a reliable sign of a neuter dental stem, and recognizing it pays off on almost every page.
 - The neuter rule from the second declension holds here too: nominative = accusative = vocative, and the plural of all three is -α (σώματα).
 - **νύξ looks like a velar stem and is not.** The stem is νυκτ-; in the nominative the κτ meets ς and is written ξ, but the genitive νυκτός shows the dental, and the dative plural is νυξί(ν).
 - Some dental stems take -ν in the accusative singular instead of -α: χάριν from χάρις, ἔριν from ἔρις.
 - Monosyllabic stems accent the ending in the genitive and dative: νυκτός, νυκτί, νυκτῶν, νυξί(ν); ποδός, ποδί, ποσί(ν). παῖς follows this in the singular (παιδός, παιδί) but keeps παίδων in the genitive plural.
 - The vocative singular of the feminines in -ις is the bare stem without its dental: ἐλπί, πατρί.
 
-## Dialect and Period
+## Historical Development
 
 **Homer's dative plural is the tell.** Beside the -σι(ν) you have learned, epic has a second dative plural in **-εσσι(ν)**, taken into the epic language from Aeolic, and the dental stems supply its most familiar example:
 

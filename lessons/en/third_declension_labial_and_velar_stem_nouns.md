@@ -63,7 +63,7 @@ Everywhere else the stop stands unchanged before a vowel: φύλακος, φύλ
 - The vocative is the same as the nominative throughout this group.
 - Neuters do not occur here: a Greek word cannot end in a stop, so a bare neuter stem in π or κ has no possible nominative.
 
-## Dialect and Period
+## Historical Development
 
 **The letters ξ and ψ are themselves a historical accident.** They exist to write exactly the clusters this lesson is about, and the Greek cities did not agree for a long time on whether to use them. Athens, in its own older alphabet, wrote these sounds out as two letters: **ΧΣ** for ξ and **ΦΣ** for ψ. Only with the official adoption of the Ionic alphabet in 403 BC did the Athenian public inscriptions switch to the single letters. So a fifth-century Attic stone may spell φύλαξ as ΦΥΛΑΧΣ, and editions of inscriptions preserve this; the language is identical, only the spelling convention has changed.
 

@@ -124,7 +124,7 @@ The present indicative active has the ending **‑ω** in the first person singu
 
 ---
 
-## 8. Historical Development & Etymology
+## 8. Historical Development
 
 - The name **aorist** comes from ἀόριστος "unbounded": an aspect that presents the action without internal delimitation.
 - The **augment** (ἐ‑) is a relic of the Indo-European past marker and has a parallel in Sanskrit (*a‑*).

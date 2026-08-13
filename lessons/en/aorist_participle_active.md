@@ -42,7 +42,7 @@ The aorist participle describes an action that occurred **before** the action of
 ### Notes on Usage and Context
 ω-Verbs are frequent in narrative and descriptive passages for expressing completed past actions. The aorist participle is especially useful for compressing narrative: instead of two coordinate sentences, the earlier action goes into a participle while the main verb carries the following action — a pattern you will meet at every step in Greek prose.
 
-### Historical Development and Etymology
+### Historical Development
 The conjugation patterns of ω-verbs reflect Greek's development out of Proto-Indo-European: the marker ‑σα‑ continues the ancient sigmatic suffix, and the participial suffix ‑ντ‑ (visible in λύσαντος) has parallels in many related languages. The use of the aorist and its participle shows how finely Greek can express time and aspect.
 
 By mastering the aorist, the participle, and the active voice of ω-verbs, students can recognize complex ideas and actions in Ancient Greek and enjoy the texts all the more.

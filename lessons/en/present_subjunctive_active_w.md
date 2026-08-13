@@ -129,7 +129,7 @@ The subjunctive is **not** used for a simple statement of fact; that is the doma
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 | Aspect | Detail |
 |--------|--------|
@@ -155,4 +155,4 @@ Keep this table to hand as you meet new verbs: replace the stem **λυ‑** with
 
 ---
 
-**End of lesson** — you now know how to form, recognise, and use the present subjunctive active of ‑ω verbs.
+**End of lesson** — you now know how to form, recognize, and use the present subjunctive active of ‑ω verbs.

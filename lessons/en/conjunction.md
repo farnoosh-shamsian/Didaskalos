@@ -62,7 +62,7 @@ The boundary is soft. δέ, γάρ, and οὖν are traditionally counted as par
 - Negative in the subordinate clause follows its type: factual ὅτι-clauses take οὐ, purpose and conditional clauses take μή: ἵνα μὴ ἁμάρτῃ "so that he may not err".
 - After verbs of saying, Greek often prefers an **infinitive construction** instead of ὅτι — both are common.
 
-## 7. Dialect and Period
+## 7. Historical Development
 
 How Greek joins its clauses together changes a great deal between Homer and the New Testament, and the change affects the whole texture of a text.
 

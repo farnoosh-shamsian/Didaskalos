@@ -99,7 +99,7 @@ Stems in λ, μ, ν, ρ lose the σ and contract:
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - The infinitive ending **‑σθαι** is the invariable middle marker across the Greek verb; only the stem changes from tense to tense.
 - The future's **σ** continues the Indo-European desiderative *‑sye/o‑, which explains the natural fit between the future infinitive and verbs of hoping, promising, and intending.

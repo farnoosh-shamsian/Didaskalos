@@ -12,7 +12,7 @@ pos: verb
 
 A command to do something once, for oneself: δοῦ "give of your own", θοῦ "set for yourself", ἀπόδου "sell".
 
-These are root-aorist forms, so they are among the shortest imperatives in Greek — and in compounds the accent jumps back onto the preposition, which is how you recognise them.
+These are root-aorist forms, so they are among the shortest imperatives in Greek — and in compounds the accent jumps back onto the preposition, which is how you recognize them.
 
 ---
 

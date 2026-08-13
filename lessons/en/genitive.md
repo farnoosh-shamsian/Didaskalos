@@ -58,7 +58,7 @@ The morphology of the genitive in ancient Greek is thus a systematic addition: t
 
 ---
 
-### Dialect and Period
+### Historical Development
 
 Like the dative, the Greek genitive is a merger of two older cases: the inherited genitive ("of") and the **ablative** ("from"). That is why one ending covers both possession (τοῦ φίλου "of the friend") and separation (ἀπὸ τῆς πόλεως "from the city"), and why verbs of depriving, ceasing and differing all take it.
 

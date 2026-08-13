@@ -63,7 +63,7 @@ Watch the article and it will tell you:
 
 Learning the article's 17 distinct forms thoroughly is the single best early investment in reading Greek.
 
-## 7. Dialect and Period
+## 7. Historical Development
 
 The article has the most dramatic history of any word in Greek: within the span of texts you will read, **it turns from a pronoun into an article.** §5 above mentions this in passing; it is worth seeing properly, because it changes how you read Homer.
 

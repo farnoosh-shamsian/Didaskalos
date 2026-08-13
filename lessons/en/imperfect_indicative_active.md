@@ -43,5 +43,5 @@ Another example, the verb ἀγοράζω, "to buy" — since it begins with a v
 ### Notes on Usage and Context
 The imperfect narrates ongoing or repeated past actions and is used to **set the scene and provide background**: the imperfect paints the setting, while the aorist advances the events. It also expresses **attempted** action (conative: ἔπειθον "I was trying to persuade") and **beginning** action (inchoative) — nuances well worth capturing in translation.
 
-### Historical Development and Etymology
+### Historical Development
 The Greek imperfect is rooted in Proto-Indo-European: the combination of the past-tense augment (*e‑) with the present stem and the secondary endings — the same formation seen in Sanskrit. Because it is built on the present stem, the imperfect is the "past partner" of the present: everything you know about the present system (contraction, stem irregularities) applies here as well. Recognizing this connection makes the imperfect much easier to learn.

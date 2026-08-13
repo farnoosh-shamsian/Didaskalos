@@ -125,7 +125,7 @@ These endings are the same for every present middle/passive participle (γραφ
 
 ---
 
-## 7. Historical Development & Etymology
+## 7. Historical Development
 
 | Aspect | Details |
 |--------|---------|

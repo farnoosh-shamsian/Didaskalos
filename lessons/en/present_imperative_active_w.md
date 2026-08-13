@@ -5,7 +5,7 @@ pos: verb
 
 # The Present Imperative Active (ω-Verbs)
 
-**Aim:** by the end of this lesson you will be able to recognise, form, and translate the present active imperative in Ancient Greek, and you will know how the characteristic **‑ω** ending of the present indicative relates to building the imperative.
+**Aim:** by the end of this lesson you will be able to recognize, form, and translate the present active imperative in Ancient Greek, and you will know how the characteristic **‑ω** ending of the present indicative relates to building the imperative.
 
 ---
 
@@ -58,7 +58,7 @@ The present imperative is therefore a command with **imperfective aspect**: "kee
 
 | Verb | Meaning | 2nd sg. | 3rd sg. | 2nd pl. |
 |------|---------|---------|---------|---------|
-| **τιμάω** | to honour | **τίμα** | **τιμάτω** | **τιμᾶτε** |
+| **τιμάω** | to honor | **τίμα** | **τιμάτω** | **τιμᾶτε** |
 | **ποιέω** | to do, make | **ποίει** | **ποιείτω** | **ποιεῖτε** |
 | **δηλόω** | to make clear | **δήλου** | **δηλούτω** | **δηλοῦτε** |
 
@@ -71,7 +71,7 @@ The present imperative is therefore a command with **imperfective aspect**: "kee
 | Rule | Explanation | Example |
 |------|-------------|---------|
 | **1. Build from the stem, not the 1st sg. form** | The imperative is built on the present stem (the part before ‑ω). | λύω → stem λυ‑ → **λῦε!** |
-| **2. 2nd singular in ‑ε** | Regular verbs take ‑ε; contract verbs show the contracted vowel. | γράφε! "write!"; τίμα! "honour!" |
+| **2. 2nd singular in ‑ε** | Regular verbs take ‑ε; contract verbs show the contracted vowel. | γράφε! "write!"; τίμα! "honor!" |
 | **3. 3rd person in ‑έτω** | This is the third-person command: "let him …". | λυέτω "let him loose" |
 | **4. 2nd plural in ‑ετε** | Identical to the indicative; the sense comes from context. | λύετε "loose!" |
 | **5. 3rd plural** | Classical Attic ‑όντων; later texts use ‑έτωσαν. | λυόντων / λυέτωσαν |
@@ -86,7 +86,7 @@ The present imperative is therefore a command with **imperfective aspect**: "kee
 | Greek (imperative) | Person | Translation |
 |--------------------|--------|-------------|
 | **λῦε τὸν δεσμόν.** | 2nd sg. | "Loose the bond!" |
-| **τιμᾶτε τοὺς γονέας.** | 2nd pl. | "Honour your parents." |
+| **τιμᾶτε τοὺς γονέας.** | 2nd pl. | "Honor your parents." |
 | **γράφε τὸν λόγον.** | 2nd sg. | "Write the speech." |
 | **λεγέτω ὁ ῥήτωρ.** | 3rd sg. | "Let the orator speak." |
 | **ἀκούετε τῆς διδασκαλίας.** | 2nd pl. | "Listen to the teaching." |
@@ -104,7 +104,7 @@ The present imperative is therefore a command with **imperfective aspect**: "kee
 
 ---
 
-## 6. Historical Development & Etymology
+## 6. Historical Development
 
 - **Indo-European roots** — the 2nd singular imperative was originally the **bare stem** (Indo-European *‑e); Greek λῦε is exactly this ancient formation (compare Sanskrit *bhára* "carry!", Latin *age* "do!").
 - **The ending ‑τω** — built from the deictic element *‑tōd, also visible in Old Latin (*estōd* "let it be" = Greek ἔστω).

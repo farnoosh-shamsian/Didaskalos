@@ -36,7 +36,7 @@ The kinship nouns in -ηρ — πατήρ "father", μήτηρ "mother", θυγ�
 - The syncopated dative plural inserts -α-: πατράσι(ν), ἀνδράσι(ν).
 - Vocatives are the bare stem with recessive accent: δαῖμον, πάτερ, ἄνερ.
 
-## Dialect and Period
+## Historical Development
 
 The kinship terms in this group — πατήρ, μήτηρ, θυγάτηρ, ἀνήρ — are among the oldest words in Greek, inherited directly from Indo-European, and their awkwardness is the awkwardness of great age. The syncopation you learned (πατρός, not πατέρος) is a shortening that had not finished happening when the epics were composed.
 

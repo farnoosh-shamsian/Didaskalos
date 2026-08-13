@@ -48,7 +48,7 @@ Two patterns divide this class, and the split is worth knowing because the secon
 | ταχύς "swift" | θάττων (Ionic θάσσων) | τάχιστος |
 | ἡδύς "sweet, pleasant" | ἡδίων | ἥδιστος |
 
-These are vocabulary, not paradigms — θάττων must simply be recognised as the comparative of ταχύς.
+These are vocabulary, not paradigms — θάττων must simply be recognized as the comparative of ταχύς.
 
 Two structural notes:
 
@@ -64,7 +64,7 @@ The adverbs follow the adjective, as always: ταχέως, θᾶττον, τάχ
 - μέλας, μέλαινα, μέλαν has stem μελαν-: gen. μέλανος, fem. like θάλαττα.
 - Adjectives of this class always take the first-declension feminine; only the masculine and neuter are third declension.
 
-## Dialect and Period
+## Historical Development
 
 These adjectives inherit the dialect features of the third-declension nouns, and for the same reason: their stems end in a vowel or a consonant that reacts to the ending attached to it.
 

@@ -72,7 +72,7 @@ The nominative singular endings:
 |-------|-------------|
 | **ὁ λελυκὼς τὸν ἵππον ἀπῆλθεν.** | The man who had loosed the horse went away. |
 | **εὗρον τὴν θύραν κεκλεισμένην, τὸν δὲ φύλακα τεθνηκότα.** | They found the door shut and the guard dead. |
-| **οἱ πεπαιδευκότες τοὺς παῖδας τιμῶνται.** | Those who have educated the children are honoured. |
+| **οἱ πεπαιδευκότες τοὺς παῖδας τιμῶνται.** | Those who have educated the children are honored. |
 | **γεγραφὼς τὴν ἐπιστολήν, ἀνεπαύσατο.** | Having written the letter, he rested. |
 
 ---
