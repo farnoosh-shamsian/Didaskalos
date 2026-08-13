@@ -159,8 +159,8 @@ So a Classical Athenian reading Plato saw an unbroken line of capitals with no a
 This section is about the letters themselves. The Greek *written with* them also varies from dialect to dialect — Attic θάλαττα *thálatta* against Ionic and Koine θάλασσα *thálassa*, and much else — but that belongs to the dialects module.
 
 ## Exercises
-
 ### Reading Aloud
+
 
 Sound each word out and write its transliteration before checking the key. Cover the key first — a transliteration you read is worth nothing; one you produce is the whole exercise.
 
@@ -171,13 +171,6 @@ Sound each word out and write its transliteration before checking the key. Cover
 5. ᾠδή
 6. ἄγγελος
 
-### Telling Breathings Apart
-
-Each pair differs in one mark. Say what the difference is and what it does to the sound.
-
-7. ὅρος / ὄρος
-8. αὑτοῦ / αὐτοῦ
-
 #### Answer Key
 
 1. *ánthrōpos* — "human being". The initial α takes a smooth breathing, so no *h*.
@@ -186,5 +179,32 @@ Each pair differs in one mark. Say what the difference is and what it does to th
 4. *xénos* — "stranger, guest". ξ is a single letter, /ks/.
 5. *ōidḗ* — "song". The iota subscript under ω is written but not pronounced.
 6. *ángelos* — "messenger". γ before γ is /ŋ/, not /g/ — hence *ng*, not *gg*.
-7. ὅρος *hóros* "boundary" has a rough breathing and begins with *h*; ὄρος *óros* "mountain" has a smooth breathing and does not.
-8. Same distinction on a diphthong, where the breathing sits on the second vowel: αὑτοῦ *hautoû* begins with *h*, αὐτοῦ *autoû* does not.
+
+### Telling Breathings Apart
+
+
+Each pair differs in one mark. Say what the difference is and what it does to the sound.
+
+1. ὅρος / ὄρος
+2. αὑτοῦ / αὐτοῦ
+
+#### Answer Key
+
+1. ὅρος *hóros* "boundary" has a rough breathing and begins with *h*; ὄρος *óros* "mountain" has a smooth breathing and does not.
+2. Same distinction on a diphthong, where the breathing sits on the second vowel: αὑτοῦ *hautoû* begins with *h*, αὐτοῦ *autoû* does not.
+
+### What Happened to This Word?
+
+Each of these is a shape you will meet in the first text you read. Name what has been done to it, and give the word or words it stands for.
+
+1. δ'
+2. ἀφ' ἡμῶν
+3. κἀγώ
+4. λέγουσιν
+
+#### Answer Key
+
+1. Elision: δέ *dé* "and, but", with its short final vowel dropped before a following vowel.
+2. Elision plus aspiration: ἀπό *apó* "from" + ἡμῶν *hēmôn* "us". The π became φ because the next word carries a rough breathing.
+3. Crasis: καὶ ἐγώ *kaì egṓ* "and I", fused into one word and marked with a coronis.
+4. Movable nu on λέγουσι *légousi* "they say". Nothing has changed grammatically; the ν is there because a vowel or a pause follows.

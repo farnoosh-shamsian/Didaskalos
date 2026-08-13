@@ -93,8 +93,8 @@ Each adjective lesson has a **Historical Development** section of its own.
 - Adjectives borrow their endings from the noun declensions; which set they borrow changes nothing about how they behave.
 
 ## Exercises
-
 ### Agreement
+
 
 Each noun below is given with its case, number and gender. Say what form ἀγαθός, ἀγαθή, ἀγαθόν *(agathós, agathḗ, agathón)* "good" would take to agree with it — you are choosing the grammar, not spelling out a paradigm you have not met yet.
 
@@ -103,22 +103,26 @@ Each noun below is given with its case, number and gender. Say what form ἀγα
 3. τῶν ἔργων *tôn érgōn* (gen. pl. neut.)
 4. ἡ πόλις *hē pólis* (nom. sg. fem.)
 
-### Position
-
-Translate each, and say whether the adjective is attributive or predicate.
-
-5. ὁ δίκαιος κριτής *ho díkaios kritḗs*
-6. δίκαιος ὁ κριτής *díkaios ho kritḗs*
-7. ὁ κριτὴς ὁ δίκαιος *ho kritḕs ho díkaios*
-8. οὗτος ὁ κριτής *hoûtos ho kritḗs*
-
 #### Answer Key
 
 1. Dative singular masculine — ἀγαθῷ *agathôi*.
 2. Accusative plural feminine — ἀγαθάς *agathás*, which happens to rhyme with its noun because both take first-declension feminine endings. Item 4 shows what happens when they do not.
 3. Genitive plural neuter — ἀγαθῶν *agathôn*. The genitive plural is the same for all three genders, in adjectives as in the article.
 4. Nominative singular feminine — ἀγαθή *agathḗ*. πόλις is feminine even though its ending looks nothing like a first-declension feminine.
-5. "The just judge." **Attributive** — the adjective sits between the article and its noun.
-6. "The judge is just." **Predicate** — the adjective is outside the article phrase, and no verb is needed.
-7. "The just judge." **Attributive**, in the second of the two attributive patterns, with the article repeated before the adjective.
-8. "This judge." Predicate *position*, but attributive in sense — demonstratives are the exception noted in §3, and this is not "this is the judge."
+
+### Position
+
+
+Translate each, and say whether the adjective is attributive or predicate.
+
+1. ὁ δίκαιος κριτής *ho díkaios kritḗs*
+2. δίκαιος ὁ κριτής *díkaios ho kritḗs*
+3. ὁ κριτὴς ὁ δίκαιος *ho kritḕs ho díkaios*
+4. οὗτος ὁ κριτής *hoûtos ho kritḗs*
+
+#### Answer Key
+
+1. "The just judge." **Attributive** — the adjective sits between the article and its noun.
+2. "The judge is just." **Predicate** — the adjective is outside the article phrase, and no verb is needed.
+3. "The just judge." **Attributive**, in the second of the two attributive patterns, with the article repeated before the adjective.
+4. "This judge." Predicate *position*, but attributive in sense — demonstratives are the exception noted in §3, and this is not "this is the judge."

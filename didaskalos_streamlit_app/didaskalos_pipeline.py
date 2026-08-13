@@ -1150,6 +1150,7 @@ def get_topic_words(
     topic_rows["postag"] = topic_rows["postag"].astype(str).str.strip()
     topic_rows = topic_rows[(topic_rows["form"] != "") & (topic_rows["lemma"] != "") & (topic_rows["postag"] != "")]
     topic_rows = topic_rows[topic_rows["lemma"].apply(is_greek_lemma)]
+    topic_rows = drop_word_fragments(topic_rows)
 
     if topic_rows.empty:
         return pd.DataFrame()
@@ -2003,6 +2004,7 @@ def _build_sentence_target_rows(
     topic_rows["lemma"] = topic_rows["lemma"].astype(str).str.strip()
     topic_rows["postag"] = topic_rows["postag"].astype(str).str.strip()
     topic_rows = topic_rows[(topic_rows["form"] != "") & (topic_rows["postag"] != "")]
+    topic_rows = drop_word_fragments(topic_rows)
     topic_rows = filter_topic_rows_by_lesson_rules(syllabus_label, lesson_pos_category, topic_rows)
 
     if "token_index" not in topic_rows.columns:
@@ -2014,8 +2016,9 @@ def _build_sentence_target_rows(
     return topic_rows
 
 
-# Fragments and one-word "sentences" make poor full-sentence exercises.
-MIN_EXERCISE_SENTENCE_WORDS = 3
+# Fragments and one-word "sentences" make poor full-sentence exercises. Three
+# words still admitted things like "οὐ γὰρ οὖν.", which show the student nothing.
+MIN_EXERCISE_SENTENCE_WORDS = 5
 
 # A token counts as a word only if it has a letter, so standalone punctuation
 # does not count toward the minimum length.
@@ -2026,8 +2029,41 @@ def _count_words(text: str) -> int:
     return sum(1 for token in text.split() if _WORD_TOKEN_RE.search(token))
 
 
+# Elision and crasis leave pieces of words in the treebanks: "τ-" from τἆλλα,
+# "-τε" from οὔτε. They are not forms a student can parse or point to.
+_FRAGMENT_FORM_RE = re.compile(r"^[-‐-―]|[-‐-―]$")
+
+
+def is_word_fragment(form: str) -> bool:
+    text = str(form).strip()
+    return not text or bool(_FRAGMENT_FORM_RE.search(text))
+
+
+def drop_word_fragments(rows: pd.DataFrame) -> pd.DataFrame:
+    if rows is None or rows.empty or "form" not in rows.columns:
+        return rows
+    return rows[~rows["form"].map(is_word_fragment)]
+
+
+# Treebanks mark elision with whichever apostrophe their editor used, so the
+# same clause arrives twice as μὰ Δί̓ and μὰ Δί’ unless they are folded together.
+_APOSTROPHE_CHARS = "'’ʼʽ̓᾽´"
+_APOSTROPHE_RE = re.compile(f"[{_APOSTROPHE_CHARS}]")
+
+
+def _fold_apostrophes(text: str) -> str:
+    # NFC first: a combining smooth breathing belongs to its vowel and composes
+    # away, leaving loose only the ones marking an elided word — the apostrophes
+    # this is meant to drop.
+    return _APOSTROPHE_RE.sub("", unicodedata.normalize("NFC", str(text)))
+
+
 def _normalize_answer_word(word: str) -> str:
-    return str(word).strip().lower()
+    return _fold_apostrophes(str(word).strip().lower())
+
+
+def _normalize_sentence_key(text: str) -> str:
+    return _fold_apostrophes(re.sub(r"\s+", " ", str(text).strip()))
 
 
 def _pick_unique_exercise_sentences(
@@ -2062,7 +2098,7 @@ def _pick_unique_exercise_sentences(
         if len(selected_sentence_ids) >= max_sentences:
             break
 
-        sentence_text_key = re.sub(r"\s+", " ", str(sentence_text).strip())
+        sentence_text_key = _normalize_sentence_key(sentence_text)
 
         if not sentence_text_key or sentence_text_key in used_sentence_texts:
             continue
@@ -2074,17 +2110,25 @@ def _pick_unique_exercise_sentences(
         if positions is None or len(positions) == 0:
             continue
 
-        candidate_positions = []
-        for position in positions:
-            answer_form = _normalize_answer_word(target_forms[position])
-            if not answer_form or answer_form in used_answer_words:
-                continue
-            candidate_positions.append(position)
-
-        if not candidate_positions:
+        # A sentence earns its place by introducing a form no earlier sentence
+        # answered — but once chosen it keeps every target it contains, or the
+        # key would tell the student that a word they correctly found is wrong.
+        answer_positions = [
+            position
+            for position in positions
+            if _normalize_answer_word(target_forms[position])
+        ]
+        if not answer_positions:
             continue
 
-        chosen_targets = topic_rows.iloc[candidate_positions]
+        introduces_new_form = any(
+            _normalize_answer_word(target_forms[position]) not in used_answer_words
+            for position in answer_positions
+        )
+        if not introduces_new_form:
+            continue
+
+        chosen_targets = topic_rows.iloc[answer_positions]
         selected_sentence_ids.append(sentence_index)
         selected_targets_by_sentence[sentence_index] = chosen_targets
         used_sentence_texts.add(sentence_text_key)

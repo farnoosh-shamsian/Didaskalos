@@ -88,8 +88,8 @@ When a form surprises you, look at the citation first:
 You do not need to memorize this table. You need only the habit of glancing at the citation before deciding that a form is irregular. Nine times out of ten it is perfectly regular — for the dialect it belongs to.
 
 ## Exercises
-
 ### Regular, For Its Dialect?
+
 
 Each form below is given with the citation it came from. For each one: say whether it is **regular for the kind of Greek it belongs to** or genuinely anomalous, and if it differs from the Attic paradigm, say what the Attic form would be.
 
@@ -99,10 +99,6 @@ Each form below is given with the citation it came from. For each one: say wheth
 4. ἐν τῇ καρδίᾳ *en têi kardíāi* "in the heart" — *Mark 2*
 5. θεοῖσι *theoîsi* — *Hom. Od. 1.1*
 
-### Reading the Signal
-
-6. You meet an uncontracted γένεος *géneos* where your paradigm gives γένους *génous*. Which two authors in this collection are the likeliest source, and what is the general rule of thumb that covers this case?
-
 #### Answer Key
 
 1. **Regular.** Attic is the odd one out on σσ/ττ: Herodotus, Homer, Koine and the New Testament all write σσ. The Attic form is θάλαττα *thálatta*.
@@ -110,4 +106,12 @@ Each form below is given with the citation it came from. For each one: say wheth
 3. **Regular for a tragic chorus.** Choral odes use a Doric-flavoured literary language that keeps long ᾱ where Attic has η. The Attic form is μήτηρ *mḗtēr*. Note that the spoken dialogue of the same play would use μήτηρ — the convention applies to the odes.
 4. **Regular for Koine.** Attic could say this with a bare dative and no preposition; Koine increasingly props the dative up with ἐν *en*. Nothing is wrong with the ending — the difference is syntactic, and it is one of the three large shifts in §5.
 5. **Regular for epic.** The longer dative plural in -οισι *-oisi*, against Attic θεοῖς *theoîs*. Herodotus uses it too.
-6. **Homer or Herodotus** — they are the two sources in this collection that keep the older uncontracted forms. The rule of thumb: *if a form looks longer or less contracted than the paradigm, it is probably older.*
+
+### Reading the Signal
+
+
+1. You meet an uncontracted γένεος *géneos* where your paradigm gives γένους *génous*. Which two authors in this collection are the likeliest source, and what is the general rule of thumb that covers this case?
+
+#### Answer Key
+
+1. **Homer or Herodotus** — they are the two sources in this collection that keep the older uncontracted forms. The rule of thumb: *if a form looks longer or less contracted than the paradigm, it is probably older.*

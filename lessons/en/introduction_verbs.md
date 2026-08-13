@@ -146,8 +146,8 @@ Every verb lesson has a **Historical Development** section covering its own slot
 - Learn verbs by their principal parts; each part supplies a fixed set of tenses, and the endings then follow regular patterns.
 
 ## Exercises
-
 ### Parsing
+
 
 Give the person, number, tense, voice and mood of each form. All of them are built from λύω *lýō* "loosen" or παιδεύω *paideúō* "educate", and all have appeared above.
 
@@ -157,12 +157,6 @@ Give the person, number, tense, voice and mood of each form. All of them are bui
 4. λῦε *lŷe*
 5. λέλυκα *lélyka*
 
-### Principal Parts
-
-6. From which principal part of παιδεύω is the imperfect built?
-7. ἐλύθην *elýthēn* is the sixth principal part of λύω. Name the two tenses it supplies.
-8. A verb appears in a text as ποιοῦμεν *poioûmen*. What headword would a lexicon list it under, and why is that not what you see?
-
 #### Answer Key
 
 1. 1st person plural, present, active, indicative — "we are educating".
@@ -170,6 +164,16 @@ Give the person, number, tense, voice and mood of each form. All of them are bui
 3. 3rd person singular, present, active, subjunctive — "so that he may loosen". Present here marks aspect, not time: nothing about this form says "now".
 4. 2nd person singular, present, active, imperative — "loosen!"
 5. 1st person singular, perfect, active, indicative — "I have loosened". The λε- is reduplication, not an augment.
-6. The **first** part, παιδεύω. The present and the imperfect share a stem; the imperfect adds the augment and secondary endings to it.
-7. The aorist passive and the future passive.
-8. **ποιέω** *poiéō*. ποιοῦμεν is a contract verb: the stem-final ε has merged with the thematic vowel, and the lexicon lists the uncontracted form, so you have to undo the contraction before you can look it up.
+
+### Principal Parts
+
+
+1. From which principal part of παιδεύω is the imperfect built?
+2. ἐλύθην *elýthēn* is the sixth principal part of λύω. Name the two tenses it supplies.
+3. A verb appears in a text as ποιοῦμεν *poioûmen*. What headword would a lexicon list it under, and why is that not what you see?
+
+#### Answer Key
+
+1. The **first** part, παιδεύω. The present and the imperfect share a stem; the imperfect adds the augment and secondary endings to it.
+2. The aorist passive and the future passive.
+3. **ποιέω** *poiéō*. ποιοῦμεν is a contract verb: the stem-final ε has merged with the thematic vowel, and the lexicon lists the uncontracted form, so you have to undo the contraction before you can look it up.

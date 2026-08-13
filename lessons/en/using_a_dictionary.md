@@ -139,8 +139,8 @@ Write the entry down by hand, in this form:
 Three habits make the difference. Copy the **whole headword**, genitive and article included, because that is what tells you how to decline it. Record **two or three senses**, not one, so you are not trapped when the first fails. And add the sense you found in **your own** sentence, not the lexicon's, since the phrasing you choose is the one you will remember.
 
 ## Exercises
-
 ### What Would You Look Up?
+
 
 For each form, give the headword a lexicon would list it under, and say what you had to undo to get there.
 
@@ -149,19 +149,23 @@ For each form, give the headword a lexicon would list it under, and say what you
 3. ἀπέκτεινεν *apékteinen* (from a compound of κτείνω *kteínō* "kill")
 4. ποιεῖτε *poieîte*
 
-### Finding It on the Page
-
-5. Put these in the order a Greek lexicon would list them: ὥρα, ἥλιος, ἀγαθός, θάλασσα, ἐγώ *(hṓra, hḗlios, agathós, thálassa, egṓ)*.
-6. You are looking for ἁγνός *hagnós* and cannot find it. A classmate suggests it will be filed separately from ἀγαθός *agathós* because of the rough breathing. Are they right?
-
 #### Answer Key
 
 1. **δῶρον** *dôron* "gift". Take off the dative plural ending -οις; the article τοῖς confirms the case before you even reach the noun.
 2. **πέμπω** *pémpō*. Undo the augment ἐ- and the aorist marker: ἐ-πεμψ-α-μεν. The ψ is π + σ, which is why the present looks different from the aorist.
 3. **ἀποκτείνω** *apokteínō*, not κτείνω. The augment is hiding inside the compound — ἀπ-έ-κτεινεν — so the verb has to be looked up under its prefix. The final ν is movable and can be ignored.
 4. **ποιέω** *poiéō*. A contract verb: the contraction has to be undone, and the lexicon lists the uncontracted form.
-5. ἀγαθός, ἐγώ, ἥλιος, θάλασσα, ὥρα — following α, ε, η, θ, ω. The trap is η and ω: η comes early, right after ζ, and ω comes last of all, nowhere near ο.
-6. No. Breathings are ignored in alphabetical order, so ἁγνός and ἀγαθός sit in the same sequence and are ordered by α-γ-α against α-γ-ν *(a-g-a / a-g-n)* — ἀγαθός first. There is no separate list for rough-breathing words.
+
+### Finding It on the Page
+
+
+1. Put these in the order a Greek lexicon would list them: ὥρα, ἥλιος, ἀγαθός, θάλασσα, ἐγώ *(hṓra, hḗlios, agathós, thálassa, egṓ)*.
+2. You are looking for ἁγνός *hagnós* and cannot find it. A classmate suggests it will be filed separately from ἀγαθός *agathós* because of the rough breathing. Are they right?
+
+#### Answer Key
+
+1. ἀγαθός, ἐγώ, ἥλιος, θάλασσα, ὥρα — following α, ε, η, θ, ω. The trap is η and ω: η comes early, right after ζ, and ω comes last of all, nowhere near ο.
+2. No. Breathings are ignored in alphabetical order, so ἁγνός and ἀγαθός sit in the same sequence and are ordered by α-γ-α against α-γ-ν *(a-g-a / a-g-n)* — ἀγαθός first. There is no separate list for rough-breathing words.
 
 ---
 

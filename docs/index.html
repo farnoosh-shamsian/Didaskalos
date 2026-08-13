@@ -216,16 +216,22 @@
 
       <div class="about-block">
         <p>
-          Ancient Greek pedagogy is mostly limited to a few languages. For most of the world's speakers, learning Greek therefore means going through a second foreign language first, or translating a textbook that was written for a different audience, which can turn the translation process into a rewrite, or complicate the learning experience.
-          Didaskalos is built the other way round: the pedagogy lives in code
-          and the teaching language is data, so a textbook in a new language is
-          a translation job rather than a rewrite. It is now available in English and Persian, but nothing in the design is specific to either.
+          Ancient Greek pedagogy is concentrated in English and a few European languages, and for speakers of most other languages the resources are very limited or nonexistent. Learning Greek therefore means going through a second foreign language first, or translating a textbook that was written for a different audience, which can turn the translation process into a rewrite, or complicate the learning experience.
+          Didaskalos is built the other way round: the <em>sequencing</em> lives
+          in code and the teaching language is a data file, while the pedagogy
+          lives in modules written from the start to be translated. Adding a
+          language needs one locale file and a translated set of modules, with no
+          change to the pipeline — though the translation itself is not
+          mechanical, since for a language with no Greek-teaching tradition the
+          grammatical terminology has to be coined rather than translated. It is
+          now available in English and Persian, but nothing in the design is
+          specific to either.
         </p>
       </div>
 
       <section class="posts">
         <article>
-          <h3>The teaching language is data</h3>
+          <h3>The teaching language is a data file</h3>
           <p>
             Everything language-specific sits in two places — the lesson modules
             and one locale file. Translate those and Didaskalos teaches Greek in
@@ -297,14 +303,15 @@
       </ol>
 
       <p class="figure">
-        Thucydides, <em>The Peloponnesian War</em> → 31,924 analyzed tokens ·
+        Thucydides, <em>Peloponnesian War</em> 1 and 3.1–40 (the portion the
+        Gorman treebank annotates) → 31,924 analyzed tokens ·
         119 ranked grammar topics.
       </p>
 
       <section class="section" id="syllabus">
         <h2>When frequency and pedagogy disagree</h2>
         <p class="section-intro">
-          A purely statistical syllabus might be a flawed teacher. Three cases where Didaskalos deliberately overrules the frequency count:
+          A purely statistical syllabus is a poor teacher. Three cases where Didaskalos deliberately overrules the frequency count:
         </p>
       </section>
 
@@ -354,9 +361,10 @@
         <article>
           <h3>Bring your own corpus</h3>
           <p>
-            Pick from 85 works by 25 authors and collections across four
-            treebank corpora — Perseus, Gorman, Harrington, and the PROIEL New
-            Testament — or paste treebank URLs and upload your own XML. Each
+            Pick from 85 works by 25 authors and collections — whole works, or
+            the portions of them the treebanks annotate — across four
+            treebank corpora: Perseus, Gorman, Harrington, and the PROIEL New
+            Testament. Or paste treebank URLs and upload your own XML. Each
             source is listed in the app with its author and license.
           </p>
         </article>
@@ -374,7 +382,9 @@
           <p>
             Exercises are unaltered corpus sentences, scored by word rarity and
             sentence length and preferring sentences whose vocabulary earlier
-            lessons have already introduced — so difficulty increases slowly.
+            lessons have already introduced — so lexical difficulty climbs
+            gradually. Syntactic difficulty is not scored, so the real curve is
+            lumpy rather than gentle.
           </p>
         </article>
       </section>
@@ -384,7 +394,7 @@
         <h2>Built to be translated</h2>
         <p class="section-intro">
           Didaskalos was bilingual from the start, and being translatable is a
-          design goal rather than an afterthought. Localization in a new language would only require a single locale file and a translated set of modules.
+          design goal rather than an afterthought. Localization in a new language needs a single locale file and a translated set of modules — the pipeline does not change, though coining a grammatical terminology where none exists is real work.
         </p>
       </section>
       <section class="posts">
@@ -401,7 +411,9 @@
           <p>
             No lesson explains Greek by comparison with the learner's first
             language. That single constraint is what lets a module be translated
-            rather than rewritten for each new audience.
+            rather than rewritten for each new audience — at a real cost, since
+            contrastive explanation is an effective tool for adult learners and
+            the rule gives it up.
           </p>
         </article>
         <article>
@@ -440,10 +452,13 @@
           Didaskalos began as an answer to one language's version of that
           problem. For readers in Iran and across West and Central Asia, and in
           parts of Africa, Ancient Greek texts are primary sources for their own
-          past: much of the surviving narrative of ancient Persia reaches us
-          only in Greek. Yet Ancient Greek is not taught regularly at any
-          institution in Iran, and there is no functional grammar, reader, or
-          textbook written for Persian speakers.
+          past: much of the surviving <em>continuous narrative</em> of ancient
+          Persia reaches us only in Greek. The Old Persian royal inscriptions,
+          the Elamite Persepolis archives, the Babylonian chronicles and the
+          Aramaic documents are indispensable primary sources, but they are not
+          narrative history. Yet as of 2026, and to my knowledge, no Iranian
+          institution offers a regular Ancient Greek course, and there is no
+          functional grammar, reader, or textbook written for Persian speakers.
         </p>
         <p>
           So those texts are read at second hand, and every mediating edition
@@ -466,7 +481,9 @@
           hand-corrected, and the review is ongoing.
         </p>
         <p>
-          The generation pipeline itself is language-independent. English and
+          The generation pipeline's data flow is agnostic to the teaching
+          language, though its explanatory framework is not: the modules assume
+          the categories of the Western grammatical tradition. English and
           Persian are available today; another language needs a locale file and a translated set of modules, not a change to the system.
         </p>
       </div>
@@ -576,7 +593,7 @@
         </div>
         <div>
           <span class="num">۱۵۷</span>
-          <span class="label">ماژول درس در هر زبان</span>
+          <span class="label">پودمان درس در هر زبان</span>
         </div>
         <div>
           <span class="num">۲</span>
@@ -591,12 +608,17 @@
 
       <div class="about-block">
         <p>
-          آموزش یونانی باستان بیشتر به چند زبان محدود مانده است. برای بیشتر مردم
-          جهان، آموختن یونانی یعنی نخست گذشتن از یک زبان خارجی دیگر، یا ترجمهٔ
-          کتاب درسی‌ای که برای مخاطبی دیگر نوشته شده است — کاری که می‌تواند ترجمه
-          را به نوشتنِ دوباره بدل کند یا تجربهٔ یادگیری را پیچیده سازد.
-          دیداسکالوس از سوی دیگر ساخته شده است: روش آموزش در کد است و زبان آموزش،
-          داده است، پس کتاب درسی به زبانی تازه کارِ ترجمه است نه نوشتنِ دوباره.
+          آموزش یونانی باستان در انگلیسی و چند زبانِ اروپاییِ دیگر متمرکز است، و
+          برای گویشورانِ بیشترِ زبان‌های دیگر منابع بسیار محدود است یا اصلاً وجود
+          ندارد. آموختن یونانی از این رو یعنی نخست گذشتن از یک زبان خارجی دیگر، یا
+          ترجمهٔ کتاب درسی‌ای که برای مخاطبی دیگر نوشته شده است — کاری که می‌تواند
+          ترجمه را به نوشتنِ دوباره بدل کند یا تجربهٔ یادگیری را پیچیده سازد.
+          دیداسکالوس از سوی دیگر ساخته شده است: <em>ترتیبِ درس‌ها</em> در کد است و
+          زبانِ آموزش یک فایلِ داده، و خودِ روشِ آموزش در پودمان‌هایی نشسته است که
+          از آغاز برای ترجمه‌شدن نوشته شده‌اند. افزودنِ زبانی تازه به یک فایلِ زبان
+          و مجموعه‌ای پودمانِ ترجمه‌شده نیاز دارد و سامانه تغییری نمی‌کند — هرچند
+          خودِ ترجمه کاری مکانیکی نیست، چون برای زبانی که سنتِ آموزشِ یونانی ندارد
+          اصطلاحاتِ دستوری را باید ساخت، نه ترجمه کرد.
           اکنون به انگلیسی و فارسی در دسترس است، اما هیچ چیز در طراحی به
           هیچ‌کدام از این دو وابسته نیست.
         </p>
@@ -604,9 +626,9 @@
 
       <section class="posts">
         <article>
-          <h3>زبانِ آموزش، داده است</h3>
+          <h3>زبانِ آموزش، یک فایلِ داده است</h3>
           <p>
-            هر چه به زبان وابسته است تنها در دو جا نشسته است: ماژول‌های درس و یک
+            هر چه به زبان وابسته است تنها در دو جا نشسته است: پودمان‌های درس و یک
             فایل زبان. همین دو را ترجمه کنید تا دیداسکالوس یونانی را به آن زبان
             درس بدهد — رابط، درس‌ها، اصطلاحات دستوری و کتاب خروجی با هم. خودِ
             برنامه تغییری نمی‌کند.
@@ -672,7 +694,7 @@
         <li>
           <h3>مونتاژ</h3>
           <p>
-            هر مبحث ماژول درس، جدول صرفی و تمرین‌های برگرفته از پیکره را با خود
+            هر مبحث پودمان درس، جدول صرفی و تمرین‌های برگرفته از پیکره را با خود
             می‌آورد و کتاب با قالب Markdown، HTML یا CSV بیرون داده می‌شود —
             همراه با شناسنامه‌ای که نام، مجوز و نشانی هر پیکرهٔ منبع را می‌آورد.
           </p>
@@ -680,14 +702,15 @@
       </ol>
 
       <p class="figure">
-        توسیدید، <em>تاریخ جنگ پلوپونزی</em> ← ۳۱٬۹۲۴ واژهٔ تحلیل‌شده · ۱۱۹ مبحث
+        توسیدید، <em>تاریخ جنگ پلوپونزی</em> ۱ و ۳٫۱–۴۰ (همان بخشی که پیکرهٔ
+        Gorman حاشیه‌نگاری کرده است) ← ۳۱٬۹۲۴ واژهٔ تحلیل‌شده · ۱۱۹ مبحث
         دستوری رتبه‌بندی‌شده.
       </p>
 
       <section class="section">
         <h2>وقتی بسامد و آموزش در تقابل قرار می‌گیرند</h2>
         <p class="section-intro">
-          برنامهٔ درسیِ صرفاً آماری ممکن است آموزگار ناقصی باشد. سه موردی که
+          برنامهٔ درسیِ صرفاً آماری آموزگار خوبی نیست. سه موردی که
           دیداسکالوس آگاهانه شمارشِ بسامد را نادیده می‌گیرد:
         </p>
       </section>
@@ -720,7 +743,7 @@
           <p class="response">
             چنین درس‌هایی همیشه پیاپی می‌آیند، و برچسب‌های هم‌صورت یا تکراری در
             یک درس ادغام می‌شوند: حالت ندایی درون درس فاعلی آموزش داده می‌شود،
-            نه در ماژولی جدا که همان را تکرار کند.
+            نه در پودمانی جدا که همان را تکرار کند.
           </p>
         </div>
       </div>
@@ -736,8 +759,9 @@
         <article>
           <h3>پیکرهٔ خودتان را بیاورید</h3>
           <p>
-            از میان ۸۵ اثر از ۲۵ نویسنده و مجموعه در چهار پیکرهٔ درختی —
-            Perseus، Gorman، Harrington و عهد جدیدِ PROIEL — انتخاب کنید، یا
+            از میان ۸۵ اثر از ۲۵ نویسنده و مجموعه — کامل، یا در همان بخش‌هایی
+            که پیکره‌ها حاشیه‌نگاری کرده‌اند — در چهار پیکرهٔ درختی:
+            Perseus، Gorman، Harrington و عهد جدیدِ PROIEL. یا
             نشانی پیکره‌ها را وارد کنید و فایل‌های XML خودتان را بارگذاری کنید.
             هر منبع با نام پدیدآور و مجوزش در برنامه فهرست شده است.
           </p>
@@ -756,7 +780,9 @@
           <p>
             تمرین‌ها جمله‌های دست‌نخوردهٔ پیکره‌اند که بر پایهٔ نایابی واژه‌ها و
             طول جمله امتیاز می‌گیرند و جمله‌هایی مقدم‌اند که واژگانشان در
-            درس‌های پیشین آمده باشد — پس دشواری به‌آرامی بالا می‌رود.
+            درس‌های پیشین آمده باشد — پس دشواریِ واژگانی به‌آرامی بالا می‌رود.
+            دشواریِ نحوی امتیاز داده نمی‌شود، پس منحنیِ واقعیِ دشواری ناهموار
+            است نه ملایم.
           </p>
         </article>
       </section>
@@ -766,8 +792,10 @@
         <h2>ساخته‌شده برای ترجمه</h2>
         <p class="section-intro">
           دیداسکالوس از همان آغاز دوزبانه بوده و ترجمه‌پذیری هدفی طراحی‌شده است،
-          نه چیزی که بعداً به آن افزوده شود. بومی‌سازی به زبانی تازه تنها به یک
-          فایل زبان و مجموعه‌ای از ماژول‌های ترجمه‌شده نیاز دارد.
+          نه چیزی که بعداً به آن افزوده شود. بومی‌سازی به زبانی تازه به یک
+          فایل زبان و مجموعه‌ای از پودمان‌های ترجمه‌شده نیاز دارد و سامانه تغییری
+          نمی‌کند — هرچند ساختنِ اصطلاحاتِ دستوری آنجا که وجود ندارند کارِ
+          کمی نیست.
         </p>
       </section>
       <section class="posts">
@@ -775,15 +803,17 @@
           <h3>اصطلاحات یکدست</h3>
           <p>
             جدولی گزیده از اصطلاحات دستوری انگلیسی–فارسی واژگان را در سراسر ۱۵۷
-            ماژول درس ثابت نگه می‌دارد، تا یک مقوله هرگز به دو نام خوانده نشود.
+            پودمان درس ثابت نگه می‌دارد، تا یک مقوله هرگز به دو نام خوانده نشود.
           </p>
         </article>
         <article>
           <h3>یک قاعده که ترجمه را ممکن می‌کند</h3>
           <p>
             هیچ درسی یونانی را با مقایسه با زبان اول زبان‌آموز توضیح نمی‌دهد.
-            همین یک محدودیت است که اجازه می‌دهد ماژول‌ها برای هر مخاطب تازه
-            ترجمه شوند، نه از نو نوشته.
+            همین یک محدودیت است که اجازه می‌دهد پودمان‌ها برای هر مخاطب تازه
+            ترجمه شوند، نه از نو نوشته — و این بهایی واقعی دارد، چون توضیحِ
+            مقابله‌ای یکی از کارآمدترین ابزارها برای زبان‌آموزِ بزرگ‌سال است و
+            این قاعده از آن چشم می‌پوشد.
           </p>
         </article>
         <article>
@@ -799,7 +829,7 @@
       <div class="cta">
         <h3>دیداسکالوس را به زبان دیگری می‌خواهید؟</h3>
         <p>
-          هر چه به زبان وابسته است تنها در دو جا نشسته است: ماژول‌های درس و یک
+          هر چه به زبان وابسته است تنها در دو جا نشسته است: پودمان‌های درس و یک
           فایل زبان. همین دو را ترجمه کنید تا دیداسکالوسی داشته باشید که یونانی
           را به زبان شما درس می‌دهد — خودِ برنامه تغییری نمی‌کند و چیزی لازم
           نیست برای مخاطب تازه از نو نوشته شود. اگر دوست دارید این کار را برای
@@ -821,9 +851,12 @@
         <p>
           دیداسکالوس در آغاز پاسخی بود به روایتِ یک زبان از همین مسئله. برای
           خوانندگان ایران و سراسر غرب و مرکز آسیا، و بخش‌هایی از آفریقا، متن‌های
-          یونانی باستان منابع دست‌اول تاریخ خودشان‌اند: بخش بزرگی از روایت
-          برجای‌ماندهٔ ایران باستان تنها به یونانی به دست ما رسیده است. با این
-          حال یونانی باستان در هیچ نهاد آموزشی ایران به‌طور منظم تدریس نمی‌شود، و
+          یونانی باستان منابع دست‌اول تاریخ خودشان‌اند: بخش بزرگی از
+          <em>روایتِ پیوستهٔ</em> برجای‌ماندهٔ ایران باستان تنها به یونانی به دست
+          ما رسیده است. سنگ‌نبشته‌های پارسی باستان، بایگانی‌های ایلامیِ تخت‌جمشید،
+          گاه‌نامه‌های بابلی و اسناد آرامی منابعی دست‌اول و ضروری‌اند، اما تاریخِ
+          روایی نیستند. با این حال تا سال ۲۰۲۶ و تا آنجا که می‌دانم، هیچ نهاد
+          آموزشی در ایران درسِ منظمِ یونانی باستان ارائه نمی‌کند، و
           هیچ دستور زبان کاربردی، خوانشگر یا کتاب درسی‌ای برای فارسی‌زبانان نوشته
           نشده است.
         </p>
@@ -842,14 +875,16 @@
       </section>
       <div class="about-block">
         <p>
-          ماژول‌های دستوری در آغاز پیش‌نویس‌هایی بودند که با یک پردازشگر RAG بر
+          پودمان‌های دستوری در آغاز پیش‌نویس‌هایی بودند که با یک پردازشگر RAG بر
           پایهٔ دستورهای مرجع — از جمله دستور زبان یونانی Smyth و Crosby &amp;
-          Schaeffer — تولید شده بودند. آن پردازشگر کنار گذاشته شده است: ماژول‌ها
+          Schaeffer — تولید شده بودند. آن پردازشگر کنار گذاشته شده است: پودمان‌ها
           اکنون دست‌ویراسته می‌شوند و بازبینی‌شان ادامه دارد.
         </p>
         <p>
-          خودِ پردازشگرِ تولید مستقل از زبان است. امروز انگلیسی و فارسی در
-          دسترس‌اند؛ زبان تازه به یک فایل زبان و مجموعه‌ای از ماژول‌های
+          جریانِ دادهٔ پردازشگرِ تولید به زبانِ آموزش وابسته نیست، اما چارچوبِ
+          توضیحی‌اش هست: پودمان‌ها مقوله‌های سنتِ دستورنویسیِ غربی را مفروض
+          می‌گیرند. امروز انگلیسی و فارسی در
+          دسترس‌اند؛ زبان تازه به یک فایل زبان و مجموعه‌ای از پودمان‌های
           ترجمه‌شده نیاز دارد، نه به تغییر در سامانه.
         </p>
       </div>
@@ -857,7 +892,7 @@
       <section class="section">
         <h2>کاستی‌های شناخته‌شده</h2>
         <p class="section-intro">
-          جدا از بازبینی ماژول‌های درس، زیرساخت اصلی نیز در حال تغییر و بهبود
+          جدا از بازبینی پودمان‌های درس، زیرساخت اصلی نیز در حال تغییر و بهبود
           است. این‌ها برخی از مسائلی است که روی‌شان کار می‌کنم:
         </p>
       </section>
@@ -874,7 +909,7 @@
         </li>
         <li>
           صرف‌های نادر هنوز فایل درس ندارند، پس ساخت‌های بسیار بزرگ ممکن است
-          نبودِ یک ماژول را گزارش کنند.
+          نبودِ یک پودمان را گزارش کنند.
         </li>
         <li>
           پیکره‌های منبع گاهی با یکدیگر ناسازگارند یا برچسب‌های ناخوانا و
@@ -895,7 +930,7 @@
             rel="noopener noreferrer"
             >CC BY-NC-SA 4.0</a
           >
-          منتشر می‌شود. این مجوز کار اصلی را دربر می‌گیرد: پردازشگر، ماژول‌های
+          منتشر می‌شود. این مجوز کار اصلی را دربر می‌گیرد: پردازشگر، پودمان‌های
           درس، روش تدوین برنامهٔ درسی و ترجمه‌ها. متن‌های یونانی منبع همچنان
           تابع مجوزی هستند که پدیدآورندگان خودشان تعیین کرده‌اند و هر کتاب
           تولیدشده آن‌ها را در شناسنامه‌اش بازمی‌آورد.

@@ -32,9 +32,12 @@ Notice the elegant trio for motion and rest: **εἰς + acc.** (motion toward),
 | διά | through: διὰ τῆς χώρας "through the land" | because of: διὰ τοῦτο "because of this" |
 | κατά | down from; against: κατὰ τῶν πετρῶν "down from the rocks" | according to; throughout: κατὰ τοὺς νόμους "according to the laws" |
 | μετά | with: μετὰ τῶν συμμάχων "with the allies" | after: μετὰ τὴν μάχην "after the battle" |
+| περί | about, concerning: περὶ τοῦ νόμου "about the law" | around: περὶ τὴν πόλιν "around the city" |
 | ὑπέρ | on behalf of; above: ὑπὲρ τῆς πατρίδος "for the fatherland" | beyond: ὑπὲρ δύναμιν "beyond one's power" |
 
 μετά is the classic illustration: μετὰ τῶν φίλων "**with** the friends" but μετὰ τὸν πόλεμον "**after** the war". Same word, different case, different world.
+
+**περί + genitive** is worth singling out for a different reason: it is the ordinary way to say what a speech or an argument is *about*, and in Attic oratory and Plato it is one of the commonest words on the page — περὶ τοῦ πράγματος, περὶ τῶν πραγμάτων, περὶ ἑτέρου ἀνθρώπου.
 
 ## 4. Prepositions with Three Cases
 
@@ -47,18 +50,33 @@ Notice the elegant trio for motion and rest: **εἰς + acc.** (motion toward),
 
 **ὑπό + genitive** deserves special attention: it marks the **agent of a passive verb** — ἐπαιδεύθη ὑπὸ τοῦ διδασκάλου "he was educated **by** the teacher". You will meet this constantly.
 
-## 5. Two Spelling Notes
+## 5. "Improper" Prepositions
+
+A second group began life as adverbs, never compounds with a verb, and governs the **genitive** only. Grammars call them improper prepositions; they behave like ordinary ones in a sentence.
+
+| Word | Meaning | Example |
+|---|---|---|
+| ἕνεκα (Ionic εἵνεκα) | for the sake of, because of | τούτου ἕνεκα "for this reason" |
+| χάριν | for the sake of | τοῦ κέρδους χάριν "for the sake of gain" |
+| ἄνευ | without | ἄνευ τῶν φίλων "without his friends" |
+| μέχρι / ἄχρι | until, as far as | μέχρι τῆς νυκτός "until nightfall" |
+| πλήν | except | πλὴν ἑνός "except one" |
+| μεταξύ | between | μεταξὺ τούτων "between these" |
+
+ἕνεκα and χάριν are **postpositive**: they follow their noun rather than preceding it (τούτου ἕνεκα, not *ἕνεκα τούτου, though the latter occurs).
+
+## 6. Two Spelling Notes
 
 - ἐκ becomes **ἐξ** before a vowel: ἐξ ἀρχῆς "from the beginning".
 - Prepositions ending in a vowel elide it before a vowel: ἀπ᾿ αὐτοῦ, δι᾿ ὀλίγου, μετ᾿ ἐμοῦ (and the consonant aspirates before rough breathing: ἀφ᾿ οὗ, καθ᾿ ἡμέραν).
 
-## 6. Points to Watch
+## 7. Points to Watch
 
 - **Always learn preposition + case + meaning as one unit.** "μετά + gen. = with; μετά + acc. = after" — never just "μετά = with/after".
 - Prepositions also serve as **verb prefixes** with related meanings: εἰσ-έρχομαι "go into", ἐκ-βάλλω "throw out", περι-βάλλω "throw around". Recognizing the preposition inside a compound verb unlocks its meaning.
 - A prepositional phrase between article and noun is attributive: οἱ ἐν τῇ πόλει ἄνθρωποι "the people in the city".
 
-## 7. Historical Development
+## 8. Historical Development
 
 Prepositions have the clearest life story of any word class in Greek: they begin as free adverbs, become prepositions and preverbs, and end up taking over work the case endings used to do on their own.
 
@@ -77,11 +95,11 @@ To an Attic reader this looks like a compound verb split in half; historically i
 | "into" / "in" | εἰς vs ἐν kept distinct | the two blur; εἰς encroaches on ἐν |
 | Agent | ὑπό + gen. | ὑπό + gen., but ἀπό and διά spread |
 
-**"Improper" prepositions multiply.** Koine freely presses adverbs into prepositional service — **ἐνώπιον** "before", **ἔμπροσθεν**, **ὀπίσω**, **χάριν**, **ἕνεκα**, **ἔξωθεν**. These govern the genitive and never compound with verbs, which is why grammars call them improper. The New Testament uses them constantly.
+**"Improper" prepositions multiply.** The class described in §5 grows: Koine freely presses further adverbs into prepositional service — **ἐνώπιον** "before", **ἔμπροσθεν**, **ὀπίσω**, **ἔξωθεν** — alongside the ἕνεκα and χάριν that Attic already had. The New Testament uses them constantly.
 
 The endpoint: Modern Greek keeps only a handful of prepositions, and nearly all of them take the accusative.
 
-## 8. Example Sentences
+## 9. Example Sentences
 
 - οἱ στρατιῶται ἐκ τῆς πόλεως εἰς τὴν θάλατταν ἐπορεύοντο. — "The soldiers marched out of the city to the sea."
 - μετὰ τὴν μάχην οἱ σύμμαχοι σὺν τοῖς Ἀθηναίοις ἦσαν. — "After the battle the allies were with the Athenians."

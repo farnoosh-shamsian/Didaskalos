@@ -123,8 +123,8 @@ The short version: **if a form looks longer than the paradigm, it is probably ol
 - Three declension patterns supply the endings; learn each noun as *nominative + genitive + article*, because the genitive names the declension and hands you the stem.
 
 ## Exercises
-
 ### Reading the Article
+
 
 Each phrase below is unambiguous because of its article. Give the **case, number and gender** of each.
 
@@ -135,13 +135,6 @@ Each phrase below is unambiguous because of its article. Give the **case, number
 5. αἱ τιμαί *hai timaí*
 6. τοῦ σώματος *toû sṓmatos*
 
-### Reading the Dictionary Entry
-
-Name the declension of each noun, and give the stem that its other forms are built on.
-
-7. σῶμα, σώματος, τό *sôma, sṓmatos, tó*
-8. χώρα, χώρας, ἡ *chṓra, chṓras, hē*
-
 #### Answer Key
 
 1. Genitive plural. The gender cannot be told from τῶν, which serves all three — that is the one cell of the paradigm which withholds information.
@@ -150,5 +143,16 @@ Name the declension of each noun, and give the stem that its other forms are bui
 4. Accusative singular masculine.
 5. Nominative plural feminine.
 6. Genitive singular — neuter, as it happens (σῶμα), though the article τοῦ serves masculine and neuter alike here.
-7. Third declension: the genitive ends in -ος. Stem **σωματ-** *(sōmat-)*, from σώματος minus -ος. Note that the nominative σῶμα would never have told you this.
-8. First declension: the genitive ends in -ας. Stem **χωρ-** *(chōr-)*.
+
+### Reading the Dictionary Entry
+
+
+Name the declension of each noun, and give the stem that its other forms are built on.
+
+1. σῶμα, σώματος, τό *sôma, sṓmatos, tó*
+2. χώρα, χώρας, ἡ *chṓra, chṓras, hē*
+
+#### Answer Key
+
+1. Third declension: the genitive ends in -ος. Stem **σωματ-** *(sōmat-)*, from σώματος minus -ος. Note that the nominative σῶμα would never have told you this.
+2. First declension: the genitive ends in -ας. Stem **χωρ-** *(chōr-)*.
