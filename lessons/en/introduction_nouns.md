@@ -29,24 +29,26 @@ Each case has more uses than this table shows — prepositions, time expressions
 
 You have just seen ὁ, τοῦ, τῷ, τόν standing in front of λόγος in that table. That is the **article**, and it is worth meeting straight away, because it appears in front of a great many Greek nouns and it declines exactly as they do.
 
-Greek has only the definite article — there is no separate word for "a" or "an"; a noun without the article is simply indefinite. What the article does have is a full set of forms, one for every combination of gender, number and case:
+Greek has only the definite article — there is no separate word for "a" or "an"; a noun without the article is simply indefinite. What the article does have is a form for every combination of gender, number and case. Here are the singular forms, which are all you need for this module:
 
-| | Masc. sg. | Fem. sg. | Neut. sg. | Masc. pl. | Fem. pl. | Neut. pl. |
-|---|---|---|---|---|---|---|
-| **Nominative** | ὁ *ho* | ἡ *hē* | τό *tó* | οἱ *hoi* | αἱ *hai* | τά *tá* |
-| **Genitive** | τοῦ *toû* | τῆς *tês* | τοῦ *toû* | τῶν *tôn* | τῶν *tôn* | τῶν *tôn* |
-| **Dative** | τῷ *tôi* | τῇ *têi* | τῷ *tôi* | τοῖς *toîs* | ταῖς *taîs* | τοῖς *toîs* |
-| **Accusative** | τόν *tón* | τήν *tḗn* | τό *tó* | τούς *toús* | τάς *tás* | τά *tá* |
+| | Masc. | Fem. | Neut. |
+|---|---|---|---|
+| **Nominative** | ὁ *ho* | ἡ *hē* | τό *tó* |
+| **Genitive** | τοῦ *toû* | τῆς *tês* | τοῦ *toû* |
+| **Dative** | τῷ *tôi* | τῇ *têi* | τῷ *tôi* |
+| **Accusative** | τόν *tón* | τήν *tḗn* | τό *tó* |
 
-This is the single most useful table in the book to know by heart, so here it is whole rather than in instalments — twenty-four cells, seventeen distinct forms, and every one of them frequent. Because the article changes with the noun, it announces the noun's case and gender before you have even reached the noun — and when the noun is a third-declension form whose own ending is ambiguous, the article is often what settles the question.
+Twelve cells, nine distinct forms, and every one of them frequent. Because the article changes with the noun, it announces the noun's case and gender before you have even reached the noun — and when the noun is a third-declension form whose own ending is ambiguous, the article is often what settles the question.
 
 Three things to notice while you learn it:
 
-- The **genitive plural is τῶν *tôn* for all three genders** — one form, three jobs.
-- **Neuter nominative and accusative are identical** (τό, τά), here and everywhere else in Greek.
-- Four forms — **ὁ, ἡ, οἱ, αἱ** *(ho, hē, hoi, hai)* — have no τ and no accent. They are the proclitics you met in the alphabet module; their bareness is a feature of the paradigm, not an omission.
+- **Masculine and neuter share τοῦ and τῷ** *(toû, tôi)*. In the genitive and dative the article stops telling the two apart, and the noun's own ending has to do the work.
+- **Neuter nominative and accusative are identical** (τό), here and everywhere else in Greek.
+- **ὁ** and **ἡ** *(ho, hē)* have no τ and no accent. They are the proclitics you met in the alphabet module; their bareness is a feature of the paradigm, not an omission.
 
-There is **no vocative article**: to address someone Greek uses the particle ὦ *ô* instead (ὦ ἄνδρες *ô ándres* "gentlemen!"). The article's fuller story — how it came from a demonstrative, and what it does beyond marking definiteness — is the business of the article lesson.
+There is **no vocative article**: to address someone Greek uses the particle ὦ *ô* instead (ὦ ἄνδρες *ô ándres* "gentlemen!").
+
+The plural is built on the same plan of three genders and four cases, and you will meet its forms in the examples that follow — οἱ λόγοι *hoi lógoi*, τὰ δῶρα *tà dôra* — glossed where they arise. The full paradigm, and the article's fuller story besides — how it came from a demonstrative, and everything it does beyond marking definiteness — is the business of the article lesson.
 
 ## 4. Number
 
@@ -118,7 +120,7 @@ The short version: **if a form looks longer than the paradigm, it is probably ol
 
 - Greek nouns encode **case** (role), **number**, and **gender** in their endings.
 - Word order is flexible because the endings, not the position, mark the grammar.
-- The **article** declines with its noun and announces the noun's gender and case; its twenty-four forms are the best early investment in the language.
+- The **article** declines with its noun and announces the noun's gender and case; learn the singular forms now, and the whole paradigm with the article lesson.
 - **Neuters** have the same form for nominative and accusative, and a neuter plural subject takes a singular verb.
 - Three declension patterns supply the endings; learn each noun as *nominative + genitive + article*, because the genitive names the declension and hands you the stem.
 
@@ -126,23 +128,23 @@ The short version: **if a form looks longer than the paradigm, it is probably ol
 ### Reading the Article
 
 
-Each phrase below is unambiguous because of its article. Give the **case, number and gender** of each.
+Give the **case, number and gender** of each phrase below. The article settles most of it; where it cannot, say so.
 
-1. τῶν ἀνθρώπων *tôn anthrṓpōn*
-2. τῇ ὁδῷ *têi hodôi*
-3. τὰ δῶρα *tà dôra*
-4. τὸν λόγον *tòn lógon*
-5. αἱ τιμαί *hai timaí*
-6. τοῦ σώματος *toû sṓmatos*
+1. τῇ ὁδῷ *têi hodôi*
+2. τὸν λόγον *tòn lógon*
+3. τοῦ σώματος *toû sṓmatos*
+4. τὸ δῶρον *tò dôron*
+5. τῆς τιμῆς *tês timês*
+6. ὁ ἄνθρωπος *ho ánthrōpos*
 
 #### Answer Key
 
-1. Genitive plural. The gender cannot be told from τῶν, which serves all three — that is the one cell of the paradigm which withholds information.
-2. Dative singular feminine.
-3. Nominative **or** accusative plural neuter. Neuters never distinguish the two; only the sentence decides.
-4. Accusative singular masculine.
-5. Nominative plural feminine.
-6. Genitive singular — neuter, as it happens (σῶμα), though the article τοῦ serves masculine and neuter alike here.
+1. Dative singular feminine.
+2. Accusative singular masculine.
+3. Genitive singular. τοῦ serves masculine and neuter alike, so the article alone will not tell you which — it is neuter here, but only because you know σῶμα.
+4. Nominative **or** accusative singular neuter. Neuters never distinguish the two; only the sentence decides.
+5. Genitive singular feminine.
+6. Nominative singular masculine.
 
 ### Reading the Dictionary Entry
 
