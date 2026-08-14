@@ -1,0 +1,290 @@
+﻿row_type,code,domain,term_en,term_fa,term_ku,section_en,used_in,ku_status
+section,,section,Nominative,حالت نهادی,دۆخی نیهادی,,,exact
+section,,section,Genitive,حالت اضافی,دۆخی ئیزافە,,,exact
+section,,section,Dative,حالت برایی,دۆخی داتیڤ,,,exact
+section,,section,Accusative,حالت رایی,دۆخی ئاکووزاتیڤ (بەرکاری),,,exact
+section,,section,Vocative,حالت ندایی,دۆخی ڤوکاتیڤ (بانگ‌کردن),,,exact
+section,,section,Present,زمان حال,کاتی ڕانەبوردوو یان کاتی ئێستا,,,exact
+section,,section,Imperfect,زمان گذشته‌ی استمراری,کاتی ڕابوردووی بەردەوام,,,exact
+section,,section,Future,زمان آینده,کاتی داهاتوو,,,exact
+section,,section,Aorist,زمان گذشته‌ی تام,ڕابردووی دیاری‌نەکراو,,,exact
+section,,section,Perfect,زمان حال کامل,کاتی ئیستای ته‌واو,,,exact
+section,,section,Pluperfect,زمان گذشته‌ی کامل,کاتی ڕابردووی ته‌واو,,,exact
+section,,section,Future Perfect,زمان آینده‌ی کامل,کاتی داهاتووی ته‌واو,,,exact
+section,,section,Active Voice,جهت معلوم,ڕێژەی دیاریکراو(مه‌علووم),,,exact
+section,,section,Middle Voice,جهت میانی,ڕێژەی ناوه‌ندی,,,exact
+section,,section,Passive Voice,جهت مجهول,ڕێژەی کارا بزر(نه‌ناسراو),,,exact
+section,,section,Indicative,وجه اخباری,ڕێژەی ئیخباری,,,exact
+section,,section,Subjunctive,وجه التزامی,ڕێژەی داخوازی,,,exact
+section,,section,Optative,وجه تمنایی,ڕێژەی خۆزگەیی,,,exact
+section,,section,Imperative,وجه امری,ڕێژەی فەرمان,,,exact
+section,,section,Infinitive,اسم‌مصدر,چاوگ,,,exact
+section,,section,Participle,وجه وصفی,ئاوەڵناوی کرداری,,,exact
+section,,section,Article,حرف تعریف,پیتی پێناسە,,,exact
+section,,section,The pronoun αὐτός,ضمیر αὐτός,جێناوی αὐτός,,,exact
+section,,section,Notes,ملاحظات,تێبینی,,,exact
+entry,NomSubj,entry,Subject,نهاد,نیهاد,Nominative,,exact
+entry,NomPred,entry,Predicate,مسند,گوزاره,Nominative,,exact
+entry,NomInd,entry,Independent,مستقل,سەربەخۆ,Nominative,,exact
+entry,NomVoc,entry,As Vocative,ندایی,بانگهێشتن,Nominative,,exact
+entry,GenPos,entry,Possessor,ملکی,خاوەنایەتی,Genitive,,exact
+entry,GenPart,entry,Partitive,کلیّت یک جزء,دەربڕینی گشتییەت,Genitive,,exact
+entry,GenQual,entry,Quality,کیفی,چلۆنایەتی,Genitive,,exact
+entry,GenExpl,entry,Explanation,توضیحی,ڕوون‌کردنه‌و‌ه,Genitive,,exact
+entry,GenMat,entry,Material,جنس,جنس,Genitive,,exact
+entry,GenMeas,entry,Measure,کمّی,چەندێتی,Genitive,,exact
+entry,GenSubj,entry,Subjective,فاعلی,بکه‌ری,Genitive,,exact
+entry,GenObj,entry,Objective,مفعولی,به‌رکاری,Genitive,,exact
+entry,GenVal,entry,Value,ارزش,بایەخ,Genitive,,exact
+entry,GenVerb,entry,Complement of the Verb,مکمل فعل,تەواوکەری کار,Genitive,,exact
+entry,GenSep,entry,Source and Separation,منشاء و جدایی,سەرچاوە و جیابوونەوە,Genitive,,exact
+entry,GenTime,entry,Time,زمان,کات,Genitive,,exact
+entry,GenComp,entry,Comparison,قیاسی,بەراوردکاری,Genitive,,exact
+entry,GenLoc,entry,Place,مکان,شوێن,Genitive,,exact
+entry,GenAbs,entry,In Genitive Absolute,در عبارات اضافی مستقل,له دەستەواژەی ئیزافه‌ی سەربەخۆ,Genitive,,exact
+entry,GenRef,entry,Reference,موضوع یا زمینه,بابەت یان به‌ستێن,Genitive,,exact
+entry,GenCaus,entry,Cause,علّت,هۆکار,Genitive,,exact
+entry,DatVerb,entry,Complement of the verb,مکمل فعل,تەواوکەری کردار,Dative,,exact
+entry,DatPos,entry,Possessor,ملکی,خاوەندارێتی,Dative,,exact
+entry,DatAdvn,entry,Advantage (or Disadvantage),نفع و ضرر,بەرژەوەندی یان زیان,Dative,,exact
+entry,DatEthic,entry,Ethical Dative (or Dative of Feeling),تأکیدی (بیان احساسات),تاکیدی (دەربڕینی هه‌ست),Dative,,exact
+entry,DatAgent,entry,Agent,عامل,بکه‌ر,Dative,,exact
+entry,DatMean,entry,Manner and means,نحوه و وسیله,شێوە و کەرەسە,Dative,,exact
+entry,DatMeas,entry,Measure of Difference,مقیاس اندازه‌گیری,ئەندازەگیری و پێوان,Dative,,exact
+entry,DatInstr,entry,Instrument,ابزاری,ئامێر,Dative,,exact
+entry,DatCaus,entry,Cause or Purpose,سبب و هدف,هۆکار و ئامانج,Dative,,exact
+entry,DatAccom,entry,Accompaniment,همراهی,هاوڕێیی,Dative,,exact
+entry,DatTime,entry,Time,زمان,کات,Dative,,exact
+entry,DatLoc,entry,Place,مکان,شوێن,Dative,,exact
+entry,DatResp,entry,Respect,تصریحی,ڕوون کردنه‌وه,Dative,,exact
+entry,DatExpr,entry,Experiencer,تجربه‌گر,تاقی‌که‌ر,Dative,,exact
+entry,AccObj,entry,Direct Object,مفعول مستقیم,بەرکاری ڕاستەوخۆ,Accusative,,exact
+entry,AccCog,entry,Cognate,رایی هم‌ریشه,ئاکووزاتیڤی هاوڕەگ,Accusative,,exact
+entry,AccSubj,entry,Subject of Infinitive or Participle,فاعل اسم‌مصدر یا وجه وصفی,نیهادی چاوگ یان ئاوەڵناوی کاری,Accusative,,exact
+entry,AccResp,entry,Respect,رایی تصریحی,ئاکووزاتیڤی ڕوون‌کردنه‌وه,Accusative,,exact
+entry,AccTime,entry,Time,بازه‌ی زمانی,مه‌ودای کات,Accusative,,exact
+entry,AccSpac,entry,Space,بازه‌ی مکانی,مه‌ودای شوێن,Accusative,,exact
+entry,AccDirec,entry,Direction,جهت,لایەن,Accusative,,exact
+entry,AccAdv,entry,Adverbial,قیدی,ئاوەڵکار,Accusative,,exact
+entry,AccOath,entry,Oaths,سوگند,سوێند,Accusative,,exact
+entry,AccDoubl,entry,Double Accusative,با افعال دومفعولی,لەگەڵ کردارگه‌لی دو به‌رکار,Accusative,,exact
+entry,AccCaus,entry,Cause or Goal,علت یا هدف,هۆکار یان مەبەست,Accusative,,exact
+entry,Voc,entry,Exclamations and direct address,خطاب مستقیم یا حیرت,بانگهێشتی ڕاستەوخۆ یان سەرسووڕمان,Vocative,,exact
+entry,Pres,entry,Present of Continuity,استمرار,ڕانەبوردووی بەردەوام,Present,,exact
+entry,PresIter,entry,Customary Action (Iterative),تکرار و عادات,دووپات و عاده‌ت(دووبارەکراو),Present,,exact
+entry,PresCona,entry,Conative Present,ارادی,قه‌ستی,Present,,exact
+entry,PresHist,entry,Historical Present,تاریخی,مێژوویی,Present,,exact
+entry,PresPerf,entry,Resultative and Perfective Present,نتیجه‌محور یا کلیت‌محور,دەرئەنجام یان باری گشتی,Present,,exact
+entry,PresNoni,entry,Non-indicative (Imperfective Aspect),غیر اخباری (نمود ناکامل),ڕێژه‌ی نائیخباری,Present,,exact
+entry,Impf,entry,Imperfect of Continuance,بیان استمرار,دەربڕینی بەردەوامی,Imperfect,,exact
+entry,ImpfIter,entry,Customary Action (Iterative),تکرار و عادات,دووپات‌بوونەوە و خوو,Imperfect,,exact
+entry,ImpfCona,entry,Conative Imperfect,ارادی,خۆویستوو,Imperfect,,exact
+entry,ImpfComp,entry,Imperfect of Completed Action,نتیجه‌محور,نتیجه‌محور,Imperfect,,exact
+entry,ImpfDesc,entry,Imperfect of Description,توصیفی,ڕوون‌کردنەوە,Imperfect,,exact
+entry,ImpfCons,entry,Imperfect of Consecutive Action,بیان توالی (آغازی),یەک‌لەدوای‌یەک (سه‌ره‌تایی),Imperfect,,exact
+entry,Fut,entry,Future Events or Expectations,رویدادها و انتظارات آینده,ڕووداوه‌کان و چاوەڕوانی,Future,,exact
+entry,FutHypo,entry,Hypothesis or General Truth,فرضیات و حقایق کلی,گریمانە و ڕاستی گشتی,Future,,exact
+entry,FutJuss,entry,Jussive Future,امری,فه‌رمان دان,Future,,exact
+entry,FutNoni,entry,Non-indicative,غیر اخباری,نائیخباری,Future,,exact
+entry,Aor,entry,Resultative Aorist,نتیجه‌محور,دەرئەنجامی,Aorist,,exact
+entry,AorIngr,entry,Ingressive Aorist,آغازشگر,دەستپێکەر,Aorist,,exact
+entry,AorComp,entry,Complexive Aorist,مرکب,لێکدراو,Aorist,,exact
+entry,AorGnom,entry,Gnomic Aorist,امثال و حقایق کلی,ڕاستی گشتی,Aorist,,exact
+entry,AorSug,entry,Suggestive Questions and Requests,پرسش و درخواست پیشنهادی,پرسیار و داواکاری پێشنیار,Aorist,,exact
+entry,AorIter,entry,Customary Action (Iterative),تکرار و عادات,دووبارەبوونەوە و خوو,Aorist,,exact
+entry,AorDram,entry,Dramatic Aorist,نمایشی,شانۆگەری,Aorist,,exact
+entry,AorNoni,entry,Non-indicative (Perfective Aspect),غیر اخباری (نمود کامل),نائیخباری,Aorist,,exact
+entry,Perf,entry,Completed action,امر انجام‌شده,کردارێکی تەواو,Perfect,,exact
+entry,PerfInten,entry,Intensive Perfect,تأکیدی,جەختکه‌ر,Perfect,,exact
+entry,PerfFut,entry,Perfect for Future Perfect,در معنای آینده‌ی کامل,له واتای داهاتووی ته‌واو,Perfect,,exact
+entry,PerfNoni,entry,Non-indicative,غیر اخباری,نائيخباری,Perfect,,exact
+entry,Pperf,entry,Past Perfect,گذشته‌ی کامل,ڕابردووی ته‌واو,Pluperfect,,exact
+entry,PperfImm,entry,Pluperfect of Immediate Occurrence,وقوع بلافاصله,ڕوودانی دەسبەجێ,Pluperfect,,exact
+entry,PperfInt,entry,Intensive Pluperfect,تأکیدی,جه‌ختکه‌ر,Pluperfect,,exact
+entry,Futperf,entry,Future Completed Action,امر انجام‌شده‌ در آینده,کردەوەێک له داهاتوو,Future Perfect,,exact
+entry,FutperfInten,entry,Intensive or Immediate Consequence,پیامد شدید یا فوری,ئەنجامی ته‌واو یان دەسبەجێ,Future Perfect,,exact
+entry,Act,entry,Active Voice,جهت معلوم,ڕێژەی دیاریکراو,Active Voice,,exact
+entry,MidIndir,entry,Indirect Reflexive Middle,انعکاسی غیرمستقیم,ناوه‌ندی گەڕانەوەیی ناڕاستەوخۆ,Middle Voice,,exact
+entry,MidDir,entry,Direct Reflexive Middle,انعکاسی مستقیم,ناوینە‌ی گەڕانەوەیی ڕاستەوخۆ,Middle Voice,,exact
+entry,MidSpee,entry,Speech Act Middle,گفتاری,وتاردان,Middle Voice,,exact
+entry,MidMotion,entry,Body Motions,حرکات جسمانی,جم‌وجۆڵی جه‌سته‌یی,Middle Voice,,exact
+entry,MidMent,entry,"Mental Activity, Process or Perception",ادراک، کنش یا فرآیند ذهنی,تێگەیشتن یان چالاکی مێشکی,Middle Voice,,exact
+entry,MidRecip,entry,Reciprocal Middle,متقابل,ناوه‌ندی بەرامبەر,Middle Voice,,exact
+entry,MidSpon,entry,Spontaneous Process Middle,روند خودآیند,ناوەندی پرۆسەی خۆبەخۆ,Middle Voice,,exact
+entry,Pass,entry,Passive voice,جهت مجهول,ڕێژەی نه‌ناسراو,Passive Voice,,exact
+entry,Ind,entry,Assertions and Questions,خبری یا سوالی,ئیخباری یای پرسیاری,Indicative,,exact
+entry,IndOblig,entry,Unfulfilled Obligation,تعهد انجام‌نشده,بەڵێنی‌ جێبەجێ‌نە‌کراو,Indicative,,exact
+entry,IndWish,entry,Unattainable Wish,فرض محال,گریمانی مەحاڵ,Indicative,,exact
+entry,IndCount,entry,Counterfactual Indicative,خلاف واقع,ئاماژه به دژە ڕاستی,Indicative,,exact
+entry,SubjHort,entry,Hortatory Subjunctive,ترغیبی,هاندەرانە,Subjunctive,,exact
+entry,SubjProh,entry,Prohibitive Subjunctive,بیان نهی,ڕێگر,Subjunctive,,exact
+entry,SubjDoubt,entry,Doubtful Assertion,تصدیق مردّدانه,بریاری گوماناوی,Subjunctive,,exact
+entry,SubjDelib,entry,Deliberative Subjunctive,رایزنی,ڕاوێژکاری,Subjunctive,,exact
+entry,SubjHomer,entry,Anticipatory Subjunctive (Homeric),پیش‌انگارانه (هومری),پێش‌بینانە (هومێری),Subjunctive,,exact
+entry,SubjDenia,entry,Emphatic Denial,نفی تأکیدی,ڕەددانەوە‌ی بەهێز,Subjunctive,,exact
+entry,SubjSubor,entry,In subordinate clause,در بند‌های وابسته,له بڕگە‌ بەستراوه‌کان,Subjunctive,,exact
+entry,OptWish,entry,Optative of Wish,آرزویی,خۆزگەیی,Optative,,exact
+entry,OptComm,entry,Command or Request,امر یا درخواست,فه‌رمان یان داخوازی,Optative,,exact
+entry,OptPoten,entry,Potential Optative,بالقوه,داڕشتنی ڕەنگەیی,Optative,,exact
+entry,OptSubor,entry,In subordinate clause,در بند‌های وابسته,له بڕگە‌ بەستراوه‌کان,Optative,,exact
+entry,ImprComm,entry,Command or Prohibition,امر یا نهی,فەرمان یان بەرگیری,Imperative,,exact
+entry,ImprAssum,entry,"Assumption, Concession or Greeting",فرض، مزیت یا درود,گریمانەکردن، دەربڕینی سڵاو,Imperative,,exact
+entry,InfDyn,entry,Dynamic infinitive,مصدر پویا,چاوگی چالاک,Infinitive,,exact
+entry,InfDec,entry,Declarative infinitive,مصدر تبیینی,چاوگی ئاگاداری,Infinitive,,exact
+entry,InfIdio,entry,Idiomatic expressions,در عبارات اصطلاحی,له دەستەواژه‌ی زاراوەیی,Infinitive,,exact
+entry,InfComm,entry,"Infinitive of Commands, Wishes, and Exclamations",بیان امر، آرزو یا حیرت,دەربڕینی ئاوات یان سەرسوڕمان,Infinitive,,exact
+entry,InfArt,entry,Articular Infinitive,با حرف تعریف,پیتی پێناسین,Infinitive,,exact
+entry,PartAttr,entry,Attributive and Substantival Participle,توصیفی و اسمی,ئاوەڵ‌ناوی کرداری,Participle,,exact
+entry,PartCirc,entry,Circumstantial Participle,بیان موقعیت,دەربڕینی بارودۆخ,Participle,,exact
+entry,PartGen,entry,Circumstantial Participle - Genitive Absolute,بیان موقعیت - اضافی مستقل,دەربڕینی بارودۆخ - ئیزافە‌ی سەربەخۆ,Participle,,exact
+entry,PartAcc,entry,Circumstantial Participle - Accusative Absolute,بیان موقعیت - رایی مستقل,دەربڕینی بارودۆخ - ئاکووزاتیڤی سەربەخۆ,Participle,,exact
+entry,PartSupp,entry,Supplementary Participle,مکمل,تەواوکەر,Participle,,exact
+entry,ArtPart,entry,Particular article,معرفه‌ساز,ناسراوساز,Article,,exact
+entry,ArtSubs,entry,As Substantivizer,اسم‌ساز,ناوساز,Article,,exact
+entry,ArtPron,entry,Pronominal,ضمیری,جێناو,Article,,exact
+entry,ArtGener,entry,Generic,اسم جنس,ناوی گشتی,Article,,exact
+entry,ArtAbst,entry,Abstract Concept,با مفاهیم انتزاعی,چەمکی لێ‌دابڕاو(ئابستراکت),Article,,exact
+entry,ArtProp,entry,Proper Names,با اسم خاص,لەگەڵ ناوی تایبەت,Article,,exact
+entry,ArtPoss,entry,Possession,ملکی,خاوەندارێتی,Article,,exact
+entry,AutEmph,entry,Emphatic,تأکیدی,جەختکەر,The pronoun αὐτός,,exact
+entry,AutPron,entry,Personal Pronoun,ضمیر شخصی,جێناوی کەس,The pronoun αὐτός,,exact
+entry,AutIden,entry,Identicalness,یکسانی,هەمان(هه‌و),The pronoun αὐτός,,exact
+entry,AutRefl,entry,Reflexive,انعکاسی,گەڕانەوەیی (Reflexive),The pronoun αὐτός,,exact
+entry,Agr,entry,Agreement,انطباق صرفی,ڕێک بوونی گه‌ردانی,Notes,,exact
+entry,GBP,entry,Governed by Preposition,معمول حرف‌اضافه,به‌گوێره‌ی پیتی پێوەندی,Notes,,exact
+metalanguage,,word class,verb,فعل,کردار,,Nominative > Subject (§NomSubj); Nominative > Predicate (§NomPred); Genitive > Subjective (§GenSubj); Genitive > Objective (§GenObj); +57 more,verified
+metalanguage,,word class,noun,اسم,ناو,,Nominative > Predicate (§NomPred); Genitive > Partitive (§GenPart); Genitive > Material (§GenMat); Genitive > Measure (§GenMeas); +24 more,verified
+metalanguage,,word class,pronoun,ضمیر,جێناو,,Genitive > In Genitive Absolute (§GenAbs); Dative > Ethical Dative (or Dative of Feeling) (§DatEthic); Dative > Experiencer (§DatExpr); Accusative > Cause or Goal (§AccCaus); +8 more,verified
+metalanguage,,word class,personal pronoun,ضمیر شخصی,جێناوی کەسی,,Dative > Ethical Dative (or Dative of Feeling) (§DatEthic); Article > Pronominal (§ArtPron); The pronoun αὐτός > Personal Pronoun (§AutPron),verified
+metalanguage,,word class,reflexive pronoun,ضمیر انعکاسی,جێناوی گەڕانەوەیی,,Middle Voice > Direct Reflexive Middle (§MidDir); The pronoun αὐτός > Reflexive (§AutRefl),verified
+metalanguage,,word class,adjective,صفت,ئاوەڵناو,,Dative > Agent (§DatAgent); Dative > Measure of Difference (§DatMeas); Dative > Respect (§DatResp); Accusative > Respect (§AccResp); +5 more,verified
+metalanguage,,word class,comparative,صفت تفضیلی,ئاوەڵناوی بەراوردکاری,,Genitive > Comparison (§GenComp); Dative > Measure of Difference (§DatMeas),verified
+metalanguage,,word class,superlative,صفت عالی,ئاوەڵناوی هەرەیی,,Genitive > Comparison (§GenComp); Dative > Measure of Difference (§DatMeas),verified
+metalanguage,,word class,adverb,قید,ئاوەڵکار,,Genitive > Comparison (§GenComp); Dative > Manner and means (§DatMean); Accusative > Adverbial (§AccAdv); Accusative > Oaths (§AccOath); +2 more,verified
+metalanguage,,word class,article,حرف تعریف,پیتی پێناسە,,Genitive > Possessor (§GenPos); Accusative > Time (§AccTime); Optative > Potential Optative (§OptPoten); Infinitive > Articular Infinitive (§InfArt); +10 more,verified
+metalanguage,,word class,preposition,حرف اضافه,پیتی پێوەندی,,Dative > Complement of the verb (§DatVerb); Dative > Time (§DatTime); Dative > Place (§DatLoc); Accusative > Direction (§AccDirec),verified
+metalanguage,,word class,participle,وجه وصفی,ئاوەڵناوی کرداری,,Genitive > In Genitive Absolute (§GenAbs); Dative > Experiencer (§DatExpr); Accusative > Subject of Infinitive or Participle (§AccSubj); Present > Non-indicative (Imperfective Aspect) (§PresNoni); +11 more,verified
+metalanguage,,word class,infinitive,اسم‌مصدر / مصدر,چاوگ,,Accusative > Subject of Infinitive or Participle (§AccSubj); Present > Non-indicative (Imperfective Aspect) (§PresNoni); Future > Non-indicative (§FutNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); +9 more,verified
+metalanguage,,word class,verbal stem,ماده‌ی فعل,,,Accusative > Cognate (§AccCog); Present > Non-indicative (Imperfective Aspect) (§PresNoni); Imperfect > Customary Action (Iterative) (§ImpfIter); Future > Non-indicative (§FutNoni),not confirmed
+metalanguage,,case,case,حالت صرفی,دۆخ,,Nominative > Subject (§NomSubj); Nominative > As Vocative (§NomVoc); Dative > Ethical Dative (or Dative of Feeling) (§DatEthic); Dative > Instrument (§DatInstr); +10 more,verified
+metalanguage,,case,nominative,حالت نهادی,دۆخی نیهادی,,Nominative > Subject (§NomSubj); Nominative > Predicate (§NomPred); Nominative > Independent (§NomInd); Nominative > As Vocative (§NomVoc); +2 more,verified
+metalanguage,,case,genitive,حالت اضافی,دۆخی ئیزافە,,Genitive > Possessor (§GenPos); Genitive > Partitive (§GenPart); Genitive > Quality (§GenQual); Genitive > Explanation (§GenExpl); +19 more,verified
+metalanguage,,case,dative,حالت برایی,دۆخی داتیڤ,,Genitive > Complement of the Verb (§GenVerb); Dative > Complement of the verb (§DatVerb); Dative > Possessor (§DatPos); Dative > Advantage (or Disadvantage) (§DatAdvn); +12 more,verified
+metalanguage,,case,accusative,حالت رایی,دۆخی ئاکووزاتیڤ,,Genitive > Complement of the Verb (§GenVerb); Genitive > Time (§GenTime); Dative > Complement of the verb (§DatVerb); Dative > Respect (§DatResp); +15 more,verified
+metalanguage,,case,vocative,حالت ندایی,دۆخی ڤوکاتیڤ,,Nominative > As Vocative (§NomVoc); Vocative > Exclamations and direct address (§Voc),verified
+metalanguage,,case,instrumental case,صرف بایی,,,Dative > Instrument (§DatInstr),not confirmed
+metalanguage,,case,locative case,صرف دری,,,Dative > Place (§DatLoc),not confirmed
+metalanguage,,tense,tense,زمان,کات,,Dative > Agent (§DatAgent); Present > Present of Continuity (§Pres); Present > Customary Action (Iterative) (§PresIter); Present > Resultative and Perfective Present (§PresPerf); +19 more,verified
+metalanguage,,tense,present,زمان حال,کاتی ئێستا,,Present > Present of Continuity (§Pres); Present > Customary Action (Iterative) (§PresIter); Present > Conative Present (§PresCona); Present > Historical Present (§PresHist); +22 more,verified
+metalanguage,,tense,imperfect,گذشته‌ی استمراری,کاتی ڕابردووی بەردەوام,,Present > Historical Present (§PresHist); Imperfect > Imperfect of Continuance (§Impf); Imperfect > Customary Action (Iterative) (§ImpfIter); Imperfect > Conative Imperfect (§ImpfCona); +10 more,verified
+metalanguage,,tense,future,زمان آینده,کاتی داهاتوو,,Present > Present of Continuity (§Pres); Present > Customary Action (Iterative) (§PresIter); Future > Future Events or Expectations (§Fut); Future > Hypothesis or General Truth (§FutHypo); +15 more,verified
+metalanguage,,tense,aorist,گذشته‌ی تام,ڕابردووی دیاری‌نەکراو,,Present > Customary Action (Iterative) (§PresIter); Present > Historical Present (§PresHist); Imperfect > Imperfect of Continuance (§Impf); Imperfect > Customary Action (Iterative) (§ImpfIter); +19 more,verified
+metalanguage,,tense,perfect,حال کامل,کاتی ئێستای تەواو,,Dative > Agent (§DatAgent); Present > Customary Action (Iterative) (§PresIter); Present > Resultative and Perfective Present (§PresPerf); Perfect > Completed action (§Perf); +9 more,verified
+metalanguage,,tense,pluperfect,گذشته‌ی کامل,کاتی ڕابردووی تەواو,,Dative > Agent (§DatAgent); Perfect > Non-indicative (§PerfNoni); Pluperfect > Past Perfect (§Pperf); Pluperfect > Pluperfect of Immediate Occurrence (§PperfImm); +3 more,verified
+metalanguage,,tense,future perfect,آینده‌ی کامل,کاتی داهاتووی تەواو,,Perfect > Perfect for Future Perfect (§PerfFut); Future Perfect > Future Completed Action (§Futperf); Future Perfect > Intensive or Immediate Consequence (§FutperfInten),verified
+metalanguage,,tense,past,گذشته,ڕابردوو,,Present > Historical Present (§PresHist); Present > Resultative and Perfective Present (§PresPerf); Imperfect > Imperfect of Continuance (§Impf); Imperfect > Customary Action (Iterative) (§ImpfIter); +11 more,verified
+metalanguage,,tense,present stem,ماده‌ی حال,,,Present > Non-indicative (Imperfective Aspect) (§PresNoni),not confirmed
+metalanguage,,aspect,aspect,نمود,دۆخ / لایەن,,Present > Present of Continuity (§Pres); Present > Non-indicative (Imperfective Aspect) (§PresNoni); Future > Non-indicative (§FutNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); +1 more,verified
+metalanguage,,aspect,grammatical aspect,نمود دستوری,دەربڕینی ڕێزمانی,,Present > Non-indicative (Imperfective Aspect) (§PresNoni); Future > Non-indicative (§FutNoni),verified
+metalanguage,,aspect,imperfective,نمود ناکامل,لایەنی ناتەواو,,Present > Present of Continuity (§Pres); Present > Non-indicative (Imperfective Aspect) (§PresNoni),verified
+metalanguage,,aspect,perfective,نمود کامل,,,Present > Resultative and Perfective Present (§PresPerf); Aorist > Non-indicative (Perfective Aspect) (§AorNoni),not confirmed
+metalanguage,,aspect,telic,غایی,,,Present > Resultative and Perfective Present (§PresPerf); Imperfect > Conative Imperfect (§ImpfCona); Imperfect > Imperfect of Completed Action (§ImpfComp); Perfect > Intensive Perfect (§PerfInten),not confirmed
+metalanguage,,aspect,atelic,غیر غایی,,,Aorist > Ingressive Aorist (§AorIngr); Perfect > Intensive Perfect (§PerfInten); Pluperfect > Intensive Pluperfect (§PperfInt),not confirmed
+metalanguage,,aspect,ingressive,آغازشگر,دەستپێکەر,,Future > Future Events or Expectations (§Fut); Aorist > Resultative Aorist (§Aor); Aorist > Ingressive Aorist (§AorIngr),verified
+metalanguage,,aspect,resultative,نتیجه‌محور,دەرئەنجام‌تەوەر,,Present > Resultative and Perfective Present (§PresPerf); Future > Future Events or Expectations (§Fut); Aorist > Resultative Aorist (§Aor),verified
+metalanguage,,aspect,complexive,مرکب,,,Aorist > Complexive Aorist (§AorComp),not confirmed
+metalanguage,,aspect,iterative,تکراری,,,Imperfect > Customary Action (Iterative) (§ImpfIter); Aorist > Customary Action (Iterative) (§AorIter); Optative > In subordinate clause (§OptSubor),not confirmed
+metalanguage,,aspect,conative,ارادی,,,Imperfect > Conative Imperfect (§ImpfCona),not confirmed
+metalanguage,,aspect,gnomic,بیان حقایق کلی,,,Future > Hypothesis or General Truth (§FutHypo); Aorist > Gnomic Aorist (§AorGnom),not confirmed
+metalanguage,,aspect,intensive,تأکیدی,جەختکەرەوە,,Perfect > Intensive Perfect (§PerfInten); Pluperfect > Intensive Pluperfect (§PperfInt); The pronoun αὐτός > Emphatic (§AutEmph),verified
+metalanguage,,aspect,completed action,کنش کامل,کرداری تەواو,,Dative > Agent (§DatAgent); Perfect > Completed action (§Perf); Pluperfect > Past Perfect (§Pperf); Future Perfect > Future Completed Action (§Futperf),verified
+metalanguage,,aspect,ongoing action,کنش در حال انجام,کرداری بەردەوام,,Present > Non-indicative (Imperfective Aspect) (§PresNoni); Imperfect > Imperfect of Continuance (§Impf); Future > Non-indicative (§FutNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); +1 more,verified
+metalanguage,,aspect,repeated action,کنش تکراری,دووپاتەکراو,,Accusative > Subject of Infinitive or Participle (§AccSubj); Present > Customary Action (Iterative) (§PresIter); Present > Non-indicative (Imperfective Aspect) (§PresNoni); Imperfect > Customary Action (Iterative) (§ImpfIter); +3 more,verified
+metalanguage,,aspect,customary action,کنش مرسوم / عادت,باو,,Present > Customary Action (Iterative) (§PresIter); Imperfect > Customary Action (Iterative) (§ImpfIter); Aorist > Customary Action (Iterative) (§AorIter),verified
+metalanguage,,mood,mood,وجه,ڕێژە,,Present > Non-indicative (Imperfective Aspect) (§PresNoni); Future > Non-indicative (§FutNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); Perfect > Non-indicative (§PerfNoni); +3 more,verified
+metalanguage,,mood,indicative,وجه اخباری,ڕێژەی ئیخباری,,Present > Customary Action (Iterative) (§PresIter); Present > Non-indicative (Imperfective Aspect) (§PresNoni); Future > Non-indicative (§FutNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); +7 more,verified
+metalanguage,,mood,non-indicative,غیراخباری,,,Perfect > Non-indicative (§PerfNoni),not confirmed
+metalanguage,,mood,subjunctive,وجه التزامی,ڕێژەی داخوازی,,Present > Non-indicative (Imperfective Aspect) (§PresNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); Perfect > Non-indicative (§PerfNoni); Subjunctive > Hortatory Subjunctive (§SubjHort); +6 more,verified
+metalanguage,,mood,optative,وجه تمنایی,ڕێژەی خۆزگەیی,,Present > Non-indicative (Imperfective Aspect) (§PresNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); Perfect > Non-indicative (§PerfNoni); Optative > Optative of Wish (§OptWish); +5 more,verified
+metalanguage,,mood,imperative,وجه امری,ڕێژەی فەرمان,,Present > Non-indicative (Imperfective Aspect) (§PresNoni); Future > Jussive Future (§FutJuss); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); Perfect > Non-indicative (§PerfNoni); +5 more,verified
+metalanguage,,mood,potential,بالقوه,ڕەنگەیی,,Indicative > Counterfactual Indicative (§IndCount); Optative > Potential Optative (§OptPoten); Optative > In subordinate clause (§OptSubor); Infinitive > Dynamic infinitive (§InfDyn); +1 more,verified
+metalanguage,,mood,counterfactual,خلاف واقع,ناڕاست,,Indicative > Assertions and Questions (§Ind); Indicative > Unfulfilled Obligation (§IndOblig); Indicative > Counterfactual Indicative (§IndCount),verified
+metalanguage,,voice,voice,جهت,ڕێژە,,Active Voice > Active Voice (§Act); Middle Voice > Spontaneous Process Middle (§MidSpon); Passive Voice > Passive voice (§Pass),verified
+metalanguage,,voice,active,جهت معلوم,ڕێژەی دیاریکراو,,Genitive > Subjective (§GenSubj); Aorist > Customary Action (Iterative) (§AorIter); Future Perfect > Future Completed Action (§Futperf); Active Voice > Active Voice (§Act); +3 more,verified
+metalanguage,,voice,middle,جهت میانی,ڕێژەی ناوەندی,,Aorist > Customary Action (Iterative) (§AorIter); Future Perfect > Future Completed Action (§Futperf); Middle Voice > Indirect Reflexive Middle (§MidIndir); Middle Voice > Direct Reflexive Middle (§MidDir); +7 more,verified
+metalanguage,,voice,passive,جهت مجهول,ڕێژەی نەناسراو,,Genitive > Objective (§GenObj); Dative > Agent (§DatAgent); Future Perfect > Future Completed Action (§Futperf); Middle Voice > Spontaneous Process Middle (§MidSpon); +3 more,verified
+metalanguage,,voice,causative,سببی,,,Active Voice > Active Voice (§Act); Middle Voice > Indirect Reflexive Middle (§MidIndir); Middle Voice > Spontaneous Process Middle (§MidSpon),not confirmed
+metalanguage,,voice,reflexive,انعکاسی,گەڕانەوەیی,,Middle Voice > Indirect Reflexive Middle (§MidIndir); Middle Voice > Direct Reflexive Middle (§MidDir); The pronoun αὐτός > Reflexive (§AutRefl),verified
+metalanguage,,voice,direct reflexive,انعکاسی مستقیم,,,Middle Voice > Indirect Reflexive Middle (§MidIndir); Middle Voice > Direct Reflexive Middle (§MidDir); The pronoun αὐτός > Reflexive (§AutRefl),not confirmed
+metalanguage,,voice,indirect reflexive,انعکاسی غیرمستقیم,,,Middle Voice > Indirect Reflexive Middle (§MidIndir),not confirmed
+metalanguage,,voice,reciprocal,متقابل,,,Middle Voice > Reciprocal Middle (§MidRecip),not confirmed
+metalanguage,,voice,spontaneous process,روند خودآیند,,,Middle Voice > Spontaneous Process Middle (§MidSpon),not confirmed
+metalanguage,,voice,transitive,گذرا,تێپەڕ,,Active Voice > Active Voice (§Act); Participle > Supplementary Participle (§PartSupp),verified
+metalanguage,,voice,intransitive,ناگذر,تێنەپەڕ,,Active Voice > Active Voice (§Act); Participle > Supplementary Participle (§PartSupp),verified
+metalanguage,,voice,impersonal,غیرشخصی,ناکەکەسی,,Dative > Experiencer (§DatExpr); Indicative > Unfulfilled Obligation (§IndOblig); Participle > Circumstantial Participle - Accusative Absolute (§PartAcc),verified
+metalanguage,,syntax,subject,فاعل / نهاد,بکەر / نیهاد,,Nominative > Subject (§NomSubj); Nominative > Predicate (§NomPred); Genitive > Subjective (§GenSubj); Genitive > In Genitive Absolute (§GenAbs); +18 more,verified
+metalanguage,,syntax,object,مفعول,بەرکار,,Genitive > Objective (§GenObj); Genitive > Value (§GenVal); Genitive > Complement of the Verb (§GenVerb); Dative > Complement of the verb (§DatVerb); +11 more,verified
+metalanguage,,syntax,direct object,مفعول مستقیم,بەرکاری ڕاستەوخۆ,,Dative > Complement of the verb (§DatVerb); Accusative > Direct Object (§AccObj); Accusative > Double Accusative (§AccDoubl); Active Voice > Active Voice (§Act); +2 more,verified
+metalanguage,,syntax,indirect object,مفعول غیرمستقیم,بەرکاری ناڕاستەوخۆ,,Dative > Complement of the verb (§DatVerb); Middle Voice > Indirect Reflexive Middle (§MidIndir),verified
+metalanguage,,syntax,predicate,مسند,پاڵدراو,,Nominative > Predicate (§NomPred); Genitive > Quality (§GenQual); Dative > Cause or Purpose (§DatCaus); Accusative > Subject of Infinitive or Participle (§AccSubj); +2 more,verified
+metalanguage,,syntax,predicate position,جایگاه مسند,,,The pronoun αὐτός > Emphatic (§AutEmph),not confirmed
+metalanguage,,syntax,complement,مکمل,تەواوکەر,,Genitive > Comparison (§GenComp); Infinitive > Dynamic infinitive (§InfDyn),verified
+metalanguage,,syntax,attributive,وصفی,,,Genitive > Quality (§GenQual); Dative > Time (§DatTime); Participle > Attributive and Substantival Participle (§PartAttr); Article > Particular article (§ArtPart); +3 more,not confirmed
+metalanguage,,syntax,substantival,اسمی,,,Participle > Attributive and Substantival Participle (§PartAttr),not confirmed
+metalanguage,,syntax,agreement,مطابقت / انطباق صرفی,,,Nominative > Predicate (§NomPred); Participle > Attributive and Substantival Participle (§PartAttr); Participle > Supplementary Participle (§PartSupp); The pronoun αὐτός > Emphatic (§AutEmph),not confirmed
+metalanguage,,syntax,main verb,فعل اصلی,کرداری سەرەکی,,Imperfect > Imperfect of Description (§ImpfDesc); Future > Non-indicative (§FutNoni); Infinitive > Declarative infinitive (§InfDec); Participle > Circumstantial Participle (§PartCirc); +2 more,verified
+metalanguage,,syntax,agent,عامل,بکەر,,"Dative > Agent (§DatAgent); Future > Future Events or Expectations (§Fut); Middle Voice > Body Motions (§MidMotion); Middle Voice > Mental Activity, Process or Perception (§MidMent); +2 more",verified
+metalanguage,,syntax,participant,شرکت‌کننده,,,Middle Voice > Reciprocal Middle (§MidRecip),not confirmed
+metalanguage,,syntax,experiencer,تجربه‌گر,تاقی‌کەر,,"Dative > Experiencer (§DatExpr); Middle Voice > Speech Act Middle (§MidSpee); Middle Voice > Mental Activity, Process or Perception (§MidMent)",verified
+metalanguage,,syntax,beneficiary,ذی‌نفع,,,Dative > Advantage (or Disadvantage) (§DatAdvn); Middle Voice > Indirect Reflexive Middle (§MidIndir); Middle Voice > Speech Act Middle (§MidSpee),not confirmed
+metalanguage,,construction,clause,بند / عبارت,ڕستە / دەستەواژە,,Accusative > Subject of Infinitive or Participle (§AccSubj); Accusative > Oaths (§AccOath); Indicative > Assertions and Questions (§Ind); Subjunctive > In subordinate clause (§SubjSubor); +3 more,verified
+metalanguage,,construction,subordinate clause,بند وابسته,,,Indicative > Assertions and Questions (§Ind); Subjunctive > In subordinate clause (§SubjSubor); Optative > In subordinate clause (§OptSubor),not confirmed
+metalanguage,,construction,relative clause,عبارت موصولی,,,Indicative > Assertions and Questions (§Ind); Subjunctive > In subordinate clause (§SubjSubor); Optative > In subordinate clause (§OptSubor),not confirmed
+metalanguage,,construction,temporal clause,عبارت بیان زمان,,,Indicative > Assertions and Questions (§Ind); Subjunctive > In subordinate clause (§SubjSubor); Optative > In subordinate clause (§OptSubor),not confirmed
+metalanguage,,construction,conditional clause,عبارت شرطی,,,Indicative > Assertions and Questions (§Ind); Subjunctive > In subordinate clause (§SubjSubor); Optative > In subordinate clause (§OptSubor),not confirmed
+metalanguage,,construction,sentence,جمله,ڕستە,,Nominative > Independent (§NomInd); Genitive > In Genitive Absolute (§GenAbs); Accusative > Subject of Infinitive or Participle (§AccSubj); Present > Customary Action (Iterative) (§PresIter); +6 more,verified
+metalanguage,,construction,phrase,عبارت,دەستەواژە,,Perfect > Perfect for Future Perfect (§PerfFut); Passive Voice > Passive voice (§Pass); Infinitive > Idiomatic expressions (§InfIdio); Infinitive > Articular Infinitive (§InfArt); +1 more,verified
+metalanguage,,construction,noun phrase,عبارت اسمی,,,Infinitive > Articular Infinitive (§InfArt),not confirmed
+metalanguage,,construction,construction,ساختار / ساخت دستوری,پێکهاتە,,Genitive > Explanation (§GenExpl); Genitive > In Genitive Absolute (§GenAbs); Dative > Experiencer (§DatExpr); Subjunctive > In subordinate clause (§SubjSubor); +3 more,verified
+metalanguage,,construction,genitive absolute,عبارت اضافی مستقل,دەستەواژەی ئیزافەی سەربەخۆ,,Genitive > In Genitive Absolute (§GenAbs); Participle > Circumstantial Participle - Genitive Absolute (§PartGen),verified
+metalanguage,,construction,accusative absolute,عبارت رایی مستقل,,,Participle > Circumstantial Participle (§PartCirc); Participle > Circumstantial Participle - Accusative Absolute (§PartAcc),not confirmed
+metalanguage,,construction,circumstantial participle,وجه وصفی بیان موقعیت,ئاوەڵناوی کرداری بارودۆخ,,Genitive > In Genitive Absolute (§GenAbs); Participle > Circumstantial Participle (§PartCirc); Participle > Circumstantial Participle - Genitive Absolute (§PartGen),verified
+metalanguage,,construction,supplementary participle,وجه وصفی مکمل,,,Participle > Supplementary Participle (§PartSupp),not confirmed
+metalanguage,,construction,attributive participle,وجه وصفی توصیفی,,,Participle > Attributive and Substantival Participle (§PartAttr),not confirmed
+metalanguage,,construction,articular infinitive,مصدر با حرف تعریف,,,Infinitive > Articular Infinitive (§InfArt),not confirmed
+metalanguage,,construction,dynamic infinitive,مصدر پویا,,,"Infinitive > Dynamic infinitive (§InfDyn); Infinitive > Declarative infinitive (§InfDec); Infinitive > Infinitive of Commands, Wishes, and Exclamations (§InfComm)",not confirmed
+metalanguage,,construction,declarative infinitive,مصدر تبیینی,,,Infinitive > Dynamic infinitive (§InfDyn); Infinitive > Declarative infinitive (§InfDec),not confirmed
+metalanguage,,construction,periphrastic,ترکیبی,,,Future Perfect > Future Completed Action (§Futperf),not confirmed
+metalanguage,,feature,person,شخص,کەس,,Nominative > Independent (§NomInd); Genitive > Possessor (§GenPos); Genitive > Quality (§GenQual); Dative > Possessor (§DatPos); +19 more,verified
+metalanguage,,feature,first person,اول‌شخص,کەسی یەکەم,,Aorist > Dramatic Aorist (§AorDram); Subjunctive > Hortatory Subjunctive (§SubjHort); Subjunctive > Deliberative Subjunctive (§SubjDelib),verified
+metalanguage,,feature,second person,دوم‌شخص,کەسی دووەم,,"Dative > Ethical Dative (or Dative of Feeling) (§DatEthic); Future > Jussive Future (§FutJuss); Subjunctive > Prohibitive Subjunctive (§SubjProh); Infinitive > Infinitive of Commands, Wishes, and Exclamations (§InfComm)",verified
+metalanguage,,feature,third person,سوم‌شخص,کەسی سێهەم,,Dative > Ethical Dative (or Dative of Feeling) (§DatEthic); Subjunctive > Prohibitive Subjunctive (§SubjProh); Article > Pronominal (§ArtPron); The pronoun αὐτός > Personal Pronoun (§AutPron),verified
+metalanguage,,feature,singular,مفرد,تاک,,Genitive > Possessor (§GenPos); Dative > Experiencer (§DatExpr); Aorist > Dramatic Aorist (§AorDram); Subjunctive > Hortatory Subjunctive (§SubjHort); +3 more,verified
+metalanguage,,feature,plural,جمع,کۆ,,Genitive > Possessor (§GenPos); Dative > Experiencer (§DatExpr); Subjunctive > Hortatory Subjunctive (§SubjHort); Article > Generic (§ArtGener),verified
+metalanguage,,feature,neuter,خنثی,بێ‌لایەن,,Genitive > Possessor (§GenPos); Accusative > Cause or Goal (§AccCaus); Infinitive > Articular Infinitive (§InfArt); Participle > Attributive and Substantival Participle (§PartAttr); +1 more,verified
+metalanguage,,feature,definite,متعین,,,Present > Resultative and Perfective Present (§PresPerf); Article > Particular article (§ArtPart),not confirmed
+metalanguage,,feature,indefinite,نامتعین / نامعین,,,Dative > Experiencer (§DatExpr); Present > Resultative and Perfective Present (§PresPerf); Subjunctive > In subordinate clause (§SubjSubor); Optative > In subordinate clause (§OptSubor); +1 more,not confirmed
+metalanguage,,feature,negative,منفی,نەرێنی,,Accusative > Oaths (§AccOath); Imperfect > Imperfect of Continuance (§Impf); Indicative > Assertions and Questions (§Ind); Indicative > Unattainable Wish (§IndWish); +10 more,verified
+metalanguage,,feature,negation,نفی,نکۆڵی,,Imperfect > Imperfect of Continuance (§Impf); Subjunctive > Doubtful Assertion (§SubjDoubt); Subjunctive > Emphatic Denial (§SubjDenia),verified
+metalanguage,,feature,emphatic,تأکیدی,,,Imperfect > Customary Action (Iterative) (§ImpfIter); Perfect > Intensive Perfect (§PerfInten); Middle Voice > Direct Reflexive Middle (§MidDir); Subjunctive > Emphatic Denial (§SubjDenia); +3 more,not confirmed
+metalanguage,,notion,action,کنش,کردە,,Genitive > Subjective (§GenSubj); Genitive > Time (§GenTime); Genitive > Place (§GenLoc); Genitive > Cause (§GenCaus); +50 more,verified
+metalanguage,,notion,state,حالت,حاڵەت,,Genitive > Objective (§GenObj); Genitive > Reference (§GenRef); Accusative > Respect (§AccResp); Present > Present of Continuity (§Pres); +14 more,verified
+metalanguage,,notion,process,فرآیند,پرۆسە,,Present > Non-indicative (Imperfective Aspect) (§PresNoni); Imperfect > Imperfect of Consecutive Action (§ImpfCons); Future > Non-indicative (§FutNoni); Aorist > Non-indicative (Perfective Aspect) (§AorNoni); +3 more,verified
+metalanguage,,notion,event,رویداد,,,Present > Present of Continuity (§Pres); Imperfect > Imperfect of Description (§ImpfDesc); Aorist > Resultative Aorist (§Aor); Aorist > Gnomic Aorist (§AorGnom); +3 more,not confirmed
+metalanguage,,notion,state of mind,حالت ذهنی,حاڵەتی زەینی,,Genitive > Objective (§GenObj); Aorist > Dramatic Aorist (§AorDram),verified
+metalanguage,,notion,cause,علت,هۆکار,,Genitive > Complement of the Verb (§GenVerb); Genitive > Cause (§GenCaus); Dative > Cause or Purpose (§DatCaus); Accusative > Cause or Goal (§AccCaus); +4 more,verified
+metalanguage,,notion,purpose,هدف / قصد,ئامانج,,Dative > Cause or Purpose (§DatCaus); Future > Future Events or Expectations (§Fut); Future > Non-indicative (§FutNoni); Pluperfect > Past Perfect (§Pperf); +2 more,verified
+metalanguage,,notion,manner,نحوه / چگونگی,شێواز,,Dative > Manner and means (§DatMean); Accusative > Adverbial (§AccAdv); Imperfect > Imperfect of Description (§ImpfDesc); Aorist > Gnomic Aorist (§AorGnom); +2 more,verified
+metalanguage,,notion,means,وسیله,کەرەسە,,Dative > Manner and means (§DatMean); Dative > Accompaniment (§DatAccom); Future > Future Events or Expectations (§Fut); Middle Voice > Indirect Reflexive Middle (§MidIndir); +3 more,verified
+metalanguage,,notion,instrument,ابزار,ئامێر,,Dative > Instrument (§DatInstr); Accusative > Respect (§AccResp); Passive Voice > Passive voice (§Pass),verified
+metalanguage,,notion,comparison,مقایسه,بەراوردکردن,,Genitive > Complement of the Verb (§GenVerb); Genitive > Comparison (§GenComp); Dative > Measure of Difference (§DatMeas); Aorist > Gnomic Aorist (§AorGnom),verified
+metalanguage,,notion,possession,مالکیت,خاوەنایەتی,,Genitive > Possessor (§GenPos); Dative > Possessor (§DatPos); Dative > Agent (§DatAgent); Aorist > Resultative Aorist (§Aor),verified
+metalanguage,,notion,possessor,مالک,خاوەن,,Genitive > Possessor (§GenPos); Article > Possession (§ArtPoss),verified
+metalanguage,,notion,speaker,گوینده,,,Dative > Ethical Dative (or Dative of Feeling) (§DatEthic); Future > Future Events or Expectations (§Fut); Aorist > Dramatic Aorist (§AorDram); Subjunctive > Deliberative Subjunctive (§SubjDelib); +1 more,not confirmed
+metalanguage,,notion,command,فرمان / امر,,,Future > Jussive Future (§FutJuss); Aorist > Suggestive Questions and Requests (§AorSug); Optative > Command or Request (§OptComm); Imperative > Command or Prohibition (§ImprComm); +2 more,not confirmed
+metalanguage,,notion,prohibition,نهی,,,Future > Jussive Future (§FutJuss); Subjunctive > Prohibitive Subjunctive (§SubjProh); Imperative > Command or Prohibition (§ImprComm),not confirmed
+metalanguage,,notion,wish,آرزو,,,Indicative > Unattainable Wish (§IndWish); Optative > Optative of Wish (§OptWish); Optative > Command or Request (§OptComm); Optative > In subordinate clause (§OptSubor); +1 more,not confirmed
+metalanguage,,notion,question,پرسش,,,Accusative > Oaths (§AccOath); Future > Hypothesis or General Truth (§FutHypo); Aorist > Suggestive Questions and Requests (§AorSug); Indicative > Assertions and Questions (§Ind); +1 more,not confirmed
+metalanguage,,notion,general truth,حقایق کلی,,,Present > Customary Action (Iterative) (§PresIter); Future > Hypothesis or General Truth (§FutHypo); Aorist > Gnomic Aorist (§AorGnom),not confirmed
+metalanguage,,notion,verbs of saying,افعال گفتن,,,Genitive > Reference (§GenRef); Middle Voice > Speech Act Middle (§MidSpee); Infinitive > Idiomatic expressions (§InfIdio); Infinitive > Articular Infinitive (§InfArt),not confirmed
+metalanguage,,notion,verbs of emotion,افعال بیان احساسات,,,Genitive > Cause (§GenCaus); Dative > Cause or Purpose (§DatCaus); Participle > Supplementary Participle (§PartSupp),not confirmed
