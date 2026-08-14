@@ -58,8 +58,8 @@ Users can also paste treebank URLs or upload their own XML.
    the book is exported as Markdown, HTML, or CSV — with a colophon naming every source corpus, its
    license, and its URL.
 
-Thucydides, for example — Book 1 and 3.1–40, the portion the Gorman treebank annotates — yields
-31,924 analyzed tokens and 119 ranked grammar topics.
+Homer, for example — the whole *Iliad*, all 24 books — yields 128,102 analyzed tokens and 132
+ranked grammar topics.
 
 Two textbook types are available. The case-based textbook explains nouns and adjectives case by
 case; the declension-based one first classifies every noun and adjective into declension classes

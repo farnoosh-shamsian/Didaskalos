@@ -259,6 +259,17 @@ def is_deponent_lemma(lemma: str) -> bool:
     return lemma_conjugation_key(lemma).endswith("μαι")
 
 
+# First and second person pronouns, accents off. They inflect for case and
+# number only.
+GENDERLESS_PRONOUN_LEMMAS = frozenset({"εγω", "συ", "ημεις", "υμεις", "νω", "σφω"})
+
+
+def is_genderless_pronoun_lemma(lemma: str) -> bool:
+    if not isinstance(lemma, str) or not lemma:
+        return False
+    return normalize_greek_lemma(lemma_headword(lemma)) in GENDERLESS_PRONOUN_LEMMAS
+
+
 @lru_cache(maxsize=None)
 def _is_greek_lemma_cached(lemma: str) -> bool:
     return bool(GREEK_MARK_RE.search(lemma))
@@ -515,6 +526,33 @@ def _noun_lemma_signals(noun_rows: pd.DataFrame) -> tuple[dict[str, str], dict[s
 
 GENDER_ARTICLES = {"m": "ὁ", "f": "ἡ", "n": "τό"}
 
+# How one-gendered a lemma's noun-tagged occurrences must be before the citation
+# line names an article for it. Below this it is a word inflecting for all three
+# genders that the tagger happened to call a noun -- μηδείς, πᾶς, τοιοῦτος --
+# and a majority vote would print "μηδείς, τό".
+CITATION_GENDER_MAJORITY = 0.9
+
+
+def _mainly_noun_keys(combined_df: pd.DataFrame, noun_rows: pd.DataFrame) -> set[str]:
+    # Lemmas the corpus mostly tags as nouns. μηδείς and πᾶς are tagged noun in
+    # the odd substantive passage, and a citation line built from those few rows
+    # gives them a gender and a genitive they do not have as headwords.
+    if noun_rows.empty:
+        return set()
+    all_keys = combined_df["lemma"].map(lemma_headword)
+    totals = all_keys.value_counts()
+    noun_counts = noun_rows["key"].value_counts()
+    shares = noun_counts / totals.reindex(noun_counts.index)
+    return set(shares[shares >= 0.5].index)
+
+
+def _single_gender_noun_keys(noun_rows: pd.DataFrame) -> set[str]:
+    gendered = noun_rows[noun_rows["gender"].isin(["m", "f", "n"])]
+    if gendered.empty:
+        return set()
+    shares = gendered.groupby("key")["gender"].agg(lambda genders: genders.value_counts(normalize=True).max())
+    return set(shares[shares >= CITATION_GENDER_MAJORITY].index)
+
 _GRAVE, _ACUTE = "̀", "́"
 
 
@@ -544,13 +582,16 @@ def build_lemma_citation_index(combined_df: pd.DataFrame) -> dict[str, dict[str,
         return {}
 
     majority_gender, genitive_forms = _noun_lemma_signals(noun_rows)
+    noun_keys = _mainly_noun_keys(combined_df, noun_rows)
+    one_gender_keys = _single_gender_noun_keys(noun_rows) & noun_keys
 
     citation_index: dict[str, dict[str, str]] = {}
     for key in set(majority_gender) | set(genitive_forms):
         forms = genitive_forms.get(key, [])
+        article = GENDER_ARTICLES.get(majority_gender.get(key, ""), "") if key in one_gender_keys else ""
         citation_index[key] = {
-            "genitive": to_citation_accent(Counter(forms).most_common(1)[0][0]) if forms else "",
-            "article": GENDER_ARTICLES.get(majority_gender.get(key, ""), ""),
+            "genitive": to_citation_accent(Counter(forms).most_common(1)[0][0]) if forms and key in noun_keys else "",
+            "article": article,
         }
     return citation_index
 
@@ -642,6 +683,16 @@ def build_combined_df(
         return pd.DataFrame()
 
     combined_df = pd.concat(all_dfs, ignore_index=True)
+
+    # Editors differ on whether a breathing is its own codepoint, so the same
+    # word arrives as both ὁ and ο +  ̔ . Left alone they count as two words and
+    # print as two vocabulary entries.
+    for column in ("lemma", "form"):
+        if column in combined_df.columns:
+            combined_df[column] = combined_df[column].map(
+                lambda value: unicodedata.normalize("NFC", value) if isinstance(value, str) else value
+            )
+
     combined_df["syllabus"] = combined_df["postag"].apply(parse_postag)
     combined_df["pos_category"] = combined_df["postag"].apply(parse_pos_category)
     combined_df["verb_subcategory"] = combined_df.apply(
@@ -910,8 +961,8 @@ def _postag_pos_label(postag: str, lang: str) -> str:
     return pos_name if value == key else value
 
 
-def format_parsed_features(postag: str, lang: str) -> str:
-    pairs = parse_form_features(postag)
+def format_parsed_features(postag: str, lang: str, lemma: str = "") -> str:
+    pairs = parse_form_features(postag, lemma)
     if not pairs:
         return ""
     separator = t("tb_feature_separator", lang)
@@ -926,11 +977,11 @@ def _parse_answer_line(row: Mapping[str, Any], lang: str, rtl: bool) -> str | No
     # so has nothing to parse. Every exercise that prints a key uses this, so a
     # verb, a participle and a noun all answer in the same shape.
     postag = str(row.get("postag") or "")
-    features = format_parsed_features(postag, lang)
+    lemma = str(row.get("lemma", ""))
+    features = format_parsed_features(postag, lang, lemma)
     if not features:
         return None
 
-    lemma = str(row.get("lemma", ""))
     answer = t(
         "tb_parse_answer",
         lang,
@@ -958,9 +1009,10 @@ def _parse_answers_for_rows(target_rows: pd.DataFrame | None, lang: str, rtl: bo
     seen = set()
     for _, row in target_rows.iterrows():
         form = str(row.get("form", ""))
-        if form in seen:
+        dedupe_key = _normalize_answer_word(form)
+        if dedupe_key in seen:
             continue
-        seen.add(form)
+        seen.add(dedupe_key)
         parsed = _parse_answer_line(row, lang, rtl)
         parsed_any = parsed_any or parsed is not None
         answers.append(parsed or _ltr_isolate(form, rtl))
@@ -985,7 +1037,7 @@ def _postag_feature(postag: str, index: int, code_map: Mapping[str, str]) -> str
     return code_map.get(code)
 
 
-def parse_form_features(postag: str) -> list[tuple[str, str]]:
+def parse_form_features(postag: str, lemma: str = "") -> list[tuple[str, str]]:
     # The full parse of one form, as ordered (feature, value) pairs in the order a
     # grammar book asks for them. Only what the form actually carries is reported:
     # an infinitive has no person, a participle has a case. Slots left empty by the
@@ -1028,10 +1080,15 @@ def parse_form_features(postag: str) -> list[tuple[str, str]]:
             # Only the personal pronouns are marked for person; the rest leave the
             # slot empty and drop out below.
             pairs.append(("person", _postag_feature(postag, POSTAG_PERSON_INDEX, PERSON_MAP)))
+        gender = _postag_feature(postag, POSTAG_GENDER_INDEX, GENDER_MAP)
+        if is_genderless_pronoun_lemma(lemma):
+            # ἐγώ and σύ have no gender. Treebanks tag them masculine by default,
+            # which would print as grammar the student then has to unlearn.
+            gender = None
         pairs += [
             ("case", _postag_feature(postag, POSTAG_CASE_INDEX, CASE_MAP)),
             ("number", _postag_feature(postag, POSTAG_NUMBER_INDEX, NUMBER_MAP)),
-            ("gender", _postag_feature(postag, POSTAG_GENDER_INDEX, GENDER_MAP)),
+            ("gender", gender),
         ]
         if pos == "a":
             pairs.append(("degree", _postag_feature(postag, POSTAG_DEGREE_INDEX, DEGREE_MAP)))
@@ -1165,7 +1222,11 @@ def get_topic_words(
 
     topic_rows["lemma_frequency"] = pd.to_numeric(topic_rows["lemma_frequency"], errors="coerce").fillna(0)
     topic_rows = topic_rows.sort_values("lemma_frequency", ascending=False)
-    topic_words = topic_rows.drop_duplicates(subset=["lemma"], keep="first").head(num_words)
+    # One entry per lemma, then one per printed form: the interrogative τίς and
+    # the indefinite τις are two lemmas that can surface as the same string with
+    # the same parse, which asks the student the same question twice.
+    topic_words = topic_rows.drop_duplicates(subset=["lemma"], keep="first")
+    topic_words = topic_words.drop_duplicates(subset=["form"], keep="first").head(num_words)
     return topic_words[["form", "lemma", "postag", "token_index", "sentence_index"]]
 
 
@@ -2020,6 +2081,10 @@ def _build_sentence_target_rows(
 # words still admitted things like "οὐ γὰρ οὖν.", which show the student nothing.
 MIN_EXERCISE_SENTENCE_WORDS = 5
 
+# The picker throws candidates away — too short, or answering nothing the lesson
+# has not already answered — so it is handed several times what it will keep.
+EXERCISE_SENTENCE_POOL_FACTOR = 5
+
 # A token counts as a word only if it has a letter, so standalone punctuation
 # does not count toward the minimum length.
 _WORD_TOKEN_RE = re.compile(r"\w", re.UNICODE)
@@ -2059,7 +2124,9 @@ def _fold_apostrophes(text: str) -> str:
 
 
 def _normalize_answer_word(word: str) -> str:
-    return _fold_apostrophes(str(word).strip().lower())
+    # A final acute turns grave in running text, so δέ and δὲ are one word and
+    # should not be answered twice in the same key.
+    return _fold_apostrophes(to_citation_accent(str(word).strip()).lower())
 
 
 def _normalize_sentence_key(text: str) -> str:
@@ -2239,7 +2306,7 @@ def generate_exercises_for_topic(
         syllabus_label=syllabus_label,
         combined_df=combined_df,
         sentences_df=sentences_df,
-        num_sentences=num_sentences,
+        num_sentences=num_sentences * EXERCISE_SENTENCE_POOL_FACTOR,
         known_lemmas=known_lemmas,
     )
 
@@ -2454,6 +2521,12 @@ def _render_source_summary(
         if has_custom:
             lines.append(f"- {t('tb_corpus_custom', lang)}")
         lines.append("")
+
+    # Where the answer keys come from, and what the coverage figures do and do not
+    # measure. Same reasoning as the licence below: the file outlives the session,
+    # so a reader who never saw the app has no other way to learn any of it.
+    lines.append(f"**{t('tb_caveats_label', lang)}** {t('tb_caveats_body', lang)}")
+    lines.append("")
 
     # Terms for the textbook itself. An exported file leaves the app entirely, so
     # this is the only place a later reader can learn them, and the ShareAlike

@@ -84,7 +84,6 @@ def _sync_lang_query_param() -> None:
     # Selectbox on_change hook: mirror the new choice into the URL.
     st.query_params["lang"] = st.session_state["lang"]
 
-HEADER_IMAGE_PATH = APP_DIR / "assets" / "electroplato.png"
 # Greek wordmark, in two inks: the "-ink" file is the dark red-brown recolour for
 # the light theme, the plain one the logo's own gold for the dark sidebar. Both
 # are rendered and theme.py's stylesheet hides the one that would be invisible.
@@ -105,14 +104,6 @@ textbook_logo_data_uri = ""
 if TEXTBOOK_LOGO_PATH.exists():
     encoded_logo = base64.b64encode(TEXTBOOK_LOGO_PATH.read_bytes()).decode("ascii")
     textbook_logo_data_uri = f"data:image/svg+xml;base64,{encoded_logo}"
-header_image_html = ""
-if HEADER_IMAGE_PATH.exists():
-    encoded_image = base64.b64encode(HEADER_IMAGE_PATH.read_bytes()).decode("ascii")
-    header_image_html = (
-        f'<img src="data:image/png;base64,{encoded_image}" '
-        'style="float: right; width: 34%; max-width: 360px; min-width: 200px; margin: 0 0 0.9rem 1.1rem; border-radius: 8px;" '
-        'alt="Didaskalos header image" />'
-    )
 
 st.title(t("app_title", lang))
 st.markdown(
@@ -124,10 +115,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown(
-    t("intro_html", lang).replace("{header_image}", header_image_html),
-    unsafe_allow_html=True,
-)
+st.markdown(t("intro_html", lang), unsafe_allow_html=True)
+
+st.markdown(t("how_it_works_html", lang), unsafe_allow_html=True)
+
+st.markdown(t("feedback_html", lang), unsafe_allow_html=True)
 
 GITHUB_OWNER = "farnoosh-shamsian"
 GITHUB_REPO = "didaskalos"
@@ -828,6 +820,7 @@ if available_lessons.empty:
 selected_lesson_files = available_lessons["file"].tolist()
 
 build_clicked = st.button(t("build_button", lang), type="primary", use_container_width=True)
+st.caption(t("build_speed_note", lang))
 
 if build_clicked:
     if not selected_treebank_files:
@@ -959,6 +952,8 @@ if build_result:
     st.subheader(t("frequency_syllabus_header", lang))
     st.dataframe(build_result["frequency_syllabus"], use_container_width=True, height=420)
 
+    st.caption(t("results_note", lang))
+
     st.download_button(
         label=t("download_frequency_syllabus", lang),
         data=build_result["frequency_csv"],
@@ -991,6 +986,8 @@ if build_result:
         use_container_width=True,
     )
 
+    st.caption(t("lesson_modules_note", lang))
+
     st.subheader(t("textbook_md_preview_header", lang))
     st.code(build_result["textbook_markdown"][:6000], language="markdown")
 
@@ -1001,5 +998,4 @@ if build_result:
 
 st.markdown("---")
 st.caption(t("footer_caption", lang))
-st.caption(t("image_credit", lang))
 st.caption(t("license_caption", lang, year=date.today().year))
