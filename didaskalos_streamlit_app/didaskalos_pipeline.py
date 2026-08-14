@@ -270,6 +270,23 @@ def is_genderless_pronoun_lemma(lemma: str) -> bool:
     return normalize_greek_lemma(lemma_headword(lemma)) in GENDERLESS_PRONOUN_LEMMAS
 
 
+# The particles, accents off. A closed class the treebanks disagree about:
+# Perseus tags most of them "g", Gorman files them with the adverbs, so γάρ and
+# μέν arrive looking like content words. Particle-hood is a property of the word
+# rather than of the slot it fills, so the book carries the list itself. Held to
+# lemmas with no content-word homograph once the accents come off -- μήν the
+# particle and μήν "month" normalize alike, so neither is here.
+PARTICLE_LEMMAS = frozenset(
+    {"δε", "γαρ", "μεν", "τε", "ουν", "αν", "δη", "γε", "αρα", "μεντοι", "καιτοι", "τοινυν"}
+)
+
+
+def is_particle_lemma(lemma: str) -> bool:
+    if not isinstance(lemma, str) or not lemma:
+        return False
+    return normalize_greek_lemma(lemma_headword(lemma)) in PARTICLE_LEMMAS
+
+
 @lru_cache(maxsize=None)
 def _is_greek_lemma_cached(lemma: str) -> bool:
     return bool(GREEK_MARK_RE.search(lemma))
@@ -1099,9 +1116,13 @@ def parse_form_features(postag: str, lemma: str = "") -> list[tuple[str, str]]:
 DEPONENT_LESSON_LABEL = "deponent verbs"
 DEPONENT_LESSON_FILENAME = "deponent_verbs.md"
 
-# The starter module that teaches dictionary lookup; it also carries the generated
-# core function-word table, so the book names it rather than matching on position.
+# The starter module that teaches dictionary lookup.
 DICTIONARY_LESSON_MODULE = "using_a_dictionary"
+
+# The last starter module, which carries the generated core function-word table:
+# the hand-over point between the preset modules and the corpus-driven lessons.
+# Named rather than matched on position.
+DIALECTS_LESSON_MODULE = "greek_dialects"
 
 
 def get_topic_rows_for_label(syllabus_label: str, combined_df: pd.DataFrame) -> pd.DataFrame:
@@ -1239,10 +1260,13 @@ VOCAB_LIST_SIZES = {
     "noun/adjective": 20,
 }
 VOCAB_LIST_SIZE_DEFAULT = 20
-# How many function words the dictionary module hands over up front.
+# How many function words the last starter module hands over up front.
 VOCAB_CORE_WORD_COUNT = 20
 # A function word attested once is a scribal accident, not vocabulary.
 VOCAB_MIN_FUNCTION_WORD_COUNT = 2
+# Share of a lemma's tokens that must carry a function-word tag before the core
+# table will take it. Membership is per lemma, not per token.
+FUNCTION_WORD_LEMMA_SHARE = 0.5
 
 _VOCAB_COLUMNS = ["headword", "ledger_key", "frequency", "is_name", "is_deponent", "pos_category"]
 
@@ -1273,6 +1297,19 @@ def _clean_lemma_rows(rows: pd.DataFrame) -> pd.DataFrame:
     return rows[rows["lemma"].apply(is_greek_lemma)]
 
 
+def _dominant_value(rows: pd.DataFrame, column: str) -> pd.Series:
+    # The commonest value of a column per ledger key, ties going to whichever the
+    # groupby met first.
+    return (
+        rows.groupby(["ledger_key", column], sort=False)
+        .size()
+        .sort_values(ascending=False)
+        .reset_index()
+        .drop_duplicates("ledger_key")
+        .set_index("ledger_key")[column]
+    )
+
+
 def _aggregate_vocabulary_rows(rows: pd.DataFrame) -> pd.DataFrame:
     # One row per headword, ranked by how often the corpus uses it.
     if rows.empty:
@@ -1298,13 +1335,20 @@ def _aggregate_vocabulary_rows(rows: pd.DataFrame) -> pd.DataFrame:
     aggregated = (
         rows.groupby("ledger_key", sort=False)
         .agg(
-            headword=("headword", "first"),
             frequency=("_frequency", "max"),
             is_deponent=("_deponent", "any"),
-            pos_category=("_pos", "first"),
         )
         .reset_index()
     )
+
+    # Spelling and tag both come from the commonest row rather than whichever one
+    # sorted first. The ledger key drops breathings, so εἰς and εἷς share an entry
+    # and "first" could print the numeral over the preposition's count; the
+    # treebanks also tag inconsistently, and one stray row in 326 made ὅς an
+    # article.
+    aggregated["headword"] = aggregated["ledger_key"].map(_dominant_value(rows, "headword"))
+    aggregated["pos_category"] = aggregated["ledger_key"].map(_dominant_value(rows, "_pos")).fillna("")
+
     aggregated["is_name"] = aggregated["headword"].map(_is_proper_name)
     return aggregated.sort_values("frequency", ascending=False, ignore_index=True)
 
@@ -2023,17 +2067,32 @@ def get_core_function_words(
     combined_df: pd.DataFrame,
     top_n: int = VOCAB_CORE_WORD_COUNT,
 ) -> pd.DataFrame:
-    # The function words a reader meets on the first page. Their own lessons are
-    # ordered by frequency and may land late or fall outside the lesson count
-    # altogether, so the book hands them over up front instead.
+    # The function words a reader meets from the first corpus sentence onward.
+    # Their own lessons are ordered by frequency and may land late or fall outside
+    # the lesson count altogether, so the book hands them over up front instead.
     if combined_df is None or combined_df.empty or "postag" not in combined_df.columns:
         return pd.DataFrame(columns=_VOCAB_COLUMNS)
 
     rows = _clean_lemma_rows(combined_df)
-    function_rows = rows[~rows["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES)]
+    if rows.empty:
+        return pd.DataFrame(columns=_VOCAB_COLUMNS)
+
+    # Judged over the lemma rather than the token. Filtering row by row let one
+    # mis-tagged token carry a content word in: ὅς is tagged article once in 326
+    # and οὐ conjunction once in 315, and both then ranked here on their full
+    # lemma count, ahead of genuine function words. The particles join on the
+    # list, since the tag alone files most of them under the adverbs.
+    is_particle = rows["lemma"].map(is_particle_lemma)
+    is_function = ~rows["postag"].astype(str).str.startswith(CONTENT_POS_PREFIXES) | is_particle
+    function_share = is_function.groupby(rows["lemma"].map(vocabulary_ledger_key)).transform("mean")
+    function_rows = rows[function_share > FUNCTION_WORD_LEMMA_SHARE]
     if function_rows.empty:
         return pd.DataFrame(columns=_VOCAB_COLUMNS)
-    return _aggregate_vocabulary_rows(function_rows).head(top_n)
+
+    core = _aggregate_vocabulary_rows(function_rows).head(top_n)
+    # The commonest tag would call δέ an adverb, which is what the list is for.
+    core.loc[core["headword"].map(is_particle_lemma), "pos_category"] = "particle"
+    return core
 
 
 def format_core_function_words(core_words: pd.DataFrame | None, lang: str = DEFAULT_LANG) -> str:
@@ -2558,24 +2617,43 @@ def heading_slug(text: str, separator: str = "-") -> str:
     return _HEADING_SLUG_SPACE_RE.sub(separator, slug)
 
 
-def _render_title_page(lang: str) -> list[str]:
-    # Cover: logo, title, tagline, build date. The blank lines inside the div are
-    # what keep GitHub and md_in_html parsing the markdown within it, and
+def _title_page_works_line(source_summary: Mapping[str, Any] | None, lang: str) -> str | None:
+    # "Author — Work1, Work2; Author2 — Work3", grouped and separated the same way
+    # as the "Texts included" list further down (_render_source_summary), so the
+    # two mentions of the same works read consistently.
+    if not source_summary:
+        return None
+    works = list(source_summary.get("works") or [])
+    if not works:
+        return None
+    grouped: dict[str, list[str]] = {}
+    for author, work in works:
+        key = author or t("tb_unknown_author", lang)
+        grouped.setdefault(key, []).append(work)
+    return "; ".join(f"{author} — {', '.join(titles)}" for author, titles in grouped.items())
+
+
+def _render_title_page(lang: str, source_summary: Mapping[str, Any] | None = None) -> list[str]:
+    # Cover: logo, title, included works, build date. The blank lines inside the
+    # div are what keep GitHub and md_in_html parsing the markdown within it, and
     # align="center" rather than a style attribute because GitHub strips styles.
-    return [
+    lines = [
         '<div class="title-page" align="center" markdown="1">',
         "",
         f'<img class="textbook-logo" src="{TEXTBOOK_LOGO_URL}" alt="Didaskalos" width="360">',
         "",
         f"# {t('tb_doc_title', lang)}",
         "",
-        t("subtitle", lang),
-        "",
-        t("tb_built_on", lang, date=date.today().isoformat()),
-        "",
-        "</div>",
-        "",
     ]
+    works_line = _title_page_works_line(source_summary, lang)
+    if works_line:
+        lines.append(works_line)
+        lines.append("")
+    lines.append(t("tb_built_on", lang, date=date.today().isoformat()))
+    lines.append("")
+    lines.append("</div>")
+    lines.append("")
+    return lines
 
 
 def format_passage_appendix(passages: list[dict], lang: str = DEFAULT_LANG) -> str:
@@ -2616,7 +2694,7 @@ def generate_textbook_markdown(
         "introduction_adjectives",
         "introduction_verbs",
         DICTIONARY_LESSON_MODULE,
-        "greek_dialects",
+        DIALECTS_LESSON_MODULE,
     ]
     rtl = is_rtl(lang)
     if syllabus_mode == "declension":
@@ -2719,7 +2797,7 @@ def generate_textbook_markdown(
         lesson["body"] = body
 
     markdown_content = []
-    markdown_content.extend(_render_title_page(lang))
+    markdown_content.extend(_render_title_page(lang, source_summary))
     markdown_content.append(intro_text)
     markdown_content.append("")
 
@@ -2790,9 +2868,10 @@ def generate_textbook_markdown(
 
         known_lemmas = build_known_lemma_seed(working_combined_df)
         citation_index = build_lemma_citation_index(working_combined_df)
-        # The dictionary module hands the closed classes over on page one, because
-        # their own lessons are frequency-ordered and may land late or not at all.
-        # The ledger starts from exactly the words that table printed.
+        # The last starter module hands the closed classes over before the corpus
+        # lessons begin, because their own lessons are frequency-ordered and may
+        # land late or not at all. The ledger starts from the words that table
+        # printed.
         core_function_words = get_core_function_words(working_combined_df)
         if not core_function_words.empty:
             introduced_lemmas.update(core_function_words["ledger_key"])
@@ -2826,7 +2905,7 @@ def generate_textbook_markdown(
         markdown_content.append(lesson["body"])
 
         if lesson.get("is_starter"):
-            if lesson["label"] == DICTIONARY_LESSON_MODULE:
+            if lesson["label"] == DIALECTS_LESSON_MODULE:
                 core_words_table = format_core_function_words(core_function_words, lang=lang)
                 if core_words_table:
                     markdown_content.append("")

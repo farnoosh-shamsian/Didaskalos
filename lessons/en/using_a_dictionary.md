@@ -2,7 +2,7 @@
 
 Every lesson in this book ends with a list of words to learn, and none of them comes with a translation. That is deliberate. A word you looked up yourself, and wrote down yourself, is a word you keep; a word handed to you in a glossary is one you read past. This module teaches the skill the rest of the book assumes.
 
-It comes here, after the introductions to nouns, adjectives and verbs, because looking a word up means undoing what the grammar did to it. You will need the case endings, the genitive, and the idea of a verb's principal parts — all of which you have now met.
+It comes here, after the introductions to nouns, adjectives and verbs, because looking a word up means undoing what the grammar did to it. You will need the case endings, the genitive, and the way a verb is assembled from augment, stem and ending — all of which you have now met. One thing the introductions left alone is the row of forms a verb entry opens with, its **principal parts**; §5 below explains what they are, because you cannot read a verb entry without them.
 
 ## 1. The Shape of an Entry
 
@@ -16,19 +16,11 @@ A lexicon does not list the word as you met it in the text. It lists the **headw
 | **Deponent verb** | 1st singular present, ending in **-μαι** *-mai* | **γίγνομαι** | gígnomai | no active **present** exists; translate actively |
 | **Everything else** | the word itself | **ὑπό**, **καί**, **μέν** | hypó, kaí, mén | the constructions it governs |
 
-"No active present exists" is the safe form of the rule. Several deponents do have an active form somewhere else in their paradigm — γίγνομαι itself has an active perfect, γέγονα *gégona* "I have become" — so do not conclude from an active form that you have the wrong verb.
-
 The vocabulary lists in this book follow the same conventions. Where a noun's genitive and article are printed, they were taken from the texts themselves — from a genitive singular actually attested in the corpus you built this book from. Where they are missing, the corpus simply never used that noun in the genitive singular; the lexicon will supply it.
 
 ## 2. Alphabetical Order
 
-Greek dictionaries order words by the alphabet you met in the alphabet module: **α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω**. Note that **η** sits between ζ and θ, not next to ε, and **ω** comes last, far from ο. This is the single most common reason a beginner cannot find a word that is certainly there.
-
-Three things are **ignored** when ordering:
-
-- **Breathings.** ἀγαθός and ἁγνός *agathós, hagnós* are ordered by α-γ-α and α-γ-ν (*a-g-a*, *a-g-n*), not by the breathing mark. Rough and smooth breathings do not separate words into two lists.
-- **Accents.** νόμος and νομός *nómos, nomós* sit together, distinguished only after the letters run out.
-- **Iota subscript.** ᾳ, ῃ, ῳ (*āi, ēi, ōi*) order as α, η, ω (*a, ē, ō*).
+Greek dictionaries order words by the alphabet you met in the alphabet module: **α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω**. Note that **η** sits between ζ and θ, not next to ε, and **ω** comes last, far from ο.
 
 Final **ς** is the same letter as **σ** and orders in the same place.
 
@@ -82,7 +74,9 @@ A verb entry gives a series of forms, conventionally six:
 > *lýō, lýsō, élysa, lélyka, lélymai, elýthēn*
 > present — future — aorist active — perfect active — perfect middle/passive — aorist passive
 
-Each one is the stem for a whole family of forms. Learning the principal parts of a common verb is worth more than learning several rare words, because the third and sixth parts in particular are often unpredictable, and they are what let you recognize the verb in a text at all.
+Each one is the stem for a whole family of forms, and the six are listed precisely because they are the points at which the stem cannot be predicted from the others. Learning the principal parts of a common verb is worth more than learning several rare words, because the third and sixth parts in particular are often unpredictable, and they are what let you recognize the verb in a text at all.
+
+Two of them carry a trap for the reader working backwards. Parts **3** and **6** are cited *with* their augment — ἔλυσα, ἐλύθην *élysa, elýthēn*, both beginning ἐ- — and that augment is the dictionary's convention, not part of the stem. Take it off before you compare the entry with the form in front of you, exactly as §3 had you take it off the text.
 
 ## 6. Reading the Entry
 
@@ -113,9 +107,7 @@ These are the same author abbreviations this book uses under its own exercise se
 
 ## 7. Which Lexicon
 
-The right lexicon depends on the text you are reading. **Every lexicon named below defines Greek in English.** That is not a recommendation of English but a statement of what exists: full scholarly lexicons of Ancient Greek have been compiled into only a handful of languages, and for most languages there is no equivalent at all.
-
-If you are reading Greek through a language with no lexicon of its own, the practical consequence is small but worth planning for. All of these are available in digital form, so an entry can be copied out and put through a machine translation tool, and that is a reasonable way to work. Three cautions. The abbreviations in §6 and the dialect labels usually survive machine translation badly or not at all, so read them from the table above rather than from the translation. The Greek headword, the citations and the numbered structure of the entry are the parts you can rely on — keep them in view as you go. And check any sense you settle on against the sentence you actually met the word in: a translation of a translation drifts, and the sentence in front of you is the thing that decides.
+The right lexicon depends on the text you are reading. **Every lexicon named below defines Greek in English.** All of these are available in digital form, so an entry can be copied out and put through a machine translation tool, and that is a reasonable way to work if you are reading Greek through a language with no lexicon of its own, but read cautiously: a translation of a translation drifts, and the sentence in front of you is the thing that decides.
 
 | Reading | Use |
 |---|---|
@@ -155,18 +147,3 @@ For each form, give the headword a lexicon would list it under, and say what you
 2. **πέμπω** *pémpō*. Undo the augment ἐ- and the aorist marker: ἐ-πεμψ-α-μεν. The ψ is π + σ, which is why the present looks different from the aorist.
 3. **ἀποκτείνω** *apokteínō*, not κτείνω. The augment is hiding inside the compound — ἀπ-έ-κτεινεν — so the verb has to be looked up under its prefix. The final ν is movable and can be ignored.
 4. **ποιέω** *poiéō*. A contract verb: the contraction has to be undone, and the lexicon lists the uncontracted form.
-
-### Finding It on the Page
-
-
-1. Put these in the order a Greek lexicon would list them: ὥρα, ἥλιος, ἀγαθός, θάλασσα, ἐγώ *(hṓra, hḗlios, agathós, thálassa, egṓ)*.
-2. You are looking for ἁγνός *hagnós* and cannot find it. A classmate suggests it will be filed separately from ἀγαθός *agathós* because of the rough breathing. Are they right?
-
-#### Answer Key
-
-1. ἀγαθός, ἐγώ, ἥλιος, θάλασσα, ὥρα — following α, ε, η, θ, ω. The trap is η and ω: η comes early, right after ζ, and ω comes last of all, nowhere near ο.
-2. No. Breathings are ignored in alphabetical order, so ἁγνός and ἀγαθός sit in the same sequence and are ordered by α-γ-α against α-γ-ν *(a-g-a / a-g-n)* — ἀγαθός first. There is no separate list for rough-breathing words.
-
----
-
-The **Core Function Words** table below is the real assignment. Those are the highest-frequency words in the texts your book was built from, and every one of them is a lookup you can do now, with the method you have just practised.

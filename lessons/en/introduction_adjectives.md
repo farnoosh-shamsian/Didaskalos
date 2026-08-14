@@ -55,41 +55,22 @@ A related point of vocabulary: an adjective is often described as having **three
 
 ## 6. Degrees of Comparison
 
-Greek adjectives have three degrees:
+Greek adjectives have three degrees, made by adding a suffix to the adjective: the **positive** σοφός *sophós* "wise", the **comparative** σοφώτερος *sophṓteros* "wiser", and the **superlative** σοφώτατος *sophṓtatos* "wisest".
 
-| Degree | Regular formation | Example | Transliteration |
-|---|---|---|---|
-| Positive | — | σοφός "wise" | sophós |
-| Comparative | -τερος, -α, -ον (*-teros, -a, -on*) | σοφώτερος "wiser; rather wise; too wise" | sophṓteros |
-| Superlative | -τατος, -η, -ον (*-tatos, -ē, -on*) | σοφώτατος "wisest; very wise" | sophṓtatos |
-
-Note that the Greek comparative does not only compare. With nothing to compare against, it means "rather" or "too"; likewise the superlative without a group means simply "very". Both degrees are built by adding a suffix to the stem, whatever the equivalent construction looks like in the language you are translating into.
-
-**Where the ω in σοφώτερος comes from.** The rule says "add -τερος to the stem", and then an ο appears as ω, which looks like cheating. It is a small rhythmic adjustment: in a second-declension adjective, the stem's final **ο lengthens to ω when the syllable before it is short**. σοφ- *soph-* is short, so σοφός gives σοφ**ώ**τερος *sophṓteros*. Compare δίκαιος *díkaios* "just", where the preceding syllable is long and no lengthening happens: δικαι**ό**τερος *dikaióteros*. Nothing grammatical hangs on it — but if you do not know the rule, half the comparatives you meet look like different words.
-
-**Two ways of being irregular.** Some very common adjectives do not use these suffixes at all, and it is worth separating the two things that can happen:
-
-- A different **suffix pair**, -ίων / -ιστος *(-íōn / -istos)*, attached to a shortened stem: μέγας → μείζων, μέγιστος *(mégas → meízōn, mégistos)* "great, greater, greatest"; ἡδύς → ἡδίων, ἥδιστος *(hēdýs → hēdíōn, hḗdistos)* "sweet, sweeter, sweetest". These are irregular in *form* but regular as a group, and the group is small.
-- A different **word** altogether — genuine suppletion, as with ἀγαθός → ἀμείνων, ἄριστος *(agathós → ameínōn, áristos)* "good, better, best" and κακός → χείρων, χείριστος *(kakós → cheírōn, cheíristos)* "bad, worse, worst".
-
-Either way these are among the most frequent adjectives in Greek, so you will learn them by meeting them rather than by drilling them.
-
-Comparatives and superlatives are themselves adjectives, and behave like any other: they decline, and they agree with their noun. The thing being compared against appears either in the genitive or after ἤ *ḗ* "than": σοφώτερος τοῦ ἀδελφοῦ / σοφώτερος ἢ ὁ ἀδελφός *sophṓteros toû adelphoû / sophṓteros ḕ ho adelphós* "wiser than his brother".
+One thing about them is worth having early, because it is not what the names suggest: the Greek comparative does not always compare. With nothing to compare against it means "rather" or "too" — σοφώτερος can be "rather wise" — and a superlative with no group in view means simply "very". The suffixes themselves, the very common adjectives that compare irregularly, and how the resulting forms behave are all the business of the adjective lessons.
 
 ## 7. Historical Development
 
-Adjective endings are borrowed wholesale from the noun declensions, so they inherit exactly the same dialect variation.
+The borrowing described in section 5 is a historical fact about the language: Greek never developed a separate set of adjective endings at all. A three-ending adjective is simply two noun declensions working as one word — ἀγαθός, ἀγαθή, ἀγαθόν *agathós, agathḗ, agathón* takes the second-declension endings of λόγος *lógos* in the masculine and of δῶρον *dôron* in the neuter, and the first-declension endings of τιμή *timḗ* in the feminine.
 
-Two differences will account for most of what looks unfamiliar. **Ionic uses η *ē* where Attic uses ᾱ *ā*** in the feminine, so Herodotus writes ἀξίη and μικρή *axíē, mikrḗ* for Attic ἀξία and μικρά *axía, mikrá*. And the **contract adjectives are contractions**: Attic χρυσοῦς *chrysoûs* "golden" is Homeric and Ionic χρύσεος *chrýseos* with the vowels run together, which is why the epic form has an extra syllable.
-
-Each adjective lesson has a **Historical Development** section of its own.
+So whatever happened to the noun endings over the centuries happened to adjectives at the same time and in the same way. Each adjective lesson has a **Historical Development** section of its own.
 
 ## Summary
 
 - Adjectives agree with their noun in **gender, number, case** — matching grammar, not spelling.
 - **Position relative to the article** distinguishes "the wise man" from "the man is wise." With no article there is no distinction to make.
 - The article can turn any adjective into a noun — masculine for people, neuter for things.
-- Comparison adds -τερος/-τατος *-teros/-tatos*, with a handful of irregular but very frequent forms.
+- Adjectives have three **degrees**, and a comparative with nothing to compare against means "rather", not "more".
 - Adjectives borrow their endings from the noun declensions; which set they borrow changes nothing about how they behave.
 
 ## Exercises

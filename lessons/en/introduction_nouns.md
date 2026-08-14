@@ -1,5 +1,7 @@
 # Introduction to Greek Nouns and Declensions
 
+> **Nothing in this module is to be memorized.** The tables here are shown to you, not set for you. When you meet a declension table, look at it the way you would look at a diagram: this is what it means for a noun to be declined, this is where the stem stops and the ending starts, this is how one form differs from the next. That is all it is asked to do here. Every pattern in this module — the noun λόγος *lógos*, the three declension families, the article — has a lesson of its own later on, and that is where each is learned properly, with its own examples and exercises. Read, notice, move on. (The article, in section 3, is the one table you may find yourself returning to, for the reason given there.)
+
 ## 1. One Word, Many Forms
 
 An Ancient Greek noun changes its ending to show what it is doing in the sentence. Who acts and who is acted upon is marked **on the words themselves**, not by where they stand. Swap the endings and the meaning swaps with them, even though the word order is untouched:
@@ -29,7 +31,9 @@ Each case has more uses than this table shows — prepositions, time expressions
 
 You have just seen ὁ, τοῦ, τῷ, τόν standing in front of λόγος in that table. That is the **article**, and it is worth meeting straight away, because it appears in front of a great many Greek nouns and it declines exactly as they do.
 
-Greek has only the definite article — there is no separate word for "a" or "an"; a noun without the article is simply indefinite. What the article does have is a form for every combination of gender, number and case. Here are the singular forms, which are all you need for this module:
+The article has a form for every combination of gender, number and case. Here is the whole of it:
+
+**Singular**
 
 | | Masc. | Fem. | Neut. |
 |---|---|---|---|
@@ -38,17 +42,16 @@ Greek has only the definite article — there is no separate word for "a" or "an
 | **Dative** | τῷ *tôi* | τῇ *têi* | τῷ *tôi* |
 | **Accusative** | τόν *tón* | τήν *tḗn* | τό *tó* |
 
-Twelve cells, nine distinct forms, and every one of them frequent. Because the article changes with the noun, it announces the noun's case and gender before you have even reached the noun — and when the noun is a third-declension form whose own ending is ambiguous, the article is often what settles the question.
+**Plural**
 
-Three things to notice while you learn it:
+| | Masc. | Fem. | Neut. |
+|---|---|---|---|
+| **Nominative** | οἱ *hoi* | αἱ *hai* | τά *tá* |
+| **Genitive** | τῶν *tôn* | τῶν *tôn* | τῶν *tôn* |
+| **Dative** | τοῖς *toîs* | ταῖς *taîs* | τοῖς *toîs* |
+| **Accusative** | τούς *toús* | τάς *tás* | τά *tá* |
 
-- **Masculine and neuter share τοῦ and τῷ** *(toû, tôi)*. In the genitive and dative the article stops telling the two apart, and the noun's own ending has to do the work.
-- **Neuter nominative and accusative are identical** (τό), here and everywhere else in Greek.
-- **ὁ** and **ἡ** *(ho, hē)* have no τ and no accent. They are the proclitics you met in the alphabet module; their bareness is a feature of the paradigm, not an omission.
-
-There is **no vocative article**: to address someone Greek uses the particle ὦ *ô* instead (ὦ ἄνδρες *ô ándres* "gentlemen!").
-
-The plural is built on the same plan of three genders and four cases, and you will meet its forms in the examples that follow — οἱ λόγοι *hoi lógoi*, τὰ δῶρα *tà dôra* — glossed where they arise. The full paradigm, and the article's fuller story besides — how it came from a demonstrative, and everything it does beyond marking definiteness — is the business of the article lesson.
+**The article always agrees with its noun in gender, number and case**, which makes it the most helpful thing on the page: where a noun's own ending gives nothing away, the small word in front has already announced all three. There is **no vocative article** — Greek addresses someone with the particle ὦ *ô* instead (ὦ ἄνδρες *ô ándres* "gentlemen!"), which is why ὦ stands in the vocative line of the paradigm below.
 
 ## 4. Number
 
@@ -58,7 +61,7 @@ The plural is built on the same plan of three genders and four cases, and you wi
 
 ## 5. Gender
 
-Every noun is **masculine**, **feminine**, or **neuter** — a grammatical classification, not a biological one: ἡ ὁδός *hē hodós* "road" is feminine, τὸ τέκνον *tò téknon* "child" is neuter. Learn every noun together with its article (ὁ, ἡ, τό — *ho, hē, tó*), because the article states the gender openly while the noun's own ending often does not.
+Every noun is **masculine**, **feminine**, or **neuter** — a grammatical classification, not a biological one: ἡ ὁδός *hē hodós* "road" is feminine, τὸ τέκνον *tò téknon* "child" is neuter. When you do come to learn nouns, take each one together with its article (ὁ, ἡ, τό — *ho, hē, tó*), because the article states the gender openly while the noun's own ending often does not.
 
 ### Two rules about neuters
 
@@ -84,7 +87,7 @@ A noun's declension determines *which* set of endings it uses — but the *infor
 
 **stem + ending**: λόγ- *lóg-* (the meaning "word") + -ου *-ou* (genitive singular) = λόγου *lógou* "of a word".
 
-Everything so far has been *about* declension without showing one. Here is a noun declined in full — λόγος *lógos* "word", the standard second-declension masculine, with its article beside it:
+Everything so far has been *about* declension without showing one. Here is a noun declined in full — λόγος *lógos* "word", the standard second-declension masculine, with its article beside it. It is here to be looked at, not learned; the second declension has its own lesson:
 
 | Case | Singular | Transliteration | Plural | Transliteration |
 |---|---|---|---|---|
@@ -96,39 +99,24 @@ Everything so far has been *about* declension without showing one. Here is a nou
 
 Read it down the column and then across, and notice what is doing the work: the stem λογ- *log-* never changes, the article and the ending change together, and between them they name the case and number twice over. That redundancy is what makes Greek readable at speed. This is one noun of one declension — the other patterns have their own lessons — but the anatomy is the same in all three.
 
-The join is not always this visible. When a stem ends in a vowel and an ending begins with one, the two usually merge into a single long vowel or diphthong — this is called **contraction**, and it is why some forms look shorter than the pieces they are made of. You will meet it often enough that the word is worth having now; the lessons that need it explain it where it arises.
-
-Dictionaries therefore list nouns with the nominative, the genitive, and the article: λόγος, -ου, ὁ *lógos, -ou, ho*. The genitive reveals both the declension and the stem — make it a habit to learn all three parts.
-
-**Reading the declension off the genitive.** This is the payoff, and it is quick:
-
-| If the genitive singular ends in… | The noun is… | Example |
-|---|---|---|
-| **-ου** *(-ou)* | second declension | λόγος, **λόγου**, ὁ *lógos, lógou, ho* |
-| **-ης** or **-ας** *(-ēs, -as)* | first declension | τιμή, **τιμῆς**, ἡ *timḗ, timês, hē* |
-| **-ος** or **-ως** *(-os, -ōs)* | third declension | φύλαξ, **φύλακος**, ὁ *phýlax, phýlakos, ho* |
-
-The third declension is where this matters most. Its nominative is unpredictable — φύλαξ *phýlax* gives no hint of the stem — but the genitive hands you both the family and the stem to build the rest on: drop the -ος *-os* from φύλακος and you have φυλακ- *phylak-*, which every other form is made from.
-
 ## 8. Historical Development
 
-Your reading passages come from whatever texts you chose, and those may be centuries apart. So you will meet endings that do not match the table: a genitive in ‑οιο *-oio* instead of ‑ου *-ou*, a dative plural in ‑οισι *-oisi* instead of ‑οις *-ois*, a vowel left uncontracted where the paradigm contracts it. These are not errors and not exceptions to be memorized — they are the same endings at a different point in their history, and each declension lesson has a **Historical Development** section explaining which is which.
-
-The short version: **if a form looks longer than the paradigm, it is probably older.**
+Your reading passages come from whatever texts you chose, and those may be centuries apart. So you will meet endings that do not match the table: a genitive in ‑οιο *-oio* instead of ‑ου *-ou*, a dative plural in ‑οισι *-oisi* instead of ‑οις *-ois*, two vowels left standing apart where the paradigm merges them into one. These are not errors and not exceptions to be memorized — they are the same endings at a different point in their history, and each declension lesson has a **Historical Development** section explaining which is which.
 
 ## Summary
 
 - Greek nouns encode **case** (role), **number**, and **gender** in their endings.
 - Word order is flexible because the endings, not the position, mark the grammar.
-- The **article** declines with its noun and announces the noun's gender and case; learn the singular forms now, and the whole paradigm with the article lesson.
+- The **article** agrees with its noun in gender, number and case, so it announces the grammar of a noun whose own ending may give nothing away.
 - **Neuters** have the same form for nominative and accusative, and a neuter plural subject takes a singular verb.
-- Three declension patterns supply the endings; learn each noun as *nominative + genitive + article*, because the genitive names the declension and hands you the stem.
+- Three declension patterns supply the endings; which pattern a noun follows decides *which* endings it takes, not *what* they mean.
+- **No paradigm in this module is homework.** The forms shown here are all taught in lessons of their own; what you take away now is how declension works, not which ending goes where.
 
 ## Exercises
 ### Reading the Article
 
 
-Give the **case, number and gender** of each phrase below. The article settles most of it; where it cannot, say so.
+Give the **case, number and gender** of each phrase below. The article settles most of it; where it cannot, say so. Keep the tables above in view while you work — this is not a memory test.
 
 1. τῇ ὁδῷ *têi hodôi*
 2. τὸν λόγον *tòn lógon*
@@ -145,16 +133,3 @@ Give the **case, number and gender** of each phrase below. The article settles m
 4. Nominative **or** accusative singular neuter. Neuters never distinguish the two; only the sentence decides.
 5. Genitive singular feminine.
 6. Nominative singular masculine.
-
-### Reading the Dictionary Entry
-
-
-Name the declension of each noun, and give the stem that its other forms are built on.
-
-1. σῶμα, σώματος, τό *sôma, sṓmatos, tó*
-2. χώρα, χώρας, ἡ *chṓra, chṓras, hē*
-
-#### Answer Key
-
-1. Third declension: the genitive ends in -ος. Stem **σωματ-** *(sōmat-)*, from σώματος minus -ος. Note that the nominative σῶμα would never have told you this.
-2. First declension: the genitive ends in -ας. Stem **χωρ-** *(chōr-)*.

@@ -1,5 +1,7 @@
 # Introduction to Greek Verbs
 
+> **This module is a map, not a syllabus.** What follows is the whole Greek verb system in miniature — every tense, mood and voice named at once, on purpose, so that you can see the shape of the thing before you meet any part of it. It will look like a great deal, and that impression is honest: the Greek verb *is* a large and intricate system. None of it is to be learned here. Every category named in this module has a lesson of its own, and that is where it is actually taught. For now, read for the shape and let the detail go.
+
 ## 1. One Word, a Whole Sentence
 
 A single Greek verb form carries a great deal of information at once — who is acting, how many of them, when, in what manner, and whether they act or are acted upon. All of it sits in one word, in the stem and the ending:
@@ -46,8 +48,6 @@ That matters because outside the indicative mood — in infinitives, commands, s
 
 Middle and passive are worth stating precisely, because the imprecise version wastes time: **their forms are identical everywhere except the future and the aorist.** In those two tenses, and only there, Greek has a distinct passive; everywhere else λύομαι *lýomai* is both "I ransom" and "I am being loosened", and the context decides. That is why the lesson titles in this book pair them — *middle/passive* — in most tenses and separate them in the aorist and future.
 
-Some verbs — called **deponents** — have only middle/passive forms but active meanings: ἔρχομαι *érchomai* "I come", βούλομαι *boúlomai* "I want".
-
 ### Mood
 
 | Mood | Signals | Example | Transliteration |
@@ -75,15 +75,13 @@ A typical form assembles like this:
 
 Not every slot is filled in every form; the μι-verbs of §4 skip the thematic vowel entirely. But the order never changes, and knowing it means you can take a form apart from either end.
 
-**One rule about the augment that will save you repeatedly: the augment appears only in the indicative.** It marks past *time*, and past time is only asserted in the indicative mood, so an aorist infinitive, subjunctive, imperative or participle has no augment at all — λῦσαι *lŷsai* "to loosen", not \*ἐλῦσαι. This is also the first thing to undo when looking a verb up, and the dictionary module builds on it.
-
 ## 4. The Two Conjugations: ω-Verbs and μι-Verbs
 
-Greek verbs fall into two families, and every verb lesson in this book is labelled with the one it belongs to, so it is worth knowing the difference now. The families are named after the ending of the first principal part — the form a dictionary lists.
+Greek verbs fall into two families, and every verb lesson in this book is labelled with the one it belongs to, so it is worth knowing the difference now. The families are named after the ending of the form a dictionary lists — the 1st person singular present.
 
-**ω-verbs** (also called *thematic*) are the overwhelming majority. Between the stem and the ending they insert a short connecting vowel, ο or ε, called the **thematic vowel**: λύ-ο-μεν *lý-o-men* "we loosen", λύ-ε-τε *lý-e-te* "you loosen". The first principal part ends in **-ω**: λύω *lýō*, παιδεύω *paideúō*, γράφω *gráphō*.
+**ω-verbs** (also called *thematic*) are the overwhelming majority. Between the stem and the ending they insert a short connecting vowel, ο or ε, called the **thematic vowel**: λύ-ο-μεν *lý-o-men* "we loosen", λύ-ε-τε *lý-e-te* "you loosen". The dictionary form ends in **-ω**: λύω *lýō*, παιδεύω *paideúō*, γράφω *gráphō*.
 
-**μι-verbs** (also called *athematic*) are a small closed group, but they include some of the most frequent verbs in the language — εἰμί *eimí* "I am", δίδωμι *dídōmi* "I give", τίθημι *títhēmi* "I put", ἵστημι *hístēmi* "I set". They attach the ending directly to the stem with no connecting vowel, and the stem itself often alternates between a long and a short vowel: δίδω-μεν *dídō-men* against δίδο-μεν *dído-men*. The first principal part ends in **-μι**.
+**μι-verbs** (also called *athematic*) are a small closed group, but they include some of the most frequent verbs in the language — εἰμί *eimí* "I am", δίδωμι *dídōmi* "I give", τίθημι *títhēmi* "I put", ἵστημι *hístēmi* "I set". They attach the ending directly to the stem with no connecting vowel, and the stem itself often alternates between a long and a short vowel: δίδω-μεν *dídō-men* against δίδο-μεν *dído-men*. The dictionary form ends in **-μι**.
 
 Two things follow. First, the difference is confined to certain tenses — mainly the present and imperfect, and the aorist of a few verbs; elsewhere μι-verbs behave much like everyone else. Second, because μι-verbs are both irregular and extremely common, a frequency-driven book reaches them early, which is why you will see lessons marked **(mi)** alongside the much larger number marked **(w)**.
 
@@ -101,33 +99,9 @@ Two practical consequences. **In reading**, a circumflex on the ending of a pres
 
 Contract verbs are entirely regular once the contraction rules are known, and they get their own lessons. For now, recognize the shape.
 
-## 5. Principal Parts
+> **None of this section is to be learned now.** Two conjugations, a thematic vowel, a closed group of athematic verbs and a large group of contracted ones, all in a couple of pages — it is a lot, and it is meant only to make the lesson labels legible. When a lesson is marked **(w)** or **(mi)**, you now know what it is telling you. How a μι-verb actually goes, and how a contraction actually works, arrive one lesson at a time, and every one of those lessons assumes you are meeting the forms for the first time.
 
-Because stems change across tenses, dictionaries list **six principal parts** for each verb, from which every form can be built. For παιδεύω *paideúō* "educate":
-
-1. παιδεύω *paideúō* (present)
-2. παιδεύσω *paideúsō* (future)
-3. ἐπαίδευσα *epaídeusa* (aorist active)
-4. πεπαίδευκα *pepaídeuka* (perfect active)
-5. πεπαίδευμαι *pepaídeumai* (perfect middle/passive)
-6. ἐπαιδεύθην *epaideúthēn* (aorist passive)
-
-Regular verbs like this are predictable; frequent irregular verbs must be memorized — and the frequency-based lessons in this book prioritize exactly those.
-
-**What each part is for.** This is the whole point of learning them, and it is what turns six memorized words into every form of the verb:
-
-| Part | Gives you |
-|---|---|
-| 1. Present | present and imperfect, in all voices and moods |
-| 2. Future | future active and middle |
-| 3. Aorist active | aorist active and middle |
-| 4. Perfect active | perfect and pluperfect active |
-| 5. Perfect middle/passive | perfect and pluperfect middle/passive |
-| 6. Aorist passive | aorist passive **and** future passive |
-
-Notice that the six parts are exactly the places where the stem cannot be predicted from the others. Parts **3** and **6** are the ones that most often surprise — they are also the ones cited *with* their augment (ἐπαίδευσα, ἐπαιδεύθην *epaídeusa, epaideúthēn*), which is a convention of the dictionary, not part of the stem. Strip the ἐ- back off before building anything from them.
-
-## 6. Historical Development
+## 5. Historical Development
 
 Your reading passages may come from texts written centuries apart, so some forms will not match the paradigm. Three shifts affect the verb system in particular, and they are worth knowing before you start:
 
@@ -143,7 +117,6 @@ Every verb lesson has a **Historical Development** section covering its own slot
 - Aspect (ongoing vs. single event vs. completed-with-result) matters more than time.
 - Verbs come in two conjugations, ω-verbs and μι-verbs; the lessons are labelled accordingly. **Contract verbs** are ω-verbs whose stem-vowel merges with the ending.
 - The **augment appears only in the indicative**, and middle and passive differ in form only in the future and the aorist.
-- Learn verbs by their principal parts; each part supplies a fixed set of tenses, and the endings then follow regular patterns.
 
 ## Exercises
 ### Parsing
@@ -164,16 +137,3 @@ Give the person, number, tense, voice and mood of each form. All of them are bui
 3. 3rd person singular, present, active, subjunctive — "so that he may loosen". Present here marks aspect, not time: nothing about this form says "now".
 4. 2nd person singular, present, active, imperative — "loosen!"
 5. 1st person singular, perfect, active, indicative — "I have loosened". The λε- is reduplication, not an augment.
-
-### Principal Parts
-
-
-1. From which principal part of παιδεύω is the imperfect built?
-2. ἐλύθην *elýthēn* is the sixth principal part of λύω. Name the two tenses it supplies.
-3. A verb appears in a text as ποιοῦμεν *poioûmen*. What headword would a lexicon list it under, and why is that not what you see?
-
-#### Answer Key
-
-1. The **first** part, παιδεύω. The present and the imperfect share a stem; the imperfect adds the augment and secondary endings to it.
-2. The aorist passive and the future passive.
-3. **ποιέω** *poiéō*. ποιοῦμεν is a contract verb: the stem-final ε has merged with the thematic vowel, and the lexicon lists the uncontracted form, so you have to undo the contraction before you can look it up.

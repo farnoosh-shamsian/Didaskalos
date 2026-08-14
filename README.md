@@ -148,9 +148,7 @@ matter of dropping files into a folder and adding one manifest entry — see
 Didaskalos began as an answer to one language's version of that problem. For readers in Iran and
 across West and Central Asia, and in parts of Africa, Ancient Greek texts are primary sources for
 their own past: much of the surviving *continuous narrative* of ancient Persia reaches us only in
-Greek. The Old Persian royal inscriptions, the Elamite Persepolis archives, the Babylonian
-chronicles and the Aramaic documents are indispensable primary sources, but they are not narrative
-history. Yet as of 2026, and to my knowledge, no Iranian institution offers a regular Ancient Greek
+Greek. Yet as of 2026, and to my knowledge, no Iranian institution offers a regular Ancient Greek
 course, and there is no functional grammar, reader, or textbook written for Persian speakers.
 
 So those texts are read at second hand, and every mediating edition adds its own interpretive

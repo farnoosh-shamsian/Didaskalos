@@ -34,6 +34,12 @@ consonant stem,ستاک همخوان‌دار,noun & case,
 vowel stem,ستاک واکه‌دار,noun & case,
 nasal stem,ستاک خیشومی,noun & case,
 liquid stem,ستاک روان,noun & case,
+partitive genitive,کلیّت یک جزء,case usage,Didakta term; used in genitive.md §2
+genitive of comparison,قیاسی,case usage,Didakta term; used in genitive.md §3
+verbs governing a case,مکمل فعل,case usage,Didakta term; used in genitive.md §5 and dative.md §7
+accusative/dative of respect,تصریحی,case usage,Didakta term; used in accusative.md §6 and dative.md §4
+double accusative,رایی با افعال دومفعولی,case usage,Didakta term; used in accusative.md §2
+measure of difference,مقیاس اندازه‌گیری,case usage,Didakta term; used in dative.md §3
 conjugation,صرف فعل,verb,same Persian term صرف is used for declension
 tense,زمان,verb,
 aspect,نمود,verb,
@@ -97,7 +103,7 @@ mi-verbs (μι-verbs),فعل‌های ‑μι,verb,
 present system,دستگاه حال,verb,
 verbal adjective,صفت فعلی,verb,
 verbal noun,اسم فعلی,verb,
-transitive,متعدی,verb,
+transitive,گذرا,verb,Didakta term (was متعدی); note intransitive below still uses لازم not ناگذر
 intransitive,لازم,verb,
 historical present,حال تاریخی,verb,
 stative,ایستا (بیانگر حالت),verb,not used in the Persian lessons; suggested equivalent
@@ -145,20 +151,20 @@ direct object,مفعول بی‌واسطه,syntax & usage,
 indirect object,مفعول باواسطه,syntax & usage,
 predicate,مسند,syntax & usage,
 copular verb,فعل ربطی,syntax & usage,
-complement,متمم,syntax & usage,
+complement,مکمل,syntax & usage,Didakta term (was متمم)
 agent,کنشگر,syntax & usage
 circumstantial participle,وجه وصفی قیدی,syntax & usage,
 possession,مالکیت,syntax & usage,
 direct address,خطاب مستقیم,syntax & usage,
 means/instrument,ابزار,syntax & usage,
-benefactive,سودبر (به سود خود),syntax & usage
+benefactive,نفع و ضرر,syntax & usage,Didakta term for dative of advantage (was سودبر)
 negation,نفی,syntax & usage,
 prohibition,نهی,syntax & usage,
 command,فرمان,syntax & usage,
 exhortation,ترغیب,syntax & usage,
 hortatory subjunctive,التزامی ترغیبی,syntax & usage,
 wish,آرزو,syntax & usage,
-potential,امکانی,syntax & usage,
+potential,بالقوه,syntax & usage,Didakta term (was امکانی)
 habitual,عادتی,syntax & usage,
 punctual (single event),رویداد واحد,syntax & usage,
 duration,دیرش,syntax & usage,
