@@ -8,6 +8,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
+from itertools import groupby
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlparse, urlsplit, urlunsplit
@@ -104,6 +105,22 @@ textbook_logo_data_uri = ""
 if TEXTBOOK_LOGO_PATH.exists():
     encoded_logo = base64.b64encode(TEXTBOOK_LOGO_PATH.read_bytes()).decode("ascii")
     textbook_logo_data_uri = f"data:image/svg+xml;base64,{encoded_logo}"
+
+# Type scale. The prose blocks are 1.2rem, so the controls and captions that do
+# the actual work follow them up rather than sitting at Streamlit's defaults.
+st.markdown(
+    """
+    <style>
+    .stMainBlockContainer [data-testid="stCaptionContainer"] p { font-size: 0.95rem; }
+    .st-key-tbhint [data-testid="stCaptionContainer"] p { font-size: 1.05rem; }
+    [class*="st-key-tbauth"] [data-testid="stMarkdownContainer"] p { font-size: 1.15rem; }
+    [class*="st-key-tbworks"] [data-testid="stCheckbox"] p { font-size: 1.05rem; }
+    .stMainBlockContainer .stButton button p { font-size: 1.1rem; }
+    section[data-testid="stSidebar"] label p { font-size: 1rem; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.title(t("app_title", lang))
 st.markdown(
@@ -631,15 +648,41 @@ if st_fragment is None:
         return func
 
 
+# Author name once per row, works flowing after it and wrapping
+PICKER_CSS = """
+<style>
+[class*="st-key-tbauth"] {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 0 0.75rem;
+}
+[class*="st-key-tbauth"] > [data-testid="stElementContainer"] {
+    width: auto;
+    flex: 0 0 auto;
+    min-width: 9rem;
+}
+[class*="st-key-tbworks"] {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.15rem 1.1rem;
+}
+[class*="st-key-tbworks"] > [data-testid="stElementContainer"] {
+    width: auto;
+    flex: 0 0 auto;
+}
+[class*="st-key-tbworks"] label { white-space: nowrap; }
+/* Too narrow for a name column: let the author take its own line. */
+@media (max-width: 700px) {
+    [class*="st-key-tbauth"] { flex-wrap: wrap; }
+    [class*="st-key-tbauth"] > [data-testid="stElementContainer"] { min-width: 100%; }
+}
+</style>
+"""
+
+
 def _tb_checkbox_key(item_id: str) -> str:
     return f"tb_cb_{item_id}"
-
-
-def _set_treebank_selection(item_ids: list[str], value: bool) -> None:
-    # Runs as a button on_click, before the checkboxes are re-instantiated, so
-    # seeding their session values here is allowed.
-    for item_id in item_ids:
-        st.session_state[_tb_checkbox_key(item_id)] = value
 
 
 def _aggregate_works(available_treebanks: pd.DataFrame, lang: str) -> dict[str, dict]:
@@ -668,10 +711,13 @@ def _aggregate_works(available_treebanks: pd.DataFrame, lang: str) -> dict[str, 
 @st_fragment
 def render_treebank_selector(available_treebanks: pd.DataFrame, lang: str) -> None:
     # A fragment, so ticking a checkbox reruns only this block and not the
-    # sidebar's metadata prefetch. One flat checkbox per whole work; ticking it
-    # selects all of that work's files, and the union goes to session state.
+    # sidebar's metadata prefetch. One checkbox per whole work, grouped under a
+    # single author name; ticking it selects all of that work's files, and the
+    # union goes to session state.
     st.subheader(t("available_treebanks_header", lang))
-    st.caption(t("picker_hint", lang))
+    # Keyed so the type scale can tell this instruction from the fine print.
+    with st.container(key="tbhint"):
+        st.caption(t("picker_hint", lang))
 
     items = _aggregate_works(available_treebanks, lang)
     # Author first, then work, so an author's works sit together in the list.
@@ -679,26 +725,13 @@ def render_treebank_selector(available_treebanks: pd.DataFrame, lang: str) -> No
         items.items(),
         key=lambda kv: (kv[1]["author"].casefold(), kv[1]["work"].casefold()),
     )
-    all_item_ids = [item_id for item_id, _ in ordered]
-
-    btn_all, btn_clear = st.columns(2)
-    btn_all.button(
-        t("select_all_button", lang),
-        key="tb_select_all_btn",
-        use_container_width=True,
-        on_click=_set_treebank_selection,
-        args=(all_item_ids, True),
-    )
-    btn_clear.button(
-        t("clear_selection_button", lang),
-        key="tb_clear_btn",
-        use_container_width=True,
-        on_click=_set_treebank_selection,
-        args=(all_item_ids, False),
-    )
-
-    for item_id, it in ordered:
-        st.checkbox(f"{it['author']} — {it['work']}", key=_tb_checkbox_key(item_id))
+    # Sorted by author already, so groupby collapses each run into one row.
+    for idx, (author, group) in enumerate(groupby(ordered, key=lambda kv: kv[1]["author"])):
+        with st.container(key=f"tbauth{idx}"):
+            st.markdown(f"**{author}**")
+            with st.container(key=f"tbworks{idx}"):
+                for item_id, it in group:
+                    st.checkbox(it["work"], key=_tb_checkbox_key(item_id))
 
     selected_files: list[str] = []
     for item_id, it in items.items():
@@ -809,6 +842,8 @@ if available_treebanks.empty:
     st.warning(t("no_treebanks_warning", lang))
     st.stop()
 
+# Injected outside the fragment, so a checkbox rerun does not drop the styles.
+st.markdown(PICKER_CSS, unsafe_allow_html=True)
 render_treebank_selector(available_treebanks, lang)
 _render_sources_note(treebank_records, lang)
 selected_treebank_files = st.session_state.get("selected_treebank_files", [])
