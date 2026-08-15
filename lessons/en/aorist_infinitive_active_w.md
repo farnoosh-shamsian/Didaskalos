@@ -107,7 +107,7 @@ The infinitive has **only one form** — it takes neither person nor number. All
 3. **Articular infinitive** — τὸ λῦσαι "the (single) act of loosing" as a noun: πρὸ τοῦ λῦσαι "before loosing."
 4. **Result clauses with ὥστε** — ὥστε λαβεῖν τὴν πόλιν "so as to take the city."
 5. **πρίν + infinitive** — πρὶν ἐλθεῖν τοὺς πολεμίους "before the enemy came."
-6. **Aspectual contrast with the present infinitive** — present = ongoing/repeated; aorist = single: ἐκέλευε γράφειν "he kept ordering (him) to write" vs. ἐκέλευσε γράψαι "he ordered (him) to write (this)." The infinitive is always negated with **μή**.
+6. **Aspectual contrast with the present infinitive** — present = ongoing/repeated; aorist = single: ἐκέλευε γράφειν "he kept ordering (him) to write" vs. ἐκέλευσε γράψαι "he ordered (him) to write (this)."
 
 ---
 

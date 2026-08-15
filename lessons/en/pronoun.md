@@ -122,7 +122,7 @@ These decline and agree like ordinary adjectives. Just as common is the plain **
 
 - **Breathings and accents distinguish look-alikes:** αὕτη "this (f.)" vs. αὐτή "she/herself"; ἥ (relative) vs. ἡ (article); τίς; "who?" vs. τις "someone".
 - **A neuter plural subject takes a singular verb** with pronouns too: ταῦτα καλά ἐστιν "these things are beautiful."
-- The genitive of a demonstrative or of αὐτός sits in **predicate position**: ἡ τούτου γυνή or ἡ γυνὴ αὐτοῦ "his wife".
+- The genitive of a demonstrative or of αὐτός sits in **predicate position**: ἡ γυνὴ αὐτοῦ "his wife".
 
 ## 10. Historical Development
 

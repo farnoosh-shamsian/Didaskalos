@@ -13,7 +13,6 @@ Like nouns, Greek adjectives are **inflected**: each form shows **gender**, **nu
 Agreement means matching the grammar, **not** necessarily the ending:
 
 - ὁ ἀγαθὸς ἄνθρωπος *ho agathòs ánthrōpos* — "the good man" (both masc. nom. sg. — endings happen to match)
-- ἡ ἀγαθὴ γυνή *hē agathḕ gynḗ* — "the good woman" (both fem. nom. sg. — endings differ)
 - τῆς καλῆς πόλεως *tês kalês póleōs* — "of the beautiful city" (both fem. gen. sg. — an adjective taking first-declension endings, agreeing with a third-declension noun)
 
 Because the forms match grammatically, Greek can separate an adjective from its noun by several words without losing the connection. It is the **agreement** that binds the two together, not their being next to each other:
@@ -88,7 +87,7 @@ Each noun below is given with its case, number and gender. Say what form ἀγα
 
 1. Dative singular masculine — ἀγαθῷ *agathôi*.
 2. Accusative plural feminine — ἀγαθάς *agathás*, which happens to rhyme with its noun because both take first-declension feminine endings. Item 4 shows what happens when they do not.
-3. Genitive plural neuter — ἀγαθῶν *agathôn*. The genitive plural is the same for all three genders, in adjectives as in the article.
+3. Genitive plural neuter — ἀγαθῶν *agathôn*.
 4. Nominative singular feminine — ἀγαθή *agathḗ*. πόλις is feminine even though its ending looks nothing like a first-declension feminine.
 
 ### Position

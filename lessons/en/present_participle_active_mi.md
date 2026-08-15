@@ -81,7 +81,6 @@ The commonest participle of this group belongs to εἰμί "to be":
 | **2. Masculine nominative in ‑ς with compensatory lengthening** | *διδο‑ντ‑ς → διδούς; *τιθε‑ντ‑ς → τιθείς. | ἱστάς, δεικνύς |
 | **3. Agreement** | The participle agrees with its noun in gender, number, and case. | ὁ διδοὺς ἀνήρ "the man who gives" |
 | **4. Present reduplication is kept** | It distinguishes the present δι‑δούς from the aorist δούς — a pair you will meet constantly. | διδούς (present) ≠ δούς (aorist) |
-| **5. Accent** | Masculine and neuter forms with a monosyllabic stem throw the accent onto the ending: gen. διδόντος, dat. pl. διδοῦσι(ν). | — |
 
 ---
 

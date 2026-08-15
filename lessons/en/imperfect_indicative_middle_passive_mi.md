@@ -27,7 +27,7 @@ In μι-verbs the endings attach **directly to the stem, without a thematic vowe
 | Person | Ending | Note |
 |--------|--------|-----------------|
 | 1st sg. | **‑μην** | — |
-| 2nd sg. | **‑σο** | The σ survives, since it is not between two vowels: ἐτίθε-σο |
+| 2nd sg. | **‑σο** | The σ survives: ἐτίθε-σο |
 | 3rd sg. | **‑το** | — |
 | 1st pl. | **‑μεθα** | — |
 | 2nd pl. | **‑σθε** | — |
@@ -83,7 +83,7 @@ In the middle/passive imperfect, μι-verbs use the **short stem** (the same as 
 |------|-------------|---------|
 | **1. Augment** | ἐ‑ before a consonant; lengthening of an initial vowel. | τίθημι → **ἐ**τιθέμην; ἐπίσταμαι → **ἠ**πιστάμην |
 | **2. The short stem** | The middle/passive always uses the short stem: τιθε‑, διδο‑, ἱστα‑. | ἐτίθετο (not *ἐτίθητο) |
-| **3. The σ of the 2nd person survives** | Because after the consonant-free athematic stem the σ is not intervocalic. | ἐδίδοσο, ἵστασο |
+| **3. The σ of the 2nd person survives** | The athematic verbs keep ‑σο intact, where the thematic verbs lost the σ and contracted. | ἐδίδοσο, ἵστασο |
 | **4. Middle or passive? Context!** | ἐδίδοτο = "was given (for himself)" or "was being given"; with ὑπό + genitive it is definitely passive. | ἐδίδοτο ὑπὸ τοῦ βασιλέως |
 | **5. εἰμί has no middle/passive** | Its imperfect (ἦν) has only one set of forms. | — |
 | **6. Do not confuse with the aorist middle** | ἐτίθετο (imperfect) but ἔθετο (aorist): the reduplication τι‑ marks the present system. | ἐδίδοτο / ἔδοτο |

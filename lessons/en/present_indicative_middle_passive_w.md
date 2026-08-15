@@ -63,7 +63,7 @@ The final vowel of the stem merges with the thematic vowel and ending:
 | Rule | Explanation | Example |
 |------|-------------|---------|
 | **1. One form, two meanings** | Middle and passive are identical in the present; context decides. | λύεται "is being loosed" or "looses for himself" |
-| **2. Thematic vowel** | ο before μ, ε elsewhere. | λυ‑ό‑μεθα, λύ‑ε‑σθε |
+| **2. Thematic vowel** | ο before μ and ν, ε elsewhere. | λυ‑ό‑μεθα, λύ‑ο‑νται, λύ‑ε‑σθε |
 | **3. Two spellings in the 2nd sg.** | ‑ῃ is the more classical spelling; ‑ει became common in later Attic. | λύῃ / λύει |
 | **4. Agent of the passive** | Expressed with ὑπό + genitive; an inanimate instrument takes the plain dative. | γράφεται ὑπὸ τοῦ μαθητοῦ |
 | **5. Contract verbs** | The stem vowel merges with the ending. | φιλέ‑ομαι → φιλοῦμαι |

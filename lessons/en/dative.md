@@ -79,7 +79,7 @@ Many Greek verbs take a dative where English has a plain object. Learn the case 
 | Meaning | Verbs |
 | --- | --- |
 | obeying, trusting, following | πείθομαι, πιστεύω, ἕπομαι, ἀκολουθέω |
-| helping, being useful | βοηθέω, ὠφελέω, συμφέρω |
+| helping, being useful | βοηθέω, συμφέρω |
 | meeting, associating, quarrelling | ἐντυγχάνω, χράομαι, διαφέρομαι |
 | being angry, envying, blaming | ὀργίζομαι, φθονέω, μέμφομαι |
 | being like, being friendly | ἔοικα, φίλος εἰμί |

@@ -43,7 +43,7 @@ The primary middle endings attach to the stem **without a thematic vowel**:
 | 2 pl. | **‑σθε** | **λέλυσθε** "you (pl.) have been freed" |
 | 3 pl. | **‑νται** | **λέλυνται** "they have been freed" |
 
-> **Note:** since there is no thematic vowel, ‑σαι survives intact (λέλυσαι) — unlike the present (λύῃ from *λύεσαι).
+> **Note:** the ending ‑σαι survives intact here (λέλυσαι) — unlike the present (λύῃ from *λύεσαι).
 
 ### 2.3 Consonant-Final Stems: Assimilation
 

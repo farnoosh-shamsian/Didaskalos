@@ -56,7 +56,6 @@ The complete paradigm of the aorist middle participle of **πράττω** "to do
 | Verb | Aorist stem | Middle participle (masc. nom.) |
 |------|-------------|--------------------------------|
 | **λύω** "to loose" | λυσ‑ | **λυσάμενος** "having ransomed" |
-| **ἀκούω** "to hear" | ἀκουσ‑ | **ἀκουσάμενος** (poetic) |
 | **δέχομαι** "to receive" | δεξ‑ | **δεξάμενος** "having received" |
 | **γίγνομαι** "to become" | γεν‑ | **γενόμενος** "having become" |
 
@@ -68,7 +67,7 @@ The complete paradigm of the aorist middle participle of **πράττω** "to do
 | **Middle** | **‑σάμενος / ‑όμενος** | λυσάμενος, γενόμενος |
 | **Passive** | ‑θείς, ‑θεῖσα, ‑θέν | λυθείς |
 
-*Only the aorist distinguishes middle and passive with two separate formations; in the present, λυόμενος covers both meanings.*
+*The aorist distinguishes middle and passive with two separate formations; in the present, λυόμενος covers both meanings.*
 
 ---
 

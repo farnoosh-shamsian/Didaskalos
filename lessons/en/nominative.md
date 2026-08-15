@@ -90,7 +90,7 @@ The third declension has no single nominative ending: some nouns add ‑ς to th
 
 | Nominative | Vocative | Type |
 | --- | --- | --- |
-| ὁ φύλαξ "guard" | ὦ φύλαξ | identical (sigma-stem) |
+| ὁ φύλαξ "guard" | ὦ φύλαξ | identical |
 | τὸ σῶμα "body" | ὦ σῶμα | identical (neuter) |
 | ὁ πατήρ "father" | ὦ πάτερ | bare stem, recessive accent |
 | ὁ ἀνήρ "man" | ὦ ἄνερ | bare stem, recessive accent |

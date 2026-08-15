@@ -16,7 +16,7 @@ This module tells you where those forms come from, so that they read as *informa
 | **Ionic prose** | 5th c. BCE | Ionic | Herodotus |
 | **Classical Attic** | 5th–4th c. BCE | Attic — the dialect of Athens | Thucydides, Plato, Xenophon, Aristotle, the orators (Lysias, Demosthenes, Aeschines, Antiphon), the tragedians (Aeschylus, Sophocles) |
 | **Hellenistic** | 3rd–1st c. BCE | early Koine — a common Greek built mainly on Attic | Polybius, Diodorus Siculus |
-| **Imperial and New Testament** | 1st–2nd c. CE | Koine, and self-consciously archaic Attic | New Testament, Josephus, Plutarch, Lucian, Appian, Athenaeus, Dionysius of Halicarnassus, Apollodorus, Aesop |
+| **Imperial and New Testament** | 1st c. BCE – 3rd c. CE | Koine, and self-consciously archaic Attic | New Testament, Josephus, Plutarch, Lucian, Appian, Athenaeus, Dionysius of Halicarnassus, Apollodorus, Aesop |
 
 Treat the first row's dates loosely. The **Homeric Hymns** are a collection assembled over a long period — some are close to Homer in date, others are centuries later — and they are grouped here because they share his language and metre, not because they share his century. The same caution applies in the other direction to row five, as §3 explains.
 

@@ -81,13 +81,13 @@ Greek verbs fall into two families, and every verb lesson in this book is labell
 
 **ω-verbs** (also called *thematic*) are the overwhelming majority. Between the stem and the ending they insert a short connecting vowel, ο or ε, called the **thematic vowel**: λύ-ο-μεν *lý-o-men* "we loosen", λύ-ε-τε *lý-e-te* "you loosen". The dictionary form ends in **-ω**: λύω *lýō*, παιδεύω *paideúō*, γράφω *gráphō*.
 
-**μι-verbs** (also called *athematic*) are a small closed group, but they include some of the most frequent verbs in the language — εἰμί *eimí* "I am", δίδωμι *dídōmi* "I give", τίθημι *títhēmi* "I put", ἵστημι *hístēmi* "I set". They attach the ending directly to the stem with no connecting vowel, and the stem itself often alternates between a long and a short vowel: δίδω-μεν *dídō-men* against δίδο-μεν *dído-men*. The dictionary form ends in **-μι**.
+**μι-verbs** (also called *athematic*) are a small closed group, but they include some of the most frequent verbs in the language — εἰμί *eimí* "I am", δίδωμι *dídōmi* "I give", τίθημι *títhēmi* "I put", ἵστημι *hístēmi* "I set". They attach the ending directly to the stem with no connecting vowel, and the stem itself often alternates between a long and a short vowel: δίδω-μι *dídō-mi* against δίδο-μεν *dído-men*. The dictionary form ends in **-μι**.
 
 Two things follow. First, the difference is confined to certain tenses — mainly the present and imperfect, and the aorist of a few verbs; elsewhere μι-verbs behave much like everyone else. Second, because μι-verbs are both irregular and extremely common, a frequency-driven book reaches them early, which is why you will see lessons marked **(mi)** alongside the much larger number marked **(w)**.
 
 ### Contract verbs, a subgroup of the ω-verbs
 
-One group of ω-verbs needs flagging now, because it is very large and because it disguises itself. When a verb's stem **ends in α, ε or ο**, that vowel collides with the thematic vowel and the two merge — the contraction the noun module mentioned. The result is a form shorter than its parts, usually carrying a circumflex:
+One group of ω-verbs needs flagging now, because it is very large and because it disguises itself. When a verb's stem **ends in α, ε or ο**, that vowel collides with the thematic vowel and the two merge — a **contraction**. The result is a form shorter than its parts, usually carrying a circumflex:
 
 | Uncontracted (as the dictionary lists it) | Contracted (as the text shows it) | Meaning |
 |---|---|---|
@@ -95,7 +95,7 @@ One group of ω-verbs needs flagging now, because it is very large and because i
 | ὁρά-ω *horá-ō* | **ὁρῶ** *horô*, 3rd sg. **ὁρᾷ** *horâi* | "I see" |
 | δηλό-ω *dēló-ō* | **δηλῶ** *dēlô* | "I make clear" |
 
-Two practical consequences. **In reading**, a circumflex on the ending of a present-tense verb is a good clue that you are looking at a contract verb rather than an unfamiliar one. **In looking words up**, the lexicon's headword is the *uncontracted* form, which is not what you saw in the text: ὁρᾷ has to be turned back into ὁράω before it can be found. If ὁρᾷ looked opaque when it turned up in the nouns module, this is why.
+Two practical consequences. **In reading**, a circumflex on the ending of a present-tense verb is a good clue that you are looking at a contract verb rather than an unfamiliar one. **In looking words up**, the lexicon's headword is the *uncontracted* form, which is not what you saw in the text: ὁρᾷ has to be turned back into ὁράω before it can be found.
 
 Contract verbs are entirely regular once the contraction rules are known, and they get their own lessons. For now, recognize the shape.
 

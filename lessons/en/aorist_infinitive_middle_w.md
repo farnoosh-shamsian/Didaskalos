@@ -71,7 +71,7 @@ Second-aorist stem + the thematic ending, always accented on the penult:
 | **3. Accent** | ‑σασθαι infinitives accent the penult (λύσασθαι); second-aorist middle infinitives accent the penult too, on the ε: γενέσθαι, λαβέσθαι. | |
 | **4. Aspect, not time** | The aorist infinitive says nothing about past time except in indirect discourse. | βούλεται παύσασθαι "he wants to stop" |
 | **5. In indirect discourse it does mark time** | After verbs of saying/thinking, the aorist infinitive represents a past indicative. | ἔφη παύσασθαι "he said that he had ceased" |
-| **6. Middle ≠ passive** | The aorist keeps them apart: λύσασθαι (middle) vs. λυθῆναι (passive). Only the present and imperfect merge them. | |
+| **6. Middle ≠ passive** | The aorist keeps them apart: λύσασθαι (middle) vs. λυθῆναι (passive). | |
 
 ---
 
@@ -103,5 +103,5 @@ Thucydides is especially fond of γενέσθαι and πυθέσθαι in report
 
 - The middle ending **‑σθαι** is the regular infinitive marker of the middle voice throughout the Greek verb (present λύεσθαι, perfect λελύσθαι, aorist λύσασθαι) — a stable formation from Proto-Greek onwards.
 - The **‑σα‑** of the first aorist reflects the Indo-European sigmatic aorist suffix *‑s‑, seen also in Latin *dīxī* and Sanskrit *ábhārṣam*.
-- The **second aorist** preserves the older athematic-root pattern; its infinitive ‑έσθαι shows the thematic vowel that the sigmatic type lacks.
+- The **second aorist** infinitive ‑έσθαι shows the thematic vowel that the sigmatic type lacks.
 - In Koine the middle voice steadily lost ground to the passive, and in Modern Greek the infinitive disappeared altogether, replaced by να-clauses.

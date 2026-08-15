@@ -136,7 +136,7 @@ The genitive singular is the key form of this declension: it is where the true s
 _Key points_
 
 - The ordinary ending is **‑ος** in the singular and **‑ων** in the plural.
-- ι‑stems and ευ‑stems have **‑εως / ‑εων**, and they keep their accent on the antepenult (πόλεως, πόλεων) — a licensed exception to the ordinary accent rule.
+- ι‑stems and ευ‑stems have **‑εως / ‑εων**, and the ι‑stems keep their accent on the antepenult (πόλεως, πόλεων) — a licensed exception to the ordinary accent rule.
 - σ‑stem neuters contract: γένε(σ)ος → **γένους**.
 
 ---
@@ -156,7 +156,7 @@ _Key points_
 
 - **τῶν is the genitive plural of all three genders** — the article tells you nothing about gender here.
 - ‑ου is both a second-declension genitive singular and a first-declension **masculine** genitive singular; both are genitive, so no harm done.
-- A genitive standing between article and noun is attributive (ἡ τῶν Ἀθηναίων πόλις); a genitive of αὐτός or a demonstrative stands **outside** it (ἡ γυνὴ αὐτοῦ, ἡ τούτου γυνή "his wife").
+- A genitive standing between article and noun is attributive (ἡ τῶν Ἀθηναίων πόλις); a genitive of αὐτός or a demonstrative stands **outside** it (ἡ γυνὴ αὐτοῦ "his wife").
 - When a genitive has no noun to attach to and no preposition, look for one of §3, §5, §6 or §7.
 
 ---
@@ -175,13 +175,13 @@ Like the dative, the Greek genitive is a merger of two older cases: the inherite
 | σ-stem sg. | γένεος | γένεος | γένους |
 | ι-stem sg. | πόληος, πόλιος | πόλιος | πόλεως |
 
-**‑οιο** is worth singling out: it is the commonest genitive in Homer after ‑ου and one of the first endings that marks a text as epic.
+**‑οιο** is worth singling out: it is one of the first endings that marks a text as epic.
 
 **Usage shifts.** The **partitive** genitive (§2) is markedly more frequent in Homer than in Attic prose, and often stands alone where later Greek would add a preposition. Moving the other way, Koine increasingly prefers to make the relation explicit with a preposition: **ἐκ** or **ἀπό** + genitive where Attic was content with the bare case. The **genitive of comparison** (§3) likewise gives ground in Koine to **ἤ** "than" or **παρά** / **ὑπέρ** + accusative — a construction familiar to readers of the New Testament.
 
 **The genitive absolute** (§7), on the other hand, thrives: already common in Attic, it is used freely throughout Koine narrative.
 
-**In Koine** the genitive is the one oblique case that gains ground. As the dative recedes, the genitive absorbs some of its territory — the beginning of a process that ends in Modern Greek, where the genitive is the only oblique case left standing.
+**In Koine** the genitive is the one oblique case that gains ground. As the dative recedes, the genitive absorbs some of its territory — the beginning of a process that ends in Modern Greek.
 
 ## 12. Example Sentences
 

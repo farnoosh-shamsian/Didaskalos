@@ -27,7 +27,7 @@ Twenty-four cells, seventeen distinct forms, and every one of them frequent. Lea
 
 ### Key observations
 
-- The **genitive plural is τῶν for all three genders** — one form, three jobs, and the one cell of the paradigm that withholds information.
+- The **genitive plural is τῶν for all three genders** — one form, three jobs.
 - **Neuter nominative and accusative are identical** (τό, τά) — as with all neuters.
 - **Masculine and neuter share τοῦ and τῷ** in the singular, τῶν and τοῖς in the plural. The article separates the genders reliably only in the nominative and accusative.
 - Four forms — **ὁ, ἡ, οἱ, αἱ** — lack an initial τ and carry a rough breathing instead. These are the proclitics: no accent of their own, leaning forward onto the word that follows.
@@ -84,7 +84,7 @@ The gender and number tell you what kind of noun you have got, and the conventio
 - ἐν τῷ λέγειν — "while speaking"
 - πρὸς τὸ μανθάνειν — "with a view to learning"
 
-The whole verbal phrase, object and all, sits inside the article: διὰ τὸ τοὺς πολεμίους φοβεῖσθαι "because of fearing the enemy". The construction is Classical, and it becomes markedly more common in Koine.
+The construction is Classical, and it becomes markedly more common in Koine.
 
 ## 6. The Article as a Pronoun
 
@@ -93,7 +93,7 @@ The article began life as a demonstrative pronoun ("that one"), and two traces o
 - **ὁ μέν … ὁ δέ …** — "the one … the other …". In the plural, οἱ μέν … οἱ δέ … "some … others …"; in the neuter, τὰ μέν … τὰ δέ … "some things … other things …".
 - **ὁ δέ** at the start of a sentence — "and he", "but he", marking a change of subject: ὁ δὲ ἀπεκρίνατο "and he answered". This is very common in narrative, and reading it as "the" will derail the sentence.
 
-Both patterns are fossils: here the article is doing what it did generally in Homer, and nowhere else in Classical prose.
+Both patterns are fossils: here the article is doing what it did generally in Homer.
 
 ## 7. Idiomatic Uses
 

@@ -2,7 +2,7 @@
 
 The **accusative** is the case of the goal. Its central job is to name the thing an action is done *to* — the direct object — but Greek extends that idea a long way: the accusative also measures how far and how long, names the respect in which something is true, carries the subject of an infinitive, and follows the great majority of prepositions.
 
-It is the commonest case in Greek prose after the nominative, and one of the easiest to recognize: outside the neuter, an accusative almost always ends in **‑ν** in the singular and **‑ς** in the plural.
+It is one of the easiest cases to recognize: outside the neuter, an accusative almost always ends in **‑ν** in the singular and **‑ς** in the plural.
 
 ---
 
@@ -146,7 +146,6 @@ _Key points_
 
 ## 10. Points to Watch
 
-- **‑ας is ambiguous.** τὰς τιμάς is accusative plural, but τῆς τιμῆς-type genitives in ‑ας (χώρας) look similar; the article decides.
 - **Neuter forms are ambiguous between nominative and accusative.** Word order and the verb decide which: τὰ πράγματα may be subject or object.
 - An accusative with no transitive verb in sight is usually one of the special uses above — respect, extent, oath, or the subject of an infinitive.
 
@@ -158,7 +157,7 @@ The accusative is the most stable case in Greek. Its endings barely move between
 
 **Epic uses.** Two constructions are far commoner in Homer than in later prose:
 
-- The **accusative of respect** (§6), naming the part or aspect in which something is true: πόδας ὠκὺς Ἀχιλλεύς "Achilles, swift **as to his feet**", ἀλγέων ἦτορ "grieving **in his heart**". Attic keeps it but uses it more sparingly.
+- The **accusative of respect** (§6), naming the part or aspect in which something is true: πόδας ὠκὺς Ἀχιλλεύς "Achilles, swift **as to his feet**". Attic keeps it but uses it more sparingly.
 - The **double accusative** (§2) with verbs of asking, teaching and depriving, which narrows steadily after the Classical period.
 
 The accusative of extent in space and time (§5) runs through every period unchanged.

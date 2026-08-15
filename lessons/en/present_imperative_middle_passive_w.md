@@ -27,7 +27,7 @@ The present imperative commands an **ongoing or general** action; the aorist imp
 
 | Person | Ending | λύω → | Meaning |
 |--------|--------|-------|---------|
-| 2nd sg. | **‑ου** (from ‑ε‑σο) | **λύου** | wash yourself! / be loosed! |
+| 2nd sg. | **‑ου** (from ‑ε‑σο) | **λύου** | be loosed! |
 | 3rd sg. | **‑έσθω** | **λυέσθω** | let him… |
 | 2nd pl. | **‑εσθε** | **λύεσθε** | (you all)…! |
 | 3rd pl. | **‑έσθων / ‑έσθωσαν** | **λυέσθων** | let them… |

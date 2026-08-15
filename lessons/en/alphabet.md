@@ -105,7 +105,7 @@ The rule "almost every word carries one accent" has two exceptions, and both are
 
 **Proclitics** have no accent of their own and lean forward onto the word after them. They are few and very common: the article forms **ὁ, ἡ, οἱ, αἱ** (*ho, hē, hoi, hai*), the prepositions **ἐν, εἰς, ἐκ/ἐξ** (*en, eis, ek/ex*), the negative **οὐ** (*ou*), and **ὡς** (*hōs*). When you meet the article and notice that some of its forms are bare while the rest are accented, this is why.
 
-**Enclitics** have no accent of their own either, but they lean *backwards* onto the word before them — and in doing so they often throw an extra accent onto it. That is why you will see words apparently carrying two accents: ἄνθρωπός τις *ánthrōpós tis* "a certain man", where the second accent on ἄνθρωπος belongs to τις. The common enclitics are the indefinite τις/τι *(tis/ti)* "some, any", the present of εἰμί *(eimí)* "be" (except the 2nd singular εἶ), the unemphatic pronouns μου, μοι, με *(mou, moi, me)*, and the particles γε, τε, περ *(ge, te, per)*.
+**Enclitics** have no accent of their own either, but they lean *backwards* onto the word before them — and in doing so they often throw an extra accent onto it. That is why you will see words apparently carrying two accents: ἄνθρωπός τις *ánthrōpós tis* "a certain man", where the second accent on ἄνθρωπος belongs to τις. The commonest enclitics include the indefinite τις/τι *(tis/ti)* "some, any", the present of εἰμί *(eimí)* "be" (except the 2nd singular εἶ), the unemphatic pronouns μου, μοι, με *(mou, moi, me)*, and the particles γε, τε, περ *(ge, te, per)*.
 
 Neither group needs memorizing now. What you need is the recognition: **a word with no accent, or a word with two, is not a misprint.**
 

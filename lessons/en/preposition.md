@@ -52,7 +52,7 @@ Notice the elegant trio for motion and rest: **εἰς + acc.** (motion toward),
 
 ## 5. "Improper" Prepositions
 
-A second group began life as adverbs, never compounds with a verb, and governs the **genitive** only. Grammars call them improper prepositions; they behave like ordinary ones in a sentence.
+A second group began life as adverbs, never compounds with a verb, and governs the **genitive**. Grammars call them improper prepositions; they behave like ordinary ones in a sentence.
 
 | Word | Meaning | Example |
 |---|---|---|

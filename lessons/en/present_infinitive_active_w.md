@@ -14,11 +14,9 @@ In this lesson we will learn what the **present active infinitive** is, how it i
 | Term | Description |
 |------|-------------|
 | **Infinitive** | The "to‑do" form of a verb. It is non-finite, i.e. it has no person or number. |
-| **Present** | Refers to present time (or a general, timeless action) — and, more importantly, conveys imperfective aspect. |
+| **Present** | Conveys imperfective aspect: the action viewed as ongoing or repeated, not as located in present time. |
 | **Active** | The subject of the verb performs the action (as opposed to middle or passive). |
 | **Form** | In Ancient Greek the present active infinitive ends in **‑ειν** for regular verbs, and in **‑ᾶν, ‑εῖν, ‑οῦν** for the three groups of contract verbs. |
-
-The infinitive can be thought of as the "dictionary entry" of a verb: it shows the basic meaning and the conjugational class.
 
 ---
 

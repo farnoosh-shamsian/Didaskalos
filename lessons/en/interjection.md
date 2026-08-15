@@ -15,7 +15,7 @@ Interjections stand outside the grammar of the sentence: they modify nothing and
 | **φεῦ** | grief or amazement: "alas! ah!" | often with a genitive of cause |
 | **ὢ πόποι** | dismay, indignation: "good heavens!" | Homeric; opens speeches of complaint |
 | **οἴμοι / ὤμοι** | lament: "woe is me!" | tragedy; often with a genitive or a nominative |
-| **αἰαῖ** | wail of grief: "aiai! alas!" | tragedy (the origin of the name Αἴας, as Sophocles puns) |
+| **αἰαῖ** | wail of grief: "aiai! alas!" | tragedy |
 | **εἴθε** | wish-particle: "if only ...!" | introduces wishes with the optative |
 | **ἆ** | pain or protest: "ah!" | drama |
 | **ἰού** | pain, or (context!) joyful surprise | drama |
@@ -71,5 +71,5 @@ Interjections are the most register-bound words in the language: they belong to 
 - ὦ ἄνδρες Ἀθηναῖοι, οὐκ ἴστε τί ποιεῖτε. — "Men of Athens, you do not know what you are doing."
 - ἰὼ γενεαὶ βροτῶν. — "Alas, generations of mortals!" (Sophocles)
 - φεῦ φεῦ, τί λέξω; — "Alas, alas — what shall I say?"
-- οἴμοι, πέπληγμαι. — "Ah me, I am struck!" (Aeschylus, the cry of Agamemnon)
+- ὤμοι, πέπληγμαι. — "Ah me, I am struck!" (Aeschylus, the cry of Agamemnon)
 - ὢ πόποι, οἷον ἔργον εἴργασται. — "Good heavens, what a deed has been done!"

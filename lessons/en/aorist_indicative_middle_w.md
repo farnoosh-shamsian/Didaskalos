@@ -81,7 +81,7 @@ That is why the second person of the aorist middle ends in ‑ω — a shape tha
 
 | Rule | Explanation | Example |
 |------|-------------|----------------------|
-| **Augment** | All aorist indicative forms take the augment: ἐ‑ before a consonant, vowel lengthening in vowel-initial verbs. | ἀκούω → **ἠκουσάμην** (poetic) |
+| **Augment** | All aorist indicative forms take the augment: ἐ‑ before a consonant, vowel lengthening in vowel-initial verbs. | ἄρχω → **ἠρξάμην** "I began" |
 | **Loss of σ between vowels** | In the 2nd singular: ‑σασο → ‑σω; ‑ε(σ)ο → ‑ου. | ἐλύσω, ἐγένου |
 | **Keep the three ‑ω's apart** | λύω = present active 1st person; λύσω = future active 1st person; **ἐλύσω** = aorist middle **2nd person** (with the augment!). | The augment is the sure sign |
 | **Deponents** | Verbs without active forms take the same endings and translate actively. | ἐδεξάμην "I received" |
@@ -106,5 +106,5 @@ That is why the second person of the aorist middle ends in ‑ω — a shape tha
 
 1. **Self-benefit** — the middle often says the subject profits from the action: ἐπραξάμην "I exacted (for myself)."
 2. **Narrative** — the aorist middle is as fundamental to storytelling as the active: ἐγένετο "it happened" is everywhere.
-3. **The second-person trap** — any ‑ω form that carries an augment is a 2nd-person aorist middle, not a present active; internalize this.
+3. **The second-person trap** — any ‑ω form that carries an augment is a 2nd-person middle, not a present active; internalize this.
 4. **Versus the passive** — for "this was done to me" Greek uses ‑θην; the middle always keeps the subject as the doer.

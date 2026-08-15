@@ -73,7 +73,7 @@ Particles are the part of Greek that varies most sharply by period — and the o
 | ἠδέ, ἰδέ | καί "and" |
 | τοι | τοι (but far commoner in Homer) |
 
-**κε(ν) is the one to learn first.** It does the job of Attic ἄν, and since ἄν is essential to conditionals and potentials, mistaking κεν will derail a Homeric sentence. Herodotus uses both κε and ἄν.
+**κε(ν) is the one to learn first.** It does the job of Attic ἄν, and since ἄν is essential to conditionals and potentials, mistaking κεν will derail a Homeric sentence.
 
 **Koine thins the system drastically.** In the New Testament the particle inventory shrinks to a small working set — καί, δέ, γάρ, οὖν, ἀλλά, μέν (much reduced) — and the fine Attic distinctions between γε, δή, τοι, μέντοι, δῆτα largely disappear. The **μέν … δέ** correlation, near-automatic in Attic, becomes optional and comparatively rare; a δέ frequently appears with no μέν to answer it.
 

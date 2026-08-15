@@ -15,7 +15,7 @@ These join **equal** elements — two nouns, two verbs, two independent clauses:
 | καί | and; also, even | ὁ πατὴρ καὶ ἡ μήτηρ "the father and the mother" |
 | τε (enclitic) | and (attaches to its word) | ἄνδρες γυναῖκές τε "men and women" |
 | δέ | and, but (postpositive) | ὁ δὲ ἀπῆλθεν "and he went away" |
-| ἀλλά | but (strong contrast, correction) | οὐ λόγων ἀλλ᾿ ἔργων "not words but deeds" |
+| ἀλλά | but (strong contrast, correction) | οὐ λόγων ἀλλ᾿ ἔργων "not of words but of deeds" |
 | ἤ | or; than | νῦν ἢ ὕστερον "now or later" |
 | οὐδέ / μηδέ | and not, not even | οὐδὲ εἷς "not even one" |
 | γάρ | for (introduces a reason; postpositive) | φεύγωμεν· ὁ γὰρ πολέμιος ἐγγύς. "Let's flee — for the enemy is near." |
@@ -32,7 +32,7 @@ These introduce **dependent clauses** and tell you exactly what kind:
 | Conjunction | Introduces | Example |
 |---|---|---|
 | ὅτι / ὡς | statement: "that"; cause: "because" | λέγει ὅτι ἥκει "he says that he has come" |
-| εἰ | condition: "if" | εἰ θεοὶ εἰσίν "if there are gods" |
+| εἰ | condition: "if" | εἰ θεοί εἰσιν "if there are gods" |
 | ἐάν (= εἰ + ἄν) | condition with subjunctive: "if (ever)" | ἐὰν ζητῇς, εὑρήσεις "if you seek, you will find" |
 | ἐπεί / ἐπειδή | "when, since, after" | ἐπεὶ ταῦτα ἤκουσεν "when he heard this" |
 | ὅτε | "when" | ὅτε νέος ἦν "when he was young" |

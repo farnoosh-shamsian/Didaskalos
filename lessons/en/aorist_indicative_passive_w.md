@@ -98,7 +98,7 @@ Both types take the **augment** ἐ‑ in the indicative (occasionally dropped i
 2. **Legal and official language** — for formal statements of what "was done": ἐψηφίσθη "it was decreed."
 3. **Poetry** — the augment may be dropped and word order rearranged for meter.
 4. **The passive-deponent trap** — do not translate ἐφοβήθην as "I was frightened by someone"; it means "I feared." The dictionary is your guide.
-5. **Versus the middle** — the aorist is the only tense where middle and passive have distinct forms: ἐλυσάμην "I loosed for myself" ≠ ἐλύθην "I was loosed."
+5. **Versus the middle** — the aorist keeps middle and passive apart in form: ἐλυσάμην "I loosed for myself" ≠ ἐλύθην "I was loosed."
 
 ---
 

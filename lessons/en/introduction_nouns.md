@@ -9,7 +9,7 @@ An Ancient Greek noun changes its ending to show what it is doing in the sentenc
 - ὁ ἄνθρωπος τὸν ἵππον διώκει *ho ánthrōpos tòn híppon diṓkei* — "the man chases the horse"
 - τὸν ἄνθρωπον ὁ ἵππος διώκει *tòn ánthrōpon ho híppos diṓkei* — "the horse chases the man"
 
-The endings (-ος *-os* for subject, -ον *-on* for object), not the position, tell you who sees whom. This is why Greek word order is so free — and why learning the endings is the heart of learning Greek.
+The endings (-ος *-os* for subject, -ον *-on* for object), not the position, tell you who chases whom. This is why Greek word order is so free — and why learning the endings is the heart of learning Greek.
 
 Every noun form combines three pieces of information: **case**, **number**, and **gender**.
 

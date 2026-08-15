@@ -19,7 +19,7 @@ There is no "irregular conjugation" to learn. What follows is three families of 
 
 ## 1. Suppletive Aorists
 
-Some verbs supply their aorist from an entirely different root. This is called **suppletion**: two unrelated stems are pressed into service as though they were one verb, so that ὁράω "I see" takes the aorist εἶδον, which has no letter in common with it. The present and the aorist are two roots serving one meaning, and both must be learned as a pair.
+Some verbs supply their aorist from an entirely different root. This is called **suppletion**: two unrelated stems are pressed into service as though they were one verb, so that ὁράω "I see" takes the aorist εἶδον. The present and the aorist are two roots serving one meaning, and both must be learned as a pair.
 
 | Present | Aorist | Meaning |
 | --- | --- | --- |
