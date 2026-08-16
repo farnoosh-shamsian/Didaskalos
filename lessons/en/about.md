@@ -34,4 +34,4 @@ In this opening group of modules — the alphabet, the dictionary module, the in
 
 ## About the Developer
 
-Didaskalos was developed by Farnoosh Shamsian. For more information, please refer to the relevant project pages and publications, or check out https://farnoosh-shamsian.github.io/
+Didaskalos was developed by Farnoosh Shamsian. For more information, please refer to the relevant project pages and publications, or check out <https://farnoosh-shamsian.github.io/>
