@@ -990,18 +990,10 @@ if build_result:
     st.caption(t("results_note", lang))
 
     st.download_button(
-        label=t("download_frequency_syllabus", lang),
-        data=build_result["frequency_csv"],
-        file_name="frequency_syllabus.csv",
-        mime="text/csv",
-        use_container_width=True,
-    )
-
-    st.download_button(
-        label=t("download_combined_rows", lang),
-        data=build_result["combined_csv"],
-        file_name="combined_treebank_rows.csv",
-        mime="text/csv",
+        label=t("download_textbook_html", lang),
+        data=build_result["textbook_html"].encode("utf-8"),
+        file_name="textbook.html",
+        mime="text/html",
         use_container_width=True,
     )
 
@@ -1014,22 +1006,31 @@ if build_result:
     )
 
     st.download_button(
-        label=t("download_textbook_html", lang),
-        data=build_result["textbook_html"].encode("utf-8"),
-        file_name="textbook.html",
-        mime="text/html",
+        label=t("download_combined_rows", lang),
+        data=build_result["combined_csv"],
+        file_name="combined_treebank_rows.csv",
+        mime="text/csv",
+        use_container_width=True,
+    )
+
+    st.download_button(
+        label=t("download_frequency_syllabus", lang),
+        data=build_result["frequency_csv"],
+        file_name="frequency_syllabus.csv",
+        mime="text/csv",
         use_container_width=True,
     )
 
     st.caption(t("lesson_modules_note", lang))
 
-    st.subheader(t("textbook_md_preview_header", lang))
-    st.code(build_result["textbook_markdown"][:6000], language="markdown")
-
     st.subheader(t("textbook_html_preview_header", lang))
     # The HTML can be several MB, so it is only sent when asked for.
     if st.toggle(t("show_html_preview_label", lang), value=False, key="show_html_preview"):
         components.html(build_result["textbook_html"], height=800, scrolling=True)
+
+    st.subheader(t("textbook_md_preview_header", lang))
+    if st.toggle(t("show_md_preview_label", lang), value=False, key="show_md_preview"):
+        st.code(build_result["textbook_markdown"][:6000], language="markdown")
 
 st.markdown("---")
 st.caption(t("footer_caption", lang))

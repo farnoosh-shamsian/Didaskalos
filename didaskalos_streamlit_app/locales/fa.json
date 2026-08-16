@@ -61,6 +61,7 @@
   "textbook_md_preview_header": "پیش‌نمایش Markdown کتاب",
   "textbook_html_preview_header": "پیش‌نمایش HTML کتاب",
   "show_html_preview_label": "نمایش پیش‌نمایش HTML",
+  "show_md_preview_label": "نمایش پیش‌نمایش Markdown",
   "footer_caption": "دیداسکالوس پروژه‌ای متن‌باز و همچنان در حال ساخت است. مشارکت‌ها و بازخوردها به بهتر شدن آن کمک می‌کند.",
   "license_caption": "© {year} فرنوش شمسیان. دیداسکالوس با مجوز [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) منتشر می‌شود. متن‌های منبع همچنان تابع مجوزهای پدیدآورندگان خودشان هستند.",
   "tb_doc_title": "درسنامهٔ بسامدبنیاد دستور زبان یونانی باستان",

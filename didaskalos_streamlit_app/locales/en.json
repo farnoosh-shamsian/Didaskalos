@@ -61,6 +61,7 @@
   "textbook_md_preview_header": "Textbook Markdown Preview",
   "textbook_html_preview_header": "Textbook HTML Preview",
   "show_html_preview_label": "Show HTML preview",
+  "show_md_preview_label": "Show Markdown preview",
   "footer_caption": "Didaskalos is an open-source project, and still very much in progress. Contributions and feedback are welcome.",
   "license_caption": "© {year} Farnoosh Shamsian. Didaskalos is released under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Source texts remain under the licenses granted by their own authors.",
   "tb_doc_title": "A Frequency-Based Textbook for Ancient Greek Grammar",
