@@ -66,6 +66,12 @@ body {
   line-height: 1.9;
 }
 
+/* Identifiers that must survive a line break intact — model ids and the like
+   would otherwise split at their hyphens. */
+.no-break {
+  white-space: nowrap;
+}
+
 /* Header: brand left, nav and language switch right. */
 
 header {
