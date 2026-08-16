@@ -622,6 +622,7 @@ nav ul li a:hover {
 }
 
 .about-block a,
+.limits a,
 .note a {
   color: var(--link-color);
 }
