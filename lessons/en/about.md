@@ -20,7 +20,7 @@ Each unit in the resulting textbook pairs a grammatical explanation, written to 
 
 **The sentences are real from the first lesson.** They have not been shortened or rewritten, which means that early on a sentence will contain words and constructions you have not met. This is normal and it is not a sign that you have fallen behind. Read for the thing the lesson is about: find the form under discussion, parse it, see what it is doing. Understanding the whole sentence is a bonus at first. It should get steadily more common as you go, because the frequency ordering means the words you learn are precisely the ones that keep coming back — though how fast that happens depends on the corpus you chose, and no one has yet measured it.
 
-**Frequent is not the same as easy.** Because the syllabus follows frequency rather than a traditional teaching order, some genuinely difficult grammar arrives early — the μι-verbs *(mi-verbs)* and the participle are both awkward and both extremely common, so a Didaskalos book reaches them sooner than a conventional textbook would. Expect the difficulty curve to be lumpy rather than gentle. The compensation is that every topic earned its place by how often it occurs in *your* texts, so nothing you learn is there only for the sake of the syllabus.
+**Frequent is not the same as easy.** Because the syllabus follows frequency rather than a traditional teaching order, some genuinely difficult grammar arrives early — the μι-verbs ⟨mi-verbs⟩ and the participle are both awkward and both extremely common, so a Didaskalos book reaches them sooner than a conventional textbook would. Expect the difficulty curve to be lumpy rather than gentle. The compensation is that every topic earned its place by how often it occurs in *your* texts, so nothing you learn is there only for the sake of the syllabus.
 
 ---
 
@@ -31,6 +31,8 @@ Because the corpus is the learner's own, the Greek in a given textbook may span 
 ## A Note on Transliteration
 
 In this opening group of modules — the alphabet, the dictionary module, the introductions to nouns, adjectives and verbs, and the dialects module — every Greek word and example is followed by its transliteration in Latin letters. This is a temporary scaffold, there to help you internalize the alphabet and check your reading while the letters are still new. It stops after these lessons: from the first frequency-driven lesson onward the Greek stands on its own, because by then you should be reading the Greek script directly rather than through a Latin echo of it.
+
+The transliteration is written in **angle brackets**: ὕδωρ ⟨hýdōr⟩ "water". The brackets are there so that you never have to work out which of the two words on the page is the Greek — the Greek is the bare one, and the bracketed one is the scaffold that will be taken away. They also keep the notation honest, because this book marks two different things about a letter and they are easy to confuse. **Angle brackets are spelling**: ⟨h⟩ is how a rough breathing is written in Latin letters. **Slashes are sound**: /h/ is what you say. A table that gives both — as the alphabet table does — is telling you two separate facts about the same letter.
 
 ## About the Developer
 

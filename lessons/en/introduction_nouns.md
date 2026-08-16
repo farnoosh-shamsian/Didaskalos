@@ -1,15 +1,15 @@
 # Introduction to Greek Nouns and Declensions
 
-> **Nothing in this module is to be memorized.** The tables here are shown to you, not set for you. When you meet a declension table, look at it the way you would look at a diagram: this is what it means for a noun to be declined, this is where the stem stops and the ending starts, this is how one form differs from the next. That is all it is asked to do here. Every pattern in this module — the noun λόγος *lógos*, the three declension families, the article — has a lesson of its own later on, and that is where each is learned properly, with its own examples and exercises. Read, notice, move on. (The article, in section 3, is the one table you may find yourself returning to, for the reason given there.)
+> **Nothing in this module is to be memorized.** The tables here are shown to you, not set for you. When you meet a declension table, look at it the way you would look at a diagram: this is what it means for a noun to be declined, this is where the stem stops and the ending starts, this is how one form differs from the next. That is all it is asked to do here. Every pattern in this module — the noun λόγος ⟨lógos⟩, the three declension families, the article — has a lesson of its own later on, and that is where each is learned properly, with its own examples and exercises. Read, notice, move on. (The article, in section 3, is the one table you may find yourself returning to, for the reason given there.)
 
 ## 1. One Word, Many Forms
 
 An Ancient Greek noun changes its ending to show what it is doing in the sentence. Who acts and who is acted upon is marked **on the words themselves**, not by where they stand. Swap the endings and the meaning swaps with them, even though the word order is untouched:
 
-- ὁ ἄνθρωπος τὸν ἵππον διώκει *ho ánthrōpos tòn híppon diṓkei* — "the man chases the horse"
-- τὸν ἄνθρωπον ὁ ἵππος διώκει *tòn ánthrōpon ho híppos diṓkei* — "the horse chases the man"
+- ὁ ἄνθρωπος τὸν ἵππον διώκει ⟨ho ánthrōpos tòn híppon diṓkei⟩ — "the man chases the horse"
+- τὸν ἄνθρωπον ὁ ἵππος διώκει ⟨tòn ánthrōpon ho híppos diṓkei⟩ — "the horse chases the man"
 
-The endings (-ος *-os* for subject, -ον *-on* for object), not the position, tell you who chases whom. This is why Greek word order is so free — and why learning the endings is the heart of learning Greek.
+The endings (-ος ⟨-os⟩ for subject, -ον ⟨-on⟩ for object), not the position, tell you who chases whom. This is why Greek word order is so free — and why learning the endings is the heart of learning Greek.
 
 Every noun form combines three pieces of information: **case**, **number**, and **gender**.
 
@@ -37,39 +37,39 @@ The article has a form for every combination of gender, number and case. Here is
 
 | | Masc. | Fem. | Neut. |
 |---|---|---|---|
-| **Nominative** | ὁ *ho* | ἡ *hē* | τό *tó* |
-| **Genitive** | τοῦ *toû* | τῆς *tês* | τοῦ *toû* |
-| **Dative** | τῷ *tôi* | τῇ *têi* | τῷ *tôi* |
-| **Accusative** | τόν *tón* | τήν *tḗn* | τό *tó* |
+| **Nominative** | ὁ ⟨ho⟩ | ἡ ⟨hē⟩ | τό ⟨tó⟩ |
+| **Genitive** | τοῦ ⟨toû⟩ | τῆς ⟨tês⟩ | τοῦ ⟨toû⟩ |
+| **Dative** | τῷ ⟨tôi⟩ | τῇ ⟨têi⟩ | τῷ ⟨tôi⟩ |
+| **Accusative** | τόν ⟨tón⟩ | τήν ⟨tḗn⟩ | τό ⟨tó⟩ |
 
 **Plural**
 
 | | Masc. | Fem. | Neut. |
 |---|---|---|---|
-| **Nominative** | οἱ *hoi* | αἱ *hai* | τά *tá* |
-| **Genitive** | τῶν *tôn* | τῶν *tôn* | τῶν *tôn* |
-| **Dative** | τοῖς *toîs* | ταῖς *taîs* | τοῖς *toîs* |
-| **Accusative** | τούς *toús* | τάς *tás* | τά *tá* |
+| **Nominative** | οἱ ⟨hoi⟩ | αἱ ⟨hai⟩ | τά ⟨tá⟩ |
+| **Genitive** | τῶν ⟨tôn⟩ | τῶν ⟨tôn⟩ | τῶν ⟨tôn⟩ |
+| **Dative** | τοῖς ⟨toîs⟩ | ταῖς ⟨taîs⟩ | τοῖς ⟨toîs⟩ |
+| **Accusative** | τούς ⟨toús⟩ | τάς ⟨tás⟩ | τά ⟨tá⟩ |
 
-**The article always agrees with its noun in gender, number and case**, which makes it the most helpful thing on the page: where a noun's own ending gives nothing away, the small word in front has already announced all three. There is **no vocative article** — Greek addresses someone with the particle ὦ *ô* instead (ὦ ἄνδρες *ô ándres* "gentlemen!"), which is why ὦ stands in the vocative line of the paradigm below.
+**The article always agrees with its noun in gender, number and case**, which makes it the most helpful thing on the page: where a noun's own ending gives nothing away, the small word in front has already announced all three. There is **no vocative article** — Greek addresses someone with the particle ὦ ⟨ô⟩ instead (ὦ ἄνδρες ⟨ô ándres⟩ "gentlemen!"), which is why ὦ stands in the vocative line of the paradigm below.
 
 ## 4. Number
 
-- **Singular** — one: ὁ λόγος *ho lógos* "the word"
-- **Plural** — more than one: οἱ λόγοι *hoi lógoi* "the words"
-- **Dual** — exactly two (rare; mostly poetry and fixed pairs like "both hands"): τὼ χεῖρε *tṑ cheîre*
+- **Singular** — one: ὁ λόγος ⟨ho lógos⟩ "the word"
+- **Plural** — more than one: οἱ λόγοι ⟨hoi lógoi⟩ "the words"
+- **Dual** — exactly two (rare; mostly poetry and fixed pairs like "both hands"): τὼ χεῖρε ⟨tṑ cheîre⟩
 
 ## 5. Gender
 
-Every noun is **masculine**, **feminine**, or **neuter** — a grammatical classification, not a biological one: ἡ ὁδός *hē hodós* "road" is feminine, τὸ τέκνον *tò téknon* "child" is neuter. When you do come to learn nouns, take each one together with its article (ὁ, ἡ, τό — *ho, hē, tó*), because the article states the gender openly while the noun's own ending often does not.
+Every noun is **masculine**, **feminine**, or **neuter** — a grammatical classification, not a biological one: ἡ ὁδός ⟨hē hodós⟩ "road" is feminine, τὸ τέκνον ⟨tò téknon⟩ "child" is neuter. When you do come to learn nouns, take each one together with its article (ὁ, ἡ, τό — ⟨ho, hē, tó⟩), because the article states the gender openly while the noun's own ending often does not.
 
 ### Two rules about neuters
 
 Neuter nouns come with a discount and a trap, and both are worth having on day one.
 
-**The discount: a neuter's nominative and accusative are always identical.** Whatever the declension, whatever the number. That removes a third of the guesswork from every neuter noun you will ever meet — and the price is that a neuter form on its own never tells you whether it is the subject or the object. The rest of the sentence decides. The neuter plural, in every declension, ends in **-α** *(-a)*: τὰ δῶρα *tà dôra* "the gifts", τὰ σώματα *tà sṓmata* "the bodies".
+**The discount: a neuter's nominative and accusative are always identical.** Whatever the declension, whatever the number. That removes a third of the guesswork from every neuter noun you will ever meet — and the price is that a neuter form on its own never tells you whether it is the subject or the object. The rest of the sentence decides. The neuter plural, in every declension, ends in **-α** ⟨-a⟩: τὰ δῶρα ⟨tà dôra⟩ "the gifts", τὰ σώματα ⟨tà sṓmata⟩ "the bodies".
 
-**The trap: a neuter plural subject takes a *singular* verb.** τὰ ζῷα τρέχει *tà zôia tréchei* — "the animals run", with the verb in the singular. In any other language this would be an error, and in Greek it is the rule; Greek treats a neuter plural as a collective. You will meet it in your first authentic sentences, so recognize it now rather than concluding that the text is corrupt.
+**The trap: a neuter plural subject takes a *singular* verb.** τὰ ζῷα τρέχει ⟨tà zôia tréchei⟩ — "the animals run", with the verb in the singular. In any other language this would be an error, and in Greek it is the rule; Greek treats a neuter plural as a collective. You will meet it in your first authentic sentences, so recognize it now rather than concluding that the text is corrupt.
 
 ## 6. Declensions: the Three Patterns
 
@@ -77,17 +77,17 @@ Nouns fall into three families of endings, called **declensions**:
 
 | Declension | Typical look | Examples | Transliteration |
 |---|---|---|---|
-| First | -η / -α (*-ē / -a*; mostly feminine; some masculines in -ης/-ας *-ēs/-as*) | τιμή, χώρα, πολίτης | timḗ, chṓra, polítēs |
-| Second | -ος (*-os*, mostly masculine), -ον (*-on*, neuter) | λόγος, δῶρον | lógos, dôron |
-| Third | consonant or ι/υ (*i/y*) stems; gen. sg. -ος/-ως (*-os/-ōs*) | φύλαξ, σῶμα, πόλις | phýlax, sôma, pólis |
+| First | -η / -α (⟨-ē / -a⟩; mostly feminine; some masculines in -ης/-ας ⟨-ēs/-as⟩) | τιμή, χώρα, πολίτης | timḗ, chṓra, polítēs |
+| Second | -ος (⟨-os⟩, mostly masculine), -ον (⟨-on⟩, neuter) | λόγος, δῶρον | lógos, dôron |
+| Third | consonant or ι/υ ⟨i/y⟩ stems; gen. sg. -ος/-ως ⟨-os/-ōs⟩ | φύλαξ, σῶμα, πόλις | phýlax, sôma, pólis |
 
 A noun's declension determines *which* set of endings it uses — but the *information* the endings carry (case and number) is the same across all three.
 
 ## 7. Anatomy of a Noun Form
 
-**stem + ending**: λόγ- *lóg-* (the meaning "word") + -ου *-ou* (genitive singular) = λόγου *lógou* "of a word".
+**stem + ending**: λόγ- ⟨lóg-⟩ (the meaning "word") + -ου ⟨-ou⟩ (genitive singular) = λόγου ⟨lógou⟩ "of a word".
 
-Everything so far has been *about* declension without showing one. Here is a noun declined in full — λόγος *lógos* "word", the standard second-declension masculine, with its article beside it. It is here to be looked at, not learned; the second declension has its own lesson:
+Everything so far has been *about* declension without showing one. Here is a noun declined in full — λόγος ⟨lógos⟩ "word", the standard second-declension masculine, with its article beside it. It is here to be looked at, not learned; the second declension has its own lesson:
 
 | Case | Singular | Transliteration | Plural | Transliteration |
 |---|---|---|---|---|
@@ -97,11 +97,11 @@ Everything so far has been *about* declension without showing one. Here is a nou
 | Accusative | τὸν λόγον | tòn lógon | τοὺς λόγους | toùs lógous |
 | Vocative | ὦ λόγε | ô lóge | ὦ λόγοι | ô lógoi |
 
-Read it down the column and then across, and notice what is doing the work: the stem λογ- *log-* never changes, the article and the ending change together, and between them they name the case and number twice over. That redundancy is what makes Greek readable at speed. This is one noun of one declension — the other patterns have their own lessons — but the anatomy is the same in all three.
+Read it down the column and then across, and notice what is doing the work: the stem λογ- ⟨log-⟩ never changes, the article and the ending change together, and between them they name the case and number twice over. That redundancy is what makes Greek readable at speed. This is one noun of one declension — the other patterns have their own lessons — but the anatomy is the same in all three.
 
 ## 8. Historical Development
 
-Your reading passages come from whatever texts you chose, and those may be centuries apart. So you will meet endings that do not match the table: a genitive in ‑οιο *-oio* instead of ‑ου *-ou*, a dative plural in ‑οισι *-oisi* instead of ‑οις *-ois*, two vowels left standing apart where the paradigm merges them into one. These are not errors and not exceptions to be memorized — they are the same endings at a different point in their history, and each declension lesson has a **Historical Development** section explaining which is which.
+Your reading passages come from whatever texts you chose, and those may be centuries apart. So you will meet endings that do not match the table: a genitive in ‑οιο ⟨-oio⟩ instead of ‑ου ⟨-ou⟩, a dative plural in ‑οισι ⟨-oisi⟩ instead of ‑οις ⟨-ois⟩, two vowels left standing apart where the paradigm merges them into one. These are not errors and not exceptions to be memorized — they are the same endings at a different point in their history, and each declension lesson has a **Historical Development** section explaining which is which.
 
 ## Summary
 
@@ -118,12 +118,12 @@ Your reading passages come from whatever texts you chose, and those may be centu
 
 Give the **case, number and gender** of each phrase below. The article settles most of it; where it cannot, say so. Keep the tables above in view while you work — this is not a memory test.
 
-1. τῇ ὁδῷ *têi hodôi*
-2. τὸν λόγον *tòn lógon*
-3. τοῦ σώματος *toû sṓmatos*
-4. τὸ δῶρον *tò dôron*
-5. τῆς τιμῆς *tês timês*
-6. ὁ ἄνθρωπος *ho ánthrōpos*
+1. τῇ ὁδῷ ⟨têi hodôi⟩
+2. τὸν λόγον ⟨tòn lógon⟩
+3. τοῦ σώματος ⟨toû sṓmatos⟩
+4. τὸ δῶρον ⟨tò dôron⟩
+5. τῆς τιμῆς ⟨tês timês⟩
+6. ὁ ἄνθρωπος ⟨ho ánthrōpos⟩
 
 #### Answer Key
 

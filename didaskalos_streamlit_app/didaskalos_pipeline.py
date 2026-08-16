@@ -919,18 +919,54 @@ _GREEK_ATOM = f"(?:{_GREEK_PHRASE}|{_GREEK_ELEM})"
 _GREEK_RUN_RE = re.compile(f"-?{_GREEK_ATOM}(?:{_GREEK_SEP}{_GREEK_ATOM})*-?")
 
 
+# The starter modules mark transliteration ⟨like this⟩. The brackets are mirrored
+# characters, so they point outward only while the preceding strong character is
+# left-to-right. Isolating the Greek beside them takes that context away and they
+# render reversed, so the transliteration needs isolating too.
+_TRANSLIT_RUN_RE = re.compile("⟨[^⟨⟩]*⟩")
+
+
 _HTML_TAG_SPLIT_RE = re.compile(r"(<[^>]*>)")
 
 
-def wrap_greek_runs_in_html(html: str) -> str:
+# A cell holding only Greek, transliteration or a Latin citation is an LTR block,
+# not an LTR run: isolating the text fixes its word order but leaves the cell
+# aligned against the right edge with its final period on the wrong side.
+_TABLE_CELL_RE = re.compile(r"<(td|th)([^>]*)>(.*?)</\1>", re.DOTALL)
+_ANY_TAG_RE = re.compile(r"<[^>]*>")
+_ARABIC_RE = re.compile("[؀-ۿݐ-ݿﭐ-﷿ﹰ-﻿]")
+# Latin here has to reach past ASCII: the transliteration writes macrons and
+# acutes (ē, ō, ḗ), and the pronunciation column is IPA, so a cell holding only
+# those would otherwise be left in the RTL flow.
+_LTR_LETTER_RE = re.compile(f"[{_GREEK_LETTER}A-Za-zÀ-ʯḀ-ỿ]")
+
+
+def _ltr_table_cells(html: str) -> str:
+    def flip(match: re.Match) -> str:
+        tag, attrs, inner = match.group(1), match.group(2), match.group(3)
+        text = _ANY_TAG_RE.sub("", inner)
+        if _ARABIC_RE.search(text) or not _LTR_LETTER_RE.search(text):
+            return match.group(0)
+        return f'<{tag}{attrs} dir="ltr">{inner}</{tag}>'
+
+    return _TABLE_CELL_RE.sub(flip, html)
+
+
+def wrap_ltr_runs_in_html(html: str) -> str:
+    # Cells first, while their contents are still plain text.
+    html = _ltr_table_cells(html)
     # Text nodes only. Heading ids and the links to them are slugged from the
     # heading text, so Greek does reach markup, and wrapping it there would break
     # the attribute.
     parts = _HTML_TAG_SPLIT_RE.split(html)
     for index in range(0, len(parts), 2):
-        parts[index] = _GREEK_RUN_RE.sub(
+        text = _GREEK_RUN_RE.sub(
             lambda match: f'<bdi lang="grc" dir="ltr">{match.group(0)}</bdi>',
             parts[index],
+        )
+        parts[index] = _TRANSLIT_RUN_RE.sub(
+            lambda match: f'<bdi dir="ltr">{match.group(0)}</bdi>',
+            text,
         )
     return "".join(parts)
 
@@ -940,6 +976,16 @@ def _ltr_isolate(text: str, rtl: bool) -> str:
     if not rtl:
         return text
     return f'<span lang="grc" dir="ltr">{text}</span>'
+
+
+def _ltr_block(lines: list[str], rtl: bool) -> list[str]:
+    # Greek-only lines are their own LTR island. Isolating the text fixes word
+    # order but leaves the block against the right margin with its list markers
+    # there too. Blank lines inside keep GitHub and md_in_html parsing the
+    # markdown within, as on the title page.
+    if not rtl:
+        return lines
+    return ['<div class="ltr-block" dir="ltr" markdown="1">', "", *lines, "", "</div>", ""]
 
 
 def _citation_suffix(row: Mapping[str, Any], rtl: bool) -> str:
@@ -2296,8 +2342,11 @@ def _format_exercise_nonverb(
         t(prompt_key, lang, pos_label=pos_label),
         "",
     ]
-    for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
-        lines.append(f"{idx}. {_ltr_isolate(str(row['sentence_text']), rtl)}{_citation_suffix(row, rtl)}")
+    items = [
+        f"{idx}. {_ltr_isolate(str(row['sentence_text']), rtl)}{_citation_suffix(row, rtl)}"
+        for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1)
+    ]
+    lines += _ltr_block(items, rtl)
     lines.append("")
     lines.append(f"#### {t('tb_answer_key_header', lang)}")
     lines.append("")
@@ -2323,13 +2372,15 @@ def _format_exercise_verb(
         "",
     ]
 
+    items = []
     for idx, (_, row) in enumerate(exercise_sentences.iterrows(), 1):
         sentence_rows = sentence_verb_rows.get(row["sentence_index"])
         forms = set()
         if sentence_rows is not None and not sentence_rows.empty:
             forms = set(sentence_rows["form"].tolist())
         marked = mark_topic_words_in_sentence(row["sentence_text"], forms)
-        lines.append(f"{idx}. {_ltr_isolate(marked, rtl)}{_citation_suffix(row, rtl)}")
+        items.append(f"{idx}. {_ltr_isolate(marked, rtl)}{_citation_suffix(row, rtl)}")
+    lines += _ltr_block(items, rtl)
 
     lines.append("")
     lines.append(f"#### {t('tb_answer_key_header', lang)}")
@@ -2658,7 +2709,7 @@ def _render_title_page(lang: str, source_summary: Mapping[str, Any] | None = Non
 
 def format_passage_appendix(passages: list[dict], lang: str = DEFAULT_LANG) -> str:
     # The passages themselves. Greek is LTR-isolated here rather than left to the
-    # HTML export, because wrap_greek_runs_in_html only runs on that path and the
+    # HTML export, because wrap_ltr_runs_in_html only runs on that path and the
     # markdown download would otherwise reorder the words on an RTL page.
     rtl = is_rtl(lang)
     lines = [t("tb_passages_intro", lang), ""]
@@ -2671,7 +2722,7 @@ def format_passage_appendix(passages: list[dict], lang: str = DEFAULT_LANG) -> s
             heading = str(number)
         lines.append(f"## {heading}")
         lines.append("")
-        lines.append(_ltr_isolate(passage["text"], rtl))
+        lines += _ltr_block([_ltr_isolate(passage["text"], rtl)], rtl)
         lines.append("")
 
     return "\n".join(lines).rstrip()
@@ -3060,7 +3111,7 @@ def generate_textbook_html(
     )
 
     if rtl:
-        body_html = wrap_greek_runs_in_html(body_html)
+        body_html = wrap_ltr_runs_in_html(body_html)
 
     dir_attr = "rtl" if rtl else "ltr"
     rtl_font_link = ""
@@ -3078,6 +3129,13 @@ def generate_textbook_html(
         pre, code {
             direction: ltr;
             text-align: left;
+        }
+        /* Greek-only blocks and cells are their own LTR island. */
+        .ltr-block, td[dir="ltr"], th[dir="ltr"] {
+            text-align: left;
+        }
+        .ltr-block ol, .ltr-block ul {
+            padding-inline-start: 1.5rem;
         }
 """
 

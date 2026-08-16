@@ -6,8 +6,8 @@
 
 A single Greek verb form carries a great deal of information at once — who is acting, how many of them, when, in what manner, and whether they act or are acted upon. All of it sits in one word, in the stem and the ending:
 
-- παιδεύομεν *paideúomen* = "we are educating" (who: *we*; when/how: *ongoing present*; voice: *active*)
-- ἐπαιδεύθης *epaideúthēs* = "you were educated" (*you*, *past, single event*, *passive*)
+- παιδεύομεν ⟨paideúomen⟩ = "we are educating" (who: *we*; when/how: *ongoing present*; voice: *active*)
+- ἐπαιδεύθης ⟨epaideúthēs⟩ = "you were educated" (*you*, *past, single event*, *passive*)
 
 Every finite verb form encodes five things: **person**, **number**, **tense/aspect**, **voice**, and **mood**.
 
@@ -21,7 +21,7 @@ Every finite verb form encodes five things: **person**, **number**, **tense/aspe
 | 2nd | you (sg.) | you (pl.) |
 | 3rd | he/she/it | they |
 
-Because the ending shows the person, subject pronouns are usually omitted: λέγω *légō* by itself means "I speak." (There is also a rare dual for pairs.)
+Because the ending shows the person, subject pronouns are usually omitted: λέγω ⟨légō⟩ by itself means "I speak." (There is also a rare dual for pairs.)
 
 ### Tense — Really Aspect
 
@@ -42,11 +42,11 @@ That matters because outside the indicative mood — in infinitives, commands, s
 
 ### Voice
 
-- **Active**: the subject acts — λύω *lýō* "I loosen"
-- **Middle**: the subject acts on/for itself or with self-involvement — λύομαι *lýomai* "I ransom (get someone freed for myself)"
-- **Passive**: the subject is acted upon — λύομαι *lýomai* "I am being loosened"
+- **Active**: the subject acts — λύω ⟨lýō⟩ "I loosen"
+- **Middle**: the subject acts on/for itself or with self-involvement — λύομαι ⟨lýomai⟩ "I ransom (get someone freed for myself)"
+- **Passive**: the subject is acted upon — λύομαι ⟨lýomai⟩ "I am being loosened"
 
-Middle and passive are worth stating precisely, because the imprecise version wastes time: **their forms are identical everywhere except the future and the aorist.** In those two tenses, and only there, Greek has a distinct passive; everywhere else λύομαι *lýomai* is both "I ransom" and "I am being loosened", and the context decides. That is why the lesson titles in this book pair them — *middle/passive* — in most tenses and separate them in the aorist and future.
+Middle and passive are worth stating precisely, because the imprecise version wastes time: **their forms are identical everywhere except the future and the aorist.** In those two tenses, and only there, Greek has a distinct passive; everywhere else λύομαι ⟨lýomai⟩ is both "I ransom" and "I am being loosened", and the context decides. That is why the lesson titles in this book pair them — *middle/passive* — in most tenses and separate them in the aorist and future.
 
 ### Mood
 
@@ -57,7 +57,7 @@ Middle and passive are worth stating precisely, because the imprecise version wa
 | Optative | wish, remote possibility | λύοι "may he loosen!" | lýoi |
 | Imperative | command | λῦε "loosen!" | lŷe |
 
-Two further verb forms behave like nouns and adjectives: the **infinitive** (λύειν *lýein* "to loosen") and the **participle** (λύων *lýōn* "loosening"), both of which Greek uses with great freedom, often building whole subordinate clauses around a single participle.
+Two further verb forms behave like nouns and adjectives: the **infinitive** (λύειν ⟨lýein⟩ "to loosen") and the **participle** (λύων ⟨lýōn⟩ "loosening"), both of which Greek uses with great freedom, often building whole subordinate clauses around a single participle.
 
 ### One encouraging fact
 
@@ -69,9 +69,9 @@ A typical form assembles like this:
 
 **(augment or reduplication) + stem + (thematic vowel) + tense marker + ending**
 
-- ἐ-παίδευ-σα-μεν *e-paídeu-sa-men* "we educated": augment ἐ- *e-*, stem παιδευ- *paideu-*, aorist marker -σα- *-sa-*, ending -μεν *-men* (1st plural).
-- λύ-ο-μεν *lý-o-men* "we loosen": stem λυ- *ly-*, thematic vowel -ο- *-o-*, ending -μεν *-men*. No augment, because this is not a past tense.
-- λέ-λυ-κα *lé-ly-ka* "I have loosened": **reduplication** λε- *le-* — the stem's first consonant repeated with ε — marking the perfect, then stem, tense marker and ending.
+- ἐ-παίδευ-σα-μεν ⟨e-paídeu-sa-men⟩ "we educated": augment ἐ- ⟨e-⟩, stem παιδευ- ⟨paideu-⟩, aorist marker -σα- ⟨-sa-⟩, ending -μεν ⟨-men⟩ (1st plural).
+- λύ-ο-μεν ⟨lý-o-men⟩ "we loosen": stem λυ- ⟨ly-⟩, thematic vowel -ο- ⟨-o-⟩, ending -μεν ⟨-men⟩. No augment, because this is not a past tense.
+- λέ-λυ-κα ⟨lé-ly-ka⟩ "I have loosened": **reduplication** λε- ⟨le-⟩ — the stem's first consonant repeated with ε — marking the perfect, then stem, tense marker and ending.
 
 Not every slot is filled in every form; the μι-verbs of §4 skip the thematic vowel entirely. But the order never changes, and knowing it means you can take a form apart from either end.
 
@@ -79,11 +79,11 @@ Not every slot is filled in every form; the μι-verbs of §4 skip the thematic 
 
 Greek verbs fall into two families, and every verb lesson in this book is labelled with the one it belongs to, so it is worth knowing the difference now. The families are named after the ending of the form a dictionary lists — the 1st person singular present.
 
-**ω-verbs** (also called *thematic*) are the overwhelming majority. Between the stem and the ending they insert a short connecting vowel, ο or ε, called the **thematic vowel**: λύ-ο-μεν *lý-o-men* "we loosen", λύ-ε-τε *lý-e-te* "you loosen". The dictionary form ends in **-ω**: λύω *lýō*, παιδεύω *paideúō*, γράφω *gráphō*.
+**ω-verbs** (also called *thematic*) are the overwhelming majority. Between the stem and the ending they insert a short connecting vowel, ο or ε, called the **thematic vowel**: λύ-ο-μεν ⟨lý-o-men⟩ "we loosen", λύ-ε-τε ⟨lý-e-te⟩ "you loosen". The dictionary form ends in **-ω**: λύω ⟨lýō⟩, παιδεύω ⟨paideúō⟩, γράφω ⟨gráphō⟩.
 
-**μι-verbs** (also called *athematic*) are a small closed group, but they include some of the most frequent verbs in the language — εἰμί *eimí* "I am", δίδωμι *dídōmi* "I give", τίθημι *títhēmi* "I put", ἵστημι *hístēmi* "I set". They attach the ending directly to the stem with no connecting vowel, and the stem itself often alternates between a long and a short vowel: δίδω-μι *dídō-mi* against δίδο-μεν *dído-men*. The dictionary form ends in **-μι**.
+**μι-verbs** (also called *athematic*) are a small closed group, but they include some of the most frequent verbs in the language — εἰμί ⟨eimí⟩ "I am", δίδωμι ⟨dídōmi⟩ "I give", τίθημι ⟨títhēmi⟩ "I put", ἵστημι ⟨hístēmi⟩ "I set". They attach the ending directly to the stem with no connecting vowel, and the stem itself often alternates between a long and a short vowel: δίδω-μι ⟨dídō-mi⟩ against δίδο-μεν ⟨dído-men⟩. The dictionary form ends in **-μι**.
 
-Two things follow. First, the difference is confined to certain tenses — mainly the present and imperfect, and the aorist of a few verbs; elsewhere μι-verbs behave much like everyone else. Second, because μι-verbs are both irregular and extremely common, a frequency-driven book reaches them early, which is why you will see lessons marked **(mi)** alongside the much larger number marked **(w)**.
+Two things follow. First, the difference is confined to certain tenses — mainly the present and imperfect, and the aorist of a few verbs; elsewhere μι-verbs behave much like everyone else. Second, because μι-verbs are both irregular and extremely common, a frequency-driven book reaches them early, which is why you will see lessons marked *(mi)* alongside the much larger number marked *(w)*.
 
 ### Contract verbs, a subgroup of the ω-verbs
 
@@ -91,23 +91,23 @@ One group of ω-verbs needs flagging now, because it is very large and because i
 
 | Uncontracted (as the dictionary lists it) | Contracted (as the text shows it) | Meaning |
 |---|---|---|
-| φιλέ-ω *philé-ō* | **φιλῶ** *philô* | "I love" |
-| ὁρά-ω *horá-ō* | **ὁρῶ** *horô*, 3rd sg. **ὁρᾷ** *horâi* | "I see" |
-| δηλό-ω *dēló-ō* | **δηλῶ** *dēlô* | "I make clear" |
+| φιλέ-ω ⟨philé-ō⟩ | **φιλῶ** ⟨philô⟩ | "I love" |
+| ὁρά-ω ⟨horá-ō⟩ | **ὁρῶ** ⟨horô⟩, 3rd sg. **ὁρᾷ** ⟨horâi⟩ | "I see" |
+| δηλό-ω ⟨dēló-ō⟩ | **δηλῶ** ⟨dēlô⟩ | "I make clear" |
 
 Two practical consequences. **In reading**, a circumflex on the ending of a present-tense verb is a good clue that you are looking at a contract verb rather than an unfamiliar one. **In looking words up**, the lexicon's headword is the *uncontracted* form, which is not what you saw in the text: ὁρᾷ has to be turned back into ὁράω before it can be found.
 
 Contract verbs are entirely regular once the contraction rules are known, and they get their own lessons. For now, recognize the shape.
 
-> **None of this section is to be learned now.** Two conjugations, a thematic vowel, a closed group of athematic verbs and a large group of contracted ones, all in a couple of pages — it is a lot, and it is meant only to make the lesson labels legible. When a lesson is marked **(w)** or **(mi)**, you now know what it is telling you. How a μι-verb actually goes, and how a contraction actually works, arrive one lesson at a time, and every one of those lessons assumes you are meeting the forms for the first time.
+> **None of this section is to be learned now.** Two conjugations, a thematic vowel, a closed group of athematic verbs and a large group of contracted ones, all in a couple of pages — it is a lot, and it is meant only to make the lesson labels legible. When a lesson is marked *(w)* or *(mi)*, you now know what it is telling you. How a μι-verb actually goes, and how a contraction actually works, arrive one lesson at a time, and every one of those lessons assumes you are meeting the forms for the first time.
 
 ## 5. Historical Development
 
 Your reading passages may come from texts written centuries apart, so some forms will not match the paradigm. Three shifts affect the verb system in particular, and they are worth knowing before you start:
 
-- **The optative fades.** Common and supple in Homer and Classical Attic, it declines sharply in the Hellenistic period and is nearly gone from the New Testament, surviving mostly in the fixed phrase μὴ γένοιτο *mḕ génoito* "may it not be so."
+- **The optative fades.** Common and supple in Homer and Classical Attic, it declines sharply in the Hellenistic period and is nearly gone from the New Testament, surviving mostly in the fixed phrase μὴ γένοιτο ⟨mḕ génoito⟩ "may it not be so."
 - **The perfect merges with the aorist.** Classical Greek keeps them distinct — the aorist reports an event, the perfect a state that still holds. In Koine that distinction erodes and the perfect drifts toward being a plain past tense.
-- **The infinitive gives way to ἵνα *hína* clauses**, the beginning of a change that Modern Greek completed.
+- **The infinitive gives way to ἵνα ⟨hína⟩ clauses**, the beginning of a change that Modern Greek completed.
 
 Every verb lesson has a **Historical Development** section covering its own slot.
 
@@ -122,13 +122,13 @@ Every verb lesson has a **Historical Development** section covering its own slot
 ### Parsing
 
 
-Give the person, number, tense, voice and mood of each form. All of them are built from λύω *lýō* "loosen" or παιδεύω *paideúō* "educate", and all have appeared above.
+Give the person, number, tense, voice and mood of each form. All of them are built from λύω ⟨lýō⟩ "loosen" or παιδεύω ⟨paideúō⟩ "educate", and all have appeared above.
 
-1. παιδεύομεν *paideúomen*
-2. ἐπαιδεύθης *epaideúthēs*
-3. λύῃ *lýēi* (in ἵνα λύῃ *hína lýēi*)
-4. λῦε *lŷe*
-5. λέλυκα *lélyka*
+1. παιδεύομεν ⟨paideúomen⟩
+2. ἐπαιδεύθης ⟨epaideúthēs⟩
+3. λύῃ ⟨lýēi⟩ (in ἵνα λύῃ ⟨hína lýēi⟩)
+4. λῦε ⟨lŷe⟩
+5. λέλυκα ⟨lélyka⟩
 
 #### Answer Key
 

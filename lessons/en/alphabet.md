@@ -33,12 +33,12 @@ The Ancient Greek alphabet has **24 letters**. Each has a name, an uppercase and
 
 Two writing rules to notice immediately:
 
-- **Final sigma:** σ is written **ς** at the end of a word: σοφός *sophós* "wise".
-- **Gamma before velars:** γ before γ, κ, χ, ξ is pronounced **/ŋ/** — a nasal made at the back of the mouth, in the same position as κ, rather than the ordinary /g/: ἄγγελος "messenger" = *angelos*.
+- **Final sigma:** σ is written **ς** at the end of a word: σοφός ⟨sophós⟩ "wise".
+- **Gamma before velars:** γ before γ, κ, χ, ξ is pronounced **/ŋ/** — a nasal made at the back of the mouth, in the same position as κ, rather than the ordinary /g/: ἄγγελος "messenger" = ⟨angelos⟩.
 
 > The aspirated stops θ, φ, χ were pronounced in the Classical period as **/tʰ/, /pʰ/, /kʰ/** — τ, π, κ released **with a puff of air** after them. Their fricative pronunciations **/θ/, /f/, /x/** developed later; you will hear both conventions in classrooms.
 
-**One note on the transliteration column**, since this book uses it throughout the opening modules: **υ is written *y* when it stands alone and *u* inside a diphthong.** So ψυχή is *psychḗ* but αὐτός is *autós* — the same letter, transliterated two ways, because *au* is the readable spelling of the diphthong and *y* is the readable spelling of the vowel.
+**Two notes on transliteration**, since this book uses it throughout the opening modules. First, outside this column a transliteration is written in angle brackets — σοφός ⟨sophós⟩ — so that it never has to be told apart from the Greek beside it by guesswork; slashes mean a sound rather than a spelling, so /h/ is what you hear and ⟨h⟩ is what you write. Second: **υ is written ⟨y⟩ when it stands alone and ⟨u⟩ inside a diphthong.** So ψυχή is ⟨psychḗ⟩ but αὐτός is ⟨autós⟩ — the same letter, transliterated two ways, because ⟨au⟩ is the readable spelling of the diphthong and ⟨y⟩ is the readable spelling of the vowel.
 
 **Which pronunciation should you use?** The table above gives the reconstructed Classical one, and it is the one this book uses: it keeps vowel length as real duration, which is what verse scans on. You will also meet **Modern Greek** pronunciation, used by most Greeks and by some teachers — authentic to a later stage of the same language, but it merges vowels the Classical spelling distinguishes (η, ι, υ, ει and οι all become /i/), which makes spelling harder to learn. Pick one and be consistent; the point is to have a sound in your head for every word, not to be archaeologically perfect.
 
@@ -53,7 +53,7 @@ To type Greek, install a **polytonic** keyboard layout — the ordinary modern G
 - For α, ι, υ, the length is a property of each word and is not normally marked in writing. Textbooks sometimes add a macron (ᾱ, ῑ, ῡ) to show a long vowel.
 - A **circumflex accent** (ᾶ, ῆ, ῶ, etc.) can stand only on a long vowel or diphthong — so a circumflex always signals length.
 
-Length is not a decorative detail. It decides **where an accent may fall**, which is why two words spelled with the same letters can be accented differently; it decides **how a line of verse scans**, so it is the whole basis of reading Homer or tragedy aloud; and it occasionally distinguishes grammar outright — a final -ᾱ *(-ā)* and a final -ᾰ *(-a)* are the same letter on the page, but the long one ends a first-declension singular like χώρᾱ *chṓrā* "land" and the short one ends a neuter plural like ἔργᾰ *érga* "deeds". Note the length when you learn a word.
+Length is not a decorative detail. It decides **where an accent may fall**, which is why two words spelled with the same letters can be accented differently; it decides **how a line of verse scans**, so it is the whole basis of reading Homer or tragedy aloud; and it occasionally distinguishes grammar outright — a final -ᾱ ⟨-ā⟩ and a final -ᾰ ⟨-a⟩ are the same letter on the page, but the long one ends a first-declension singular like χώρᾱ ⟨chṓrā⟩ "land" and the short one ends a neuter plural like ἔργᾰ ⟨érga⟩ "deeds". Note the length when you learn a word.
 
 ## 3. Diphthongs
 
@@ -73,19 +73,19 @@ A diphthong is two vowels pronounced as one syllable; the second is always **ι*
 
 The last of these is worth a glance now even though it is not Attic: **ωυ** is an Ionic spelling, and if your corpus contains Herodotus you will meet it constantly.
 
-**Long-vowel diphthongs with iota:** when ι follows a long ᾱ, η, or ω, it is written *under* the letter — the **iota subscript**: ᾳ, ῃ, ῳ (*āi, ēi, ōi*) — as in τῇ χώρᾳ *têi chṓrāi* "in the land". With capitals it is written on the line instead (adscript): ΤΗΙ ΧΩΡΑΙ *TĒI CHŌRĀI*. The subscript iota was probably no longer pronounced in the Classical period, but it must always be written — it often carries grammatical information (e.g., it marks the dative).
+**Long-vowel diphthongs with iota:** when ι follows a long ᾱ, η, or ω, it is written *under* the letter — the **iota subscript**: ᾳ, ῃ, ῳ ⟨āi, ēi, ōi⟩ — as in τῇ χώρᾳ ⟨têi chṓrāi⟩ "in the land". With capitals it is written on the line instead (adscript): ΤΗΙ ΧΩΡΑΙ ⟨TĒI CHŌRĀI⟩. The subscript iota was probably no longer pronounced in the Classical period, but it must always be written — it often carries grammatical information (e.g., it marks the dative).
 
 ## 4. Breathings
 
 Every word that begins with a vowel (or ρ) carries a **breathing mark**:
 
-- **Rough breathing** ( ῾ ) = an *h*-sound before the vowel: ἵππος *híppos* "horse", ὁ *ho* "the".
-- **Smooth breathing** ( ᾿ ) = no *h*-sound: ἐγώ *egṓ* "I".
-- Initial ρ always takes rough breathing: ῥήτωρ *rhḗtōr* "orator".
-- **Initial υ always takes rough breathing** too: ὕδωρ *hýdōr* "water", ὑπό *hypó* "under", ὑμεῖς *hymeîs* "you (pl.)". A word beginning with υ therefore begins with *h*, without exception worth worrying about — one free piece of information every time.
-- On diphthongs the breathing sits on the **second** vowel: αἱ, οὐ, εἰ (*hai, ou, ei*).
+- **Rough breathing** ( ῾ ) = an /h/-sound before the vowel: ἵππος ⟨híppos⟩ "horse", ὁ ⟨ho⟩ "the".
+- **Smooth breathing** ( ᾿ ) = no /h/-sound: ἐγώ ⟨egṓ⟩ "I".
+- Initial ρ always takes rough breathing: ῥήτωρ ⟨rhḗtōr⟩ "orator".
+- **Initial υ always takes rough breathing** too: ὕδωρ ⟨hýdōr⟩ "water", ὑπό ⟨hypó⟩ "under", ὑμεῖς ⟨hymeîs⟩ "you (pl.)". A word beginning with υ therefore begins with /h/, without exception worth worrying about — one free piece of information every time.
+- On diphthongs the breathing sits on the **second** vowel: αἱ, οὐ, εἰ ⟨hai, ou, ei⟩.
 
-The two marks look similar — read carefully: ὅρος *hóros* "boundary" begins with *h*, ὄρος *óros* "mountain" does not.
+The two marks look similar — read carefully: ὅρος ⟨hóros⟩ "boundary" begins with /h/, ὄρος ⟨óros⟩ "mountain" does not.
 
 ## 5. Accents
 
@@ -97,15 +97,15 @@ Almost every Greek word carries one accent, on one of its last three syllables:
 | Grave | ` | replaces a final acute inside a sentence: τὸν ἄνθρωπον | tòn ánthrōpon |
 | Circumflex | ῀ | δῶρον (long vowels/diphthongs only) | dôron |
 
-In the Classical period the accent was musical (a change of pitch); today it is usually read as stress. For now: **copy accents faithfully** — they occasionally distinguish words (εἰμί *eimí* "I am" vs. εἶμι *eîmi* "I will go") — but do not let them slow down your reading.
+In the Classical period the accent was musical (a change of pitch); today it is usually read as stress. For now: **copy accents faithfully** — they occasionally distinguish words (εἰμί ⟨eimí⟩ "I am" vs. εἶμι ⟨eîmi⟩ "I will go") — but do not let them slow down your reading.
 
 ### Words with no accent, and words with two
 
 The rule "almost every word carries one accent" has two exceptions, and both are visible on the page from your first sentence.
 
-**Proclitics** have no accent of their own and lean forward onto the word after them. They are few and very common: the article forms **ὁ, ἡ, οἱ, αἱ** (*ho, hē, hoi, hai*), the prepositions **ἐν, εἰς, ἐκ/ἐξ** (*en, eis, ek/ex*), the negative **οὐ** (*ou*), and **ὡς** (*hōs*). When you meet the article and notice that some of its forms are bare while the rest are accented, this is why.
+**Proclitics** have no accent of their own and lean forward onto the word after them. They are few and very common: the article forms **ὁ, ἡ, οἱ, αἱ** ⟨ho, hē, hoi, hai⟩, the prepositions **ἐν, εἰς, ἐκ/ἐξ** ⟨en, eis, ek/ex⟩, the negative **οὐ** ⟨ou⟩, and **ὡς** ⟨hōs⟩. When you meet the article and notice that some of its forms are bare while the rest are accented, this is why.
 
-**Enclitics** have no accent of their own either, but they lean *backwards* onto the word before them — and in doing so they often throw an extra accent onto it. That is why you will see words apparently carrying two accents: ἄνθρωπός τις *ánthrōpós tis* "a certain man", where the second accent on ἄνθρωπος belongs to τις. The commonest enclitics include the indefinite τις/τι *(tis/ti)* "some, any", the present of εἰμί *(eimí)* "be" (except the 2nd singular εἶ), the unemphatic pronouns μου, μοι, με *(mou, moi, me)*, and the particles γε, τε, περ *(ge, te, per)*.
+**Enclitics** have no accent of their own either, but they lean *backwards* onto the word before them — and in doing so they often throw an extra accent onto it. That is why you will see words apparently carrying two accents: ἄνθρωπός τις ⟨ánthrōpós tis⟩ "a certain man", where the second accent on ἄνθρωπος belongs to τις. The commonest enclitics include the indefinite τις/τι ⟨tis/ti⟩ "some, any", the present of εἰμί ⟨eimí⟩ "be" (except the 2nd singular εἶ), the unemphatic pronouns μου, μοι, με ⟨mou, moi, me⟩, and the particles γε, τε, περ ⟨ge, te, per⟩.
 
 Neither group needs memorizing now. What you need is the recognition: **a word with no accent, or a word with two, is not a misprint.**
 
@@ -117,27 +117,27 @@ Greek words do not always appear in the shape the dictionary gives them. Three h
 
 | Written | Transliteration | Stands for |
 |---|---|---|
-| δ' | *d'* | δέ *dé* "and, but" |
-| ἀλλ' | *all'* | ἀλλά *allá* "but" |
-| ἀπ' ἐμοῦ | *ap' emoû* | ἀπό *apó* "from" |
-| οὐδ' | *oud'* | οὐδέ *oudé* "and not" |
+| δ' | d' | δέ ⟨dé⟩ "and, but" |
+| ἀλλ' | all' | ἀλλά ⟨allá⟩ "but" |
+| ἀπ' ἐμοῦ | ap' emoû | ἀπό ⟨apó⟩ "from" |
+| οὐδ' | oud' | οὐδέ ⟨oudé⟩ "and not" |
 
-One wrinkle: if the following word has a **rough** breathing, a π or τ exposed by the elision is aspirated to match — ἀπό + ἡμῶν becomes **ἀφ' ἡμῶν** *aph' hēmôn* "from us", and ἐπί + ᾧ becomes **ἐφ' ᾧ** *eph' hôi*. So ἀφ' and ἐφ' are not separate words; they are ἀπό and ἐπί in front of an *h*.
+One wrinkle: if the following word has a **rough** breathing, a π or τ exposed by the elision is aspirated to match — ἀπό + ἡμῶν becomes **ἀφ' ἡμῶν** ⟨aph' hēmôn⟩ "from us", and ἐπί + ᾧ becomes **ἐφ' ᾧ** ⟨eph' hôi⟩. So ἀφ' and ἐφ' are not separate words; they are ἀπό and ἐπί in front of an /h/.
 
 **Crasis.** Sometimes a word and the one after it merge outright, and the merger is marked by a **coronis** — a mark identical to a smooth breathing, sitting on the fused vowel:
 
-- καὶ ἐγώ → **κἀγώ** *kagṓ* "and I"
-- τὰ ἄλλα → **τἆλλα** *tâlla* "the rest"
-- καὶ εἶτα → **κᾆτα** *kâita* "and then"
+- καὶ ἐγώ → **κἀγώ** ⟨kagṓ⟩ "and I"
+- τὰ ἄλλα → **τἆλλα** ⟨tâlla⟩ "the rest"
+- καὶ εἶτα → **κᾆτα** ⟨kâita⟩ "and then"
 
 If a word seems to begin with a breathing mark in an impossible place, it is a coronis, and the word is two words.
 
 **Movable consonants.** Some endings grow an extra letter before a vowel (or at a pause) and lose it otherwise. The commonest is **movable nu**:
 
-- ἐστί / **ἐστίν** *(estí / estín)* "he is"
-- λέγουσι / **λέγουσιν** *(légousi / légousin)* "they say"
+- ἐστί / **ἐστίν** ⟨estí / estín⟩ "he is"
+- λέγουσι / **λέγουσιν** ⟨légousi / légousin⟩ "they say"
 
-The same thing happens with οὕτω / **οὕτως** *(hoútō / hoútōs)* "thus" and with the preposition ἐκ, which becomes **ἐξ** *(ex)* before a vowel. None of it changes the meaning or the grammar. **Ignore the extra letter when identifying a form** — λέγουσιν parses exactly as λέγουσι does.
+The same thing happens with οὕτω / **οὕτως** ⟨hoútō / hoútōs⟩ "thus" and with the preposition ἐκ, which becomes **ἐξ** ⟨ex⟩ before a vowel. None of it changes the meaning or the grammar. **Ignore the extra letter when identifying a form** — λέγουσιν parses exactly as λέγουσι does.
 
 ## 7. Historical Development
 
@@ -152,11 +152,11 @@ The same thing happens with οὕτω / **οὕτως** *(hoútō / hoútōs)* "
 
 So a Classical Athenian reading Plato saw an unbroken line of capitals with no accents and no word division. Every accent, breathing, comma and space in your text was supplied by an editor.
 
-**The lost letter.** Greek once had a letter **Ϝ** (digamma), pronounced **/w/** — the semivowel corresponding to the vowel υ, as ι corresponds to /j/. It had disappeared from Attic and Ionic before our texts were written, but it was still there when the Homeric poems were composed, and its ghost affects the metre: a word such as ἔργον *érgon* (originally ϝέργον *wérgon*) or οἶνος *oînos* (ϝοῖνος *woînos*) sometimes behaves in Homer's verse as though it still began with a consonant. If a Homeric line seems not to scan, a vanished digamma is a common reason.
+**The lost letter.** Greek once had a letter **Ϝ** (digamma), pronounced **/w/** — the semivowel corresponding to the vowel υ, as ι corresponds to /j/. It had disappeared from Attic and Ionic before our texts were written, but it was still there when the Homeric poems were composed, and its ghost affects the metre: a word such as ἔργον ⟨érgon⟩ (originally ϝέργον ⟨wérgon⟩) or οἶνος ⟨oînos⟩ (ϝοῖνος ⟨woînos⟩) sometimes behaves in Homer's verse as though it still began with a consonant. If a Homeric line seems not to scan, a vanished digamma is a common reason.
 
-**The sound values drifted too.** By the Koine period several vowels and diphthongs that were once distinct had converged on the same *i* sound — ι, η, ει and οι (*i, ē, ei, oi*) all heading toward /i/, a change called **iotacism**. This is why New Testament manuscripts so often disagree over exactly these spellings: scribes were writing what they heard, and what they heard no longer distinguished them.
+**The sound values drifted too.** By the Koine period several vowels and diphthongs that were once distinct had converged on the same /i/ sound — ι, η, ει and οι ⟨i, ē, ei, oi⟩ all heading toward /i/, a change called **iotacism**. This is why New Testament manuscripts so often disagree over exactly these spellings: scribes were writing what they heard, and what they heard no longer distinguished them.
 
-This section is about the letters themselves. The Greek *written with* them also varies from dialect to dialect — Attic θάλαττα *thálatta* against Ionic and Koine θάλασσα *thálassa*, and much else — but that belongs to the dialects module.
+This section is about the letters themselves. The Greek *written with* them also varies from dialect to dialect — Attic θάλαττα ⟨thálatta⟩ against Ionic and Koine θάλασσα ⟨thálassa⟩, and much else — but that belongs to the dialects module.
 
 ## Exercises
 ### Reading Aloud
@@ -173,12 +173,12 @@ Sound each word out and write its transliteration before checking the key. Cover
 
 #### Answer Key
 
-1. *ánthrōpos* — "human being". The initial α takes a smooth breathing, so no *h*.
-2. *theós* — "god". θ is an aspirated *t*, not English *th*.
-3. *psychḗ* — "soul". ψ is a single letter, /ps/; υ standing alone is *y*.
-4. *xénos* — "stranger, guest". ξ is a single letter, /ks/.
-5. *ōidḗ* — "song". The iota subscript under ω is written but not pronounced.
-6. *ángelos* — "messenger". γ before γ is /ŋ/, not /g/ — hence *ng*, not *gg*.
+1. ⟨ánthrōpos⟩ — "human being". The initial α takes a smooth breathing, so no /h/.
+2. ⟨theós⟩ — "god". θ is an aspirated /t/, not English ⟨th⟩.
+3. ⟨psychḗ⟩ — "soul". ψ is a single letter, /ps/; υ standing alone is ⟨y⟩.
+4. ⟨xénos⟩ — "stranger, guest". ξ is a single letter, /ks/.
+5. ⟨ōidḗ⟩ — "song". The iota subscript under ω is written but not pronounced.
+6. ⟨ángelos⟩ — "messenger". γ before γ is /ŋ/, not /g/ — hence ⟨ng⟩, not ⟨gg⟩.
 
 ### Telling Breathings Apart
 
@@ -190,8 +190,8 @@ Each pair differs in one mark. Say what the difference is and what it does to th
 
 #### Answer Key
 
-1. ὅρος *hóros* "boundary" has a rough breathing and begins with *h*; ὄρος *óros* "mountain" has a smooth breathing and does not.
-2. Same distinction on a diphthong, where the breathing sits on the second vowel: αὑτοῦ *hautoû* begins with *h*, αὐτοῦ *autoû* does not.
+1. ὅρος ⟨hóros⟩ "boundary" has a rough breathing and begins with /h/; ὄρος ⟨óros⟩ "mountain" has a smooth breathing and does not.
+2. Same distinction on a diphthong, where the breathing sits on the second vowel: αὑτοῦ ⟨hautoû⟩ begins with /h/, αὐτοῦ ⟨autoû⟩ does not.
 
 ### What Happened to This Word?
 
@@ -204,7 +204,7 @@ Each of these is a shape you will meet in the first text you read. Name what has
 
 #### Answer Key
 
-1. Elision: δέ *dé* "and, but", with its short final vowel dropped before a following vowel.
-2. Elision plus aspiration: ἀπό *apó* "from" + ἡμῶν *hēmôn* "us". The π became φ because the next word carries a rough breathing.
-3. Crasis: καὶ ἐγώ *kaì egṓ* "and I", fused into one word and marked with a coronis.
-4. Movable nu on λέγουσι *légousi* "they say". Nothing has changed grammatically; the ν is there because a vowel or a pause follows.
+1. Elision: δέ ⟨dé⟩ "and, but", with its short final vowel dropped before a following vowel.
+2. Elision plus aspiration: ἀπό ⟨apó⟩ "from" + ἡμῶν ⟨hēmôn⟩ "us". The π became φ because the next word carries a rough breathing.
+3. Crasis: καὶ ἐγώ ⟨kaì egṓ⟩ "and I", fused into one word and marked with a coronis.
+4. Movable nu on λέγουσι ⟨légousi⟩ "they say". Nothing has changed grammatically; the ν is there because a vowel or a pause follows.
