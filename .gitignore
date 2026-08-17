@@ -7,5 +7,4 @@ __pycache__/
 **/.env
 .claude/
 
-# logo generator - kept locally, not published
 brand/build_logo.py
