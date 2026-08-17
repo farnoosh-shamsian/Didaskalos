@@ -23,6 +23,7 @@
   "upload_label": "Upload treebank XML files",
   "upload_help": "Upload one or more XML files.",
   "no_treebanks_warning": "No treebanks available. Provide treebank URLs or upload XML files.",
+  "discovery_errors_caption": "GitHub could not be reached while listing content ({details}). The list below comes from the copy shipped with the app, so it may not show files added very recently.",
   "available_treebanks_header": "Available Treebanks",
   "select_column_label": "Select",
   "treebank_col_file": "File",

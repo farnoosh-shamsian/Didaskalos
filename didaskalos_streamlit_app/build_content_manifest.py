@@ -2,9 +2,13 @@ import json
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+APP_DIR = Path(__file__).resolve().parent
+REPO_ROOT = APP_DIR.parent
 REGISTRY_PATH = REPO_ROOT / "treebanks" / "registry.json"
-MANIFEST_PATH = REPO_ROOT / "content_manifest.json"
+# Written beside the app so the Docker build context carries it into the image:
+# discovery then needs no network at all, which is the only thing GitHub's rate
+# limiting cannot take away.
+MANIFEST_PATH = APP_DIR / "content_manifest.json"
 LESSON_PREFIXES = ("lessons/en/", "lessons/fa/")
 # Same slice the app used to range-request per file; enough for title/author and
 # the first <sentence> start tag, which carries the document_id.

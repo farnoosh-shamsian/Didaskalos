@@ -148,10 +148,12 @@ TREEBANK_PREFIX = "treebanks/perseus/"
 # Manifest of treebank collections (folder + format + provenance). Drives
 # discovery when present; falls back to TREEBANK_PREFIX when missing.
 TREEBANK_REGISTRY_PATH = "treebanks/registry.json"
-# Committed file list for the treebank and lesson folders, served from raw.
-# The GitHub API is rate limited per IP and Cloud Run shares its egress address,
-# so the tree call cannot be the only source of discovery.
-CONTENT_MANIFEST_PATH = "content_manifest.json"
+# Generated file list for the treebank and lesson folders, shipped inside the
+# image. GitHub rate limits both the tree API (per IP, and Cloud Run's egress
+# address is shared) and raw.githubusercontent.com, so anything fetched at
+# startup can vanish; reading the manifest off disk cannot.
+CONTENT_MANIFEST_PATH = "didaskalos_streamlit_app/content_manifest.json"
+LOCAL_CONTENT_MANIFEST = Path(__file__).resolve().parent / "content_manifest.json"
 FETCH_TIMEOUT_SECONDS = 20
 FETCH_MAX_WORKERS = 8
 # Title/author live in the XML header, so a bounded range read fills the selector
@@ -399,6 +401,19 @@ def _download_url_records_to_dir(records: list[dict], suffix_dir_name: str) -> t
     return target_dir, enriched_records
 
 
+# Why a discovery source came back empty, so the app can say so instead of
+# showing a bare "no treebanks" and leaving the cause to guesswork.
+_DISCOVERY_ERRORS: dict[str, str] = {}
+
+
+def _describe_fetch_error(error: Exception) -> str:
+    if isinstance(error, HTTPError):
+        return f"HTTP {error.code}"
+    if isinstance(error, URLError):
+        return f"{type(error).__name__}: {error.reason}"
+    return f"{type(error).__name__}: {error}"
+
+
 @st.cache_data(show_spinner=False)
 def _github_tree_paths() -> list[str]:
     # One recursive tree call shared by every discovery helper.
@@ -406,7 +421,8 @@ def _github_tree_paths() -> list[str]:
     try:
         with urlopen(request, timeout=FETCH_TIMEOUT_SECONDS) as response:
             payload = json.loads(response.read().decode("utf-8"))
-    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError):
+    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as error:
+        _DISCOVERY_ERRORS["GitHub tree API"] = _describe_fetch_error(error)
         return []
 
     tree_nodes = payload.get("tree") if isinstance(payload, dict) else None
@@ -418,14 +434,26 @@ def _github_tree_paths() -> list[str]:
 
 @st.cache_data(show_spinner=False)
 def load_content_manifest() -> dict:
-    # {} when the manifest is absent, which leaves discovery on the tree call alone.
-    try:
-        raw = _fetch_url_bytes(f"{GITHUB_RAW_BASE}/{CONTENT_MANIFEST_PATH}")
-    except Exception:
-        return {}
+    # Disk first: the copy in the image is the one source no rate limit can take
+    # away. The fetch is the fallback for a checkout without a generated manifest.
+    raw: bytes | None = None
+    if LOCAL_CONTENT_MANIFEST.is_file():
+        try:
+            raw = LOCAL_CONTENT_MANIFEST.read_bytes()
+        except OSError as error:
+            _DISCOVERY_ERRORS["manifest file"] = f"{type(error).__name__}: {error}"
+
+    if raw is None:
+        try:
+            raw = _fetch_url_bytes(f"{GITHUB_RAW_BASE}/{CONTENT_MANIFEST_PATH}")
+        except Exception as error:
+            _DISCOVERY_ERRORS["manifest fetch"] = _describe_fetch_error(error)
+            return {}
+
     try:
         payload = json.loads(raw.decode("utf-8"))
-    except (json.JSONDecodeError, UnicodeDecodeError, AttributeError):
+    except (json.JSONDecodeError, UnicodeDecodeError, AttributeError) as error:
+        _DISCOVERY_ERRORS["manifest parse"] = f"{type(error).__name__}: {error}"
         return {}
     return payload if isinstance(payload, dict) else {}
 
@@ -917,6 +945,12 @@ with st.sidebar:
 
 available_treebanks = _build_treebank_display_table(treebank_records)
 available_lessons = pd.DataFrame(lesson_records)
+
+if _DISCOVERY_ERRORS:
+    st.caption(
+        t("discovery_errors_caption", lang,
+          details="; ".join(f"{source} — {reason}" for source, reason in _DISCOVERY_ERRORS.items()))
+    )
 
 if available_treebanks.empty:
     st.warning(t("no_treebanks_warning", lang))
