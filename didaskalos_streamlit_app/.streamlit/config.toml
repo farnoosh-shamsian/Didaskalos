@@ -19,12 +19,12 @@ font = "sans-serif"
 [theme.light]
 primaryColor = "#3a1712"
 backgroundColor = "#cdc6b6"
-secondaryBackgroundColor = "#afa795"
+secondaryBackgroundColor = "#b7af9f"
 textColor = "#1f1c16"
 linkColor = "#530707"
 borderColor = "#5c5545"
 codeBackgroundColor = "#dad4c8"
-dataframeHeaderBackgroundColor = "#afa795"
+dataframeHeaderBackgroundColor = "#b7af9f"
 
 [theme.dark]
 primaryColor = "#d4a87a"
