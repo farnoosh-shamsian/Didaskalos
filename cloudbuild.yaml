@@ -1,50 +1,47 @@
 steps:
   # Build the container image (Dockerfile lives in the app subdirectory)
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: "gcr.io/cloud-builders/docker"
     args:
-      - 'build'
-      - '-t'
-      - 'europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:latest'
-      - '-t'
-      - 'europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:$SHORT_SHA'
-      - 'didaskalos_streamlit_app'
+      - "build"
+      - "-t"
+      - "europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:latest"
+      - "-t"
+      - "europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:$SHORT_SHA"
+      - "didaskalos_streamlit_app"
 
   # Push the container image to Artifact Registry
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: "gcr.io/cloud-builders/docker"
     args:
-      - 'push'
-      - '--all-tags'
-      - 'europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app'
+      - "push"
+      - "--all-tags"
+      - "europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app"
 
   # Deploy to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args:
-      - 'run'
-      - 'deploy'
-      - 'didaskalos-app'
-      - '--image'
-      - 'europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:$SHORT_SHA'
-      - '--region'
-      - 'europe-west1'
-      - '--platform'
-      - 'managed'
-      # A "select all" build peaks well above the 512Mi default and was being
-      # OOM-killed, so 2Gi and a longer timeout. CPU stays at 1: a second core
-      # only shaved time off builds, and every vCPU is billed for the whole life
-      # of an instance, idle stretches included. max-instances bounds the bill.
-      - '--memory'
-      - '2Gi'
-      - '--cpu'
-      - '1'
-      - '--timeout'
-      - '600'
-      - '--max-instances'
-      - '3'
+      - "run"
+      - "deploy"
+      - "didaskalos-app"
+      - "--image"
+      - "europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:$SHORT_SHA"
+      - "--region"
+      - "europe-west1"
+      - "--platform"
+      - "managed"
+
+      - "--memory"
+      - "2Gi"
+      - "--cpu"
+      - "1"
+      - "--timeout"
+      - "600"
+      - "--max-instances"
+      - "3"
 
 images:
-  - 'europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:latest'
-  - 'europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:$SHORT_SHA'
+  - "europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:latest"
+  - "europe-west1-docker.pkg.dev/didaskalos-501609/cloud-run-source-deploy/didaskalos-app:$SHORT_SHA"
 
 options:
   logging: CLOUD_LOGGING_ONLY
