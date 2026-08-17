@@ -1,11 +1,11 @@
 # Didaskalos
 
-Didaskalos (διδάσκαλος, *teacher*) is a corpus-driven pipeline that reads an annotated Ancient
+Didaskalos (διδάσκαλος, _teacher_) is a corpus-driven pipeline that reads an annotated Ancient
 Greek corpus and writes a textbook for it. Grammar topics are ordered by what the selected texts
 actually use rather than by a fixed curriculum, and the exercises are authentic sentences from that
 corpus, each carrying its citation.
 
-- **Live app:** <https://didaskalos-app-11551311398.europe-west1.run.app/>
+- **Live app:** <https://didaskalos-app-11551311398.europe-west1.run.app/> (English and Persian)
 - **Project site:** <https://farnoosh-shamsian.github.io/didaskalos/> (English and Persian)
 
 ## Why
@@ -14,13 +14,13 @@ Ancient Greek pedagogy is concentrated in English and a few European languages. 
 other languages the resources are very limited or nonexistent, so learning Greek means going through
 a second foreign language first, or translating a textbook that was written for a different
 audience — which can turn the translation into a rewrite, or complicate the learning experience. Didaskalos is built the other way round: the
-*sequencing* lives in code and the teaching language is a data file, while the pedagogy lives in
+_sequencing_ lives in code and the teaching language is a data file, while the pedagogy lives in
 modules written from the start to be translated. The Greek is not simplified — a deliberate tradeoff,
 discussed under [Exercises and difficulty scoring](#exercises-and-difficulty-scoring).
 
 Adding a language needs one locale file and a translated set of lesson modules, with no change to the
 pipeline. The translation itself is not mechanical: for a language with no Greek-teaching tradition
-the grammatical metalanguage has to be *coined* rather than translated, which is why the Persian
+the grammatical metalanguage has to be _coined_ rather than translated, which is why the Persian
 localization needed a curated terminology table.
 
 English and Persian are available today. Persian comes first because it is the language I work in
@@ -35,13 +35,13 @@ texts actually use, and every exercise is a real sentence carrying its citation.
 
 ## What is in it
 
-| | |
-| --- | --- |
-| Works built in | 85 (whole works, or the portions of them annotated in the source treebanks) |
-| Authors and collections | 25 |
-| Treebank corpora | 4 (Perseus, Gorman, Harrington, PROIEL New Testament) |
-| Lesson modules | 157 per language |
-| Interface and textbook languages | English, Persian |
+|                                  |                                                                             |
+| -------------------------------- | --------------------------------------------------------------------------- |
+| Works built in                   | 85 (whole works, or the portions of them annotated in the source treebanks) |
+| Authors and collections          | 25                                                                          |
+| Treebank corpora                 | 4 (Perseus, Gorman, Harrington, PROIEL New Testament)                       |
+| Lesson modules                   | 157 per language                                                            |
+| Interface and textbook languages | English, Persian                                                            |
 
 Users can also paste treebank URLs or upload their own XML.
 
@@ -58,7 +58,7 @@ Users can also paste treebank URLs or upload their own XML.
    the book is exported as Markdown, HTML, or CSV — with a colophon naming every source corpus, its
    license, and its URL.
 
-Homer, for example — the whole *Iliad*, all 24 books — yields 128,102 analyzed tokens and 132
+Homer, for example — the whole _Iliad_, all 24 books — yields 128,102 analyzed tokens and 132
 ranked grammar topics.
 
 Two textbook types are available. The case-based textbook explains nouns and adjectives case by
@@ -90,7 +90,7 @@ simplified. Each sentence is scored on three factors — the mean rarity of its 
 its single rarest word, and its length — and selection also prefers sentences whose vocabulary
 earlier lessons have already introduced.
 
-*Lexical* difficulty therefore rises gradually. Syntactic difficulty does not: subordination depth,
+_Lexical_ difficulty therefore rises gradually. Syntactic difficulty does not: subordination depth,
 hyperbaton and participial stacking are not scored, though for Greek they are what makes a sentence
 hard, so the real curve is lumpy rather than gentle (see [Known limitations](#known-limitations)).
 And while no sentence is reworded, each is an excerpt: it reaches the learner as a modern editor
@@ -103,15 +103,15 @@ Lesson modules are Markdown files, one folder per language (`lessons/en`, `lesso
 parallel filenames so a translated file shadows its English counterpart. They reached their
 present state through six passes, recorded here so a reader can weigh them:
 
-1. **Draft.** A Retrieval-Augmented Generation pipeline read Smyth's *Greek Grammar* and Crosby
-   & Schaeffer's *An Introduction to Greek* and drafted one module per syllabus entry, using
+1. **Draft.** A Retrieval-Augmented Generation pipeline read Smyth's _Greek Grammar_ and Crosby
+   & Schaeffer's _An Introduction to Greek_ and drafted one module per syllabus entry, using
    open-weight models served by Groq. That pipeline has been retired and is kept for reference
    in [`archive/ragbot/`](archive/ragbot/).
 2. **First edit.** Claude Opus 4.6 revised the English drafts.
 3. **Translation.** Claude Fable 5 translated the modules into Persian.
 4. **Terminology.** The English–Persian grammatical terminology table
    ([`grammatical_terminology_en_fa.csv`](grammatical_terminology_en_fa.csv)) was distilled
-   *from* the finished translation rather than written before it, then used to normalize terms
+   _from_ the finished translation rather than written before it, then used to normalize terms
    back across both languages.
 5. **Second edit.** Claude Opus 5 revised both language sets against that table.
 6. **Fact-check.** Claude Opus 5 checked every module.
@@ -140,7 +140,7 @@ Everything language-specific lives in two places:
    tables of contents stay line-for-line parallel.
 
 Translate those and Didaskalos teaches Greek in that language; the pipeline itself does not change.
-What is agnostic here is the *data flow*, not the explanatory framework: the modules assume the
+What is agnostic here is the _data flow_, not the explanatory framework: the modules assume the
 categories of the Western grammatical tradition, and right-to-left support needed a code change of
 its own, so a language whose own grammatical tradition carves things up differently may need more
 than a translation.
@@ -160,8 +160,8 @@ matter of dropping files into a folder and adding one manifest entry — see
 ## Where this started
 
 Didaskalos began as an answer to one language's version of that problem. For readers in Iran,
-Ancient Greek texts are primary sources for their own past: much of the surviving *continuous
-narrative* of ancient Persia reaches us only in Greek. Yet no Iranian institution offers a regular
+Ancient Greek texts are primary sources for their own past: much of the surviving _continuous
+narrative_ of ancient Persia reaches us only in Greek. Yet no Iranian institution offers a regular
 Ancient Greek course, and there is no functional grammar, reader, or textbook written for Persian
 speakers.
 
@@ -203,7 +203,7 @@ See [LICENSE](LICENSE) for the full text.
 
 **Scope.** This license covers the original work of this project: the pipeline and
 application code, the grammar and lesson modules, the syllabus-generation method, and
-the Persian localization. It does *not* relicense the source texts. As stated under
+the Persian localization. It does _not_ relicense the source texts. As stated under
 [Lesson modules and localization](#lesson-modules-and-localization), the modules began as
 drafts generated from standard reference grammars and are under continuing hand-correction;
 they are offered here as the author's own expression as corrected so far, not as an independent
@@ -213,12 +213,12 @@ rediscovery of the descriptive facts of Greek grammar, which belong to no one.
 own authors, as declared in [`treebanks/registry.json`](treebanks/registry.json) and
 shown in the app:
 
-| Corpus | Upstream license |
-| --- | --- |
-| Perseus Ancient Greek Dependency Treebank | CC BY-SA 3.0 |
-| Gorman Ancient Greek Dependency Trees | CC BY-NC-SA 4.0 |
-| Harrington Treebanked Commentaries | MIT |
-| PROIEL New Testament | CC BY-NC-SA 4.0 |
+| Corpus                                    | Upstream license |
+| ----------------------------------------- | ---------------- |
+| Perseus Ancient Greek Dependency Treebank | CC BY-SA 3.0     |
+| Gorman Ancient Greek Dependency Trees     | CC BY-NC-SA 4.0  |
+| Harrington Treebanked Commentaries        | MIT              |
+| PROIEL New Testament                      | CC BY-NC-SA 4.0  |
 
 Note that Perseus is CC BY-SA 3.0, which does **not** permit a NonCommercial
 restriction to be added to that material; its ShareAlike terms continue to govern the
