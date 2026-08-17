@@ -88,11 +88,19 @@ Listing what is in `treebanks/` and `lessons/` takes two sources, merged:
   from GitHub raw at runtime. Regenerate it whenever files are added or removed.
 - The GitHub tree API — picks up anything pushed since the manifest was last generated.
 
-The manifest exists because the tree API is rate limited per IP (60 requests an hour when
-unauthenticated) and Cloud Run's egress address is shared, so the call can fail for reasons that
-have nothing to do with this app. When it did, and it was the only source, the app showed
-"No treebanks available" and stopped. Either source alone now yields the full list, so a stale
-manifest or an unreachable API degrades nothing.
+Either source alone yields the full list, so a stale manifest or an unreachable API degrades
+nothing. The manifest also carries each treebank file's `title`, `author` and `document_id`, read
+from its XML header when the manifest is built — these are what the picker labels rows with and
+what groups a work split across many passage files into one entry.
+
+Both exist because of GitHub's rate limits, which the app used to walk straight into. The tree API
+allows 60 requests an hour per IP unauthenticated, and Cloud Run's egress address is shared, so
+losing that one call left the app with nothing to list ("No treebanks available"). Reading the
+metadata cost one range request per file — around 165 of them on every cold start, before the user
+had asked for anything — which earned a `429 Too Many Requests` from `raw.githubusercontent.com`
+for minutes at a time: the picker crawled, and every file whose header failed to load fell back to
+showing its corpus name under "Unknown author". Building the picker now costs one request for the
+manifest instead of one per file, and fetches retry briefly on 429/503.
 
 A new *format* (beyond `agdt-xml`/`conllu`) is added once by writing an adapter in
 `treebank_parsers.py` and registering it in `PARSERS`; every adapter must emit the same token
