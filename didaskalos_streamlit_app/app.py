@@ -5,6 +5,7 @@ import os
 import json
 import sys
 import tempfile
+import time
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
@@ -279,6 +280,35 @@ def _normalize_url(url: str) -> str:
     return urlunsplit((parts.scheme, parts.netloc, path, query, fragment))
 
 
+# GitHub answers a burst of requests with 429 and occasionally 503. A short
+# bounded backoff clears both far more often than not, and the local and manifest
+# fallbacks still cover the case where it does not.
+RETRY_STATUS_CODES = (429, 503)
+FETCH_RETRIES = 2
+FETCH_RETRY_MAX_WAIT_SECONDS = 5
+
+
+def _retry_wait_seconds(error: HTTPError, attempt: int) -> float:
+    retry_after = error.headers.get("Retry-After") if error.headers else None
+    try:
+        wait = float(retry_after) if retry_after else 2.0 * (attempt + 1)
+    except ValueError:
+        wait = 2.0 * (attempt + 1)
+    return min(wait, FETCH_RETRY_MAX_WAIT_SECONDS)
+
+
+def _urlopen_bytes(request: Request, max_bytes: int | None = None) -> bytes:
+    for attempt in range(FETCH_RETRIES + 1):
+        try:
+            with urlopen(request, timeout=FETCH_TIMEOUT_SECONDS) as response:
+                return response.read() if max_bytes is None else response.read(max_bytes)
+        except HTTPError as error:
+            if error.code not in RETRY_STATUS_CODES or attempt == FETCH_RETRIES:
+                raise
+            time.sleep(_retry_wait_seconds(error, attempt))
+    raise RuntimeError("unreachable")
+
+
 # Cached for the life of the process so a rerun never re-downloads a file.
 # Failures raise rather than return None, so transient errors are not memoized.
 @st.cache_data(show_spinner=False, max_entries=256)
@@ -286,8 +316,7 @@ def _fetch_url_bytes(url: str) -> bytes:
     source_url = _normalize_url(url)
     try:
         request = Request(source_url, headers={"User-Agent": "Mozilla/5.0"})
-        with urlopen(request, timeout=FETCH_TIMEOUT_SECONDS) as response:
-            return response.read()
+        return _urlopen_bytes(request)
     except (HTTPError, URLError, TimeoutError, ValueError):
         local_payload = _read_from_local_repo_if_available(source_url)
         if local_payload is not None:
@@ -306,8 +335,7 @@ def _fetch_url_header_bytes(url: str, max_bytes: int = METADATA_HEADER_BYTES) ->
             source_url,
             headers={"User-Agent": "Mozilla/5.0", "Range": f"bytes=0-{max_bytes - 1}"},
         )
-        with urlopen(request, timeout=FETCH_TIMEOUT_SECONDS) as response:
-            return response.read(max_bytes)
+        return _urlopen_bytes(request, max_bytes)
     except (HTTPError, URLError, TimeoutError, ValueError):
         local_payload = _read_from_local_repo_if_available(source_url)
         if local_payload is not None:
@@ -402,20 +430,29 @@ def load_content_manifest() -> dict:
     return payload if isinstance(payload, dict) else {}
 
 
-def _manifest_paths(section: str, prefix: str) -> list[str]:
+def _manifest_entries(section: str, prefix: str) -> dict[str, dict]:
+    # Path -> the file's manifest record. Lessons list bare names, treebanks carry
+    # the header metadata the picker labels rows with.
     folders = load_content_manifest().get(section)
     if not isinstance(folders, dict):
-        return []
+        return {}
     names = folders.get(prefix)
     if not isinstance(names, list):
-        return []
-    return [f"{prefix}{name}" for name in names if isinstance(name, str)]
+        return {}
+
+    entries: dict[str, dict] = {}
+    for item in names:
+        if isinstance(item, str):
+            entries[f"{prefix}{item}"] = {}
+        elif isinstance(item, dict) and isinstance(item.get("file"), str):
+            entries[f"{prefix}{item['file']}"] = item
+    return entries
 
 
 def _discover_paths(section: str, prefix: str, suffix: str) -> list[str]:
     # Manifest and live tree merged: the manifest keeps discovery working while the
     # API is unreachable, the API picks up files pushed since the manifest was built.
-    paths = set(_manifest_paths(section, prefix))
+    paths = set(_manifest_entries(section, prefix))
     paths.update(
         path
         for path in _github_tree_paths()
@@ -473,7 +510,9 @@ def load_registered_treebank_urls() -> list[dict]:
         if not prefix:
             continue
         suffix = _glob_suffix(corpus.get("file_glob", "*.xml"))
+        manifest_entries = _manifest_entries("treebanks", prefix)
         for path in _discover_paths("treebanks", prefix, suffix):
+            meta = manifest_entries.get(path, {})
             entries.append(
                 {
                     "url": f"{GITHUB_RAW_BASE}/{path}",
@@ -482,6 +521,9 @@ def load_registered_treebank_urls() -> list[dict]:
                     "format": corpus.get("format", "agdt-xml"),
                     "license": corpus.get("license"),
                     "author": corpus.get("author"),
+                    "title": meta.get("title"),
+                    "file_author": meta.get("author"),
+                    "document_id": meta.get("document_id"),
                 }
             )
     return sorted(entries, key=lambda entry: entry["url"])
@@ -577,12 +619,17 @@ def _merge_treebank_entries(default_entries: list[dict], custom_urls: list[str])
 
 def _build_treebank_records(entries: list[dict]) -> list[dict]:
     used_names = set()
-    # Only XML files with no manifest author need a header read; CoNLL-U has no
-    # header and relies on the manifest.
+    # The manifest already carries every listed file's header metadata, so a read
+    # over the network is left for what it cannot cover: a pasted URL, or a file
+    # pushed since the manifest was built. Reading all of them was what made the
+    # picker slow and tripped GitHub's rate limit. CoNLL-U has no header at all
+    # and takes its author from the registry.
     urls_needing_meta = [
         entry["url"]
         for entry in entries
         if not entry.get("author")
+        and not entry.get("title")
+        and not entry.get("document_id")
         and entry.get("format") in (None, "agdt-xml")
         and entry["url"].lower().endswith(".xml")
     ]
@@ -593,7 +640,10 @@ def _build_treebank_records(entries: list[dict]) -> list[dict]:
         url = entry["url"]
         parsed = urlparse(url)
         file_name = Path(parsed.path).name or f"file_{i}"
-        meta_title, meta_author, meta_document_id = metadata_by_url.get(url, (None, None, None))
+        fetched_title, fetched_author, fetched_document_id = metadata_by_url.get(url, (None, None, None))
+        meta_title = fetched_title or entry.get("title")
+        meta_author = fetched_author or entry.get("file_author")
+        meta_document_id = fetched_document_id or entry.get("document_id")
         records.append(
             {
                 "file": _unique_name(file_name, used_names),
