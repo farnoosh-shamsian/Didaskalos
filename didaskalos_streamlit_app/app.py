@@ -147,6 +147,10 @@ TREEBANK_PREFIX = "treebanks/perseus/"
 # Manifest of treebank collections (folder + format + provenance). Drives
 # discovery when present; falls back to TREEBANK_PREFIX when missing.
 TREEBANK_REGISTRY_PATH = "treebanks/registry.json"
+# Committed file list for the treebank and lesson folders, served from raw.
+# The GitHub API is rate limited per IP and Cloud Run shares its egress address,
+# so the tree call cannot be the only source of discovery.
+CONTENT_MANIFEST_PATH = "content_manifest.json"
 FETCH_TIMEOUT_SECONDS = 20
 FETCH_MAX_WORKERS = 8
 # Title/author live in the XML header, so a bounded range read fills the selector
@@ -385,18 +389,49 @@ def _github_tree_paths() -> list[str]:
 
 
 @st.cache_data(show_spinner=False)
-def load_github_tree_urls(prefix: str) -> list[str]:
-    urls = []
-    for path in _github_tree_paths():
-        if not path.startswith(prefix):
-            continue
-        if prefix == TREEBANK_PREFIX and not path.lower().endswith(".xml"):
-            continue
-        if prefix in LESSON_PREFIXES and not path.lower().endswith(".md"):
-            continue
-        urls.append(f"{GITHUB_RAW_BASE}/{path}")
+def load_content_manifest() -> dict:
+    # {} when the manifest is absent, which leaves discovery on the tree call alone.
+    try:
+        raw = _fetch_url_bytes(f"{GITHUB_RAW_BASE}/{CONTENT_MANIFEST_PATH}")
+    except Exception:
+        return {}
+    try:
+        payload = json.loads(raw.decode("utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError, AttributeError):
+        return {}
+    return payload if isinstance(payload, dict) else {}
 
-    return sorted(urls)
+
+def _manifest_paths(section: str, prefix: str) -> list[str]:
+    folders = load_content_manifest().get(section)
+    if not isinstance(folders, dict):
+        return []
+    names = folders.get(prefix)
+    if not isinstance(names, list):
+        return []
+    return [f"{prefix}{name}" for name in names if isinstance(name, str)]
+
+
+def _discover_paths(section: str, prefix: str, suffix: str) -> list[str]:
+    # Manifest and live tree merged: the manifest keeps discovery working while the
+    # API is unreachable, the API picks up files pushed since the manifest was built.
+    paths = set(_manifest_paths(section, prefix))
+    paths.update(
+        path
+        for path in _github_tree_paths()
+        if path.startswith(prefix) and (not suffix or path.lower().endswith(suffix))
+    )
+    return sorted(paths)
+
+
+@st.cache_data(show_spinner=False)
+def load_discovered_urls(prefix: str) -> list[str]:
+    is_lesson = prefix in LESSON_PREFIXES
+    section = "lessons" if is_lesson else "treebanks"
+    return [
+        f"{GITHUB_RAW_BASE}/{path}"
+        for path in _discover_paths(section, prefix, ".md" if is_lesson else ".xml")
+    ]
 
 
 @st.cache_data(show_spinner=False)
@@ -429,21 +464,16 @@ def load_registered_treebank_urls() -> list[dict]:
         return [
             {"url": url, "corpus_id": "perseus", "corpus_name": None,
              "format": "agdt-xml", "license": None, "author": None}
-            for url in load_github_tree_urls(TREEBANK_PREFIX)
+            for url in load_discovered_urls(TREEBANK_PREFIX)
         ]
 
-    paths = _github_tree_paths()
     entries: list[dict] = []
     for corpus in registry:
         prefix = corpus.get("path", "")
         if not prefix:
             continue
         suffix = _glob_suffix(corpus.get("file_glob", "*.xml"))
-        for path in paths:
-            if not path.startswith(prefix):
-                continue
-            if suffix and not path.lower().endswith(suffix):
-                continue
+        for path in _discover_paths("treebanks", prefix, suffix):
             entries.append(
                 {
                     "url": f"{GITHUB_RAW_BASE}/{path}",
@@ -524,7 +554,7 @@ def _resolve_default_lesson_urls(lang: str = DEFAULT_LANG) -> list[str]:
     merged: list[str] = []
     for prefix in prefixes:
         # Remote and local merged so a GitHub API gap does not hide lessons.
-        merged.extend(load_github_tree_urls(prefix))
+        merged.extend(load_discovered_urls(prefix))
         merged.extend(_list_local_lesson_urls(prefix))
     return _dedupe_lesson_urls_by_filename(_ensure_starter_lesson_urls(merged))
 
