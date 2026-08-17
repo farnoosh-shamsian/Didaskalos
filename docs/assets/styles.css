@@ -4,19 +4,22 @@
 :root {
   --primary-color: #530707;
   --article-header-color: #5b0000;
-  --secondary-color: #b3ab9a;
-  --footer-color: #b3ab9a;
-  --background-color: #c4bca9;
+  --secondary-color: #afa795;
+  --footer-color: #afa795;
+  --background-color: #cdc6b6;
   --text-color: #1f1c16;
-  --link-color: #2b2116;
+  --link-color: #530707;
   --accent-gold: #d4a87a;
   /* Small filled surfaces take a brownish red, not the heading red, which reads
      too hot against the sand. */
   --deep-red: #3a1712;
   /* Text sitting on one of those filled surfaces. */
   --on-accent: #cacbc4;
-  --rule-color: rgba(31, 28, 22, 0.15);
-  --figure-tint: rgba(31, 28, 22, 0.08);
+  /* Rules and borders carry 3:1 against the ground they sit on, so an edge is
+     still an edge with reduced contrast sensitivity. Hence the dark hairline
+     rather than the faint one the sand would otherwise invite. */
+  --rule-color: rgba(31, 28, 22, 0.55);
+  --figure-tint: rgba(31, 28, 22, 0.10);
   --header-font-size: clamp(26px, 2.4vw, 38px);
   --nav--font-size: clamp(16px, 1vw, 20px);
 }
@@ -28,15 +31,15 @@
 :root[data-theme="dark"] {
   --primary-color: #d4a87a;
   --article-header-color: #e0b68a;
-  --secondary-color: #2b211c;
-  --footer-color: #2b211c;
-  --background-color: #1e1714;
-  --text-color: #e3d9c8;
+  --secondary-color: #362923;
+  --footer-color: #362923;
+  --background-color: #181310;
+  --text-color: #e7ded0;
   --link-color: #d4a87a;
   --deep-red: #d4a87a;
-  --on-accent: #1e1714;
-  --rule-color: rgba(227, 217, 200, 0.16);
-  --figure-tint: rgba(227, 217, 200, 0.07);
+  --on-accent: #181310;
+  --rule-color: rgba(231, 222, 208, 0.42);
+  --figure-tint: rgba(231, 222, 208, 0.09);
 }
 
 * {
@@ -397,7 +400,9 @@ nav ul li a:hover {
   font-size: 1.2em;
   border-radius: 5px;
   flex-basis: 30%;
-  opacity: 0.7;
+  /* Faded, but not so far that the card's own body text drops under 4.5:1 —
+     the hover that restores it never arrives on touch or by keyboard. */
+  opacity: 0.85;
   /* Only what the hover changes: `all` would fade the card's colours on every
      theme switch. */
   transition: opacity ease-in-out 0.5s, transform ease-in-out 0.5s;

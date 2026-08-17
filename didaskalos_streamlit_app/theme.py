@@ -39,7 +39,7 @@ _TOGGLE_SCRIPT_ID = "didaskalos-theme-toggle"
 # colours: the text and accent of the theme it sits in.
 _TOGGLE_COLORS = {
     "light": {"ink": "#1f1c16", "hover": "#530707", "wash": "rgba(31, 28, 22, 0.10)"},
-    "dark": {"ink": "#e3d9c8", "hover": "#d4a87a", "wash": "rgba(227, 217, 200, 0.12)"},
+    "dark": {"ink": "#e7ded0", "hover": "#d4a87a", "wash": "rgba(231, 222, 208, 0.12)"},
 }
 
 _TOGGLE_COLOR_RULES = """

@@ -9,28 +9,32 @@
 # light, the logo's gold on near-black brown for dark. The site's rule about the
 # red holds here too — a saturated red is only ever text or a small filled
 # surface, and on dark it gives way to the gold entirely.
+#
+# borderColor is far darker than the ground it draws on, on purpose: it is the
+# only thing marking where an input begins, and a hairline tinted to match the
+# sand disappears for anyone reading with reduced contrast sensitivity.
 [theme]
 font = "sans-serif"
 
 [theme.light]
 primaryColor = "#3a1712"
-backgroundColor = "#c4bca9"
-secondaryBackgroundColor = "#b3ab9a"
+backgroundColor = "#cdc6b6"
+secondaryBackgroundColor = "#afa795"
 textColor = "#1f1c16"
 linkColor = "#530707"
-borderColor = "#a49b86"
-codeBackgroundColor = "#d1cabb"
-dataframeHeaderBackgroundColor = "#b3ab9a"
+borderColor = "#5c5545"
+codeBackgroundColor = "#dad4c8"
+dataframeHeaderBackgroundColor = "#afa795"
 
 [theme.dark]
 primaryColor = "#d4a87a"
-backgroundColor = "#1e1714"
-secondaryBackgroundColor = "#2b211c"
-textColor = "#e3d9c8"
+backgroundColor = "#181310"
+secondaryBackgroundColor = "#362923"
+textColor = "#e7ded0"
 linkColor = "#e0b68a"
-borderColor = "#4a3a30"
-codeBackgroundColor = "#2b211c"
-dataframeHeaderBackgroundColor = "#2b211c"
+borderColor = "#8e705c"
+codeBackgroundColor = "#362923"
+dataframeHeaderBackgroundColor = "#362923"
 
 [server]
 headless = true

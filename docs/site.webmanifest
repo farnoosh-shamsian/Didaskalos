@@ -5,7 +5,7 @@
   "start_url": "/didaskalos/",
   "scope": "/didaskalos/",
   "display": "standalone",
-  "background_color": "#c4bca9",
+  "background_color": "#cdc6b6",
   "theme_color": "#530707",
   "icons": [
     {

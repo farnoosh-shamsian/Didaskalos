@@ -11,7 +11,7 @@ const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const themedImages = document.querySelectorAll("[data-src-light][data-src-dark]");
 
 const THEME_KEY = "didaskalos-theme";
-const THEME_COLORS = { light: "#c4bca9", dark: "#1e1714" };
+const THEME_COLORS = { light: "#cdc6b6", dark: "#181310" };
 // The button says what a click will do, not what the theme currently is.
 const THEME_LABELS = {
   en: { light: "Switch to dark theme", dark: "Switch to light theme" },

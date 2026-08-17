@@ -197,14 +197,14 @@ _FONT_STACK = {
 # Both are sent and the overlay picks one from the theme stamp.
 _OVERLAY_COLORS = {
     "light": {
-        "card": "#d1cabb",
+        "card": "#dad4c8",
         "text": "#1f1c16",
         "accent": "#3a1712",
         "onAccent": "#cacbc4",
     },
     "dark": {
-        "card": "#2b211c",
-        "text": "#e3d9c8",
+        "card": "#362923",
+        "text": "#e7ded0",
         "accent": "#d4a87a",
         "onAccent": "#1e1714",
     },
